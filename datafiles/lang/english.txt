@@ -1,0 +1,501 @@
+# -----------
+# PROPERTIES
+# -----------
+lang = "en"
+display_name = "ENGLISH"
+custom_fonts = false
+game_version = "V1.0.311"
+
+# ---------------
+# IMPORTANT NOTE
+# ---------------
+# Do NOT modify this file. 
+#
+# If you modify this file and the game receives an update, this file will not update, which
+# may result in a crash.
+#
+#
+# --------------------
+# CUSTOM FONT EXAMPLE
+# --------------------
+# tutorialfont_dir = "fonts/tutorial_en.png"
+# tutorialfont_map = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!,.:"
+# tutorialfont_sep = "2"
+# creditsfont_dir = "fonts/credits_en.png"
+# creditsfont_map = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.:!0123456789?'\"ÁÉÍÓÚáéíóú_-[]▼()&#风雨廊桥전태양*яиБжидГзв¡¿Ññ"
+# creditsfont_sep = "2"
+# bigfont_dir = "fonts/bigfont_en.png"
+# bigfont_map = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.1234567890:"
+# bigfont_sep = "0"
+# smallfont_dir = "fonts/smallfont_en.png"
+# smallfont_map "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.:?1234567890"
+# smallfont_sep = "0"
+#
+# NOTE: If you want to use the default font when making a new lang file you need to declare
+# the *_dir variable to noone, like so:
+#
+# creditsfont_dir = noone
+#
+# ---------------------------------------------------------------------------------
+# The code above will automatically generate new variables called %fontname%_%lang%
+# So you'll have to declare them here like so:
+# ---------------------------------------------------------------------------------
+# tutorialfont = "tutorialfont_en"
+# creditsfont = "creditsfont_en"
+# smallfont = "smallfont_en"
+# bigfontfont = "bigfontfont_en"
+
+tutorialfont = "tutorialfont_en"
+creditsfont = "creditsfont_en"
+bigfont = "bigfont_en"
+smallfont = "smallfont_en"
+
+# -------------
+# GAMEPAD ICONS
+# -------------
+# [U] Up
+# [L] Left
+# [R] Right
+# [D] Down
+# [F] Forward
+# [B] Backwards
+# [G] Grab
+# [M] Mach
+# [J] Jump
+# [S] Shoot
+# [T] Taunt
+# [g] Groundpound
+# [s] Superjump
+# --------
+# EFFECTS
+# --------
+# / end effect
+# {s} shake
+# {u} up down motion (like the tutorial)
+
+# ---------
+# TUTORIAL
+# ---------
+tutorial1 = "Press [J] to jump! Hold [D] and a direction to crawl!"
+tutorial2 = "You can break marble and metal blocks underneath you with a bodyslam! Press [g] while in the air!"
+tutorial3 = "Start the bodyslam from higher to destroy metal blocks!"
+tutorial4 = "Some blocks may be hidden, keep an eye out for them! Press [G] to destroy them!"
+tutorial5 = "Press [G] to do the Grab Dash! It can destroy marble blocks!"
+tutorial6 = "Hold [M] to start a Mach Run! If you hold [M] then jump on a wall, you will start wall running!"
+tutorial7 = "Press [J] while wall running to jump off the wall! Keep [M] held to stick on the other walls! A tip: You can also use the Grab Dash to start a wall run while in the air, just keep [M] held!"
+tutorial8 = "Press [G] then hold [M] for a quick start with the Mach Run! Try it out!"
+tutorial9 = "You can also jump after pressing [G] in order to do a long jump!"
+tutorial10 = "You can also simply run up a slope next to a wall to automatically start wall running!"
+tutorial11 = "While doing a Mach Run, hold [D] to destroy blocks in a small gap!"
+tutorial12 = "Release [D] and keep holding [M] to continue the Mach Run!"
+tutorial13 = "Hold [D] during a Mach Run while in the air to do a dive!"
+tutorial14 = "In order to destroy metal blocks, you need to gain speed by doing the Mach Run. You can hold [F] to go even faster too!"
+tutorial15 = "Running down a slope will make you go faster!"
+tutorial16 = "To turn while retaining Mach Run, press the opposite direction."
+tutorial17 = "Try turning before falling down a hole, you will retain your speed once on the ground"
+tutorial18 = "While at high speed, hold [s] then release it to perform the Super Jump! You can also adjust your position with [L][R] while you are holding [s]!"
+tutorial19 = "After starting a Super Jump, you can also dash forward in the air by pressing [G]! Give it a try!"
+tutorial20 = "Another trick: Press [G] then [D] immediately to go through gaps faster!"
+tutorial21 = "You can grab things with the Grab Dash and throw them by pressing [G] again!"
+tutorial22 = "If you hold [U] before throwing, you will send the things up!"
+tutorial23 = "Collect these in order to get a better rank! Some can only be acquired during the escape..."
+tutorial24 = "You need to save most of the dudes in the cages in order to advance to the next floor! They will give you money to pay Mr.Stick! If you miss too many of them, you will need to replay some levels!"
+tutorial25 = "Destroy John the pillar in order to open the exit gate. This will reverse the solid pillar blocks!"
+tutorial_lapunlock = "{u}All lap 2 portals unlocked!/"
+tutorial_lap = "Har, har! Enter this portal when the pillar has been taken down... If you dare! You will have to do another loop around the level, so be sure to have the time for it!"
+getout = "GET OUT NOW!!!"
+
+# -----------------
+# GUSTAVO TUTORIAL
+# -----------------
+forest1 = "Hold [M] to move faster and destroy metal blocks!"
+forest2 = "Press [U][G] to kick the rat!"
+forest3 = "Press [J] in the air to do a double jump! You can cancel out of it with another move too!"
+forest4 = "Press [D] middair to quickly go down!"
+forest5 = "The double jump can also destroy metal blocks underneath!"
+forest6 = "While doing the double jump, hold [J] while holding in the direction of a wall to climb it!"
+
+# -----------------
+# HUB TIPS
+# -----------------
+hubtips1 = "Did you know you could do a flying uppercut by pressing [U] then [G]? This can work as a pseudo double jump and can also dispatch enemies in the air!"
+hubtips2 = "After dispatching a few enemies, you might have noticed the electricity effect around you. While the effect is active, press [U] then [T] to dispatch every enemy on the screen!"
+hubtips3 = "Did you know that you can block and parry any projectile or damage by pressing [T] before getting hurt?"
+hubtips4 = "Be wary of your final judgement. Your performance is always accounted for."
+hubtips5 = "Once you have beaten a level, you can revisit it to find a Lap 2 portal near the entrance. These will give you a point bonus, but also force you to loop around the escape portion one more time..."
+hubtips6 = "Did you know that you can do a piledriver by holding an enemy and pressing [D] while in the air ? You can also perform a piledriver that will boost you upward if you hold [U] before grabbing an enemy."
+hubtips7 = "An obscure technique: While doing a dive in the air and pressing [J], you will directly go downward with a body slam. Only useful if you want to save time!"
+hubtips8 = "Did you know that you can make enemies react to you faster by pressing [T] near them?"
+hubtips9 = "The elusive P rank... You can get it by doing everything there is to do in a level. The problem is that you need to keep a combo for the entirety of the level! It's a tough challenge, so don't feel bad if you don't want to do it!"
+
+# -----------------
+# HUB GARBAGE
+# -----------------
+
+garbage1 = "Did you know that your full name is Peppino Spaghetti? That's unfortunate."
+garbage2 = "If you hurt Peppino too much, you can go to hell!"
+garbage3 = "What do you know about this tower? Who are you? I don't know anything!" 
+garbage4 = "If you scratch my back, I will scratch yours!"
+garbage5 = "I wouldn't trust this Gustavo guy... He seems a bit too friendly..."
+garbage6 = "I'm going to go ahead and talk about something that I've been telling others who know about this place of worship that you did this. Well, we're down from your pizzeria, and we're down from this tower. There are customers, and they want to see one of these things. So I got a friend, he went down one of the floors and this guy came up next to me, and the idea was, why is it that when you're in the upper part of the tower there is this Pizzaface character, then there's a man from your previous life leading the way? There's a pizza in your tower with all this information."
+garbage7 = "Pizza Tower Instant Pizza Gaming Promotion! Type /pizza to order a free pizza courtesy of Peppino's Pizza!"
+garbage8 = "Remember to not take too many breaks, keep playing! Your time here is limited!"
+garbage9 = "I've lost my medication again. This day is going to suck!"
+garbage10 = "I don't think you need any hints today."
+garbage11 = "Do you seriously think that I'm going to give you more advice after that blunder you just did?"
+garbage12 = "Does your fridge smell weird? Have you checked the expiration date?"
+garbage13 = "You know, you really could lose some weight."
+garbage14 = "Are you going to play or just stand there stupidly?"
+garbage15 = "Kiss my ass!"
+
+# -------------------
+# TRANSFORMATION TIPS
+# -------------------
+knighttip = "{u}[J][J] Double Jump [J][g] Down Thrust/"
+firemouthtip = "{u}[J][G] Air Dash/"
+shotguntip = "{u}[G] Shoot [J][g] Shoot down/"
+boxxedtip = "{u}[J] Flap [G] Spin/"
+morttip = "{u}[J][J] Double Jump [G] Attack/"
+ghosttip = "{u}[U][D][L][R] Move/"
+rockettip = "{u}[B] Change Direction [J] Jump/"
+barreltip = "{u}[M] Roll/"
+balloontip = "{u}[J] Jump/"
+gravesurftip = "{u}[J] Jump/"
+jetpack1tip = "{u}[G] Dash/"
+jetpack2tip = "{u}[J] Hold in the air to spin/"
+trashrolltip = "{u}[J] Jump/"
+antigravtip = "{u}[J] Pop/"
+cheesedtip = "{u}[F][J] Stick to wall [J] Walljump/"
+golftip = "{u}[U][L][R] Aim [G] Shoot/"
+weenietip = "{u}[J] Jump/"
+crosspriesttip = "{u}Kill the ghosts!!/"
+supertaunttip = "{u}[U][T] Super Taunt/"
+
+# ---------------
+# OPTIONS TEXT
+# ---------------
+pause_resume = "RESUME"
+pause_options = "OPTIONS"
+pause_restart = "RESTART LEVEL"
+pause_exit = "EXIT LEVEL"
+
+option_audio = "AUDIO"
+option_video = "VIDEO"
+option_controls = "CONTROLS"
+option_game = "GAME"
+
+option_back = "BACK"
+option_on = "ON"
+option_off = "OFF"
+option_yes = "YES"
+option_no = "NO"
+option_none = "NONE"
+option_press = "PRESS A BUTTON"
+option_press_key = "PRESS A KEY"
+
+option_master = "MASTER"
+option_music = "MUSIC"
+option_sfx = "SFX"
+option_unfocus = "UNFOCUSED MUTE"
+
+option_window_mode = "WINDOW MODE"
+option_fullscreen = "FULLSCREEN"
+option_exclusive = "EXCLUSIVE"
+option_windowed = "WINDOWED"
+option_borderless = "BORDERLESS"
+option_resolution = "RESOLUTION"
+option_scaling = "SCALING"
+option_scaling_fit = "FIT"
+option_scaling_pp = "PIXEL PERFECT"
+option_scaling_expand = "EXPAND"
+option_texfilter = "TEXTURE FILTERING"
+option_hud = "SHOW HUD"
+option_vsync = "VSYNC"
+
+option_confirm = "CONFIRM SETTINGS"
+option_revert = "REVERTING IN %..."
+
+option_lang = "LANGUAGE"
+option_vibration = "RUMBLE"
+option_timer = "TIMER"
+option_timer_type = "TIMER TYPE"
+option_timer_level = "PER LEVEL"
+option_timer_save = "PER SAVE"
+option_erase_save = "ERASE SAVE DATA"
+
+option_controller = "CONTROLLER"
+option_keyboard = "KEYBOARD"
+option_reset_config = "RESET CONFIG"
+option_controls_saved = "{u}Controls saved!/"
+option_controls_resetted = "{u}Configuration resetted!/"
+
+option_deadzone = "GENERAL DEADZONE"
+option_deadzone_title = "DEADZONES"
+option_deadzone_h = "HORIZ. DEADZONE"
+option_deadzone_v = "VERT. DEADZONE"
+option_deadzone_press = "PRESS DEADZONE"
+option_deadzone_crouch = "CROUCH WALK DZ"
+option_deadzone_superjump = "SUPERJUMP WALK DZ"
+option_controller_binds = "BINDINGS"
+option_controller_superjump = "JOYSTICK SUPERJUMP"
+option_controller_groundpound = "JOYSTICK GROUNDPOUND"
+
+# ---------------
+# MISC TEXT
+# ---------------
+menu_delete = "HOLD TO DELETE SAVE %"
+menu_controller_disconnected = "CONTROLLER DISCONNECTED\n\nPRESS START TO CONTINUE"
+menu_exit = "EXIT THE GAME?"
+menu_skip = "Press [G] to skip"
+menu_loading = "LOADING..."
+peppinohurt = "{s}You've hurt Peppino % times.../"
+gustavohurt = "{s}You've hurt Gustavo % times.../"
+mrsticknotification = "{u}Come to Mr.Stick to rent a boss gate!/"
+mrmooneynotification = "{u}Will you help Mr.Mooney with a little charity?/"
+computer_text1 = "Toppins: % out of %\nSecrets: % out of %\nTreasure: % out of %"
+computer_text2 = "Achievements: % out of %\nClothes: % out of %\nDamage: %"
+secret_text1 = "{u}You have found % secret out of 3!/"
+secret_text2 = "{u}You have found % secrets out of 3!/"
+rank_highscore = "HIGHSCORE: "
+rank_damage = "DAMAGE: "
+rank_time = "TIME: "
+rank_combo = "HIGHEST COMBO: "
+rank_totaltime = "TOTAL TIME: "
+rank_totaldamage = "TOTAL DAMAGE: "
+rank_totalscore = "TOTAL SCORE: "
+rank_totalenemies = "ENEMIES KILLED: "
+key_up = "UP"
+key_left = "LEFT"
+key_right = "RIGHT"
+key_down = "DOWN"
+# ---------------
+# ROOM NAMES
+# ---------------
+room_towerentrance = "PIZZA TOWER ENTRANCE"
+room_towerjohngutter = "JOHN GUTTER HALL"
+room_tower1 = "TOWER LOBBY"
+room_tower2 = "WESTERN DISTRICT"
+room_tower3 = "VACATION RESORT"
+room_tower4 = "SLUM"
+room_tower5 = "STAFF ONLY"
+room_towertask1 = "TOWER ACHIEVEMENTS"
+room_towertask2 = "WESTERN ACHIEVEMENTS"
+room_towertask3 = "VACATION ACHIEVEMENTS"
+room_towertask4 = "SLUM ACHIEVEMENTS"
+room_towertask5 = "STAFF ACHIEVEMENTS"
+room_towerlaundry = "WASH N CLEAN"
+room_towermansion = "MANSION"
+room_towernoisette = "NOISETTE CAFE"
+room_towerunknown = "UNKNOWN"
+room_towerpizzaland = "PIZZALAND"
+room_towergraffiti = "MR CAR"
+room_towerravine = "RAVINE"
+room_towerruin = "OLD TOWER"
+room_towerfinalhallway = "CONTROL ROOM"
+room_soundtest = "SOUND TEST"
+room_outside = "OUTSIDE"
+# ---------------
+# ACHIEVEMENTS
+# ---------------
+dresser_classictitle = "Classic Cook"
+dresser_classic = "The one and only"
+dresser_unfunnytitle = "Unfunny Cook"
+dresser_unfunny = "Unlocked by ending any combo on the Unfunny title"
+dresser_sagetitle = "Sage Blue"
+dresser_sage = "Unlocked by finishing all of the Floor 1\nlevels in less than an hour"
+dresser_moneytitle = "Money Green"
+dresser_money = "Unlocked by having the maximum amount of\nmoney by World 2"
+dresser_bloodtitle = "Blood Red"
+dresser_blood = "Unlocked by killing 1000 enemies\nin a playthrough"
+dresser_tvtitle = "TV Purple"
+dresser_tv = "Unlocked by getting P rank in every level"
+dresser_darktitle = "Dark Cook"
+dresser_dark = "Unlocked by getting every\nNo Hit Boss Chef Task"
+dresser_shittytitle = "Shitty Cook"
+dresser_shitty = "Unlocked by crouching on the same poop\nspot in Oh Shit for 10 seconds"
+dresser_goldentitle = "Golden God"
+dresser_golden = "Unlocked by getting S rank in every level"
+dresser_garishtitle = "Garish Cook"
+dresser_garish = "Unlocked by taunting 50 times"
+dresser_mooneytitle = "Mooney Orange"
+dresser_mooney = "Unlocked by giving money to Mr. Mooney"
+dresser_funnytitle = "Funny Polka"
+dresser_funny = "Unlocked by ending any combo on the Funny title"
+dresser_itchytitle = "Itchy Sweater"
+dresser_itchy = "Unlocked by getting punched by\nGrandpa Pepper in The Pig City"
+dresser_pizzatitle = "Pizza Man"
+dresser_pizza = "Unlocked by beating the game once"
+dresser_stripestitle = "Bowling Stripes"
+dresser_stripes = "Unlocked by killing 30 bowling rats"
+dresser_goldemannetitle = "Goldemanne"
+dresser_goldemanne = "Unlocked by clearing every Chef Task room"
+dresser_bonestitle = "Bad Bones"
+dresser_bones = "Unlocked by getting hurt 50 times"
+dresser_pptitle = "PP Shirt"
+dresser_pp = "Unlocked by beating the game twice"
+dresser_wartitle = "War Camo"
+dresser_war = "Unlocked by beating WAR the first time\nyou play it"
+dresser_johntitle = "John Suit"
+dresser_john = "Unlocked by resurrecting John in less than 2h 15m"
+achievement_peppermantitle = "The Critic"
+achievement_pepperman = "Defeat this worlds boss without getting hurt"
+achievement_vigilantetitle = "The Ugly"
+achievement_vigilante = "Defeat this worlds boss without getting hurt"
+achievement_noisetitle = "Denoise"
+achievement_noise = "Defeat this worlds boss without getting hurt"
+achievement_fakepeptitle = "Faker"
+achievement_fakepep = "Defeat this worlds boss without getting hurt"
+achievement_pizzafacetitle = "Face Off"
+achievement_pizzaface = "Defeat this worlds boss without getting hurt"
+achievement_sranks1title = "S Ranked"
+achievement_sranks2title = "S Ranked"
+achievement_sranks3title = "S Ranked"
+achievement_sranks4title = "S Ranked"
+achievement_sranks5title = "S Ranked"
+achievement_pranks1title = "P Ranked"
+achievement_pranks2title = "P Ranked"
+achievement_pranks3title = "P Ranked"
+achievement_pranks4title = "P Ranked"
+achievement_pranks5title = "P Ranked"
+achievement_sranks1 = "Get all S Ranks in this world"
+achievement_pranks1 = "Get all P Ranks in this world"
+achievement_sranks2 = "Get all S Ranks in this world"
+achievement_pranks2 = "Get all P Ranks in this world"
+achievement_sranks3 = "Get all S Ranks in this world"
+achievement_pranks3 = "Get all P Ranks in this world"
+achievement_sranks4 = "Get all S Ranks in this world"
+achievement_pranks4 = "Get all P Ranks in this world"
+achievement_sranks5 = "Get all S Ranks in this world"
+achievement_pranks5 = "Get all P Ranks in this world"
+# ----- WORLD 1 ------
+achievement_hiddentitle = "????"
+achievement_entrance1title = "John Gutted"
+achievement_entrance1 = "Destroy all the dead john blocks in John Gutter"
+achievement_entrance2title = "Lets Make This Quick"
+achievement_entrance2 = "Finish John Gutter in under two minutes"
+achievement_entrance3title = "Primate Rage"
+achievement_entrance3 = "Get a combo of 99 or more in John Gutter"
+achievement_medieval1title = "Shining Armor"
+achievement_medieval1 = "Get to all the priests without bumping into\na wall once in Pizzascape"
+achievement_medieval2title = "Spoonknight"
+achievement_medieval2 = "Parry ten forknights in Pizzascape"
+achievement_medieval3title = "Spherical"
+achievement_medieval3 = "Kill another enemy while in the ball form\nin Pizzascape"
+achievement_ruin1title = "Thrill Seeker"
+achievement_ruin1 = "Finish Ancient Cheese without getting hurt\nby an explosion"
+achievement_ruin2title = "Volleybomb"
+achievement_ruin2 = "Kill a rat using a bomb dropped by\nan enemy in Ancient Cheese"
+achievement_ruin3title = "Delicacy"
+achievement_ruin3 = "Make more than forty one sets of\ncheese platforms crumble in Ancient Cheese"
+achievement_dungeon1title = "Very Very Hot Sauce"
+achievement_dungeon1 = "Finish Bloodsauce Dungeon without touching lava once"
+achievement_dungeon2title = "Eruption Man"
+achievement_dungeon2 = "During escape, go up with the superjump for more\nthan two seconds in Bloodsauce Dungeon"
+achievement_dungeon3title = "Unsliced Pizzaman"
+achievement_dungeon3 = "Finish Bloodsauce Dungeon without getting hurt\nby a pizzacutter"
+# ----- WORLD 2 ------
+achievement_badland1title = "Peppinos Rain Dance"
+achievement_badland1 = "Reactivate a totem by dancing with the mach dash\nin Oregano Desert"
+achievement_badland2title = "Unnecessary Violence"
+achievement_badland2 = "Kill all of the clerk sausages in the pizzamarts"
+achievement_badland3title = "Alien Cow"
+achievement_badland3 = "Dont get hit by a single cow in Oregano Desert"
+achievement_graveyard1title = "Ghosted"
+achievement_graveyard1 = "Avoid getting touched by the John Ghost\nin Wasteyard"
+achievement_graveyard2title = "Pretend Ghost"
+achievement_graveyard2 = "Kill 20 or more enemies as a ghost\nin Wasteyard"
+achievement_graveyard3title = "Alive and Well"
+achievement_graveyard3 = "Surf every corpse in Wasteyard"
+achievement_farm1title = "No One Is Safe"
+achievement_farm1 = "Kill three unreachable enemies at once\nwith the supertaunt in Fun Farm"
+achievement_farm2title = "Cube Menace"
+achievement_farm2 = "Find and destroy the Mort cube"
+achievement_farm3title = "Good Egg"
+achievement_farm3 = "Complete Fun Farm while avoiding getting hurt with\nMort on you."
+achievement_saloon1title = "Non Alcoholic"
+achievement_saloon1 = "Destroy nearly every beer bottle\nin Fastfood Saloon"
+achievement_saloon2title = "Already Pressed"
+achievement_saloon2 = "Activate each button only once in Fastfood Saloon"
+achievement_saloon3title = "Royal Flush"
+achievement_saloon3 = "Touch every single card in Fastfood Saloon"
+# ----- WORLD 3 ------
+achievement_plage1title = "Blowback"
+achievement_plage1 = "Kill a cannon goblin with his own bomb\nin Crust Cove"
+achievement_plage2title = "X"
+achievement_plage2 = "Uncover all the treasure guys in Crust Cove"
+achievement_plage3title = "Demolition Expert"
+achievement_plage3 = "Complete Crust Cove without getting hit by an\nexplosion"
+achievement_forest1title = "Bee Nice"
+achievement_forest1 = "Stand next to a bee and taunt in Gnome Forest"
+achievement_forest2title = "Lumberjack"
+achievement_forest2 = "Destroy every wood block in Gnome Forest"
+achievement_forest3title = "Bullseye"
+achievement_forest3 = "Kill a noise goblin with his own arrow\nin Gnome Forest"
+achievement_space1title = "Turbo Tunnel"
+achievement_space1 = "Avoid hitting the ceiling during the room\nright after the John Pillar in Deep Dish Nine"
+achievement_space2title = "Blast Em Asteroids"
+achievement_space2 = "Destroy all asteroids in Deep Dish Nine"
+achievement_space3title = "Man Meteor"
+achievement_space3 = "Kill 5 UFOlives in a single bodyslam\nin Deep Dish Nine"
+achievement_minigolf1title = "Primo Golfer"
+achievement_minigolf1 = "Get the highest rank in the courses of Golf"
+achievement_minigolf2title = "Nice Shot"
+achievement_minigolf2 = "Kill three or more enemies in a single stroke in Golf"
+achievement_minigolf3title = "Helpful Burger"
+achievement_minigolf3 = "Get a burger enemy to hit the ball inside the goal"
+# ----- WORLD 4 ------
+achievement_street1title = "Pan Fried"
+achievement_street1 = "Find the bacon room"
+achievement_street2title = "Strike!"
+achievement_street2 = "Kill three or more enemies with a single Brick ball\nin Pig City"
+achievement_street3title = "Say Oink!"
+achievement_street3 = "Take a photo with every Pig City citizen"
+achievement_sewer1title = "Cant Fool Me"
+achievement_sewer1 = "Avoid killing any pizzaboy cardboard in Oh Shit!"
+achievement_sewer2title = "Food Clan"
+achievement_sewer2 = "Kill ten ninjas by parrying them in Oh Shit!"
+achievement_sewer3title = "Penny Pincher"
+achievement_sewer3 = "Avoid getting grabbed by Mr Pinch\nduring the escape sequence of Oh Shit!"
+achievement_industrial1title = "Unflattening"
+achievement_industrial1 = "Remove the boxxed transformation from each priest\nat least once in Peppibot Factory"
+achievement_industrial2title = "Whoop This"
+achievement_industrial2 = "Survive the first secret of Peppibot Factory\nwithout getting hurt"
+achievement_industrial3title = "There Can Be Only One"
+achievement_industrial3 = "Destroy every Peppino robot in Peppibot Factory"
+achievement_freezer1title = "Frozen Nuggets"
+achievement_freezer1 = "Free all the frozen birds in Freezerator"
+achievement_freezer2title = "Seasons Greetings"
+achievement_freezer2 = "Kill 5 fake santas in Freezerator"
+achievement_freezer3title = "Ice Climber"
+achievement_freezer3 = "Complete Freezerator without falling in a pit"
+# ----- WORLD 5 ------
+achievement_chateau1title = "Cross To Bare"
+achievement_chateau1 = "Kill thirty ghosts in Pizzascare"
+achievement_chateau2title = "Haunted Playground"
+achievement_chateau2 = "Avoid getting hurt by the King Ghosts traps\nin Pizzascare"
+achievement_chateau3title = "Skullsplitter"
+achievement_chateau3 = "Destroy every single skull block in Pizzascare"
+achievement_kidsparty1title = "And This... Is My Gun On A Stick!"
+achievement_kidsparty1 = "Kill every chasing monster in the escape\nsection of Dont Make A Sound"
+achievement_kidsparty2title = "Let Them Sleep"
+achievement_kidsparty2 = "Activate the alarms in Don't Make A Sound\nless than six times before the escape sequence"
+achievement_kidsparty3title = "Jumpspared"
+achievement_kidsparty3 = "Avoid getting jumpscared in Dont Make A Sound"
+achievement_war1title = "Decorated Veteran"
+achievement_war1 = "Dont get hurt more than three times in WAR"
+achievement_war2title = "Sharpshooter"
+achievement_war2 = "Dont miss more than three shots in WAR"
+achievement_war3title = "Trip to the Warzone"
+achievement_war3 = "Finish WAR with more than a minute left"
+# -----------
+#  CREDITS
+# -----------
+credits_game = "GAME BY\n\nMcPig\nSertif"
+credits_music = "MUSIC BY\n\nRonan \"Mr. Sauceman\" de Castel\nClascyJitto\nPost Elvis\n\nPIZZA MAYHEM\n\nBernadette \"Kyoobot\" Perez\nJared \"Jack Knife\" Shaw"
+credits_sfx = "SOUNDS BY\n\nClascyJitto\nRonan %Mr. Sauceman% de Castel\ncness_50b\nMcPig\nSertif\nJoel Chacon"
+credits_mort = "MORT THE CHICKEN BY\n\nEd Annunziata\n\nMORT CUBE AND\nPICKLE BY\n\nStrawberryOctii"
+credits_playtester1 = "PLAYTESTERS\n\nFátima %pussybitch% Velázquez\nLaser\nPaperclip\nDylan %dylfinedas%\nBasinga\nDylan %Cactus Companion% Alger\nLennert %Cray% Vogelsang\nfallatious"
+credits_playtester2 = "Joel Chacon\nlelo9444\nMr. Unown\nBernadette %Kyoobot% Perez\nAlexandre %Lother% Mercier\nTony Grayson\nJavier Marcos\nComrade Zach"
+credits_playtester3 = "TwoTain\nVladislav Krasko\nCaptain Spaghet\nAva %Chilly% Labiche\nKegan Smith\nMiguel %Radman% Glass\nRandy.\nBananaGal\nChristopher %Skidsii% Dietrich"
+credits_playtester4 = "Gavin Brahney\nVorco\nPatrick Scott\nMr_Meugh\nLunex %Slimeball% Aki"
+credits_fmod = "Made with FMOD Studio\nby Firelight Technologies Pty Ltd."
