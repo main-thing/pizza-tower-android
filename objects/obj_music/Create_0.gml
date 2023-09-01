@@ -61,4 +61,5 @@ room_arr = [
 	[rm_swedish, mu_ufo, mu_pinballsecret, false], 
 	[tower_tutorial1, mu_funiculi, mu_funiculi, false], 
 	[boss_fakepep, mu_fakepep, mu_fakepep, false], 
+	[rm_editor_big, mu_snickchallenge, mu_medievalsecret, false], 
 ]

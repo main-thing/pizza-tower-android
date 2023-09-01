@@ -3,8 +3,27 @@ if (i_d == dsxioks)
 {
     if ds_map_find_value(async_load, "status")
     {
-        if (ds_map_find_value(async_load, "result") != "")
+        if (ds_map_find_value(async_load, "result") != ""){
             nejdmssx = ds_map_find_value(async_load, "result")
+			if(nejdmssx != "save" && nejdmssx != "load"){
+				edit_object_var(nejdmssx)
+			} else{
+				if(nejdmssx == "save"){
+					save_editor_objects()
+				}
+				if(nejdmssx == "load"){
+					amogustextlol = get_string_async("load code: ","")
+				}
+			}
+		}
     }
-    edit_object_var(nejdmssx)
+}
+if (i_d == amogustextlol)
+{
+    if ds_map_find_value(async_load, "status")
+    {
+        if (ds_map_find_value(async_load, "result") != "") {
+			load_editor_objects(ds_map_find_value(async_load, "result"))
+		}
+    }
 }

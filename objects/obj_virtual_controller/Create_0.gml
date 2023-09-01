@@ -10,7 +10,7 @@ dwnxed = undefined
 ndskld = undefined
 nejdmsx = ""
 dsnxjk = undefined
-door_object_arr = [obj_arenadoor, obj_startgate, obj_snickchallengedoor, obj_door, obj_keydoor, obj_geromedoor]
+door_object_arr = [obj_arenadoor, obj_startgate, obj_snickchallengedoor, obj_door, obj_keydoor, obj_geromedoor, obj_hallway]
 depth = -19999
 //TODO: READ FROM AN EXTERNAL INI FILE SO PEOPLE CAN MAKE CUSTOM LANGAUAGES FOR TEXT HERE.
 if (mysprite != undefined) {
@@ -192,9 +192,20 @@ function docommand(commandstring,silentcommand = false) {
 							} else{
 								var object = instance_create(obj_player1.x - 50, obj_player1.y, asset_get_index(commands[i]))	
 							}
-							if(array_find_index(door_object_arr,object.object_index) > -1){
+							with(object) 
+							{
+								for (var i2 = 0; i2 < array_length(other.door_object_arr); i2++) 
+								{
+									if (other.door_object_arr[i2] == object_index){
+										variable_instance_set(id, "targetRoom", room)
+									}
+								}
+							}
+							if(obj_fakeeditor.editormode == 1){
 								with(object){
-									variable_instance_set(object,"targetRoom",0)
+									variable_instance_set(id, "createdbyeditor", 1)
+									variable_instance_set(id, "editorplacedroom", room)
+									variable_instance_set(id, "oldinstanceeditor", object_index)
 								}
 							}
 						} else{

@@ -32,6 +32,7 @@ level_array[4][1] = ["KIDS PARTY", kidsparty_1, "kidsparty"]
 level_array[4][2] = ["WAR", war_1, "war"]
 level_array[5][0] = ["CHARACTERSELECT", characterselect, "characterselect"]
 level_array[5][1] = ["ENEMY TEST", rm_swedish, "rm_swedish"]
+level_array[5][2] = ["EDITOR ROOM", rm_editor_big, "rm_editor_big"]
 
 toppin_info[0] = [0, spr_toppinshroom] // image_index, sprite
 toppin_info[1] = [0, spr_toppincheese]

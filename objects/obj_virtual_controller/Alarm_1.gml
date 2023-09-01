@@ -28,6 +28,12 @@ if (global.showcollisions){
 			visible = true
 		}
 	}
+	with(obj_music_trigger){
+			visible = true
+	}
+	with(obj_background_trigger){
+			visible = true
+	}
 }
 if (!global.showcollisions){
 	with(obj_solid){
@@ -44,5 +50,11 @@ if (!global.showcollisions){
 		if (object_index == obj_platform) {
 			visible = false
 		}
+	}
+	with(obj_music_trigger){
+			visible = false
+	}
+	with(obj_background_trigger){
+			visible = false
 	}
 }

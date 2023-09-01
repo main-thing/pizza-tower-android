@@ -24,6 +24,7 @@ old_object_x = 0
 old_object_y = 0
 object_clicked = 0
 dsxioks = undefined
+amogustextlol = undefined
 nejdmssx = ""
 transfotip = undefined
 exclude_object_hide_arr = [obj_pizzaface, obj_johnghost, obj_snickexe]
@@ -112,8 +113,9 @@ function load_editor_objects(argument0) //gml_Script_load_editor_objects
                     {
                         for (i4 = 0; i4 < array_length(vararray); i4++)
                         {
-                            if (vararray[i4] != "object_index")
+                            if (vararray[i4] != "object_index"){
                                 variable_instance_set(id, vararray[i4], varvaluearray[i4])
+							}
                             variable_instance_set(id, "oldinstanceeditor", ds_map_find_value(lemap, "oldinstanceeditor"))
                             variable_instance_set(id, "createdbyeditor", ds_map_find_value(lemap, "createdbyeditor"))
                             variable_instance_set(id, "editorplacedroom", ds_map_find_value(lemap, "editorplacedroom"))
