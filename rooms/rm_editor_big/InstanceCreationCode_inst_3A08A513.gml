@@ -1,0 +1,1 @@
+prompt_array = [tv_create_prompt("spawn obj_music_trigger, spawn obj_background_trigger, spawn obj_enemyspawn, spawn obj_variable_trigger. You are on your own now.", tvprompt.trigger, spr_tv_exprheat, 2.0)]

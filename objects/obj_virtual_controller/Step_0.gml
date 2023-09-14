@@ -28,7 +28,7 @@ if (mouse_check_button_pressed(mb_left) && position_meeting(device_mouse_x_to_gu
 		}
 		if (keycode == "debug") {	
 			if (global.movingvkeys == 0) {
-				dwnxed = get_string_async("Debug ( noclip, showcollisions <boolean>, panic <seconds>, oldassets <boolean>, enableranks <boolean>, hidetiles, showtiles, toggletiles, character <string>, player_set_state <states.state>,instance_set_variable <obj_> <type> <variablename> <new value>,global_set_variable <type> <variablename> <new value>,spawn <obj_> )",nejdmsx)
+				dwnxed = get_string_async("Debug ( noclip, showcollisions <boolean>, panic <seconds>, oldassets <boolean>, enableranks <boolean>, hidetiles, showtiles, toggletiles, character <string>, player_set_state <states.state>,instance_set_variable <obj_> <type> <variablename> <new value>,global_set_variable <type> <variablename> <new value>,spawn <obj_> <optional distance>)", nejdmsx)
 			}
 		}
 		if (keycode == "bind") {

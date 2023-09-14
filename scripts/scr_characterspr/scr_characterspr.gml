@@ -90,6 +90,10 @@ function scr_characterspr()
 		spr_walljumpstart = spr_player_walljumpstart
 		spr_superjumpprep = spr_player_superjumpprep
 		spr_superjump = spr_player_superjump
+		spr_Sjumpcancel = spr_player_Sjumpcancel
+		spr_Sjumpcancelland = spr_player_Sjumpcancelland
+		spr_Sjumpcancelstart = spr_player_Sjumpcancelstart
+		spr_Sjumpcancelslide = spr_player_Sjumpcancelslide
 		spr_superjumppreplight = spr_player_superjumppreplight
 		spr_superjumpright = spr_player_superjumpright
 		spr_superjumpleft = spr_player_superjumpleft
@@ -325,6 +329,10 @@ function scr_characterspr()
 		spr_walljumpstart = spr_playerN_walljumpstart
 		spr_superjumpprep = spr_playerN_Sjumpstart
 		spr_superjump = spr_playerN_Sjump
+		spr_Sjumpcancel = spr_player_Sjumpcancel
+		spr_Sjumpcancelland = spr_player_Sjumpcancelland
+		spr_Sjumpcancelstart = spr_player_Sjumpcancelstart
+		spr_Sjumpcancelslide = spr_player_Sjumpcancelslide
 		spr_machfreefall = spr_playerN_fall
 		spr_mach3hit = spr_playerN_machpunch1
 		spr_knightpepwalk = spr_playerN_knightmove
@@ -558,6 +566,10 @@ function scr_characterspr()
 		spr_walljumpstart = spr_playerV_walljump
 		spr_superjumpprep = spr_player_superjumpprep
 		spr_superjump = spr_playerV_superjump
+		spr_Sjumpcancel = spr_player_Sjumpcancel
+		spr_Sjumpcancelland = spr_player_Sjumpcancelland
+		spr_Sjumpcancelstart = spr_player_Sjumpcancelstart
+		spr_Sjumpcancelslide = spr_player_Sjumpcancelslide
 		spr_superjumppreplight = spr_player_superjumppreplight
 		spr_superjumpright = spr_player_superjumpright
 		spr_superjumpleft = spr_player_superjumpleft
@@ -731,6 +743,10 @@ function scr_characterspr()
 		spr_walljumpstart = spr_player_walljumpstart
 		spr_superjumpprep = spr_player_superjumpprep
 		spr_superjump = spr_player_superjump
+		spr_Sjumpcancel = spr_player_Sjumpcancel
+		spr_Sjumpcancelland = spr_player_Sjumpcancelland
+		spr_Sjumpcancelstart = spr_player_Sjumpcancelstart
+		spr_Sjumpcancelslide = spr_player_Sjumpcancelslide
 		spr_superjumppreplight = spr_player_superjumppreplight
 		spr_superjumpright = spr_player_superjumpright
 		spr_superjumpleft = spr_player_superjumpleft

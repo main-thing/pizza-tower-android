@@ -34,6 +34,15 @@ if (global.showcollisions){
 	with(obj_background_trigger){
 			visible = true
 	}
+	with(obj_enemyspawn){
+			visible = true
+	}
+	with(obj_variable_trigger){
+			visible = true
+	}
+	with(obj_tvtrigger){
+			visible = true
+	}
 }
 if (!global.showcollisions){
 	with(obj_solid){
@@ -55,6 +64,15 @@ if (!global.showcollisions){
 			visible = false
 	}
 	with(obj_background_trigger){
+			visible = false
+	}
+	with(obj_enemyspawn){
+			visible = false
+	}
+	with(obj_variable_trigger){
+			visible = false
+	}
+	with(obj_tvtrigger){
 			visible = false
 	}
 }

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "sfx_dizzy",
   "conversionMode": 0,
   "compression": 0,
   "volume": 0.31,
@@ -12,13 +15,9 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_dizzy",
-  "duration": 2.96,
+  "duration": 2.960363,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sfx_dizzy",
-  "tags": [],
-  "resourceType": "GMSound",
 }

@@ -10,7 +10,7 @@ dwnxed = undefined
 ndskld = undefined
 nejdmsx = ""
 dsnxjk = undefined
-door_object_arr = [obj_arenadoor, obj_startgate, obj_snickchallengedoor, obj_door, obj_keydoor, obj_geromedoor, obj_hallway]
+door_object_arr = [obj_taxi, obj_arenadoor, obj_startgate, obj_snickchallengedoor, obj_door, obj_keydoor, obj_geromedoor, obj_hallway, obj_secretportal, obj_lapportal]
 depth = -19999
 //TODO: READ FROM AN EXTERNAL INI FILE SO PEOPLE CAN MAKE CUSTOM LANGAUAGES FOR TEXT HERE.
 if (mysprite != undefined) {
@@ -183,14 +183,31 @@ function docommand(commandstring,silentcommand = false) {
 	if (string_pos("spawn", string_lower(commandstring)) == 1) {
 			var commands = string_split(commandstring, " ");
 			var hasarg2 = false
+			var hasarg3 = false
+			var distance = 0
+			var _object = obj_forknight
 			for (var i = 1;i < array_length(commands);i++) {
 					if(i == 2){
 							hasarg2 = true
 						if(object_exists(asset_get_index(commands[i]))){
+							_object = asset_get_index(commands[i])
+						}
+					}
+					if(i == 3){
+						distance = real(commands[i])
+						hasarg3 = true
+					}
+					if(i >= 3){
+						break
+					}
+			}
+			if(hasarg2 == false) {
+				instance_create(obj_player1.x, obj_player1.y - 20, obj_forknight)
+			} else{
 							if(obj_player1.xscale >= 0){
-								var object = instance_create(obj_player1.x + 30, obj_player1.y, asset_get_index(commands[i]))
-							} else{
-								var object = instance_create(obj_player1.x - 50, obj_player1.y, asset_get_index(commands[i]))	
+								var object = instance_create(obj_player1.x + distance, obj_player1.y, _object)
+							} else {
+								var object = instance_create(obj_player1.x - distance, obj_player1.y, _object)	
 							}
 							with(object) 
 							{
@@ -207,17 +224,8 @@ function docommand(commandstring,silentcommand = false) {
 									variable_instance_set(id, "editorplacedroom", room)
 									variable_instance_set(id, "oldinstanceeditor", object_index)
 								}
+								alarm[1] = 1
 							}
-						} else{
-							hasarg2 = false
-						}
-					}
-					if(i >= 2){
-						break
-					}
-			}
-			if(hasarg2 == false){
-				instance_create(obj_player1.x, obj_player1.y - 20, obj_forknight)
 			}
 	}
 	if (string_pos("player_set_state", string_lower(commandstring)) == 1) {
@@ -696,7 +704,46 @@ function docommand(commandstring,silentcommand = false) {
 						scr_characterspr()
 					}
 				break
-				
+				case "character2 pepperman":
+					with (obj_player2)
+					{
+						character = "M"
+						ispeppino = 0
+						scr_characterspr()
+					}
+				break
+				case "character2 vigilante":
+					with (obj_player2)
+					{
+						character = "V"
+						ispeppino = 0
+						scr_characterspr()
+					}
+				break
+				case "character2 peppino":
+					with (obj_player2)
+					{
+						character = "P"
+						ispeppino = 1
+						scr_characterspr()
+					}
+				break
+				case "character2 oldnoise":
+					with (obj_player2)
+					{
+						character = "N"
+						ispeppino = 0
+						scr_characterspr()
+					}
+				break
+				case "character2 noise":
+					with (obj_player2)
+					{
+						character = "P"
+						ispeppino = 0
+						scr_characterspr()
+					}
+				break
 		}
 }
 function processedit(commandstring) {

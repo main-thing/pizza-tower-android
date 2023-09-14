@@ -23,7 +23,7 @@
   "option_windows_scale": 0,
   "option_windows_copy_exe_to_dest": false,
   "option_windows_sleep_margin": 10,
-  "option_windows_texture_page": "512x512",
+  "option_windows_texture_page": "1024x1024",
   "option_windows_installer_finished": "${base_options_dir}/windows/installer/finished.bmp",
   "option_windows_installer_header": "${base_options_dir}/windows/installer/header.bmp",
   "option_windows_license": "${base_options_dir}/windows/installer/license.txt",

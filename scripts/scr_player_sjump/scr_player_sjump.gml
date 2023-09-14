@@ -53,7 +53,7 @@ function scr_player_Sjump()
 	else if (key_slap2 && character == "P" && sprite_index != spr_superspringplayer && sprite_index != spr_player_Sjumpcancelstart)
 	{
 		image_index = 0
-		sprite_index = spr_player_Sjumpcancelstart
+		sprite_index = spr_Sjumpcancelstart
 	}
 	if (sprite_index == spr_player_Sjumpcancelstart)
 	{

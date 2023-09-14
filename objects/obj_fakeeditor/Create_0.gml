@@ -20,6 +20,7 @@ dragmode = 0
 copymode = 0
 editormode = 0
 selectedent = undefined
+oldselectedent = undefined
 old_object_x = 0
 old_object_y = 0
 object_clicked = 0
@@ -27,7 +28,7 @@ dsxioks = undefined
 amogustextlol = undefined
 nejdmssx = ""
 transfotip = undefined
-exclude_object_hide_arr = [obj_pizzaface, obj_johnghost, obj_snickexe]
+exclude_object_hide_arr = [obj_pizzaface, obj_johnghost, obj_snickexe, obj_fakesanta]
 variabletochange = ""
 door_object_arr = [obj_arenadoor, obj_startgate, obj_snickchallengedoor, obj_door, obj_keydoor, obj_geromedoor]
 depth = -19998
@@ -36,95 +37,60 @@ if(instance_number(object_index) > 1){
 }
 function save_editor_objects() //gml_Script_save_editor_objects
 {
-    var instance_list = ds_list_create()
-    var myid = id
-    var tempvar = undefined
+    var myobjects = array_create(0)
     with (all)
     {
         if variable_instance_exists(id, "createdbyeditor")
         {
-            var instance_map = ds_map_create()
-            ds_list_add(instance_list, instance_map)
-            ds_list_mark_as_map(instance_list, (ds_list_size(instance_list) - 1))
-            var i = 0
-            var var_array = variable_instance_get_names(id)
-            ds_map_add(instance_map, "object_index", object_index)
-            ds_map_add(instance_map, "image_xscale", image_xscale)
-            ds_map_add(instance_map, "image_yscale", image_yscale)
-            ds_map_add(instance_map, "x", x)
-            ds_map_add(instance_map, "y", y)
-            ds_map_add(instance_map, "persistent", persistent)
-            ds_map_add(instance_map, "createdbyeditor", createdbyeditor)
-            ds_map_add(instance_map, "editorplacedroom", editorplacedroom)
-            ds_map_add(instance_map, "oldinstanceeditor", oldinstanceeditor)
-            while (i < array_length(var_array))
+            var objectproperties = {
+			x: x,
+			y: y,
+			image_angle: image_angle,
+			image_xscale: image_xscale,
+			image_yscale: image_yscale,
+			image_speed: image_speed,
+			persistent: persistent,
+			image_blend: image_blend,
+			object_index: object_index,
+		}
+		var var_array = variable_instance_get_names(id)
+		var i = 0
+		while (i < array_length(var_array))
             {
-                if is_real(variable_instance_get(id, var_array[i]))
-                    ds_map_add(instance_map, var_array[i], ("real|" + string(variable_instance_get(id, var_array[i]))))
-                if is_bool(variable_instance_get(id, var_array[i]))
-                    ds_map_add(instance_map, var_array[i], ("bool|" + string(bool(variable_instance_get(id, var_array[i])))))
-                if is_string(variable_instance_get(id, var_array[i]))
-                    ds_map_add(instance_map, var_array[i], ("string|" + string(variable_instance_get(id, var_array[i]))))
+                variable_struct_set(objectproperties, var_array[i], variable_instance_get(id, var_array[i]))
                 i++
             }
+		array_push(myobjects, objectproperties)
         }
     }
-    var savelist = ds_map_create()
-    ds_map_add_list(savelist, "instance_list", instance_list)
-    var liststring = json_encode(savelist)
-    get_string_async("copy string", liststring)
-    ds_map_destroy(savelist)
+	var objectsstring = json_stringify(myobjects)
+	get_string_async("save code:",objectsstring)
 }
-
+function createeditorobject(loadedobject){
+		with(instance_create(0, 0, loadedobject.object_index)) {
+			var var_array = variable_struct_get_names(loadedobject)
+			var i = 0
+			while (i < array_length(var_array))
+            {
+				if(var_array[i] != "object_index"){
+					variable_instance_set(id, var_array[i], variable_struct_get(loadedobject, var_array[i]))
+				}
+                i++
+            }
+		}
+}
 function load_editor_objects(argument0) //gml_Script_load_editor_objects
 {
     if ((!is_string(argument0)) || argument0 == "")
         show_message_async("No input provided")
     else
     {
-        var json_temp = json_decode(argument0)
-        instance_list = ds_map_find_value(json_temp, "instance_list")
-        var i2 = 0
-        for (i2 = 0; i2 < ds_list_size(instance_list); i2++)
-        {
-            var lemap = ds_list_find_value(instance_list, i2)
-            var size = ds_map_size(lemap)
-            var key = ds_map_find_first(lemap)
-            var vararray = []
-            var varvaluearray = []
-            var i3 = 0
-            for (i3 = 0; i3 < (size - 1); i3++)
-            {
-                var i4 = 0
-                key = ds_map_find_next(lemap, key)
-                vararray[i3] = key
-                varvaluearray[i3] = ds_map_find_value(lemap, key)
-                if (string(varvaluearray[i3]) == "null")
-                    varvaluearray[i3] = undefined
-                if (string_pos("real|", varvaluearray[i3]) == 1)
-                    varvaluearray[i3] = real(string_replace(varvaluearray[i3], "real|", ""))
-                if (string_pos("bool|", varvaluearray[i3]) == 1)
-                    varvaluearray[i3] = bool(string_replace(varvaluearray[i3], "bool|", ""))
-                if (string_pos("string|", varvaluearray[i3]) == 1)
-                    varvaluearray[i3] = string_replace(varvaluearray[i3], "string|", "")
-                if (i3 == (size - 2))
-                {
-                    with (instance_create(ds_map_find_value(lemap, "x"), ds_map_find_value(lemap, "y"), ds_map_find_value(lemap, "object_index")))
-                    {
-                        for (i4 = 0; i4 < array_length(vararray); i4++)
-                        {
-                            if (vararray[i4] != "object_index"){
-                                variable_instance_set(id, vararray[i4], varvaluearray[i4])
-							}
-                            variable_instance_set(id, "oldinstanceeditor", ds_map_find_value(lemap, "oldinstanceeditor"))
-                            variable_instance_set(id, "createdbyeditor", ds_map_find_value(lemap, "createdbyeditor"))
-                            variable_instance_set(id, "editorplacedroom", ds_map_find_value(lemap, "editorplacedroom"))
-                        }
-                    }
-                }
-            }
-        }
-        ds_map_destroy(json_temp)
+		var objload = ""
+			objload = json_parse(argument0)
+        while(array_length(objload) > 0) {
+			var loadedobject = array_pop(objload)
+			createeditorobject(loadedobject)
+		}
     }
 }
 

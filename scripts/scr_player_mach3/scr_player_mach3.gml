@@ -140,7 +140,7 @@ function scr_player_mach3()
 		if (!grounded)
 			sprite_index = spr_player_mach2jump
 		else
-			sprite_index = spr_player_machroll
+			sprite_index = spr_machroll
 		if (character == "V")
 			sprite_index = spr_playerV_divekickstart
 	}

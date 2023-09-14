@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "mu_noiseentrance",
   "conversionMode": 0,
   "compression": 0,
   "volume": 0.89,
@@ -12,13 +15,9 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mu_noiseentrance",
-  "duration": 115.826,
+  "duration": 115.82694,
   "parent": {
     "name": "Music",
     "path": "folders/Sounds/Music.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "mu_noiseentrance",
-  "tags": [],
-  "resourceType": "GMSound",
 }
