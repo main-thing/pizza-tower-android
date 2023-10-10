@@ -10,8 +10,8 @@ function scr_player_barrelslide()
 		movespeed = Approach(movespeed, (xscale * 14), 0.1)
 	if (floor(image_index) == (image_number - 1))
 	{
-		if (sprite_index == spr_player_barrelslipnslide)
-			sprite_index = spr_player_barrelroll
+		if (sprite_index == spr_barrelslipnslide)
+			sprite_index = spr_barrelroll
 	}
 	if key_jump
 		input_buffer_jump = 0
@@ -38,7 +38,7 @@ function scr_player_barrelslide()
 			else
 			{
 				state = states.barreljump
-				sprite_index = spr_player_barrelfall
+				sprite_index = spr_barrelfall
 			}
 		}
 	}

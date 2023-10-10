@@ -1,4 +1,3 @@
-event_inherited()
 with (all)
 {
     if (variable_instance_exists(id, "createdbyeditor") && variable_instance_exists(id, "editorplacedroom") && variable_instance_exists(id, "oldinstanceeditor"))

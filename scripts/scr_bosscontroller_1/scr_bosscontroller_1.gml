@@ -160,7 +160,7 @@ function scr_bosscontroller_normal()
 				fmod_event_instance_play(global.snd_bossbeaten);
 				global.pistol = false;
 				pistolanim = -4;
-				sprite_index = spr_player_levelcomplete;
+				sprite_index = spr_levelcomplete;
 				image_speed = 0.35;
 				image_index = 0;
 				state = states.arenaintro;

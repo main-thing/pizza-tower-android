@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_graveyardinterior",
   "spriteId": {
     "name": "tile_graveyard3",
     "path": "sprites/tile_graveyard3/tile_graveyard3.yy",
@@ -189,8 +192,4 @@
     "name": "Graveyard",
     "path": "folders/Tile Sets/Graveyard.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_graveyardinterior",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

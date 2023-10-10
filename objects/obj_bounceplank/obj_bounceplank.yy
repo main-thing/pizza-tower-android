@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_bounceplank",
   "spriteId": {
     "name": "spr_bounceplank",
     "path": "sprites/spr_bounceplank/spr_bounceplank.yy",
@@ -25,7 +28,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -33,8 +36,4 @@
     "name": "Unused",
     "path": "folders/Objects/Room structure/Unused.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_bounceplank",
-  "tags": [],
-  "resourceType": "GMObject",
 }

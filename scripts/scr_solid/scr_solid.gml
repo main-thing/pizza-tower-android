@@ -1,5 +1,6 @@
 function scr_solid(argument0, argument1)
 {
+	if(!obj_player.finalmoveset){
 	var old_x = x
 	var old_y = y
 	x = argument0
@@ -37,6 +38,45 @@ function scr_solid(argument0, argument1)
 	x = old_x
 	y = old_y
 	return false;
+	} else {
+		var old_x = x;
+		var old_y = y;
+		x = argument0;
+		y = argument1;
+		if (place_meeting(x, y, obj_solid))
+		{
+			x = old_x;
+			y = old_y;
+			return true;
+		}
+		if (y > old_y && place_meeting(x, y, obj_platform))
+		{
+			var num = instance_place_list(x, y, obj_platform, global.instancelist, false);
+			var _collided = false;
+			for (var i = 0; i < num; i++)
+			{
+				var b = ds_list_find_value(global.instancelist, i);
+				if (id != b.id && !place_meeting(x, old_y, b) && place_meeting(x, y, b))
+					_collided = true;
+			}
+			ds_list_clear(global.instancelist);
+			if (_collided)
+			{
+				x = old_x;
+				y = old_y;
+				return true;
+			}
+		}
+		if (check_slope(obj_slope))
+		{
+			x = old_x;
+			y = old_y;
+			return true;
+		}
+		x = old_x;
+		y = old_y;
+		return false;
+	}
 }
 
 function check_slope(argument0)

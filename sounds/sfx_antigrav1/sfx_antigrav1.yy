@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "sfx_antigrav1",
   "conversionMode": 0,
   "compression": 0,
   "volume": 1.0,
@@ -12,13 +15,9 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_antigrav1.wav",
-  "duration": 0.524,
+  "duration": 0.524036,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sfx_antigrav1",
-  "tags": [],
-  "resourceType": "GMSound",
 }

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_tutorialimage_tileset",
   "spriteId": {
     "name": "tilespr_tile_tutorialimage_tileset",
     "path": "sprites/tilespr_tile_tutorialimage_tileset/tilespr_tile_tutorialimage_tileset.yy",
@@ -47,8 +50,4 @@
     "name": "Tutorial",
     "path": "folders/Tile Sets/Tutorial.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_tutorialimage_tileset",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

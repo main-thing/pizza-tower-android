@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_noisejetpack",
   "spriteId": {
     "name": "spr_playerN_doublejumpfall",
     "path": "sprites/spr_playerN_doublejumpfall/spr_playerN_doublejumpfall.yy",
@@ -25,7 +28,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -33,8 +36,4 @@
     "name": "World 4",
     "path": "folders/Objects/Room structure/World 4.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_noisejetpack",
-  "tags": [],
-  "resourceType": "GMObject",
 }

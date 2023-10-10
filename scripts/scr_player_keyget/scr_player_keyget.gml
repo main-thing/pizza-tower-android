@@ -14,11 +14,15 @@ function scr_player_keyget()
 	crouchAnim = 1
 	machhitAnim = 0
 	sprite_index = spr_keyget
+	global.heattime = 60
 	if (floor(image_index) == (image_number - 1))
 	{
 		global.keyget = 0
 		state = states.normal
 		image_index = 0
+		if(!global.oldsprites){
+			instance_create(x, y, obj_keyfollow);
+		}
 	}
 	exit;
 }

@@ -47,7 +47,7 @@ if (obj_player.state != states.playersuperattack)
 						state = states.handstandjump
 						movespeed = 10
 						image_index = random_range(0, (image_number - 1))
-						sprite_index = spr_player_groundedattack
+						sprite_index = spr_groundedattack
 					}
 					hp = 0
 					boss_destroy(lastplayerid)

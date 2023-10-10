@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "sfx_fireassend",
   "conversionMode": 0,
   "compression": 0,
   "volume": 1.0,
@@ -12,13 +15,9 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_fireassend",
-  "duration": 2.209,
+  "duration": 2.209819,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sfx_fireassend",
-  "tags": [],
-  "resourceType": "GMSound",
 }

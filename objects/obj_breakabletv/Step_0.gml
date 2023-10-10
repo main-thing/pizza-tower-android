@@ -5,7 +5,7 @@ if place_meeting(x, y, obj_player)
 		if (state == states.mach1 or state == states.mach2)
 		{
 			state = states.finishingblow
-			sprite_index = spr_player_finishingblow1
+			sprite_index = spr_finishingblow1
 			image_index = 0
 			hsp = 0
 			movespeed = 0
@@ -30,7 +30,7 @@ if (grabbed == 1)
 	{
 		grounded = false
 		x = obj_player.x
-		if (obj_player.sprite_index != spr_player_haulingstart)
+		if (obj_player.sprite_index != spr_haulingstart)
 			y = (obj_player.y - 40)
 		else if (floor(obj_player.image_index) == 0)
 			y = obj_player.y
@@ -80,7 +80,7 @@ if (grabbed == 1)
 		thrown = true
 		x = obj_player.x
 		y = obj_player.y
-		if (obj_player.sprite_index == spr_player_shoulder)
+		if (obj_player.sprite_index == spr_shoulder)
 			vsp = 15
 		if (obj_player.sprite_index == spr_player_diagonaldownthrow)
 		{

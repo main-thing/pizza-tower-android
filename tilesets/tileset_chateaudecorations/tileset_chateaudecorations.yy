@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_chateaudecorations",
   "spriteId": {
     "name": "tilespr_tileset_chateaudecorations",
     "path": "sprites/tilespr_tileset_chateaudecorations/tilespr_tileset_chateaudecorations.yy",
@@ -238,8 +241,4 @@
     "name": "Chateau",
     "path": "folders/Tile Sets/Chateau.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_chateaudecorations",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_exit",
   "spriteId": {
     "name": "spr_exittile",
     "path": "sprites/spr_exittile/spr_exittile.yy",
@@ -995,8 +998,4 @@
     "name": "Tower",
     "path": "folders/Tile Sets/Tower.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_exit",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

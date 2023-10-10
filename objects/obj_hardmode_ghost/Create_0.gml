@@ -18,3 +18,7 @@ content[7] = obj_rancher
 content[8] = obj_tank
 content[9] = obj_noisey
 content[10] = obj_forknight
+if(!variable_global_exists("hardmode_ghostsprite")){
+	global.hardmode_ghostsprite = spr_snick_exe
+}
+sprite_index = global.hardmode_ghostsprite

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_ufo_tileset",
   "spriteId": {
     "name": "tile_ufo",
     "path": "sprites/tile_ufo/tile_ufo.yy",
@@ -745,8 +748,4 @@
     "name": "Desert",
     "path": "folders/Tile Sets/Desert.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_ufo_tileset",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_desertdeco",
   "spriteId": {
     "name": "spr_desertdeco",
     "path": "sprites/spr_desertdeco/spr_desertdeco.yy",
@@ -2027,8 +2030,4 @@
     "name": "Desert",
     "path": "folders/Tile Sets/Desert.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_desertdeco",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_strongcolddecoration",
   "spriteId": {
     "name": "spr_decorations",
     "path": "sprites/spr_decorations/spr_decorations.yy",
@@ -233,8 +236,4 @@
     "name": "Strongcold",
     "path": "folders/Tile Sets/Strongcold.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_strongcolddecoration",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

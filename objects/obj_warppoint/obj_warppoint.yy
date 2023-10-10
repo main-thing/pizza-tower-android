@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_warppoint",
   "spriteId": {
     "name": "spr_ufolive_teleporter",
     "path": "sprites/spr_ufolive_teleporter/spr_ufolive_teleporter.yy",
@@ -28,8 +31,4 @@
     "name": "Unused",
     "path": "folders/Objects/Room structure/Unused.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_warppoint",
-  "tags": [],
-  "resourceType": "GMObject",
 }

@@ -3,7 +3,7 @@ if mouse_check_button_pressed(mb_left)
         if editormode
         {
             if (device_mouse_x_to_gui(0) < (button1x + button1width) && device_mouse_y_to_gui(0) < (button1y + button1height) && device_mouse_x_to_gui(0) >= button1x && device_mouse_y_to_gui(0) >= button1y){
-                dsxioks = get_string_async("Set object variable (<type> <variablename> <new value>), save, load.", nejdmssx)
+                dsxioks = get_string_async("Set object variable (<type> <variablename> <new value>), save, load, delete level.", nejdmssx)
 				return
 			}
             else if (device_mouse_x_to_gui(0) < (button2x + button2width) && device_mouse_y_to_gui(0) < (button2y + button2height) && device_mouse_x_to_gui(0) >= button2x && device_mouse_y_to_gui(0) >= button2y)
@@ -15,7 +15,7 @@ if mouse_check_button_pressed(mb_left)
                 {
                     if instance_exists(other.selectedent)
                     {
-                        text = ("Deleted " + object_get_name(other.selectedent.object_index))
+                        text = ("Deleted " + string_upper(object_get_name(other.selectedent.object_index)))
                         instance_destroy(other.selectedent)
                     }
                 }
@@ -63,7 +63,7 @@ if mouse_check_button_pressed(mb_left)
                 with (transfotip)
                 {
                     if instance_exists(other.selectedent)
-                        text = ("Selected " + object_get_name(other.selectedent.object_index))
+                        text = ("Selected " + string_upper(object_get_name(other.selectedent.object_index)))
                 }
             }
         }

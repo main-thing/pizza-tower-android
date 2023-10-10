@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_stopsign",
   "spriteId": {
     "name": "spr_stopsign",
     "path": "sprites/spr_stopsign/spr_stopsign.yy",
@@ -22,7 +25,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -30,8 +33,4 @@
     "name": "World 4",
     "path": "folders/Objects/Room structure/World 4.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_stopsign",
-  "tags": [],
-  "resourceType": "GMObject",
 }

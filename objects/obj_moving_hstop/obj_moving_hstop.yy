@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_moving_hstop",
   "spriteId": {
     "name": "spr_moving_stop",
     "path": "sprites/spr_moving_stop/spr_moving_stop.yy",
@@ -22,7 +25,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -30,8 +33,4 @@
     "name": "World 5",
     "path": "folders/Objects/Room structure/World 5.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_moving_hstop",
-  "tags": [],
-  "resourceType": "GMObject",
 }

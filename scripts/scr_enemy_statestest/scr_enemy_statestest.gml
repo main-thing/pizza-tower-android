@@ -53,7 +53,7 @@ function scr_enemy_pummel()
 				if key_up
 				{
 					state = states.punch
-					sprite_index = spr_player_breakdanceuppercut
+					sprite_index = spr_breakdanceuppercut
 					image_index = 0
 					vsp = -14
 					movespeed = 2
@@ -85,7 +85,7 @@ function scr_enemy_pummel()
 					vsp = -4
 					movespeed = 9
 					state = states.punch
-					sprite_index = spr_player_breakdancestart
+					sprite_index = spr_breakdancestart
 					breakdance = 35
 					image_index = 0
 					with (obj_camera)

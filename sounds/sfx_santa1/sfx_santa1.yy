@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "sfx_santa1",
   "conversionMode": 0,
   "compression": 0,
   "volume": 0.58,
@@ -12,13 +15,9 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_santa1",
-  "duration": 2.142,
+  "duration": 2.142041,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sfx_santa1",
-  "tags": [],
-  "resourceType": "GMSound",
 }

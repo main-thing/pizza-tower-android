@@ -88,8 +88,9 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3C58FC32","properties":[],"isDnd":false,"objectId":{"name":"obj_destroyable2","path":"objects/obj_destroyable2/obj_destroyable2.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1184.0,"y":384.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B10B79AA","properties":[],"isDnd":false,"objectId":{"name":"obj_destroyable2","path":"objects/obj_destroyable2/obj_destroyable2.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1152.0,"y":384.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_46BFE722","properties":[],"isDnd":false,"objectId":{"name":"obj_destroyable2","path":"objects/obj_destroyable2/obj_destroyable2.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1216.0,"y":384.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2088ED15","properties":[],"isDnd":false,"objectId":{"name":"obj_priest","path":"objects/obj_priest/obj_priest.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":672.0,"y":370.0,},
       ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
-    {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","tilesetId":{"name":"tileset_secret","path":"tilesets/tileset_secret/tileset_secret.yy",},"x":0,"y":0,"tiles":{"TileDataFormat":1,"SerialiseWidth":50,"SerialiseHeight":17,"TileCompressedData":[
+    {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","tilesetId":{"name":"tileset_secret_1","path":"tilesets/tileset_secret_1/tileset_secret_1.yy",},"x":0,"y":0,"tiles":{"TileDataFormat":1,"SerialiseWidth":50,"SerialiseHeight":17,"TileCompressedData":[
 -8,59,2,49,77,-34,78,2,79,49,-12,59,2,49,56,-34,0,2,89,49,-12,59,2,49,56,-34,0,2,89,49,-12,59,4,49,56,0,0,-12,47,1,44,-4,45,1,46,-6,47,1,44,-3,
 45,1,46,-3,41,2,89,49,-12,59,5,49,56,0,0,47,-11,0,1,54,-4,49,1,56,-6,0,1,54,-3,49,1,56,-3,0,2,89,49,-12,59,5,49,56,0,0,47,-11,0,1,54,-4,
 49,1,56,-6,0,5,54,49,59,49,56,-3,0,2,89,49,-12,59,5,49,56,0,0,47,-11,0,1,64,-4,65,1,66,-6,0,5,54,49,59,49,56,-3,0,2,89,49,-12,59,5,49,56,
@@ -174,6 +175,7 @@
     {"name":"inst_3C58FC32","path":"rooms/strongcold_secret4/strongcold_secret4.yy",},
     {"name":"inst_B10B79AA","path":"rooms/strongcold_secret4/strongcold_secret4.yy",},
     {"name":"inst_46BFE722","path":"rooms/strongcold_secret4/strongcold_secret4.yy",},
+    {"name":"inst_2088ED15","path":"rooms/strongcold_secret4/strongcold_secret4.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

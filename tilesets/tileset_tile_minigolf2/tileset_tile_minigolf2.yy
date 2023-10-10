@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_tile_minigolf2",
   "spriteId": {
     "name": "sprite_tile_minigolf2",
     "path": "sprites/sprite_tile_minigolf2/sprite_tile_minigolf2.yy",
@@ -83,8 +86,4 @@
     "name": "Golf",
     "path": "folders/Tile Sets/Golf.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_tile_minigolf2",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

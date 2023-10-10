@@ -3,7 +3,7 @@ if (sprite_index == spr_bulletHUD && global.bullet < 3)
 	global.bullet += 1
 	with (obj_tv)
 	{
-		sprite = spr_tvrevolver
+		sprite = spr_null
 		alarm[0] = 50
 		image_speed = 0.35
 	}
@@ -16,7 +16,7 @@ if (sprite_index == spr_fuelHUD && global.fuel < 3)
 	global.fuel += 1
 	with (obj_tv)
 	{
-		sprite = spr_tvchainsaw
+		sprite = spr_null
 		alarm[0] = 50
 		image_speed = 0.35
 	}

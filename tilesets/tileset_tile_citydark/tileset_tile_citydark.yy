@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_tile_citydark",
   "spriteId": {
     "name": "sprite_tile_citydark",
     "path": "sprites/sprite_tile_citydark/sprite_tile_citydark.yy",
@@ -83,8 +86,4 @@
     "name": "Street",
     "path": "folders/Tile Sets/Street.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_tile_citydark",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

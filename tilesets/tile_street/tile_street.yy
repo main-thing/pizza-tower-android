@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_street",
   "spriteId": {
     "name": "tilespr_tile_street",
     "path": "sprites/tilespr_tile_street/tilespr_tile_street.yy",
@@ -975,8 +978,4 @@
     "name": "Street",
     "path": "folders/Tile Sets/Street.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_street",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

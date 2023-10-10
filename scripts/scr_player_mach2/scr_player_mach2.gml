@@ -47,7 +47,7 @@ function scr_player_mach2()
 	{
 		if (machpunchAnim == 0 && sprite_index != spr_mach && sprite_index != spr_mach1 && sprite_index != spr_mach4 && sprite_index != spr_player_machhit)
 		{
-			if (sprite_index != spr_player_machhit && sprite_index != spr_rollgetup && sprite_index != spr_suplexdash && sprite_index != spr_taunt && sprite_index != spr_player_Sjumpcancelstart)
+			if (sprite_index != spr_player_machhit && sprite_index != spr_rollgetup && sprite_index != spr_suplexdash && sprite_index != spr_taunt && sprite_index != spr_Sjumpcancelstart)
 				sprite_index = spr_mach
 		}
 		if (machpunchAnim == 1)
@@ -70,8 +70,8 @@ function scr_player_mach2()
 	}
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_mach1)
 		sprite_index = spr_mach
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_longjump)
-		sprite_index = spr_player_longjumpend
+	if (floor(image_index) == (image_number - 1) && sprite_index == spr_longjump)
+		sprite_index = spr_longjumpend
 	if (!grounded)
 		machpunchAnim = 0
 	if grounded
@@ -100,14 +100,27 @@ function scr_player_mach2()
 		input_buffer_jump = 0
 	if (((!grounded) && (place_meeting((x + hsp), y, obj_solid) or scr_solid_slope((x + hsp), y)) && (!(place_meeting((x + hsp), y, obj_destructibles)))) or (grounded && (place_meeting((x + sign(hsp)), (y - 16), obj_solid) or scr_solid_slope((x + sign(hsp)), (y - 16))) && (!(place_meeting((x + hsp), y, obj_destructibles))) && (!(place_meeting((x + hsp), y, obj_metalblock))) && place_meeting(x, (y + 1), obj_slope)))
 	{
+		if(!finalmoveset){
 		wallspeed = movespeed
 		if (vsp > 0)
 			wallspeed -= vsp
 		state = states.climbwall
+		} else{
+			wallspeed = movespeed;
+			grabclimbbuffer = 0;
+			if (movespeed < 1)
+				wallspeed = 1;
+			else
+				movespeed = wallspeed;
+			state = states.climbwall;
+		}
 	}
 	if ((!grounded) && place_meeting((x + sign(hsp)), y, obj_climbablewall) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && (!(place_meeting((x + sign(hsp)), y, obj_metalblock))))
 	{
 		wallspeed = movespeed
+		if(finalmoveset){
+			grabclimbbuffer = 0;
+		}
 		state = states.climbwall
 	}
 	if ((!instance_exists(dashcloudid)) && grounded)
@@ -118,11 +131,11 @@ function scr_player_mach2()
 			other.dashcloudid = id
 		}
 	}
-	if (grounded && floor(image_index) == (image_number - 1) && (sprite_index == spr_rollgetup or sprite_index == spr_player_rampjump))
+	if (grounded && floor(image_index) == (image_number - 1) && (sprite_index == spr_rollgetup or sprite_index == spr_rampjump))
 		sprite_index = spr_mach
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_suplexdash)
 		sprite_index = spr_mach
-	if ((!grounded) && sprite_index != spr_secondjump2 && sprite_index != spr_clownjump && sprite_index != spr_clownfall && sprite_index != spr_mach2jump && sprite_index != spr_mach2jump && sprite_index != spr_walljumpstart && sprite_index != spr_taunt && sprite_index != spr_player_Sjumpcancelstart && sprite_index != spr_walljumpend && sprite_index != spr_player_longjump && sprite_index != spr_player_longjumpend)
+	if ((!grounded) && sprite_index != spr_secondjump2 && sprite_index != spr_clownjump && sprite_index != spr_clownfall && sprite_index != spr_mach2jump && sprite_index != spr_mach2jump && sprite_index != spr_walljumpstart && sprite_index != spr_taunt && sprite_index != spr_Sjumpcancelstart && sprite_index != spr_walljumpend && sprite_index != spr_longjump && sprite_index != spr_longjumpend)
 	{
 		sprite_index = spr_secondjump1
 		if skateboarding
@@ -142,8 +155,13 @@ function scr_player_mach2()
 		state = states.tumble
 		vsp = 10
 		image_index = 0
-		if (!grounded)
-			sprite_index = spr_player_mach2jump
+		if (!grounded) {
+			if(!finalmoveset){
+				sprite_index = spr_mach2jump
+			} else {
+				sprite_index = spr_dive
+			}
+		}
 		else
 			sprite_index = spr_machroll
 		if (character == "V")
@@ -165,7 +183,7 @@ function scr_player_mach2()
 			{
 				state = states.bump
 				image_index = 0
-				sprite_index = spr_player_wallsplat
+				sprite_index = spr_wallsplat
 			}
 		}
 	}
@@ -234,24 +252,54 @@ function scr_player_mach2()
 	if (skateboarding && sprite_index != spr_clownjump && grounded)
 		sprite_index = spr_clown
 	if mortjump
-		sprite_index = spr_player_mortjumpstart
-	if key_slap2
-	{
-		sprite_index = spr_suplexdash
-		suplexmove = 1
-		suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
-		sfx_gain(suplexdashsnd)
-		state = states.handstandjump
-		if (movespeed < 5)
-			movespeed = 5
-		image_index = 0
-		flash = 1
+		sprite_index = spr_mortdoublejumpstart
+	if(!finalmoveset){
+		if (key_shoot2 && shotgunAnim)
+			scr_shotgunshoot()
+		if ((key_slap2 or input_buffer_slap < 8) && (!key_up))
+		{
+			sprite_index = spr_suplexdash
+			suplexmove = 1
+			suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
+			sfx_gain(suplexdashsnd)
+			state = states.handstandjump
+			movespeed = 8
+			image_index = 0
+			flash = 1
+		}
+	} else {
+		if(shotgunAnim){
+			if (key_slap2) {
+				scr_shotgunshoot()
+			}
+		} else {
+			if ((key_slap2 or input_buffer_slap < 8) && (!key_up))
+			{
+				sprite_index = spr_suplexdash
+				suplexmove = 1
+				suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
+				sfx_gain(suplexdashsnd)
+				state = states.handstandjump
+				movespeed = 8
+				image_index = 0
+				flash = 1
+			}
+			else if (key_slap2 && input_buffer_slap > 0 && key_up && shotgunAnim == 0)
+			{
+				input_buffer_slap = 0;
+				state = states.punch;
+				image_index = 0;
+				sprite_index = spr_breakdanceuppercut;
+				vsp = -10;
+				movespeed = hsp;
+				particle_set_scale(particle.highjumpcloud2, xscale, 1);
+				create_particle(x, y, particle.highjumpcloud2, 0);
+			}
+		}
 	}
-	if (key_shoot2 && shotgunAnim == 1)
-		scr_shotgunshoot()
 	if (global.attackstyle == 2 && key_slap2)
 	{
-		randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, 557, 556, 555, spr_punch])
+		randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_suplexmash5, spr_suplexmash6, spr_suplexmash7, spr_punch])
 		image_index = 0
 		state = states.lungeattack
 	}

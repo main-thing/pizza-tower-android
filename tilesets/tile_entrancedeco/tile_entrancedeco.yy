@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_entrancedeco",
   "spriteId": {
     "name": "spr_entrancedeco",
     "path": "sprites/spr_entrancedeco/spr_entrancedeco.yy",
@@ -735,8 +738,4 @@
     "name": "Tower",
     "path": "folders/Tile Sets/Tower.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_entrancedeco",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

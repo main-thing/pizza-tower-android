@@ -1,6 +1,6 @@
 function scr_player_balloon()
 {
-	sprite_index = spr_player_ratballoon
+	sprite_index = spr__ratballoon
 	hsp = movespeed
 	move = (key_left + key_right)
 	vsp = -5

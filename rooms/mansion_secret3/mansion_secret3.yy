@@ -16,7 +16,7 @@
     {"inherit":false,"visible":false,"xview":0,"yview":0,"wview":1024,"hview":768,"xport":0,"yport":0,"wport":1024,"hport":768,"hborder":32,"vborder":32,"hspeed":-1,"vspeed":-1,"objectId":null,},
   ],
   "layers": [
-    {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","tilesetId":{"name":"tileset_secret","path":"tilesets/tileset_secret/tileset_secret.yy",},"x":0,"y":0,"tiles":{"TileDataFormat":1,"SerialiseWidth":74,"SerialiseHeight":27,"TileCompressedData":[
+    {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","tilesetId":{"name":"tileset_secret_1","path":"tilesets/tileset_secret_1/tileset_secret_1.yy",},"x":0,"y":0,"tiles":{"TileDataFormat":1,"SerialiseWidth":74,"SerialiseHeight":27,"TileCompressedData":[
 -32,59,2,49,56,-40,0,-32,59,2,49,56,-40,0,-32,59,2,49,56,-40,0,-32,59,2,49,56,-40,0,-32,59,2,49,56,-40,0,-33,49,1,56,-40,0,-30,65,4,79,49,49,56,-70,0,4,54,49,49,56,-70,0,4,54,49,49,56,-40,0,-24,45,1,46,-5,41,4,54,49,49,
 56,-40,0,-5,49,1,77,-18,65,1,66,-5,0,4,64,65,65,66,-40,0,-4,59,2,49,56,-68,0,-4,59,2,49,56,-68,0,-4,59,2,49,56,-68,0,-4,59,2,49,97,-27,45,1,46,-40,0,-4,59,-29,49,1,56,-40,0,-32,59,2,49,56,-40,0,-32,59,2,49,56,-40,0,
 -32,59,2,49,56,-40,0,-32,59,2,49,56,-40,0,-32,59,2,49,56,-40,0,-32,59,2,49,56,-40,0,-32,59,2,49,56,-40,0,-32,59,2,49,56,-40,0,-32,59,2,49,56,-40,0,-32,59,2,49,56,-40,0,-32,59,2,49,56,-40,0,],},"visible":true,"depth":-100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},

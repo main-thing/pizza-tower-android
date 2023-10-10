@@ -53,6 +53,37 @@ function scr_player_Sjumpprep()
 			}
 			image_speed = 0.35
 			break
+		
+		case "S":
+            if (sprite_index == spr_snick_superjumpprep || sprite_index == spr_snick_superjumplight)
+                move = (key_left + key_right)
+            else
+                move = xscale
+            if (!(place_meeting(x, (y + 1), obj_railparent)))
+                hsp = (move * movespeed)
+            else
+            {
+                _railinst = instance_place(x, (y + 1), obj_railparent)
+                hsp = ((move * movespeed) + (_railinst.movespeed * _railinst.dir))
+            }
+            if (sprite_index == spr_snick_superjumpprep && movespeed > 0)
+                movespeed -= 1
+            if (floor(image_index) == (image_number - 1) && sprite_index == spr_snick_superjumpprep)
+                sprite_index = spr_snick_superjumplight
+            if (sprite_index == spr_snick_superjumplight)
+                movespeed = 2
+			if ((!key_up) && grounded && (character == "S" || sprite_index == spr_snick_superjumplight) && (!(scr_solid(x, (y - 16)))) && (!(scr_solid(x, (y - 32)))))
+            {
+				scr_soundeffect(sfx_superjumprelease)
+				instance_create(x, y, obj_explosioneffect)
+				sprite_index = spr_superjump
+				state = states.Sjump
+				vsp = -17
+				image_index = 0
+			}
+			image_speed = 0.35
+		break
+		
 		case "N":
 			hsp = 0
 			vsp = 0

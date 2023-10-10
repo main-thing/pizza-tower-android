@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_ruinend",
   "spriteId": {
     "name": "tilespr_tile_ruinend",
     "path": "sprites/tilespr_tile_ruinend/tilespr_tile_ruinend.yy",
@@ -935,8 +938,4 @@
     "name": "Ruin",
     "path": "folders/Tile Sets/Ruin.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_ruinend",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

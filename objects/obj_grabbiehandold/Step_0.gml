@@ -7,7 +7,7 @@ if (sprite_index == spr_grabbiehand_hifive && floor(image_index) == (image_numbe
 for (var i = 0; i < 2; i++)
 {
 	var targetplayer = asset_get_index(concat("obj_player", (i + 1)))
-	if (distance_to_pos(x, y, xstart, ystart, 6, 6) && targetplayer.sprite_index != spr_player_catched && targetplayer.x > (x - 50) && targetplayer.x < (x + 50) && targetplayer.y > y && targetplayer.y < (y + 200) && (!thumbingup))
+	if (distance_to_pos(x, y, xstart, ystart, 6, 6) && targetplayer.sprite_index != spr_catched && targetplayer.x > (x - 50) && targetplayer.x < (x + 50) && targetplayer.y > y && targetplayer.y < (y + 200) && (!thumbingup))
 	{
 		delay--
 		if (delay <= 0)

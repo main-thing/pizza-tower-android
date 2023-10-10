@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_unclimbablewall",
   "spriteId": {
     "name": "spr_hurtbox",
     "path": "sprites/spr_hurtbox/spr_hurtbox.yy",
@@ -28,8 +31,4 @@
     "name": "Unused",
     "path": "folders/Objects/Room structure/Unused.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_unclimbablewall",
-  "tags": [],
-  "resourceType": "GMObject",
 }

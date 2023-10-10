@@ -114,7 +114,7 @@ function scr_player_slap()
 		{
 			if (move != 0)
 				dir = move
-			sprite_index = spr_player_fall
+			sprite_index = spr_fall
 			state = states.jump
 		}
 	}

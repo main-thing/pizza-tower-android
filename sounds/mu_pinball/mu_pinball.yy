@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "mu_pinball",
   "conversionMode": 0,
   "compression": 0,
   "volume": 0.75,
@@ -17,8 +20,4 @@
     "name": "Music",
     "path": "folders/Sounds/Music.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "mu_pinball",
-  "tags": [],
-  "resourceType": "GMSound",
 }

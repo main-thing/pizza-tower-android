@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_beachprops2",
   "spriteId": {
     "name": "tilespr_tileset_beachprops2",
     "path": "sprites/tilespr_tileset_beachprops2/tilespr_tileset_beachprops2.yy",
@@ -265,8 +268,4 @@
     "name": "Beach",
     "path": "folders/Tile Sets/Beach.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_beachprops2",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

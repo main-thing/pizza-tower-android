@@ -68,7 +68,7 @@ function SUPER_player_destroy(argument0)
 		y = hitY
 		xscale = (-other.image_xscale)
 		hitxscale = (-other.image_xscale)
-		sprite_index = spr_player_outofpizza1
+		sprite_index = spr_outofpizza1
 		hithsp = 15
 		hitstunned = 10000
 		hitvsp = -8

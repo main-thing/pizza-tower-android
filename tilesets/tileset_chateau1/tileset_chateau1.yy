@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_chateau1",
   "spriteId": {
     "name": "tile_chateau1",
     "path": "sprites/tile_chateau1/tile_chateau1.yy",
@@ -860,8 +863,4 @@
     "name": "Chateau",
     "path": "folders/Tile Sets/Chateau.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_chateau1",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

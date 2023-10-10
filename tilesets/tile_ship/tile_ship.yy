@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_ship",
   "spriteId": {
     "name": "tilespr_tile_ship",
     "path": "sprites/tilespr_tile_ship/tilespr_tile_ship.yy",
@@ -755,8 +758,4 @@
     "name": "Beach",
     "path": "folders/Tile Sets/Beach.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_ship",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

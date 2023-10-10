@@ -6,10 +6,10 @@ function scr_player_transitioncutscene()
 	{
 		xscale *= -1
 		hsp = 5
-		sprite_index = spr_player_move
+		sprite_index = spr_move
 		costumercutscenetimer = 35
 	}
-	if (sprite_index == spr_player_move && costumercutscenetimer < 0)
+	if (sprite_index == spr_move && costumercutscenetimer < 0)
 	{
 		with (obj_costumerdoor)
 		{
@@ -19,9 +19,9 @@ function scr_player_transitioncutscene()
 		image_index = 0
 		hsp = 0
 		xscale *= -1
-		sprite_index = spr_player_givepizza
+		sprite_index = spr_givepizza
 	}
-	if (sprite_index == spr_player_levelcomplete && costumercutscenetimer < 0)
+	if (sprite_index == spr_levelcomplete && costumercutscenetimer < 0)
 	{
 		if (grounded && x > (other.x + 32) && x < (other.x + 160) && key_up && (state == states.normal or state == states.mach1 or state == states.mach2 or state == states.mach3))
 		{
@@ -47,9 +47,9 @@ function scr_player_transitioncutscene()
 			}
 		}
 	}
-	if (sprite_index == spr_player_givepizza && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_givepizza && floor(image_index) == (image_number - 1))
 		image_speed = 0
-	if (sprite_index == spr_player_levelcomplete && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_levelcomplete && floor(image_index) == (image_number - 1))
 		image_speed = 0
 	exit;
 }

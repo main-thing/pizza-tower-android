@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_desert_tileset",
   "spriteId": {
     "name": "tile_desert",
     "path": "sprites/tile_desert/tile_desert.yy",
@@ -245,8 +248,4 @@
     "name": "Desert",
     "path": "folders/Tile Sets/Desert.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_desert_tileset",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

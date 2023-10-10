@@ -6,4 +6,4 @@ if (obj_player1.character == "P" && obj_player1.spotlight == 1 && obj_player1.is
 if ((obj_player1.character == "N" or (!obj_player1.ispeppino)) && obj_player1.spotlight == 1)
 	sprite_index = spr_giantpizzahalloween
 depth = 11
-secret = 1
+secret = 0

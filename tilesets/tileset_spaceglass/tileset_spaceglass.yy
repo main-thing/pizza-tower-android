@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_spaceglass",
   "spriteId": {
     "name": "spr_spaceglass",
     "path": "sprites/spr_spaceglass/spr_spaceglass.yy",
@@ -38,8 +41,4 @@
     "name": "Space",
     "path": "folders/Tile Sets/Space.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_spaceglass",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

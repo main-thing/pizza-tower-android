@@ -16,5 +16,5 @@ if (other.state != states.gotoplayer)
 	create_collect(x, y, sprite_index)
 	with (instance_create((x + 16), y, obj_smallnumber))
 		number = string(val)
-	tv_do_expression(spr_tv_exprcollect)
+	tv_do_expression(other._spr_tv_exprcollect)
 }

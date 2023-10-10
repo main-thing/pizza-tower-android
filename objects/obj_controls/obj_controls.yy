@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_controls",
   "spriteId": {
     "name": "spr_controls",
     "path": "sprites/spr_controls/spr_controls.yy",
@@ -28,8 +31,4 @@
     "name": "Visuals",
     "path": "folders/Objects/Visuals.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_controls",
-  "tags": [],
-  "resourceType": "GMObject",
 }

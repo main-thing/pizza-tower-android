@@ -2,6 +2,7 @@ function scr_player_climbwall()
 {	
 	switch character
 	{
+		case "S":
 		case "P":
 			if (windingAnim < 200)
 				windingAnim++
@@ -22,12 +23,45 @@ function scr_player_climbwall()
 				sprite_index = spr_machclimbwall
 			else
 				sprite_index = spr_clingwall
-			if ((!key_attack) && (!skateboarding))
+			if (!finalmoveset) 
 			{
-				state = states.normal
-				movespeed = 0
-				railmovespeed = 6
-				raildir = (-xscale)
+				if(character != "S"){
+					if ((!key_attack) && (!skateboarding))
+					{
+						state = states.normal
+						movespeed = 0
+						railmovespeed = 6
+						raildir = (-xscale)
+					}
+				} else {
+					if ((!key_attack) && (!skateboarding) && move != xscale && move != 0)
+					{
+						state = states.normal
+						movespeed = 0
+						railmovespeed = 6
+						raildir = (-xscale)
+					}
+				}
+			} else {
+				if (grabclimbbuffer > 0)
+					grabclimbbuffer--;
+				if(character != "S"){
+					if (!key_attack && !skateboarding && grabclimbbuffer == 0)
+					{
+						state =	states.normal;
+						movespeed = 0;
+						railmovespeed = 6;
+						raildir = -xscale;
+					}
+				} else {
+					if (!key_attack && !skateboarding && grabclimbbuffer == 0 && move != xscale && move != 0)
+					{
+						state =	states.normal;
+						movespeed = 0;
+						railmovespeed = 6;
+						raildir = -xscale;
+					}
+				}
 			}
 			if (verticalbuffer <= 0 && place_meeting(x, (y - 1), obj_solid) && (!(place_meeting(x, (y - 1), obj_verticalhallway))) && (!(place_meeting(x, (y - 1), obj_destructibles))) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or scr_solid_slope((x + sign(hsp)), y)) && (!(place_meeting((x - sign(hsp)), y, obj_slope))))
 			{
@@ -99,10 +133,20 @@ function scr_player_climbwall()
 				wallspeed += 0.1
 			crouchslideAnim = 1
 			sprite_index = spr_machclimbwall
-			if (!key_attack)
-			{
-				state = states.normal
-				movespeed = 0
+			if(!finalmoveset){
+				if (!key_attack)
+				{
+					state = states.normal
+					movespeed = 0
+				}
+			} else {
+				if (grabclimbbuffer > 0)
+					grabclimbbuffer--;
+				if (!key_attack && grabclimbbuffer == 0)
+				{
+					state = states.normal
+					movespeed = 0;
+				}
 			}
 			if (scr_solid(x, (y - 1)) && (!(place_meeting(x, (y - 1), obj_destructibles))) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or scr_solid_slope((x + sign(hsp)), y)) && (!(place_meeting((x - sign(hsp)), y, obj_slope))))
 			{

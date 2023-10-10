@@ -1,3 +1,4 @@
+hide = 0
 if (special_prompts == -4 && room != Realtitlescreen && room != characterselect)
 {
 	special_prompts = ds_map_create()

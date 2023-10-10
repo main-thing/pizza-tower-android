@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_mach3solid",
   "spriteId": {
     "name": "spr_solid",
     "path": "sprites/spr_solid/spr_solid.yy",
@@ -31,8 +34,4 @@
     "name": "Unused",
     "path": "folders/Objects/Level/Unused.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_mach3solid",
-  "tags": [],
-  "resourceType": "GMObject",
 }

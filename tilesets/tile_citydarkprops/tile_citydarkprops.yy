@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_citydarkprops",
   "spriteId": {
     "name": "spr_citydarkprops",
     "path": "sprites/spr_citydarkprops/spr_citydarkprops.yy",
@@ -323,8 +326,4 @@
     "name": "Street",
     "path": "folders/Tile Sets/Street.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_citydarkprops",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

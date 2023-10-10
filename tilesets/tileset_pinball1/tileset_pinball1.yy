@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_pinball1",
   "spriteId": {
     "name": "tile_pinball1",
     "path": "sprites/tile_pinball1/tile_pinball1.yy",
@@ -273,8 +276,4 @@
     "name": "Pinball",
     "path": "folders/Tile Sets/Pinball.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_pinball1",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

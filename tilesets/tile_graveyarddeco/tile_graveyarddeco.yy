@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_graveyarddeco",
   "spriteId": {
     "name": "tilespr_tile_graveyarddeco",
     "path": "sprites/tilespr_tile_graveyarddeco/tilespr_tile_graveyarddeco.yy",
@@ -860,8 +863,4 @@
     "name": "Graveyard",
     "path": "folders/Tile Sets/Graveyard.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_graveyarddeco",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

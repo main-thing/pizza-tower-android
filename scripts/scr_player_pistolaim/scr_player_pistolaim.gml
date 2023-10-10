@@ -43,7 +43,7 @@ function scr_player_pistolaim()
 	}
 	if (!grounded)
 	{
-		sprite_index = spr_player_fall
+		sprite_index = spr_fall
 		state = states.jump
 	}
 	if (move != 0)

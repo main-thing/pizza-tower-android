@@ -27,7 +27,7 @@ function scr_player_machslide()
 	}
 	if (place_meeting((x + xscale), y, obj_solid) && (sprite_index == spr_machslide or sprite_index == spr_machslidestart))
 	{
-		sprite_index = spr_player_wallsplat
+		sprite_index = spr_wallsplat
 		state = states.bump
 		image_index = 0
 	}
@@ -62,7 +62,7 @@ function scr_player_machslide()
 			launch_buffer = 20
 		}
 	}
-	if (sprite_index == spr_player_crouchslide && movespeed == 0 && grounded)
+	if (sprite_index == spr_crouchslide && movespeed == 0 && grounded)
 	{
 		facehurt = 1
 		state = states.normal

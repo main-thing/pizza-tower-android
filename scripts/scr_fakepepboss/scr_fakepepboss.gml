@@ -24,6 +24,9 @@ function fakepep_set_attack(phase, wastedhits, _attack, _cooldown, _deformed_tim
 }
 function fakepep_get_attack(phase, wastedhits)
 {
+	if(phase >= 6){
+		phase = 5
+	}
 	return attack_list[phase][wastedhits];
 }
 function fakepep_start_projectiles(phase, wastedhits)
@@ -295,13 +298,14 @@ function scr_fakepepboss_arenaintro()
 			image_speed = 0.35;
 			xscale = -other.image_xscale;
 			if (other.sprite_index == spr_fakepeppino_intro1)
-				sprite_index = spr_player_gnomecutscene1;
+				sprite_index = spr_gnomecutscene1;
 			if (floor(image_index) == (image_number - 1))
 			{
-				if (sprite_index == spr_player_gnomecutscene2)
+				if (sprite_index == spr_gnomecutscene2)
 					image_index = image_number - 1;
-				else if (sprite_index == spr_player_gnomecutscene3)
-					sprite_index = spr_player_gnomecutscene4;
+				else if (sprite_index == spr_gnomecutscene3){
+					sprite_index = spr_gnomecutscene4;
+				}
 			}
 		}
 		if (floor(image_index) == (image_number - 1))
@@ -320,7 +324,7 @@ function scr_fakepepboss_arenaintro()
 			introbuffer = 70;
 			with (obj_player)
 			{
-				sprite_index = spr_player_gnomecutscene2;
+				sprite_index = spr_gnomecutscene2;
 				image_index = 0;
 			}
 		}
@@ -333,7 +337,7 @@ function scr_fakepepboss_arenaintro()
 			with (obj_player)
 			{
 				scr_soundeffect(sfx_pepscream)
-				sprite_index = spr_player_gnomecutscene3;
+				sprite_index = spr_gnomecutscene3;
 				image_index = 0;
 			}
 		}
@@ -351,12 +355,25 @@ function scr_fakepepboss_arenaintro()
 				ID = other.id;
 			with (obj_player)
 			{
-				sprite_index = spr_player_screamtransition;
+				sprite_index = spr_screamtransition;
 				image_index = 0;
 				image_speed = 0.35;
 				landAnim = false;
-				tauntstoredstate = states.normal;
-				state = states.animation;
+				if(variable_instance_exists(self,"tauntsound")){
+					scr_soundeffect(tauntsound)
+				} else{
+					scr_soundeffect(sfx_taunt) // fallback incase this var somehow gets deleted
+				}
+				taunttimer = 20
+				tauntstoredmovespeed = movespeed
+				tauntstoredvsp = vsp
+				tauntstoredsprite = spr_idle
+				tauntstoredstate = states.normal
+				state = states.backbreaker
+				sprite_index = spr_taunt
+				image_index = random_range(0, 11)
+				with (instance_create(x, y, obj_taunteffect))
+					player = other.id
 			}
 		}
 	}
@@ -509,7 +526,6 @@ function scr_fakepepboss_deformed()
 		instance_destroy(obj_fakepephead);
 		if (sprite_index != spr_fakepeppino_reform)
 		{
-			scr_sound(sfx_fakepepreform)
 			x = irandom_range(101, room_width - 101);
 			while (!place_meeting(x, y + 1, obj_solid))
 			{

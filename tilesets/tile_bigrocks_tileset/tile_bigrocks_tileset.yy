@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_bigrocks_tileset",
   "spriteId": {
     "name": "tile_bigrocks",
     "path": "sprites/tile_bigrocks/tile_bigrocks.yy",
@@ -179,8 +182,4 @@
     "name": "Desert",
     "path": "folders/Tile Sets/Desert.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_bigrocks_tileset",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

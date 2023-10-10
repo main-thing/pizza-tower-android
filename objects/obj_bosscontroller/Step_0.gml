@@ -37,7 +37,7 @@ if ((!instance_exists(bossID)) && (!bossdead))
 	alarm[0] = 150
 	with (obj_player1)
 	{
-		sprite_index = spr_player_levelcomplete
+		sprite_index = spr_levelcomplete
 		image_speed = 0.35
 		image_index = 0
 		state = states.arenaintro

@@ -12,9 +12,9 @@ function scr_player_grabbing()
 		else if (!grounded)
 			movespeed = 12
 	}
-	var attackdash = spr_player_suplexdash
-	var airattackdash = spr_player_suplexgrabjump
-	var airattackdashstart = spr_player_suplexgrabjumpstart
+	var attackdash = spr_suplexdash
+	var airattackdash = spr_suplexgrabjump
+	var airattackdashstart = spr_suplexdashjumpstart
 	if (sprite_index == attackdash && (!grounded))
 	{
 		image_index = 0
@@ -27,7 +27,7 @@ function scr_player_grabbing()
 		state = states.grabbing
 		image_index = 0
 		vsp = 0
-		sprite_index = spr_player_suplexdash
+		sprite_index = spr_suplexdash
 		movespeed = 8
 		with (instance_create(x, y, obj_superdashcloud))
 			image_xscale = other.xscale
@@ -83,7 +83,7 @@ function scr_player_grabbing()
 		image_index = 0
 		if (!grounded)
 		{
-			sprite_index = spr_player_suplexcancel
+			sprite_index = spr_suplexcancel
 			grav = 0.5
 			state = states.jump
 		}

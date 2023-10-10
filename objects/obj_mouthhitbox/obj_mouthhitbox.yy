@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_mouthhitbox",
   "spriteId": {
     "name": "spr_mouthhitbox",
     "path": "sprites/spr_mouthhitbox/spr_mouthhitbox.yy",
@@ -28,8 +31,4 @@
     "name": "Unused",
     "path": "folders/Objects/Level/Unused.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_mouthhitbox",
-  "tags": [],
-  "resourceType": "GMObject",
 }

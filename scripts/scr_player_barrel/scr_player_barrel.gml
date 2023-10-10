@@ -20,16 +20,16 @@ function scr_player_barrel()
 	}
 	else
 		movespeed = Approach(movespeed, 0, 0.5)
-	if (sprite_index == spr_player_barrelland && floor(image_index) == (image_number - 1))
-		sprite_index = spr_player_barrelidle
+	if (sprite_index == spr_barrelland && floor(image_index) == (image_number - 1))
+		sprite_index = spr_barrelidle
 	if grounded
 	{
-		if (sprite_index != spr_player_barrelland)
+		if (sprite_index != spr_barrelland)
 		{
 			if (hsp != 0)
-				sprite_index = spr_player_barrelmove
+				sprite_index = spr_barrelmove
 			else
-				sprite_index = spr_player_barrelidle
+				sprite_index = spr_barrelidle
 		}
 		if (scr_slope() && hsp != 0)
 		{
@@ -50,7 +50,7 @@ function scr_player_barrel()
 					xscale = move
 			}
 			state = states.barreljump
-			sprite_index = spr_player_barreljump
+			sprite_index = spr_barreljump
 			image_index = 0
 			jumpstop = 0
 			create_particle(x, y, particle.highjumpcloud1, 0)
@@ -60,25 +60,25 @@ function scr_player_barrel()
 			movespeed = (xscale * 7)
 			instance_create(x, y, obj_jumpdust)
 			state = states.barrelslide
-			sprite_index = spr_player_barrelslipnslide
+			sprite_index = spr_barrelslipnslide
 			image_index = 0
 		}
 	}
 	else
 	{
 		state = states.barreljump
-		sprite_index = spr_player_barrelfall
+		sprite_index = spr_barrelfall
 		image_index = 0
 		if (vsp < 0)
-			sprite_index = spr_player_barreljump
+			sprite_index = spr_barreljump
 	}
 	if (place_meeting((x + sign(hsp)), y, obj_solid) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
 	{
 		movespeed = 0
-		if (sprite_index == spr_player_barrelmove)
-			sprite_index = spr_player_barrelidle
+		if (sprite_index == spr_barrelmove)
+			sprite_index = spr_barrelidle
 	}
-	if (sprite_index == spr_player_barrelmove)
+	if (sprite_index == spr_barrelmove)
 	{
 		if ((!steppy) && (floor(image_index == 4) or floor(image_index) == 13))
 		{

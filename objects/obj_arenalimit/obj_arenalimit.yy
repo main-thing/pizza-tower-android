@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_arenalimit",
   "spriteId": {
     "name": "spr_camera_1x1",
     "path": "sprites/spr_camera_1x1/spr_camera_1x1.yy",
@@ -28,8 +31,4 @@
     "name": "Arenas",
     "path": "folders/Objects/Room structure/Arenas.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_arenalimit",
-  "tags": [],
-  "resourceType": "GMObject",
 }

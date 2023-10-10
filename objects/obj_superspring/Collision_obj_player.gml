@@ -31,7 +31,7 @@ with (other)
 		{
 			state = states.freefall
 			vsp = 10
-			sprite_index = spr_player_rockethitwall
+			sprite_index = spr_rockethitwall
 		}
 		other.image_index = 0
 		other.sprite_index = spr_presentbox_activate

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_kitchen",
   "spriteId": {
     "name": "tilespr_tile_kitchen",
     "path": "sprites/tilespr_tile_kitchen/tilespr_tile_kitchen.yy",
@@ -800,8 +803,4 @@
     "name": "Kids Party",
     "path": "folders/Tile Sets/Kids Party.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_kitchen",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

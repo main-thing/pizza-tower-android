@@ -680,7 +680,7 @@ if (visible == false && state == states.comingoutdoor)
 		coopdelay = 0
 	}
 }
-if (global.coop == true)
+if (global.coop)
 {
 	if ((state == states.punch or state == states.handstandjump) && (!((obj_player2.state == states.punch or obj_player2.state == states.handstandjump))))
 		fightballadvantage = 1
@@ -991,10 +991,14 @@ if (character != "M")
 	}
 	else
 		mask_index = spr_crouchmask
+	if (character == "S")
+			mask_index = spr_crouchmask
 }
 else
 	mask_index = spr_pepperman_mask
-if (state == states.gottreasure or sprite_index == spr_knightpepstart or sprite_index == spr_knightpepthunder or state == states.keyget or state == states.chainsaw or state == states.door or state == states.ejected or state == states.victory or state == states.comingoutdoor or state == states.gameover or state == states.gotoplayer or state == states.policetaxi or state == states.actor or place_meeting(x, y, obj_secretportal) or place_meeting(x, y, obj_secretportalstart))
+if (character == "S" && state == states.bombpep)
+    mask_index = spr_player_mask
+if (state == states.keyget or sprite_index == spr_keyget or state == states.gottreasure or sprite_index == spr_knightpepstart or sprite_index == spr_knightpepthunder or state == states.keyget or state == states.chainsaw or state == states.door or state == states.ejected or state == states.victory or state == states.comingoutdoor or state == states.gameover or state == states.gotoplayer or state == states.policetaxi or state == states.actor or place_meeting(x, y, obj_secretportal) or place_meeting(x, y, obj_secretportalstart))
 	cutscene = 1
 else
 	cutscene = 0

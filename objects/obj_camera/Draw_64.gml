@@ -109,11 +109,13 @@ if (obj_player.state != states.gameover)
 
 	var t = (spr_h * perc)
 	var top = (spr_h - t)
-	draw_sprite_part(spr_ranks_hudfill, rank_ix, 0, top, spr_w, (spr_h - top), (rx - spr_xo), ((ry - spr_yo) + top))
 	if (!global.showrank) {
 		draw_sprite_ext(spr_ranks_hudeggplant, rank_ix, rx, ry, rank_scale, rank_scale, 0, c_white, 1)
 	} else {
 		draw_sprite_ext(spr_ranks_hud, rank_ix, rx, ry, rank_scale, rank_scale, 0, c_white, 1)
+		if(perc != 1){
+			draw_sprite_part(spr_ranks_hudfill, rank_ix, 0, top, spr_w, (spr_h - top), (rx - spr_xo), ((ry - spr_yo) + top))
+		}
 	}
 	draw_set_valign(fa_top)
 	draw_set_halign(fa_left)
@@ -175,7 +177,9 @@ if (obj_player.state != states.gameover)
 	if (obj_player1.character == "V")
 		draw_text((200 + healthshake), (125 + healthshake), global.playerhealth)
 	draw_text(window_get_height() - 50, window_get_width() - 200, "Lap: " + string(global.laps))
-	draw_sprite_ext(spr_inv, -1, 41, 150, 1, 1, 1, c_white, alpha)
-	if global.key_inv
-		draw_sprite_ext(spr_key, -1, 41, 150, 1, 1, 1, c_white, alpha)
+	if(global.oldsprites){
+		draw_sprite_ext(spr_inv, -1, 41, 150, 1, 1, 1, c_white, alpha)
+		if global.key_inv
+			draw_sprite_ext(spr_key, -1, 41, 150, 1, 1, 1, c_white, alpha)
+	}
 }

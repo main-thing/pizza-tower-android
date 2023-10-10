@@ -10,13 +10,13 @@ function scr_player_thrown()
 	if (grounded && vsp > -1)
 	{
 		hsp = 0
-		if (sprite_index == spr_player_outofpizza2)
+		if (sprite_index == spr_outofpizza2)
 		{
-			sprite_index = spr_player_outofpizza3
+			sprite_index = spr_outofpizza3
 			image_index = 0
 		}
 	}
-	if (grounded && vsp > 0 && sprite_index != spr_player_outofpizza1 && sprite_index != spr_player_outofpizza2 && sprite_index != spr_player_outofpizza3 && sprite_index != spr_player_outofpizza4)
+	if (grounded && vsp > 0 && sprite_index != spr_outofpizza1 && sprite_index != spr_outofpizza2 && sprite_index != spr_outofpizza3 && sprite_index != spr_outofpizza4)
 	{
 		state = states.normal
 		movespeed = 0
@@ -29,12 +29,12 @@ function scr_player_thrown()
 	{
 		switch sprite_index
 		{
-			case spr_player_outofpizza1:
-				sprite_index = spr_player_outofpizza2
+			case spr_outofpizza1:
+				sprite_index = spr_outofpizza2
 				image_index = 0
 				break
-			case spr_player_outofpizza3:
-				sprite_index = spr_player_outofpizza4
+			case spr_outofpizza3:
+				sprite_index = spr_outofpizza4
 				image_index = 0
 				break
 		}

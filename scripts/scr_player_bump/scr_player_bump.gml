@@ -1,6 +1,6 @@
 function scr_player_bump()
 {
-	if (sprite_index != spr_player_wallsplat)
+	if (sprite_index != spr_wallsplat)
 	{
 		movespeed = 0
 		mach2 = 0
@@ -17,7 +17,7 @@ function scr_player_bump()
 			image_speed = 0.35
 		if (sprite_index == spr_rockethitwall && grounded)
 			image_index = (image_number - 1)
-		if (floor(image_index) == (image_number - 1) && sprite_index != spr_player_catched && sprite_index != spr_boxxedpep_air)
+		if (floor(image_index) == (image_number - 1) && sprite_index != spr_catched && sprite_index != spr_boxxedpepair)
 		{
 			if (!skateboarding)
 			{
@@ -27,7 +27,7 @@ function scr_player_bump()
 			else
 				state = states.mach2
 		}
-		if (sprite_index != spr_player_catched && sprite_index != spr_boxxedpep_air && sprite_index != spr_rockethitwall && sprite_index != spr_tumbleend && sprite_index != spr_hitwall)
+		if (sprite_index != spr_catched && sprite_index != spr_boxxedpep_air && sprite_index != spr_rockethitwall && sprite_index != spr_tumbleend && sprite_index != spr_hitwall)
 			sprite_index = ((!skateboarding) ? spr_bump : spr_clownbump)
 	}
 	else

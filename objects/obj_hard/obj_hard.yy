@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_hard",
   "spriteId": {
     "name": "spr_hard",
     "path": "sprites/spr_hard/spr_hard.yy",
@@ -28,8 +31,4 @@
     "name": "Visuals",
     "path": "folders/Objects/Visuals.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_hard",
-  "tags": [],
-  "resourceType": "GMObject",
 }

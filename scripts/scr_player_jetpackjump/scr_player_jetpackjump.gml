@@ -48,13 +48,13 @@ function scr_player_jetpackjump()
 	if (sprite_index != spr_rockethitwall or (!jetpackdash))
 	{
 		dir = xscale
-		if (sprite_index == spr_player_jetpackstart)
+		if (sprite_index == spr_jetpackstart)
 		{
-			sprite_index = spr_player_jetpackmid
+			sprite_index = spr_jetpackmid
 			image_index = 0
 		}
-		else if (sprite_index == spr_player_jetpackmid && floor(image_index) == (image_number - 1))
-			sprite_index = spr_player_jetpackend
+		else if (sprite_index == spr_jetpackmid && floor(image_index) == (image_number - 1))
+			sprite_index = spr_jetpackend
 		if (move != 0)
 		{
 			if (move != xscale)

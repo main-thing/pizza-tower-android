@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_mansion2",
   "spriteId": {
     "name": "spr_mansiontile2",
     "path": "sprites/spr_mansiontile2/spr_mansiontile2.yy",
@@ -855,8 +858,4 @@
     "name": "Mansion",
     "path": "folders/Tile Sets/Mansion.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_mansion2",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

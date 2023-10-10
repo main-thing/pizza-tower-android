@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_forestplain",
   "spriteId": {
     "name": "tilespr_tile_forestplain",
     "path": "sprites/tilespr_tile_forestplain/tilespr_tile_forestplain.yy",
@@ -553,8 +556,4 @@
     "name": "Forest",
     "path": "folders/Tile Sets/Forest.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_forestplain",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

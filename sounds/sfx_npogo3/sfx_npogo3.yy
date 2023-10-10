@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "sfx_Npogo3",
   "conversionMode": 0,
   "compression": 0,
   "volume": 0.55,
@@ -17,8 +20,4 @@
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sfx_Npogo3",
-  "tags": [],
-  "resourceType": "GMSound",
 }

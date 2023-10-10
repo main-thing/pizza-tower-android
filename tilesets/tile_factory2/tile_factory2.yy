@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_factory2",
   "spriteId": {
     "name": "spr_factory2",
     "path": "sprites/spr_factory2/spr_factory2.yy",
@@ -855,8 +858,4 @@
     "name": "Industrial",
     "path": "folders/Tile Sets/Industrial.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_factory2",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

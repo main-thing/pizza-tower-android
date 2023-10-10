@@ -8,10 +8,10 @@ obj_tv.alarm[0] = 260
 obj_tv.tvsprite = spr_tvclap
 obj_tv.image_speed = 0.1
 obj_player.image_index = 0
-obj_player.x = 608
+//obj_player.x = 608
 obj_player.hsp = 0
-obj_player.y = 498
-obj_player.sprite_index = spr_player_levelcomplete
+//obj_player.y = 498
+obj_player.sprite_index = obj_player.spr_levelcomplete
 obj_player.state = states.bossintro
 if (reset == 0)
 {

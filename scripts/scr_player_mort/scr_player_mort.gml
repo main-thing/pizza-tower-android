@@ -27,16 +27,16 @@ function scr_player_mort()
 	if (place_meeting((x + sign(hsp)), y, obj_solid) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
 	{
 		movespeed = 0
-		if (sprite_index == spr_player_barrelmove)
-			sprite_index = spr_player_barrelidle
+		if (sprite_index == spr_barrelmove)
+			sprite_index = spr_barrelidle
 	}
 	if (!landAnim)
 	{
 		if (move != 0)
-			sprite_index = spr_player_mortwalk
+			sprite_index = spr__mortwalk
 		else
 		{
-			sprite_index = spr_player_mortidle
+			sprite_index = spr__mortidle
 			image_speed = 0.35
 		}
 	}
@@ -44,14 +44,14 @@ function scr_player_mort()
 	{
 		landAnim = 0
 		if (move != 0)
-			sprite_index = spr_player_mortwalk
+			sprite_index = spr__mortwalk
 		else
-			sprite_index = spr_player_mortidle
+			sprite_index = spr__mortidle
 	}
 	if (!grounded)
 	{
 		state = states.mortjump
-		sprite_index = spr_player_mortjump
+		sprite_index = spr_mortjump
 	}
 	else if (input_buffer_jump < 8)
 	{
@@ -59,7 +59,7 @@ function scr_player_mort()
 		state = states.mortjump
 		doublejump = 0
 		vsp = -11
-		sprite_index = spr_player_mortjumpstart
+		sprite_index = spr_mortdoublejumpstart
 		image_index = 0
 		scr_soundeffect(sfx_jump)
 		create_particle(x, y, particle.jumpdust, 0)
@@ -73,7 +73,7 @@ function mort_attack()
 	if key_slap2
 	{
 		state = states.mortattack
-		sprite_index = spr_player_mortattackfront
+		sprite_index = spr_mortattackfront
 		image_index = 0
 		if (move != 0)
 			xscale = move
@@ -81,14 +81,14 @@ function mort_attack()
 		if key_up
 		{
 			_angle = 90
-			sprite_index = spr_player_mortattackup
+			sprite_index = spr_mortattackup
 		}
 		else if (key_down && (!grounded))
 		{
 			if (!grounded)
 				vsp = 3
 			_angle = 270
-			sprite_index = spr_player_mortattackdown
+			sprite_index = spr_mortattackdown
 		}
 		else
 			movespeed = (xscale * 12)
@@ -101,7 +101,7 @@ function mort_attack()
 			alarm[0] = 15
 		}
 	}
-	if (sprite_index == spr_player_mortattackdown or sprite_index == spr_player_mortattackup or sprite_index == spr_player_mortattack)
+	if (sprite_index == spr_mortattackdown or sprite_index == spr_mortattackup or sprite_index == spr_mortattack)
 	{
 		if (punch_afterimage > 0)
 			punch_afterimage--

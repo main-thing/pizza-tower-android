@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "trapscreen2_tileset",
   "spriteId": {
     "name": "tilespr_trapscreen2_tileset",
     "path": "sprites/tilespr_trapscreen2_tileset/tilespr_trapscreen2_tileset.yy",
@@ -36,8 +39,4 @@
     "name": "Tile Sets",
     "path": "folders/Tile Sets.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "trapscreen2_tileset",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

@@ -20,7 +20,7 @@ if (other.state != states.gotoplayer)
 	{
 		for (var xx = 0; xx < 4; xx++)
 		{
-			create_collect(_x, _y, (obj_player1.ispeppino ? choose(1563, 1559, 2709, 1561) : choose(2080, 2082, 2086, 2087, 2088)))
+			create_collect(_x, _y, (obj_player1.ispeppino ? choose(spr_cheesecollect, spr_tomatocollect, spr_shroomcollect, spr_pineapplecollect) : choose(spr_halloweencollectibles1, spr_halloweencollectibles2, spr_halloweencollectibles3, spr_halloweencollectibles4, spr_halloweencollectibles5)))
 			_x += 16
 		}
 		_x = _xstart

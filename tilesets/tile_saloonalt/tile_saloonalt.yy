@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_saloonalt",
   "spriteId": {
     "name": "tilespr_tile_saloonalt",
     "path": "sprites/tilespr_tile_saloonalt/tilespr_tile_saloonalt.yy",
@@ -1043,8 +1046,4 @@
     "name": "Saloon",
     "path": "folders/Tile Sets/Saloon.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_saloonalt",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

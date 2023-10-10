@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_doorF",
   "spriteId": {
     "name": "sprite12242609",
     "path": "sprites/sprite12242609/sprite12242609.yy",
@@ -28,8 +31,4 @@
     "name": "Warps",
     "path": "folders/Objects/Room structure/Generic/Warps.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_doorF",
-  "tags": [],
-  "resourceType": "GMObject",
 }

@@ -112,7 +112,7 @@ if global.timedgatetimer
 }
 if (!instance_exists(obj_ghostcollectibles))
 {
-	if ((global.panic == true && global.minutes < 1) or player.sprite_index == spr_player_timesup)
+	if ((global.panic == true && global.minutes < 1) or player.sprite_index == spr_timesup)
 	{
 		shake_mag = 2
 		shake_mag_acc = (3 / room_speed)

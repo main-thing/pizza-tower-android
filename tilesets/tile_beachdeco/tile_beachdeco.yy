@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_beachdeco",
   "spriteId": {
     "name": "tilespr_tile_beachdeco",
     "path": "sprites/tilespr_tile_beachdeco/tilespr_tile_beachdeco.yy",
@@ -935,8 +938,4 @@
     "name": "Beach",
     "path": "folders/Tile Sets/Beach.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_beachdeco",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

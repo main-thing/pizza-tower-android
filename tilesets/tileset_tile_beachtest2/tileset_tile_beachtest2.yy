@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_tile_beachtest2",
   "spriteId": {
     "name": "sprite_tile_beachtest2",
     "path": "sprites/sprite_tile_beachtest2/sprite_tile_beachtest2.yy",
@@ -83,8 +86,4 @@
     "name": "Beach",
     "path": "folders/Tile Sets/Beach.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_tile_beachtest2",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

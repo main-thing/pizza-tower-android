@@ -14,7 +14,7 @@ if (object_index != obj_pizzakinpineapple or (sprite_index != spr_monsterpineapp
 				sprite_index = spr_idle_strongcold
 			if (sprite_index != spr_intro_strongcold)
 			{
-				image_alpha = playerid.image_alpha
+				//image_alpha = playerid.image_alpha
 				sprite_index = (yprev != y ? spr_run_strongcold : spr_idle_strongcold)
 				depth = -6
 			}
@@ -24,7 +24,7 @@ if (object_index != obj_pizzakinpineapple or (sprite_index != spr_monsterpineapp
 				sprite_index = spr_idle
 			if (sprite_index != spr_intro)
 			{
-				image_alpha = playerid.image_alpha
+				//image_alpha = playerid.image_alpha
 				sprite_index = (xprev != x ? spr_run : spr_idle)
 				depth = -6
 			}

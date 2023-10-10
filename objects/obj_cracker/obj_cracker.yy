@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_cracker",
   "spriteId": {
     "name": "spr_mach4block",
     "path": "sprites/spr_mach4block/spr_mach4block.yy",
@@ -31,8 +34,4 @@
     "name": "Unused",
     "path": "folders/Objects/Room structure/Unused.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_cracker",
-  "tags": [],
-  "resourceType": "GMObject",
 }

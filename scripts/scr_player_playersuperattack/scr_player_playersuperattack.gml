@@ -32,7 +32,7 @@ function scr_player_playersuperattack()
 			if place_meeting(x, y, bossID)
 			{
 				superattackstate = states.punch
-				randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, 557, 556, 555, spr_punch])
+				randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_suplexmash5, spr_suplexmash6, spr_suplexmash7, spr_punch])
 				punchcount = 10
 				image_index = 0
 			}
@@ -52,7 +52,7 @@ function scr_player_playersuperattack()
 				if (punchcount > 0)
 				{
 					punchcount--
-					randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, 557, 556, 555, spr_punch])
+					randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_suplexmash5, spr_suplexmash6, spr_suplexmash7, spr_punch])
 					image_index = 0
 					scr_soundeffect(sfx_killingblow)
 					with (bossID)

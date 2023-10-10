@@ -116,7 +116,7 @@ function create_red_afterimage(_x, _y, _sprite, _image_index, _xscale)
 	var b = create_blue_afterimage(_x, _y, _sprite, _image_index, _xscale);
 	with (b)
 		identifier = afterimage.enemy;
-		image_blend = make_color_rgb(223, 47, 0)
+		//image_blend = make_color_rgb(223, 47, 0)
 	return b;
 }
 function create_blur_afterimage(argument0, argument1, argument2, argument3, argument4)

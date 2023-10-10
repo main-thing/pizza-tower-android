@@ -11,7 +11,7 @@ function scr_player_Sjump()
 	crouchslideAnim = 1
 	crouchAnim = 0
 	machhitAnim = 0
-	if ((sprite_index == spr_superjump or sprite_index == spr_superspringplayer) && (character == "N" or character == "P"))
+	if ((sprite_index == spr_superjump or sprite_index == spr_superspringplayer) && (character == "N" || character == "P" || character == "S"))
 		vsp = sjumpvsp
 	sjumpvsp -= 0.1
 	if (character == "V" && image_index > 3)
@@ -50,25 +50,40 @@ function scr_player_Sjump()
 		state = states.Sjumpland
 		machhitAnim = 0
 	}
-	else if (key_slap2 && character == "P" && sprite_index != spr_superspringplayer && sprite_index != spr_player_Sjumpcancelstart)
+	else if (key_slap2 && character == "P" && sprite_index != spr_superspringplayer && sprite_index != spr_Sjumpcancelstart)
 	{
 		image_index = 0
 		sprite_index = spr_Sjumpcancelstart
 	}
-	if (sprite_index == spr_player_Sjumpcancelstart)
+	if (sprite_index == spr_Sjumpcancelstart)
 	{
 		vsp = 0
 		if (move != 0)
 			xscale = move
-		if (floor(image_index) == (image_number - 1))
-		{
-			vsp = -5
-			movespeed = 12
-			image_index = 0
-			sprite_index = spr_player_Sjumpcancel
-			state = states.punch
-			with (instance_create(x, y, obj_crazyruneffect))
-				image_xscale = other.xscale
+		if(!finalmoveset){
+			if (floor(image_index) == (image_number - 1))
+			{
+				vsp = -5
+				movespeed = 12
+				image_index = 0
+				sprite_index = spr_Sjumpcancel
+				state = states.punch
+				with (instance_create(x, y, obj_crazyruneffect))
+					image_xscale = other.xscale
+			}
+		} else {
+			if (floor(image_index) == (image_number - 1))
+			{
+				jumpstop = true;
+				vsp = -4;
+				flash = true;
+				movespeed = 13;
+				image_index = 0;
+				sprite_index = spr_player_Sjumpcancel;
+				state = states.mach3;
+				with (instance_create(x, y, obj_crazyrunothereffect))
+					image_xscale = other.xscale;
+			}
 		}
 	}
 	if (character == "N" && key_jump2)

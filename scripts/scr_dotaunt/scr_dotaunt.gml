@@ -5,7 +5,11 @@ function scr_dotaunt()
 		input_finisher_buffer = 0
 		if (!finisher)
 		{
-			scr_soundeffect(sfx_taunt)
+			if(variable_instance_exists(self,"tauntsound")){
+				scr_soundeffect(tauntsound)
+			} else{
+				scr_soundeffect(sfx_taunt) // fallback incase this var somehow gets deleted
+			}
 			taunttimer = 20
 			tauntstoredmovespeed = movespeed
 			tauntstoredvsp = vsp

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_strongcold",
   "spriteId": {
     "name": "tile_strongcold",
     "path": "sprites/tile_strongcold/tile_strongcold.yy",
@@ -215,8 +218,4 @@
     "name": "Strongcold",
     "path": "folders/Tile Sets/Strongcold.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_strongcold",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

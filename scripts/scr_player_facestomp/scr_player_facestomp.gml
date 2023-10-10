@@ -35,10 +35,10 @@ function scr_player_facestomp()
 		freefallstart = 0
 	}
 	if (facestompAnim == 0)
-		sprite_index = spr_player_facestomp
+		sprite_index = spr_facestomp
 	else if (facestompAnim == 1)
 	{
-		sprite_index = spr_player_facestomphit
+		sprite_index = spr_facestomphit
 		if (floor(image_index) == 5)
 			facestompAnim = 0
 	}
@@ -47,7 +47,7 @@ function scr_player_facestomp()
 	image_speed = 0.35
 	if (grounded && input_buffer_jump < 8 && vsp > 0)
 	{
-		sprite_index = spr_player_hanstandjump
+		sprite_index = spr_hanstandjump
 		stompAnim = 0
 		hsp = 0
 		state = states.handstandjump

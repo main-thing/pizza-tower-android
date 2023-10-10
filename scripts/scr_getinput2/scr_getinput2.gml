@@ -1,7 +1,7 @@
 function scr_getinput2()
 {
-	if (instance_exists(obj_debugcontroller) && obj_debugcontroller.active)
-		exit;
+	/*if (instance_exists(obj_debugcontroller) && obj_debugcontroller.active)
+		exit;*/
 	var _dvc = obj_inputAssigner.player_input_device[1]
 	gamepad_set_axis_deadzone(_dvc, 0.4)
 	key_up = (keyboard_check(global.key_upN) or gamepad_button_check(_dvc, global.key_upCN) or gamepad_axis_value(_dvc, gp_axislv) < 0)

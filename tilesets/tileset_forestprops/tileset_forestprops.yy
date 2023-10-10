@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_forestprops",
   "spriteId": {
     "name": "tilespr_tileset_forestprops",
     "path": "sprites/tilespr_tileset_forestprops/tilespr_tileset_forestprops.yy",
@@ -225,8 +228,4 @@
     "name": "Forest",
     "path": "folders/Tile Sets/Forest.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_forestprops",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

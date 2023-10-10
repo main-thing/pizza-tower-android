@@ -1,7 +1,7 @@
 function scr_player_backbreaker()
 {
 	mach2 = 0
-	if (sprite_index != spr_player_machfreefall)
+	if (sprite_index != spr_machfreefall)
 	{
 		hsp = 0
 		movespeed = 0
@@ -10,10 +10,10 @@ function scr_player_backbreaker()
 		hsp = (xscale * movespeed)
 	move = (key_right2 + key_left2)
 	landAnim = 0
-	if (sprite_index == spr_player_machfreefall && place_meeting(x, (y + 1), obj_solid))
+	if (sprite_index == spr_machfreefall && place_meeting(x, (y + 1), obj_solid))
 	{
 		state = states.machslide
-		sprite_index = spr_player_crouchslide
+		sprite_index = spr_crouchslide
 	}
 	if (sprite_index == spr_taunt or sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4 or sprite_index == spr_player_ratmounttaunt)
 	{
@@ -109,15 +109,15 @@ function scr_player_backbreaker()
 		if (is_array(global.hasfarmer) && global.hasfarmer[farmerpos])
 			scr_change_farmers()
 	}
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_eatspaghetti)
+	if (floor(image_index) == (image_number - 1) && sprite_index == spr_eatspaghetti)
 		state = states.normal
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_throw)
+	if (floor(image_index) == (image_number - 1) && sprite_index == spr_throw)
 		state = states.normal
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_Timesup && place_meeting(x, y, obj_exitgate))
 		state = states.normal
-	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_player_levelcomplete or sprite_index == spr_playerN_victory))
+	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_levelcomplete or sprite_index == spr_victory))
 		state = states.normal
-	if (key_jump && sprite_index == spr_player_phoneidle)
+	if (key_jump && sprite_index == spr_phoneidle)
 	{
 		global.panic = true
 		sprite_index = spr_bossintro
@@ -128,7 +128,7 @@ function scr_player_backbreaker()
 			sprite_index = spr_phonedebris
 		}
 	}
-	if (global.miniboss == true && sprite_index == spr_bossintro && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_bossintro && floor(image_index) == (image_number - 1))
 		state = states.normal
 	image_speed = 0.4
 	exit;

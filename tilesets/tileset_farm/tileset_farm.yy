@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_farm",
   "spriteId": {
     "name": "tile_farm",
     "path": "sprites/tile_farm/tile_farm.yy",
@@ -273,8 +276,4 @@
     "name": "Farm",
     "path": "folders/Tile Sets/Farm.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_farm",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

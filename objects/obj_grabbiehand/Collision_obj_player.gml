@@ -11,7 +11,7 @@ if (state != states.grabbing && x == xstart && y == ystart)
 		}
 		state = states.bump
 		if (boxxed == 0)
-			sprite_index = spr_player_catched
+			sprite_index = spr_catched
 		else
 			sprite_index = spr_boxxedpep_air
 		other.playerid = id

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_pineabreakdancehitbox",
   "spriteId": {
     "name": "spr_player_mask",
     "path": "sprites/spr_player_mask/spr_player_mask.yy",
@@ -25,7 +28,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -33,8 +36,4 @@
     "name": "Hitboxes",
     "path": "folders/Objects/Baddie/Hitboxes.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_pineabreakdancehitbox",
-  "tags": [],
-  "resourceType": "GMObject",
 }

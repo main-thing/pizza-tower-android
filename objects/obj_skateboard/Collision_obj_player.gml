@@ -4,5 +4,6 @@ if (other.state != states.chainsaw && other.skateboarding == 0)
 	other.movespeed = 10
 	other.state = states.mach2
 	other.skateboarding = 1
-	tv_push_prompt_once(tv_create_prompt("This is the clown transformation text", tvprompt.transfo, spr_tv_clown, 3), "skateboard")
+	other.clowntimer = clowntimer
+	tv_push_prompt_once(tv_create_prompt("This is the clown transformation text", tvprompt.transfo, other._spr_tv_clown, 3), "skateboard")
 }

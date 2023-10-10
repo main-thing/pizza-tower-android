@@ -32,6 +32,6 @@ else if (room != rank_room)
 		skipintro = true;
 	with (obj_fakepepboss)
 		skipintro = true;
-	with (obj_pizzafaceboss)
-		skipintro = true;
+	/*with (obj_pizzafaceboss)
+		skipintro = true;*/
 }

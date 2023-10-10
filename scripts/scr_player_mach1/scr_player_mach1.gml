@@ -68,7 +68,7 @@ function scr_player_mach1()
 		sprite_index = spr_airdash2
 	if (sprite_index == spr_airdash1 && floor(image_index) == (image_number - 1))
 		sprite_index = spr_airdash2
-	if (!key_attack)
+	if (!key_attack || (character == "S" && move == 0))
 	{
 		state = states.normal
 		image_index = 0
@@ -116,7 +116,11 @@ function scr_player_mach1()
 			}
 			break
 	}
-
+	if (key_attack && (!(place_meeting((x + xscale), y, obj_solid))) && character == "S" && grounded)
+	{
+		state = states.handstandjump
+		movespeed = 0
+	}
 	if (key_down && (!grounded))
 	{
 		if (!shotgunAnim)
@@ -128,7 +132,7 @@ function scr_player_mach1()
 		}
 		else
 		{
-			sprite_index = spr_player_shotgunjump1
+			sprite_index = spr_shotgunjump1
 			image_index = 0
 			state = states.freefallprep
 			vsp = -5

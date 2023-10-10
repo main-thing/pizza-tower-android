@@ -54,7 +54,7 @@ function scr_player_rocket()
 		{
 			sprite_index = spr_rocket
 			if (grounded && vsp >= 0)
-				sprite_index = spr_player_rocketrun
+				sprite_index = spr_rocketrun
 		}
 	}
 	if grounded
@@ -64,7 +64,7 @@ function scr_player_rocket()
 		{
 			state = states.rocketslide
 			scr_soundeffect(sfx_machslideboost)
-			sprite_index = spr_player_rocketslide
+			sprite_index = spr_rocketslide
 			image_index = 0
 		}
 	}

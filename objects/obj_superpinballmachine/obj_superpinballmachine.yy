@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_superpinballmachine",
   "spriteId": {
     "name": "spr_superpinballmachine",
     "path": "sprites/spr_superpinballmachine/spr_superpinballmachine.yy",
@@ -28,8 +31,4 @@
     "name": "Cutscenes",
     "path": "folders/Objects/Cutscenes.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_superpinballmachine",
-  "tags": [],
-  "resourceType": "GMObject",
 }

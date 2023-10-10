@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_trash_tileset",
   "spriteId": {
     "name": "tile_trash",
     "path": "sprites/tile_trash/tile_trash.yy",
@@ -135,8 +138,4 @@
     "name": "Sewer",
     "path": "folders/Tile Sets/Sewer.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_trash_tileset",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

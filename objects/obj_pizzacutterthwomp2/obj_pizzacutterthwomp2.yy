@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_pizzacutterthwomp2",
   "spriteId": {
     "name": "spr_pizzacutterholder",
     "path": "sprites/spr_pizzacutterholder/spr_pizzacutterholder.yy",
@@ -28,8 +31,4 @@
     "name": "Unused",
     "path": "folders/Objects/Room structure/Unused.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_pizzacutterthwomp2",
-  "tags": [],
-  "resourceType": "GMObject",
 }

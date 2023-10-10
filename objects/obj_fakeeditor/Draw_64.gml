@@ -1,3 +1,4 @@
+draw_set_halign(fa_center)
 if editormode
 {
     if button1clicked

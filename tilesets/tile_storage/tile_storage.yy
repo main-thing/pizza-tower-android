@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_storage",
   "spriteId": {
     "name": "tilespr_tile_storage",
     "path": "sprites/tilespr_tile_storage/tilespr_tile_storage.yy",
@@ -545,8 +548,4 @@
     "name": "Kids Party",
     "path": "folders/Tile Sets/Kids Party.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_storage",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

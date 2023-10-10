@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_deadjohn1",
   "spriteId": {
     "name": "spr_deadjohn1",
     "path": "sprites/spr_deadjohn1/spr_deadjohn1.yy",
@@ -31,8 +34,4 @@
     "name": "World 1",
     "path": "folders/Objects/Room structure/World 1.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_deadjohn1",
-  "tags": [],
-  "resourceType": "GMObject",
 }

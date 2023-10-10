@@ -1,12 +1,11 @@
 {
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_squash",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
     "name": "Enemies",
     "path": "folders/Scripts/Enemies.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "scr_squash",
-  "tags": [],
-  "resourceType": "GMScript",
 }

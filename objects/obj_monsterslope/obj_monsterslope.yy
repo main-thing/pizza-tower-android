@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_monsterslope",
   "spriteId": {
     "name": "spr_monsterslope",
     "path": "sprites/spr_monsterslope/spr_monsterslope.yy",
@@ -28,8 +31,4 @@
     "name": "World 5",
     "path": "folders/Objects/Room structure/World 5.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_monsterslope",
-  "tags": [],
-  "resourceType": "GMObject",
 }

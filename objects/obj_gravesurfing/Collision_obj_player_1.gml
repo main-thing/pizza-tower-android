@@ -9,14 +9,14 @@ if (buffer <= 0 && other.state != states.ghost)
 			notification_push(notifs.corpsesurf, [room]);
 			ds_list_add(global.saveroom, other.id);
 		}
-		fmod_event_one_shot_3d("event:/sfx/pep/gravecorpsestart", x, y);
+		//fmod_event_one_shot_3d("event:/sfx/pep/gravecorpsestart", x, y);
 		vsp = -11;
 		movespeed = abs(movespeed);
 		dir = xscale;
 		movespeed = 13;
 		with (instance_create(x, y, obj_jumpdust))
 			image_xscale = other.xscale;
-		sprite_index = spr_player_corpsestart;
+		sprite_index = spr__corpsestart;
 		image_index = 0;
 		gravesurfingjumpbuffer = 50;
 		with (obj_gravecorpse)

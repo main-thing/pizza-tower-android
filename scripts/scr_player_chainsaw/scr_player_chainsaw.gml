@@ -22,7 +22,7 @@ function scr_player_chainsaw()
 		vsp = tauntstoredvsp
 		if (global.attackstyle == 0)
 		{
-			if ((tauntstoredstate == states.handstandjump && (tauntstoredsprite == spr_player_suplexgrabjumpstart or tauntstoredsprite == spr_player_suplexgrabjump or tauntstoredsprite == spr_player_airattack or tauntstoredsprite == spr_player_airattackstart)) or sprite_index == spr_piledriverland)
+			if ((tauntstoredstate == states.handstandjump && (tauntstoredsprite == spr_suplexdashjumpstart or tauntstoredsprite == spr_suplexdashjump or tauntstoredsprite == spr_airattack or tauntstoredsprite == spr_airattackstart)) or sprite_index == spr_piledriverland)
 			{
 				jumpAnim = 1
 				state = states.jump
@@ -36,7 +36,7 @@ function scr_player_chainsaw()
 		}
 		if (global.attackstyle == 1)
 		{
-			if ((tauntstoredstate == states.handstandjump && (tauntstoredsprite == spr_player_suplexgrabjumpstart or tauntstoredsprite == spr_player_suplexgrabjump or tauntstoredsprite == spr_player_airattack or tauntstoredsprite == spr_player_airattackstart)) or sprite_index == spr_piledriverland)
+			if ((tauntstoredstate == states.handstandjump && (tauntstoredsprite == spr_suplexdashjumpstart or tauntstoredsprite == spr_suplexdashjump or tauntstoredsprite == spr_airattack or tauntstoredsprite == spr_airattackstart)) or sprite_index == spr_piledriverland)
 			{
 				movespeed = 4
 				state = states.tackle

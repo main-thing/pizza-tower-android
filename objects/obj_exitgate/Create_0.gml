@@ -12,5 +12,7 @@ dropstate = states.normal
 hand_y = (y - 1000)
 handsprite = 207
 handindex = 0
+/*
 if (obj_player.character == "S")
 	instance_destroy()
+*/

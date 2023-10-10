@@ -7,15 +7,15 @@ function scr_player_trashjump()
 		movespeed = Approach(movespeed, (move * 6), 0.5)
 	else
 		movespeed = Approach(movespeed, 0, 0.25)
-	if (vsp > 0 && sprite_index == spr_player_trashjump)
+	if (vsp > 0 && sprite_index == spr_trashjump)
 	{
-		sprite_index = spr_player_trashjump2
+		sprite_index = spr_trashjump2
 		image_index = 0
 	}
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_trashjump2)
-		sprite_index = spr_player_trashfall
-	if (vsp < 0 && sprite_index != spr_player_trashjump)
-		sprite_index = spr_player_trashjump
+	if (floor(image_index) == (image_number - 1) && sprite_index == spr_trashjump2)
+		sprite_index = spr_trashfall
+	if (vsp < 0 && sprite_index != spr_trashjump)
+		sprite_index = spr_trashjump
 	if (grounded && vsp > 0)
 	{
 		if instance_place(x, (y + 1), obj_slope)

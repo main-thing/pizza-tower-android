@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_hallwaymonster",
   "spriteId": {
     "name": "spr_hallwaymonster",
     "path": "sprites/spr_hallwaymonster/spr_hallwaymonster.yy",
@@ -28,8 +31,4 @@
     "name": "Unused",
     "path": "folders/Objects/Room structure/Unused.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_hallwaymonster",
-  "tags": [],
-  "resourceType": "GMObject",
 }

@@ -1,1 +1,1 @@
-targetRoom = ufo_12
+targetRoom = ufo_3

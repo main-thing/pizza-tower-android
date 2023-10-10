@@ -139,7 +139,7 @@ function state_player_jump()
 			if (key_attack or sprite_index == spr_shotgunshoot)
 				landAnim = 0
 			if (sprite_index == spr_mortdoublejump or sprite_index == spr_mortdoublejumpstart)
-				sprite_index = spr_player_mortland
+				sprite_index = spr__mortland
 			if (sprite_index != spr_shotgunshoot)
 				image_index = 0
 			input_buffer_secondjump = 0
@@ -154,10 +154,12 @@ function state_player_jump()
 		input_buffer_jump = 0
 	if (vsp > 5 && sprite_index != spr_mortdoublejump)
 		fallinganimation++
-	if (fallinganimation >= 40 && fallinganimation < 80)
-		sprite_index = spr_facestomp
-	else if (fallinganimation >= 80)
-		sprite_index = spr_freefall
+	if(character != "S"){
+		if (fallinganimation >= 40 && fallinganimation < 80)
+			sprite_index = spr_facestomp
+		else if (fallinganimation >= 80)
+			sprite_index = spr_freefall
+	}
 	if (!stompAnim)
 	{
 		if (!jumpAnim)
@@ -191,8 +193,8 @@ function state_player_jump()
 				case spr_player_Sjumpstart:
 					sprite_index = spr_player_Sjump
 					break
-				case spr_player_shotgunjump1:
-					sprite_index = spr_player_shotgunjump2
+				case spr_shotgunjump1:
+					sprite_index = spr_shotgunjump2
 					break
 				case spr_shotgun_shootair:
 					sprite_index = spr_shotgunfall
@@ -266,7 +268,7 @@ function state_player_jump()
 			}
 		}
 	}
-	if (sprite_index == spr_player_suplexcancel)
+	if (sprite_index == spr_suplexcancel)
 		image_speed = 0.4
 	else
 		image_speed = 0.35
@@ -290,16 +292,43 @@ function state_player_jump()
 			shake_mag_acc = (30 / room_speed)
 		}
 	}
-	if (key_slap2 && sprite_index != spr_suplexbump)
-	{
-		image_index = 0
-		sprite_index = spr_suplexdashjumpstart
-		flash = 1
-		suplexmove = 1
-		suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
-		sfx_gain(suplexdashsnd)
-		state = states.handstandjump
-		movespeed = 5
+	if(character != "S" && character != "V"){
+		if(!finalmoveset){
+			if (key_slap2 && sprite_index != spr_suplexbump)
+			{
+				image_index = 0
+				sprite_index = spr_suplexdashjumpstart
+				flash = 1
+				suplexmove = 1
+				suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
+				sfx_gain(suplexdashsnd)
+				state = states.handstandjump
+				movespeed = 5
+			}
+		} else {
+			if (key_slap2 && sprite_index != spr_suplexbump)
+			{
+				image_index = 0
+				sprite_index = spr_suplexdashjumpstart
+				flash = 1
+				suplexmove = 1
+				suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
+				sfx_gain(suplexdashsnd)
+				state = states.handstandjump
+				movespeed = 5
+			}
+			else if (key_slap2 && input_buffer_slap > 0 && key_up && shotgunAnim == 0)
+			{
+				input_buffer_slap = 0;
+				state = states.punch;
+				image_index = 0;
+				sprite_index = spr_breakdanceuppercut;
+				vsp = -10;
+				movespeed = hsp;
+				particle_set_scale(particle.highjumpcloud2, xscale, 1);
+				create_particle(x, y, particle.highjumpcloud2, 0);
+			}
+		}
 	}
 	if (key_shoot2 && shotgunAnim)
 		scr_shotgunshoot()
@@ -385,6 +414,15 @@ function state_player_jump()
 					movespeed = 6
 			}
 			break
+        case "S":
+            if (key_attack && grounded && fallinganimation < 40)
+            {
+                image_index = 0
+                state = states.handstandjump
+                if (movespeed < 6)
+                    movespeed = 6
+            }
+            break
 		case "V":
 			if (key_attack && grounded && fallinganimation < 40)
 			{

@@ -116,7 +116,7 @@ function scr_enemy_grabbed()
 			x = _obj_player.x
 			y = _obj_player.y
 			state = states.stun
-			if (_obj_player.sprite_index == spr_player_shoulder)
+			if (_obj_player.sprite_index == _obj_player.spr_shoulder)
 				vsp = 15
 			if (_obj_player.sprite_index == spr_player_diagonaldownthrow)
 			{
@@ -243,7 +243,7 @@ function scr_enemy_grabbed()
 			x = (_obj_player.x + (_obj_player.xscale * 15))
 			y = _obj_player.y
 		}
-		if (_obj_player.state == states.superslam or (_obj_player.state == states.chainsaw && sprite_index == spr_player_piledriver))
+		if (_obj_player.state == states.superslam or (_obj_player.state == states.chainsaw && sprite_index == _obj_player.spr_piledriver))
 		{
 			if (_obj_player.character == "P" && _obj_player.ispeppino)
 			{

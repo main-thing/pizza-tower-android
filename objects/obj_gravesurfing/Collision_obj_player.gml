@@ -8,7 +8,7 @@ if (buffer <= 0 && other.state != states.ghost && other.grounded)
 		dir = xscale
 		movespeed = 13
 		instance_create(x, y, obj_jumpdust)
-		sprite_index = spr_player_corpsestart
+		sprite_index = spr__corpsestart
 		image_index = 0
 		with (obj_gravecorpse)
 		{

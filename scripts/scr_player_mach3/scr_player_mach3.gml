@@ -80,11 +80,15 @@ function scr_player_mach3()
 	{
 		if (sprite_index == spr_mach3jump && floor(image_index) == (image_number - 1))
 			sprite_index = spr_mach4
+		if(finalmoveset){
+			if (sprite_index == spr_Sjumpcancel && grounded)
+				sprite_index = spr_mach4;
+		}
 		if (floor(image_index) == (image_number - 1) && (sprite_index == spr_rollgetup || sprite_index == spr_mach3hit || sprite_index == spr_dashpadmach))
 			sprite_index = spr_mach4
 		if (sprite_index == spr_mach2jump && grounded && vsp > 0)
 			sprite_index = spr_mach4
-		if (movespeed > 16 && sprite_index != spr_crazyrun && sprite_index != spr_player_Sjumpcancelstart && sprite_index != spr_taunt)
+		if (movespeed > 16 && sprite_index != spr_crazyrun && sprite_index != spr_Sjumpcancelstart && sprite_index != spr_taunt)
 		{
 			mach4mode = 1
 			flash = 1
@@ -114,7 +118,7 @@ function scr_player_mach3()
 		image_speed = 0.4
 	if key_jump
 		input_buffer_jump = 0
-	if (((!key_attack) && fightball == 0 && (!launched) && sprite_index != spr_dashpadmach && grounded && (character == "P" || character == "N")) || (character == "S" && (move == 0 || move != xscale) && grounded && fightball == 0))
+	if (((!key_attack) && fightball == 0 && (!launched) && sprite_index != spr_dashpadmach && grounded && (character == "P" || character == "N"  || character == "V")) || (character == "S" && (move == 0 || move != xscale) && grounded && fightball == 0))
 	{
 		sprite_index = spr_machslidestart
 		scr_soundeffect(sfx_break)
@@ -122,7 +126,7 @@ function scr_player_mach3()
 		image_index = 0
 		launched = 0
 	}
-	if (move == (-xscale) && grounded && (!launched) && (character == "P" || character == "N") && fightball == 0 && sprite_index != spr_dashpadmach)
+	if (move == (-xscale) && grounded && (!launched) && (character == "P" || character == "N" || character == "V") && fightball == 0 && sprite_index != spr_dashpadmach)
 	{
 		scr_soundeffect(sfx_machslideboost)
 		sprite_index = spr_mach3boost
@@ -138,38 +142,81 @@ function scr_player_mach3()
 		image_index = 0
 		vsp = 10
 		if (!grounded)
-			sprite_index = spr_player_mach2jump
+			sprite_index = spr_dive
 		else
 			sprite_index = spr_machroll
-		if (character == "V")
-			sprite_index = spr_playerV_divekickstart
+		/*if (character == "V")
+			sprite_index = spr_playerV_divekickstart*/
 	}
 	if (((!grounded) && (place_meeting((x + hsp), y, obj_solid) || scr_solid_slope((x + hsp), y)) && (!(place_meeting((x + hsp), y, obj_destructibles))) && (!(place_meeting((x + hsp), y, obj_mach3solid))) && (!(place_meeting((x + hsp), y, obj_metalblock)))) || (grounded && (place_meeting((x + sign(hsp)), (y - 16), obj_solid) || scr_solid_slope((x + sign(hsp)), (y - 16))) && (!(place_meeting((x + hsp), y, obj_destructibles))) && (!(place_meeting((x + hsp), y, obj_mach3solid))) && (!(place_meeting((x + hsp), y, obj_metalblock))) && place_meeting(x, (y + 1), obj_slope)))
 	{
+		if(!finalmoveset){
 		wallspeed = movespeed
 		if (vsp > 0)
 			wallspeed -= vsp
 		state = states.climbwall
+		} else{
+			wallspeed = movespeed;
+			grabclimbbuffer = 0;
+			if (movespeed < 1)
+				wallspeed = 1;
+			else
+				movespeed = wallspeed;
+			state = states.climbwall;
+		}
 	}
 	if ((!grounded) && place_meeting((x + sign(hsp)), y, obj_climbablewall) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && (!(place_meeting((x + sign(hsp)), y, obj_metalblock))))
 	{
 		wallspeed = movespeed
+		if(finalmoveset){
+			grabclimbbuffer = 0;
+		}
 		state = states.climbwall
 	}
-	if key_slap2
-	{
-		sprite_index = spr_suplexdash
-		suplexmove = 1
-		suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
-		sfx_gain(suplexdashsnd)
-		state = states.handstandjump
-		if (movespeed < 5)
-			movespeed = 5
-		image_index = 0
-		flash = 1
+	if(!finalmoveset){
+		if (key_shoot2 && shotgunAnim)
+			scr_shotgunshoot()
+		if ((key_slap2 or input_buffer_slap < 8) && (!key_up))
+		{
+			sprite_index = spr_suplexdash
+			suplexmove = 1
+			suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
+			sfx_gain(suplexdashsnd)
+			state = states.handstandjump
+			movespeed = 8
+			image_index = 0
+			flash = 1
+		}
+	} else {
+		if(shotgunAnim){
+			if (key_slap2) {
+				scr_shotgunshoot()
+			}
+		} else {
+			if ((key_slap2 or input_buffer_slap < 8) && (!key_up))
+			{
+				sprite_index = spr_suplexdash
+				suplexmove = 1
+				suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
+				sfx_gain(suplexdashsnd)
+				state = states.handstandjump
+				movespeed = 8
+				image_index = 0
+				flash = 1
+			}
+			else if (key_slap2 && input_buffer_slap > 0 && key_up && shotgunAnim == 0)
+			{
+				input_buffer_slap = 0;
+				state = states.punch;
+				image_index = 0;
+				sprite_index = spr_breakdanceuppercut;
+				vsp = -10;
+				movespeed = hsp;
+				particle_set_scale(particle.highjumpcloud2, xscale, 1);
+				create_particle(x, y, particle.highjumpcloud2, 0);
+			}
+		}
 	}
-	if (key_shoot2 && shotgunAnim == 1)
-		scr_shotgunshoot()
 	if (scr_solid((x + sign(hsp)), y) && (!(place_meeting((x + sign(hsp)), y, obj_mach3solid))) && (!scr_slope()) && (scr_solid_slope((x + sign(hsp)), y) || place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_metalblock))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && (!(place_meeting((x + sign(hsp)), y, obj_climbablewall))) && grounded)
 	{
 		var _bump = ledge_bump((vsp >= 0 ? 32 : 22))
@@ -263,7 +310,7 @@ function scr_player_mach3()
 		image_speed = 0.4
 	else
 		image_speed = 0.4
-	if (key_up && fightball == 0 && character == "P" && grounded && sprite_index != spr_dashpadmach && (!(place_meeting(x, y, obj_dashpad))))
+	if (key_up && fightball == 0 && (character == "P" || character == "S" || character == "N") && grounded && sprite_index != spr_dashpadmach && (!(place_meeting(x, y, obj_dashpad))))
 	{
 		sprite_index = spr_superjumpprep
 		state = states.Sjumpprep
@@ -272,7 +319,7 @@ function scr_player_mach3()
 	}
 	if (global.attackstyle == 2 && key_slap2)
 	{
-		randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, 557, 556, 555, spr_punch])
+		randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_suplexmash5, spr_suplexmash6, spr_suplexmash7, spr_punch])
 		image_index = 0
 		state = states.lungeattack
 	}

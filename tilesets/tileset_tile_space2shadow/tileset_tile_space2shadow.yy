@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_tile_space2shadow",
   "spriteId": {
     "name": "sprite_tile_space2shadow",
     "path": "sprites/sprite_tile_space2shadow/sprite_tile_space2shadow.yy",
@@ -83,8 +86,4 @@
     "name": "Space",
     "path": "folders/Tile Sets/Space.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_tile_space2shadow",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

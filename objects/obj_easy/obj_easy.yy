@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_easy",
   "spriteId": {
     "name": "spr_easy",
     "path": "sprites/spr_easy/spr_easy.yy",
@@ -28,8 +31,4 @@
     "name": "Visuals",
     "path": "folders/Objects/Visuals.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_easy",
-  "tags": [],
-  "resourceType": "GMObject",
 }

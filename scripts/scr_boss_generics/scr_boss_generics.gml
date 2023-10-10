@@ -40,7 +40,7 @@ function scr_boss_grabbed()
 			baddiegrabbedID = other.id;
 			state = states.supergrab;
 			supergrabstate = states.punch;
-			sprite_index = choose(spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7);
+			sprite_index = choose(spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_suplexmash5, spr_suplexmash6, spr_suplexmash7);
 			image_index = sprite_get_number(sprite_index) - 1;
 			other.camzoom = 1;
 		}

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_industrialcomplex",
   "spriteId": {
     "name": "tilespr_tile_industrialcomplex",
     "path": "sprites/tilespr_tile_industrialcomplex/tilespr_tile_industrialcomplex.yy",
@@ -545,8 +548,4 @@
     "name": "Kids Party",
     "path": "folders/Tile Sets/Kids Party.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_industrialcomplex",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

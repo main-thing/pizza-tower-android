@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_space1",
   "spriteId": {
     "name": "tilespr_tile_space1",
     "path": "sprites/tilespr_tile_space1/tilespr_tile_space1.yy",
@@ -1069,8 +1072,4 @@
     "name": "Space",
     "path": "folders/Tile Sets/Space.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_space1",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

@@ -16,3 +16,6 @@ bg_2yoffset = 0
 fg1_x = 0
 fg1_y = 0
 backgrounds = ["Backgrounds_still1", "Backgrounds_still2"]
+if(instance_number(object_index) > 1){
+	instance_destroy()
+}

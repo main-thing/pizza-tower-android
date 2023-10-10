@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_alienfollow",
   "spriteId": {
     "name": "spr_alienfollow",
     "path": "sprites/spr_alienfollow/spr_alienfollow.yy",
@@ -31,8 +34,4 @@
     "name": "Followers",
     "path": "folders/Objects/Level/Followers.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_alienfollow",
-  "tags": [],
-  "resourceType": "GMObject",
 }

@@ -43,7 +43,7 @@ function scr_collide_destructibles()
 				with (instance_place((x + xscale), y, obj_rollblock))
 					instance_destroy()
 			}
-			if (state == states.mach3 && sprite_index == spr_player_fightball)
+			if (state == states.mach3 && sprite_index == spr_fightball)
 			{
 				with (instance_place((x + xscale), y, obj_fightballblock))
 					instance_destroy()
@@ -60,8 +60,8 @@ function scr_collide_destructibles()
 			{
 				if place_meeting((x + hsp), y, obj_destructibles)
 				{
-					if (character != "V")
-					{
+					/*if (character != "V")
+					{*/
 						with (instance_place((x + hsp), y, obj_destructibles))
 						{
 							GamepadSetVibration(0, 0.8, 0.8, 0.5)
@@ -69,7 +69,7 @@ function scr_collide_destructibles()
 						}
 						if (state == states.mach2)
 							machpunchAnim = 1
-					}
+					//}
 				}
 			}
 			if (state == states.hurt && thrown == true)
@@ -116,10 +116,10 @@ function scr_collide_destructibles()
 				}
 			}
 			ds_list_clear(global.instancelist)
-			if (vsp <= 0.5 && (state == states.jump or state == states.ratmountjump or state == states.mach3 or state == states.mach2 or state == states.antigrav or state == states.pogo or (state == states.bombpepup && bombup_dir == -1) or state == states.punch or state == states.climbwall or state == states.fireass or state == states.Sjump or state == states.cheeseballclimbwall or state == states.mach3 or (state == states.punch && (sprite_index == spr_player_breakdanceuppercut or sprite_index == spr_player_breakdanceuppercutend))))
+			if (vsp <= 0.5 && (state == states.jump or state == states.ratmountjump or state == states.mach3 or state == states.mach2 or state == states.antigrav or state == states.pogo or (state == states.bombpepup && bombup_dir == -1) or state == states.punch or state == states.climbwall or state == states.fireass or state == states.Sjump or state == states.cheeseballclimbwall or state == states.mach3 or (state == states.punch && (sprite_index == spr_breakdanceuppercut or sprite_index == spr_breakdanceuppercutend))))
 			{
 				var vy = -1
-				if (state == states.punch && (sprite_index == spr_player_breakdanceuppercut or sprite_index == spr_player_breakdanceuppercutend))
+				if (state == states.punch && (sprite_index == spr_breakdanceuppercut or sprite_index == spr_breakdanceuppercutend))
 					vy = vsp
 				if place_meeting(x, (y + vy), obj_destructibles)
 				{
@@ -137,46 +137,48 @@ function scr_collide_destructibles()
 					}
 				}
 			}
-			if (vsp >= 0 && (state == states.freefall or state == states.superslam or state == states.freefallland or state == states.ratmountgroundpound or (state == states.slipbanan && vsp >= 10)))
-			{
-				if place_meeting(x, ((y + vsp) + 2), obj_destructibles)
+				if (vsp >= 0 && (state == states.freefall or state == states.superslam or state == states.freefallland or state == states.ratmountgroundpound or (state == states.slipbanan && vsp >= 10)))
 				{
-					with (instance_place(x, ((y + vsp) + 2), obj_destructibles))
+					if place_meeting(x, ((y + vsp) + 2), obj_destructibles)
 					{
-						with (_obj_player)
+						with (instance_place(x, ((y + vsp) + 2), obj_destructibles))
 						{
-							if place_meeting(x, ((y + vsp) + 2), obj_bigdestructibles)
+							with (_obj_player)
 							{
-								var _inst = instance_place(x, ((y + vsp) + 2), obj_bigdestructibles)
-								if instance_exists(_inst)
-								{
-									var j = 0
-									var _max = 256
-									while (!(place_meeting(x, (y + 1), obj_bigdestructibles)))
+								if (!finalmoveset) {
+									if place_meeting(x, ((y + vsp) + 2), obj_bigdestructibles)
 									{
-										y += 1
-										j++
-										if (j >= _max)
-											break
-										else
-											continue
+										var _inst = instance_place(x, ((y + vsp) + 2), obj_bigdestructibles)
+										if instance_exists(_inst)
+										{
+											var j = 0
+											var _max = 256
+											while (!(place_meeting(x, (y + 1), obj_bigdestructibles)))
+											{
+												y += 1
+												j++
+												if (j >= _max)
+													break
+												else
+													continue
+											}
+										}
+										if (freefallsmash <= 10 && state != states.slipbanan && (!isgustavo))
+										{
+											if (shotgunAnim == 0)
+												sprite_index = spr_bodyslamland
+											else
+												sprite_index = spr_shotgunjump2
+											state = states.freefallland
+											image_index = 0
+										}
 									}
 								}
-								if (freefallsmash <= 10 && state != states.slipbanan && (!isgustavo))
-								{
-									if (shotgunAnim == 0)
-										sprite_index = spr_bodyslamland
-									else
-										sprite_index = spr_shotgunjump2
-									state = states.freefallland
-									image_index = 0
-								}
 							}
+							instance_destroy()
 						}
-						instance_destroy()
 					}
 				}
-			}
 			if (state == states.freefall or state == states.freefallland or state == states.slipbanan)
 			{
 				if (place_meeting(x, (y + 1), obj_metalblock) && (freefallsmash >= 10 or state == states.slipbanan))
@@ -197,7 +199,7 @@ function scr_collide_destructibles()
 							if (place_meeting((x + hsp), y, obj_bigdestructibles) && state != states.crouchslide && state != states.mach2 && state != states.machroll)
 							{
 								state = states.finishingblow
-								sprite_index = spr_player_lungehit
+								sprite_index = spr_lungehit
 								image_index = 0
 								instance_destroy(other)
 								_destroyed = 1

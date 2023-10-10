@@ -14,7 +14,7 @@ function scr_player_machfreefall()
 	move2 = (key_right2 + key_left2)
 	move = (key_right + key_left)
 	crouchslideAnim = 1
-	sprite_index = spr_player_machfreefall
+	sprite_index = spr_machfreefall
 	if (scr_solid((x + 1), y) && image_xscale == 1)
 	{
 		machhitAnim = 0

@@ -20,7 +20,7 @@ if (state != states.grabbed)
 					stompAnim = 1
 					other.image_index = 0
 					vsp = -14
-					sprite_index = spr_player_stompprep
+					sprite_index = spr_stompprep
 				}
 				else
 				{
@@ -31,7 +31,7 @@ if (state != states.grabbed)
 					stompAnim = 1
 					other.image_index = 0
 					vsp = -9
-					sprite_index = spr_player_stompprep
+					sprite_index = spr_stompprep
 				}
 			}
 		}

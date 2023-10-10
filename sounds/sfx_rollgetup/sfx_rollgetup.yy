@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "sfx_rollgetup",
   "conversionMode": 0,
   "compression": 0,
   "volume": 0.75,
@@ -17,8 +20,4 @@
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sfx_rollgetup",
-  "tags": [],
-  "resourceType": "GMSound",
 }

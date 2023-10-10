@@ -4,3 +4,4 @@ global.oldsprites = true
 global.showrank = false
 global.showcollisions = false
 global.bossintro = 0
+gml_pragma("PNGCrush")

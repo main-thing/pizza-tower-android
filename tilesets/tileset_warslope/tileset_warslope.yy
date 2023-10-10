@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_warslope",
   "spriteId": {
     "name": "sprite_warslope",
     "path": "sprites/sprite_warslope/sprite_warslope.yy",
@@ -89,8 +92,4 @@
     "name": "War",
     "path": "folders/Tile Sets/War.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_warslope",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

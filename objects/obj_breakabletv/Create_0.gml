@@ -12,3 +12,4 @@ depth = 1
 platformid = -4
 hsp_carry = 0
 vsp_carry = 0
+thrown = false

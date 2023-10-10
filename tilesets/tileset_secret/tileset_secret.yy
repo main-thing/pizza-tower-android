@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_secret",
   "spriteId": {
     "name": "tile_secret",
     "path": "sprites/tile_secret/tile_secret.yy",
@@ -20,12 +23,12 @@
   "tile_count": 410,
   "autoTileSets": [],
   "tileAnimationFrames": [
-    {"frames":[
+    {"resourceType":"GMTileAnimation","resourceVersion":"1.0","name":"animation_1","frames":[
         17,
         18,
         27,
         28,
-      ],"resourceVersion":"1.0","name":"animation_1","tags":[],"resourceType":"GMTileAnimation",},
+      ],},
   ],
   "tileAnimationSpeed": 10.0,
   "tileAnimation": {
@@ -1682,8 +1685,4 @@
     "name": "Tile Sets",
     "path": "folders/Tile Sets.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_secret",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

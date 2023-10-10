@@ -19,12 +19,12 @@ function scr_hurtplayer(argument0)
 		{
 			if (state == states.blockstance)
 			{
-				if (sprite_index != spr_player_airattackstart)
+				if (sprite_index != spr_airattackstart)
 				{
 					instance_create(x, y, obj_parryeffect)
 					image_index = 0
 				}
-				sprite_index = spr_player_airattackstart
+				sprite_index = spr_airattackstart
 				hsp = ((-xscale) * 2)
 			}
 			else if (state != states.thrown && state != states.hit && (!hurted))
@@ -115,9 +115,6 @@ function scr_hurtplayer(argument0)
 		{
 		}
 		else if (state == states.rideweenie)
-		{
-		}
-		else if (state == states.slipnslide)
 		{
 		}
 		else if (state == states.boxxedpep)

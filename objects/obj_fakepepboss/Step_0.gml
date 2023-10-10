@@ -120,6 +120,9 @@ if (prevhp != elitehit)
 		pizzahead_subhp = pizzahead_maxsubhp;
 		currentprojectile = 0;
 		subhp = maxsubhp;
+		if(phase >= 6){
+			phase = 6
+		}
 		var timer = fakepep_get_attack(phase - 1, wastedhits).deformed_timer;
 		var attack = fakepep_get_projectile(phase - 1, wastedhits, currentprojectile);
 		state = states.walk;

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_interior",
   "spriteId": {
     "name": "spr_interiortile",
     "path": "sprites/spr_interiortile/spr_interiortile.yy",
@@ -715,8 +718,4 @@
     "name": "Street",
     "path": "folders/Tile Sets/Street.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_interior",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

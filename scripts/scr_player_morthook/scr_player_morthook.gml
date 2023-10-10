@@ -15,9 +15,9 @@ function scr_player_morthook()
 	y = Approach(y, morthookID.y, movespeed)
 	if (floor(x) == morthookID.x && floor(y) == morthookID.y)
 	{
-		if (sprite_index != spr_player_morthook)
+		if (sprite_index != spr__morthook)
 		{
-			sprite_index = spr_player_morthook
+			sprite_index = spr__morthook
 			image_index = 0
 		}
 		else if (floor(image_index) == (image_number - 1))

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_superjumphold_tileset",
   "spriteId": {
     "name": "tilespr_tile_superjumphold_tileset",
     "path": "sprites/tilespr_tile_superjumphold_tileset/tilespr_tile_superjumphold_tileset.yy",
@@ -44,8 +47,4 @@
     "name": "Tutorial",
     "path": "folders/Tile Sets/Tutorial.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_superjumphold_tileset",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

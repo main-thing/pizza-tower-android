@@ -52,6 +52,7 @@ function save_editor_objects() //gml_Script_save_editor_objects
 			persistent: persistent,
 			image_blend: image_blend,
 			object_index: object_index,
+			depth: depth,
 		}
 		var var_array = variable_instance_get_names(id)
 		var i = 0
@@ -93,9 +94,18 @@ function load_editor_objects(argument0) //gml_Script_load_editor_objects
 		}
     }
 }
-
+function delete_editor_objects(){
+	with (all)
+	{
+		if (variable_instance_exists(id, "createdbyeditor") && variable_instance_exists(id, "editorplacedroom") && variable_instance_exists(id, "oldinstanceeditor"))
+		{
+			instance_destroy()
+		}
+	}
+}
 function edit_object_var(argument0) //gml_Script_edit_object_var
 {
+	var commandstring = argument0
     var commands = string_split(argument0, " ")
     var i = 1
     while (i < array_length(commands))
@@ -149,7 +159,7 @@ function edit_object_var(argument0) //gml_Script_edit_object_var
                         case "string":
                             if is_string(commands[i])
                             {
-                                variable_instance_set(selectedent, variabletochange, commands[i])
+                                variable_instance_set(selectedent, variabletochange, string_replace(commandstring, "string " + variabletochange, ""))
                                 show_message_async("successfully set string")
                             }
                             break
@@ -218,7 +228,7 @@ function edit_object_var(argument0) //gml_Script_edit_object_var
                         case "string":
                             if is_string(commands[i])
                             {
-                                variable_instance_set(selectedent, variabletochange, commands[i])
+                                variable_instance_set(selectedent, variabletochange, string_replace(commandstring, "string " + variabletochange, ""))
                                 show_message_async("successfully set string")
                             }
                             break
@@ -269,13 +279,13 @@ function edit_object_var(argument0) //gml_Script_edit_object_var
                             show_message_async("successfully set real")
                         }
                         break
-                    case "string":
-                        if is_string(commands[i])
-                        {
-                            variable_instance_set(selectedent, variabletochange, commands[i])
-                            show_message_async("successfully set string")
-                        }
-                        break
+                        case "string":
+                            if is_string(commands[i])
+                            {
+                                variable_instance_set(selectedent, variabletochange, string_replace(commandstring, "string " + variabletochange, ""))
+                                show_message_async("successfully set string")
+                            }
+                            break
                     case "asset":
                         if (asset_get_index(commands[i]) > -1)
                         {

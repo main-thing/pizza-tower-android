@@ -9,3 +9,4 @@ alarm[0] = 50
 platformid = -4
 hsp_carry = 0
 vsp_carry = 0
+grounded = 0

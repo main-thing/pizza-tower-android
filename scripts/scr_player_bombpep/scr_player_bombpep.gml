@@ -1,7 +1,7 @@
 function scr_player_bombgrab()
 {
 	move = (key_left + key_right)
-	if (sprite_index != spr_uppercutfinishingblow && sprite_index != spr_player_throw)
+	if (sprite_index != spr_uppercutfinishingblow && sprite_index != spr_throw)
 		hsp = (move * movespeed)
 	else
 		hsp = 0
@@ -37,7 +37,7 @@ function scr_player_bombgrab()
 		movespeed = 0
 	if (!instance_exists(bombgrabID))
 		state = states.normal
-	if (sprite_index != spr_haulingstart && sprite_index != spr_uppercutfinishingblow && sprite_index != spr_player_throw)
+	if (sprite_index != spr_haulingstart && sprite_index != spr_uppercutfinishingblow && sprite_index != spr_throw)
 	{
 		if grounded
 		{
@@ -71,7 +71,7 @@ function scr_player_bombgrab()
 			}
 			else
 			{
-				sprite_index = spr_player_throw
+				sprite_index = spr_throw
 				with (bombgrabID)
 				{
 					state = states.normal
@@ -130,8 +130,8 @@ function scr_player_bombpepup()
 	{
 		pizzapepper = 0
 		a = 0
-		if (sprite_index == spr_player_supersidejump)
-			sprite_index = spr_player_supersidejumpland
+		if (sprite_index == spr_supersidejump)
+			sprite_index = spr_supersidejumpland
 		if (sprite_index == spr_superjump or sprite_index == spr_superspringplayer)
 			sprite_index = spr_superjumpland
 		with (obj_camera)
@@ -312,7 +312,7 @@ function scr_player_bombpep()
 		steppy = 0
 	if (key_slap2 && state != states.normal && sprite_index != spr_bombpepintro && sprite_index != spr_bombpepend)
 	{
-		sprite_index = spr_player_throw
+		sprite_index = spr_throw
 		image_index = 0
 		hsp = 0
 		bombpeptimer = 0

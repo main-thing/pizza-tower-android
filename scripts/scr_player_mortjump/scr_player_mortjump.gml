@@ -24,14 +24,14 @@ function scr_player_mortjump()
 	if (place_meeting((x + sign(hsp)), y, obj_solid) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
 	{
 		movespeed = 0
-		if (sprite_index == spr_player_barrelmove)
-			sprite_index = spr_player_barrelidle
+		if (sprite_index == spr_barrelmove)
+			sprite_index = spr_barrelidle
 	}
 	if (floor(image_index) == (image_number - 1))
 	{
-		if (sprite_index == spr_player_mortjumpstart)
-			sprite_index = spr_player_mortjump
-		else if (sprite_index == spr_player_mortdoublejump or sprite_index == spr_mortdoublejumpstart)
+		if (sprite_index == spr_mortdoublejumpstart)
+			sprite_index = spr_mortjump
+		else if (sprite_index == spr_mortdoublejump or sprite_index == spr_mortdoublejumpstart)
 			sprite_index = spr_mortdoublejump
 	}
 	if (grounded && vsp > 0.5)
@@ -41,7 +41,7 @@ function scr_player_mortjump()
 			input_buffer_jump = 8
 			state = states.mortjump
 			vsp = -14
-			sprite_index = spr_player_mortjumpstart
+			sprite_index = spr_mortdoublejumpstart
 			image_index = 0
 			doublejump = 0
 			jumpstop = 0
@@ -63,7 +63,7 @@ function scr_player_mortjump()
 		input_buffer_jump = 8
 		doublejump = 1
 		state = states.mortjump
-		sprite_index = spr_player_mortdoublejump
+		sprite_index = spr_mortdoublejump
 		image_index = 0
 		vsp = -11
 		repeat (4)

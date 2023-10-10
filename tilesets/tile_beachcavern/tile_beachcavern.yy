@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_beachcavern",
   "spriteId": {
     "name": "tilespr_tile_beachcavern",
     "path": "sprites/tilespr_tile_beachcavern/tilespr_tile_beachcavern.yy",
@@ -535,8 +538,4 @@
     "name": "Beach",
     "path": "folders/Tile Sets/Beach.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_beachcavern",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

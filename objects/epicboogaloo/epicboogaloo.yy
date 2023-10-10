@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "epicboogaloo",
   "spriteId": null,
   "solid": false,
   "visible": true,
@@ -25,8 +28,4 @@
     "name": "Game settings",
     "path": "folders/Objects/Game settings.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "epicboogaloo",
-  "tags": [],
-  "resourceType": "GMObject",
 }

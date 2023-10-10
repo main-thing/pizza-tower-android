@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_freezer2",
   "spriteId": {
     "name": "tile_freezer2",
     "path": "sprites/tile_freezer2/tile_freezer2.yy",
@@ -855,8 +858,4 @@
     "name": "Freezer",
     "path": "folders/Tile Sets/Freezer.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_freezer2",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

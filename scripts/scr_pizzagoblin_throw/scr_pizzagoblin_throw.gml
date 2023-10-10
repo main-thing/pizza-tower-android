@@ -217,6 +217,8 @@ function scr_pizzagoblin_throw()
 				break
 			case obj_miniufo:
 				instance_create(x, y, obj_warplaser)
+			case obj_trashOLD:
+				instance_create(x, y, obj_cheeseball)
 				break
 			case obj_miniufo_grounded:
 				with (instance_create((x + (8 * image_xscale)), y, obj_enemybullet))

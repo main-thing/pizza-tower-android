@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_bigforestblock",
   "spriteId": {
     "name": "spr_bigforestblock",
     "path": "sprites/spr_bigforestblock/spr_bigforestblock.yy",
@@ -25,7 +28,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -33,8 +36,4 @@
     "name": "World 3",
     "path": "folders/Objects/Room structure/World 3.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_bigforestblock",
-  "tags": [],
-  "resourceType": "GMObject",
 }

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_citycarnival",
   "spriteId": {
     "name": "spr_citycarnival",
     "path": "sprites/spr_citycarnival/spr_citycarnival.yy",
@@ -595,8 +598,4 @@
     "name": "Street",
     "path": "folders/Tile Sets/Street.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_citycarnival",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

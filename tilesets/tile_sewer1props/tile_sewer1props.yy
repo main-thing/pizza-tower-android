@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_sewer1props",
   "spriteId": {
     "name": "spr_sewer1props",
     "path": "sprites/spr_sewer1props/spr_sewer1props.yy",
@@ -595,8 +598,4 @@
     "name": "Sewer",
     "path": "folders/Tile Sets/Sewer.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_sewer1props",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

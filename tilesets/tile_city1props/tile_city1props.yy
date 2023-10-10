@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_city1props",
   "spriteId": {
     "name": "spr_city1props",
     "path": "sprites/spr_city1props/spr_city1props.yy",
@@ -623,8 +626,4 @@
     "name": "Street",
     "path": "folders/Tile Sets/Street.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_city1props",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

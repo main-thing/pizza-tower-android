@@ -18,7 +18,7 @@ function state_player_normal()
 		input_up_buffer = 0
 		input_down_buffer = 0
 	}
-	if key_up
+	if (key_up && character != "S")
 		breakdance_speed = Approach(breakdance_speed, 0.6, 0.005)
 	else
 		breakdance_speed = 0.25
@@ -27,8 +27,10 @@ function state_player_normal()
 		if (!instance_exists(obj_beatbox))
 		{
 			instance_create(x, y, obj_genericpoofeffect)
-			with (instance_create(x, y, obj_beatbox))
+			with (instance_create(x, y, obj_beatbox)){
 				vsp = -11
+				targetplayer = other.object_index
+			}
 		}
 		notecreate--
 	}
@@ -66,9 +68,12 @@ function state_player_normal()
 			if shoot
 				sprite_index = spr_pistolwalk
 			else if mort
-				sprite_index = spr_player_mortwalk
-			else if key_up
-				sprite_index = spr_player_breakdance
+				sprite_index = spr__mortwalk
+			else if(key_up){
+				if(character != "S"){
+					sprite_index = spr_breakdance
+				}
+			}
 			else if (global.minutes == 0 && global.seconds == 0)
 				sprite_index = spr_hurtwalk
 			else if (global.stylethreshold == 2)
@@ -90,7 +95,7 @@ function state_player_normal()
 	}
 	else
 	{
-		if (sprite_index == spr_player_breakdance)
+		if (sprite_index == spr_breakdance)
 			image_speed = breakdance_speed
 		else
 			image_speed = 0.35
@@ -133,9 +138,12 @@ function state_player_normal()
 					if shoot
 						sprite_index = spr_player_pistolidle
 					else if mort
-						sprite_index = spr_player_mortidle
-					else if key_up
-						sprite_index = spr_player_breakdance
+						sprite_index = spr__mortidle
+					else if(key_up){
+							if(character != "S"){
+								sprite_index = spr_breakdance
+						}
+					}	
 					else if (global.minutes == 0 && global.seconds == 0)
 						sprite_index = spr_hurtidle
 					else if global.panic
@@ -152,29 +160,61 @@ function state_player_normal()
 					idle = 0
 					windingAnim--
 					sprite_index = spr_winding
-					if key_up
-						sprite_index = spr_player_breakdance
+					if(key_up){
+						if(character != "S"){
+							sprite_index = spr_breakdance
+						}
+					}
 				}
 			}
 			else
 			{
 				windingAnim = 0
 				sprite_index = spr_facehurt
-				if key_up
-					sprite_index = spr_player_breakdance
+				if(key_up){
+					if(character != "S"){
+						sprite_index = spr_breakdance
+					}
+				}
 			}
 		}
 	}
 	if (movespeed > 8)
 		movespeed -= 0.1
+	if (character == "S")
+	{
+    if (machslideAnim == 0)
+    {
+        if (move == 0)
+        {
+            if (idle < 400)
+                idle++
+            if (idle >= 100 && floor(image_index) == (image_number - 1))
+            {
+                idle = 0
+                image_index = 0
+            }
+            if (idle >= 100 && sprite_index != spr_idle1)
+                sprite_index = spr_idle1
+            if (idle < 100)
+                sprite_index = spr_idle
+        }
+        if (move != 0)
+        {
+            machslideAnim = 0
+            sprite_index = spr_move
+            xscale = move
+			}
+		}
+	}
 	if landAnim
 	{
-		if (sprite_index == spr_player_mortland)
+		if (sprite_index == spr__mortland)
 		{
 			if (floor(image_index) == (image_number - 1))
 			{
 				landAnim = 0
-				sprite_index = spr_player_mortidle
+				sprite_index = spr__mortidle
 				image_index = 0
 			}
 		}
@@ -255,13 +295,15 @@ function state_player_normal()
 				railmomentum = 1
 			freefallstart = 0
 		}
-		if (key_down or (grounded && vsp > 0 && scr_solid(x, (y - 3)) && scr_solid(x, y)) or place_meeting(x, y, obj_solid))
-		{
-			state = states.crouch
-			landAnim = 0
-			crouchAnim = 1
-			image_index = 0
-			idle = 0
+		if(character != "S"){
+			if (key_down or (grounded && vsp > 0 && scr_solid(x, (y - 3)) && scr_solid(x, y)) or place_meeting(x, y, obj_solid))
+			{
+				state = states.crouch
+				landAnim = 0
+				crouchAnim = 1
+				image_index = 0
+				idle = 0
+			}
 		}
 	}
 	else if (!key_jump)
@@ -279,7 +321,7 @@ function state_player_normal()
 			jumpAnim = 1
 		state = states.jump
 	}
-	if (sprite_index == spr_player_breakdance && breakdance_speed > 0.4)
+	if (sprite_index == spr_breakdance && breakdance_speed > 0.4)
 	{
 		if ((!instance_exists(dashcloudid)) && grounded)
 		{
@@ -298,28 +340,59 @@ function state_player_normal()
 			}
 		}
 	}
-	if (key_shoot2 && shotgunAnim)
-		scr_shotgunshoot()
-	if ((key_slap2 or input_buffer_slap < 8) && (!key_up))
-	{
-		sprite_index = spr_suplexdash
-		suplexmove = 1
-		suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
-		sfx_gain(suplexdashsnd)
-		state = states.handstandjump
-		movespeed = 8
-		image_index = 0
-		flash = 1
-	}
-	else if ((key_slap2 or input_buffer_slap < 8) && key_up)
-	{
-		state = states.punch
-		image_index = 0
-		sprite_index = spr_player_breakdanceuppercut
-		vsp = -14
-		movespeed = hsp
-		particle_set_scale(particle.highjumpcloud2, xscale, 1)
-		create_particle(x, y, particle.highjumpcloud2, 0)
+	if(!finalmoveset){
+		if (key_shoot2 && shotgunAnim)
+			scr_shotgunshoot()
+		if ((key_slap2 or input_buffer_slap < 8) && (!key_up))
+		{
+			sprite_index = spr_suplexdash
+			suplexmove = 1
+			suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
+			sfx_gain(suplexdashsnd)
+			state = states.handstandjump
+			movespeed = 8
+			image_index = 0
+			flash = 1
+		}
+		else if ((key_slap2 or input_buffer_slap < 8) && key_up && character != "S")
+		{
+			state = states.punch
+			image_index = 0
+			sprite_index = spr_breakdanceuppercut
+			vsp = -14
+			movespeed = hsp
+			particle_set_scale(particle.highjumpcloud2, xscale, 1)
+			create_particle(x, y, particle.highjumpcloud2, 0)
+		}
+	} else {
+		if(shotgunAnim){
+			if (key_slap2) {
+				scr_shotgunshoot()
+			}
+		} else {
+			if ((key_slap2 or input_buffer_slap < 8) && (!key_up))
+			{
+				sprite_index = spr_suplexdash
+				suplexmove = 1
+				suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
+				sfx_gain(suplexdashsnd)
+				state = states.handstandjump
+				movespeed = 8
+				image_index = 0
+				flash = 1
+			}
+			else if (key_slap2 && input_buffer_slap > 0 && key_up && shotgunAnim == 0 && character != "S")
+			{
+				state = states.punch;
+				input_buffer_slap = 0;
+				image_index = 0;
+				sprite_index = spr_breakdanceuppercut;
+				vsp = -14;
+				movespeed = hsp;
+				particle_set_scale(particle.highjumpcloud2, xscale, 1);
+				create_particle(x, y, particle.highjumpcloud2, 0);
+			}
+		}
 	}
 	switch character
 	{
@@ -340,6 +413,13 @@ function state_player_normal()
 				movespeed = 0
 			}
 			break
+		case "S":
+			if (key_attack && state != states.handstandjump){
+				image_index = 0
+				state = states.handstandjump
+				movespeed = 5
+			}
+		break
 		case "N":
 			if (pogochargeactive or pizzapepper > 0)
 			{

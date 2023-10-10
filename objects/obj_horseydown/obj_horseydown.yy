@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_horseydown",
   "spriteId": {
     "name": "spr_tubedown",
     "path": "sprites/spr_tubedown/spr_tubedown.yy",
@@ -25,7 +28,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -33,8 +36,4 @@
     "name": "World 2",
     "path": "folders/Objects/Room structure/World 2.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_horseydown",
-  "tags": [],
-  "resourceType": "GMObject",
 }

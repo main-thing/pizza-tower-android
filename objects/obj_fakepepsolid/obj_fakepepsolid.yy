@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_fakepepsolid",
   "spriteId": {
-    "name": "spr_wall_1",
-    "path": "sprites/spr_wall_1/spr_wall_1.yy",
+    "name": "spr_wall",
+    "path": "sprites/spr_wall/spr_wall.yy",
   },
   "solid": false,
   "visible": false,

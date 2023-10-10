@@ -26,7 +26,9 @@ function scr_player_crouch()
 		crouchAnim = 1
 		jumpAnim = 1
 		image_index = 0
-		mask_index = spr_player_mask
+		if(character != "S"){
+			mask_index = spr_player_mask
+		}
 	}
 	if (crouchAnim == 0)
 	{

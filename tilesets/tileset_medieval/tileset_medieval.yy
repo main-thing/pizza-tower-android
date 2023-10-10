@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_medieval",
   "spriteId": {
     "name": "tile_medieval",
     "path": "sprites/tile_medieval/tile_medieval.yy",
@@ -215,8 +218,4 @@
     "name": "Medieval",
     "path": "folders/Tile Sets/Medieval.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_medieval",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

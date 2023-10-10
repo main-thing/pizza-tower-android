@@ -4,7 +4,7 @@ enum tvprompt
 	trigger,
 	transfo
 }
-
+hide = 1
 image_speed = 0.1
 chose = 0
 message = ""
@@ -71,3 +71,9 @@ hand_index = 0
 bar_surface = -4
 barfill_x = 0
 showtime_buffer = 0
+tv_x = 845
+tv_y = 80
+fake_tv_x = 845
+fake_tv_y = 80
+tv_overlay_sprite = spr_tv_empty
+tv_bg_sprite = spr_tv_bg

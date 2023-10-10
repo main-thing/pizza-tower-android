@@ -8,7 +8,7 @@ with (other)
 		instance_destroy(other)
 		shotgunAnim = 1
 		state = states.shotgun
-		tv_push_prompt_once(tv_create_prompt("This is the shotgun powerup text", tvprompt.transfo, spr_tv_shotgun, 3), "shotgun")
+		tv_push_prompt_once(tv_create_prompt("This is the shotgun powerup text", tvprompt.transfo, self._spr_tv_shotgun, 3), "shotgun")
 		global.heattime = 60
 	}
 }

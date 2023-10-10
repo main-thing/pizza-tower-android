@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_secretportalstart",
   "spriteId": {
     "name": "spr_secretportal_spawnopen",
     "path": "sprites/spr_secretportal_spawnopen/spr_secretportal_spawnopen.yy",
@@ -22,7 +25,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -30,8 +33,4 @@
     "name": "Warps",
     "path": "folders/Objects/Room structure/Generic/Warps.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_secretportalstart",
-  "tags": [],
-  "resourceType": "GMObject",
 }

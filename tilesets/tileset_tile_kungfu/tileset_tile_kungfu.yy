@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_tile_kungfu",
   "spriteId": {
     "name": "sprite_tile_kungfu",
     "path": "sprites/sprite_tile_kungfu/sprite_tile_kungfu.yy",
@@ -83,8 +86,4 @@
     "name": "Pinball",
     "path": "folders/Tile Sets/Pinball.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_tile_kungfu",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

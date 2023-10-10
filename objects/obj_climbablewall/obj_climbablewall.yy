@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_climbablewall",
   "spriteId": {
     "name": "sprite1029",
     "path": "sprites/sprite1029/sprite1029.yy",
@@ -31,8 +34,4 @@
     "name": "Unused",
     "path": "folders/Objects/Room structure/Unused.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_climbablewall",
-  "tags": [],
-  "resourceType": "GMObject",
 }

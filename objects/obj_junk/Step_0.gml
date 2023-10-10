@@ -14,7 +14,7 @@ if (grabbed == 1 && (!ratgrabbed))
 		grav = 0
 		grounded = false
 		x = playerid.x
-		if (playerid.sprite_index != spr_player_haulingstart && playerid.state != states.finishingblow)
+		if (playerid.sprite_index != playerid.spr_haulingstart && playerid.state != states.finishingblow)
 			y = (playerid.y - 60)
 		else if (floor(playerid.image_index) == 0)
 			y = (playerid.y - 20)
@@ -102,7 +102,7 @@ if (grabbed == 1 && (!ratgrabbed))
 		thrown = true
 		x = playerid.x
 		y = playerid.y
-		if (playerid.sprite_index == spr_player_shoulder)
+		if (playerid.sprite_index == spr_shoulder)
 			vsp = 15
 		if (playerid.sprite_index == spr_player_diagonaldownthrow)
 		{

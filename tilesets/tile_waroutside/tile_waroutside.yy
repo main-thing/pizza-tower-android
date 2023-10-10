@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_waroutside",
   "spriteId": {
     "name": "tilespr_tile_waroutside",
     "path": "sprites/tilespr_tile_waroutside/tilespr_tile_waroutside.yy",
@@ -665,8 +668,4 @@
     "name": "War",
     "path": "folders/Tile Sets/War.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_waroutside",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

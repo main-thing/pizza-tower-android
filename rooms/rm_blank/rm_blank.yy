@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMRoom",
+  "resourceVersion": "1.0",
+  "name": "rm_blank",
   "isDnd": false,
   "volume": 1.0,
   "parentRoom": null,
@@ -42,8 +45,4 @@
     "name": "Rooms",
     "path": "folders/Rooms.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "rm_blank",
-  "tags": [],
-  "resourceType": "GMRoom",
 }

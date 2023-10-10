@@ -1,3 +1,4 @@
+scr_initenemy()
 grav = 0.5
 hsp = 0
 vsp = 0
@@ -17,7 +18,7 @@ reset = 0
 hp = 5
 hitboxcreate = 0
 grounded = true
-idlespr = spr_pizzaball_idle
+idlespr = spr_pizzaball_walk
 stunfallspr = spr_pizzaball_stun
 walkspr = spr_pizzaball_walk
 grabbedspr = spr_pizzaball_stun

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "sfx_bombpep1",
   "conversionMode": 0,
   "compression": 0,
   "volume": 0.86,
@@ -12,13 +15,9 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_bombpep1",
-  "duration": 3.096,
+  "duration": 3.096644,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sfx_bombpep1",
-  "tags": [],
-  "resourceType": "GMSound",
 }

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_factoryswitch",
   "spriteId": {
     "name": "spr_noisearrow",
     "path": "sprites/spr_noisearrow/spr_noisearrow.yy",
@@ -28,8 +31,4 @@
     "name": "Unused",
     "path": "folders/Objects/Room structure/Unused.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_factoryswitch",
-  "tags": [],
-  "resourceType": "GMObject",
 }

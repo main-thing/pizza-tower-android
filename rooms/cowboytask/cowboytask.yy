@@ -16,7 +16,7 @@
     {"inherit":false,"visible":false,"xview":0,"yview":0,"wview":1024,"hview":768,"xport":0,"yport":0,"wport":1024,"hport":768,"hborder":32,"vborder":32,"hspeed":-1,"vspeed":-1,"objectId":null,},
   ],
   "layers": [
-    {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","tilesetId":{"name":"tile_pizzamart","path":"tilesets/tile_pizzamart/tile_pizzamart.yy",},"x":0,"y":0,"tiles":{"TileDataFormat":1,"SerialiseWidth":79,"SerialiseHeight":17,"TileCompressedData":[
+    {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","tilesetId":{"name":"tile_pizzamart_1","path":"tilesets/tile_pizzamart_1/tile_pizzamart_1.yy",},"x":0,"y":0,"tiles":{"TileDataFormat":1,"SerialiseWidth":79,"SerialiseHeight":17,"TileCompressedData":[
 -239,25,1,17,-72,32,1,19,-5,25,1,23,-72,0,1,14,-3,15,-2,25,1,23,-72,0,1,24,-5,25,1,23,-72,0,1,24,-5,25,1,23,-72,0,1,24,-5,25,1,23,-72,0,1,24,-5,25,1,23,-72,0,1,24,-3,25,-2,32,1,33,-72,0,1,24,-3,25,-75,0,1,24,-3,25,-75,0,1,
 24,-3,25,-75,0,1,34,-3,35,-75,12,1,39,-161,25,],},"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[],"visible":true,"depth":100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},

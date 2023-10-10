@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "bg_grindrail_tileset",
   "spriteId": {
     "name": "tilespr_bg_grindrail_tileset",
     "path": "sprites/tilespr_bg_grindrail_tileset/tilespr_bg_grindrail_tileset.yy",
@@ -37,8 +40,4 @@
     "name": "Mansion",
     "path": "folders/Tile Sets/Mansion.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "bg_grindrail_tileset",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

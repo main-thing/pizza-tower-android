@@ -1,9 +1,9 @@
+following_character_init()
 image_speed = 0.35
 depth = -6
 xoffset = 25
 yoffset = 0
 LAG_STEPS = 20
-followqueue = ds_queue_create()
 spritequeue = ds_queue_create()
 ds_list_insert(global.followerlist, 0, id)
 pos = ds_list_find_index(global.followerlist, id)
@@ -14,3 +14,5 @@ space = 0
 maxspace = 1
 spaceaccel = 0.2
 sprite_index = obj_player2.spr_idle
+lock = 0
+use_collision = 0

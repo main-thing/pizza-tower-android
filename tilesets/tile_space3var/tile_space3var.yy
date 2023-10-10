@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_space3var",
   "spriteId": {
     "name": "spr_space3var",
     "path": "sprites/spr_space3var/spr_space3var.yy",
@@ -45,8 +48,4 @@
     "name": "Space",
     "path": "folders/Tile Sets/Space.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_space3var",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_vigidelete",
   "spriteId": {
     "name": "sprite1790",
     "path": "sprites/sprite1790/sprite1790.yy",
@@ -22,7 +25,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":4,"eventType":7,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":4,"eventType":7,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -30,8 +33,4 @@
     "name": "Generic",
     "path": "folders/Objects/Room structure/Generic.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_vigidelete",
-  "tags": [],
-  "resourceType": "GMObject",
 }

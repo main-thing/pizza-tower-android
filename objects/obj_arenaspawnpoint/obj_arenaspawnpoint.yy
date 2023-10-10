@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_arenaspawnpoint",
   "spriteId": {
     "name": "sprite10291",
     "path": "sprites/sprite10291/sprite10291.yy",
@@ -22,7 +25,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -30,8 +33,4 @@
     "name": "Arenas",
     "path": "folders/Objects/Room structure/Arenas.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_arenaspawnpoint",
-  "tags": [],
-  "resourceType": "GMObject",
 }

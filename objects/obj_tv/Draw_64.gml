@@ -5,6 +5,8 @@ draw_set_halign(fa_center)
 draw_set_color(c_white)
 if is_bossroom()
 	exit;
+if hide 
+	exit;
 if global.use_temperature
 {
 	var _width = sprite_get_width(spr_temperature_meterfill)
@@ -18,10 +20,8 @@ if global.use_temperature
 }
 var collect_x = irandom_range((-collect_shake), collect_shake)
 var collect_y = irandom_range((-collect_shake), collect_shake)
-var tv_x = 845
-var tv_y = 80
-var _cx = (tv_x + combo_posX)
-var _cy = (((tv_y + 117) + hud_posY) + combo_posY)
+var _cx = (fake_tv_x + combo_posX)
+var _cy = (((fake_tv_y + 117) + hud_posY) + combo_posY)
 var _perc = (global.combotime / 60)
 var _minX = (_cx - 56)
 var _maxX = (_cx + 59)
@@ -45,8 +45,11 @@ for (var i = num; i > 0; i--)
 }
 if (room != strongcold_endscreen)
 {
-	draw_sprite_ext(spr_tv_bg, 0, (tv_x + collect_x), ((tv_y + collect_y) + hud_posY), 1, 1, 0, c_white, alpha)
-	draw_sprite_ext(sprite_index, image_index, (tv_x + collect_x), ((tv_y + collect_y) + hud_posY), 1, 1, 0, c_white, alpha)
+	draw_sprite_ext(tv_bg_sprite, 0, (fake_tv_x + collect_x), ((fake_tv_y + collect_y) + hud_posY), 1, 1, 0, c_white, alpha)
+	draw_sprite_ext(sprite_index, image_index, (tv_x + collect_x), ((tv_y + collect_y) + hud_posY), obj_player1.tv_hud_xscale, obj_player1.tv_hud_yscale, 0, c_white, alpha)
+	if(obj_player1.faketv = 1){
+		draw_sprite_ext(tv_overlay_sprite, 0, (fake_tv_x + collect_x), ((fake_tv_y + collect_y) + hud_posY), obj_player1.fake_tv_hud_xscale, obj_player1.fake_tv_hud_yscale, 0, c_white, alpha)
+	}
 }
 if (bubblespr != -4)
 	draw_sprite_ext(bubblespr, bubbleindex, 512, 53, 1, 1, 1, c_white, alpha)

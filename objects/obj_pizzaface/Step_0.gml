@@ -24,7 +24,11 @@ if (place_meeting(x, y, playerid) && (!playerid.cutscene) && playerid.state != s
 		else if (variable_global_exists("toppinwarriorid5") && instance_exists(global.toppinwarriorid5))
 			instance_destroy(global.toppinwarriorid5)
 		instance_create(x, y, obj_flash)
-		global.seconds = 59
+		global.panic = true
+		global.fill = 59 * 12
+		with(obj_tv){
+			chunkmax = global.fill
+		}
 		obj_camera.alarm[1] = 60
 		obj_camera.ded = 0
 		instance_destroy()

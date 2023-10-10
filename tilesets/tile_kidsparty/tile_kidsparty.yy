@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_kidsparty",
   "spriteId": {
     "name": "spr_kidspartytile",
     "path": "sprites/spr_kidspartytile/spr_kidspartytile.yy",
@@ -1555,8 +1558,4 @@
     "name": "Kids Party",
     "path": "folders/Tile Sets/Kids Party.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_kidsparty",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

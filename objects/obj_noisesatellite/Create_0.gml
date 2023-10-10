@@ -1,3 +1,4 @@
+scr_initenemy()
 grav = 0.5
 hsp = 0
 vsp = 0
@@ -32,6 +33,7 @@ stunspr = spr_noisesatellite
 recoveryspr = spr_noisesatellite
 stompedspr = spr_noisesatellite
 grabbedspr = spr_noisesatellitestun
+scaredspr = spr_noisesatellite
 image_xscale = 1
 hp = 0
 grounded = true

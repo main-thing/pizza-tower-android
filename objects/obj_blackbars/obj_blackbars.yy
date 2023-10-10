@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_blackbars",
   "spriteId": null,
   "solid": false,
   "visible": true,
@@ -25,8 +28,4 @@
     "name": "Effects",
     "path": "folders/Objects/Visuals/Effects.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_blackbars",
-  "tags": [],
-  "resourceType": "GMObject",
 }

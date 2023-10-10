@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_farmceilling",
   "spriteId": {
     "name": "tilespr_tile_farmceilling",
     "path": "sprites/tilespr_tile_farmceilling/tilespr_tile_farmceilling.yy",
@@ -477,8 +480,4 @@
     "name": "Farm",
     "path": "folders/Tile Sets/Farm.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_farmceilling",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

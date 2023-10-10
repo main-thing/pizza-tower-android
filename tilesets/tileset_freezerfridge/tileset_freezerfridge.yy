@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_freezerfridge",
   "spriteId": {
     "name": "tilespr_tileset_freezerfridge",
     "path": "sprites/tilespr_tileset_freezerfridge/tilespr_tileset_freezerfridge.yy",
@@ -895,8 +898,4 @@
     "name": "Freezer",
     "path": "folders/Tile Sets/Freezer.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_freezerfridge",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

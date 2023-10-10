@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMFont",
+  "resourceVersion": "1.0",
+  "name": "font0",
   "hinting": 0,
   "glyphOperations": 1,
   "interpreter": 1,
@@ -130,8 +133,4 @@
     "name": "Fonts",
     "path": "folders/Fonts.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "font0",
-  "tags": [],
-  "resourceType": "GMFont",
 }

@@ -14,4 +14,8 @@ else
 create_collect(x, y, sprite_index)
 with (instance_create((x + 16), y, obj_smallnumber))
 	number = string(val)
-tv_do_expression(spr_tv_exprcollect)
+with (obj_player) {
+		if (check_player_coop()) {
+			tv_do_expression(self._spr_tv_exprcollect)
+		}
+}

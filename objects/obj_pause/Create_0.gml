@@ -23,3 +23,13 @@ for (i = 0; i < array_length(toppin_sprite); i++)
 	toppin_index[i] = 0
 	toppin_has[i] = 0
 }
+with(obj_player1){
+	if(!variable_instance_exists(self,"key_start")){
+		scr_getinput()
+	}
+}
+with(obj_player2){
+	if(!variable_instance_exists(self,"key_start")){
+		scr_getinput2()
+	}
+}

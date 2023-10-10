@@ -13,7 +13,7 @@ function cutscene_gustavofail_start()
 			visible = true
 			image_alpha = 1
 			state = states.actor
-			sprite_index = spr_player_gnomecutscene1
+			sprite_index = spr_gnomecutscene1
 			image_speed = 0.35
 			xscale = 1
 			hsp = 0

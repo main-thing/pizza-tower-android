@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_grabsign_tileset",
   "spriteId": {
     "name": "tilespr_tile_grabsign_tileset",
     "path": "sprites/tilespr_tile_grabsign_tileset/tilespr_tile_grabsign_tileset.yy",
@@ -71,8 +74,4 @@
     "name": "Tutorial",
     "path": "folders/Tile Sets/Tutorial.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_grabsign_tileset",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

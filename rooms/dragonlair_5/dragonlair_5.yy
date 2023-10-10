@@ -100,6 +100,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B04A9F65","properties":[],"isDnd":false,"objectId":{"name":"obj_onewaybigblock","path":"objects/obj_onewaybigblock/obj_onewaybigblock.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":480.0,"y":480.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_34FE1DDD","properties":[],"isDnd":false,"objectId":{"name":"obj_onewaybigblock","path":"objects/obj_onewaybigblock/obj_onewaybigblock.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":512.0,"y":1856.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B9A18B45","properties":[],"isDnd":false,"objectId":{"name":"obj_platform","path":"objects/obj_platform/obj_platform.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":3.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":512.0,"y":704.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B1E73E2","properties":[],"isDnd":false,"objectId":{"name":"obj_priest","path":"objects/obj_priest/obj_priest.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":800.0,"y":562.0,},
       ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","tilesetId":{"name":"tileset_medieval2","path":"tilesets/tileset_medieval2/tileset_medieval2.yy",},"x":0,"y":0,"tiles":{"TileDataFormat":1,"SerialiseWidth":32,"SerialiseHeight":110,"TileCompressedData":[
 -70,18,-24,22,-8,18,2,22,51,-20,32,2,53,22,-8,18,2,22,23,-20,0,2,21,22,-8,18,2,22,23,-20,0,2,
@@ -229,6 +230,7 @@
     {"name":"inst_B04A9F65","path":"rooms/dragonlair_5/dragonlair_5.yy",},
     {"name":"inst_34FE1DDD","path":"rooms/dragonlair_5/dragonlair_5.yy",},
     {"name":"inst_B9A18B45","path":"rooms/dragonlair_5/dragonlair_5.yy",},
+    {"name":"inst_B1E73E2","path":"rooms/dragonlair_5/dragonlair_5.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

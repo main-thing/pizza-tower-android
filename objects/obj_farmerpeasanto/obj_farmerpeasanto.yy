@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_farmerpeasanto",
   "spriteId": {
     "name": "spr_peasanto_idle",
     "path": "sprites/spr_peasanto_idle/spr_peasanto_idle.yy",
@@ -31,8 +34,4 @@
     "name": "Follower pick ups",
     "path": "folders/Objects/Room structure/Follower pick ups.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_farmerpeasanto",
-  "tags": [],
-  "resourceType": "GMObject",
 }

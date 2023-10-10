@@ -2,8 +2,16 @@ if (obj_player1.state == states.debugstate)
 	exit;
 with (other)
 {
-	x = other.x
-	y = (other.y + (other.sprite_height - 46))
+	if(variable_instance_exists(other,"target_x")){
+		x = other.target_x
+	} else {
+		x = other.x
+	}
+	if(variable_instance_exists(other,"target_y")){
+		y = other.target_y
+	} else {
+		y = (other.y + (other.sprite_height - 46))
+	}
 	if (!instance_exists(obj_fadeout))
 	{
 		obj_player1.lastroom = room

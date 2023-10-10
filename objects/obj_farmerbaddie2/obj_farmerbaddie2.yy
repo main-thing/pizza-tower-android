@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_farmerbaddie2",
   "spriteId": {
     "name": "spr_farmer2_idle",
     "path": "sprites/spr_farmer2_idle/spr_farmer2_idle.yy",
@@ -28,7 +31,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -36,8 +39,4 @@
     "name": "Enemies",
     "path": "folders/Objects/Baddie/Enemies.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_farmerbaddie2",
-  "tags": [],
-  "resourceType": "GMObject",
 }

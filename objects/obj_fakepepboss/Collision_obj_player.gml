@@ -43,7 +43,7 @@ if (staggerbuffer <= 0 && flickertime <= 0 && ((other.state == states.handstandj
 		scr_soundeffect(sfx_killingblow)
 		state = states.tackle;
 		movespeed = 4;
-		sprite_index = choose(spr_player_lungehit, spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);
+		sprite_index = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3)
 		image_index = 0;
 	}
 }

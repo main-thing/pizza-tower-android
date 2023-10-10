@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_ghosttransparency",
   "spriteId": null,
   "solid": false,
   "visible": false,
@@ -25,8 +28,4 @@
     "name": "World 2",
     "path": "folders/Objects/Level/World 2.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_ghosttransparency",
-  "tags": [],
-  "resourceType": "GMObject",
 }

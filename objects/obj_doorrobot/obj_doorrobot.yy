@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_doorRobot",
   "spriteId": {
     "name": "sprite12242013",
     "path": "sprites/sprite12242013/sprite12242013.yy",
@@ -28,8 +31,4 @@
     "name": "Unused",
     "path": "folders/Objects/Room structure/Unused.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_doorRobot",
-  "tags": [],
-  "resourceType": "GMObject",
 }

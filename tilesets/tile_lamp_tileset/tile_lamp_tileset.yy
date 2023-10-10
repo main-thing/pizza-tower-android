@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_lamp_tileset",
   "spriteId": {
     "name": "tile_lamp",
     "path": "sprites/tile_lamp/tile_lamp.yy",
@@ -99,8 +102,4 @@
     "name": "Mansion",
     "path": "folders/Tile Sets/Mansion.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_lamp_tileset",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

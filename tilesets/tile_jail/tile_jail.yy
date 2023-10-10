@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_jail",
   "spriteId": {
     "name": "bg_jailroom1",
     "path": "sprites/bg_jailroom1/bg_jailroom1.yy",
@@ -1139,8 +1142,4 @@
     "name": "Street",
     "path": "folders/Tile Sets/Street.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_jail",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

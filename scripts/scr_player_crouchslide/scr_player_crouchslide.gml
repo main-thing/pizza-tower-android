@@ -19,7 +19,7 @@ function scr_player_crouchslide()
 		input_buffer_jump = 0
 	if (grounded && input_buffer_jump < 8 && (!(scr_solid((x + 27), (y - 32)))) && (!(scr_solid((x - 27), (y - 32)))) && (!(scr_solid(x, (y - 32)))) && (!(scr_solid(x, (y - 16)))))
 	{
-		sprite_index = spr_player_jumpdive1
+		sprite_index = spr_jumpdive1
 		image_index = 0
 		vsp = -11
 		with (instance_create(x, y, obj_superdashcloud))
@@ -28,13 +28,13 @@ function scr_player_crouchslide()
 			other.dashcloudid = id
 		}
 	}
-	if (grounded && (sprite_index == spr_player_jumpdive1 or sprite_index == spr_player_jumpdive2) && vsp > 0)
+	if (grounded && (sprite_index == spr_jumpdive1 or sprite_index == spr_jumpdive2) && vsp > 0)
 	{
 		sprite_index = spr_crouchslip
 		jumpstop = 0
 	}
-	if (sprite_index == spr_player_jumpdive1 && floor(image_index) == (image_number - 1))
-		sprite_index = spr_player_jumpdive2
+	if (sprite_index == spr_jumpdive1 && floor(image_index) == (image_number - 1))
+		sprite_index = spr_jumpdive2
 	mask_index = spr_crouchmask
 	if (grounded && key_attack && (!(scr_solid((x + 27), (y - 32)))) && (!(scr_solid((x - 27), (y - 32)))) && (!(scr_solid(x, (y - 32)))) && (!(scr_solid(x, (y - 16)))))
 	{

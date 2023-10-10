@@ -2,13 +2,13 @@ function scr_player_barrelclimbwall()
 {
 	move = (key_left + key_right)
 	hsp = 0
-	if (sprite_index == spr_player_barrelslipnslide && floor(image_index) == (image_number - 1))
-		sprite_index = spr_player_barrelroll
+	if (sprite_index == spr_barrelslipnslide && floor(image_index) == (image_number - 1))
+		sprite_index = spr_barrelroll
 	if (!key_attack)
 	{
 		movespeed = 0
 		state = states.barreljump
-		sprite_index = spr_player_barrelfall
+		sprite_index = spr_barrelfall
 	}
 	if (grounded && vsp > 0)
 	{

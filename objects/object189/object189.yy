@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "object189",
   "spriteId": {
     "name": "spr_debris",
     "path": "sprites/spr_debris/spr_debris.yy",
@@ -25,7 +28,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -33,8 +36,4 @@
     "name": "Particles",
     "path": "folders/Objects/Visuals/Particles.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "object189",
-  "tags": [],
-  "resourceType": "GMObject",
 }

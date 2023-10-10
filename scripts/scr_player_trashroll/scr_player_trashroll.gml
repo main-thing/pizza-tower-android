@@ -4,28 +4,28 @@ function scr_player_trashroll()
 	if (scr_slope() && hsp != 0)
 		scr_player_addslopemomentum(0.25, 0.5)
 	movespeed = max(3, movespeed)
-	if (sprite_index != spr_player_corpsestart && sprite_index != spr_player_corpsesurf)
+	if (sprite_index != spr__corpsestart && sprite_index != spr__corpsesurf)
 	{
-		if (sprite_index != spr_player_trashjump && sprite_index != spr_player_trashjump2 && sprite_index != spr_player_trashfall)
-			sprite_index = spr_player_trashslide
+		if (sprite_index != spr_trashjump && sprite_index != spr_trashjump2 && sprite_index != spr_trashfall)
+			sprite_index = spr_trashslide
 		else
 		{
-			if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_trashjump2)
-				sprite_index = spr_player_trashfall
-			if (vsp > 0 && sprite_index == spr_player_trashjump)
+			if (floor(image_index) == (image_number - 1) && sprite_index == spr_trashjump2)
+				sprite_index = spr_trashfall
+			if (vsp > 0 && sprite_index == spr_trashjump)
 			{
-				sprite_index = spr_player_trashjump2
+				sprite_index = spr_trashjump2
 				image_index = 0
 			}
 			if (grounded && vsp > 0)
-				sprite_index = spr_player_trashslide
+				sprite_index = spr_trashslide
 		}
 	}
 	else
 	{
 		image_speed = 0.35
-		if (sprite_index == spr_player_corpsestart && floor(image_index) == (image_number - 1))
-			sprite_index = spr_player_corpsesurf
+		if (sprite_index == spr__corpsestart && floor(image_index) == (image_number - 1))
+			sprite_index = spr__corpsesurf
 	}
 	if key_jump
 	{

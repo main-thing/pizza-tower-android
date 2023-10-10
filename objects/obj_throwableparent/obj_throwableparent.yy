@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_throwableparent",
   "spriteId": null,
   "solid": false,
   "visible": true,
@@ -25,8 +28,4 @@
     "name": "Unused",
     "path": "folders/Objects/Level/Unused.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_throwableparent",
-  "tags": [],
-  "resourceType": "GMObject",
 }

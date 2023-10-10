@@ -11,7 +11,6 @@ if ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == fal
 			instance_create(x, y, obj_genericpoofeffect)
 		}
 	}
-	
 	global.fill = 4000 // time left in frames
 	with obj_tv
 		chunkmax = global.fill
@@ -51,7 +50,6 @@ if ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == fal
 	scr_soundeffect(sfx_killenemy)
 	instance_create(x, y + 600, obj_itspizzatime)
 	global.panic = true
-	
 	switch room
 	{
 		case entrance_10:
@@ -154,6 +152,10 @@ if ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == fal
 			global.minutes = 5
 			global.seconds = 30
 			break
+	}
+	global.fill = ((global.minutes * 60) + global.seconds) * 12
+	with(obj_tv){
+		chunkmax = global.fill
 	}
 	ds_list_add(global.saveroom, id)
 }

@@ -38,10 +38,10 @@ switch state
 					else
 						sprite_index = idlespr
 				}
-				else if (sprite_index != spr_player_jump && sprite_index != spr_player_fall)
-					sprite_index = spr_player_fall
-				else if (sprite_index == spr_player_jump && floor(image_index) == (image_number - 1))
-					sprite_index = spr_player_fall
+				else if (sprite_index != jumpspr && sprite_index != fallspr)
+					sprite_index = fallspr
+				else if (sprite_index == jumpspr && floor(image_index) == (image_number - 1))
+					sprite_index = fallspr
 				var inst_front = collision_line(x, (y + 25), (x + (sign(hsp) * 78)), (y + 25), obj_solid, false, true)
 				var inst_down = collision_line((x + (sign(hsp) * 16)), y, (x + (sign(hsp) * 16)), (y + 64), obj_solid, false, true)
 				var inst_down2 = collision_line((x + (sign(hsp) * 16)), y, (x + (sign(hsp) * 16)), (y + 64), obj_platform, false, true)
@@ -49,7 +49,7 @@ switch state
 				if ((((!(place_meeting(x, (y + 1), obj_slope))) && (inst_front != -4 or inst_up != -4)) or (inst_down == -4 && inst_down2 == -4)) && targetplayer.y <= (y + 32) && grounded && state != states.charge)
 				{
 					vsp = -11
-					sprite_index = spr_player_jump
+					sprite_index = jumpspr
 					image_index = 0
 				}
 			}

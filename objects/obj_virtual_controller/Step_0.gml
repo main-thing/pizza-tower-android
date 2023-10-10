@@ -17,23 +17,37 @@ if (mouse_check_button_pressed(mb_left) && position_meeting(device_mouse_x_to_gu
 				}
 			}
 			if (keycode == "load") {
-				djoiksa = get_string_async("load buttons: load, default, [{\"x\": 928.0,...}]","")
-			}
+				if(clipboard_has_text()){
+						if(string_pos("[",clipboard_get_text()) == 1) {
+							djoiksa = get_string_async("load buttons: load, default, [{\"x\": 928.0,...}]",clipboard_get_text())
+						} else {
+							djoiksa = get_string_async("load buttons: load, default, [{\"x\": 928.0,...}]","")
+						}
+					} else{
+						djoiksa = get_string_async("load buttons: load, default, [{\"x\": 928.0,...}]","")
+					}
+				}
 			if (keycode == "save") {
 				virtual_key_save(true)
 			}
 			if (keycode == "color") {
-				ndskld = get_string_async("edit selected button(color <red green blue>, sprite <sprite name>, scale <int / float>, alpha <int / float>, image_speed <int / float>)", nejdmsx)
+				ndskld = get_string_async("edit selected button(color <red green blue>, sprite <sprite name>, scale <int / float>, alpha <int / float>, image_speed <int / float>, framenumber <int>)", nejdmsx)
 			}
 		}
 		if (keycode == "debug") {	
 			if (global.movingvkeys == 0) {
-				dwnxed = get_string_async("Debug ( noclip, showcollisions <boolean>, panic <seconds>, oldassets <boolean>, enableranks <boolean>, hidetiles, showtiles, toggletiles, character <string>, player_set_state <states.state>,instance_set_variable <obj_> <type> <variablename> <new value>,global_set_variable <type> <variablename> <new value>,spawn <obj_> <optional distance>)", nejdmsx)
+				dwnxed = get_string_async("Debug ( help )", nejdmsx)
 			}
 		}
 		if (keycode == "bind") {
 			if (global.movingvkeys == 0) {
-				processcommand(keycode2,true)
+				if(global.showbinds){
+					processcommand(keycode2,true)
+				} else {
+					if(string_pos("togglebinds",string_lower(string(keycode2))) != 0){
+						processcommand(keycode2,true)
+					}
+				}
 			}
 		}
 }
@@ -58,6 +72,15 @@ if (global.movingvkeys == 0) {
 	image_alpha = myusualalpha
 	image_blend = realcolor
 	pulse = 1
+}
+if(string_pos("togglebinds",string_lower(string(keycode2))) == 0){
+	if(keycode == "bind"){
+		if(global.showbinds){
+			image_alpha = myusualalpha
+		} else {
+			image_alpha = 0
+		}
+	}
 }
 if (global.movingvkeys == 1) {
 if (global.selectedvbutton == self) {

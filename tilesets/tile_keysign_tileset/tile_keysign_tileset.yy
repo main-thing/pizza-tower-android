@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_keysign_tileset",
   "spriteId": {
     "name": "tile_keysign",
     "path": "sprites/tile_keysign/tile_keysign.yy",
@@ -71,8 +74,4 @@
     "name": "Tile Sets",
     "path": "folders/Tile Sets.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_keysign_tileset",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

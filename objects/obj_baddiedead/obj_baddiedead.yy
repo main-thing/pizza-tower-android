@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_baddiedead",
   "spriteId": null,
   "solid": false,
   "visible": true,
@@ -25,8 +28,4 @@
     "name": "Baddie",
     "path": "folders/Objects/Baddie.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_baddiedead",
-  "tags": [],
-  "resourceType": "GMObject",
 }

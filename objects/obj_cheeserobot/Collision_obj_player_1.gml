@@ -19,7 +19,7 @@ if (state != states.grabbed)
 					stompAnim = true;
 					other.image_index = 0;
 					vsp = -14;
-					sprite_index = spr_player_stompprep;
+					sprite_index = spr_stompprep;
 				}
 				else
 				{
@@ -30,7 +30,7 @@ if (state != states.grabbed)
 					stompAnim = true;
 					other.image_index = 0;
 					vsp = -9;
-					sprite_index = spr_player_stompprep;
+					sprite_index = spr_stompprep;
 				}
 			}
 		}
@@ -62,7 +62,7 @@ if (state != states.grabbed)
 			machpunchAnim = true;
 			if (!grounded && state != states.freefall)
 			{
-				sprite_index = spr_player_mach2jump;
+				sprite_index = spr_mach2jump;
 				vsp = -10;
 			}
 		}

@@ -49,6 +49,9 @@ function createvbutton(loadedbutton){
 				if(variable_struct_exists(loadedbutton,"image_xscale")){
 					image_xscale = loadedbutton.image_xscale
 				}
+				if(variable_struct_exists(loadedbutton,"image_index")){
+					image_index = loadedbutton.image_index
+				}
 				if(variable_struct_exists(loadedbutton,"image_yscale")){
 					image_yscale = loadedbutton.image_yscale
 				}
@@ -94,6 +97,7 @@ function virtual_key_save(export = false) {
 			image_xscale: image_xscale,
 			image_yscale: image_yscale,
 			image_speed: image_speed,
+			image_index: image_index,
 			realcolor: realcolor,
 			balpha: myusualalpha,
 			sprite_name: sprite_get_name(sprite_index)
@@ -103,6 +107,7 @@ function virtual_key_save(export = false) {
 	}
 	if(export) {
 		get_string_async("Controls Save Code: ", json_stringify(mybuttons))
+		clipboard_set_text(json_stringify(mybuttons))
 		return
 	}
 	var buttonstring = json_stringify(mybuttons)
@@ -146,7 +151,7 @@ function virtual_key_load(buttonstring2 = "") {
 	}
 }
 function processcommand(commandstring,silentcommand = false){
-	var _string = commandstring
+	var _string = string_trim(commandstring)
 	if (string_pos(";", _string) != 0) {
 		var _commands = string_split(_string + ";",";")
 		var i = 0
@@ -218,14 +223,54 @@ function docommand(commandstring,silentcommand = false) {
 									}
 								}
 							}
-							if(obj_fakeeditor.editormode == 1){
-								with(object){
-									variable_instance_set(id, "createdbyeditor", 1)
-									variable_instance_set(id, "editorplacedroom", room)
-									variable_instance_set(id, "oldinstanceeditor", object_index)
+							if(instance_exists(obj_fakeeditor)){
+								if(obj_fakeeditor.editormode == 1){
+									with(object){
+										variable_instance_set(id, "createdbyeditor", 1)
+										variable_instance_set(id, "editorplacedroom", room)
+										variable_instance_set(id, "oldinstanceeditor", object_index)
+									}
+									alarm[1] = 1
 								}
-								alarm[1] = 1
 							}
+			}
+	}
+	if (string_pos("play_sound", string_lower(commandstring)) == 1) {
+			var commands = string_split(commandstring, " ");
+			var hasarg2 = false
+			var _audio = sfx_taunt
+			for (var i = 1;i < array_length(commands);i++) {
+					if(i == 2){
+						if(audio_exists(asset_get_index(commands[i]))){
+							_audio = asset_get_index(commands[i])
+						}
+						hasarg2 = true
+					}
+					if(i >= 2){
+						break
+					}
+			}
+			scr_soundeffect(_audio)
+	}
+	if (string_pos("play_music", string_lower(commandstring)) == 1) {
+			var commands = string_split(commandstring, " ");
+			var hasarg2 = false
+			var _audio = mu_entrance
+			for (var i = 1;i < array_length(commands);i++) {
+					if(i == 2){
+						if(audio_exists(asset_get_index(commands[i]))){
+							_audio = asset_get_index(commands[i])
+						}
+						hasarg2 = true
+					}
+					if(i >= 2){
+						break
+					}
+			}
+			with(obj_music){
+				audio_stop_sound(musicID)
+				music = _audio
+				musicID = scr_music(music)
 			}
 	}
 	if (string_pos("player_set_state", string_lower(commandstring)) == 1) {
@@ -236,8 +281,12 @@ function docommand(commandstring,silentcommand = false) {
 							switch(commands[i]){
 								case "states.ratmount":
 								case "ratmount":
-									with(obj_player1)
-									state = states.ratmount
+									with(obj_player1) {
+										ratmount_movespeed = 8
+										gustavodash = 0
+										isgustavo = 1
+										state = states.ratmount
+									}
 								break
 								case "states.knightpep":
 								case "knightpep":
@@ -267,6 +316,7 @@ function docommand(commandstring,silentcommand = false) {
 								case "normal":
 									with(obj_player1){
 									state = states.normal
+									isgustavo = 0
 									sprite_index = spr_idle
 									}
 								break
@@ -342,8 +392,9 @@ function docommand(commandstring,silentcommand = false) {
 									with(obj_player1){
 										instance_create(x, y, obj_genericpoofeffect)
 										movespeed = 10
-										state = states.mach2
 										skateboarding = 1
+										clowntimer = 150
+										state = states.mach2
 									}
 								break
 							}
@@ -522,78 +573,17 @@ function docommand(commandstring,silentcommand = false) {
 			case "showcollision":
 			case "showcollisions":
 				global.showcollisions = !global.showcollisions
-				if (global.showcollisions) {
-					with(obj_solid) {
-						if (object_index == obj_solid || object_index == obj_secretbigblock || object_index == obj_secretblock || object_index == obj_secretmetalblock) {
-							visible = true
-						}
-					}
-					with(obj_slope) {
-						if (object_index == obj_slope) {
-							visible = true
-						}
-					}
-					with(obj_platform) {
-						if (object_index == obj_platform) {
-							visible = true
-						}
-					}
-				}
-				if (!global.showcollisions) {
-					with(obj_solid) {
-						if (object_index == obj_solid || object_index == obj_secretbigblock || object_index == obj_secretblock || object_index == obj_secretmetalblock) {
-							visible = false
-						}
-					}
-					with(obj_slope) {
-						if (object_index == obj_slope) {
-							visible = false
-						}
-					}
-					with(obj_platform) {
-						if (object_index == obj_platform) {
-							visible = false
-						}
-					}
-				}
-				break
+				alarm[1]= 1
+			break
 				case "showcollision true":
 				case "showcollisions true":
-				global.showcollisions = true
-				with(obj_solid) {
-						if (object_index == obj_solid || object_index == obj_secretbigblock || object_index == obj_secretblock || object_index == obj_secretmetalblock || object_index == obj_mach3solid) {
-							visible = true
-						}
-					}
-					with(obj_slope) {
-						if (object_index == obj_slope) {
-							visible = true
-						}
-					}
-					with(obj_platform) {
-						if (object_index == obj_platform) {
-							visible = true
-						}
-					}
+					global.showcollisions = true
+					alarm[1]= 1
 				break
 				case "showcollision false":
 				case "showcollisions false":
-				global.showcollisions = false
-				with(obj_solid) {
-						if (object_index == obj_solid || object_index == obj_secretbigblock || object_index == obj_secretblock || object_index == obj_secretmetalblock || object_index == obj_mach3solid) {
-							visible = false
-						}
-					}
-					with(obj_slope) {
-						if (object_index == obj_slope) {
-							visible = false
-						}
-					}
-					with(obj_platform) {
-						if (object_index == obj_platform) {
-							visible = false
-						}
-					}
+					global.showcollisions = false
+					alarm[1]= 1
 				break
 				case "oldasset true":
 				case "oldassets true":
@@ -624,16 +614,12 @@ function docommand(commandstring,silentcommand = false) {
 							sprite_index = spr_pizzaface
 						with(obj_machalleffect)
 							sprite_index = spr_cloudeffect
-						with(obj_machalleffect)
-							sprite_index = spr_cloudeffect
 						break
 						case false:
 						with(obj_pizzaboxunopen)
 							sprite_index = spr_pizzaboxunopen_1
 						with(obj_pizzaface)
 							sprite_index = spr_pizzaface_1
-						with(obj_machalleffect)
-							sprite_index = spr_cloudeffect_1
 						with(obj_machalleffect)
 							sprite_index = spr_cloudeffect_1
 						break 
@@ -664,6 +650,7 @@ function docommand(commandstring,silentcommand = false) {
 				case "toggletiles":
 					global.hidetiles = !global.hidetiles
 				break
+				case "character m":
 				case "character pepperman":
 					with (obj_player1)
 					{
@@ -672,6 +659,16 @@ function docommand(commandstring,silentcommand = false) {
 						scr_characterspr()
 					}
 				break
+				case "character s":
+				case "character snick":
+					with (obj_player1)
+					{
+						character = "S"
+						ispeppino = 0
+						scr_characterspr()
+					}
+				break
+				case "character v":
 				case "character vigilante":
 					with (obj_player1)
 					{
@@ -680,6 +677,7 @@ function docommand(commandstring,silentcommand = false) {
 						scr_characterspr()
 					}
 				break
+				case "character p":
 				case "character peppino":
 					with (obj_player1)
 					{
@@ -688,6 +686,7 @@ function docommand(commandstring,silentcommand = false) {
 						scr_characterspr()
 					}
 				break
+				case "character n":
 				case "character oldnoise":
 					with (obj_player1)
 					{
@@ -704,6 +703,7 @@ function docommand(commandstring,silentcommand = false) {
 						scr_characterspr()
 					}
 				break
+				case "character2 m":
 				case "character2 pepperman":
 					with (obj_player2)
 					{
@@ -712,6 +712,16 @@ function docommand(commandstring,silentcommand = false) {
 						scr_characterspr()
 					}
 				break
+				case "character2 s":
+				case "character2 snick":
+					with (obj_player2)
+					{
+						character = "S"
+						ispeppino = 0
+						scr_characterspr()
+					}
+				break
+				case "character2 v":
 				case "character2 vigilante":
 					with (obj_player2)
 					{
@@ -720,6 +730,7 @@ function docommand(commandstring,silentcommand = false) {
 						scr_characterspr()
 					}
 				break
+				case "character2 p":
 				case "character2 peppino":
 					with (obj_player2)
 					{
@@ -728,6 +739,7 @@ function docommand(commandstring,silentcommand = false) {
 						scr_characterspr()
 					}
 				break
+				case "character2 n":
 				case "character2 oldnoise":
 					with (obj_player2)
 					{
@@ -744,7 +756,17 @@ function docommand(commandstring,silentcommand = false) {
 						scr_characterspr()
 					}
 				break
-		}
+				case "togglebinds":
+					if(global.showbinds){
+						global.showbinds = false
+					} else {
+						global.showbinds = true
+					}
+				break
+				case "help":
+					get_string_async("Available Commands: ","noclip, showcollisions <boolean>, panic <seconds>, oldassets <boolean>, enableranks <boolean>, hidetiles, showtiles, toggletiles, character <string>, player_set_state <states.state>,instance_set_variable <obj_> <type> <variablename> <new value>,global_set_variable <type> <variablename> <new value>,spawn <obj_> <optional distance>, play_sound <sound>, play_music <sound>, togglebinds")
+				break
+	}
 }
 function processedit(commandstring) {
 	if (global.selectedvbutton == undefined) {
@@ -855,6 +877,25 @@ function processedit(commandstring) {
 		if(argcount == 1){
 			with(global.selectedvbutton){
 				image_speed = _speed
+			}
+		}
+	}
+	if (string_pos("framenumber", string_lower(commandstring)) == 1) {
+		var commands = string_split(commandstring, " ");
+		var argcount = 0
+		var _imageindex = 0 // default
+		for (var i = 1;i < array_length(commands);i++) {
+				if(i == 2){
+					_imageindex = real(commands[i])
+					argcount++
+				}
+				if(i >= 2){
+					break
+				}
+		}
+		if(argcount == 1){
+			with(global.selectedvbutton){
+				image_index = _imageindex
 			}
 		}
 	}

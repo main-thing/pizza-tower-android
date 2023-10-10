@@ -1,7 +1,7 @@
 function scr_getinput()
 {
-	if (instance_exists(obj_debugcontroller) && obj_debugcontroller.active)
-		exit;
+	/*if (instance_exists(obj_debugcontroller) && obj_debugcontroller.active)
+		exit;*/
 	
 	var _dvc = obj_inputAssigner.player_input_device[0]
 	

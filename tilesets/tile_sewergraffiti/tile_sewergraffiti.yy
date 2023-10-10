@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_sewergraffiti",
   "spriteId": {
     "name": "tilespr_tile_sewergraffiti",
     "path": "sprites/tilespr_tile_sewergraffiti/tilespr_tile_sewergraffiti.yy",
@@ -611,8 +614,4 @@
     "name": "Sewer",
     "path": "folders/Tile Sets/Sewer.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_sewergraffiti",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

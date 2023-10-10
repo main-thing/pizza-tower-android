@@ -3,7 +3,13 @@ function tv_set_idle()
 	with (obj_tv)
 	{
 		state = states.normal
-		sprite_index = spr_tv_idle
+		with (obj_player)
+		{
+			if (check_player_coop())
+			{
+				other.sprite_index = self._spr_tv_idle
+			}
+		}
 	}
 }
 
@@ -12,7 +18,13 @@ function tv_reset()
 	with (obj_tv)
 	{
 		state = states.normal
-		sprite_index = spr_tv_idle
+		with (obj_player)
+		{
+			if (check_player_coop())
+			{
+				other.sprite_index = self._spr_tv_idle
+			}
+		}
 		ds_list_clear(tvprompts_list)
 	}
 }
@@ -112,15 +124,21 @@ function tv_do_expression(spr)
 		{
 			state = states.tv_whitenoise
 			expressionsprite = spr
-			sprite_index = spr_tv_whitenoise
+		with (obj_player)
+		{
+			if (check_player_coop())
+			{
+				other.sprite_index = self._spr_tv_whitenoise
+			}
+		}
 			
 			switch expressionsprite
 			{
-				case spr_tv_exprhurt:
+				case obj_player._spr_tv_exprhurt:
 				case spr_tv_hurtG:
 					expressionbuffer = 60
 					break
-				case spr_tv_exprcollect:
+				case obj_player._spr_tv_exprcollect:
 					expressionbuffer = 150
 					if obj_player.isgustavo
 						expressionsprite = spr_tv_happyG

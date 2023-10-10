@@ -12,7 +12,7 @@ function scr_enemy_hit()
 		if (grabbedby == 1)
 			_player = obj_player1
 		else
-			_player = 323
+			_player = obj_player2
 		if (obj_player.tauntstoredstate == states.mach2 or obj_player.tauntstoredstate == states.tumble or obj_player.state == states.mach2 or obj_player.state == states.tumble)
 			thrown = false
 		else

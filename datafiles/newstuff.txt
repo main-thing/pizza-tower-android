@@ -1,0 +1,15 @@
+version 9.5.0
+1. vigilante is fixed for the most part.
+2. added snick.
+3. misc sprite unhardcoding.
+4. tv sprites can now be edited with instance_set_variable.
+5. fixed some unused rooms.
+6. fixed player_set_state commands clownpep and gustavo.
+7. fixed some unused enemies.
+8. fixed some screen size issues regarding big displays.
+9. showcollisions got some minor changes.
+10. obj_command_trigger was added, commands can be run via this trigger.
+11. updated obj_background_trigger to allow still backgrounds.
+12. added play_music and play_sound commands.
+13. edited the main menu slightly.
+14. togglebinds command. (can be bound)

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_freezeddragon",
   "spriteId": {
     "name": "spr_cheesedragon_idle",
     "path": "sprites/spr_cheesedragon_idle/spr_cheesedragon_idle.yy",
@@ -31,8 +34,4 @@
     "name": "Cutscenes",
     "path": "folders/Objects/Cutscenes.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_freezeddragon",
-  "tags": [],
-  "resourceType": "GMObject",
 }

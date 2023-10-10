@@ -7,13 +7,13 @@ function scr_player_mortattack()
 		if (grounded && vsp > 0)
 		{
 			state = states.mort
-			sprite_index = spr_player_mortidle
+			sprite_index = spr__mortidle
 			landAnim = 0
 		}
 		else
 		{
 			state = states.mortjump
-			sprite_index = spr_player_mortjump
+			sprite_index = spr_mortjump
 		}
 	}
 	if (punch_afterimage > 0)

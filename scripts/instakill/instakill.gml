@@ -40,7 +40,7 @@ function Instakill()
 		if ((!grounded) && state != states.boxxedpepspin && state != states.freefall && (key_jump2 or input_buffer_jump == 0))
 		{
 			if (state == states.mach3 && fightball == 0)
-				sprite_index = spr_player_mach2jump
+				sprite_index = spr_mach2jump
 			suplexmove = 0
 			vsp = -11
 		}
@@ -67,9 +67,9 @@ function Instakill()
 		{
 			image_index = random_range(0, (image_number - 1))
 			if grounded
-				sprite_index = spr_player_groundedattack
+				sprite_index = spr_groundedattack
 			else
-				sprite_index = spr_player_ungroundedattack
+				sprite_index = spr_ungroundedattack
 		}
 		if (state == states.chainsawbump && (!global.kungfu))
 		{

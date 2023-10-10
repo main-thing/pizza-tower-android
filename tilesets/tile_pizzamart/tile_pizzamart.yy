@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_pizzamart",
   "spriteId": {
     "name": "spr_pizzamarttile",
     "path": "sprites/spr_pizzamarttile/spr_pizzamarttile.yy",
@@ -275,8 +278,4 @@
     "name": "Desert",
     "path": "folders/Tile Sets/Desert.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_pizzamart",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

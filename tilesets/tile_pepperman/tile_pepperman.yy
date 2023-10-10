@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_pepperman",
   "spriteId": {
     "name": "tilespr_tile_pepperman",
     "path": "sprites/tilespr_tile_pepperman/tilespr_tile_pepperman.yy",
@@ -185,8 +188,4 @@
     "name": "Mansion",
     "path": "folders/Tile Sets/Mansion.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tile_pepperman",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

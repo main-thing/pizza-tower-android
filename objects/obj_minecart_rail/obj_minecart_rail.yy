@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_minecart_rail",
   "spriteId": {
     "name": "spr_ghost_cartrail",
     "path": "sprites/spr_ghost_cartrail/spr_ghost_cartrail.yy",
@@ -28,8 +31,4 @@
     "name": "Cutscenes",
     "path": "folders/Objects/Cutscenes.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_minecart_rail",
-  "tags": [],
-  "resourceType": "GMObject",
 }

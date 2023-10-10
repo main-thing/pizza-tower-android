@@ -134,13 +134,18 @@ function scr_player_grab()
 			sprite_index = spr_haulingidle
 		swingdingendcooldown++
 		hsp = (xscale * movespeed)
-		if (scr_solid((x + xscale), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or scr_solid_slope((x + sign(hsp)), y)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
-		{
-			vsp = -4
-			sprite_index = spr_player_kungfujump
-			image_index = 0
-			state = states.punch
-			movespeed = -6
+		if(character != "S" && character != "V"){
+			if(!finalmoveset)
+			{
+				if (scr_solid((x + xscale), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or scr_solid_slope((x + sign(hsp)), y)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
+					{
+						vsp = -4
+						sprite_index = spr_kungfujump
+						image_index = 0
+						state = states.punch
+						movespeed = -6
+					}
+			}
 		}
 		with (instance_place((x + xscale), y, obj_destructibles))
 			instance_destroy()

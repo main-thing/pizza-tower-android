@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "sfx_pizzaface",
   "conversionMode": 0,
   "compression": 0,
   "volume": 0.31,
@@ -12,13 +15,9 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_pizzaface",
-  "duration": 2.774,
+  "duration": 2.774694,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sfx_pizzaface",
-  "tags": [],
-  "resourceType": "GMSound",
 }

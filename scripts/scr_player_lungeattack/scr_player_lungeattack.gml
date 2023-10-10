@@ -28,7 +28,7 @@ function scr_player_lungeattack()
 		movespeed = 5
 		image_index = 0
 		flash = 1
-		sprite_index = spr_player_lunge
+		sprite_index = spr_lunge
 	}
 	var cancelindex = 4
 	if (floor(image_index) > (image_number - 2) && (!hit_connected))
@@ -114,7 +114,7 @@ function DoFinisher()
 		state = states.punch
 		movespeed = 6
 		image_index = 0
-		sprite_index = spr_player_breakdanceuppercut
+		sprite_index = spr_breakdanceuppercut
 		vsp = -16
 		hsp = (xscale * movespeed)
 		particle_set_scale(particle.highjumpcloud2, xscale, 1)
@@ -123,7 +123,7 @@ function DoFinisher()
 	else if ((key_left + key_right) == xscale)
 	{
 		state = states.punch
-		sprite_index = spr_player_lungehit
+		sprite_index = spr_lungehit
 		image_index = 0
 		movespeed = 14
 		with (instance_create(x, y, obj_superdashcloud))
@@ -133,7 +133,7 @@ function DoFinisher()
 	}
 	else if key_down
 	{
-		sprite_index = spr_player_breakdance
+		sprite_index = spr_breakdance
 		image_index = 0
 		machhitAnim = 0
 		state = states.tumble
@@ -144,7 +144,7 @@ function DoFinisher()
 	else
 	{
 		state = states.punch
-		sprite_index = spr_player_lungehit
+		sprite_index = spr_lungehit
 		image_index = 0
 		movespeed = 14
 		with (instance_create(x, y, obj_superdashcloud))

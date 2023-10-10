@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "sfx_machslideboost",
   "conversionMode": 0,
   "compression": 0,
   "volume": 0.16,
@@ -12,13 +15,9 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_machslideboost",
-  "duration": 1.409,
+  "duration": 1.409161,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sfx_machslideboost",
-  "tags": [],
-  "resourceType": "GMSound",
 }

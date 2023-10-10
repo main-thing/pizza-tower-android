@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_dungeon3",
   "spriteId": {
     "name": "tile_dungeon3",
     "path": "sprites/tile_dungeon3/tile_dungeon3.yy",
@@ -1485,8 +1488,4 @@
     "name": "Dungeon",
     "path": "folders/Tile Sets/Dungeon.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_dungeon3",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }
