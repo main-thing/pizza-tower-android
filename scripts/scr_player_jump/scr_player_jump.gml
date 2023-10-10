@@ -292,8 +292,12 @@ function state_player_jump()
 			shake_mag_acc = (30 / room_speed)
 		}
 	}
-	if(character != "S" && character != "V"){
-		if(!finalmoveset){
+	if(character != "S" && character != "V")
+	{
+		if(!finalmoveset)
+		{
+			if (key_shoot2 && shotgunAnim)
+				scr_shotgunshoot()
 			if (key_slap2 && sprite_index != spr_suplexbump)
 			{
 				image_index = 0
@@ -306,32 +310,46 @@ function state_player_jump()
 				movespeed = 5
 			}
 		} else {
-			if (key_slap2 && sprite_index != spr_suplexbump)
-			{
-				image_index = 0
-				sprite_index = spr_suplexdashjumpstart
-				flash = 1
-				suplexmove = 1
-				suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
-				sfx_gain(suplexdashsnd)
-				state = states.handstandjump
-				movespeed = 5
-			}
-			else if (key_slap2 && input_buffer_slap > 0 && key_up && shotgunAnim == 0)
-			{
-				input_buffer_slap = 0;
-				state = states.punch;
-				image_index = 0;
-				sprite_index = spr_breakdanceuppercut;
-				vsp = -10;
-				movespeed = hsp;
-				particle_set_scale(particle.highjumpcloud2, xscale, 1);
-				create_particle(x, y, particle.highjumpcloud2, 0);
+			if(shotgunAnim){
+				if (key_slap2) {
+					scr_shotgunshoot()
+				}
+			} else {
+				if (key_slap2 && sprite_index != spr_suplexbump)
+				{
+					image_index = 0
+					sprite_index = spr_suplexdashjumpstart
+					flash = 1
+					suplexmove = 1
+					suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
+					sfx_gain(suplexdashsnd)
+					state = states.handstandjump
+					movespeed = 5
+				}
+				else if (key_slap2 && input_buffer_slap > 0 && key_up && shotgunAnim == 0)
+				{
+					input_buffer_slap = 0;
+					state = states.punch;
+					image_index = 0;
+					sprite_index = spr_breakdanceuppercut;
+					vsp = -10;
+					movespeed = hsp;
+					particle_set_scale(particle.highjumpcloud2, xscale, 1);
+					create_particle(x, y, particle.highjumpcloud2, 0);
+				}
 			}
 		}
+	} else {
+		if(!finalmoveset)
+		{
+			if (key_shoot2 && shotgunAnim)
+				scr_shotgunshoot()
+		} else 
+		{
+			if (key_slap2 && shotgunAnim)
+				scr_shotgunshoot()
+		}
 	}
-	if (key_shoot2 && shotgunAnim)
-		scr_shotgunshoot()
 	if (key_slap2 && shoot)
 	{
 		if (!shotgunAnim)

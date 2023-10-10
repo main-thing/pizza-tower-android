@@ -256,7 +256,7 @@ function scr_player_mach2()
 	if(!finalmoveset){
 		if (key_shoot2 && shotgunAnim)
 			scr_shotgunshoot()
-		if ((key_slap2 or input_buffer_slap < 8) && (!key_up))
+		if ((key_slap2 or input_buffer_slap < 8) && (!key_up) && character != "V" && character != "S")
 		{
 			sprite_index = spr_suplexdash
 			suplexmove = 1
@@ -273,27 +273,30 @@ function scr_player_mach2()
 				scr_shotgunshoot()
 			}
 		} else {
-			if ((key_slap2 or input_buffer_slap < 8) && (!key_up))
+			if(character != "V" && character != "S")
 			{
-				sprite_index = spr_suplexdash
-				suplexmove = 1
-				suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
-				sfx_gain(suplexdashsnd)
-				state = states.handstandjump
-				movespeed = 8
-				image_index = 0
-				flash = 1
-			}
-			else if (key_slap2 && input_buffer_slap > 0 && key_up && shotgunAnim == 0)
-			{
-				input_buffer_slap = 0;
-				state = states.punch;
-				image_index = 0;
-				sprite_index = spr_breakdanceuppercut;
-				vsp = -10;
-				movespeed = hsp;
-				particle_set_scale(particle.highjumpcloud2, xscale, 1);
-				create_particle(x, y, particle.highjumpcloud2, 0);
+				if ((key_slap2 or input_buffer_slap < 8) && (!key_up))
+				{
+					sprite_index = spr_suplexdash
+					suplexmove = 1
+					suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
+					sfx_gain(suplexdashsnd)
+					state = states.handstandjump
+					movespeed = 8
+					image_index = 0
+					flash = 1
+				}
+				else if (key_slap2 && input_buffer_slap > 0 && key_up && shotgunAnim == 0)
+				{
+					input_buffer_slap = 0;
+					state = states.punch;
+					image_index = 0;
+					sprite_index = spr_breakdanceuppercut;
+					vsp = -10;
+					movespeed = hsp;
+					particle_set_scale(particle.highjumpcloud2, xscale, 1);
+					create_particle(x, y, particle.highjumpcloud2, 0);
+				}
 			}
 		}
 	}

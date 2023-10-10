@@ -24,7 +24,8 @@ function scr_player_handstandjump() {
 	}
 	if (shoot == 1) var attackdash = spr_player_pistolshot
 	else attackdash = spr_suplexdash
-	if (sprite_index == spr_lungestart && floor(image_index) == (image_number - 1)) sprite_index = spr_lunge
+	if (sprite_index == spr_lungestart && floor(image_index) == (image_number - 1)) 
+		sprite_index = spr_lunge
 	var airattackdash = spr_suplexdashjump
 	var airattackdashstart = spr_suplexdashjumpstart
 	if (global.attackstyle == 2) {

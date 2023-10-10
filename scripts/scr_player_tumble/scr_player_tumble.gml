@@ -22,7 +22,6 @@ function scr_player_tumble()
 		{
 			vsp = 10;
 			sprite_index = spr_dive;
-			//fmod_event_instance_play(snd_dive);
 		}
 	}
 	if (grounded && sprite_index == spr_dive)
