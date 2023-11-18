@@ -1,4 +1,6 @@
 var _self = id
+var _x = x
+var _y = y
 with (other)
 {
 	if (object_index != obj_onewaybigblock)

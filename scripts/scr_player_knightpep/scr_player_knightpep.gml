@@ -179,11 +179,14 @@ function scr_player_knightpep()
 			movespeed = 11
 		else
 			movespeed = 8
-		with (instance_place(x, (y + 1), obj_slope))
-			other.xscale = (-sign(image_xscale))
-		state = states.knightpepslopes
-		sprite_index = spr_knightpepdownslope
-		slope_buffer = 20
+		with (instance_place(x, (y + 1), obj_slope)){
+			if(!oldblock){
+				other.xscale = (-sign(image_xscale))
+				other.state = states.knightpepslopes
+				other.sprite_index = other.spr_knightpepdownslope
+				other.slope_buffer = 20
+			}
+		}
 	}
 	exit;
 }

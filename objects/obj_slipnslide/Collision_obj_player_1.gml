@@ -1,17 +1,18 @@
-with (other)
+with (obj_player)
 {
-	if (state != states.trashroll && state != states.trashjump && state != states.cheeseball)
-	{
-		fmod_event_one_shot_3d("event:/sfx/pep/slip", x, y);
-		sprite_index = spr_slipbanan1;
-		other.drop = true;
-		vsp = -11;
-		movespeed += 2;
-		if (movespeed > 14)
-			movespeed = 14;
-		hsp = movespeed * xscale;
-		image_index = 0;
-		state = states.slipbanan;
-	}
-	instance_destroy(other);
+    if (state == states.mach1 || state == states.mach2 || state == states.mach3 || state == states.machslide || state == states.slipnslide)
+    {
+        other.drop = 1
+        state = states.slipnslide
+        if (movespeed < 8)
+            movespeed = 8
+    }
+    if (state == states.barrelmach1 || state == states.barrelmach2)
+    {
+        image_index = 0
+        other.drop = 1
+        state = states.barrelslipnslide
+        if (movespeed < 8)
+            movespeed = 8
+    }
 }

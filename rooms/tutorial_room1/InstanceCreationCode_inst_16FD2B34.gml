@@ -1,0 +1,1 @@
+targetRoom = normalT_treasure

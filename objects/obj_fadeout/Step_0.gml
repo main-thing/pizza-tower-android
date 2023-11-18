@@ -5,11 +5,16 @@ if (fadealpha > 1)
 	{
 		if (custom_level == 0)
 		{
-			with (obj_player)
+			/*with (obj_player)
 			{
-				if place_meeting(x, y, obj_goldendoor)
-					game_restart()
-			}
+				if(instance_place(x, y, obj_goldendoor) != noone){
+					with(instance_place(x, y, obj_goldendoor)){
+						if(!olddoor){
+							game_restart()
+						}
+					}
+				}
+			}*/
 			if (room != obj_player1.targetRoom or roomreset)
 			{
 				scr_room_goto(obj_player1.targetRoom)

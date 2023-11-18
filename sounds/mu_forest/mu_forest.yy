@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mu_forest.ogg",
-  "duration": 208.954,
+  "duration": 208.95493,
   "parent": {
     "name": "Music",
     "path": "folders/Sounds/Music.yy",

@@ -64,4 +64,10 @@ room_arr = [
 	[boss_fakepep, mu_fakepep, mu_fakepep, false], 
 	[rm_editor_big, mu_snickchallenge, mu_medievalsecret, false], 
 	[dragonlair_1, mu_dragonlair, mu_medievalsecret, false], 
+	[tutorial_room1, mu_tutorial, mu_medievalsecret, false], 
+	[normalT_room1, mu_ruin, mu_medievalsecret, false], 
+	[normalT_bonus1, mu_dungeondepth, mu_medievalsecret, false], 
+	[normalT_room3, mu_ruin, mu_medievalsecret, false], 
+	[normalT_bonus2, mu_dungeondepth, mu_medievalsecret, false], 
+	[normalT_room5, mu_ruin, mu_medievalsecret, false], 
 ]

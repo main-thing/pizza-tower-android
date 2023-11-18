@@ -75,24 +75,19 @@ if (state != states.grabbed)
 			if ((!(scr_solid(x, (y + 1)))) && state != states.freefall)
 				vsp = -10
 		}
-		if (attacking == 0 && state != states.tackle && state != states.hurt && (!(y < other.y)) && grabbing == 0 && other.state != states.stun)
+		if (attacking == 0 && state != states.tackle && state != states.hurt && (!(y < other.y)) && grabbing == 0 && other.state != states.stun && state != states.bump)
 		{
-			if (x != other.x)
-			{
-				other.image_xscale = (-(sign((other.x - x))))
-				xscale = (-(sign((x - other.x))))
-			}
-			hsp = ((-xscale) * 4)
+			scr_soundeffect(sfx_bumpwall)
 			vsp = -4
-			other.image_xscale = (-xscale)
-			other.hsp = ((-other.image_xscale) * 4)
-			other.vsp = -4
+			hsp = (-3 * xscale)
+			state = states.bump
+			sprite_index = spr_bump
+			image_index = 0
 			if (other.state == states.walk or other.state == states.turn)
 				other.state = states.idle
-			image_index = 0
-			state = states.bump
 			if (other.state == states.land)
 				other.state = states.idle
+			other.image_xscale = (-xscale)
 		}
 	}
 }

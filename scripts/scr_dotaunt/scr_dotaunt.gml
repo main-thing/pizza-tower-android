@@ -6,7 +6,11 @@ function scr_dotaunt()
 		if (!finisher)
 		{
 			if(variable_instance_exists(self,"tauntsound")){
-				scr_soundeffect(tauntsound)
+				if(audio_exists(tauntsound)){
+					scr_soundeffect(tauntsound)
+				} else{
+					scr_soundeffect(sfx_taunt) // fallback incase this var somehow gets deleted
+				}
 			} else{
 				scr_soundeffect(sfx_taunt) // fallback incase this var somehow gets deleted
 			}

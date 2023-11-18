@@ -30,6 +30,11 @@ if mouse_check_button_pressed(mb_left)
                 selectedent = undefined
                 copymode = (!copymode)
             }
+            else if (device_mouse_x_to_gui(0) < (button5x + button5width) && device_mouse_y_to_gui(0) < (button5y + button5height) && device_mouse_x_to_gui(0) >= button5x && device_mouse_y_to_gui(0) >= button5y)
+            {
+                selectedent = undefined
+                gridmode = (!gridmode)
+            }
             if (!hoverbutton)
             {
 				oldselectedent = selectedent
@@ -54,6 +59,7 @@ if mouse_check_button_pressed(mb_left)
                             variable_instance_set(id, "createdbyeditor", 1)
                             variable_instance_set(id, "editorplacedroom", room)
                             variable_instance_set(id, "oldinstanceeditor", object_index)
+                            variable_instance_set(id, "persistent", 1)
                         }
                     }
                 }
@@ -92,6 +98,10 @@ if mouse_check_button_pressed(mb_left)
     {
         selectedent.x = (old_object_x + mouse_x)
         selectedent.y = (old_object_y + mouse_y)
+		if(gridmode){
+			selectedent.x = round(selectedent.x / grid_size) * grid_size
+			selectedent.y = round(selectedent.y / grid_size) * grid_size
+		}
     }
     hoverbutton = 0
     if (device_mouse_x_to_gui(0) < (button1x + button1width) && device_mouse_y_to_gui(0) < (button1y + button1height) && device_mouse_x_to_gui(0) >= button1x && device_mouse_y_to_gui(0) >= button1y)

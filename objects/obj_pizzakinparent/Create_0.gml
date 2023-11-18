@@ -1,8 +1,5 @@
 depth = 50
 event_inherited()
-with (obj_player) {
-	tv_do_expression(self._spr_tv_exprcollect)
-}
 image_speed = 0.35
 yoffset = 0
 hsp = 0
@@ -20,3 +17,6 @@ spr_run_strongcold = sprite_index
 spr_idle_strongcold = sprite_index
 xprev = x
 yprev = y
+with (playerid) {
+	tv_do_expression(self._spr_tv_exprcollect)
+}

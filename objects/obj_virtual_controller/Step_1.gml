@@ -1,6 +1,5 @@
 var _max_devices = 4; // who would do more than 4?
 					  // TODO: Sync other stuff here.
-
 for (var i = 0; i < _max_devices; i++)
 {
         var _touch_x = device_mouse_x_to_gui(i);

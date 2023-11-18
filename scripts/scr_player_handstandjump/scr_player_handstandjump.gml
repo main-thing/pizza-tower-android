@@ -7,13 +7,17 @@ function scr_player_handstandjump() {
 	if (global.attackstyle != 3) {
 		if (movespeed < 10) {
 			if ((sprite_index == spr_player_pistolshot or sprite_index == spr_shotgun_shot) && movespeed < 8) movespeed += 0.25
-			else if (sprite_index == spr_lunge && movespeed < 12) movespeed += 0.8
-			else if (movespeed < 10) movespeed += 0.5
+			else if (sprite_index == spr_lunge && movespeed < 12) 
+				movespeed += 0.8
+			else if (movespeed < 10) 
+				movespeed += 0.5
 		}
 	} else {
 		if (movespeed < 10) {
-			if ((sprite_index == spr_player_pistolshot or sprite_index == spr_shotgun_shot) && movespeed < 8) movespeed += 0.25
-			else if (movespeed < 10) movespeed += 0.5
+			if ((sprite_index == spr_player_pistolshot or sprite_index == spr_shotgun_shot) && movespeed < 8) 
+				movespeed += 0.25
+			else if (movespeed < 10) 
+				movespeed += 0.5
 		}
 		if (global.pummeltest && (!instance_exists(lungeattackID))) {
 			with(instance_create(x, y, obj_lungehitbox)) {

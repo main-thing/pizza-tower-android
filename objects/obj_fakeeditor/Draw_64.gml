@@ -51,6 +51,20 @@ if editormode
         draw_set_font(global.smallfont)
         draw_text((button4x + 25), (button4y + 16), "COPY")
     }
+    if gridmode
+    {
+        draw_roundrect_colour(button5x, button5y, (button5x + button5width), (button5y + button5height), c_green, c_green, 0)
+        draw_roundrect_colour(button5x, button5y, (button5x + button5width), (button5y + button5height), c_white, c_white, 1)
+        draw_set_font(global.smallfont)
+        draw_text((button5x + 25), (button5y + 16), "GRID")
+    }
+    else
+    {
+        draw_roundrect_colour(button5x, button5y, (button5x + button5width), (button5y + button5height), c_red, c_red, 0)
+        draw_roundrect_colour(button5x, button5y, (button5x + button5width), (button5y + button5height), c_white, c_white, 1)
+        draw_set_font(global.smallfont)
+        draw_text((button5x + 25), (button5y + 16), "GRID")
+    }
     if (instance_exists(selectedent) && editormode)
     {
         var vars = variable_instance_get_names(selectedent)

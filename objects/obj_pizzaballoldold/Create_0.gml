@@ -30,3 +30,4 @@ boundbox = 0
 important = 0
 heavy = 0
 depth = 0
+destroyable = 0

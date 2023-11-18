@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mu_minigolf.wav",
-  "duration": 208.758,
+  "duration": 208.7588,
   "parent": {
     "name": "Music",
     "path": "folders/Sounds/Music.yy",

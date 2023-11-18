@@ -1,0 +1,10 @@
+image_speed = 0.35
+noise_spawn_x = x + 500
+noise_spawn_y = y
+noise_walk_sprite = spr_noise_walk
+noise_button_sprite = spr_noise_button
+minutes = 1
+seconds = 30
+playerid = noone
+spr_got = spr_treasure1pick
+got = false

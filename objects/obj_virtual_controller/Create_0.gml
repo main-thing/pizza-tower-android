@@ -12,6 +12,8 @@ nejdmsx = ""
 dsnxjk = undefined
 door_object_arr = [obj_taxi, obj_arenadoor, obj_startgate, obj_snickchallengedoor, obj_door, obj_keydoor, obj_geromedoor, obj_hallway, obj_secretportal, obj_lapportal]
 depth = -19999
+old_button_x = x
+old_button_y = y
 //TODO: READ FROM AN EXTERNAL INI FILE SO PEOPLE CAN MAKE CUSTOM LANGAUAGES FOR TEXT HERE.
 if (mysprite != undefined) {
 	sprite_index = mysprite
@@ -152,6 +154,9 @@ function virtual_key_load(buttonstring2 = "") {
 }
 function processcommand(commandstring,silentcommand = false){
 	var _string = string_trim(commandstring)
+	if(string_pos("gml", _string) == 1) {
+		return docommand(_string, silentcommand)
+	}
 	if (string_pos(";", _string) != 0) {
 		var _commands = string_split(_string + ";",";")
 		var i = 0
@@ -184,6 +189,12 @@ function docommand(commandstring,silentcommand = false) {
 				global.panic = true
 				global.fill = 0
 			}
+	}
+	if (string_pos("gml", string_lower(commandstring)) == 1) {
+		var code = string_delete(commandstring,1,4);
+		if(string_length(code) > 2){
+			execute_string(code)
+		}
 	}
 	if (string_pos("spawn", string_lower(commandstring)) == 1) {
 			var commands = string_split(commandstring, " ");
@@ -228,7 +239,8 @@ function docommand(commandstring,silentcommand = false) {
 									with(object){
 										variable_instance_set(id, "createdbyeditor", 1)
 										variable_instance_set(id, "editorplacedroom", room)
-										variable_instance_set(id, "oldinstanceeditor", object_index)
+										variable_instance_set(id, "oldinstanceeditor", object_get_name(object_index))
+										variable_instance_set(id, "persistent", 1)
 									}
 									alarm[1] = 1
 								}
@@ -762,13 +774,36 @@ function docommand(commandstring,silentcommand = false) {
 					} else {
 						global.showbinds = true
 					}
+					audio_resume_all()
 				break
 				case "help":
-					get_string_async("Available Commands: ","noclip, showcollisions <boolean>, panic <seconds>, oldassets <boolean>, enableranks <boolean>, hidetiles, showtiles, toggletiles, character <string>, player_set_state <states.state>,instance_set_variable <obj_> <type> <variablename> <new value>,global_set_variable <type> <variablename> <new value>,spawn <obj_> <optional distance>, play_sound <sound>, play_music <sound>, togglebinds")
+					get_string_async("Available Commands: ","noclip, showcollisions <boolean>, panic <seconds>, oldassets <boolean>, enableranks <boolean>, hidetiles, showtiles, toggletiles, character <string>, player_set_state <states.state>,instance_set_variable <obj_> <type> <variablename> <new value>,global_set_variable <type> <variablename> <new value>,spawn <obj_> <optional distance>, play_sound <sound>, play_music <sound>, togglebinds, gml <gml_code>")
 				break
 	}
 }
 function processedit(commandstring) {
+	
+	if (string_pos("gridsize", string_lower(commandstring)) == 1) {
+		var commands = string_split(commandstring, " ");
+		var argcount = 0
+		var _gridsize = 0 // default
+		for (var i = 1;i < array_length(commands);i++) {
+				if(i == 2){
+					_gridsize = real(commands[i])
+					if(_gridsize <= 1){
+						_gridsize = 1
+					}
+					argcount++
+				}
+				if(i >= 2){
+					break
+				}
+		}
+		if(argcount == 1){
+			global.vkeysgrid_size = _gridsize
+		}
+		return
+	}
 	if (global.selectedvbutton == undefined) {
 		return show_message_async("A button is not selected.")
 	}
@@ -836,6 +871,7 @@ function processedit(commandstring) {
 		}
 		if(argcount == 1){
 			with(global.selectedvbutton){
+				myusualalpha = _alpha
 				image_alpha = _alpha
 			}
 		}

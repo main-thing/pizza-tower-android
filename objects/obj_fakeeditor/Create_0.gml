@@ -16,8 +16,14 @@ button4height = 50
 button4width = 50
 button4x = 180
 button4y = 0
+button5height = 50
+button5width = 50
+button5x = 240
+button5y = 0
 dragmode = 0
 copymode = 0
+gridmode = 0
+grid_size = 32
 editormode = 0
 selectedent = undefined
 oldselectedent = undefined
@@ -49,9 +55,9 @@ function save_editor_objects() //gml_Script_save_editor_objects
 			image_xscale: image_xscale,
 			image_yscale: image_yscale,
 			image_speed: image_speed,
-			persistent: persistent,
 			image_blend: image_blend,
-			object_index: object_index,
+			persistent: persistent,
+			object_index: object_get_name(object_index),
 			depth: depth,
 		}
 		var var_array = variable_instance_get_names(id)
@@ -68,16 +74,30 @@ function save_editor_objects() //gml_Script_save_editor_objects
 	get_string_async("save code:",objectsstring)
 }
 function createeditorobject(loadedobject){
-		with(instance_create(0, 0, loadedobject.object_index)) {
-			var var_array = variable_struct_get_names(loadedobject)
-			var i = 0
-			while (i < array_length(var_array))
-            {
-				if(var_array[i] != "object_index"){
-					variable_instance_set(id, var_array[i], variable_struct_get(loadedobject, var_array[i]))
-				}
-                i++
-            }
+		if(typeof(loadedobject.object_index) != "string"){
+			with(instance_create(0, 0, loadedobject.object_index)) {
+				var var_array = variable_struct_get_names(loadedobject)
+				var i = 0
+				while (i < array_length(var_array))
+	            {
+					if(var_array[i] != "object_index"){
+						variable_instance_set(id, var_array[i], variable_struct_get(loadedobject, var_array[i]))
+					}
+	                i++
+	            }
+			}
+		} else {
+			with(instance_create(0, 0, asset_get_index(loadedobject.object_index))) {
+				var var_array = variable_struct_get_names(loadedobject)
+				var i = 0
+				while (i < array_length(var_array))
+	            {
+					if(var_array[i] != "object_index"){
+						variable_instance_set(id, var_array[i], variable_struct_get(loadedobject, var_array[i]))
+					}
+	                i++
+	            }
+			}
 		}
 }
 function load_editor_objects(argument0) //gml_Script_load_editor_objects
@@ -97,9 +117,11 @@ function load_editor_objects(argument0) //gml_Script_load_editor_objects
 function delete_editor_objects(){
 	with (all)
 	{
-		if (variable_instance_exists(id, "createdbyeditor") && variable_instance_exists(id, "editorplacedroom") && variable_instance_exists(id, "oldinstanceeditor"))
+		if (variable_instance_exists(id, "createdbyeditor"))
 		{
-			instance_destroy()
+			if(createdbyeditor){
+				instance_destroy()
+			}
 		}
 	}
 }

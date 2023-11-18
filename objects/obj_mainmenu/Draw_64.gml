@@ -16,9 +16,11 @@ if(!newstuff){
 	draw_set_font(global.bigfont)
 	draw_text(480, 50, "NEW STUFF")
 	draw_set_font(global.smallfont2)
+	/*
 	var i = 0
 	var previndex_1 = 0
 	var previndex_2 = 0
+	*/
 	var tempstring = textstring
 	/*if string_count("[",textstring) == string_count("]",textstring){	
 		while(i < string_count("[",textstring)){

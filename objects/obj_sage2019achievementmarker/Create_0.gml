@@ -9,7 +9,14 @@ knight = ini_read_string("SAGE2019", "knight", 0)
 toppin = ini_read_string("SAGE2019", "toppin", 0)
 treasure = ini_read_string("SAGE2019", "treasure", 0)
 ini_close()
-
+global.SAGEshotgunsnick = snickshotgun
+global.SAGEdungeonbackup = dungeonbackup
+global.SAGEsrank = srank
+global.SAGEcombo10 = combo10
+global.SAGEsecret = secret
+global.SAGEknight = knight
+global.SAGEtoppin = toppin
+global.SAGEtreasure = treasure
 picy = 640
 up = 0
 sprite = bg_SAGEcombo10

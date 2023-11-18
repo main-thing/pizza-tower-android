@@ -1,4 +1,8 @@
-seconds--
+if(!countup){
+	seconds--
+} else {
+	seconds++
+}
 if (seconds < 0)
 {
 	if (minutes > 0)

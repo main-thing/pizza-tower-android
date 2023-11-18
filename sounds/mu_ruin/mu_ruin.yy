@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mu_ruin",
-  "duration": 116.006,
+  "duration": 116.00689,
   "parent": {
     "name": "Music",
     "path": "folders/Sounds/Music.yy",

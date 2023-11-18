@@ -40,6 +40,9 @@ if (global.showcollisions){
 	with(obj_variable_trigger){
 			visible = true
 	}
+	with(obj_command_trigger){
+			visible = true
+	}
 	with(obj_tvtrigger){
 			visible = true
 	}
@@ -70,6 +73,9 @@ if (!global.showcollisions){
 			visible = false
 	}
 	with(obj_variable_trigger){
+			visible = false
+	}
+	with(obj_command_trigger){
 			visible = false
 	}
 	with(obj_tvtrigger){

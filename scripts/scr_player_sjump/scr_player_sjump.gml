@@ -23,7 +23,8 @@ function scr_player_Sjump()
 		hsp = (xscale * a)
 		vsp = 0
 	}
-	if (scr_solid(x, (y - 1)) && (!(place_meeting(x, (y - 1), obj_destructibles))))
+	var block = instance_place(x,(y - 1), obj_metalblock)
+	if (scr_solid(x, (y - 1)) && (!(place_meeting(x, (y - 1), obj_destructibles))) && (!variable_instance_get(block,"oldblock")))
 	{
 		pizzapepper = 0
 		a = 0
@@ -55,6 +56,9 @@ function scr_player_Sjump()
 		image_index = 0
 		sprite_index = spr_Sjumpcancelstart
 	}
+	if(variable_instance_get(block,"oldblock")){
+		instance_destroy(block)
+	}
 	if (sprite_index == spr_Sjumpcancelstart)
 	{
 		vsp = 0
@@ -79,7 +83,7 @@ function scr_player_Sjump()
 				flash = true;
 				movespeed = 13;
 				image_index = 0;
-				sprite_index = spr_player_Sjumpcancel;
+				sprite_index = spr_Sjumpcancel;
 				state = states.mach3;
 				with (instance_create(x, y, obj_crazyrunothereffect))
 					image_xscale = other.xscale;

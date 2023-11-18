@@ -223,6 +223,8 @@ function scr_playerreset()
 			y = backtohubstarty
 			roomstartx = x
 			roomstarty = y
+			target_x = "null"
+			target_y = "null"
 			backupweapon = 0
 			shotgunAnim = 0
 			box = 0

@@ -1,54 +1,61 @@
-if (state == states.shoulderbash && hsp != 0)
+if (!(obj_player.y < y))
 {
-	if (other.flash)
-		other.flash = false;
-	var s = other.state;
-	scr_hurtplayer(other);
-	if (other.state != s && other.state == states.hurt)
-	{
-		state = states.stun;
-		hsp = -image_xscale * 5;
-		vsp = -8;
-		stunned = 220;
-		sprite_index = spr_pepperman_shoulderhurtstart;
-		image_index = 0;
-		image_speed = 0.35;
-		with (obj_camera)
-		{
-			shake_mag = 3;
-			shake_mag_acc = 5 / room_speed;
-		}
-		repeat (4)
-			create_debris(x, y, spr_slapstar);
-	}
+    with (obj_player)
+    {
+        if ((state != states.hurt && mach2 < 35 && state != states.freefall && state != states.tackle && state != states.barrelroll && state != states.bump && hurted == 0 && barrel == 0) || (other.charging == 1 && hurted == 0))
+        {
+            state = states.hurt
+            obj_player.image_index = 0
+            obj_player.flash = 1
+            obj_player.hsp = (sign((x - other.x)) * 5)
+            if (!(place_meeting(x, (y + 1), obj_wall)))
+            {
+                hurtbounce = 1
+                vsp = -5
+            }
+        }
+        else if (barrel == 1 && state != states.barrelroll)
+        {
+            barrel = 0
+            state = states.hurt
+            obj_player.image_index = 0
+            obj_player.flash = 1
+            obj_player.hsp = (sign((x - other.x)) * 5)
+            if (!(place_meeting(x, (y + 1), obj_wall)))
+            {
+                hurtbounce = 1
+                vsp = -5
+            }
+            instance_create((x + random_range(15, -15)), (y + random_range(15, -15)), obj_wooddebris)
+            instance_create((x + random_range(15, -15)), (y + random_range(15, -15)), obj_wooddebris)
+            instance_create((x + random_range(15, -15)), (y + random_range(15, -15)), obj_wooddebris)
+            instance_create((x + random_range(15, -15)), (y + random_range(15, -15)), obj_wooddebris)
+            instance_create((x + random_range(15, -15)), (y + random_range(15, -15)), obj_wooddebris)
+            instance_create((x + random_range(15, -15)), (y + random_range(15, -15)), obj_wooddebris)
+            instance_create((x + random_range(15, -15)), (y + random_range(15, -15)), obj_wooddebris)
+            instance_create((x + random_range(15, -15)), (y + random_range(15, -15)), obj_wooddebris)
+            instance_create((x + random_range(15, -15)), (y + random_range(15, -15)), obj_wooddebris)
+            instance_create((x + random_range(15, -15)), (y + random_range(15, -15)), obj_wooddebris)
+        }
+    }
 }
-else if (wastedhits == 9 && phase == 1 && !pizzahead && (other.instakillmove || other.state == states.handstandjump) && state == states.contemplate)
-	scr_boss_do_hurt_phase2(other);
-else if (state == states.mini && ministate != states.transition && (other.instakillmove || other.state == states.handstandjump))
+if (obj_player.y < y && obj_player.state != states.hurt && obj_player.state != states.barrelroll && obj_player.barrel == 0 && obj_player.state != states.bump && obj_player.mach2 < 35 && obj_player.state != states.freefall)
 {
-	with (other)
-		scr_pummel();
-	with (obj_camera)
-	{
-		shake_mag = 3;
-		shake_mag_acc = 5 / room_speed;
-	}
-	var lay1 = layer_get_id("Backgrounds_scroll");
-	var lay2 = layer_get_id("Backgrounds_2");
-	var lay3 = layer_get_id("Backgrounds_1");
-	layer_set_visible(lay3, true);
-	var bg1 = layer_background_get_id(lay1);
-	var bg2 = layer_background_get_id(lay2);
-	layer_background_change(bg1, bg_peppermanbosscloud1)
-	layer_background_change(bg2, bg_peppermanboss1)
-	layer_hspeed(lay1, 1);
-	obj_bosscontroller.alarm[1] = 5;
-	scr_sleep(25);
-	instance_destroy(obj_peppermanartdude);
-	instance_destroy(obj_peppermanbowlingball);
-	instance_destroy(obj_peppermanbowlingballspawner);
-	instance_destroy(obj_peppermanGIANTbowlingball);
-	destroyable = true;
-	spr_dead = spr_pepperman_minifall;
-	instance_destroy();
+    obj_player.vsp = -5.5
+    audio_sound_gain(sfx_superjump, 0.7, 0)
+    if (!audio_is_playing(sfx_superjump))
+        audio_play_sound(sfx_superjump, 1, false)
+}
+if ((obj_player.mach2 >= 35 || obj_player.state == states.freefall || obj_player.state == states.punch || obj_player.state == states.barrelroll) && charging == 0)
+{
+    flash = 1
+    stunned = 1
+    obj_player.state = states.tackle
+    obj_player.image_index = 0
+    if (obj_player.x != x)
+        image_xscale = sign((obj_player.x - x))
+    hsp = (sign((x - obj_player.x)) * 4)
+    vsp = -3
+    alarm[0] = 100
+    alarm[1] = 100
 }

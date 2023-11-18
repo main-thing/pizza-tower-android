@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mu_rankd",
-  "duration": 14.836,
+  "duration": 14.836848,
   "parent": {
     "name": "Music",
     "path": "folders/Sounds/Music.yy",

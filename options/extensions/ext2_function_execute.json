@@ -1,0 +1,9 @@
+{
+  "extensionId": {
+    "name": "ext2_function_execute",
+    "path": "extensions/ext2_function_execute/ext2_function_execute.yy"
+  },
+  "resourceVersion": "1.0",
+  "resourceType": "GMExtensionConfigSet",
+  "configurables": null
+}

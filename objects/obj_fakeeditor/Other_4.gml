@@ -35,7 +35,13 @@ with (all)
             _yscale = image_yscale
             for (i = 0; i < array_length(myvars); i++)
                 myvarsvalues[i] = variable_instance_get(id, myvars[i])
-            instance_change(oldinstanceeditor, false)
+			if(typeof(oldinstanceeditor) != "string"){
+				instance_change(oldinstanceeditor, false)
+			} else {
+				if(asset_get_index(oldinstanceeditor) > -1){
+					instance_change(asset_get_index(oldinstanceeditor), false)
+				}
+			}
             for (i = 0; i < array_length(myvars); i++)
                 variable_instance_set(id, myvars[i], myvarsvalues[i])
             persistent = persistence

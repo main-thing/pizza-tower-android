@@ -1,9 +1,9 @@
-var p = 0
+var p = false
 with (obj_player)
 {
 	if (targetDoor == "LAP")
 	{
-		p = 1
+		p = true
 		state = states.actor
 		x = other.x
 		y = other.y

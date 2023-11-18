@@ -31,7 +31,16 @@ if (mouse_check_button_pressed(mb_left) && position_meeting(device_mouse_x_to_gu
 				virtual_key_save(true)
 			}
 			if (keycode == "color") {
-				ndskld = get_string_async("edit selected button(color <red green blue>, sprite <sprite name>, scale <int / float>, alpha <int / float>, image_speed <int / float>, framenumber <int>)", nejdmsx)
+				ndskld = get_string_async("edit selected button(color <red green blue>, sprite <sprite name>, scale <int / float>, alpha <int / float>, image_speed <int / float>, framenumber <int>, gridsize <int / float>)", nejdmsx)
+			}
+			
+			if (keycode == "grid") {
+				global.vkeysgridmode = !global.vkeysgridmode
+				if(global.vkeysgridmode) {
+					sprite_index = spr_pressed
+				} else {
+					sprite_index = mysprite
+				}
 			}
 		}
 		if (keycode == "debug") {	
@@ -65,7 +74,7 @@ if (global.movingvkeys == 0) {
 			vkeycounter++
 		}
 	}
-	if (keycode == "addbutton" || keycode == "delete" || keycode == "load" || keycode == "save" || keycode == "color") {
+	if (keycode == "addbutton" || keycode == "delete" || keycode == "load" || keycode == "save" || keycode == "color" || keycode == "grid") {
 		visible = false
 	}
 	global.selectedvbutton = undefined
@@ -109,9 +118,11 @@ if (global.selectedvbutton == self) {
 		virtual_key_delete(vkeychecker2)	
 	}
 	}
-	if (keycode != "delete" && keycode != "edit" && keycode != "addbutton" && keycode != "load" && keycode != "save" && keycode != "color") {
+	if (keycode != "delete" && keycode != "edit" && keycode != "addbutton" && keycode != "load" && keycode != "save" && keycode != "color" && keycode != "grid") {
 		if (mouse_check_button(mb_left) && position_meeting(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),self)) {
 			if(global.vkcount == 0)	{
+				old_button_x = (x - device_mouse_x_to_gui(0))
+                old_button_y = (y - device_mouse_y_to_gui(0))
 				mouseon = 1
 				global.selectedvbutton = self
 			}
@@ -127,13 +138,17 @@ if (global.selectedvbutton == self) {
 	}
 	vkeycounter = 0
 	if (is_string(keycode)) {
-		if (keycode == "addbutton" || keycode == "delete" || keycode == "load" || keycode == "save" || keycode == "color") {
+		if (keycode == "addbutton" || keycode == "delete" || keycode == "load" || keycode == "save" || keycode == "color" || keycode == "grid") {
 			visible = true
 		}
 	}
 	if (mouseon == 1 && mouse_check_button(mb_left) ){
-		x = device_mouse_x_to_gui(0)
-		y = device_mouse_y_to_gui(0)
+		x = (old_button_x + device_mouse_x_to_gui(0))
+        y = (old_button_y + device_mouse_y_to_gui(0))
+		if(global.vkeysgridmode){
+			x = round(x / global.vkeysgrid_size) * global.vkeysgrid_size
+			y = round(y / global.vkeysgrid_size) * global.vkeysgrid_size
+		}
 	}
 }
 if(pressed) {

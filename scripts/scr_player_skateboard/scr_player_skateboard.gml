@@ -7,7 +7,7 @@ function scr_player_skateboard()
 	{
 		state = states.mach2
 		vsp = -6
-		with (instance_create((x + (xscale * movespeed)), y, obj_skateboard))
+		with (instance_create((x + (xscale * movespeed)), y, obj_skateboardOLD))
 		{
 			xscale = other.xscale
 			hsp = other.hsp

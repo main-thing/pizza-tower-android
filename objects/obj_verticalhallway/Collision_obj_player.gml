@@ -14,6 +14,16 @@ with (other)
 		obj_player2.lastroom = room
 		obj_player1.targetDoor = other.targetDoor
 		obj_player1.targetRoom = other.targetRoom
+		if(variable_instance_exists(other,"target_x")){
+			obj_player1.target_x = other.target_x
+		} else {
+			obj_player1.target_x = "null"
+		}
+		if(variable_instance_exists(other,"target_y")){
+			obj_player1.target_y = other.target_y
+		} else {
+			obj_player1.target_y = "null"
+		}
 		obj_player1.verticalhallway = 1
 		obj_player2.verticalhallway = 1
 		obj_player1.vhallwaydirection = sign(other.image_yscale)
@@ -24,6 +34,16 @@ with (other)
 		{
 			obj_player2.targetDoor = other.targetDoor
 			obj_player2.targetRoom = other.targetRoom
+			if(variable_instance_exists(other,"target_x")){
+				obj_player2.target_x = other.target_x
+			}  else {
+				obj_player2.target_x = "null"
+			}
+			if(variable_instance_exists(other,"target_y")){
+				obj_player2.target_y = other.target_y
+			} else {
+				obj_player2.target_y = "null"
+			}
 		}
 		other.visited = 1
 		scr_soundeffect(sfx_door)

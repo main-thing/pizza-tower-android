@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mu_graveyard.mp3",
-  "duration": 196.224,
+  "duration": 196.22401,
   "parent": {
     "name": "Music",
     "path": "folders/Sounds/Music.yy",

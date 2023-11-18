@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mu_medievalentrance",
-  "duration": 130.024,
+  "duration": 130.02487,
   "parent": {
     "name": "Music",
     "path": "folders/Sounds/Music.yy",

@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_treasure",
-  "duration": 1.714,
+  "duration": 1.714286,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",

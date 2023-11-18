@@ -263,7 +263,12 @@ function scr_player_mach2()
 			suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
 			sfx_gain(suplexdashsnd)
 			state = states.handstandjump
-			movespeed = 8
+			if(!finalmoveset){
+				movespeed = 8
+			} else {
+				if (movespeed < 5)
+					movespeed = 5;
+			}
 			image_index = 0
 			flash = 1
 		}
@@ -282,7 +287,8 @@ function scr_player_mach2()
 					suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
 					sfx_gain(suplexdashsnd)
 					state = states.handstandjump
-					movespeed = 8
+					if (movespeed < 5)
+						movespeed = 5;
 					image_index = 0
 					flash = 1
 				}

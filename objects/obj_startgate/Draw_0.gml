@@ -5,7 +5,7 @@ draw_self()
 if drawing
 {
 	draw_text(x, (y - 150), highscore)
-	draw_text(x, (y - 200), (secret_count + " OF 6 SECRET"))
+	draw_text(x, (y - 200), (string(secret_count) + " OF 6 SECRET"))
 	draw_sprite((toppin[0] ? spr_toppinshroom : spr_toppinshroom_pause), -1, (x - 75), (y - 100))
 	draw_sprite((toppin[1] ? spr_toppincheese : spr_toppincheese_pause), -1, (x - 35), (y - 100))
 	draw_sprite((toppin[2] ? spr_toppintomato : spr_toppintomato_pause), -1, x, (y - 100))

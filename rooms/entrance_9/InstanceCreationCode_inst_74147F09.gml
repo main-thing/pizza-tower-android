@@ -1,2 +1,2 @@
 content = obj_pizzakinpineapple
-depth = 100
+depth = 50

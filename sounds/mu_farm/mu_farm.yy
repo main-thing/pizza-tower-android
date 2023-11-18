@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mu_farm",
-  "duration": 98.195,
+  "duration": 98.19574,
   "parent": {
     "name": "Music",
     "path": "folders/Sounds/Music.yy",

@@ -7,7 +7,7 @@
     "path": "sprites/spr_command_trigger/spr_command_trigger.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,

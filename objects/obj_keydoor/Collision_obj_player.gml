@@ -27,6 +27,24 @@ if (!(place_meeting(x, y, obj_doorblocked)))
 			obj_player1.targetRoom = other.targetRoom
 			obj_player2.targetDoor = other.targetDoor
 			obj_player2.targetRoom = other.targetRoom
+			if(variable_instance_exists(other,"target_x")){
+				obj_player1.target_x = other.target_x
+				obj_player2.target_x = other.target_x
+				target_x = other.target_x
+			} else {
+				obj_player1.target_x = "null"
+				obj_player2.target_x = "null"
+				target_x = "null"
+			}
+			if(variable_instance_exists(other,"target_y")){
+				obj_player1.target_y = other.target_y
+				obj_player2.target_y = other.target_y
+				target_y = other.target_y
+			} else {
+				obj_player1.target_y = "null"
+				obj_player2.target_y = "null"
+				target_y = "null"
+			}
 			obj_player.image_index = 0
 			obj_player.state = states.door
 			obj_player.mach2 = 0

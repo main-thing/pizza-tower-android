@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mu_pinballsecret",
-  "duration": 71.491,
+  "duration": 71.49134,
   "parent": {
     "name": "Music",
     "path": "folders/Sounds/Music.yy",

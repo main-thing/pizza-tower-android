@@ -105,6 +105,16 @@ if (object_index != obj_player2 or global.coop == true)
 			x = (obj_doorF.x + 16)
 		y = (obj_doorF.y - 14)
 	}
+	if(variable_instance_exists(id,"target_x")){
+		if(target_x != "null"){
+			x = target_x
+		}
+	}
+	if(variable_instance_exists(id,"target_y")){
+		if(target_y != "null"){
+			y = target_y
+		}
+	}
 }
 if verticalhallway
 {
@@ -115,6 +125,14 @@ if verticalhallway
 		event_perform(ev_step, ev_step_normal)
 		if (targetDoor == other.targetDoor)
 			_vinst = id
+	}
+	if(target_x != "null"){
+		x = target_x
+		_vinst = noone
+	}
+	if(target_y != "null"){
+		y = target_y
+		_vinst = noone
 	}
 	if (_vinst != noone)
 	{

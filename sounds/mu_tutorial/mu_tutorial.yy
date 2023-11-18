@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mu_tutorial",
-  "duration": 380.604,
+  "duration": 380.6041,
   "parent": {
     "name": "Music",
     "path": "folders/Sounds/Music.yy",

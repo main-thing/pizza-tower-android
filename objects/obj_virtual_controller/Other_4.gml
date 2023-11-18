@@ -9,5 +9,6 @@ if (!variable_instance_exists(self, "gamestartedlmao")) {
 			//virtual_key_show(vkeychecker2)
 		}
 	}
+} else {
 }
 alarm[1] = 1

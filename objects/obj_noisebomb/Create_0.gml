@@ -4,13 +4,13 @@ hsp = 0
 vsp = 0
 grav = 0.23
 movespeed = 3
-with (obj_player)
+sprite_index = spr_noisebomb_intro
+instance_create(x, y, obj_baddietaunteffect)
+playerid = obj_player1
+with (playerid)
 {
 	state = states.backbreaker
 	sprite_index = spr_bossintro
 	image_index = 0
 	scr_soundeffect(sfx_scream5)
 }
-sprite_index = spr_noisebomb_intro
-//instance_create(x, y, obj_taunteffect)
-playerid = obj_player1

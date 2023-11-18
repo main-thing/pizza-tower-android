@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mu_farmsecret",
-  "duration": 71.489,
+  "duration": 71.489365,
   "parent": {
     "name": "Music",
     "path": "folders/Sounds/Music.yy",
