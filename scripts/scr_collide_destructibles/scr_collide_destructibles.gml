@@ -5,7 +5,7 @@ function scr_collide_destructibles()
 		var _obj_player = asset_get_index(concat("obj_player", (i + 1)))
 		with (_obj_player)
 		{
-			if ((state == states.jump && sprite_index == spr_playerN_noisebombspinjump) or state == states.slipbanan or state == states.rideweenie or state == states.trickjump or state == states.ratmountbounce or (state == states.pogo && pogochargeactive == 1))
+			if ((state == states.jump && sprite_index == spr_noisebombspinjump) or state == states.slipbanan or state == states.rideweenie or state == states.trickjump or state == states.ratmountbounce or (state == states.pogo && pogochargeactive == 1))
 			{
 				with (instance_place((x + xscale), y, obj_destructibles))
 				{

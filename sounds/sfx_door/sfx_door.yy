@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "sfx_door",
   "conversionMode": 0,
-  "compression": 0,
+  "compression": 1,
   "volume": 0.54,
   "preload": true,
   "bitRate": 128,

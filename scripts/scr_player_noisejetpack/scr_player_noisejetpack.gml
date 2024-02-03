@@ -6,10 +6,10 @@ function scr_player_noisejetpack()
 	{
 		jetpackfuel--
 		vsp = -6
-		sprite_index = spr_playerN_doublejump
+		sprite_index = spr_doublejump
 	}
 	else
-		sprite_index = spr_playerN_doublejumpfall
+		sprite_index = spr_doublejumpfall
 	if (move != 0)
 	{
 		if (xscale != move)

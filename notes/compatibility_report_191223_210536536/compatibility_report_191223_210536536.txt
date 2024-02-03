@@ -1,0 +1,270 @@
+Converting GML script: ${project_dir}\scripts\NSP_initialize\NSP_initialize.gml
+ERROR: C:\Users\SUHAIL\AppData\Local\GameMakerStudio2\GMS2TEMP\com.surgeonassets.nsp2_70ad5349\mvc\scripts\NSP_initialize\NSP_initialize.gml - 89: Got 'new' (new) expected 'id'
+ERROR: C:\Users\SUHAIL\AppData\Local\GameMakerStudio2\GMS2TEMP\com.surgeonassets.nsp2_70ad5349\mvc\scripts\NSP_initialize\NSP_initialize.gml - 89: unexpected syntax error
+ERROR: C:\Users\SUHAIL\AppData\Local\GameMakerStudio2\GMS2TEMP\com.surgeonassets.nsp2_70ad5349\mvc\scripts\NSP_initialize\NSP_initialize.gml - 89: unexpected syntax error
+ERROR: C:\Users\SUHAIL\AppData\Local\GameMakerStudio2\GMS2TEMP\com.surgeonassets.nsp2_70ad5349\mvc\scripts\NSP_initialize\NSP_initialize.gml - 89: unexpected terminal operator =
+Too many errors - GML not processed : ${project_dir}\scripts\NSP_initialize\NSP_initialize.gml
+
+Converting GML script: ${project_dir}\scripts\NSP_free\NSP_free.gml
+Converted description /// @description NSP_free(Free Saved);/// @param Free Saved
+
+Converting GML script: ${project_dir}\scripts\NSP_execute_string\NSP_execute_string.gml
+Converted description /// @description NSP_execute_string(String)/// @param String
+
+Converting GML script: ${project_dir}\scripts\NSP_evaluate\NSP_evaluate.gml
+Converted description /// @description NSP_evaluate(String)/// @param String
+
+Converting GML script: ${project_dir}\scripts\NSP_notify\NSP_notify.gml
+Converted description /// @description NSP_notify(Message, [OPT] List, Start, End)/// @param Message
+/// @param  [OPT] List
+/// @param  Start
+/// @param  End
+
+Converting GML script: ${project_dir}\scripts\NSP_save\NSP_save.gml
+Converted description /// @description NSP_save(String)/// @param String
+
+Converting GML script: ${project_dir}\scripts\NSP_check_saved\NSP_check_saved.gml
+Converted description /// @description NSP_check_saved(List ID)/// @param List ID
+
+Converting GML script: ${project_dir}\scripts\NSP_execute_saved\NSP_execute_saved.gml
+Converted description /// @description NSP_execute_saved(List ID)/// @param List ID
+
+Converting GML script: ${project_dir}\scripts\NSP_evaluate_saved\NSP_evaluate_saved.gml
+Converted description /// @description NSP_evaluate_saved(List ID)/// @param List ID
+
+Converting GML script: ${project_dir}\scripts\NSP_free_saved\NSP_free_saved.gml
+Converted description /// @description NSP_free_saved(List ID)/// @param List ID
+
+Converting GML script: ${project_dir}\scripts\nsp_execute_master\nsp_execute_master.gml
+Converted description /// @description nsp_execute_master(Start, End, Read-Only, StrList, ParList)/// @param Start
+/// @param  End
+/// @param  Read-Only
+/// @param  StrList
+/// @param  ParList
+
+Converting GML script: ${project_dir}\scripts\nsp_execute_block\nsp_execute_block.gml
+Converted description /// @description nsp_execute_block(Start, End, StrList, ParList)/// @param Start
+/// @param  End
+/// @param  StrList
+/// @param  ParList
+
+Converting GML script: ${project_dir}\scripts\nsp_execute_line\nsp_execute_line.gml
+Converted description /// @description nsp_execute_line(Start, End, StrList, ParList)/// @param Start
+/// @param  End
+/// @param  StrList
+/// @param  ParList
+
+Converting GML script: ${project_dir}\scripts\nsp_execute_single\nsp_execute_single.gml
+Converted description /// @description nsp_execute_single(Start, End, StrList, ParList)/// @param Start
+/// @param  End
+/// @param  StrList
+/// @param  ParList
+
+Converting GML script: ${project_dir}\scripts\nsp_execute_script\nsp_execute_script.gml
+Converted description /// @description nsp_execute_script(Script name, Argument array)/// @param Script name
+/// @param  Argument array
+
+Converting GML script: ${project_dir}\scripts\nsp_convert_to_list\nsp_convert_to_list.gml
+Converted description /// @description nsp_convert_to_list(String, Token List, Types List)/// @param String
+/// @param  Token List
+/// @param  Types List
+
+Converting GML script: ${project_dir}\scripts\nsp_tokenize\nsp_tokenize.gml
+Converted description /// @description nsp_tokenize(String, Token List)/// @param String
+/// @param  Token List
+
+Converting GML script: ${project_dir}\scripts\nsp_get_token_type\nsp_get_token_type.gml
+Converted description /// @description nsp_get_token_type(Token, Following Token)/// @param Token
+/// @param  Following Token
+
+Converting GML script: ${project_dir}\scripts\nsp_list_set_types\nsp_list_set_types.gml
+Converted description /// @description nsp_list_set_types(Token List, Types List)/// @param Token List
+/// @param  Types List
+
+Converting GML script: ${project_dir}\scripts\nsp_list_tidy_and_verify\nsp_list_tidy_and_verify.gml
+Converted description /// @description nsp_list_tidy_and_verify(Token List, Param List)/// @param Token List
+/// @param  Param List
+
+Converting GML script: ${project_dir}\scripts\nsp_get_constant\nsp_get_constant.gml
+Converted description /// @description nsp_get_constant(String)/// @param String
+
+Converting GML script: ${project_dir}\scripts\nsp_statement_positions\nsp_statement_positions.gml
+Converted description /// @description nsp_statement_positions(Start, End, Statement, StrList)/// @param Start
+/// @param  End
+/// @param  Statement
+/// @param  StrList
+
+Converting GML script: ${project_dir}\scripts\nsp_list_remove\nsp_list_remove.gml
+Converted description /// @description nsp_list_remove(Start, End, StrList, ParList)/// @param Start
+/// @param  End
+/// @param  StrList
+/// @param  ParList
+
+Converting GML script: ${project_dir}\scripts\nsp_build_grid\nsp_build_grid.gml
+Converted description /// @description nsp_build_grid(Start, End, StrList, ParList)/// @param Start
+/// @param  End
+/// @param  StrList
+/// @param  ParList
+
+Converting GML script: ${project_dir}\scripts\nsp_grid_shift\nsp_grid_shift.gml
+Converted description /// @description nsp_grid_shift(Grid, Start, End)/// @param Grid
+/// @param  Start
+/// @param  End
+
+Converting GML script: ${project_dir}\scripts\nsp_list_to_string\nsp_list_to_string.gml
+Converted description /// @description nsp_list_to_string(List, Start, End, Separator);/// @param List
+/// @param  Start
+/// @param  End
+/// @param  Separator
+
+Converting GML script: ${project_dir}\scripts\nsp_type_is_a_value\nsp_type_is_a_value.gml
+Converted description /// @description nsp_type_is_a_value(Type)/// @param Type
+
+Converting GML script: ${project_dir}\scripts\nsp_type_name\nsp_type_name.gml
+Converted description /// @description nsp_type_name(Type)/// @param Type
+
+Converting GML script: ${project_dir}\scripts\nsp_evaluate_list\nsp_evaluate_list.gml
+Converted description /// @description nsp_evaluate_list(Start, End, StrList, ParList)/// @param Start
+/// @param  End
+/// @param  StrList
+/// @param  ParList
+
+Converting GML script: ${project_dir}\scripts\nsp_evaluate_single\nsp_evaluate_single.gml
+Converted description /// @description nsp_evaluate_single(String, Type)/// @param String
+/// @param  Type
+
+Converting GML script: ${project_dir}\scripts\nsp_evaluate_long\nsp_evaluate_long.gml
+Converted description /// @description nsp_evaluate_long(Grid, Nested call, [Optional] Start, [Optional] End)/// @param Grid
+/// @param  Nested call
+/// @param  [Optional] Start
+/// @param  [Optional] End
+
+Converting GML script: ${project_dir}\scripts\nsp_evaluate_special_word\nsp_evaluate_special_word.gml
+Converted description /// @description nsp_evaluate_special_word(String)/// @param String
+
+Converting GML script: ${project_dir}\scripts\nsp_variable_set_br\nsp_variable_set_br.gml
+Converted description /// @description nsp_variable_set_br(Instance, Variable, Value)/// @param Instance
+/// @param  Variable
+/// @param  Value
+
+Converting GML script: ${project_dir}\scripts\nsp_variable_get_br\nsp_variable_get_br.gml
+Converted description /// @description nsp_variable_get_br(Instance, Variable)/// @param Instance
+/// @param  Variable
+
+Converting GML script: ${project_dir}\scripts\nsp_variable_global_set_br\nsp_variable_global_set_br.gml
+Converted description /// @description nsp_variable_global_set_br(Variable, Value)/// @param Variable
+/// @param  Value
+
+Converting GML script: ${project_dir}\scripts\nsp_variable_global_get_br\nsp_variable_global_get_br.gml
+Converted description /// @description nsp_variable_global_get_br(Variable)/// @param Variable
+
+Converting GML script: ${project_dir}\scripts\nsp_variable_set_new\nsp_variable_set_new.gml
+Error: variable 'variable_instance_set' has same name as a built-in (function, constant or variable), it must be renamed to function correctly
+Converted description /// @description nsp_variable_set_new(Instance, Variable, Value)/// @param Instance
+/// @param  Variable
+/// @param  Value
+
+Converting GML script: ${project_dir}\scripts\nsp_variable_get_new\nsp_variable_get_new.gml
+Error: variable 'variable_instance_exists' has same name as a built-in (function, constant or variable), it must be renamed to function correctly
+Error: variable 'variable_instance_get' has same name as a built-in (function, constant or variable), it must be renamed to function correctly
+Converted description /// @description nsp_variable_get_new(Instance, Variable)/// @param Instance
+/// @param  Variable
+
+Converting GML script: ${project_dir}\scripts\nsp_variable_global_set_new\nsp_variable_global_set_new.gml
+Error: variable 'variable_global_set' has same name as a built-in (function, constant or variable), it must be renamed to function correctly
+Converted description /// @description nsp_variable_global_set_new(Name, Value)/// @param Name
+/// @param  Value
+
+Converting GML script: ${project_dir}\scripts\nsp_variable_global_get_new\nsp_variable_global_get_new.gml
+Error: variable 'variable_global_exists' has same name as a built-in (function, constant or variable), it must be renamed to function correctly
+Error: variable 'variable_global_get' has same name as a built-in (function, constant or variable), it must be renamed to function correctly
+Converted description /// @description nsp_variable_global_get_new(Name)/// @param Name
+
+Converting GML script: ${project_dir}\scripts\nsp_variable_set\nsp_variable_set.gml
+Converted description /// @description nsp_variable_set(Instance, Variable, Value)/// @param Instance
+/// @param  Variable
+/// @param  Value
+
+Converting GML script: ${project_dir}\scripts\nsp_variable_get\nsp_variable_get.gml
+Converted description /// @description nsp_variable_get(Instance, Variable)/// @param Instance
+/// @param  Variable
+
+Converting GML script: ${project_dir}\scripts\nsp_variable_global_set\nsp_variable_global_set.gml
+Converted description /// @description nsp_variable_global_set(Name, Value)/// @param Name
+/// @param  Value
+
+Converting GML script: ${project_dir}\scripts\nsp_variable_global_get\nsp_variable_global_get.gml
+Converted description /// @description nsp_variable_global_get(Name)/// @param Name
+
+Converting GML script: ${project_dir}\scripts\nsp_dsm_set\nsp_dsm_set.gml
+Converted description /// @description nsp_dsm_set(Name, Value)/// @param Name
+/// @param  Value
+
+Converting GML script: ${project_dir}\scripts\nsp_dsm_get\nsp_dsm_get.gml
+Converted description /// @description nsp_dsm_get(Name)/// @param Name
+
+Converting GML script: ${project_dir}\scripts\nsp_is_special_word\nsp_is_special_word.gml
+Converted description /// @description nsp_is_special_word(String)/// @param String
+
+Converting GML script: ${project_dir}\scripts\nsp_is_string\nsp_is_string.gml
+Converted description /// @description nsp_is_string(String)/// @param String
+
+Converting GML script: ${project_dir}\scripts\nsp_is_number\nsp_is_number.gml
+Converted description /// @description nsp_is_number(String)/// @param String
+
+Converting GML script: ${project_dir}\scripts\nsp_is_script\nsp_is_script.gml
+Converted description /// @description nsp_is_script(String)/// @param String
+
+Converting GML script: ${project_dir}\scripts\nsp_is_asset\nsp_is_asset.gml
+Converted description /// @description nsp_is_asset(String)/// @param String
+
+Converting GML script: ${project_dir}\scripts\nsp_is_variable\nsp_is_variable.gml
+Converted description /// @description nsp_is_variable(String)/// @param String
+
+Converting GML script: ${project_dir}\scripts\nsp_is_dsm\nsp_is_dsm.gml
+Converted description /// @description nsp_is_dsm(String)/// @param String
+
+Converting GML script: ${project_dir}\scripts\nsp_gm_nom\nsp_gm_nom.gml
+Converted description /// @description nsp_gm_nom(String)/// @param String
+
+Converting GML script: ${project_dir}\scripts\nsp_src_token\nsp_src_token.gml
+Converted description /// @description nsp_src_token(String, Position, Token)/// @param String
+/// @param  Position
+/// @param  Token
+
+Converting GML script: ${project_dir}\scripts\nsp_token_is_valid\nsp_token_is_valid.gml
+Converted description /// @description nsp_token_is_valid(Token, Surrounding)/// @param Token
+/// @param  Surrounding
+
+Converting GML script: ${project_dir}\scripts\nsp_arithmetic_calculate\nsp_arithmetic_calculate.gml
+Converted description /// @description nsp_arithmetic_calculate(Value 1, Value 2, Token)/// @param Value 1
+/// @param  Value 2
+/// @param  Token
+
+Converting GML script: ${project_dir}\scripts\nsp_comparison_calculate\nsp_comparison_calculate.gml
+Converted description /// @description nsp_comparison_calculate(Value 1, Value 2, Token)/// @param Value 1
+/// @param  Value 2
+/// @param  Token
+
+Converting GML script: ${project_dir}\scripts\nsp_combination_calculate\nsp_combination_calculate.gml
+Converted description /// @description nsp_combination_calculate(Value 1, Value 2, Token)/// @param Value 1
+/// @param  Value 2
+/// @param  Token
+
+Converting GML script: ${project_dir}\scripts\nsp_is_equal\nsp_is_equal.gml
+Converted description /// @description nsp_is_equal(Value 1, Value 2)/// @param Value 1
+/// @param  Value 2
+
+Converting GML script: ${project_dir}\scripts\nsp_string_crop\nsp_string_crop.gml
+Converted description /// @description nsp_string_crop(String)/// @param String
+
+Converting GML script: ${project_dir}\scripts\nsp_string_crop_ext\nsp_string_crop_ext.gml
+Converted description /// @description nsp_string_crop_ext(String, Condition)/// @param String
+/// @param  Condition
+
+Converting GML script: ${project_dir}\scripts\nsp_string_find_last\nsp_string_find_last.gml
+Converted description /// @description nsp_string_find_last(String, Substring)/// @param String
+/// @param  Substring
+
+Converting GML script: ${project_dir}\scripts\nsp_string_force\nsp_string_force.gml
+Converted description /// @description nsp_string_force(Value)/// @param Value

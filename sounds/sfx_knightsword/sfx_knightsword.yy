@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "sfx_knightsword",
   "conversionMode": 0,
-  "compression": 0,
+  "compression": 1,
   "volume": 0.77,
   "preload": true,
   "bitRate": 128,
@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_knightsword",
-  "duration": 3.428,
+  "duration": 3.428571,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",

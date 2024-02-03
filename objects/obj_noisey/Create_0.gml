@@ -38,3 +38,19 @@ depth = 0
 paletteselect = 1
 spr_palette = palette_forknight
 grabbedby = 0
+is_noise = false
+with (obj_player1)
+{
+	if(character == "N" or(character == "P" && (!ispeppino))){
+		other.is_noise = true
+	}
+}
+if(is_noise){
+	idlespr = spr_doisey_walk
+	stunfallspr = spr_doisey_stun
+	walkspr = spr_doisey_walk
+	grabbedspr = spr_doisey_stun
+	scaredspr = spr_doisey_stun
+	spr_dead = spr_doisey_dead
+}
+sprite_index = walkspr

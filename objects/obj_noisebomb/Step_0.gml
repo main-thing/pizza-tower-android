@@ -8,19 +8,30 @@ else
 	playerid = obj_player2
 if (global.miniboss == false)
 	instance_destroy()
-if (sprite_index == spr_noisebomb_intro && floor(image_index) == (image_number - 1))
+if ((sprite_index == spr_noisebomb_intro||sprite_index == spr_doisebomb_intro) && floor(image_index) == (image_number - 1))
 {
 	sprite_index = spr_noisebomb_idle
+	if(is_noise){
+		sprite_index = spr_doisebomb_idle
+	}
 	x = playerid.x
 	y = playerid.y
 }
-if (global.miniboss == true && sprite_index != spr_noisebomb_intro)
+if (global.miniboss == true && sprite_index != spr_noisebomb_intro && sprite_index != spr_doisebomb_intro)
 {
 	image_alpha = obj_player.image_alpha
-	if (obj_player.hsp != 0)
+	if (obj_player.hsp != 0){
 		sprite_index = spr_noisebomb_walk
-	else
+		if(is_noise){
+			sprite_index = spr_doisebomb_walk
+		}
+	}
+	else{
 		sprite_index = spr_noisebomb_idle
+		if(is_noise){
+			sprite_index = spr_doisebomb_idle
+		}
+	}
 	depth = -6
 	if (global.pineapplefollow == 1)
 	{

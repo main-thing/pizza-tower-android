@@ -65,7 +65,7 @@ function state_player_jump()
 			if place_meeting((x + xscale), y, obj_solid)
 			{
 				scr_soundeffect(sfx_step)
-				sprite_index = spr_playerN_wallclingstart
+				sprite_index = spr_wallclingstart
 				image_index = 0
 				state = states.hang
 				xscale *= -1
@@ -75,7 +75,7 @@ function state_player_jump()
 			else if ((!doublejump) && sprite_index != spr_freefall && sprite_index != spr_facestomp)
 			{
 				scr_soundeffect(sfx_woosh)
-				sprite_index = spr_playerN_doublejump
+				sprite_index = spr_doublejump
 				image_index = 0
 				jumpstop = 0
 				vsp = -9
@@ -169,8 +169,8 @@ function state_player_jump()
 				case spr_mortdoublejumpstart:
 					sprite_index = spr_mortdoublejump
 					break
-				case spr_playerN_doublejump:
-					sprite_index = spr_playerN_doublejumpfall
+				case spr_doublejump:
+					sprite_index = spr_doublejumpfall
 					break
 				case spr_airdash1:
 					sprite_index = spr_airdash2
@@ -496,7 +496,7 @@ function state_player_jump()
 			{
 				scr_soundeffect(sfx_noisewoah)
 				if (!key_up)
-					sprite_index = spr_playerN_jetpackstart
+					sprite_index = spr_Sjumpcancelstart
 				else
 					sprite_index = spr_superjumpprep
 				image_index = 0
@@ -506,7 +506,7 @@ function state_player_jump()
 			}
 			if (key_attack && (!pogochargeactive) && (!key_slap2) && pizzapepper == 0)
 			{
-				sprite_index = spr_playerN_pogostart
+				sprite_index = spr_pogostart
 				image_index = 0
 				state = states.pogo
 			}

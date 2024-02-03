@@ -91,12 +91,12 @@ function scr_player_Sjumpprep()
 			pogocharge = 50
 			if (floor(image_index) == (image_number - 1))
 			{
-				if (sprite_index == spr_playerN_jetpackstart)
+				if (sprite_index == spr_Sjumpcancelstart)
 				{
 					if (pizzapepper == 0)
 					{
 						state = states.mach3
-						sprite_index = spr_playerN_jetpackboost
+						sprite_index = spr_Sjumpcancel
 						instance_create(x, y, obj_jumpdust)
 						movespeed = 15
 					}

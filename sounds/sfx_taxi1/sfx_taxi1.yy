@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "sfx_taxi1",
   "conversionMode": 0,
-  "compression": 0,
+  "compression": 1,
   "volume": 0.2,
   "preload": true,
   "bitRate": 128,

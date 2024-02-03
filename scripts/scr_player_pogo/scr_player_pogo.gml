@@ -21,7 +21,7 @@ function scr_player_pogo()
 		xscale = move
 	if (move != xscale)
 		pogospeed = 6
-	if (grounded && (!key_slap2) && sprite_index != spr_playerN_pogobounce && sprite_index != spr_playerN_pogobouncemach)
+	if (grounded && (!key_slap2) && sprite_index != spr_pogobounce && sprite_index != spr_pogobouncemach)
 	{
 		scr_soundeffect(sfx_Npogo3)
 		pogospeedprev = 0
@@ -29,12 +29,12 @@ function scr_player_pogo()
 		movespeed = 0
 		vsp = 0
 		if (pogochargeactive == 1)
-			sprite_index = spr_playerN_pogobouncemach
+			sprite_index = spr_pogobouncemach
 		else
-			sprite_index = spr_playerN_pogobounce
+			sprite_index = spr_pogobounce
 		create_particle(x, y, particle.landcloud, 0)
 	}
-	if (floor(image_index) == 3 && pogospeedprev == 0 && (sprite_index == spr_playerN_pogobounce or sprite_index == spr_playerN_pogobouncemach))
+	if (floor(image_index) == 3 && pogospeedprev == 0 && (sprite_index == spr_pogobounce or sprite_index == spr_pogobouncemach))
 	{
 		if key_jump2
 			vsp = -12
@@ -49,12 +49,12 @@ function scr_player_pogo()
 		movespeed = pogospeed
 		pogospeedprev = 1
 	}
-	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_playerN_pogobounce or sprite_index == spr_playerN_pogofallmach or sprite_index == spr_playerN_pogobouncemach or sprite_index == spr_playerN_pogostart))
+	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_pogobounce or sprite_index == spr_pogofallmach or sprite_index == spr_pogobouncemach or sprite_index == spr_pogostart))
 	{
 		if (pogochargeactive == 1)
-			sprite_index = spr_playerN_pogofallmach
+			sprite_index = spr_pogofallmach
 		else
-			sprite_index = spr_playerN_pogofall
+			sprite_index = spr_pogofall
 	}
 	if (pogospeed > 12 && pogochargeactive == 0)
 	{
@@ -67,7 +67,7 @@ function scr_player_pogo()
 	if (!key_attack)
 		state = states.normal
 	image_speed = 0.35
-	if (key_taunt2 && sprite_index != spr_playerN_pogobounce && sprite_index != spr_playerN_pogobouncemach)
+	if (key_taunt2 && sprite_index != spr_pogobounce && sprite_index != spr_pogobouncemach)
 	{
 		scr_soundeffect(sfx_taunt)
 		taunttimer = 20

@@ -1,4 +1,7 @@
-if(!has_touched_player) {
+if(single && has_touched_player){
+	return
+}
+if(variable_instance_get(other,variable_internal)) {
 	if(!is_global) {
 		if(instance_exists(object)) {
 			with(object) {

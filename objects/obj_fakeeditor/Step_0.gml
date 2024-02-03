@@ -112,3 +112,5 @@ if mouse_check_button_pressed(mb_left)
         hoverbutton = 1
     if (device_mouse_x_to_gui(0) < (button4x + button4width) && device_mouse_y_to_gui(0) < (button4y + button4height) && device_mouse_x_to_gui(0) >= button4x && device_mouse_y_to_gui(0) >= button4y)
         hoverbutton = 1
+    if (device_mouse_x_to_gui(0) < (button5x + button5width) && device_mouse_y_to_gui(0) < (button5y + button5height) && device_mouse_x_to_gui(0) >= button5x && device_mouse_y_to_gui(0) >= button5y)
+        hoverbutton = 1

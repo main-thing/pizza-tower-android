@@ -20,7 +20,7 @@ if (i_d == dsxioks)
 						amogustextlol = get_string_async("load code: ", clipboard_get_text())
 					} else{
 							amogustextlol = get_string_async("load code: ","")
-						}
+					}
 				}
 			}
 		}

@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "sfx_mach1",
   "conversionMode": 0,
-  "compression": 0,
+  "compression": 1,
   "volume": 1.0,
   "preload": true,
   "bitRate": 128,
@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_mach1",
-  "duration": 1.9330001,
+  "duration": 1.933061,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",

@@ -17,11 +17,14 @@ with (all)
             var persistence = persistent
             var _xscale = image_xscale
             var _yscale = image_yscale
+            var _sprite_index = sprite_index
             for (i = 0; i < array_length(myvars); i++)
                 myvarsvalues[i] = variable_instance_get(id, myvars[i])
             instance_change(obj_null, false)
-            for (i = 0; i < array_length(myvars); i++)
+            for (i = 0; i < array_length(myvars); i++){
                 variable_instance_set(id, myvars[i], myvarsvalues[i])
+			}
+			_saved_sprite = sprite_get_name(sprite_index)
             persistent = persistence
             image_xscale = _xscale
             image_yscale = _yscale
@@ -44,6 +47,9 @@ with (all)
 			}
             for (i = 0; i < array_length(myvars); i++)
                 variable_instance_set(id, myvars[i], myvarsvalues[i])
+			if(variable_instance_exists(id,"_saved_sprite")){
+				sprite_index = asset_get_index(_saved_sprite)
+			}
             persistent = persistence
             image_xscale = _xscale
             image_yscale = _yscale

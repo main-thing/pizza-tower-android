@@ -1,0 +1,9 @@
+{
+  "extensionId": {
+    "name": "N_String_Parser_2",
+    "path": "extensions/N_String_Parser_2/N_String_Parser_2.yy"
+  },
+  "resourceVersion": "1.0",
+  "resourceType": "GMExtensionConfigSet",
+  "configurables": null
+}

@@ -165,7 +165,7 @@ function scr_player_machroll()
 				image_index = 0
 				scr_soundeffect(sfx_rollgetup)
 				state = states.mach3
-				sprite_index = spr_playerN_jetpackboost
+				sprite_index = spr_Sjumpcancel
 			}
 			if ((!instance_exists(dashcloudid)) && grounded)
 			{

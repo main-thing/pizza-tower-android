@@ -434,14 +434,14 @@ function state_player_normal()
 					scr_soundeffect(sfx_noisewoah)
 					state = states.Sjumpprep
 					image_index = 0
-					sprite_index = ((!key_up) ? spr_playerN_jetpackstart : spr_superjumpprep)
+					sprite_index = ((!key_up) ? spr_jetpackstart : spr_superjumpprep)
 					hsp = 0
 					vsp = 0
 				}
 			}
 			else if (key_attack && (!key_slap2))
 			{
-				sprite_index = spr_playerN_pogostart
+				sprite_index = spr_pogostart
 				image_index = 0
 				state = states.pogo
 			}

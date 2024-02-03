@@ -43,7 +43,21 @@ if (global.showcollisions){
 	with(obj_command_trigger){
 			visible = true
 	}
+	
+	with(obj_music_trigger_door){
+			visible = true
+	}
+	with(obj_background_trigger_door){
+			visible = true
+	}
+	with(obj_command_trigger_door){
+			visible = true
+	}
+	
 	with(obj_tvtrigger){
+			visible = true
+	}
+	with(obj_tvtrigger_editor){
 			visible = true
 	}
 }
@@ -78,7 +92,22 @@ if (!global.showcollisions){
 	with(obj_command_trigger){
 			visible = false
 	}
+	
+	with(obj_music_trigger_door){
+			visible = false
+	}
+	with(obj_background_trigger_door){
+			visible = false
+	}
+	with(obj_command_trigger_door){
+			visible = false
+	}
+	
 	with(obj_tvtrigger){
+			visible = false
+	}
+	
+	with(obj_tvtrigger_editor){
 			visible = false
 	}
 }

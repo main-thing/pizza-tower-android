@@ -1,8 +1,8 @@
 function scr_player_hang()
 {
 	hsp = 0
-	if (sprite_index == spr_playerN_wallclingstart && floor(image_index) == (image_number - 1))
-		sprite_index = spr_playerN_wallcling
+	if (sprite_index == spr_wallclingstart && floor(image_index) == (image_number - 1))
+		sprite_index = spr_wallcling
 	vsp = 0
 	wallclingcooldown = 0
 	if (floor(image_index) == (image_number - 1))
@@ -12,7 +12,7 @@ function scr_player_hang()
 		jumpstop = 0
 		vsp = -15
 		state = states.jump
-		sprite_index = spr_playerN_noisebombspinjump
+		sprite_index = spr_noisebombspinjump
 		image_index = 0
 		with (instance_create(x, y, obj_jumpdust))
 			image_xscale = other.xscale

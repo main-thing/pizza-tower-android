@@ -181,7 +181,7 @@ function edit_object_var(argument0) //gml_Script_edit_object_var
                         case "string":
                             if is_string(commands[i])
                             {
-                                variable_instance_set(selectedent, variabletochange, string_replace(commandstring, "string " + variabletochange, ""))
+                                variable_instance_set(selectedent, variabletochange, string_replace(commandstring, "string " + variabletochange + " ", ""))
                                 show_message_async("successfully set string")
                             }
                             break
@@ -250,7 +250,7 @@ function edit_object_var(argument0) //gml_Script_edit_object_var
                         case "string":
                             if is_string(commands[i])
                             {
-                                variable_instance_set(selectedent, variabletochange, string_replace(commandstring, "string " + variabletochange, ""))
+                                variable_instance_set(selectedent, variabletochange, string_replace(commandstring, "string " + variabletochange + " ", ""))
                                 show_message_async("successfully set string")
                             }
                             break
@@ -304,7 +304,7 @@ function edit_object_var(argument0) //gml_Script_edit_object_var
                         case "string":
                             if is_string(commands[i])
                             {
-                                variable_instance_set(selectedent, variabletochange, string_replace(commandstring, "string " + variabletochange, ""))
+                                variable_instance_set(selectedent, variabletochange, string_replace(commandstring, "string " + variabletochange + " ", ""))
                                 show_message_async("successfully set string")
                             }
                             break

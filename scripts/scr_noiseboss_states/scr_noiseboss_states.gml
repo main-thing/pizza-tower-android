@@ -694,7 +694,7 @@ function boss_noise_jetpack()
 			scr_soundeffect(sfx_jump)
 			scr_soundeffect(sfx_woosh)
 			vsp = -15
-			sprite_index = spr_playerN_noisebombspinjump
+			sprite_index = spr_noisebombspinjump
 			image_index = 0
 			particle_set_scale(particle.jumpdust, image_xscale, 1)
 			create_particle(x, y, particle.jumpdust, 0)
@@ -734,7 +734,7 @@ function boss_noise_jetpackspin()
 			scr_soundeffect(sfx_jump)
 			scr_soundeffect(sfx_woosh)
 			vsp = -15
-			sprite_index = spr_playerN_noisebombspinjump
+			sprite_index = spr_noisebombspinjump
 			image_index = 0
 			particle_set_scale(particle.jumpdust, image_xscale, 1)
 			create_particle(x, y, particle.jumpdust, 0)

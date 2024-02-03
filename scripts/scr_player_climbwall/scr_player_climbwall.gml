@@ -189,9 +189,9 @@ function scr_player_climbwall()
 			break
 		case "N":
 			hsp = 0
-			if (sprite_index == spr_playerN_wallclingstart && floor(image_index) == (image_number - 1))
-				sprite_index = spr_playerN_wallcling
-			if (sprite_index == spr_playerN_wallcling)
+			if (sprite_index == spr_wallclingstart && floor(image_index) == (image_number - 1))
+				sprite_index = spr_wallcling
+			if (sprite_index == spr_wallcling)
 				vsp = 2
 			else
 				vsp = 0

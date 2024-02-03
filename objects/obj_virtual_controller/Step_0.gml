@@ -48,17 +48,6 @@ if (mouse_check_button_pressed(mb_left) && position_meeting(device_mouse_x_to_gu
 				dwnxed = get_string_async("Debug ( help )", nejdmsx)
 			}
 		}
-		if (keycode == "bind") {
-			if (global.movingvkeys == 0) {
-				if(global.showbinds){
-					processcommand(keycode2,true)
-				} else {
-					if(string_pos("togglebinds",string_lower(string(keycode2))) != 0){
-						processcommand(keycode2,true)
-					}
-				}
-			}
-		}
 }
 if (global.movingvkeys == 0) {
 	if (vkeycounter == 0) {

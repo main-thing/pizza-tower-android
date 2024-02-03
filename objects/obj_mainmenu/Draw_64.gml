@@ -5,16 +5,16 @@ if(!newstuff){
 	draw_set_font(global.smallfont2)
 	draw_text(100, 520, "PORTED BY MAIN_THING")
 	draw_set_font(global.bigfont)
-	draw_text(480, 350, "LEVEL SELECT")
-	draw_text(480, 390, "WHATS NEW")
-	draw_text(480, 430, "OPTIONS")
+	draw_text(display_get_gui_width() / 2, 350, "LEVEL SELECT")
+	draw_text(display_get_gui_width() / 2, 390, "WHATS NEW")
+	draw_text(display_get_gui_width() / 2, 430, "OPTIONS")
 	draw_sprite(spr_cursor, 0, 300, (350 + (selected_option * 40)))
 } else {
 	draw_set_halign(fa_center)
 	draw_set_valign(fa_left)
 	draw_set_color(c_white)
 	draw_set_font(global.bigfont)
-	draw_text(480, 50, "NEW STUFF")
+	draw_text(display_get_gui_width() / 2, 50, "NEW STUFF")
 	draw_set_font(global.smallfont2)
 	/*
 	var i = 0

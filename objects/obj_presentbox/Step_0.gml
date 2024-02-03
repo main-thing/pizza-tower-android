@@ -228,6 +228,12 @@ switch character
 		spr = spr_noisepresent
 		downspr = spr_noisepresentdown
 		deadspr = spr_playerN_hurt
+		if(is_noise){
+			upspr = spr_doisepresentup
+			spr = spr_doisepresent
+			downspr = spr_doisepresentdown
+			deadspr = spr_doise_hurt
+		}
 		break
 	case 1:
 		upspr = spr_gustavopresentup
