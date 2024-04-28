@@ -1,2 +1,2 @@
 level = "ufo"
-targetRoom = ufo_13
+targetRoom = ufo_1

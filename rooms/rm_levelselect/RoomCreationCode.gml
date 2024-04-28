@@ -6,3 +6,4 @@ with (obj_player)
 	y = -100
 	state = states.titlescreen
 }
+global.forcehidecontrols = false

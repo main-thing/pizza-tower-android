@@ -39,7 +39,7 @@ function scr_player_punch()
 		else
 		{
 			punch_afterimage = 5
-			create_blue_afterimage(x, y, sprite_index, image_index, xscale)
+			create_blue_afterimage_player(x, y, sprite_index, image_index, xscale)
 		}
 	}
 	else
@@ -133,10 +133,10 @@ function scr_player_punch()
 					if (sprite_index == spr_Sjumpcancelslide)
 						image_speed = (abs(movespeed) / 15)
 				}
-				if (sprite_index != spr_player_kungfujump && place_meeting((x + xscale), y, obj_solid) && (!(place_meeting((x + xscale), y, obj_destructibles))) && (!(place_meeting((x + xscale), y, obj_slope))))
+				if (sprite_index != spr_kungfujump && place_meeting((x + xscale), y, obj_solid) && (!(place_meeting((x + xscale), y, obj_destructibles))) && (!(place_meeting((x + xscale), y, obj_slope))))
 				{
 					vsp = -4
-					sprite_index = spr_player_kungfujump
+					sprite_index = spr_kungfujump
 					image_index = 0
 					state = states.punch
 					movespeed = -6
@@ -146,7 +146,7 @@ function scr_player_punch()
 				else
 				{
 					punch_afterimage = 5
-					create_blue_afterimage(x, y, sprite_index, image_index, xscale)
+					create_blue_afterimage_player(x, y, sprite_index, image_index, xscale)
 				}
 				if ((!instance_exists(obj_dashcloud2)) && grounded && movespeed > 5)
 				{

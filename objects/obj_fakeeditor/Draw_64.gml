@@ -1,76 +1,52 @@
-draw_set_halign(fa_center)
-if editormode
+if(!instance_exists(obj_fakeeditor)){
+	return 0;
+}
+if (instance_exists(selectedent) && editormode && !in_play_mode)
 {
-    if button1clicked
-    {
-        draw_roundrect_colour(button1x, button1y, (button1x + button1width), (button1y + button1height), c_gray, c_gray, 0)
-        draw_roundrect_colour(button1x, button1y, (button1x + button1width), (button1y + button1height), c_white, c_white, 1)
-        draw_sprite(spr_menuicon, 1, (button1x - 7), (button1y - 7))
-    }
-    else
-    {
-        draw_roundrect_colour(button1x, button1y, (button1x + button1width), (button1y + button1height), c_black, c_black, 0)
-        draw_roundrect_colour(button1x, button1y, (button1x + button1width), (button1y + button1height), c_white, c_white, 1)
-        draw_sprite(spr_menuicon, 0, (button1x - 7), (button1y - 7))
-    }
-    if button2clicked
-    {
-        draw_roundrect_colour(button2x, button2y, (button2x + button2width), (button2y + button2height), c_gray, c_gray, 0)
-        draw_roundrect_colour(button2x, button2y, (button2x + button2width), (button2y + button2height), c_white, c_white, 1)
-        draw_sprite(spr_font, 23, (button2x + 8), (button2y + 8))
-    }
-    else
-    {
-        draw_roundrect_colour(button2x, button2y, (button2x + button2width), (button2y + button2height), c_maroon, c_maroon, 0)
-        draw_roundrect_colour(button2x, button2y, (button2x + button2width), (button2y + button2height), c_white, c_white, 1)
-        draw_sprite(spr_font, 23, (button2x + 8), (button2y + 8))
-    }
-    if dragmode
-    {
-        draw_roundrect_colour(button3x, button3y, (button3x + button3width), (button3y + button3height), c_yellow, c_yellow, 0)
-        draw_roundrect_colour(button3x, button3y, (button3x + button3width), (button3y + button3height), c_white, c_white, 1)
-        draw_sprite_ext(spr_grabbiehand_catch, 0, (button3x + 23), (button3y + 14), 0.8, 0.8, 0, c_white, 1)
-    }
-    else
-    {
-        draw_roundrect_colour(button3x, button3y, (button3x + button3width), (button3y + button3height), c_gray, c_gray, 0)
-        draw_roundrect_colour(button3x, button3y, (button3x + button3width), (button3y + button3height), c_white, c_white, 1)
-        draw_sprite_ext(spr_grabbiehand_idle, 0, (button3x + 23), (button3y + 14), 0.8, 0.8, 0, c_white, 1)
-    }
-    if copymode
-    {
-        draw_roundrect_colour(button4x, button4y, (button4x + button4width), (button4y + button4height), c_green, c_green, 0)
-        draw_roundrect_colour(button4x, button4y, (button4x + button4width), (button4y + button4height), c_white, c_white, 1)
-        draw_set_font(global.smallfont)
-        draw_text((button4x + 25), (button4y + 16), "COPY")
-    }
-    else
-    {
-        draw_roundrect_colour(button4x, button4y, (button4x + button4width), (button4y + button4height), c_red, c_red, 0)
-        draw_roundrect_colour(button4x, button4y, (button4x + button4width), (button4y + button4height), c_white, c_white, 1)
-        draw_set_font(global.smallfont)
-        draw_text((button4x + 25), (button4y + 16), "COPY")
-    }
-    if gridmode
-    {
-        draw_roundrect_colour(button5x, button5y, (button5x + button5width), (button5y + button5height), c_green, c_green, 0)
-        draw_roundrect_colour(button5x, button5y, (button5x + button5width), (button5y + button5height), c_white, c_white, 1)
-        draw_set_font(global.smallfont)
-        draw_text((button5x + 25), (button5y + 16), "GRID")
-    }
-    else
-    {
-        draw_roundrect_colour(button5x, button5y, (button5x + button5width), (button5y + button5height), c_red, c_red, 0)
-        draw_roundrect_colour(button5x, button5y, (button5x + button5width), (button5y + button5height), c_white, c_white, 1)
-        draw_set_font(global.smallfont)
-        draw_text((button5x + 25), (button5y + 16), "GRID")
-    }
-    if (instance_exists(selectedent) && editormode)
-    {
-        var vars = variable_instance_get_names(selectedent)
-        draw_set_font(font0)
-        draw_set_halign(fa_left)
-        for (var i = 0; i < array_length(vars); i++)
-            draw_text_transformed(0, ((i * 10) + 100), ((vars[i] + " = ") + string(variable_instance_get(selectedent, vars[i]))), 0.8, 0.8, 0)
-    }
+	var _myvars = variable_instance_get_names(selectedent)
+	var return_array = [];
+	var clean_index = 0;
+
+	// Iterate through array1
+	for (var i = 0; i < array_length(_myvars); i++) {
+	var item = _myvars[i];
+	var found = false;
+    
+	// Check if the current item of array1 is in array2
+	for (var j = 0; j < array_length(selectedent.fake_ed_remove_vars); j++) {
+		if (item == selectedent.fake_ed_remove_vars[j]) {
+			found = true;
+			break; // Exit the loop if the item is found in array2
+		}
+	}
+	// If the item is not found in array2, add it to return_array
+	if (!found) {
+		return_array[clean_index] = item;
+		clean_index++;
+	}
+	}
+
+	// At this point, return_array contains only the elements from array1 that are not in array2
+	// If you want to replace array1 with return_array, you can do so
+	_myvars = return_array;
+    draw_set_font(font0)
+    draw_set_color(c_white)
+    draw_set_halign(fa_left)
+    for (var i = 0; i <= array_length(_myvars)-1; i++)
+        draw_text_transformed(0, ((i * 10) + 100), ((_myvars[i] + " = ") + string(variable_instance_get(selectedent, _myvars[i]))), 0.8, 0.8, 0)
+}
+/*
+if(!surface_exists(tileselectsurf)){
+	tileselectsurf = surface_create_(tileselectsurf_width,tileselectsurf_height)
+} else {
+	surface_set_target(tileselectsurf);
+	draw_clear(c_black)
+	if(keyboard_check(vk_space)){
+		funnyx -= 1
+	}
+	draw_sprite(tile_secret,0,0,funnyx)
+	surface_reset_target();
+	draw_set_color(c_white)
+	draw_rectangle(tileselectsurf_x, tileselectsurf_y, tileselectsurf_x + tileselectsurf_width,tileselectsurf_y + tileselectsurf_height,2)
+	draw_surface(tileselectsurf, tileselectsurf_x, tileselectsurf_y);
 }

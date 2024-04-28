@@ -5,6 +5,10 @@ if(step_event != ""){
 		}
 	}
 }
-if(asset_get_index(sprite) != -1 && sprite_exists(asset_get_index(sprite))){
-	sprite_index = asset_get_index(sprite)
+if(!spriteids){
+	if(asset_get_index(sprite) != -1 && sprite_exists(asset_get_index(sprite))){
+		sprite_index = asset_get_index(sprite)
+	}
+} else {
+	sprite_index = sprite
 }

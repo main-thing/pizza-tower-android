@@ -1,5 +1,10 @@
 if (room == editor_room)
 	exit;
+if(instance_exists(obj_fakeeditor)){
+	if(!obj_fakeeditor.in_play_mode){
+		exit;
+	}
+}
 player = (obj_player1.spotlight == 1 ? obj_player1 : obj_player2)
 if (!instance_exists(obj_pizzaball))
 	targetgolf = noone
@@ -166,8 +171,13 @@ if (instance_exists(player) && player.state != states.timesup && player.state !=
 			{
 				var cam_x = (((target.x - (cam_width / 2)) + chargecamera) + p2pdistancex)
 				var cam_y = ((target.y - (cam_height / 2)) - 50)
-				cam_x = clamp(cam_x, 0, (room_width - cam_width))
-				cam_y = clamp(cam_y, 0, (room_height - cam_height))
+				if(!ignorebounds){
+					cam_x = clamp(cam_x, 0, (room_width - cam_width))
+					cam_y = clamp(cam_y, 0, (room_height - cam_height))
+				} else if(instance_exists(obj_fakeeditor)){
+					cam_x = clamp(cam_x, fakex, (fakewidth + fakex - cam_width))
+					cam_y = clamp(cam_y, fakey - fakeheight, (fakey - cam_height))
+				}
 				camera_zoom(1, 0.035)
 			}
 			else if (obj_player2.state != states.titlescreen)

@@ -14,5 +14,6 @@ else
 {
 	ds_list_destroy(tex_list)
 	room_goto(Realtitlescreen)
+	scr_startupcommand()
 }
 alarm[0] = 1

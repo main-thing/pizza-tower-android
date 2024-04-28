@@ -28,8 +28,7 @@ function warbg_init()
 		var _id = layer_get_id(arr[i])
 		if (_id != -1)
 		{
-			//layer_script_begin(_id, warbg_start)
-			//layer_script_end(_id, warbg_end)
+			instance_create_depth(0,0,layer_get_depth(_id)-1,obj_warshader)
 		}
 	}
 	exit;

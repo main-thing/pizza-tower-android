@@ -4,6 +4,9 @@ function processcommand(commandstring,silentcommand = false,is_trigger = false){
 	if(string_pos("gml", _string) == 1) {
 		return docommand(_string, silentcommand, is_trigger)
 	}
+	if(string_pos("startupcommand", _string) == 1) {
+		return docommand(_string, silentcommand, is_trigger)
+	}
 	if (string_pos(";", _string) != 0) {
 		var _commands = string_split(_string + ";",";")
 		var i = 0
@@ -42,17 +45,41 @@ function docommand(commandstring,silentcommand = false,is_trigger = false) {
 			}
 	}
 	if (string_pos("reload_gml", string_lower(commandstring)) == 1) {
+		global.nsp_errorcount = 0
 		with(obj_custom_object){
-			NSP_free_saved(step_event_saved)
-			step_event_saved = NSP_save(step_event)
-			draw_event_saved = NSP_save(draw_event)
-			drawgui_event_saved = NSP_save(drawgui_event)
+			if(step_event_saved != undefined){
+				NSP_free_saved(step_event_saved)
+			}
+			if(draw_event_saved != undefined){
+				NSP_free_saved(draw_event_saved)
+			}
+			if(drawgui_event_saved != undefined){
+				NSP_free_saved(drawgui_event_saved)
+			}
+			if(step_event != ""){
+				step_event_saved = NSP_save(step_event)
+			}
+			if(draw_event != ""){
+				draw_event_saved = NSP_save(draw_event)
+			}
+			if(drawgui_event != ""){
+				drawgui_event_saved = NSP_save(drawgui_event)
+			}
 		}
 	}
 	if (string_pos("gml", string_lower(commandstring)) == 1) {
 		var code = string_delete(commandstring,1,4);
 		if(string_length(code) > 2){
+			global.nsp_errorcount = 0
 			NSP_execute_string(code)
+		}
+	}
+	if (string_pos("startupcommand", string_lower(commandstring)) == 1) {
+		var code = string_delete(commandstring,1,15);
+		if(string_length(code) > 2){
+			var file = file_text_open_write(working_directory + "startupcommand.txt")
+			file_text_write_string(file,code)
+			file_text_close(file);
 		}
 	}
 	if (string_pos("spawn", string_lower(commandstring)) == 1) {
@@ -105,8 +132,8 @@ function docommand(commandstring,silentcommand = false,is_trigger = false) {
 					}
 				}
 			}
-			if(instance_exists(obj_fakeeditor)){
-				if(obj_fakeeditor.editormode == 1){
+			if(instance_exists(obj_fakeeditor_old)){
+				if(obj_fakeeditor_old.editormode == 1){
 					with(object){
 						variable_instance_set(id, "createdbyeditor", 1)
 						variable_instance_set(id, "editorplacedroom", room)
@@ -598,6 +625,31 @@ function docommand(commandstring,silentcommand = false,is_trigger = false) {
 					}
 					alarm[1] = 1
 				break
+				case "heatmeter true":
+					global.heatmetervisible = true
+				break
+				case "heatmeter false":
+					global.heatmetervisible = false
+				break
+				case "heatmeter":
+				case "heatmetertoggle":
+					global.heatmetervisible = !global.heatmetervisible
+				break
+				case "finalmoveset true":
+					with(obj_player){
+						finalmoveset = true
+					}
+				break
+				case "finalmoveset false":
+					with(obj_player){
+						finalmoveset = false
+					}
+				break
+				case "finalmoveset":
+					with(obj_player){
+						finalmoveset = !finalmoveset
+					}
+				break
 				case "enablerank true":
 				case "enableranks true":
 					global.showrank = true
@@ -612,15 +664,56 @@ function docommand(commandstring,silentcommand = false,is_trigger = false) {
 				break
 				case "hidetile":
 				case "hidetiles":
-					global.hidetiles = true
+					layer_set_visible(layer_get_id("Tiles_BG"),false)
+					layer_set_visible(layer_get_id("Tiles_BG2"),false)
+					layer_set_visible(layer_get_id("Tiles_BG3"),false)
+					layer_set_visible(layer_get_id("Tiles_1"),false)
+					layer_set_visible(layer_get_id("Tiles_2"),false)
+					layer_set_visible(layer_get_id("Tiles_3"),false)
+					layer_set_visible(layer_get_id("Tiles_Foreground1"),false)
+					layer_set_visible(layer_get_id("Tiles_Foreground2"),false)
+					layer_set_visible(layer_get_id("Tiles_Foreground3"),false)
 				break
 				case "showtile":
 				case "showtiles":
 					global.hidetiles = false
+					layer_set_visible(layer_get_id("Tiles_BG"),true)
+					layer_set_visible(layer_get_id("Tiles_BG2"),true)
+					layer_set_visible(layer_get_id("Tiles_BG3"),true)
+					layer_set_visible(layer_get_id("Tiles_1"),true)
+					layer_set_visible(layer_get_id("Tiles_2"),true)
+					layer_set_visible(layer_get_id("Tiles_3"),true)
+					layer_set_visible(layer_get_id("Tiles_Foreground1"),true)
+					layer_set_visible(layer_get_id("Tiles_Foreground2"),true)
+					layer_set_visible(layer_get_id("Tiles_Foreground3"),true)
 				break
 				case "toggletile":
 				case "toggletiles":
 					global.hidetiles = !global.hidetiles
+					if global.hidetiles
+					{
+						layer_set_visible(layer_get_id("Tiles_BG"),false)
+						layer_set_visible(layer_get_id("Tiles_BG2"),false)
+						layer_set_visible(layer_get_id("Tiles_BG3"),false)
+						layer_set_visible(layer_get_id("Tiles_1"),false)
+						layer_set_visible(layer_get_id("Tiles_2"),false)
+						layer_set_visible(layer_get_id("Tiles_3"),false)
+						layer_set_visible(layer_get_id("Tiles_Foreground1"),false)
+						layer_set_visible(layer_get_id("Tiles_Foreground2"),false)
+						layer_set_visible(layer_get_id("Tiles_Foreground3"),false)
+					}
+					if !global.hidetiles
+					{
+						layer_set_visible(layer_get_id("Tiles_BG"),true)
+						layer_set_visible(layer_get_id("Tiles_BG2"),true)
+						layer_set_visible(layer_get_id("Tiles_BG3"),true)
+						layer_set_visible(layer_get_id("Tiles_1"),true)
+						layer_set_visible(layer_get_id("Tiles_2"),true)
+						layer_set_visible(layer_get_id("Tiles_3"),true)
+						layer_set_visible(layer_get_id("Tiles_Foreground1"),true)
+						layer_set_visible(layer_get_id("Tiles_Foreground2"),true)
+						layer_set_visible(layer_get_id("Tiles_Foreground3"),true)
+					}
 				break
 				case "character m":
 				case "character pepperman":
@@ -734,10 +827,23 @@ function docommand(commandstring,silentcommand = false,is_trigger = false) {
 					} else {
 						global.showbinds = true
 					}
-					audio_resume_all()
+				break
+				case "toggleoldeditor":
+					if(obj_fakeeditor_old.editormode){
+						obj_fakeeditor_old.editormode = false
+					} else {
+						obj_fakeeditor_old.editormode = true
+					}
+				break
+				case "toggleoldhud":
+					if(global.oldhud){
+						global.oldhud = false
+					} else {
+						global.oldhud = true
+					}
 				break
 				case "help":
-					get_string_async("Available Commands: ","noclip, showcollisions <boolean>, panic <seconds>, oldassets <boolean>, enableranks <boolean>, hidetiles, showtiles, toggletiles, character <string>, player_set_state <states.state>,instance_set_variable <obj_> <type> <variablename> <new value>,global_set_variable <type> <variablename> <new value>,spawn <obj_> <optional distance>, play_sound <sound>, play_music <sound>, togglebinds, gml <gml_code>, instance_set_variable_all <obj_> <type> <variablename> <new value>, reload_gml")
+					get_string_async("Available Commands: ","noclip, showcollisions <boolean>, panic <seconds>, oldassets <boolean>, enableranks <boolean>, hidetiles, showtiles, toggletiles, character <string>, player_set_state <states.state>,instance_set_variable <obj_> <type> <variablename> <new value>,global_set_variable <type> <variablename> <new value>,spawn <obj_> <optional distance>, play_sound <sound>, play_music <sound>, togglebinds, gml <gml_code>, instance_set_variable_all <obj_> <type> <variablename> <new value>, reload_gml, toggleoldeditor, toggleoldhud, finalmoveset, heatmetertoggle")
 				break
 	}
 }

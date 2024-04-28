@@ -23,11 +23,12 @@ function NSP_initialize() {
 	//*** Nomenclature: (Do not change this enumerator)
 	enum NSP_TOK {
 	 //Comparing:
-	 equal, unequal,
+	 equal, unequal, notequal,
 	 larger, larger_equal,
 	 smaller, smaller_equal,
 	 //Combining:
 	 _and, _or, _xor,
+	 _and2, _or2, _xor2,
 	 //Math:
 	 add, subtract,
 	 multiply, divide, 
@@ -48,8 +49,11 @@ function NSP_initialize() {
 
 	//COMBINING:
 	global.nspToken[NSP_TOK._and]          = "and";
+	global.nspToken[NSP_TOK._and2]          = "&&";
 	global.nspToken[NSP_TOK._or]           = "or";
+	global.nspToken[NSP_TOK._or2]          = "||";
 	global.nspToken[NSP_TOK._xor]          = "xor";
+	global.nspToken[NSP_TOK._xor2]          = "^^";
 
 	//COMPARING:
 	global.nspToken[NSP_TOK.equal]         = "==";
@@ -58,6 +62,7 @@ function NSP_initialize() {
 	global.nspToken[NSP_TOK.smaller]       = "<";
 	global.nspToken[NSP_TOK.smaller_equal] = "<=";
 	global.nspToken[NSP_TOK.unequal]       = "<>";
+	global.nspToken[NSP_TOK.notequal]       = "!=";
 
 	//MATH:
 	global.nspToken[NSP_TOK.add]           = "+";
@@ -91,6 +96,7 @@ function NSP_initialize() {
 	//global.nspListStr = ds_list_create();
 	//global.nspListPar = ds_list_create();
 	global.nspListSaved = ds_list_create();
+	global.nsp_errorcount = 0
 
 	if (global.nspToken[NSP_TOK.dsm_allowed] == 1)
 	  global.nspDsMap = ds_map_create();
@@ -109,6 +115,7 @@ function NSP_initialize() {
 	 _variablecl,
 	 _variablegl, //8
 	 _dsm,
-	 _specword
+	 _specword,
+	 _enumstate
 	 }
 }

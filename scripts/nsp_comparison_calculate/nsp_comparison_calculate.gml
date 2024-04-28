@@ -22,6 +22,11 @@ function nsp_comparison_calculate(argument0, argument1, argument2) {
 	 return string( (argument0<>argument1)*1.0 );
    
 	 }
+	if argument2=nspToken[NSP_TOK.notequal] {
+
+	 return string( (argument0!=argument1)*1.0 );
+   
+	 }
  
 	//Convert arguments for following functions:
 	if is_string(argument0)
@@ -56,9 +61,4 @@ function nsp_comparison_calculate(argument0, argument1, argument2) {
 	 return string( (argument0<=argument1)*1.0 );
    
 	 }
-
-
-
-
-
 }

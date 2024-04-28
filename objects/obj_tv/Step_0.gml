@@ -1,3 +1,152 @@
+if(global.oldhud){
+	if(tvsprite==spr_tv_idle){
+		tvsprite=spr_tvdefault
+	}
+	if (showtext == 1)
+	{
+	    xi = (500 + random_range(1, -1))
+	    if (yi > 500)
+	        yi -= 5
+	}
+	if (showtext == 0)
+	{
+	    xi = (500 + random_range(1, -1))
+	    if (yi < 600)
+	        yi += 1
+	}
+	if (!((obj_player.state == states.knightpep && obj_player.state == states.knightpepattack && obj_player.state == states.knightpepslopes)))
+	    once = 0
+	if (obj_player.y < 200 && obj_player.x > (room_width - 200)){
+	    alpha = 0.5
+	} else {
+		alpha = 1
+	}
+	if (room == Realtitlescreen or room == rm_eggplantdisclaimer or room == rank_room or room == rm_levelselect or room == timesuproom or room == boss_room1 or room == characterselect or room == hub_loadingscreen){
+	    alpha = 0
+		tvsprite=spr_tvdefault
+	}
+	if instance_exists(obj_itspizzatime)
+	{
+	    image_speed = 0.25
+	    message = "GET TO THE EXIT!!"
+	    alarm[0] = 200
+	    showtext = 1
+	    tvsprite = spr_tvexit
+	}
+	else if (global.collect > global.arank && shownranka == 0)
+	{
+	    image_speed = 0
+	    message = "YOU GOT ENOUGH FOR RANK A"
+	    showtext = 1
+	    alarm[0] = 200
+	    tvsprite = spr_tvranka
+	    shownranka = 1
+	}
+	else if (global.collect > global.brank && shownrankb == 0)
+	{
+	    image_speed = 0
+	    message = "YOU GOT ENOUGH FOR RANK B"
+	    showtext = 1
+	    alarm[0] = 200
+	    tvsprite = spr_tvrankb
+	    shownrankb = 1
+	}
+	else if (global.collect > global.crank && shownrankc == 0)
+	{
+	    image_speed = 0
+	    message = "YOU GOT ENOUGH FOR RANK C"
+	    showtext = 1
+	    alarm[0] = 200
+	    tvsprite = spr_tvrankc
+	    shownrankc = 1
+	}
+	else if (obj_player.sprite_index == obj_player.spr_levelcomplete)
+	{
+	    image_speed = 0.1
+	    alarm[0] = 50
+	    chose = 1
+	    tvsprite = spr_tvclap
+	    once = 1
+	}
+	else if (obj_player.state == states.hurt)
+	{
+	    image_speed = 0.1
+	    showtext = 1
+	    if (chose == 0)
+	        message = choose("OW!", "OUCH!", "OH!", "WOH!")
+	    alarm[0] = 50
+	    chose = 1
+	    tvsprite = spr_tvhurt
+	    once = 1
+	}
+	else if (obj_player.state == states.timesup)
+	{
+	    alarm[0] = 50
+	    image_speed = 0.1
+	    tvsprite = spr_tvskull
+	}
+	else if (global.hurtcounter >= global.hurtmilestone && obj_player.character == "P")
+	{
+	    alarm[0] = 150
+	    image_speed = 0.1
+	    if (obj_player.character == "P")
+	        character = "PEPPINO"
+	    else
+	        character = "THE NOISE"
+	    message = (((("YOU HAVE HURT " + string(character)) + " ") + string(global.hurtmilestone)) + " TIMES...")
+	    if (tvsprite != spr_tvtalking1 && tvsprite != spr_tvtalking2 && tvsprite != spr_tvtalking3 && tvsprite != spr_tvtalking4)
+	        tvsprite = choose(spr_tvtalking1, spr_tvtalking2, spr_tvtalking3, spr_tvtalking4)
+	    global.hurtmilestone += 3
+	}
+	else if (obj_player.state == states.skateboard)
+	{
+	    showtext = 1
+	    message = "SWEET DUDE!!"
+	    alarm[0] = 50
+	    tvsprite = spr_tvrad
+	    once = 1
+	}
+	else if (obj_player.state == states.slipnslide)
+	{
+	    image_speed = 0.1
+	    showtext = 1
+	    message = "OOPS!!"
+	    alarm[0] = 50
+	    tvsprite = spr_tvbanana
+	    once = 1
+	}
+	else if (global.combo != 0 && global.combotime != 0 && (tvsprite == spr_tvdefault || tvsprite == spr_tvcombo || tvsprite == spr_tvescape))
+	{
+	    tvsprite = spr_tvcombo
+	    image_speed = 0
+	    if (global.combo >= 4)
+	        imageindexstore = 3
+	    else
+	        imageindexstore = (global.combo - 1)
+	}
+	else if (global.combotime == 0 && tvsprite == spr_tvcombo)
+	{
+	    tvsprite = spr_tvcomboresult
+	    image_index = imageindexstore
+	    alarm[0] = 50
+	}
+	if (obj_player.state == states.keyget)
+	{
+	    showtext = 1
+	    message = "GOT THE KEY!"
+	    alarm[0] = 50
+	}
+	if instance_exists(obj_noise_normalT1)
+	{
+	    if (obj_noise_normalT1.hspeed != 0 && global.panic == 0)
+	    {
+	        showtext = 1
+	        message = "UH OH..."
+	        alarm[0] = 50
+	    }
+	}
+	exit;
+}
 if (room == Realtitlescreen or room == rm_eggplantdisclaimer or room == rank_room or room == rm_levelselect or room == timesuproom or room == boss_room1 or room == characterselect or room == hub_loadingscreen)
 {
 	visible = false

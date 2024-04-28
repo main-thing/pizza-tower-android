@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_cheesefloor.wav",
-  "duration": 0.491,
+  "duration": 0.491859,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",

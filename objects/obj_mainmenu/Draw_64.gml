@@ -14,7 +14,7 @@ if(!newstuff){
 	draw_set_valign(fa_left)
 	draw_set_color(c_white)
 	draw_set_font(global.bigfont)
-	draw_text(display_get_gui_width() / 2, 50, "NEW STUFF")
+	draw_text(display_get_gui_width() / 2, 50 + stringoffset, "NEW STUFF")
 	draw_set_font(global.smallfont2)
 	/*
 	var i = 0
@@ -33,5 +33,5 @@ if(!newstuff){
 		}
 	}*/
 	draw_set_halign(fa_left)
-	draw_text(50, 100, string_upper(tempstring))
+	draw_text(50, 100 + stringoffset, string_upper(tempstring))
 }

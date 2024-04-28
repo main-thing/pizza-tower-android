@@ -1,2 +1,2 @@
-with (obj_bosscontroller)
+with (obj_bosscontrollerOLD)
 	bossID = other.id

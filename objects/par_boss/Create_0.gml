@@ -1,5 +1,8 @@
+grabbedby = noone
+elite = 0
+elitegrab = 0
 mach3destroy = 0
-platformid = -4
+platformid = noone
 hsp_carry = 0
 vsp_carry = 0
 thrown = false
@@ -147,7 +150,7 @@ function SUPER_boss_hurt(argument0, argument1)
 		hp -= argument0
 	if (argument1.state != states.playersuperattack)
 	{
-		with (obj_bosscontroller)
+		with (obj_bosscontrollerOLD)
 			super += 30
 	}
 	with (argument1)
@@ -217,7 +220,7 @@ function SUPER_boss_hurt_noplayer(argument0)
 		hp -= argument0
 	if (obj_player.state != states.playersuperattack)
 	{
-		with (obj_bosscontroller)
+		with (obj_bosscontrollerOLD)
 			super += 30
 	}
 	lag = 8
@@ -250,9 +253,9 @@ function SUPER_boss_hurt_noplayer(argument0)
 
 function SUPER_player_hurt(argument0, argument1)
 {
-	if instance_exists(obj_bosscontroller)
-		obj_bosscontroller.player_hp -= argument0
-	with (obj_bosscontroller)
+	if instance_exists(obj_bosscontrollerOLD)
+		obj_bosscontrollerOLD.player_hp -= argument0
+	with (obj_bosscontrollerOLD)
 		super += 80
 	with (argument1)
 	{

@@ -51,6 +51,9 @@ function nsp_is_variable(argument0) {
 	if temp_str="global"
 	 return 3;
  
+	if temp_str="states"
+	 return 4;
+ 
 	if nsp_gm_nom(temp_str)
 	or nsp_is_asset(temp_str)
 	or nsp_is_number(temp_str)

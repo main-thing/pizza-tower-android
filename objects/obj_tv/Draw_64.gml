@@ -1,5 +1,9 @@
 if (room == editor_room)
 	exit;
+if(instance_exists(obj_fakeeditor)){
+	if(!obj_fakeeditor.in_play_mode)
+		exit;
+}
 draw_set_font(global.bigfont)
 draw_set_halign(fa_center)
 draw_set_color(c_white)
@@ -17,6 +21,25 @@ if global.use_temperature
 	var _height2 = (_height * _tmp)
 	draw_sprite_part_ext(spr_temperature_meterfill, 0, 0, _top, _width, _height2, 864, (192 + _height), 1, -1, c_white, 1)
 	draw_sprite(spr_temperature_meter, 0, 864, 192)
+}
+if(global.oldhud){
+	font = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.1234567890:", 1, 0)
+	draw_set_font(font)
+	draw_set_halign(fa_center)
+	draw_set_color(c_white)
+	draw_sprite_ext(tvsprite, -1, 832, 74, 1, 1, 1, c_white, alpha)
+	draw_text(xi, yi, string_hash_to_newline(message))
+	if (global.combo != 0 && global.combotime != 0 && (tvsprite == spr_tvdefault || tvsprite == spr_tvcombo))
+	    draw_text(852, 75, string_hash_to_newline(global.combo))
+	if (tvsprite == spr_tvdefault)
+	{
+	    chose = 0
+	    if (room != boss_room1)
+	        draw_text(832, 60, string_hash_to_newline(global.collect))
+	}
+	if instance_exists(obj_pizzaball)
+	    draw_text(832, 300, string_hash_to_newline(((string(global.golfhit) + " ") + "GOLF HIT")))
+	exit;
 }
 var collect_x = irandom_range((-collect_shake), collect_shake)
 var collect_y = irandom_range((-collect_shake), collect_shake)

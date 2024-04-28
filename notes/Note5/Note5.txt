@@ -1,0 +1,2 @@
+- reallow compressed compile ✔
+- low compressed compile ✔

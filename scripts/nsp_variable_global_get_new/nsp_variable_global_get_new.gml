@@ -12,7 +12,7 @@ function nsp_variable_global_get_new() {
 	if (string_copy(varname, 1, 7) == "global.") {
 
 	  varname = string_delete(varname, 1, 7);
-
+	
 	  }
   
 	if (!variable_global_exists(varname)) {

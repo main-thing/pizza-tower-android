@@ -49,3 +49,13 @@ if (room == rank_room)
 	secretmusicID = -4
 	pillarmusicID = -4
 }
+if(obj_player1.escapemusic != undefined){
+	escapemusic = obj_player1.escapemusic
+}
+if(obj_player1.lap2music != undefined){
+	lap2music = obj_player1.lap2music
+}
+if(string_pos("dragonlair_",room_get_name(room)) != 0){
+	escapemusic = mu_dragonlair
+	lap2music = mu_dragonlair
+}

@@ -83,9 +83,13 @@ function nsp_tokenize(argument0, argument1) {
 	              or copy_3=tokenArray[NSP_TOK.smaller]
 	              or copy_3=tokenArray[NSP_TOK.smaller_equal]
 	              or copy_3=tokenArray[NSP_TOK.unequal]
+	              or copy_3=tokenArray[NSP_TOK.notequal]
 	              or copy_3=tokenArray[NSP_TOK._and]
+	              or copy_3=tokenArray[NSP_TOK._and2]
 	              or copy_3=tokenArray[NSP_TOK._or]
+	              or copy_3=tokenArray[NSP_TOK._or2]
 	              or copy_3=tokenArray[NSP_TOK._xor]
+	              or copy_3=tokenArray[NSP_TOK._xor2]
 	              or copy_3=tokenArray[NSP_TOK.assign]   ) {
 
 	     token=copy_3;
@@ -113,9 +117,13 @@ function nsp_tokenize(argument0, argument1) {
 	              or copy_2=tokenArray[NSP_TOK.smaller]
 	              or copy_2=tokenArray[NSP_TOK.smaller_equal]
 	              or copy_2=tokenArray[NSP_TOK.unequal]
+	              or copy_2=tokenArray[NSP_TOK.notequal]
 	              or copy_2=tokenArray[NSP_TOK._and]
+	              or copy_2=tokenArray[NSP_TOK._and2]
 	              or copy_2=tokenArray[NSP_TOK._or]
+	              or copy_2=tokenArray[NSP_TOK._or2]
 	              or copy_2=tokenArray[NSP_TOK._xor]
+	              or copy_2=tokenArray[NSP_TOK._xor2]
 	              or copy_2=tokenArray[NSP_TOK.assign]   ) {
             
 	      token=copy_2;
@@ -143,9 +151,13 @@ function nsp_tokenize(argument0, argument1) {
 	               or copy_1=tokenArray[NSP_TOK.smaller]
 	               or copy_1=tokenArray[NSP_TOK.smaller_equal]
 	               or copy_1=tokenArray[NSP_TOK.unequal]
+	               or copy_1=tokenArray[NSP_TOK.notequal]
 	               or copy_1=tokenArray[NSP_TOK._and]
+	               or copy_1=tokenArray[NSP_TOK._and2]
 	               or copy_1=tokenArray[NSP_TOK._or]
+	               or copy_1=tokenArray[NSP_TOK._or2]
 	               or copy_1=tokenArray[NSP_TOK._xor]
+	               or copy_1=tokenArray[NSP_TOK._xor2]
 	               or copy_1=tokenArray[NSP_TOK.assign]   ) {
              
 	       token=copy_1;
@@ -199,6 +211,17 @@ function nsp_tokenize(argument0, argument1) {
 	        return 0;              
 	    break;
    
+	  case "states":
+	    if (i != ds_list_size(list)-1) {
+    
+	        list[|i+1] = "states" + nsp_string_crop(list[|i+1]);
+	        ds_list_delete(list, i);
+        
+	        }
+	      else
+	        return 0;              
+	    break;
+   
 	  case "":
 	    ds_list_delete(list,i);
 	    break;
@@ -206,7 +229,7 @@ function nsp_tokenize(argument0, argument1) {
 	  default:
 	    var c;
 	    c = nsp_get_constant(list[|i]);
-	    if (c != -9999)
+	    if (c != pointer_invalid)
 	      list[|i] = string(c);
 	    break;
  

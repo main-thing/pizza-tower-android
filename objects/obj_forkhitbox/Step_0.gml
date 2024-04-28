@@ -122,6 +122,14 @@ with (ID)
 			}
 			break
 		
+		case obj_snickexe2:
+			if (obj_player1.instakillmove or obj_player1.state == states.handstandjump)
+			{
+				instance_destroy(other)
+				hitboxcreate = 0
+			}
+			break
+		
 		case obj_pickle:
 			if (state != states.pizzagoblinthrow)
 				instance_destroy(other)

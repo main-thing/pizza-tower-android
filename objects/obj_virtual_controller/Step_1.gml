@@ -11,7 +11,7 @@ if(buttonlockable || keycode == "bind"){
         
 	    if (_ui_at_pos != noone && _held)
 	    {
-			if (buttonlockable && global.movingvkeys == 0) {
+			if (buttonlockable && !global.movingvkeys) {
 				if(!pressed){
 					if(!is_string(keycode) && keycode != undefined) {
 						keyboard_key_press(keycode)
@@ -31,12 +31,14 @@ if(buttonlockable || keycode == "bind"){
 				}
 			}
 			if (keycode == "bind") {
-				if (global.movingvkeys == 0) {
-					if(global.showbinds){
-						processcommand(keycode2,true)
-					} else {
-						if(string_pos("togglebinds",string_lower(string(keycode2))) != 0){
+				if(global.forceshowcontrols || !global.forcehidecontrols){
+					if (!global.movingvkeys) {
+						if(global.showbinds){
 							processcommand(keycode2,true)
+						} else {
+							if(string_pos("togglebinds",string_lower(string(keycode2))) != 0){
+								processcommand(keycode2,true)
+							}
 						}
 					}
 				}

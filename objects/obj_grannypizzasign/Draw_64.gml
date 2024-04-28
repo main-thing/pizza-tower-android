@@ -1,7 +1,7 @@
 if (text_state == states.titlescreen && text_y <= -(text_sprite_height * text_yscale))
 	exit;
 draw_sprite(spr_tutorialbubble_rope, 0, 64 + text_wave_x, text_y + text_wave_y);
-draw_sprite(spr_tutorialbubble_rope, 0, (SCREEN_WIDTH - 64) + text_wave_x, text_y + text_wave_y);
+draw_sprite(spr_tutorialbubble_rope, 0, (960 - 64) + text_wave_x, text_y + text_wave_y);
 var xx = 32 + text_wave_x;
 var yy = text_y + text_wave_y;
 tex_x -= 0.5;

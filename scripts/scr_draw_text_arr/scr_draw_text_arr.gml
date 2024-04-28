@@ -35,7 +35,7 @@ function scr_draw_text_arr(x, y, text_arr, color = c_white, alpha = 1, effect = 
 		
 		switch t
 		{
-			case (1 << 0):
+			case texttype.icon:
 				var spr = -4;
 				var ix = 0;
 				var txt = -4;

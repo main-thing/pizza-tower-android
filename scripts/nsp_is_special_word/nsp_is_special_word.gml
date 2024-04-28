@@ -10,6 +10,10 @@ function nsp_is_special_word(argument0) {
 	 case "self": return true;
  
 	 case "other": return true;
+ 
+	 case "all": return true;
+ 
+	 case "noone": return true;
   
 	 case "with": return true;
   

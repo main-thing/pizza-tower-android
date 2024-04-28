@@ -153,7 +153,20 @@ function virtual_key_load(buttonstring2 = "") {
 }
 
 function processedit(commandstring) {
-	
+	var _string = string_trim(commandstring)
+	if (string_pos(";", _string) != 0) {
+		var _commands = string_split(_string + ";",";")
+		var i = 0
+		while (i < array_length(_commands)) {
+			doedit(_commands[i])
+			i++
+		}
+	} else{
+			doedit(_string)
+	}
+}
+
+function doedit(commandstring){
 	if (string_pos("gridsize", string_lower(commandstring)) == 1) {
 		var commands = string_split(commandstring, " ");
 		var argcount = 0

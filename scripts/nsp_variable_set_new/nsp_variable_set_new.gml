@@ -32,7 +32,14 @@ function nsp_variable_set_new() {
 	  exit;
  
 	  }
-
+	switch(varname){
+		case "view_enabled":
+			 return view_enabled = val
+		break
+		case "room_speed":
+			return room_speed = val
+		break
+	}
 	if (is_string(val) and nsp_is_string(val)) {
 
 	  val = string_copy(val, 2, string_length(val)-2);

@@ -1,2 +1,2 @@
 level = "floorroom"
-targetRoom = floor1_room0
+targetRoom = desert_1

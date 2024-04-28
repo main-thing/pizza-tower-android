@@ -1,5 +1,5 @@
 image_speed = 0
-baddieid = 0
+baddieid = -4
 content = obj_cheeseslime
 refresh = 20
 depth = 1

@@ -370,6 +370,8 @@ function scr_characterspr() {
 		fake_tv_hud_x = 845
 		fake_tv_hud_y = 80
 		paletteselect = 1
+		escapemusic = mu_pizzatime
+		lap2music = mu_chase
 	}
 	if (character == "N"
 		or(character == "P" && (!ispeppino))) {
@@ -672,6 +674,8 @@ function scr_characterspr() {
 		fake_tv_hud_x = 845
 		fake_tv_hud_y = 80
 		paletteselect = 0
+		escapemusic = mu_noiseescape
+		lap2music = mu_noiseescape
 	}
 	if (character == "V") {
 		spr_idle = spr_playerV_idle
@@ -899,6 +903,8 @@ function scr_characterspr() {
 		fake_tv_hud_x = 845
 		fake_tv_hud_y = 80
 		paletteselect = 0
+		escapemusic = mu_pizzatime
+		lap2music = mu_chase
 	}
 	if (character == "M") {
 		spr_idle = spr_pepperman_idle
@@ -1124,6 +1130,8 @@ function scr_characterspr() {
 		fake_tv_hud_x = 845
 		fake_tv_hud_y = 80
 		paletteselect = 1
+		escapemusic = mu_pizzatime
+		lap2music = mu_chase
 	}
 	if (character == "S") {
 		spr_idle = spr_snick_idle
@@ -1299,6 +1307,8 @@ function scr_characterspr() {
 		fake_tv_hud_yscale = 1
 		fake_tv_hud_x = 845
 		fake_tv_hud_y = 80
+		escapemusic = mu_pizzatime
+		lap2music = mu_chase
 	}
 	exit;
 }

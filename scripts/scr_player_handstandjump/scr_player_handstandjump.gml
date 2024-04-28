@@ -67,46 +67,44 @@ function scr_player_handstandjump() {
 		state = states.mach2
 		grav = 0.5
 	}
-	if (key_down && grounded && global.attackstyle != 2) {
-		if(!finalmoveset) {
-			with(instance_create(x, y, obj_jumpdust))
-			image_xscale = other.xscale
-			movespeed = 12
-			crouchslipbuffer = 25
-			grav = 0.5
-			sprite_index = spr_Sjumpcancelland
-			image_index = 0
-			machhitAnim = 0
-			state = states.tumble
-		} else {
-			with (instance_create(x, y, obj_jumpdust))
-				image_xscale = other.xscale;
-			movespeed = 12;
-			crouchslipbuffer = 25;
-			grav = 0.5;
-			sprite_index = spr_crouchslip;
-			image_index = 0;
-			machhitAnim = 0;
-			state = states.tumble;
-		}
-	}
 	if(character != "S"){
-		mask_index = spr_player_mask
-	}
-	if (((!grounded) && (place_meeting((x + hsp), y, obj_solid) or scr_solid_slope((x + hsp), y)) && (!(place_meeting((x + hsp), y, obj_destructibles)))) or(grounded && (place_meeting((x + sign(hsp)), (y - 16), obj_solid) or scr_solid_slope((x + sign(hsp)), (y - 16))) && (!(place_meeting((x + hsp), y, obj_destructibles))) && (!(place_meeting((x + hsp), y, obj_metalblock))) && scr_slope())) {
-		if key_attack {
-			if(!finalmoveset){
-				wallspeed = movespeed
-				if (vsp > 0) wallspeed -= vsp
-				state = states.climbwall
+		if (key_down && grounded && global.attackstyle != 2) {
+			if(!finalmoveset) {
+				with(instance_create(x, y, obj_jumpdust))
+				image_xscale = other.xscale
+				movespeed = 12
+				crouchslipbuffer = 25
+				grav = 0.5
+				sprite_index = spr_Sjumpcancelland
+				image_index = 0
+				machhitAnim = 0
+				state = states.tumble
 			} else {
-				wallspeed = 6;
-				grabclimbbuffer = 10;
-				state = states.climbwall;
+				with (instance_create(x, y, obj_jumpdust))
+					image_xscale = other.xscale;
+				movespeed = 12;
+				crouchslipbuffer = 25;
+				grav = 0.5;
+				sprite_index = spr_crouchslip;
+				image_index = 0;
+				machhitAnim = 0;
+				state = states.tumble;
 			}
 		}
-	}
-	if(character != "S"){
+		mask_index = spr_player_mask
+		if (((!grounded) && (place_meeting((x + hsp), y, obj_solid) or scr_solid_slope((x + hsp), y)) && (!(place_meeting((x + hsp), y, obj_destructibles)))) or(grounded && (place_meeting((x + sign(hsp)), (y - 16), obj_solid) or scr_solid_slope((x + sign(hsp)), (y - 16))) && (!(place_meeting((x + hsp), y, obj_destructibles))) && (!(place_meeting((x + hsp), y, obj_metalblock))) && scr_slope())) {
+			if key_attack {
+				if(!finalmoveset){
+					wallspeed = movespeed
+					if (vsp > 0) wallspeed -= vsp
+					state = states.climbwall
+				} else {
+					wallspeed = 6;
+					grabclimbbuffer = 10;
+					state = states.climbwall;
+				}
+			}
+		}
 		if ((grounded or(!key_attack)) && scr_solid((x + xscale), y) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or scr_solid_slope((x + sign(hsp)), y))) {
 			var _bump = ledge_bump((vsp >= 0 ? 32 : 22))
 			if _bump {
@@ -117,23 +115,23 @@ function scr_player_handstandjump() {
 				instance_create((x + (xscale * 10)), (y + 10), obj_bumpeffect)
 			}
 		}
-	}
-	if ((!instance_exists(obj_slidecloud)) && grounded && movespeed > 5) {
-		with(instance_create(x, y, obj_slidecloud))
-		image_xscale = other.xscale
-	}
-	image_speed = 0.35
-	if (state != states.bump && move != xscale && move != 0) {
-		image_index = 0
-		if (!grounded) {
-			sprite_index = spr_suplexcancel
-			jumpAnim = 1
-			grav = 0.5
-			state = states.jump
-		} else {
-			state = states.normal
-			movespeed = 2
-			grav = 0.5
+		if ((!instance_exists(obj_slidecloud)) && grounded && movespeed > 5) {
+			with(instance_create(x, y, obj_slidecloud))
+			image_xscale = other.xscale
+		}
+		image_speed = 0.35
+		if (state != states.bump && move != xscale && move != 0) {
+			image_index = 0
+			if (!grounded) {
+				sprite_index = spr_suplexcancel
+				jumpAnim = 1
+				grav = 0.5
+				state = states.jump
+			} else {
+				state = states.normal
+				movespeed = 2
+				grav = 0.5
+			}
 		}
 	}
 	if (character == "S") {

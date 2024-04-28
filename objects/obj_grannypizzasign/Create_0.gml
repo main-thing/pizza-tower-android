@@ -1,6 +1,6 @@
 levelarray = array_create(0);
 show = false;
-text_xscale = (SCREEN_WIDTH - 64) / sprite_get_width(spr_tutorialbubble);
+text_xscale = (960 - 64) / sprite_get_width(spr_tutorialbubble);
 text_yscale = 2;
 text_y = -(sprite_get_height(spr_tutorialbubble) * text_yscale);
 text_sprite_height = sprite_get_height(spr_tutorialbubble);

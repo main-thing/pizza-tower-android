@@ -11,5 +11,7 @@ else
 }
 with (obj_solid)
 	visible = true
+/*
 with (par_triggers)
 	visible = true
+*/

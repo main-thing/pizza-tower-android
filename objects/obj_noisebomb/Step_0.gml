@@ -19,7 +19,7 @@ if ((sprite_index == spr_noisebomb_intro||sprite_index == spr_doisebomb_intro) &
 }
 if (global.miniboss == true && sprite_index != spr_noisebomb_intro && sprite_index != spr_doisebomb_intro)
 {
-	image_alpha = obj_player.image_alpha
+	//image_alpha = obj_player.image_alpha
 	if (obj_player.hsp != 0){
 		sprite_index = spr_noisebomb_walk
 		if(is_noise){

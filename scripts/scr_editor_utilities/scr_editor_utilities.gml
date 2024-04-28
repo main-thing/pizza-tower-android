@@ -64,14 +64,14 @@ function create_buttons_array(argument0, argument1, argument2, argument3, argume
 {
 	var xsize = 0
 	draw_set_font(global.editorfont)
-	for (i = 0; i < array_length(argument4); i++)
+	for (var i = 0; i < array_length(argument4); i++)
 	{
 		b = argument4[i]
 		var t = string_width(b[0])
 		if (t > xsize)
 			xsize = (t + argument2)
 	}
-	for (i = 0; i < array_length(argument4); i++)
+	for (var i = 0; i < array_length(argument4); i++)
 	{
 		b = argument4[i]
 		with (instance_create_depth(argument0, (argument1 + (i * argument3)), depth, obj_textbutton))

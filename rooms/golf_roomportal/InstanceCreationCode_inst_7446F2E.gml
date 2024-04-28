@@ -1,0 +1,1 @@
+targetRoom = golf_roomtreasure

@@ -1,4 +1,4 @@
-if (room == custom_lvl_room or room == editor_room)
+if (room == custom_lvl_room or room == editor_room or instance_exists(obj_fakeeditor))
 	exit;
 draw_set_color(c_black)
 var cam_x = camera_get_view_x(view_camera[0])

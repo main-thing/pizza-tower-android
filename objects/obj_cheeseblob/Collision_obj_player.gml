@@ -9,7 +9,7 @@ if (other.state != states.chainsaw)
 		}
 	}
 	if (other.state != states.cheesepep)
-		tv_push_prompt_once(tv_create_prompt("This is the cheese transformation text", tvprompt.transfo, self._spr_tv_cheesepep, 3), "cheesepep")
+		tv_push_prompt_once(tv_create_prompt("This is the cheese transformation text", tvprompt.transfo, other._spr_tv_cheesepep, 3), "cheesepep")
 	other.state = states.cheesepep
 	other.movespeed = 0
 	other.sprite_index = other.spr_cheesepepintro

@@ -55,7 +55,7 @@
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_2","tilesetId":{"name":"tile_desertdeco","path":"tilesets/tile_desertdeco/tile_desertdeco.yy",},"x":0,"y":0,"tiles":{"TileDataFormat":1,"SerialiseWidth":30,"SerialiseHeight":17,"TileCompressedData":[
 -210,0,2,2,3,-19,0,3,148,149,150,-6,0,2,26,27,-19,0,3,172,173,174,-6,0,2,50,51,-103,0,4,
 128,129,130,131,-26,0,4,152,153,154,155,-26,0,4,176,177,178,179,-20,0,3,73,74,75,-27,0,3,97,98,99,
--18,0,],},"visible":true,"depth":100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
+-18,0,],},"visible":false,"depth":100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","tilesetId":{"name":"tile_desert_tileset","path":"tilesets/tile_desert_tileset/tile_desert_tileset.yy",},"x":0,"y":0,"tiles":{"TileDataFormat":1,"SerialiseWidth":30,"SerialiseHeight":17,"TileCompressedData":[
 33,87,88,140,65,66,65,66,65,66,65,66,65,66,65,66,65,66,65,66,65,66,65,66,65,66,65,65,66,142,
 86,109,88,57,-25,0,5,54,86,119,88,57,-25,0,5,54,86,87,88,57,-25,0,5,54,86,89,88,57,-25,0,

@@ -21,13 +21,17 @@ function nsp_get_token_type(argument0, argument1) {
 	  }
 	  else if token == nspToken[NSP_TOK.equal]
 	       or token == nspToken[NSP_TOK.unequal]
+	       or token == nspToken[NSP_TOK.notequal]
 	       or token == nspToken[NSP_TOK.larger]
 	       or token == nspToken[NSP_TOK.larger_equal]
 	       or token == nspToken[NSP_TOK.smaller]
 	       or token == nspToken[NSP_TOK.smaller_equal]
 	       or token == nspToken[NSP_TOK._and]
+	       or token == nspToken[NSP_TOK._and2]
 	       or token == nspToken[NSP_TOK._or]
+	       or token == nspToken[NSP_TOK._or2]
 	       or token == nspToken[NSP_TOK._xor]
+	       or token == nspToken[NSP_TOK._xor2]
 	       or token == nspToken[NSP_TOK.add]
 	       or token == nspToken[NSP_TOK.subtract]
 	       or token == nspToken[NSP_TOK.multiply]
@@ -73,7 +77,6 @@ function nsp_get_token_type(argument0, argument1) {
 	         else {
          
 	          a = nsp_is_variable(token);
-          
 	          if (a == 1)
 	           return NSP_TYPE._variablesl;
            
@@ -82,6 +85,9 @@ function nsp_get_token_type(argument0, argument1) {
             
 	          if (a == 3)
 	            return NSP_TYPE._variablegl;
+				
+	          if (a == 4)
+	            return NSP_TYPE._enumstate;
           
 	          }
  

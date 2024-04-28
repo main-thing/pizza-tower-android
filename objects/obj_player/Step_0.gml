@@ -873,7 +873,7 @@ if (state == states.throwing or state == states.backkick or state == states.shou
 	grabbing = 1
 else
 	grabbing = 0
-if ((state == states.ratmountbounce && vsp >= 0) or sprite_index == spr_player_Sjumpcancel or sprite_index == spr_swingding or sprite_index == spr_tumble or state == states.boxxedpepspin or state == states.trashroll or state == states.trashjump or state == states.shotgundash or (state == states.shotgunfreefall && (sprite_index == spr_shotgunjump2 or sprite_index == spr_shotgunjump3)) or state == states.Sjump or state == states.rocket or state == states.rocketslide or state == states.chainsawbump or state == states.punch or state == states.faceplant or state == states.rideweenie or state == states.mach3 or (state == states.jump && sprite_index == spr_playerN_noisebombspinjump) or state == states.freefall or state == states.fireass or state == states.jetpackjump or state == states.firemouth or state == states.hookshot or state == states.jetpackjump or state == states.skateboard or state == states.mach4 or state == states.Sjump or state == states.machfreefall or state == states.tacklecharge or (state == states.superslam && sprite_index == spr_piledriver) or state == states.knightpep or state == states.knightpepattack or state == states.knightpepslopes or state == states.trickjump or state == states.cheesepep or state == states.cheeseball or state == states.ratmounttumble or state == states.ratmountgroundpound or state == states.ratmountpunch or state == states.antigrav or ratmount_movespeed == 12 or state == states.slipbanan or state == states.shoulderbash)
+if ((state == states.ratmountbounce && vsp >= 0) or sprite_index == spr_player_Sjumpcancel or sprite_index == spr_swingding or sprite_index == spr_tumble or state == states.boxxedpepspin or state == states.trashroll or state == states.trashjump or state == states.shotgundash or (state == states.shotgunfreefall && (sprite_index == spr_shotgunjump2 or sprite_index == spr_shotgunjump3)) or state == states.Sjump or state == states.rocket or state == states.rocketslide or state == states.chainsawbump or state == states.punch or state == states.faceplant or state == states.rideweenie or state == states.mach3 or (state == states.jump && sprite_index == spr_playerN_noisebombspinjump) or state == states.freefall or state == states.fireass or state == states.jetpackjump or state == states.firemouth or state == states.hookshot or state == states.jetpackjump or state == states.skateboard or state == states.mach4 or state == states.Sjump or state == states.machfreefall or state == states.tacklecharge or (state == states.superslam && sprite_index == spr_piledriver) or state == states.knightpep or state == states.knightpepattack or state == states.knightpepslopes or state == states.trickjump or state == states.cheesepep or state == states.cheeseball or state == states.ratmounttumble or state == states.ratmountgroundpound or state == states.ratmountpunch or state == states.antigrav or ratmount_movespeed == 12 or state == states.slipbanan or state == states.slipnslide or state == states.shoulderbash)
 	instakillmove = 1
 else
 	instakillmove = 0
@@ -940,40 +940,9 @@ if (toomuchalarm1 > 0)
 		toomuchalarm1 = 6
 	}
 }
-if ((y > (room_height + 300) or y < -800) && (!(place_meeting(x, y, obj_verticalhallway))) && (!verticalhallway) && room != custom_lvl_room && state != states.gameover && state != states.gotoplayer)
+if ((y > (room_height + 300) or y < -800) && (!(place_meeting(x, y, obj_verticalhallway))) && (!verticalhallway) && !instance_exists(obj_fakeeditor) && room != custom_lvl_room && state != states.gameover && state != states.gotoplayer)
 {
-	x = roomstartx
-	y = roomstarty
-	visible = true
-	with (obj_camera)
-	{
-		shake_mag = 3
-		shake_mag_acc = (3 / room_speed)
-	}
-	if (state == states.ghostpossess)
-	{
-		state = states.ghost
-		sprite_index = spr_ghostidle
-	}
-	state = states.actor
-	visible = false
-	hsp = 0
-	vsp = 0
-	scr_soundeffect(sfx_groundpound)
-	with (instance_create(x, (y + 540), obj_technicaldifficulty))
-	{
-		playerid = other.id
-		if (!other.isgustavo)
-			sprite = choose(spr_technicaldifficulty1, spr_technicaldifficulty2, spr_technicaldifficulty3)
-		else
-			sprite = spr_technicaldifficulty4
-	}
-	with (obj_ghostfollow)
-	{
-		x = xstart
-		y = ystart
-	}
-	vsp = 10
+	scr_outofbounds()
 }
 if (character == "S")
 {

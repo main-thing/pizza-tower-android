@@ -28,36 +28,13 @@ if (global.showcollisions){
 			visible = true
 		}
 	}
-	with(obj_music_trigger){
-			visible = true
-	}
-	with(obj_background_trigger){
-			visible = true
-	}
 	with(obj_enemyspawn){
 			visible = true
 	}
-	with(obj_variable_trigger){
+	with(obj_fakeeditor_trigger_base){
 			visible = true
 	}
-	with(obj_command_trigger){
-			visible = true
-	}
-	
-	with(obj_music_trigger_door){
-			visible = true
-	}
-	with(obj_background_trigger_door){
-			visible = true
-	}
-	with(obj_command_trigger_door){
-			visible = true
-	}
-	
-	with(obj_tvtrigger){
-			visible = true
-	}
-	with(obj_tvtrigger_editor){
+	with(obj_fakeeditor_trigger_door_base){
 			visible = true
 	}
 }
@@ -77,37 +54,15 @@ if (!global.showcollisions){
 			visible = false
 		}
 	}
-	with(obj_music_trigger){
-			visible = false
-	}
-	with(obj_background_trigger){
-			visible = false
-	}
 	with(obj_enemyspawn){
 			visible = false
 	}
-	with(obj_variable_trigger){
-			visible = false
-	}
-	with(obj_command_trigger){
+	
+	with(obj_fakeeditor_trigger_base){
 			visible = false
 	}
 	
-	with(obj_music_trigger_door){
-			visible = false
-	}
-	with(obj_background_trigger_door){
-			visible = false
-	}
-	with(obj_command_trigger_door){
-			visible = false
-	}
-	
-	with(obj_tvtrigger){
-			visible = false
-	}
-	
-	with(obj_tvtrigger_editor){
+	with(obj_fakeeditor_trigger_door_base){
 			visible = false
 	}
 }

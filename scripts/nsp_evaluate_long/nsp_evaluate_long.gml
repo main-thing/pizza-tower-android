@@ -401,7 +401,8 @@ function nsp_evaluate_long() {
 	      or g[#i,0]=nspToken[NSP_TOK.larger_equal]
 	      or g[#i,0]=nspToken[NSP_TOK.smaller]
 	      or g[#i,0]=nspToken[NSP_TOK.smaller_equal]
-	      or g[#i,0]=nspToken[NSP_TOK.unequal]  ) {
+	      or g[#i,0]=nspToken[NSP_TOK.unequal]
+	      or g[#i,0]=nspToken[NSP_TOK.notequal]  ) {
       
 	   token=g[#i,0];
 	   val_r=nsp_evaluate_single(g[#i+1,0],g[#i+1,1]);
@@ -438,8 +439,11 @@ function nsp_evaluate_long() {
 	 if g[#i,1]=NSP_TYPE._operator {
  
 	  if (   g[#i,0]=nspToken[NSP_TOK._and]
+	      or g[#i,0]=nspToken[NSP_TOK._and2]
 	      or g[#i,0]=nspToken[NSP_TOK._or]
-	      or g[#i,0]=nspToken[NSP_TOK._xor]  ) {
+	      or g[#i,0]=nspToken[NSP_TOK._or2]
+	      or g[#i,0]=nspToken[NSP_TOK._xor]
+	      or g[#i,0]=nspToken[NSP_TOK._xor2]  ) {
       
 	   token=g[#i,0];
 	   val_r=nsp_evaluate_single(g[#i+1,0],g[#i+1,1]);

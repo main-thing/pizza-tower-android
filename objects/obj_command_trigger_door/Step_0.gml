@@ -1,4 +1,4 @@
-switch(targetkey){
+switch(string_lower(targetkey)){
 	case "up":
 		variable_internal = "key_up2"
 	break

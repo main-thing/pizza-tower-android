@@ -76,12 +76,24 @@ function nsp_evaluate_single(argument0, argument1) {
 	   if is_string(rv) rv=nspToken[NSP_TOK.quote]+rv+nspToken[NSP_TOK.quote];
 	   return rv;
 	  break; 
+	  
+	 //states:
+	 case NSP_TYPE._enumstate:
+	   rv=nsp_states_get_new(work_str);
+	   if nsp_is_equal(rv,nspToken[NSP_TOK.abort]) {
+	    NSP_notify("SCRIPT: nsp_evaluate_single. ERROR: Cannot get the state ("+work_str+").");
+	    return nspToken[NSP_TOK.abort];
+	    }
+	   //SQ:
+	   if is_string(rv) rv=nspToken[NSP_TOK.quote]+rv+nspToken[NSP_TOK.quote];
+	   return rv;
+	  break; 
   
 	 default:
 	   NSP_notify("SCRIPT: nsp_evaluate_single. ERROR: Cannot identify the string ("+work_str+").");
 	   return nspToken[NSP_TOK.abort];
 	  break;
-
+	
 	end;
 
 

@@ -15,7 +15,8 @@ function nsp_type_is_a_value() {
 	    type == NSP_TYPE._variablesl or
 	    type == NSP_TYPE._variablecl or
 	    type == NSP_TYPE._variablegl or
-	    type == NSP_TYPE._dsm)
+	    type == NSP_TYPE._dsm or
+	    type == NSP_TYPE._enumstate)
 	  return 1;
 
 	return 0;

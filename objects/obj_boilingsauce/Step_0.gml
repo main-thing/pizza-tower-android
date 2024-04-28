@@ -12,7 +12,7 @@ with (playerid)
 		if (state != states.fireass)
 			tv_push_prompt_once(tv_create_prompt("This is the fireass transformation text", tvprompt.transfo, self._spr_tv_fireass, 3), "fireass")
 		state = states.fireass
-		vsp = -20
+		vsp = other.targetvsp
 		sprite_index = spr_fireass
 		image_index = 0
 		movespeed = hsp

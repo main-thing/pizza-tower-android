@@ -183,28 +183,14 @@ function state_player_normal()
 		movespeed -= 0.1
 	if (character == "S")
 	{
-    if (machslideAnim == 0)
-    {
-        if (move == 0)
-        {
-            if (idle < 400)
-                idle++
-            if (idle >= 100 && floor(image_index) == (image_number - 1))
-            {
-                idle = 0
-                image_index = 0
-            }
-            if (idle >= 100 && sprite_index != spr_idle1)
-                sprite_index = spr_idle1
-            if (idle < 100)
-                sprite_index = spr_idle
-        }
-        if (move != 0)
-        {
-            machslideAnim = 0
-            sprite_index = spr_move
-            xscale = move
-			}
+	    if (machslideAnim == 0)
+	    {
+				if (move != 0)
+				{
+					machslideAnim = 0
+					sprite_index = spr_move
+					xscale = move
+				}
 		}
 	}
 	if landAnim
@@ -420,10 +406,18 @@ function state_player_normal()
 			}
 			break
 		case "S":
-			if (key_attack && state != states.handstandjump){
-				image_index = 0
+			if (move != 0 && (!(place_meeting((x + xscale), y, obj_solid))) && ((!(place_meeting(x, (y + 1), obj_iceblockslope))) or (!(place_meeting((x + (xscale * 5)), y, obj_solid)))))
+			{
+				if (movespeed < 6)
+					movespeed = 6
+			    sprite_index = spr_mach1
+			    jumpAnim = 1
+			    state = states.mach1
+			    image_index = 0
+			}
+			if (key_attack && (!(place_meeting((x + xscale), y, obj_solid))) && grounded){
 				state = states.handstandjump
-				movespeed = 5
+				movespeed = 0
 			}
 		break
 		case "N":

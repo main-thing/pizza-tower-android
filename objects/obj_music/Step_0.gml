@@ -25,12 +25,21 @@ if (prevpillar_on_camera != pillar_on_camera)
 		audio_sound_gain(musicID, (0.6 * global.option_music_volume), 2000)
 	}
 }
+if(global.lap){
+	if(!lapstart && !global.oldsprites && escapemusic != lap2music){
+		audio_stop_sound(musicID)
+		escapemusicID = lap2music
+		lapstart = true
+		music = escapemusicID
+		musicID = scr_music(music)
+	}
+}
 if global.panic
 {
 	if (!panicstart)
 	{
 		panicstart = true
-		if (music != mu_pizzatime && music != mu_finalescape && music != mu_chase)
+		if (music != escapemusic && music != finalescapemusic && music != finalescapemusic)
 		{	
 			music = escapemusicID
 			audio_stop_sound(musicID)
@@ -40,23 +49,9 @@ if global.panic
 			pillarmusicID = -4
 		}
 	}
-	if(!global.oldsprites) {
-		if(audio_is_playing(mu_pizzatime) && global.laps > 0) {
-			audio_stop_sound(mu_pizzatime)
-			escapemusicID = mu_chase
-			music = escapemusicID
-			musicID = scr_music(music)
-		}
-	} else{
-		if(audio_is_playing(mu_chase) && global.laps > 0) {
-			audio_stop_sound(mu_chase)
-			escapemusicID = mu_pizzatime
-			music = escapemusicID
-			musicID = scr_music(music)
-		}
-	}
 } else {
 	panicstart = false
-	escapemusicID = mu_pizzatime
+	escapemusicID = escapemusic
 	audio_stop_sound(escapemusicID)
 }
+

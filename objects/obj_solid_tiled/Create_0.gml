@@ -35,3 +35,5 @@ tile_width = 32
 tile_height = 32
 
 shoulddraw = true
+
+holdclick = 0

@@ -1,10 +1,10 @@
 if (text_state == states.titlescreen && text_y <= -(text_sprite_height * text_yscale))
 	exit;
-reset_blendmode();
+reset_blendmode()
 if (showgranny)
 {
 	draw_sprite(spr_tutorialbubble_rope, 0, 64 + text_wave_x, text_y + text_wave_y);
-	draw_sprite(spr_tutorialbubble_rope, 0, (window_get_width() - 64) + text_wave_x, text_y + text_wave_y);
+	draw_sprite(spr_tutorialbubble_rope, 0, (960 - 64) + text_wave_x, text_y + text_wave_y);
 }
 var xx = text_borderpad + text_wave_x;
 var yy = text_y + text_wave_y;

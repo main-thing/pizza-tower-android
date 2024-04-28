@@ -63,18 +63,28 @@ function scr_player_mach3()
 	}
 	if (grounded && vsp > 0)
 		jumpstop = 0
-	if (input_buffer_jump < 8 && sprite_index != spr_mach3jump && grounded && (!((move == 1 && xscale == -1))) && (!((move == -1 && xscale == 1))))
-	{
-		scr_soundeffect(sfx_jump)
-		if (sprite_index != spr_fightball)
+	if(character != "S"){
+		if (input_buffer_jump < 8 && sprite_index != spr_mach3jump && grounded && (!((move == 1 && xscale == -1))) && (!((move == -1 && xscale == 1))))
 		{
+			scr_soundeffect(sfx_jump)
+			if (sprite_index != spr_fightball)
+			{
+				image_index = 0
+				sprite_index = spr_mach3jump
+			}
+			if (character == "P")
+				vsp = -11
+			else
+				vsp = -13
+		}
+	} else {
+		if (input_buffer_jump < 8 && grounded && (!((move == 1 && xscale == -1))) && (!((move == -1 && xscale == 1))))
+		{
+			scr_soundeffect(sfx_jump)
 			image_index = 0
 			sprite_index = spr_mach3jump
-		}
-		if (character == "P")
 			vsp = -11
-		else
-			vsp = -13
+		}
 	}
 	if (fightball == 0)
 	{

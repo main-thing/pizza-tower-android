@@ -5,5 +5,9 @@ global.showrank = false
 global.showcollisions = false
 global.bossintro = 0
 global.vkcount = 0
+global.oldhud = false
+global.heatmetervisible = true
+global.forcehidecontrols = false
+global.forceshowcontrols = false
 NSP_initialize()
 gml_pragma("PNGCrush")

@@ -13,9 +13,8 @@ function nsp_variable_get(argument0, argument1) {
 	 }
 
 	switch (argument1) begin
-
-	 case "x":
-	   return (argument0).x;
+		case "x":
+			return (argument0).x;
 	  break;
  
 	 case "y":

@@ -12,8 +12,7 @@ function NSP_notify() {
 	Returns: n/a 
 
 	*/
-	var;
-
+	global.nsp_errorcount ++
 	//*** Do not change this part ***//
 	if (argument_count > 1) {
  
@@ -23,9 +22,10 @@ function NSP_notify() {
  
 	// You can use argument[0] (string) from now on to report an error in any way.
 	// Default implementation: show_error(argument[0], false);
-
-	show_message_async(argument[0]);
-
-
+	if(global.nsp_errorcount < 10){
+		show_message_async(argument[0]);
+	} else {
+		
+	}
 
 }

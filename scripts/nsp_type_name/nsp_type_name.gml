@@ -31,6 +31,8 @@ function nsp_type_name() {
 	  case NSP_TYPE._dsm: return "dsm";
   
 	  case NSP_TYPE._specword: return "specword";
+	  
+	  case NSP_TYPE._enumstate: return "enum (states)";
   
 	  default: return "unknown";
  

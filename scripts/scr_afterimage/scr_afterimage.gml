@@ -1,4 +1,4 @@
-function create_afterimage(argument0, argument1, argument2, argument3)
+function create_afterimage(argument0, argument1, argument2, argument3, argument4 = 1)
 {
 	var q = 
 	{
@@ -8,7 +8,7 @@ function create_afterimage(argument0, argument1, argument2, argument3)
 		image_index: argument3,
 		alarm: [15, 3, -1],
 		image_blend: choose(global.afterimage_color1, global.afterimage_color2),
-		image_xscale: 1,
+		image_xscale: argument4,
 		identifier: afterimage.afterimage,
 		visible: true,
 		alpha: 1
@@ -18,9 +18,9 @@ function create_afterimage(argument0, argument1, argument2, argument3)
 	return q;
 }
 
-function create_mach3effect(argument0, argument1, argument2, argument3)
+function create_mach3effect(argument0, argument1, argument2, argument3, argument4 = 1)
 {
-	q = 
+	var q = 
 	{
 		x: argument0,
 		y: argument1,
@@ -28,7 +28,7 @@ function create_mach3effect(argument0, argument1, argument2, argument3)
 		image_index: argument3,
 		alarm: [15, 6, -1],
 		image_blend: choose(global.mach_color1, global.mach_color2),
-		image_xscale: 1,
+		image_xscale: argument4,
 		visible: true,
 		identifier: afterimage.mach3effect,
 		playerid: obj_player1,
@@ -93,7 +93,21 @@ function create_firemouth_afterimage(argument0, argument1, argument2, argument3,
 		alarm[1] = -1
 		alarm[2] = -1
 		image_xscale = argument4
-		image_blend = make_color_rgb(248, 112, 24)
+		image_blend = global.firemouth_color
+		alpha = 1.25
+	}
+}
+
+function create_blue_afterimage_player(argument0, argument1, argument2, argument3, argument4)
+{
+	with create_afterimage(argument0, argument1, argument2, argument3)
+	{
+		identifier = afterimage.blue
+		alarm[0] = -1
+		alarm[1] = -1
+		alarm[2] = -1
+		image_xscale = argument4
+		image_blend = global.afterimage_color3
 		alpha = 1.25
 	}
 }
@@ -113,11 +127,16 @@ function create_blue_afterimage(argument0, argument1, argument2, argument3, argu
 }
 function create_red_afterimage(_x, _y, _sprite, _image_index, _xscale)
 {
-	var b = create_blue_afterimage(_x, _y, _sprite, _image_index, _xscale);
-	with (b)
+	with create_afterimage(argument0, argument1, argument2, argument3)
+	{
 		identifier = afterimage.enemy;
-		//image_blend = make_color_rgb(223, 47, 0)
-	return b;
+		alarm[0] = -1
+		alarm[1] = -1
+		alarm[2] = -1
+		image_xscale = argument4
+		image_blend = make_color_rgb(223, 47, 0)
+		alpha = 1.25
+	}
 }
 function create_blur_afterimage(argument0, argument1, argument2, argument3, argument4)
 {

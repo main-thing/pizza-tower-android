@@ -42,9 +42,12 @@ if (!instance_exists(obj_option))
 				newstuff = 1
 			}
 			if(selected_option == 2){
-				instance_create(x, y, obj_pausefadeout)
+				instance_create(x, y, obj_option)
 			}
 		}
+	} else {
+		move = (key_up * -1 + key_down) * 2
+		stringoffset += move
 	}
 	prev_key_jump2 = key_jump2
 }
@@ -55,5 +58,6 @@ if(room == rm_levelselect){
 	} else {
 		var lay_id = layer_get_id("Assets_1");
 		layer_set_visible(lay_id, true);
+		stringoffset = 0
 	}
 }

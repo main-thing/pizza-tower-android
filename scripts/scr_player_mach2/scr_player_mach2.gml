@@ -154,18 +154,20 @@ function scr_player_mach2()
 		flash = 0
 		state = states.tumble
 		vsp = 10
-		image_index = 0
-		if (!grounded) {
-			if(!finalmoveset){
-				sprite_index = spr_mach2jump
-			} else {
-				sprite_index = spr_dive
+		if(character != "S"){
+			image_index = 0
+			if (!grounded) {
+				if(!finalmoveset){
+					sprite_index = spr_mach2jump
+				} else {
+					sprite_index = spr_dive
+				}
 			}
+			else
+				sprite_index = spr_machroll
+			if (character == "V")
+				sprite_index = spr_playerV_divekickstart
 		}
-		else
-			sprite_index = spr_machroll
-		if (character == "V")
-			sprite_index = spr_playerV_divekickstart
 	}
 	if (key_attack && (!(place_meeting((x + xscale), y, obj_solid))) && character == "S" && grounded)
 	{
@@ -187,26 +189,36 @@ function scr_player_mach2()
 			}
 		}
 	}
-	if (((!key_attack) && movespeed >= 8 && grounded && skateboarding == 0) or (character == "S" && move == 0 && grounded))
-	{
-		image_index = 0
-		state = states.machslide
-		scr_soundeffect(sfx_break)
-		sprite_index = spr_machslidestart
-	}
-	else if ((!key_attack) && movespeed < 8 && grounded && skateboarding == 0)
-		state = states.normal
-	if (move == (-xscale) && movespeed >= 8 && grounded && skateboarding == 0)
-	{
-		scr_soundeffect(sfx_machslideboost)
-		image_index = 0
-		state = states.machslide
-		sprite_index = spr_machslideboost
-	}
-	else if (move == (-xscale) && movespeed < 8 && grounded && skateboarding == 0)
-	{
-		xscale *= -1
-		movespeed = 6
+	if(character != "S"){
+		if (((!key_attack) && movespeed >= 8 && grounded && skateboarding == 0))
+		{
+			image_index = 0
+			state = states.machslide
+			scr_soundeffect(sfx_break)
+			sprite_index = spr_machslidestart
+		}
+		else if ((!key_attack) && movespeed < 8 && grounded && skateboarding == 0)
+			state = states.normal
+		if (move == (-xscale) && movespeed >= 8 && grounded && skateboarding == 0)
+		{
+			scr_soundeffect(sfx_machslideboost)
+			image_index = 0
+			state = states.machslide
+			sprite_index = spr_machslideboost
+		}
+		else if (move == (-xscale) && movespeed < 8 && grounded && skateboarding == 0)
+		{
+			xscale *= -1
+			movespeed = 6
+		}
+	} else {
+		if (character == "S" && move == 0 && grounded)
+		{
+			image_index = 0
+			state = states.machslide
+			scr_soundeffect(sfx_break)
+			sprite_index = spr_machslidestart
+		}
 	}
 	if (clowntimer > 0 && skateboarding == 1)
 		clowntimer--

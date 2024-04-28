@@ -13,8 +13,12 @@ secret = 0
 secretend = 0
 pillar_on_camera = 0
 prevpillar_on_camera = 0
-escapemusicID = mu_pizzatime
+lap2music = mu_chase
+escapemusic = mu_pizzatime
+finalescapemusic = mu_finalescape
+escapemusicID = escapemusic
 panicstart = false;
+lapstart = false
 room_arr = [
 	[Realtitlescreen, mu_title, mu_medievalsecret, false], 
 	[rm_levelselect, mu_title, mu_medievalsecret, false], 
@@ -55,7 +59,7 @@ room_arr = [
 	[space_1, mu_pinball, mu_pinballsecret, false], 
 	[graveyard_1, mu_graveyard, mu_medievalsecret, false], 
 	[saloon_1, mu_saloon, mu_saloonsecret, false], 
-	[ufo_1, mu_ufo, mu_pinballsecret, false], 
+	[ufo_1, mu_pinball, mu_pinballsecret, false], 
 	[plage_entrance, mu_beach, mu_medievalsecret, false], 
 	[war_1, mu_war, mu_medievalsecret, false], 
 	[characterselect, mu_characterselect, mu_medievalsecret, false],
@@ -63,7 +67,7 @@ room_arr = [
 	[tower_tutorial1, mu_funiculi, mu_funiculi, false], 
 	[boss_fakepep, mu_fakepep, mu_fakepep, false], 
 	[rm_editor_big, mu_snickchallenge, mu_medievalsecret, false], 
-	[dragonlair_1, mu_dragonlair, mu_medievalsecret, false], 
+	[dragonlair_1, mu_dungeondepth, mu_medievalsecret, false], 
 	[tutorial_room1, mu_tutorial, mu_medievalsecret, false], 
 	[normalT_room1, mu_ruin, mu_medievalsecret, false], 
 	[normalT_bonus1, mu_dungeondepth, mu_medievalsecret, false], 

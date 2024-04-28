@@ -15,6 +15,14 @@ function nsp_evaluate_special_word(argument0) {
 	   return other;
 	  break;
  
+	 case "all":
+	   return all;
+	  break;
+ 
+	 case "noone":
+	   return noone;
+	  break;
+ 
 	 default:
 	  break;
 

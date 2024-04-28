@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_cheesejump.wav",
-  "duration": 0.483,
+  "duration": 0.483333,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",

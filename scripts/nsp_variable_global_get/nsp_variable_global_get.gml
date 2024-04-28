@@ -18,10 +18,6 @@ function nsp_variable_global_get(argument0) {
 	   return room_speed;
 	  break;
   
-	 case "state":
-	   return global.state;
-	  break;
-  
 	  // Add more here...
   
 	 default:

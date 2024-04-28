@@ -102,6 +102,12 @@ function nsp_execute_single(argument0, argument1, argument2, argument3) {
 	    mode=2;
 	   break;
     
+	  case NSP_TYPE._enumstate:
+	    varname=nspListStr[|as_var_max];
+	    target=-1;
+	    mode=4;
+	   break;
+    
 	  default:
 	    NSP_notify("SCRIPT: nsp_execute_single. ERROR: Cannot assign value - illegal target.",nspListStr,list_min,list_max);
 	    exit;
@@ -144,6 +150,16 @@ function nsp_execute_single(argument0, argument1, argument2, argument3) {
 	      if is_string(old_val) old_val=nspToken[NSP_TOK.quote]+old_val+nspToken[NSP_TOK.quote];
       
 	      }
+		  else if mode=4 {
+    
+		     old_val=nsp_states_get_new(varname);
+		     if nsp_is_equal(old_val,nspToken[NSP_TOK.abort]) {
+		      exit;
+		      }
+		     //SQ
+		     if is_string(old_val) old_val=nspToken[NSP_TOK.quote]+old_val+nspToken[NSP_TOK.quote];
+     
+		  }
 	  }
   
 	 //Switch using operator char (calcualted above): 
