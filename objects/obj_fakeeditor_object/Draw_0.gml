@@ -10,12 +10,18 @@ if(object_exists(asset_get_index(fake_ed_content))){
 			sprite_index = spr_teleportmachine
 		}
 	}
+	if(fake_ed_content == "obj_rank_set"){
+		image_speed = 0
+	}
 	switch(sprite_index){
 		case spr_doorunvisited:
 			mask_index = spr_doorvisited
 		break
 		case spr_goldendoorunvisited:
 			mask_index = spr_goldendoorvisited
+		break
+		case spr_ladder:
+			mask_index = spr_wall
 		break
 		default:
 			mask_index = -1

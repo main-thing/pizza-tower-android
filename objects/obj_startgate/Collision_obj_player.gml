@@ -1,3 +1,4 @@
+msg = string_upper(level)
 switch targetRoom
 {
 	case space_1:

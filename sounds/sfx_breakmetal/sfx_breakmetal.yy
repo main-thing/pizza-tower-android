@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "sfx_breakmetal",
   "conversionMode": 0,
-  "compression": 1,
+  "compression": 3,
   "volume": 0.72,
   "preload": true,
   "bitRate": 128,

@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "sfx_woosh",
   "conversionMode": 0,
-  "compression": 1,
+  "compression": 3,
   "volume": 1.0,
   "preload": true,
   "bitRate": 128,
@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_woosh",
-  "duration": 1.071,
+  "duration": 1.071429,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",

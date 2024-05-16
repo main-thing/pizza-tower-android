@@ -27,7 +27,7 @@ function mrstick_start_round()
 			var xx = tx * 32
 			with instance_create(x + xx, y, b[0])
 			{
-				if object_index == obj_vigilanteboss
+				if object_index == obj_vigilantebossOLD
 					honor = 0
 				
 				create_particle(x, y, particle.genericpoofeffect, 0)

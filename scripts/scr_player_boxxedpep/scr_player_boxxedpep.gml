@@ -39,7 +39,7 @@ function scr_player_boxxedpep()
 		instance_create(x, y, obj_highjumpcloud2)
 		vsp = (-boxxedpepjump)
 		state = states.boxxedpepjump
-		sprite_index = spr_boxxedpep_flap
+		sprite_index = spr_boxxedpepflap
 		image_index = 0
 		repeat (7)
 		{
@@ -78,7 +78,7 @@ function scr_player_boxxedpep()
 		sprite_index = spr_boxxedpepidle
 	if (sprite_index != spr_boxxedpepintro)
 	{
-		if (sprite_index != spr_boxxedpep_flap)
+		if (sprite_index != spr_boxxedpepflap)
 		{
 			if grounded
 			{
@@ -100,7 +100,7 @@ function scr_player_boxxedpep()
 	if key_slap2
 	{
 		state = states.boxxedpepspin
-		sprite_index = spr_boxxedpep_spin
+		sprite_index = spr_boxxedpepspin
 		image_index = 0
 		vsp = -6
 		instance_create(x, y, obj_stompeffect)

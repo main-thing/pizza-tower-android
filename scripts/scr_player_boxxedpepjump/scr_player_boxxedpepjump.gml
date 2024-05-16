@@ -42,7 +42,7 @@ function scr_player_boxxedpepjump()
 	if (key_jump && boxxedpepjump > 4)
 	{
 		jumpstop = 0
-		sprite_index = spr_boxxedpep_flap
+		sprite_index = spr_boxxedpepflap
 		image_index = 0
 		repeat (7)
 		{
@@ -56,12 +56,12 @@ function scr_player_boxxedpepjump()
 		boxxedpepjump *= 0.9
 		vsp = (-boxxedpepjump)
 	}
-	if (sprite_index == spr_boxxedpep_flap && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_boxxedpepflap && floor(image_index) == (image_number - 1))
 		sprite_index = spr_boxxedpepair
 	if key_slap2
 	{
 		state = states.boxxedpepspin
-		sprite_index = spr_boxxedpep_spin
+		sprite_index = spr_boxxedpepspin
 		image_index = 0
 	}
 	exit;

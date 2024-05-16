@@ -74,4 +74,5 @@ room_arr = [
 	[normalT_room3, mu_ruin, mu_medievalsecret, false], 
 	[normalT_bonus2, mu_dungeondepth, mu_medievalsecret, false], 
 	[normalT_room5, mu_ruin, mu_medievalsecret, false], 
+	[desert_1, mu_desert, mu_desertsecret, false], 
 ]

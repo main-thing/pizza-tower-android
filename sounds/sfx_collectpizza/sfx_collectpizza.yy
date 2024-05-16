@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "sfx_collectpizza",
   "conversionMode": 0,
-  "compression": 1,
+  "compression": 3,
   "volume": 0.76,
   "preload": true,
   "bitRate": 128,
@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_collectpizza",
-  "duration": 3.8769999,
+  "duration": 3.877732,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",

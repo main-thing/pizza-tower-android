@@ -114,6 +114,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4E6C3CA5","properties":[],"isDnd":false,"objectId":{"name":"obj_platform","path":"objects/obj_platform/obj_platform.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":2.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":4736.0,"y":32.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7AF421A7","properties":[],"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":4.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":544.0,"y":-128.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_795FA276","properties":[],"isDnd":false,"objectId":{"name":"obj_priest","path":"objects/obj_priest/obj_priest.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":0.53000003,"scaleY":0.70000005,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":343.5,"y":351.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_34E73F0F","properties":[],"isDnd":false,"objectId":{"name":"obj_verticalhallway","path":"objects/obj_verticalhallway/obj_verticalhallway.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":2.0,"imageIndex":0,"imageSpeed":0.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":576.0,"y":-32.0,},
       ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Tiles_Depth1","assets":[
         {"resourceType":"GMRGraphic","resourceVersion":"1.0","name":"","spriteId":{"name":"background0","path":"sprites/background0/background0.yy",},"w":32,"h":32,"u0":192,"v0":192,"u1":224,"v1":224,"colour":4294967295,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":544.0,"y":64.0,},
@@ -2247,6 +2248,7 @@
     {"name":"inst_4E6C3CA5","path":"rooms/normalT_room6branch/normalT_room6branch.yy",},
     {"name":"inst_7AF421A7","path":"rooms/normalT_room6branch/normalT_room6branch.yy",},
     {"name":"inst_795FA276","path":"rooms/normalT_room6branch/normalT_room6branch.yy",},
+    {"name":"inst_34E73F0F","path":"rooms/normalT_room6branch/normalT_room6branch.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

@@ -10,12 +10,15 @@ switch negative
 
 draw_set_font(global.smallfont)
 draw_set_halign(fa_center)
-//shader_set()
 if flash
 {
-	//shader_set(shd_hit)
-	draw_text(x, y, letters)
-	//shader_set()
+	if(global.usehitshaders){
+		shader_set(shd_hit)
+		draw_text(x, y, letters)
+		shader_reset()
+	} else {
+		draw_text(x, y, letters)
+	}
 }
 else
 	draw_text(x, y, letters)

@@ -137,6 +137,22 @@ function nsp_get_constant(argument0) {
 		case "os_switch": return os_switch;
 		case "os_unknown": return os_unknown;
 		case "pi": return pi;
+		
+	 // files:
+		case "fa_archive": return fa_archive;
+		case "fa_directory": return fa_directory;
+		case "fa_hidden": return fa_hidden;
+		case "fa_readonly": return fa_readonly;
+		case "fa_sysfile": return fa_sysfile;
+		case "fa_volumeid": return fa_volumeid;
+		
+	 // alignment:
+		case "fa_bottom": return fa_bottom;
+		case "fa_center": return fa_center;
+		case "fa_left": return fa_left;
+		case "fa_middle": return fa_middle;
+		case "fa_right": return fa_right;
+		case "fa_top": return fa_top;
 	 
 	 
 	 //If not a defined constant:

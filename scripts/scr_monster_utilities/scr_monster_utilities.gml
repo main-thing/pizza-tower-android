@@ -15,7 +15,9 @@ function scr_monster_activate()
 			image_speed = 0.35
 		}
 	}
-	warbg_init()
+	if(!instance_exists(obj_warshader)){
+		warbg_init()
+	}
 }
 
 function get_triangle_points(argument0, argument1, argument2, argument3, argument4)

@@ -3,19 +3,19 @@ switch global.stylethreshold
 {
 	case 0:
 		var pop = spr_mildpop
-		var idle = 39
+		var idle = spr_mild
 		break
 	case 1:
 		pop = spr_antsypop
-		idle = 2838
+		idle = spr_antsy
 		break
 	case 2:
 		pop = spr_madpop
-		idle = 2459
+		idle = spr_mad
 		break
 	case 3:
 		pop = spr_crazypop
-		idle = 1014
+		idle = spr_crazy
 		break
 }
 
@@ -27,19 +27,19 @@ if (global.style > 55 && global.stylethreshold < 3)
 	{
 		case 0:
 			pop = spr_mildpop
-			idle = 39
+			idle = spr_mild
 			break
 		case 1:
 			pop = spr_antsypop
-			idle = 2838
+			idle = spr_antsy
 			break
 		case 2:
 			pop = spr_madpop
-			idle = 2459
+			idle = spr_mad
 			break
 		case 3:
 			pop = spr_crazypop
-			idle = 1014
+			idle = spr_crazy
 			break
 	}
 
@@ -55,19 +55,19 @@ if (global.style < 0 && global.stylethreshold != 0)
 	{
 		case 0:
 			pop = spr_mildpop
-			idle = 39
+			idle = spr_mild
 			break
 		case 1:
 			pop = spr_antsypop
-			idle = 2838
+			idle = spr_antsy
 			break
 		case 2:
 			pop = spr_madpop
-			idle = 2459
+			idle = spr_mad
 			break
 		case 3:
 			pop = spr_crazypop
-			idle = 1014
+			idle = spr_crazy
 			break
 	}
 

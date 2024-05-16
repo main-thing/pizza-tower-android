@@ -19,10 +19,14 @@ if pause
 	}
 	xx = 256
 	yy = 192
-	//shader_set(global.Pal_Shader)
-	//pal_swap_set(spr_palette, paletteselect, 0)
-	draw_sprite(peppino_sprite, peppino_index, xx, yy)
-	//shader_set()
+	if(global.usepaletteshaders){
+		shader_set(global.Pal_Shader)
+		pal_swap_set(spr_palette, paletteselect, 0)
+		draw_sprite(peppino_sprite, peppino_index, xx, yy)
+		shader_reset()
+	} else {
+		draw_sprite(peppino_sprite, peppino_index, xx, yy)
+	}
 	draw_set_font(global.collectfont)
 	draw_set_halign(fa_center)
 	xx = 689

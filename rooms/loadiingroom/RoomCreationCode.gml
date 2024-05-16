@@ -11,3 +11,4 @@ global.forcehidecontrols = false
 global.forceshowcontrols = false
 NSP_initialize()
 gml_pragma("PNGCrush")
+scr_checkcrashcount()

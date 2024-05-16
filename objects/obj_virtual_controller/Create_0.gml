@@ -320,3 +320,43 @@ function doedit(commandstring){
 		}
 	}
 }
+input = function (_touch_id, _touch_x, _touch_y, _click)
+{
+	if(!_click){
+		return;
+	}
+	if(buttonlockable || keycode == "bind"){
+		if (buttonlockable && !global.movingvkeys) {
+			if(!pressed){
+				if(!is_string(keycode) && keycode != undefined) {
+					keyboard_key_press(keycode)
+				}
+				if(!is_string(keycode2) && keycode2 != undefined) {
+					keyboard_key_press(keycode2)
+				}
+				pressed = true
+			} else if(pressed){
+				if(!is_string(keycode) && keycode != undefined) {
+					keyboard_key_release(keycode)
+				}
+				if(!is_string(keycode2) && keycode2 != undefined) {
+					keyboard_key_release(keycode2)
+				}
+				pressed = false
+			}
+		}
+		if (keycode == "bind") {
+			if(global.forceshowcontrols || !global.forcehidecontrols){
+				if (!global.movingvkeys) {
+					if(global.showbinds){
+						processcommand(keycode2,true)
+					} else {
+						if(string_pos("togglebinds",string_lower(string(keycode2))) != 0){
+							processcommand(keycode2,true)
+						}
+					}
+				}
+			}
+		}
+	}
+}

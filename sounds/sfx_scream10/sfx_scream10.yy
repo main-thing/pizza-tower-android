@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "sfx_scream10",
   "conversionMode": 0,
-  "compression": 1,
+  "compression": 3,
   "volume": 0.13,
   "preload": true,
   "bitRate": 128,

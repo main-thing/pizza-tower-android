@@ -36,7 +36,8 @@ level_array[5][1] = ["ENEMY TEST", rm_swedish, "rm_swedish"]
 level_array[5][2] = ["EDITOR ROOM", rm_editor_new, "rm_editor_big"]
 level_array[6][0] = ["STRONGCOLD", strongcold_10, "strongcold"]
 level_array[6][1] = ["DRAGONSLAIR", dragonlair_1, "dragonlair"]
-level_array[6][2] = ["EARLY TEST BUILD", tutorial_room1, "etb"]
+level_array[6][2] = ["DESERT", desert_1, "desert"]
+level_array[6][3] = ["EARLY TEST BUILD", tutorial_room1, "etb"]
 
 toppin_info[0] = [0, spr_toppinshroom] // image_index, sprite
 toppin_info[1] = [0, spr_toppincheese]

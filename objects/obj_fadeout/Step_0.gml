@@ -165,6 +165,12 @@ if (fadealpha > 1)
 					break
 				}
             }
+			with(obj_fakeeditor_trigger_base){
+				event_perform(ev_other,ev_room_start)
+			}
+			with(obj_fakeeditor_trigger_door_base){
+				event_perform(ev_other,ev_room_start)
+			}
 		}
 	}
 }

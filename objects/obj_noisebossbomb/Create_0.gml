@@ -16,7 +16,7 @@ vsp_carry = 0
 var i = 0
 while scr_solid(x, y)
 {
-	x += obj_noiseboss.image_xscale
+	x += obj_noisebossOLD.image_xscale
 	i++
 	if (i > room_width)
 		break

@@ -21,8 +21,13 @@ else
 if (room == dungeon_5 or room == dungeon_6)
 {
 	use_dark = 1
-	//for (var i = 0; i < array_length(dark_arr); i++)
-		//layer_shader(dark_arr[i], 5)
+	if(global.usedarkershaders){
+		for (var i = 0; i < array_length(dark_arr); i++)
+			layer_shader(dark_arr[i], shd_darker)
+	}
 }
 else
 	use_dark = 0
+if(global.usepaletteshaders){
+	pal_swap_init_system(shd_pal_swapper)
+}

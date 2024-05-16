@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "mu_rankb",
   "conversionMode": 0,
-  "compression": 1,
+  "compression": 3,
   "volume": 0.65,
   "preload": true,
   "bitRate": 128,

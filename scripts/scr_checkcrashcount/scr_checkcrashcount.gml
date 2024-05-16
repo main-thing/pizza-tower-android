@@ -5,7 +5,7 @@ function scr_checkcrashcount(){
 		file_text_close(file);
 	} else {
 		var file = file_text_open_read(working_directory + "crashcount.txt")
-		var count = file_text_open_read(file)
+		var count = file_text_read_real(file) //mistyped so it always gave a random number
 		file_text_close(file)
 		
 		var file = file_text_open_write(working_directory + "crashcount.txt")

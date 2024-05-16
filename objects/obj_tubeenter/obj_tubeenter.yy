@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_tubeenter",
   "spriteId": {
-    "name": "spr_tubeenter",
-    "path": "sprites/spr_tubeenter/spr_tubeenter.yy",
+    "name": "spr_tuberight",
+    "path": "sprites/spr_tuberight/spr_tuberight.yy",
   },
   "solid": false,
   "visible": true,

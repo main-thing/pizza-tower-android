@@ -19,11 +19,17 @@ switch state
 		draw_sprite(vstitle, -1, xx, (vsy + yy))
 		if flash
 		{
-			//shader_set(shd_hit)
-			draw_sprite(sprplayer, -1, playerx, (room_height - sprite_get_height(sprplayer)))
-			draw_sprite(sprboss, -1, bossx, (room_height - sprite_get_height(sprboss)))
-			draw_sprite(vstitle, -1, xx, (vsy + yy))
-			//shader_set()
+			if(global.usehitshaders){
+				shader_set(shd_hit)
+				draw_sprite(sprplayer, -1, playerx, (room_height - sprite_get_height(sprplayer)))
+				draw_sprite(sprboss, -1, bossx, (room_height - sprite_get_height(sprboss)))
+				draw_sprite(vstitle, -1, xx, (vsy + yy))
+				shader_reset()
+			} else {
+				draw_sprite(sprplayer, -1, playerx, (room_height - sprite_get_height(sprplayer)))
+				draw_sprite(sprboss, -1, bossx, (room_height - sprite_get_height(sprboss)))
+				draw_sprite(vstitle, -1, xx, (vsy + yy))
+			}
 		}
 		exit;
 }
@@ -62,8 +68,13 @@ var sp = ((super / supermax) * 100)
 if (super > supermax)
 	sp = 100
 draw_healthbar(64, 240, 200, 252, sp, c_dkgray, c_aqua, c_aqua, 0, 1, 1)
-//shader_set(global.Pal_Shader)
-//pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, 0)
-draw_sprite(portrait1_sprite, portrait1_index, 113, 104)
-//shader_set()
+if(global.usepaletteshaders) {
+	shader_set(global.Pal_Shader)
+	pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, 0)
+	draw_sprite(portrait1_sprite, portrait1_index, 113, 104)
+	shader_reset()
+} else {
+	draw_sprite(portrait1_sprite, portrait1_index, 113, 104)
+}
+
 draw_sprite_ext(portrait2_sprite, portrait2_index, 848, 104, -1, 1, 0, c_white, 1)

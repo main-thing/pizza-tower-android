@@ -5,29 +5,24 @@ if (instance_exists(selectedent) && editormode && !in_play_mode)
 {
 	var _myvars = variable_instance_get_names(selectedent)
 	var return_array = [];
-	var clean_index = 0;
-
-	// Iterate through array1
+	var clean_index = 0; // Iterate through array1
 	for (var i = 0; i < array_length(_myvars); i++) {
-	var item = _myvars[i];
-	var found = false;
+		var item = _myvars[i];
+		var found = false;
     
-	// Check if the current item of array1 is in array2
-	for (var j = 0; j < array_length(selectedent.fake_ed_remove_vars); j++) {
-		if (item == selectedent.fake_ed_remove_vars[j]) {
-			found = true;
-			break; // Exit the loop if the item is found in array2
+		// Check if the current item of array1 is in array2
+		for (var j = 0; j < array_length(selectedent.fake_ed_remove_vars); j++) {
+			if (item == selectedent.fake_ed_remove_vars[j]) {
+				found = true;
+				break; // Exit the loop if the item is found in array2
+			}
+		}
+		// If the item is not found in array2, add it to return_array
+		if (!found) {
+			return_array[clean_index] = item;
+			clean_index++;
 		}
 	}
-	// If the item is not found in array2, add it to return_array
-	if (!found) {
-		return_array[clean_index] = item;
-		clean_index++;
-	}
-	}
-
-	// At this point, return_array contains only the elements from array1 that are not in array2
-	// If you want to replace array1 with return_array, you can do so
 	_myvars = return_array;
     draw_set_font(font0)
     draw_set_color(c_white)

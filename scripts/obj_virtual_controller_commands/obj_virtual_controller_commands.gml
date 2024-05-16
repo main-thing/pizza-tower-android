@@ -31,6 +31,7 @@ function docommand(commandstring,silentcommand = false,is_trigger = false) {
 						global.panic = true
 						global.fill = int64(commands[i]) * 12
 						with(obj_tv){
+							pizzaface_sprite = spr_timer_pizzaface1
 							chunkmax = global.fill
 						}
 						hasarg2 = true
@@ -71,7 +72,11 @@ function docommand(commandstring,silentcommand = false,is_trigger = false) {
 		var code = string_delete(commandstring,1,4);
 		if(string_length(code) > 2){
 			global.nsp_errorcount = 0
-			NSP_execute_string(code)
+			try{
+				NSP_execute_string(code)
+			} catch(err){
+				get_string_async("AN ERROR HAS OCCURRED", err)
+			}
 		}
 	}
 	if (string_pos("startupcommand", string_lower(commandstring)) == 1) {
@@ -83,6 +88,11 @@ function docommand(commandstring,silentcommand = false,is_trigger = false) {
 		}
 	}
 	if (string_pos("spawn", string_lower(commandstring)) == 1) {
+		try{
+			string_split(commandstring, " ");
+		} catch(err){
+			return get_string_async("string splitting failed, aborting...", err);
+		}
 		var commands = string_split(commandstring, " ");
 		var hasarg2 = false
 		var hasarg3 = false
@@ -227,13 +237,14 @@ function docommand(commandstring,silentcommand = false,is_trigger = false) {
 									with(obj_player1){
 									state = states.normal
 									isgustavo = 0
+									shotgunAnim = 0
 									sprite_index = spr_idle
 									}
 								break
 								case "states.shotgun":
 								case "shotgun":
 									with(obj_player1)
-										shotgun = 1
+										shotgunAnim = 1
 								break
 								case "states.boxxedpep":
 								case "boxxedpep":

@@ -1,5 +1,4 @@
 targettileset = tile_desertdeco_OLD
-ignoretileset = tile_cavern_tileset
-nosecret = true
-levelname = "desert"
-ignoresubroom = "mart"
+tilesettoreplace = tile_desertdeco
+roomname=""
+tilesetarray=["Tiles_1","Tiles_2","Tiles_Foreground1","Tiles_BG"]

@@ -33,6 +33,7 @@ middle_y = 160
 
 tile_width = 32
 tile_height = 32
+tile_yoffset = 0
 
 shoulddraw = true
 

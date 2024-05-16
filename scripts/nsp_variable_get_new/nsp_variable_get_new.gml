@@ -44,6 +44,24 @@ function nsp_variable_get_new() {
 		case "mouse_y":
 			return mouse_y
 		break
+		case "application_surface": return application_surface;
+		break
+		case "view_camera[0]": return view_camera[0];
+		break
+		case "view_camera[1]": return view_camera[1];
+		break
+		case "view_camera[2]": return view_camera[2];
+		break
+		case "view_camera[3]": return view_camera[3];
+		break
+		case "view_camera[4]": return view_camera[4];
+		break
+		case "view_camera[5]": return view_camera[5];
+		break
+		case "view_camera[6]": return view_camera[6];
+		break
+		case "view_camera[7]": return view_camera[7];
+		break
 		case "view_current": return view_current;
 		break
 		case "current_year": return current_year;
@@ -63,6 +81,14 @@ function nsp_variable_get_new() {
 		case "current_time": return current_time;
 		break
 		case "fps": return fps;
+		break
+		case "game_id": return game_id;
+		break
+		case "game_save_id": return game_save_id;
+		break
+		case "game_display_name": return game_display_name;
+		break
+		case "game_project_name": return game_project_name;
 		break
 		case "working_directory": return working_directory;
 		break

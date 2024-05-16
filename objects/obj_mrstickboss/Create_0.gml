@@ -1,11 +1,11 @@
 event_inherited()
 boss_array[0] = -4
-boss_array[1] = [obj_pepperman, 1] // [object, bossfight phase]
-boss_array[2] = [obj_vigilanteboss, 1]
-boss_array[3] = [obj_noiseboss, 1]
-boss_array[4] = [obj_pepperman, 6]
-boss_array[5] = [obj_vigilanteboss, 6]
-boss_array[6] = [obj_noiseboss, 6]
+boss_array[1] = [obj_peppermanOLD, 1] // [object, bossfight phase]
+boss_array[2] = [obj_vigilantebossOLD, 1]
+boss_array[3] = [obj_noisebossOLD, 1]
+boss_array[4] = [obj_peppermanOLD, 6]
+boss_array[5] = [obj_vigilantebossOLD, 6]
+boss_array[6] = [obj_noisebossOLD, 6]
 state = states.arenaround
 attack_pool = [states.boss_shield, states.boss_helicopterhat, states.boss_panicjump, states.jump, states.boss_smokebombstart, states.boss_springshoes, states.boss_cardboard]
 ds_map_set(player_hurtstates, states.handstandjump, 30)

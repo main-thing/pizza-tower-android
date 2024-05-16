@@ -38,13 +38,17 @@ with (obj_baddie)
 		b = get_dark(c, other.use_dark)
 		if (object_index == obj_peppinoclone)
 		{
-			//shader_set(global.Pal_Shader)
-			//pal_swap_set(spr_peppalette, 1, 0)
+			if(global.usepaletteshaders){
+				shader_set(global.Pal_Shader)
+				pal_swap_set(spr_peppalette, 1, 0)
+			}
 		}
 		else if usepalette
 		{
-			//shader_set(global.Pal_Shader)
-			//pal_swap_set(spr_palette, paletteselect, 0)
+			if(global.usepaletteshaders){
+				shader_set(global.Pal_Shader)
+				pal_swap_set(spr_palette, paletteselect, 0)
+			}
 		}
 		draw_sprite_ext(sprite_index, image_index, x, (y + _stun), (xscale * image_xscale), yscale, angle, b, image_alpha)
 		if _kungfu
@@ -53,8 +57,11 @@ with (obj_baddie)
 				maxhp = hp
 			draw_healthbar((x - 16), (y - 50), (x + 16), (y - 45), ((hp / maxhp) * 100), c_black, c_red, c_red, 0, 1, 1)
 		}
-		if (object_index == obj_peppinoclone or usepalette)
-			//shader_set()
+		if (object_index == obj_peppinoclone or usepalette){
+			if(global.usepaletteshaders){
+				shader_reset()
+			}
+		}
 		if (object_index == obj_hamkuff)
 		{
 			if (state == states.blockstance && instance_exists(playerid))
@@ -78,12 +85,16 @@ with (obj_baddie)
 		}
 	}
 }
-//shader_set(global.Pal_Shader)
+if(global.usepaletteshaders){
+	shader_set(global.Pal_Shader)
+}
 with (obj_sausageman_dead)
 {
 	if (visible && bbox_in_camera(view_camera[0], 32))
 	{
-		//pal_swap_set(spr_palette, paletteselect, 0)
+		if(global.usepaletteshaders){
+			pal_swap_set(spr_palette, paletteselect, 0)
+		}
 		b = get_dark(image_blend, other.use_dark)
 		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, angle, b, image_alpha)
 	}
@@ -92,7 +103,9 @@ with (obj_heatafterimage)
 {
 	if visible
 	{
-		//pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, 0)
+		if(global.usepaletteshaders){
+			pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, 0)
+		}
 		draw_sprite_ext(obj_player1.sprite_index, obj_player1.image_index, x, y, obj_player1.xscale, obj_player1.yscale, 1, c_white, alpha)
 	}
 }
@@ -100,7 +113,9 @@ with (obj_player2)
 {
 	if (visible && bbox_in_camera(view_camera[0], 32))
 	{
-		//pal_swap_set(spr_palette, paletteselect, 0)
+		if(global.usepaletteshaders){
+			pal_swap_set(spr_palette, paletteselect, 0)
+		}
 		b = get_dark(image_blend, other.use_dark)
 		draw_sprite_ext(sprite_index, image_index, x, y, (xscale * scale_xs), (yscale * scale_ys), image_angle, b, image_alpha)
 	}
@@ -109,12 +124,16 @@ with (obj_player1)
 {
 	if (visible && bbox_in_camera(view_camera[0], 32))
 	{
-		//pal_swap_set(spr_palette, paletteselect, 0)
+		if(global.usepaletteshaders){
+			pal_swap_set(spr_palette, paletteselect, 0)
+		}
 		b = get_dark(image_blend, other.use_dark)
 		draw_sprite_ext(sprite_index, image_index, x, y, (xscale * scale_xs), (yscale * scale_ys), angle, b, image_alpha)
 	}
 }
-//shader_set(shd_hit)
+if(global.usehitshaders){
+	shader_set(shd_hit)
+}
 with (obj_baddie)
 {
 	_stun = 0
@@ -138,4 +157,6 @@ with (obj_smallnumber)
 	if (visible && flash)
 		draw_text(x, y, number)
 }
-//shader_set()
+if(global.usehitshaders){
+	shader_reset()
+}

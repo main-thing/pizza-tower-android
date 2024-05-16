@@ -1,4 +1,14 @@
 ///NSP_initialize()
+function nsp_reset_functionslist(){
+global.___nspfunctions = {}; // Edit this global all you want just call nsp_reset_functionslist to fix it.
+	for (var i = 0; i < 10000; i++) { 
+		var name = script_get_name(i);
+		if (string_char_at(name, 1) == "<") break;
+		if (string_char_at(name, 1) == "@") continue;
+		global.___nspfunctions[$name] = i
+	}
+}
+nsp_reset_functionslist()
 function NSP_initialize() {
 	/*
 
@@ -97,6 +107,7 @@ function NSP_initialize() {
 	//global.nspListPar = ds_list_create();
 	global.nspListSaved = ds_list_create();
 	global.nsp_errorcount = 0
+	global.___nspforceasync = true
 
 	if (global.nspToken[NSP_TOK.dsm_allowed] == 1)
 	  global.nspDsMap = ds_map_create();

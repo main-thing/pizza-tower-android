@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "sfx_taunt",
   "conversionMode": 0,
-  "compression": 1,
+  "compression": 3,
   "volume": 0.34,
   "preload": true,
   "bitRate": 128,
@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_taunt",
-  "duration": 0.7,
+  "duration": 0.700952,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",

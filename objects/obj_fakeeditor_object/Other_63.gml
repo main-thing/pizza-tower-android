@@ -69,7 +69,7 @@ if (i_d == fake_ed_tile_string)
 				break
 				case "single":
 					single_x = fake_ed_cursor_pos_x
-					single_y = fake_ed_cursor_pos_y
+					single_y = fake_ed_cursor_pos_y 
 				break
 				case "closemenu":
 				case "close menu":

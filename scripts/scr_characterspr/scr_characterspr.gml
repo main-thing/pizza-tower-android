@@ -235,6 +235,8 @@ function scr_characterspr() {
 		spr_boxxedpepdashstart = spr_boxxedpep_dashstart
 		spr_boxxedpepdashend = spr_boxxedpep_dashend
 		spr_boxxedpepdash = spr_boxxedpep_dash
+		spr_boxxedpepspin = spr_boxxedpep_spin
+		spr_boxxedpepflap = spr_boxxedpep_flap
 		spr_cheesepepintro = spr_cheesepep_intro
 		spr_cheesepepidle = spr_cheesepep_idle
 		spr_cheesepepwalk = spr_cheesepep_walk
@@ -675,7 +677,7 @@ function scr_characterspr() {
 		fake_tv_hud_y = 80
 		paletteselect = 0
 		escapemusic = mu_noiseescape
-		lap2music = mu_noiseescape
+		lap2music = mu_chase
 	}
 	if (character == "V") {
 		spr_idle = spr_playerV_idle

@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "sfx_step",
   "conversionMode": 0,
-  "compression": 1,
+  "compression": 3,
   "volume": 1.0,
   "preload": true,
   "bitRate": 128,
@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_step",
-  "duration": 0.452,
+  "duration": 0.452812,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",

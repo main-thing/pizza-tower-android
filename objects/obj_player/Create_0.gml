@@ -400,6 +400,7 @@ if (!variable_global_exists("saveroom"))
 	global.snickchallenge = 0
 	global.golfhit = 0
 	ini_open("saveData.ini")
+	global.option_editor_oldedit = ini_read_real("Option", "disableholdclick", 1)
 	global.option_fullscreen = ini_read_real("Option", "fullscreen", 1)
 	global.option_resolution = ini_read_real("Option", "resolution", 1)
 	global.option_master_volume = ini_read_real("Option", "master_volume", 1)

@@ -129,7 +129,7 @@ function create_red_afterimage(_x, _y, _sprite, _image_index, _xscale)
 {
 	with create_afterimage(argument0, argument1, argument2, argument3)
 	{
-		identifier = afterimage.enemy;
+		identifier = afterimage.fakepep;
 		alarm[0] = -1
 		alarm[1] = -1
 		alarm[2] = -1

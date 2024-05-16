@@ -27,6 +27,7 @@ if (place_meeting(x, y, playerid) && (!playerid.cutscene) && playerid.state != s
 		global.panic = true
 		global.fill = 59 * 12
 		with(obj_tv){
+			pizzaface_sprite = spr_timer_pizzaface1
 			chunkmax = global.fill
 		}
 		obj_camera.alarm[1] = 60

@@ -1,1 +1,1 @@
-targetRoom = entrance_1
+targetRoom = hub_room1

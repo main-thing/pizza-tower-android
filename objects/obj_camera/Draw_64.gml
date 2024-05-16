@@ -234,12 +234,16 @@ if (obj_player.state != states.gameover)
 	if (global.heatmetervisible) {
 		draw_sprite_part(spr_heatmeter_fill, pizzascore_index, 0, 0, (sw * b), sh, (hud_xx - 95), (hud_yy + 24))
 	}
-	//shader_set(global.Pal_Shader)
-	//pal_swap_set(98, global.stylethreshold, 0)
+	if(global.usepaletteshaders){
+		shader_set(global.Pal_Shader)
+		pal_swap_set(98, global.stylethreshold, 0)
+	}
 	if (global.heatmetervisible) {
 		draw_sprite_ext(spr_heatmeter, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha)
 	}
-	//shader_reset()
+	if(global.usepaletteshaders){
+		shader_reset()
+	}
 	draw_sprite_ext(spr_pizzascore, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha)
 	var _score = global.collect
 	if global.coop
@@ -346,7 +350,9 @@ if (obj_player.state != states.gameover)
 			color_array[i] = choose(irandom(3))
 		lastcollect = sc
 	}
-	//shader_set(global.Pal_Shader)
+	if(global.usepaletteshaders){
+		shader_set(global.Pal_Shader)
+	}
 	draw_set_alpha(alpha)
 	for (i = 0; i < num; i++)
 	{
@@ -357,7 +363,9 @@ if (obj_player.state != states.gameover)
 		xx += (w / num)
 	}
 	draw_set_alpha(1)
-	//shader_reset()
+	if(global.usepaletteshaders){
+		shader_reset()
+	}
 	draw_set_font(global.bigfont)
 	draw_set_halign(fa_center)
 	draw_set_color(c_white)

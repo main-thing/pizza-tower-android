@@ -1,5 +1,7 @@
 function fakeeditor_play_level(){
 	if(!obj_fakeeditor.in_play_mode) {
+		global.forcehidecontrols = 0
+		scr_resize_room(0,room_height,room_width,room_height)
 		with(obj_fakeeditor_object) {
 			visible = false
 			if(object_exists(asset_get_index(fake_ed_content))) {
@@ -31,8 +33,7 @@ function fakeeditor_play_level(){
 				}
 			}
 		}
-		scr_resize_room(0,room_height,room_width,room_height)
-		global.forcehidecontrols = 0
+		
 		with(obj_player1){
 			state = states.comingoutdoor
 			visible = false
@@ -74,7 +75,19 @@ function fakeeditor_ask_object(){
 	fakeeditor_obj = get_string_async("Object Name", nejdmssx)
 }
 function fakeeditor_ask_edit(){
-	fakeeditor_edit = get_string_async("save, load, delete level.", nejdmssx)
+	var commonoptions = "save, load, help, delete level"
+	if(global.option_editor_oldedit){
+		if(instance_exists(obj_fakeeditor.oldselectedent)){
+			if(obj_fakeeditor.oldselectedent.fake_ed_content == "obj_solid_tiled" || obj_fakeeditor.oldselectedent.fake_ed_content == "obj_tiled"){
+				fakeed_istilemenu = true
+				fakeeditor_edit = get_string_async("Set object variable (<type> <variablename> <new value>), " + commonoptions + ", tilemenu.", nejdmssx)
+				return;
+			}
+		}
+		fakeeditor_edit = get_string_async("Set object variable (<type> <variablename> <new value>), " + commonoptions + ".", nejdmssx)
+	} else {
+		fakeeditor_edit = get_string_async(commonoptions + ".", nejdmssx)
+	}
 }
 function fakeeditor_toggle_swipe(){
 	with(obj_fakeeditor){
@@ -145,7 +158,12 @@ function fakeeditor_toggle_grid(){
 function fakeeditor_edit_object_var(argument0) //gml_Script_edit_object_var
 {
 	var commandstring = argument0
-    var commands = string_split(argument0, " ")
+	try{
+		string_split(commandstring, " ");
+	} catch(err){
+		return get_string_async("string splitting failed, aborting...", err);
+	}
+    var commands = string_split(commandstring, " ")
     var i = 1
     while (i < array_length(commands))
     {
@@ -349,10 +367,8 @@ function fakeeditor_initcamera(){
 	global.forcehidecontrols = 1
 	view_w = 960
 	view_h = 540
-	cx = camera_get_view_x(view_camera[0])
-	cy = camera_get_view_y(view_camera[0])
-	mouse_xprevious = device_mouse_x_to_gui(0)
-	mouse_yprevious = device_mouse_y_to_gui(0)
+	cx = mouse_x
+	cy = mouse_y
 	camera_speed = 10
 	drag_speed = 0.6
 	zoom = 1
@@ -366,21 +382,13 @@ function fakeeditor_initcamera(){
 }
 function fakeeditor_camera_update()
 {
-	cx = camera_get_view_x(view_camera[0])
-	cy = camera_get_view_y(view_camera[0])
-	var mx = device_mouse_x_to_gui(0)
-	var my = device_mouse_y_to_gui(0)
-	if(obj_fakeeditor.swipemode && mouse_check_button(mb_left))
-	{
-		cx += ((mouse_xprevious - mx) * (zoom * drag_speed))
-		cy += ((mouse_yprevious - my) * (zoom * drag_speed))
+	if(mouse_check_button_pressed(mb_left)) {
+		cx = mouse_x;
+		cy = mouse_y; 
 	}
-	mouse_xprevious = mx
-	mouse_yprevious = my
-	zoom = clamp(zoom, 0.5, 8)
-	camera_set_view_pos(view_camera[0], cx, cy)
-	camera_set_view_size(view_camera[0], (view_w * zoom), (view_h * zoom))
-	surface_resize(application_surface, (view_w * zoom), (view_h * zoom))
+	if(mouse_check_button(mb_left)) { 
+		camera_set_view_pos(view_camera[0], cx - (mouse_x - camera_get_view_x(view_camera[0])), cy - (mouse_y - camera_get_view_y(view_camera[0])))
+	} 
 }
 
 function fakeeditor_draw_grid() {
@@ -440,12 +448,16 @@ function fakeeditor_save_editor_objects()
 		array_push(myobjects, objectproperties)
     }
     var liststring = json_stringify(myobjects)
-    get_string_async("copy string", liststring)
 	// here cause windows does not show full string
 	var levelbuffer = buffer_create(string_byte_length(liststring) + 1, buffer_fixed, 1)
 	buffer_write(levelbuffer, buffer_string, liststring)
 	buffer_save(levelbuffer, "levels/level.txt")
 	buffer_delete(levelbuffer)
+	if(os_type == os_windows){
+		get_string_async("copy into browser","file:///" + game_save_id + "levels/level.txt")
+	} else {
+		get_string_async("level code: ",liststring)
+	}
 }
 function fakeeditor_load_editor_objects(argument0)
 {
@@ -453,6 +465,12 @@ function fakeeditor_load_editor_objects(argument0)
         show_message_async("No input provided")
     else
     {
+		try {
+			json_parse(argument0)
+		} catch(err){
+			get_string_async("JSON ERROR",string(err))
+			return;
+		}
         var objload = json_parse(argument0)
         while(array_length(objload) > 0) {
 			var loadedobject = array_pop(objload)
@@ -488,23 +506,13 @@ function scr_resize_room(_x,_y,_width,_height){
 	}
 	*/
 }
-function call_alarm(alarmid,delay,instance = noone){
-	if(instance_exists(instance)){
-		instance.alarm[alarmid] = delay
-	} else {
-		alarm[alarmid] = delay
-	}
-}
-function set_view_surface(_id,surf){
-	view_surface_id[_id] = surf
-}
 function draw_tileset_picker(_tilespr){
 	draw_set_alpha(0.5) 
 	draw_set_color(c_black)
 	draw_rectangle(0, 0, sprite_get_width(_tilespr), sprite_get_height(_tilespr), false)
 	draw_set_alpha(1) 
 	draw_set_color(c_white)
-	draw_sprite(_tilespr,0,sprite_get_xoffset(_tilespr),sprite_get_yoffset(_tilespr))
+	draw_sprite(_tilespr, 0, sprite_get_xoffset(_tilespr), sprite_get_yoffset(_tilespr) )
 	var cursorposx = round(clamp(device_mouse_x_to_gui(0), 0, sprite_get_width(_tilespr)) / tile_width) * tile_width
 	var cursorposy = round(clamp(device_mouse_y_to_gui(0), 0, sprite_get_height(_tilespr)) / tile_height) * tile_height
 	draw_set_color(c_green)
@@ -535,16 +543,69 @@ function draw_tileset_picker(_tilespr){
 		
 	}
 }
-function array_get_index(value,array){
-	for(var __index=-1,i=0;i<array_length(array);i++)
-		if(value==array[i]){
-			__index=i;
-			break
-		}
-	return __index
-}
-function add_music_array(mainsong,secretsong,override){
-	with(obj_music){
-		array_push(room_arr,[mainsong,secretsong,override]) // music support or something for gml commands
+function fakeeditor_perfom_edit(){
+	if(nejdmssx == "save"){
+		fakeeditor_save_editor_objects()
 	}
+	if(nejdmssx == "load"){
+					
+		if(clipboard_has_text()){
+			amogustextlol = get_string_async("load code: ", clipboard_get_text())
+		} else{
+				amogustextlol = get_string_async("load code: ","")
+		}
+	}
+	/*if(nejdmssx == "setrank"){
+		fakeeditor_ask_rank()
+	}*/
+	if(nejdmssx == "help"){
+		get_string_async("",@"
+TILES:
+obj_solid_tiled -- use the tilemenu command when it is selected to pick tiles (tap and hold to select them).
+obj_tiled -- same as above.
+		
+WARPS:
+obj_door_editor -- requires the index variable of both doors to be the same
+obj_hallway_editor -- same as obj_door_editor
+obj_lapportal_editor -- same as obj_door_editor AND entrance needs start set to 1 and exit needs start set to 0
+obj_boxofpizza_editor -- same as obj_door_editor
+obj_secretportal_editor -- same as obj_door_editor AND the start variable is 1 for the portal that leads to the secret, start variable is 0 for the portal in the start of the secret, start variable is 2 for the exit of the secret.
+		
+TRIGGERS:
+obj_background_trigger -- sets the background to what the bgname variable contains on player collide. (asset bgname bg_entrance)
+obj_camera_bounds_trigger -- sets the camera bounds when touched. 
+obj_command_trigger -- runs any command that the debug menu can run via the command variable. (string command spawn obj_timesupwar)
+obj_music_trigger -- swaps the music to what the musicname variable contains on player collide. (asset musicname mu_chase)
+obj_outofbounds_trigger -- shows technical difficulty screen and respawns player.
+obj_tvtrigger_editor -- displays the hud bubble message.
+obj_variable_trigger -- do not use it.
+obj_enemyspawn -- please do not use this, you have no reason to do so.
+obj_..._trigger_door -- when targetkey is pressed in its bounds, the function of the trigger is activated. (string targetkey down)
+		
+OTHER:
+obj_rank_set -- just spawn it in the level to automatically set the rank via the maxscore variable contained in it.
+obj_solid -- generic ground that player can stand on.
+obj_slope -- generic sloped ground that the player can stand on.
+obj_platform -- generic platform that the player can stand on.
+obj_donkey -- cow.
+		")
+	}
+	if(nejdmssx == "delete level"){
+		with(obj_fakeeditor_object){
+			instance_destroy()
+		}
+	}
+	if(nejdmssx == "tilemenu"){
+		if(fakeed_istilemenu){
+			with(obj_fakeeditor.oldselectedent){
+				obj_fakeeditor.selectedent = id
+				fake_ed_hold_menu = 1
+				global.fake_ed_tilemenu = 1
+			}
+		}
+	}
+	fakeed_istilemenu = false
+}
+function fakeeditor_ask_rank(){
+	fakeeditor_rank = get_string_async("S Rank Requirement (others will be auto set): ", string(obj_fakeeditor.srank))
 }

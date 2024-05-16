@@ -1,7 +1,11 @@
 if(step_event != ""){
 	if(step_event_saved != undefined){
 		if(NSP_check_saved(step_event_saved)){
-			NSP_execute_saved(step_event_saved)
+			try {
+				NSP_execute_saved(step_event_saved)
+			} catch(err){
+				get_string_async("AN ERROR HAS OCCURRED", err)
+			}
 		}
 	}
 }

@@ -39,6 +39,33 @@ function nsp_variable_set_new() {
 		case "room_speed":
 			return room_speed = val
 		break
+		case "application_surface":
+			return application_surface = val
+		break
+		case "view_camera[0]":
+			return view_camera[0] = val;
+		break
+		case "view_camera[1]":
+			return view_camera[1] = val;
+		break
+		case "view_camera[2]":
+			return view_camera[2] = val;
+		break
+		case "view_camera[3]":
+			return view_camera[3] = val;
+		break
+		case "view_camera[4]":
+			return view_camera[4] = val;
+		break
+		case "view_camera[5]":
+			return view_camera[5] = val;
+		break
+		case "view_camera[6]": 
+			return view_camera[6] = val;
+		break
+		case "view_camera[7]": 
+			return view_camera[7] = val;
+		break
 	}
 	if (is_string(val) and nsp_is_string(val)) {
 

@@ -66,7 +66,7 @@ function vigilante_cancel_attack()
 				image_index = 0
 				with (instance_create(x, y, obj_dynamite))
 				{
-					obj_explosion = 85
+					obj_explosion = obj_dynamiteexplosion_boss
 					image_xscale = other.image_xscale
 					movespeed = 6
 					vsp = -6
