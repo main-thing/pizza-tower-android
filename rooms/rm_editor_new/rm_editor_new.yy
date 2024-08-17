@@ -18,7 +18,6 @@
   "layers": [
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5E16306C","properties":[],"isDnd":false,"objectId":{"name":"obj_fakeeditor","path":"objects/obj_fakeeditor/obj_fakeeditor.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":448.0,"y":256.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5D070A8D","properties":[],"isDnd":false,"objectId":{"name":"obj_fakeeditor_object","path":"objects/obj_fakeeditor_object/obj_fakeeditor_object.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":0.0,"y":0.0,},
       ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","tilesetId":null,"x":0,"y":0,"tiles":{"TileDataFormat":1,"SerialiseWidth":74,"SerialiseHeight":74,"TileCompressedData":[
 -1197,-2147483648,-4,0,-69,-2147483648,-6,0,-68,-2147483648,-6,0,-67,-2147483648,-7,0,-66,-2147483648,-8,0,-65,-2147483648,-9,0,-3904,-2147483648,],},"visible":true,"depth":100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
@@ -31,7 +30,6 @@
   "inheritCode": false,
   "instanceCreationOrder": [
     {"name":"inst_5E16306C","path":"rooms/rm_editor_new/rm_editor_new.yy",},
-    {"name":"inst_5D070A8D","path":"rooms/rm_editor_new/rm_editor_new.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

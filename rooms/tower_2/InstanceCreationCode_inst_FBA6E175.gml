@@ -1,1 +1,1 @@
-targetRoom = farm_1
+targetRoom = farm_2

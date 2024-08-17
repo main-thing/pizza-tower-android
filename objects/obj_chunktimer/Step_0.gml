@@ -10,4 +10,4 @@ if (global.fill <= 0 && global.panic == true && (!instance_exists(obj_pizzaface)
 	}
 }
 floor((global.fill / 100))
-global.fill = clamp(global.fill, 0, 9999999999999)
+global.fill = clamp(global.fill, 0, infinity)

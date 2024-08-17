@@ -6,6 +6,7 @@ if(instance_exists(obj_fakeeditor)){
 	}
 }
 player = (obj_player1.spotlight == 1 ? obj_player1 : obj_player2)
+
 if (!instance_exists(obj_pizzaball))
 	targetgolf = noone
 if (collect_shake > 0)

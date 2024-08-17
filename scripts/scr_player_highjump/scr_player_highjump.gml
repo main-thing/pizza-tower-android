@@ -39,20 +39,34 @@ function scr_player_highjump()
 		image_index = 0
 		freefallstart = 0
 	}
-	if (grounded && input_buffer_jump < 8 && (!key_attack) && (!key_down) && vsp > 0)
+	if(!finalmoveset)
 	{
-		vsp = -9
-		state = states.jump
-		jumpAnim = 1
-		jumpstop = 0
-		image_index = 0
-		freefallstart = 0
-		audio_sound_gain(sfx_jump, 0.7, 0)
-		if (!audio_is_playing(sfx_jump))
-			audio_play_sound(sfx_jump, 1, false)
+		if (grounded && input_buffer_jump < 8 && (!key_attack) && (!key_down) && vsp > 0)
+		{
+			vsp = -9
+			state = states.jump
+			jumpAnim = 1
+			jumpstop = 0
+			image_index = 0
+			freefallstart = 0
+			audio_sound_gain(sfx_jump, 0.7, 0)
+			if (!audio_is_playing(sfx_jump))
+				audio_play_sound(sfx_jump, 1, false)
+		}
+		if key_jump
+			input_buffer_jump = 0
+	} else {
+		if (can_jump && (input_buffer_jump > 0) && (!key_attack) && (!key_down) && (vsp > 0))
+	    {
+	        input_buffer_jump = 0
+	        vsp = -9
+	        state = states.jump
+	        jumpAnim = true
+	        jumpstop = false
+	        image_index = 0
+	        freefallstart = 0
+	    }
 	}
-	if key_jump
-		input_buffer_jump = 0
 	if (jumpAnim == 1)
 	{
 		sprite_index = spr_player_Sjumpstart

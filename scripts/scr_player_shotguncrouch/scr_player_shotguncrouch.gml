@@ -18,20 +18,38 @@ function scr_player_shotguncrouch()
 	}
 	else if (floor(image_index) == (image_number - 1))
 		sprite_index = spr_shotgunduck
-	if ((!grounded) && input_buffer_jump >= 8)
-	{
-		state = states.shotguncrouchjump
-		movespeed = 0
-		sprite_index = spr_crouchfall
-		image_index = 0
-	}
-	if (grounded && input_buffer_jump < 8)
-	{
-		input_buffer_jump = 8
-		sprite_index = spr_crouchjump
-		image_index = 0
-		state = states.shotguncrouchjump
-		vsp = -8
+	if(!finalmoveset){
+		if ((!grounded) && input_buffer_jump >= 8)
+		{
+			state = states.shotguncrouchjump
+			movespeed = 0
+			sprite_index = spr_crouchfall
+			image_index = 0
+		}
+		if (grounded && input_buffer_jump < 8)
+		{
+			input_buffer_jump = 8
+			sprite_index = spr_crouchjump
+			image_index = 0
+			state = states.shotguncrouchjump
+			vsp = -8
+		}
+	} else {
+		if ((!grounded) && (input_buffer_jump <= 0))
+	    {
+	        state = states.shotguncrouchjump
+	        movespeed = 0
+	        sprite_index = spr_crouchfall
+	        image_index = 0
+	    }
+		if (can_jump && (input_buffer_jump > 0))
+	    {
+	        input_buffer_jump = 0
+	        sprite_index = spr_crouchjump
+	        image_index = 0
+	        state = states.shotguncrouchjump
+	        vsp = -8
+	    }
 	}
 	if (grounded && vsp > 0 && (!key_down) && (!(scr_solid(x, (y - 16)))) && (!(scr_solid(x, (y - 32)))))
 	{

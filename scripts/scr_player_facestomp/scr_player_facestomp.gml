@@ -45,20 +45,37 @@ function scr_player_facestomp()
 	if (move != 0)
 		xscale = move
 	image_speed = 0.35
-	if (grounded && input_buffer_jump < 8 && vsp > 0)
+	if(!finalmoveset)
 	{
-		sprite_index = spr_hanstandjump
-		stompAnim = 0
-		hsp = 0
-		state = states.handstandjump
-		jumpAnim = 1
-		jumpstop = 0
-		image_index = 0
-		create_particle(x, y, particle.landcloud, 0)
-		freefallstart = 0
+		if (grounded && input_buffer_jump < 8 && vsp > 0)
+		{
+			sprite_index = spr_hanstandjump
+			stompAnim = 0
+			hsp = 0
+			state = states.handstandjump
+			jumpAnim = 1
+			jumpstop = 0
+			image_index = 0
+			create_particle(x, y, particle.landcloud, 0)
+			freefallstart = 0
+		}
+		if key_jump
+			input_buffer_jump = 0
+	} else {
+		if (can_jump && (input_buffer_jump > 0) && (vsp > 0))
+	    {
+	        input_buffer_jump = 0
+	        sprite_index = spr_hanstandjump
+	        stompAnim = false
+	        hsp = 0
+	        state = states.handstandjump
+	        jumpAnim = true
+	        jumpstop = false
+	        image_index = 0
+	        create_particle(x, y, (12 << 0), 0)
+	        freefallstart = 0
+	    }
 	}
-	if key_jump
-		input_buffer_jump = 0
 	exit;
 }
 

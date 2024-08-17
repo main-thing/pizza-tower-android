@@ -4,6 +4,16 @@ if(instance_exists(obj_fakeeditor)){
 	if(!obj_fakeeditor.in_play_mode)
 		exit;
 }
+if(instance_exists(obj_player1)){
+	tv_x = obj_player1.tv_hud_x
+	tv_y = obj_player1.tv_hud_y
+	fake_tv_x = obj_player1.fake_tv_hud_x
+	fake_tv_y = obj_player1.fake_tv_hud_y
+	tv_bg_sprite = obj_player1._spr_tv_bg
+	tv_overlay_sprite = obj_player1._spr_tv_empty
+	timer_xstart = obj_player1.escapetimer_x
+	timer_ystart = obj_player1.escapetimer_y
+}
 draw_set_font(global.bigfont)
 draw_set_halign(fa_center)
 draw_set_color(c_white)
@@ -73,10 +83,21 @@ for (var i = num; i > 0; i--)
 if (room != strongcold_endscreen)
 {
 	draw_sprite_ext(tv_bg_sprite, 0, (fake_tv_x + collect_x), ((fake_tv_y + collect_y) + hud_posY), 1, 1, 0, c_white, alpha)
-	draw_sprite_ext(sprite_index, image_index, (tv_x + collect_x), ((tv_y + collect_y) + hud_posY), obj_player1.tv_hud_xscale, obj_player1.tv_hud_yscale, 0, c_white, alpha)
-	if(obj_player1.faketv = 1){
-		draw_sprite_ext(tv_overlay_sprite, 0, (fake_tv_x + collect_x), ((fake_tv_y + collect_y) + hud_posY), obj_player1.fake_tv_hud_xscale, obj_player1.fake_tv_hud_yscale, 0, c_white, alpha)
+	if(global.usepaletteshaders){
+		shader_set(global.Pal_Shader)
+		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false)
+		draw_sprite_ext(sprite_index, image_index, (tv_x + collect_x), ((tv_y + collect_y) + hud_posY), obj_player1.tv_hud_xscale, obj_player1.tv_hud_yscale, 0, c_white, alpha)
+		if(obj_player1.faketv){
+			draw_sprite_ext(tv_overlay_sprite, 0, (fake_tv_x + collect_x), ((fake_tv_y + collect_y) + hud_posY), obj_player1.fake_tv_hud_xscale, obj_player1.fake_tv_hud_yscale, 0, c_white, alpha)
+		}
+		shader_reset()
+	} else{
+		draw_sprite_ext(sprite_index, image_index, (tv_x + collect_x), ((tv_y + collect_y) + hud_posY), obj_player1.tv_hud_xscale, obj_player1.tv_hud_yscale, 0, c_white, alpha)
+		if(obj_player1.faketv){
+			draw_sprite_ext(tv_overlay_sprite, 0, (fake_tv_x + collect_x), ((fake_tv_y + collect_y) + hud_posY), obj_player1.fake_tv_hud_xscale, obj_player1.fake_tv_hud_yscale, 0, c_white, alpha)
+		}
 	}
+	
 }
 if (bubblespr != -4)
 	draw_sprite_ext(bubblespr, bubbleindex, 512, 53, 1, 1, 1, c_white, alpha)

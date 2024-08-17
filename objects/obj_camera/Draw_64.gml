@@ -5,33 +5,46 @@ if(instance_exists(obj_fakeeditor)){
 		exit;
 	}
 }
+if(instance_exists(player)){
+	key_inv_x = player.key_inv_x
+	key_inv_y = player.key_inv_y
+	hud_x = player.hud_x
+	hud_y = player.hud_y
+}
 if global.kungfu
 {
+	draw_sprite(spr_pizzahealthbar, (global.hp - (sprite_get_number(spr_pizzahealthbar) -1 )) * -1, hp_hud_x, hp_hud_y) // should be dynamic now if anyone needs it.
+	/*
 	if (global.hp == 8)
-		draw_sprite(spr_pizzahealthbar, 0, 190, 70)
+		draw_sprite(spr_pizzahealthbar, 0, hp_x, hp_y)
 	else if (global.hp == 7)
-		draw_sprite(spr_pizzahealthbar, 1, 190, 70)
+		draw_sprite(spr_pizzahealthbar, 1, hp_x, hp_y)
 	else if (global.hp == 6)
-		draw_sprite(spr_pizzahealthbar, 2, 190, 70)
+		draw_sprite(spr_pizzahealthbar, 2, hp_x, hp_y)
 	else if (global.hp == 5)
-		draw_sprite(spr_pizzahealthbar, 3, 190, 70)
+		draw_sprite(spr_pizzahealthbar, 3, hp_x, hp_y)
 	else if (global.hp == 4)
-		draw_sprite(spr_pizzahealthbar, 4, 190, 70)
+		draw_sprite(spr_pizzahealthbar, 4, hp_x, hp_y)
 	else if (global.hp == 3)
-		draw_sprite(spr_pizzahealthbar, 5, 190, 70)
+		draw_sprite(spr_pizzahealthbar, 5, hp_x, hp_y)
 	else if (global.hp == 2)
-		draw_sprite(spr_pizzahealthbar, 6, 190, 70)
+		draw_sprite(spr_pizzahealthbar, 6, hp_x, hp_y)
 	else if (global.hp == 1)
-		draw_sprite(spr_pizzahealthbar, 7, 190, 70)
+		draw_sprite(spr_pizzahealthbar, 7, hp_x, hp_y)
 	else if (global.hp == 0)
-		draw_sprite(spr_pizzahealthbar, 8, 190, 70)
+		draw_sprite(spr_pizzahealthbar, 8, hp_x, hp_y)
+	*/
 }
 if(global.oldhud){
+	if(global.usepaletteshaders){
+		shader_set(global.Pal_Shader)
+		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, 0)
+	}
 	if (obj_player1.state != states.gameover)
 	{
 		if ((obj_player1.character == "V"))
 	    {
-	        if (((healthshaketime > 0) && (playerhealthup == 1)) || (obj_player1.sprite_index == spr_playerV_keydoor) || (obj_player1.state == states.keyget || (obj_player1.state == states.gottreasure)))
+	        if (((healthshaketime > 0) && (playerhealthup == 1)) || (obj_player1.sprite_index == obj_player1.spr_victory) || (obj_player1.state == states.keyget || (obj_player1.state == states.gottreasure)))
 	            draw_sprite_ext(spr_playerV_happyHUD, -1, 125, 100, 1, 1, 1, c_white, other.alpha)
 	        else if ((obj_player1.state == states.mach3))
 	            draw_sprite_ext(spr_playerV_machHUD, -1, 125, 100, 1, 1, 1, c_white, other.alpha)
@@ -87,7 +100,7 @@ if(global.oldhud){
 	        draw_sprite_ext(spr_snickHUD, -1, 125, 60, 1, 1, 1, c_white, alpha)
 	    if (obj_player1.character == "N" || (obj_player1.character == "P" && !obj_player1.ispeppino) )
 	    {
-	        if (!((obj_player1.state == states.mach1 || obj_player1.state == states.gottreasure || obj_player1.state == states.bossintro || (obj_player1.state == states.bossintro && obj_player1.sprite_index == spr_player_bossintro) || (obj_player1.state == states.bossintro && obj_player1.sprite_index == spr_player_idle) || obj_player1.state == states.bombpep || obj_player1.state == states.machroll || obj_player1.state == states.timesup || obj_player1.state == states.chainsaw || obj_player1.state == states.shotgun || obj_player1.state == states.slam || obj_player1.state == states.Sjumpland || obj_player1.state == states.grab || obj_player1.state == states.punch || obj_player1.state == states.backbreaker || obj_player1.state == states.backkick || obj_player1.state == states.uppunch || obj_player1.state == states.shoulder || obj_player1.state == states.tackle || (obj_player1.state == states.bossintro && obj_player1.sprite_index == spr_player_levelcomplete) || (obj_player1.state == states.freefallland && shake_mag > 0) || obj_player1.state == states.freefallprep || obj_player1.state == states.freefall || obj_player1.state == states.Sjump || obj_player1.state == states.Sjumpprep || obj_player1.state == states.mach2 || obj_player1.state == states.mach3 || obj_player1.state == states.smirk || obj_player1.state == states.hurt || obj_player1.state == states.keyget || obj_player1.sprite_index == spr_player_victory || obj_player1.state == states.punch)))
+	        if (!((obj_player1.state == states.mach1 || obj_player1.state == states.gottreasure || obj_player1.state == states.bossintro || (obj_player1.state == states.bossintro && obj_player1.sprite_index == obj_player1.spr_bossintro) || (obj_player1.state == states.bossintro && obj_player1.sprite_index == obj_player1.spr_idle) || obj_player1.state == states.bombpep || obj_player1.state == states.machroll || obj_player1.state == states.timesup || obj_player1.state == states.chainsaw || obj_player1.state == states.shotgun || obj_player1.state == states.slam || obj_player1.state == states.Sjumpland || obj_player1.state == states.grab || obj_player1.state == states.punch || obj_player1.state == states.backbreaker || obj_player1.state == states.backkick || obj_player1.state == states.uppunch || obj_player1.state == states.shoulder || obj_player1.state == states.tackle || (obj_player1.state == states.bossintro && obj_player1.sprite_index == spr_player_levelcomplete) || (obj_player1.state == states.freefallland && shake_mag > 0) || obj_player1.state == states.freefallprep || obj_player1.state == states.freefall || obj_player1.state == states.Sjump || obj_player1.state == states.Sjumpprep || obj_player1.state == states.mach2 || obj_player1.state == states.mach3 || obj_player1.state == states.smirk || obj_player1.state == states.hurt || obj_player1.state == states.keyget || obj_player1.sprite_index == spr_player_victory || obj_player1.state == states.punch)))
 	        {
 	            if (global.playerhealth == 1)
 	                draw_sprite_ext(spr_noiseHUD_lowhealth, -1, 125, 100, 1, 1, 1, c_white, alpha)
@@ -96,7 +109,7 @@ if(global.oldhud){
 	        }
 	        else if (obj_player1.state == states.Sjumpland || (obj_player1.state == states.freefallland && shake_mag > 0))
 	            draw_sprite_ext(spr_noiseHUD_hurt, -1, 125, 100, 1, 1, 1, c_white, alpha)
-	        else if (obj_player1.sprite_index == spr_player_victory || obj_player1.state == states.keyget || obj_player1.state == states.smirk || obj_player1.state == states.gottreasure || (obj_player1.state == states.bossintro && obj_player1.sprite_index == spr_player_levelcomplete))
+	        else if (obj_player1.sprite_index == obj_player1.spr_victory || obj_player1.state == states.keyget || obj_player1.state == states.smirk || obj_player1.state == states.gottreasure || (obj_player1.state == states.bossintro && obj_player1.sprite_index == obj_player1.spr_levelcomplete))
 	            draw_sprite_ext(spr_noiseHUD_happy, -1, 125, 100, 1, 1, 1, c_white, alpha)
 	        else if (obj_player1.state == states.mach1 || obj_player1.state == states.shotgun || obj_player1.state == states.chainsaw || obj_player1.state == states.freefallprep || obj_player1.state == states.freefall || obj_player1.state == states.tackle || obj_player1.state == states.Sjump || obj_player1.state == states.slam || obj_player1.state == states.Sjumpprep || obj_player1.state == states.grab || obj_player1.state == states.punch || obj_player1.state == states.backbreaker || obj_player1.state == states.backkick || obj_player1.state == states.uppunch || obj_player1.state == states.shoulder)
 	            draw_sprite_ext(spr_noiseHUD_mach1, -1, 125, 100, 1, 1, 1, c_white, alpha)
@@ -104,17 +117,20 @@ if(global.oldhud){
 	            draw_sprite_ext(spr_noiseHUD_mach2, -1, 125, 100, 1, 1, 1, c_white, alpha)
 	        else if (obj_player1.state == states.mach3 || obj_player1.state == states.machroll)
 	            draw_sprite_ext(spr_noiseHUD_mach3, -1, 125, 100, 1, 1, 1, c_white, alpha)
-	       else if (obj_player1.state == states.hurt || obj_player1.sprite_index == spr_bombpep_end || obj_player1.sprite_index == spr_player_fireassend || obj_player1.state == states.timesup || obj_player1.state == states.bombpep || (obj_player1.state == states.bossintro && obj_player1.sprite_index == spr_player_bossintro) || (obj_player1.state == states.bossintro && obj_player1.sprite_index == spr_player_idle))
+	       else if (obj_player1.state == states.hurt || obj_player1.sprite_index == obj_player1.spr_bombpepend || obj_player1.sprite_index == obj_player1.spr_fireassend || obj_player1.state == states.timesup || obj_player1.state == states.bombpep || (obj_player1.state == states.bossintro && obj_player1.sprite_index == obj_player1.spr_bossintro) || (obj_player1.state == states.bossintro && obj_player1.sprite_index == obj_player1.spr_idle))
 	            draw_sprite_ext(spr_noiseHUD_hurt, -1, 125, 100, 1, 1, 1, c_white, alpha)
 	        else if (obj_player1.angry == 1)
 	            draw_sprite_ext(spr_noiseHUD_angry, -1, 125, 100, 1, 1, 1, c_white, alpha)
-	        else if (obj_player1.sprite_index == spr_player_hurtidle || obj_player1.sprite_index == spr_player_hurtwalk)
+	        else if (obj_player1.sprite_index == spr_hurtidle || obj_player1.sprite_index == spr_hurtwalk)
 	            draw_sprite_ext(spr_noiseHUD_lowhealth, -1, 125, 100, 1, 1, 1, c_white, alpha)
 	        else if (global.panic == 1 || global.snickchallenge == 1)
 	            draw_sprite_ext(spr_noiseHUD_panic, -1, 125, 100, 1, 1, 1, c_white, alpha)
-	        else if (obj_player1.sprite_index == spr_shotgun_pullout)
+	        else if (obj_player1.sprite_index == spr_shotgunpullout)
 	            draw_sprite_ext(spr_noiseHUD_menacing, -1, 125, 100, 1, 1, 1, c_white, alpha)
 	    }
+		if(global.usepaletteshaders){
+			shader_reset()
+		}
 	    if (obj_player1.movespeed < 2.4 || (!((obj_player1.state == states.mach1 || obj_player1.state == states.mach2 || obj_player1.state == states.mach3 || obj_player1.state == states.climbwall || obj_player1.state == states.machslide || obj_player1.state == states.machroll || obj_player1.state == states.handstandjump))))
 	        draw_sprite_ext(spr_speedbar, 0, 125, 140, 1, 1, 1, c_white, alpha)
 	    else if (obj_player1.movespeed >= 2.4 && obj_player1.movespeed < 4.8 && (obj_player1.state == states.mach1 || obj_player1.state == states.mach2 || obj_player1.state == states.mach3 || obj_player1.state == states.climbwall || obj_player1.state == states.machslide || obj_player1.state == states.machroll || obj_player1.state == states.handstandjump))
@@ -137,22 +153,19 @@ if(global.oldhud){
 	    draw_set_color(c_white)
 	    if (global.panic == 1 || global.snickchallenge == 1)
 	    {
-	        if (global.seconds < 10)
-	        {
-	            if (global.minutes < 1)
-	                draw_set_color(c_red)
-	            else
-	                draw_set_color(c_white)
-	            draw_text((random_range(1, -1) + 480), (random_range(1, -1) + 65), string_hash_to_newline(((string(global.minutes) + ":0") + string(global.seconds))))
-	        }
-	        else if (global.seconds >= 10)
-	        {
-	            if (global.minutes < 1)
-	                draw_set_color(c_red)
-	            else
-	                draw_set_color(c_white)
-	            draw_text((random_range(1, -1) + 480), (random_range(1, -1) + 65), string_hash_to_newline(((string(global.minutes) + ":") + string(global.seconds))))
-	        }
+			var minutes = 0;
+			for (var seconds = ceil(global.fill / 12); seconds > 59; seconds -= 60)
+				minutes++;
+			if (seconds < 10)
+				seconds = concat("0", seconds);
+			else
+				seconds = string(seconds);
+	        if (global.minutes < 1)
+	            draw_set_color(c_red)
+	        else
+	            draw_set_color(c_white)
+	        draw_text((random_range(1, -1) + 480), (random_range(1, -1) + 65), string_hash_to_newline(((string(minutes) + ":") + string(seconds))))
+	        
 	    }
 	    if (global.key_inv)
 	        draw_sprite_ext(spr_key, -1, 50, 30, 1, 1, 1, c_white, alpha)
@@ -225,18 +238,18 @@ if (obj_player.state != states.gameover)
 			pizzascore_index = 0
 	}
 	if (global.heatmetervisible) {
-	var sw = sprite_get_width(spr_heatmeter_fill)
-	var sh = sprite_get_height(spr_heatmeter_fill)
+		var sw = sprite_get_width(spr_heatmeter_fill)
+		var sh = sprite_get_height(spr_heatmeter_fill)
 	}
 	var b = global.stylemultiplier
-	var hud_xx = (121 + irandom_range((-collect_shake), collect_shake))
-	var hud_yy = ((70 + irandom_range((-collect_shake), collect_shake)) + hud_posY)
+	var hud_xx = (hud_x + irandom_range((-collect_shake), collect_shake))
+	var hud_yy = ((hud_y + irandom_range((-collect_shake), collect_shake)) + hud_posY)
 	if (global.heatmetervisible) {
 		draw_sprite_part(spr_heatmeter_fill, pizzascore_index, 0, 0, (sw * b), sh, (hud_xx - 95), (hud_yy + 24))
 	}
 	if(global.usepaletteshaders){
 		shader_set(global.Pal_Shader)
-		pal_swap_set(98, global.stylethreshold, 0)
+		pal_swap_set(spr_heatmeter_palette, global.stylethreshold, 0)
 	}
 	if (global.heatmetervisible) {
 		draw_sprite_ext(spr_heatmeter, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha)
@@ -373,8 +386,8 @@ if (obj_player.state != states.gameover)
 		draw_text((200 + healthshake), (125 + healthshake), global.playerhealth)
 	draw_text(window_get_height() - 50, window_get_width() - 200, "Lap: " + string(global.laps))
 	if(global.oldsprites){
-		draw_sprite_ext(spr_inv, -1, 41, 150, 1, 1, 1, c_white, alpha)
+		draw_sprite_ext(spr_inv, -1, key_inv_x, key_inv_y, 1, 1, 1, c_white, alpha)
 		if global.key_inv
-			draw_sprite_ext(spr_key, -1, 41, 150, 1, 1, 1, c_white, alpha)
+			draw_sprite_ext(spr_key, -1, key_inv_x, key_inv_y, 1, 1, 1, c_white, alpha)
 	}
 }

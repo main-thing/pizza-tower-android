@@ -17,19 +17,29 @@ function scr_player_tumble()
 			vsp = 10
 			sprite_index = spr_dive
 		}
-	} else {
+	}
+	if(finalmoveset){
 		if (!grounded && (sprite_index == spr_crouchslip || sprite_index == spr_machroll || sprite_index == spr_mach2jump || sprite_index == spr_backslide || sprite_index == spr_backslideland))
 		{
 			vsp = 10;
 			sprite_index = spr_dive;
 		}
+		if ((sprite_index == spr_tumble) && grounded)
+	    {
+	        if ((move == xscale))
+	            movespeed = Approach(movespeed, 12, 0.25)
+	        else if ((move == (-xscale)))
+	            movespeed = Approach(movespeed, 8, 0.25)
+	        else
+	            movespeed = Approach(movespeed, 10, 0.25)
+	    }
 	}
 	if (grounded && sprite_index == spr_dive)
 	{
 		sprite_index = spr_machroll
 		image_index = 0
 	}
-	if (grounded && sprite_index != spr_tumble)
+	if (grounded && sprite_index != spr_tumble && !finalmoveset)
 		movespeed -= 0.05
 	if (sprite_index == spr_dive && key_jump)
 	{
@@ -88,7 +98,7 @@ function scr_player_tumble()
 		hsp = 0
 		movespeed = 0
 	}
-	if key_jump
+	if (key_jump && !finalmoveset)
 		input_buffer_jump = 0
 	if ((!key_jump2) && jumpstop == 0 && vsp < 0.5 && stompAnim == 0)
 	{
@@ -97,12 +107,26 @@ function scr_player_tumble()
 	}
 	if (grounded && vsp > 0 && (!(place_meeting(x, y, obj_bigcheese))))
 		jumpstop = 0
-	if (input_buffer_jump < 8 && grounded && hsp != 0 && sprite_index == spr_tumble)
+	if(!finalmoveset)
 	{
-		with (instance_create(x, y, obj_highjumpcloud2))
-			image_xscale = other.xscale
-		vsp = -11
-		image_index = 0
+		if (input_buffer_jump < 8 && grounded && hsp != 0 && sprite_index == spr_tumble)
+		{
+			with (instance_create(x, y, obj_highjumpcloud2))
+				image_xscale = other.xscale
+			vsp = -11
+			image_index = 0
+		}
+	} else {
+		if (input_buffer_jump > 0 && can_jump && state != states.bump && (hsp != 0) && (sprite_index == spr_tumble) && (!(place_meeting(x, y, obj_pinballlauncher))) && (!(place_meeting(x, y, obj_bigcheese))))
+	    {
+	        if (!(scr_solid(x, (y - 16))))
+	        {
+	            with (instance_create(x, y, obj_highjumpcloud2))
+	                image_xscale = other.xscale
+	            vsp = -11
+	            image_index = 0
+	        }
+	    }
 	}
 	if (crouchslipbuffer > 0)
 		crouchslipbuffer--

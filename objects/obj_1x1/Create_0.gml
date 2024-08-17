@@ -1,1 +1,2 @@
 outline = false
+gui = false

@@ -48,3 +48,4 @@ switch sprite_index
 		if ((!grounded) && vsp > 0)
 			sprite_index = spr_pizzacar_fall
 }
+scr_collide()

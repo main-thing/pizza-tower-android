@@ -11,8 +11,8 @@ if (instance_exists(selectedent) && editormode && !in_play_mode)
 		var found = false;
     
 		// Check if the current item of array1 is in array2
-		for (var j = 0; j < array_length(selectedent.fake_ed_remove_vars); j++) {
-			if (item == selectedent.fake_ed_remove_vars[j]) {
+		for (var j = 0; j < array_length(global.fake_ed_remove_vars); j++) {
+			if (item == global.fake_ed_remove_vars[j]) {
 				found = true;
 				break; // Exit the loop if the item is found in array2
 			}

@@ -15,7 +15,7 @@ else if changeroom
 	{
 		with (obj_player)
 		{
-			targetRoom = rm_levelselect
+			targetRoom = global.hubroom
 			targetDoor = "A"
 		}
 		instance_create(0, 0, obj_fadeout)

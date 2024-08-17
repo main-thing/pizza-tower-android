@@ -176,6 +176,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_AA60CA10","properties":[],"isDnd":false,"objectId":{"name":"obj_secretportal","path":"objects/obj_secretportal/obj_secretportal.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":2624.0,"y":512.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2F243888","properties":[],"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":13.0,"scaleY":14.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":2592.0,"y":608.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B3D7B6F0","properties":[],"isDnd":false,"objectId":{"name":"obj_slope","path":"objects/obj_slope/obj_slope.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":4.0,"scaleY":4.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":672.0,"y":576.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2DBDD5E6","properties":[],"isDnd":false,"objectId":{"name":"obj_baddiespawner","path":"objects/obj_baddiespawner/obj_baddiespawner.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":2400.0,"y":576.0,},
       ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_Foreground1","tilesetId":{"name":"tile_desertdeco","path":"tilesets/tile_desertdeco/tile_desertdeco.yy",},"x":0,"y":0,"tiles":{"TileDataFormat":1,"SerialiseWidth":174,"SerialiseHeight":24,"TileCompressedData":[
 -2822,0,36,520,521,522,523,524,1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6,171,172,173,174,175,176,177,-138,0,35,544,545,546,547,548,25,26,27,28,29,30,25,26,27,28,29,30,25,26,27,28,29,30,25,26,27,28,29,30,195,196,197,198,199,200,-139,0,147,568,569,570,571,572,49,50,51,52,53,54,49,50,51,52,53,54,49,50,51,52,53,54,49,50,51,52,53,54,219,220,221,222,223,1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6,
@@ -370,6 +371,7 @@
     {"name":"inst_AA60CA10","path":"rooms/desert_11/desert_11.yy",},
     {"name":"inst_2F243888","path":"rooms/desert_11/desert_11.yy",},
     {"name":"inst_B3D7B6F0","path":"rooms/desert_11/desert_11.yy",},
+    {"name":"inst_2DBDD5E6","path":"rooms/desert_11/desert_11.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

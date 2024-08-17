@@ -5,7 +5,7 @@ function scr_player_shotgunjump()
 	hsp = (move * movespeed)
 	if (ladderbuffer > 0)
 		ladderbuffer--
-	if key_jump
+	if key_jump && !finalmoveset
 		input_buffer_jump = 0
 	if (dir != xscale)
 	{
@@ -32,14 +32,26 @@ function scr_player_shotgunjump()
 		vsp = grav
 		jumpstop = 1
 	}
-	if (input_buffer_jump < 8 && grounded)
-	{
-		input_buffer_jump = 8
-		state = states.shotgunjump
-		vsp = -11
-		jumpstop = 0
-		sprite_index = spr_shotgunjump
-		image_index = 0
+	if(!finalmoveset){
+		if (input_buffer_jump < 8 && grounded)
+		{
+			input_buffer_jump = 8
+			state = states.shotgunjump
+			vsp = -11
+			jumpstop = 0
+			sprite_index = spr_shotgunjump
+			image_index = 0
+		}
+	} else {
+		if ((input_buffer_jump > 0) && can_jump)
+	    {
+	        input_buffer_jump = 8
+	        state = states.shotgunjump
+	        vsp = -11
+	        jumpstop = false
+	        sprite_index = spr_shotgunjump
+	        image_index = 0
+	    }
 	}
 	if (grounded && vsp > 0)
 	{

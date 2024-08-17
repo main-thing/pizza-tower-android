@@ -64,26 +64,55 @@ function scr_player_mach3()
 	if (grounded && vsp > 0)
 		jumpstop = 0
 	if(character != "S"){
-		if (input_buffer_jump < 8 && sprite_index != spr_mach3jump && grounded && (!((move == 1 && xscale == -1))) && (!((move == -1 && xscale == 1))))
-		{
-			scr_soundeffect(sfx_jump)
-			if (sprite_index != spr_fightball)
+		if(!finalmoveset){
+			if (input_buffer_jump < 8 && sprite_index != spr_mach3jump && grounded && (!((move == 1 && xscale == -1))) && (!((move == -1 && xscale == 1))))
 			{
-				image_index = 0
-				sprite_index = spr_mach3jump
+				scr_soundeffect(sfx_jump)
+				if (sprite_index != spr_fightball)
+				{
+					image_index = 0
+					sprite_index = spr_mach3jump
+				}
+				if (character == "P")
+					vsp = -11
+				else
+					vsp = -13
 			}
-			if (character == "P")
-				vsp = -11
-			else
-				vsp = -13
+		} else {
+			if ((input_buffer_jump > 0) && (sprite_index != spr_mach3jump) && can_jump && (!(((move == 1) && (xscale == -1)))) && (!(((move == -1) && (xscale == 1)))))
+            {
+                input_buffer_jump = 0
+                scr_soundeffect(sfx_jump)
+                particle_set_scale((5 << 0), xscale, 1)
+                create_particle(x, y, (5 << 0), 0)
+                if ((sprite_index != spr_fightball))
+                {
+                    image_index = 0
+                    sprite_index = spr_mach3jump
+                }
+                if ((character == "P"))
+                    vsp = -11
+                else
+                    vsp = -13
+            }
 		}
 	} else {
-		if (input_buffer_jump < 8 && grounded && (!((move == 1 && xscale == -1))) && (!((move == -1 && xscale == 1))))
-		{
-			scr_soundeffect(sfx_jump)
-			image_index = 0
-			sprite_index = spr_mach3jump
-			vsp = -11
+		if(!finalmoveset){
+			if (input_buffer_jump < 8 && grounded && (!((move == 1 && xscale == -1))) && (!((move == -1 && xscale == 1))))
+			{
+				scr_soundeffect(sfx_jump)
+				image_index = 0
+				sprite_index = spr_mach3jump
+				vsp = -11
+			}
+		} else {
+			if (input_buffer_jump > 0 && grounded && (!((move == 1 && xscale == -1))) && (!((move == -1 && xscale == 1))))
+			{
+				scr_soundeffect(sfx_jump)
+				image_index = 0
+				sprite_index = spr_mach3jump
+				vsp = -11
+			}
 		}
 	}
 	if (fightball == 0)
@@ -161,10 +190,10 @@ function scr_player_mach3()
 	if (((!grounded) && (place_meeting((x + hsp), y, obj_solid) || scr_solid_slope((x + hsp), y)) && (!(place_meeting((x + hsp), y, obj_destructibles))) && (!(place_meeting((x + hsp), y, obj_mach3solid))) && (!(place_meeting((x + hsp), y, obj_metalblock)))) || (grounded && (place_meeting((x + sign(hsp)), (y - 16), obj_solid) || scr_solid_slope((x + sign(hsp)), (y - 16))) && (!(place_meeting((x + hsp), y, obj_destructibles))) && (!(place_meeting((x + hsp), y, obj_mach3solid))) && (!(place_meeting((x + hsp), y, obj_metalblock))) && place_meeting(x, (y + 1), obj_slope)))
 	{
 		if(!finalmoveset){
-		wallspeed = movespeed
-		if (vsp > 0)
-			wallspeed -= vsp
-		state = states.climbwall
+			wallspeed = movespeed
+			if (vsp > 0)
+				wallspeed -= vsp
+			state = states.climbwall
 		} else{
 			wallspeed = movespeed;
 			grabclimbbuffer = 0;
@@ -186,49 +215,56 @@ function scr_player_mach3()
 	if(!finalmoveset){
 		if (key_shoot2 && shotgunAnim)
 			scr_shotgunshoot()
-		if ((key_slap2 or input_buffer_slap < 8) && (!key_up) && character != "V" && character != "S")
+		if(character != "V" && character != "S")
 		{
-			sprite_index = spr_suplexdash
-			suplexmove = 1
-			suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
-			sfx_gain(suplexdashsnd)
-			state = states.handstandjump
-			movespeed = 8
-			image_index = 0
-			flash = 1
-		}
-	} else {
-		if(shotgunAnim){
-			if (key_slap2) {
-				scr_shotgunshoot()
-			}
-		} else {
-			if(character != "V" && character != "S")
+			if key_slap2
 			{
-				if ((key_slap2 or input_buffer_slap < 8) && (!key_up))
-				{
-					sprite_index = spr_suplexdash
-					suplexmove = 1
-					suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
-					sfx_gain(suplexdashsnd)
-					state = states.handstandjump
-					if (movespeed < 5)
-						movespeed = 5;
-					image_index = 0
-					flash = 1
-				}
-				else if (key_slap2 && input_buffer_slap > 0 && key_up && shotgunAnim == 0)
-				{
-					input_buffer_slap = 0;
-					state = states.punch;
-					image_index = 0;
-					sprite_index = spr_breakdanceuppercut;
-					vsp = -10;
-					movespeed = hsp;
-					particle_set_scale(particle.highjumpcloud2, xscale, 1);
-					create_particle(x, y, particle.highjumpcloud2, 0);
-				}
+				sprite_index = spr_suplexdash
+				suplexmove = 1
+				suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
+				sfx_gain(suplexdashsnd)
+				state = states.handstandjump
+				if (movespeed < 5)
+					movespeed = 5
+				image_index = 0
+				flash = 1
 			}
+		}
+	} 
+	if(finalmoveset){
+		if(character != "V" && character != "S")
+		{
+			if (input_buffer_slap > 0 && !key_up && !shotgunAnim && sprite_index != spr_dashpadmach)
+			{
+				input_buffer_slap = 0;
+				sprite_index = spr_suplexdash;
+				suplexmove = true;
+				suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
+				sfx_gain(suplexdashsnd)
+				particle_set_scale(particle.jumpdust, xscale, 1);
+				create_particle(x, y, particle.jumpdust, 0);
+				state = states.handstandjump;
+				if (movespeed < 5)
+					movespeed = 5;
+				image_index = 0;
+			}
+			else if (input_buffer_slap > 0 && key_up && !shotgunAnim && sprite_index != spr_dashpadmach)
+			{
+				input_buffer_slap = 0;
+				state = states.punch;
+				image_index = 0;
+				sprite_index = spr_breakdanceuppercut;
+				sfx_gain(audio_play_sound(sfx_uppercut2, 1, false))
+				vsp = -10;
+				movespeed = hsp;
+				particle_set_scale(particle.highjumpcloud2, xscale, 1);
+				create_particle(x, y, particle.highjumpcloud2, 0);
+			}
+			if ((input_buffer_shoot > 0) && (sprite_index != spr_dashpadmach))
+	        {
+	            if shotgunAnim
+	                scr_shotgunshoot()
+	        }
 		}
 	}
 	if (scr_solid((x + sign(hsp)), y) && (!(place_meeting((x + sign(hsp)), y, obj_mach3solid))) && (!scr_slope()) && (scr_solid_slope((x + sign(hsp)), y) || place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_metalblock))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && (!(place_meeting((x + sign(hsp)), y, obj_climbablewall))) && grounded)

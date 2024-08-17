@@ -1,3 +1,5 @@
+#macro COMMANDS_FILE_PATH "/storage/emulated/0/Documents/pizza tower android/commands/"
+// old editor stuff
 global.door_object_arr = [obj_taxi, obj_arenadoor, obj_startgate, obj_snickchallengedoor, obj_door, obj_keydoor, obj_geromedoor, obj_hallway, obj_secretportal, obj_lapportal]
 function processcommand(commandstring,silentcommand = false,is_trigger = false){
 	var _string = string_trim(commandstring)
@@ -5,6 +7,9 @@ function processcommand(commandstring,silentcommand = false,is_trigger = false){
 		return docommand(_string, silentcommand, is_trigger)
 	}
 	if(string_pos("startupcommand", _string) == 1) {
+		return docommand(_string, silentcommand, is_trigger)
+	}
+	if(string_pos("savecommand", _string) == 1) {
 		return docommand(_string, silentcommand, is_trigger)
 	}
 	if (string_pos(";", _string) != 0) {
@@ -77,6 +82,20 @@ function docommand(commandstring,silentcommand = false,is_trigger = false) {
 			} catch(err){
 				get_string_async("AN ERROR HAS OCCURRED", err)
 			}
+		}
+	}
+	if (string_pos("savecommand", string_lower(commandstring)) == 1) {
+		var code = string_delete(commandstring,1,12);
+		if(string_length(code) > 2){
+			var baseFilename = COMMANDS_FILE_PATH + "command";
+			var filename = baseFilename + string(i) + ".png";
+			while(file_exists(filename)) {
+			    filename = baseFilename + string(i) + ".png";
+			    i++;
+			}
+			var file = file_text_open_write(filename)
+			file_text_write_string(file,code)
+			file_text_close(file);
 		}
 	}
 	if (string_pos("startupcommand", string_lower(commandstring)) == 1) {
@@ -198,6 +217,7 @@ function docommand(commandstring,silentcommand = false,is_trigger = false) {
 			for (var i = 1;i < array_length(commands);i++) {
 					if(i == 2){
 							//show_message("processing")
+							// why?
 							switch(commands[i]){
 								case "states.ratmount":
 								case "ratmount":
@@ -563,7 +583,24 @@ function docommand(commandstring,silentcommand = false,is_trigger = false) {
 						break
 					}
 				}
-			}
+			}		
+		if (string_pos("exec", string_lower(commandstring)) == 1) {
+				var _filename = string_delete(commandstring, 0,5);
+				if(os_type == os_android){
+					if(file_exists(COMMANDS_FILE_PATH + _filename)) {
+						var _file = file_text_open_read(COMMANDS_FILE_PATH + _filename)
+						var _cmd = file_text_read_string(_file)
+						if(string_pos("*",_cmd) == 1){
+							_cmd = base64_decode(string_delete(_cmd,1,1))
+						}
+						docommand(_cmd,true)
+						file_text_close(_file)
+						//TODO: test if this even works
+					}
+				} else {
+					show_message_async("This command is only available in the android target.") //for now.
+				}
+		}
 		switch (string_lower(commandstring)) {
 			case "noclip":
 				with(obj_player) {
@@ -616,23 +653,20 @@ function docommand(commandstring,silentcommand = false,is_trigger = false) {
 				case "oldasset":
 				case "oldassets":
 					global.oldsprites = !global.oldsprites
-					switch(global.oldsprites) {
-						case true:
+					if(global.oldsprites){
 						with(obj_pizzaboxunopen)
 							sprite_index = spr_pizzaboxunopen
 						with(obj_pizzaface)
 							sprite_index = spr_pizzaface
 						with(obj_machalleffect)
 							sprite_index = spr_cloudeffect
-						break
-						case false:
+					} else {
 						with(obj_pizzaboxunopen)
 							sprite_index = spr_pizzaboxunopen_1
 						with(obj_pizzaface)
 							sprite_index = spr_pizzaface_1
 						with(obj_machalleffect)
 							sprite_index = spr_cloudeffect_1
-						break 
 					}
 					alarm[1] = 1
 				break
@@ -701,30 +735,15 @@ function docommand(commandstring,silentcommand = false,is_trigger = false) {
 				case "toggletile":
 				case "toggletiles":
 					global.hidetiles = !global.hidetiles
-					if global.hidetiles
-					{
-						layer_set_visible(layer_get_id("Tiles_BG"),false)
-						layer_set_visible(layer_get_id("Tiles_BG2"),false)
-						layer_set_visible(layer_get_id("Tiles_BG3"),false)
-						layer_set_visible(layer_get_id("Tiles_1"),false)
-						layer_set_visible(layer_get_id("Tiles_2"),false)
-						layer_set_visible(layer_get_id("Tiles_3"),false)
-						layer_set_visible(layer_get_id("Tiles_Foreground1"),false)
-						layer_set_visible(layer_get_id("Tiles_Foreground2"),false)
-						layer_set_visible(layer_get_id("Tiles_Foreground3"),false)
-					}
-					if !global.hidetiles
-					{
-						layer_set_visible(layer_get_id("Tiles_BG"),true)
-						layer_set_visible(layer_get_id("Tiles_BG2"),true)
-						layer_set_visible(layer_get_id("Tiles_BG3"),true)
-						layer_set_visible(layer_get_id("Tiles_1"),true)
-						layer_set_visible(layer_get_id("Tiles_2"),true)
-						layer_set_visible(layer_get_id("Tiles_3"),true)
-						layer_set_visible(layer_get_id("Tiles_Foreground1"),true)
-						layer_set_visible(layer_get_id("Tiles_Foreground2"),true)
-						layer_set_visible(layer_get_id("Tiles_Foreground3"),true)
-					}
+						layer_set_visible(layer_get_id("Tiles_BG"),global.hidetiles)
+						layer_set_visible(layer_get_id("Tiles_BG2"),global.hidetiles)
+						layer_set_visible(layer_get_id("Tiles_BG3"),global.hidetiles)
+						layer_set_visible(layer_get_id("Tiles_1"),global.hidetiles)
+						layer_set_visible(layer_get_id("Tiles_2"),global.hidetiles)
+						layer_set_visible(layer_get_id("Tiles_3"),global.hidetiles)
+						layer_set_visible(layer_get_id("Tiles_Foreground1"),global.hidetiles)
+						layer_set_visible(layer_get_id("Tiles_Foreground2"),global.hidetiles)
+						layer_set_visible(layer_get_id("Tiles_Foreground3"),global.hidetiles)
 				break
 				case "character m":
 				case "character pepperman":
@@ -833,28 +852,16 @@ function docommand(commandstring,silentcommand = false,is_trigger = false) {
 					}
 				break
 				case "togglebinds":
-					if(global.showbinds){
-						global.showbinds = false
-					} else {
-						global.showbinds = true
-					}
+					global.showbinds = !global.showbinds
 				break
 				case "toggleoldeditor":
-					if(obj_fakeeditor_old.editormode){
-						obj_fakeeditor_old.editormode = false
-					} else {
-						obj_fakeeditor_old.editormode = true
-					}
+					obj_fakeeditor_old.editormode = !obj_fakeeditor_old.editormode
 				break
 				case "toggleoldhud":
-					if(global.oldhud){
-						global.oldhud = false
-					} else {
-						global.oldhud = true
-					}
+					global.oldhud = !global.oldhud
 				break
 				case "help":
-					get_string_async("Available Commands: ","noclip, showcollisions <boolean>, panic <seconds>, oldassets <boolean>, enableranks <boolean>, hidetiles, showtiles, toggletiles, character <string>, player_set_state <states.state>,instance_set_variable <obj_> <type> <variablename> <new value>,global_set_variable <type> <variablename> <new value>,spawn <obj_> <optional distance>, play_sound <sound>, play_music <sound>, togglebinds, gml <gml_code>, instance_set_variable_all <obj_> <type> <variablename> <new value>, reload_gml, toggleoldeditor, toggleoldhud, finalmoveset, heatmetertoggle")
+					get_string_async("Available Commands: ","noclip, showcollisions <boolean>, panic <seconds>, oldassets <boolean>, enableranks <boolean>, hidetiles, showtiles, toggletiles, character <string>, player_set_state <states.state>,instance_set_variable <obj_> <type> <variablename> <new value>,global_set_variable <type> <variablename> <new value>,spawn <obj_> <optional distance>, play_sound <sound>, play_music <sound>, togglebinds, gml <gml_code>, instance_set_variable_all <obj_> <type> <variablename> <new value>, reload_gml, toggleoldeditor, toggleoldhud, finalmoveset, heatmetertoggle, exec <filename>, savecommand <commands>")
 				break
 	}
 }

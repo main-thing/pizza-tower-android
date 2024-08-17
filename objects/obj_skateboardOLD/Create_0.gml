@@ -1,3 +1,10 @@
 image_speed = 0.35
 activated = false
-alarm[0] = 5
+alarm[0] = 50
+hsp = 0
+vsp = 0
+grav = 0.5
+grounded = false
+platformid = -4
+hsp_carry = 0
+vsp_carry = 0

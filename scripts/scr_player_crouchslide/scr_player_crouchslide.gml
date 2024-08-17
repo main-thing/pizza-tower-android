@@ -15,18 +15,34 @@ function scr_player_crouchslide()
 		vsp /= 20
 		jumpstop = 1
 	}
-	if key_jump
-		input_buffer_jump = 0
-	if (grounded && input_buffer_jump < 8 && (!(scr_solid((x + 27), (y - 32)))) && (!(scr_solid((x - 27), (y - 32)))) && (!(scr_solid(x, (y - 32)))) && (!(scr_solid(x, (y - 16)))))
+	if(!finalmoveset)
 	{
-		sprite_index = spr_jumpdive1
-		image_index = 0
-		vsp = -11
-		with (instance_create(x, y, obj_superdashcloud))
+		if key_jump
+			input_buffer_jump = 0
+		if (grounded && input_buffer_jump < 8 && (!(scr_solid((x + 27), (y - 32)))) && (!(scr_solid((x - 27), (y - 32)))) && (!(scr_solid(x, (y - 32)))) && (!(scr_solid(x, (y - 16)))))
 		{
-			image_xscale = other.xscale
-			other.dashcloudid = id
+			sprite_index = spr_jumpdive1
+			image_index = 0
+			vsp = -11
+			with (instance_create(x, y, obj_superdashcloud))
+			{
+				image_xscale = other.xscale
+				other.dashcloudid = id
+			}
 		}
+	} else {
+		if (can_jump && (input_buffer_jump > 0) && (!(scr_solid((x + 27), (y - 32)))) && (!(scr_solid((x - 27), (y - 32)))) && (!(scr_solid(x, (y - 32)))) && (!(scr_solid(x, (y - 16)))))
+	    {
+	        input_buffer_jump = 0
+	        sprite_index = spr_player_jumpdive1
+	        image_index = 0
+	        vsp = -11
+	        with (instance_create(x, y, obj_superdashcloud))
+	        {
+	            image_xscale = other.xscale
+	            other.dashcloudid = id
+	        }
+	    }
 	}
 	if (grounded && (sprite_index == spr_jumpdive1 or sprite_index == spr_jumpdive2) && vsp > 0)
 	{

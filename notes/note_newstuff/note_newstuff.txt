@@ -1,0 +1,36 @@
+// this is not the real update text used by obj_mainmenu
+// edit the included files in the datafiles folder
+version 10:
+: Revamp the level editor. 
+: Added infinitely sized rooms to the editor.
+: Added swipe to move camera in the level editor.
+: Hide controls in level editor.
+: Added obj_camera_bounds_trigger, obj_camerabounds_trigger_door, 
+  obj_outofbounds_trigger, obj_tvtrigger_editor_door, obj_sprite_gui, 
+  obj_text_gui, obj_generic_gravity_object, obj_door_editor, 
+  obj_boxofpizza_editor, obj_secretportal_editor, obj_hallway_editor,
+  and obj_lapportal_editor.
+: Added a tileset picker for obj_solid_tiled and obj_tiled
+: Greatly optimised obj_solid_tiled and obj_tiled.
+: Moved the old editor into the "toggleoldeditor" command.
+
+: Added gml command, run gamemaker language code via this command.
+: Added hidetiles, showtiles, and toggletiles as commands.
+: Added startup commands, use "startupcommand panic true" to start escape
+  in the menu every time you launch the game.
+: Added obj_custom_object, which can run custom gamemaker language code.
+: Fixed "togglebinds" command from resuming every paused sound.
+: Added back the old hud. Use the "toggleoldhud" command to use it.
+: Added easier music customisation for lap 2 and above. 
+  instance_set_variable obj_player asset lap2music mu_entrance
+  instance_set_variable obj_player asset escapemusic mu_entrance
+: Added the ability to disable camera bounds via instance_set_variale
+  instance_set_variable obj_camera bool ignorebounds true
+ 
+: Allowed using more than 1 command when editing a button.
+: Miscellaneous fixes added to a random pool of levels.
+: Miscellaneous fixes regarding player.
+: Shaders re-added I can no longer call this eggplant build shaderless.
+: TODO: CONTINUE WITH SPRITE RECOLORS FOR FULL SHADER SUPPORT
+
+//wait how would the mainmenu render all of this? I'll deal with it later ig lmao.

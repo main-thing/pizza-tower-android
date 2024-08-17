@@ -1,3 +1,4 @@
+#macro LEVELS_FILE_PATH "/storage/emulated/0/Documents/pizza tower android/levels/"
 function fakeeditor_play_level(){
 	if(!obj_fakeeditor.in_play_mode) {
 		global.forcehidecontrols = 0
@@ -13,8 +14,8 @@ function fakeeditor_play_level(){
 				for (var i = 0; i < array_length(_myvars); i++) {
 					var item = _myvars[i]
 					var found = false
-					for (var j = 0; j < array_length(fake_ed_remove_vars); j++) {
-					    if (item == fake_ed_remove_vars[j]) {
+					for (var j = 0; j < array_length(global.fake_ed_remove_vars); j++) {
+					    if (item == global.fake_ed_remove_vars[j]) {
 					        found = true
 					        break
 					    }
@@ -128,7 +129,6 @@ function fakeeditor_create_object(ob){
 			var _varnames = []
 			var _varvalues = []
 			fake_ed_content = ob
-			fake_ed_remove_vars = variable_instance_get_names(id)
 			with(instance_create_depth(x, y, depth, asset_get_index(ob))){
 				_varnames = variable_instance_get_names(id)
 				for(var i = 0; i < array_length(_varnames); i++){
@@ -418,9 +418,25 @@ function fakeeditor_save_editor_objects()
 			image_blend: image_blend,
 			persistent: persistent,
 			depth: depth,
+			fake_ed_content: fake_ed_content,
 		}
-        var i = 0
         var var_array = variable_instance_get_names(id)
+		var return_array = [];
+		var clean_index = 0; // Iterate through array1
+		for (var i = 0; i < array_length(var_array); i++) {
+			var item = var_array[i];
+			var found = false;
+			if(array_get_index(item,global.fake_ed_remove_vars) != -1){
+				found = true	
+			}
+			if (!found) {
+				return_array[clean_index] = item;
+				clean_index++;
+			}
+		}
+		var_array = return_array;
+		array_push(var_array,"fake_ed_content")
+        var i = 0
 		while (i < array_length(var_array)){
 			if(var_array[i] == "content"){
 				variable_struct_set(objectproperties,var_array[i],"asset|" + object_get_name(variable_instance_get(id,var_array[i])))
@@ -433,7 +449,13 @@ function fakeeditor_save_editor_objects()
 				continue;
 			}
 			if(var_array[i] == "sprite"){
-				variable_struct_set(objectproperties,var_array[i],"asset|" + sprite_get_name(variable_instance_get(id,var_array[i])))
+				if(is_string(variable_instance_get(id,var_array[i])))
+				{
+					variable_struct_set(objectproperties,var_array[i],variable_instance_get(id,var_array[i]))
+				} else 
+				{
+					variable_struct_set(objectproperties,var_array[i],"asset|" + sprite_get_name(variable_instance_get(id,var_array[i])))
+				}
 				i++
 				continue;
 			}
@@ -448,15 +470,23 @@ function fakeeditor_save_editor_objects()
 		array_push(myobjects, objectproperties)
     }
     var liststring = json_stringify(myobjects)
-	// here cause windows does not show full string
 	var levelbuffer = buffer_create(string_byte_length(liststring) + 1, buffer_fixed, 1)
 	buffer_write(levelbuffer, buffer_string, liststring)
 	buffer_save(levelbuffer, "levels/level.txt")
+	if(os_type == os_android){
+		var i = 0;
+		var baseFilename = LEVELS_FILE_PATH + "level";
+		var filename = baseFilename + string(i) + ".png";
+		while(file_exists(filename)) {
+			filename = baseFilename + string(i) + ".png";
+			i++;
+		}
+		buffer_save(levelbuffer, filename)
+		show_message_async("Level data saved to: " + filename)
+	}
 	buffer_delete(levelbuffer)
 	if(os_type == os_windows){
 		get_string_async("copy into browser","file:///" + game_save_id + "levels/level.txt")
-	} else {
-		get_string_async("level code: ",liststring)
 	}
 }
 function fakeeditor_load_editor_objects(argument0)
@@ -484,6 +514,9 @@ function fakeeditor_load_editor_objects(argument0)
 						if(string_pos("asset|",tempvar) == 1){
 							tempvar = asset_get_index(string_replace(tempvar,"asset|",""))
 						}
+					}
+					if(tempvar == pointer_null || tempvar == pointer_invalid){
+						tempvar = undefined
 					}
 					variable_instance_set(id, var_array[i], tempvar)
 	                i++
@@ -550,9 +583,9 @@ function fakeeditor_perfom_edit(){
 	if(nejdmssx == "load"){
 					
 		if(clipboard_has_text()){
-			amogustextlol = get_string_async("load code: ", clipboard_get_text())
+			amogustextlol = get_string_async("load code / filename: ", clipboard_get_text())
 		} else{
-				amogustextlol = get_string_async("load code: ","")
+				amogustextlol = get_string_async("load code / filename: ","")
 		}
 	}
 	/*if(nejdmssx == "setrank"){
@@ -583,7 +616,7 @@ obj_enemyspawn -- please do not use this, you have no reason to do so.
 obj_..._trigger_door -- when targetkey is pressed in its bounds, the function of the trigger is activated. (string targetkey down)
 		
 OTHER:
-obj_rank_set -- just spawn it in the level to automatically set the rank via the maxscore variable contained in it.
+obj_rank_set -- just spawn it in the level to automatically set the rank requirements via the maxscore variable contained in it.
 obj_solid -- generic ground that player can stand on.
 obj_slope -- generic sloped ground that the player can stand on.
 obj_platform -- generic platform that the player can stand on.

@@ -371,9 +371,24 @@ function scr_characterspr() {
 		fake_tv_hud_yscale = 1
 		fake_tv_hud_x = 845
 		fake_tv_hud_y = 80
+		key_inv_x = 41
+		key_inv_y = 150
+		hud_x = 121
+		hud_y = 70
 		paletteselect = 1
 		escapemusic = mu_pizzatime
 		lap2music = mu_chase
+		sfx_mach1snd = sfx_mach1
+		sfx_mach2snd = sfx_mach2
+		sfx_mach3snd = sfx_mach3
+		sfx_mach4snd = sfx_mach4
+		sfx_knightslidesnd = sfx_knightslide
+		sfx_bombpep1snd = sfx_bombpep1
+		sfx_tumble1snd = sfx_tumble1
+		sfx_tumble2snd = sfx_tumble2
+		sfx_tumble3snd = sfx_tumble3
+		escapetimer_x = 327
+		escapetimer_y = 464
 	}
 	if (character == "N"
 		or(character == "P" && (!ispeppino))) {
@@ -671,6 +686,10 @@ function scr_characterspr() {
 		tv_hud_yscale = 1
 		tv_hud_x = 845
 		tv_hud_y = 80
+		key_inv_x = 41
+		key_inv_y = 150
+		hud_x = 121
+		hud_y = 70
 		fake_tv_hud_xscale = 1
 		fake_tv_hud_yscale = 1
 		fake_tv_hud_x = 845
@@ -678,6 +697,17 @@ function scr_characterspr() {
 		paletteselect = 0
 		escapemusic = mu_noiseescape
 		lap2music = mu_chase
+		sfx_mach1snd = sfx_mach1
+		sfx_mach2snd = sfx_mach2
+		sfx_mach3snd = sfx_mach3
+		sfx_mach4snd = sfx_mach4
+		sfx_knightslidesnd = sfx_knightslide
+		sfx_bombpep1snd = sfx_bombpep1
+		sfx_tumble1snd = sfx_tumble1
+		sfx_tumble2snd = sfx_tumble2
+		sfx_tumble3snd = sfx_tumble3
+		escapetimer_x = 327
+		escapetimer_y = 464
 	}
 	if (character == "V") {
 		spr_idle = spr_playerV_idle
@@ -900,6 +930,10 @@ function scr_characterspr() {
 		tv_hud_yscale = 1
 		tv_hud_x = 825
 		tv_hud_y = 90
+		key_inv_x = 41
+		key_inv_y = 150
+		hud_x = 121
+		hud_y = 70
 		fake_tv_hud_xscale = 1
 		fake_tv_hud_yscale = 1
 		fake_tv_hud_x = 845
@@ -907,6 +941,17 @@ function scr_characterspr() {
 		paletteselect = 0
 		escapemusic = mu_pizzatime
 		lap2music = mu_chase
+		sfx_mach1snd = sfx_mach1
+		sfx_mach2snd = sfx_mach2
+		sfx_mach3snd = sfx_mach3
+		sfx_mach4snd = sfx_mach4
+		sfx_knightslidesnd = sfx_knightslide
+		sfx_bombpep1snd = sfx_bombpep1
+		sfx_tumble1snd = sfx_tumble1
+		sfx_tumble2snd = sfx_tumble2
+		sfx_tumble3snd = sfx_tumble3
+		escapetimer_x = 327
+		escapetimer_y = 464
 	}
 	if (character == "M") {
 		spr_idle = spr_pepperman_idle
@@ -1131,9 +1176,24 @@ function scr_characterspr() {
 		fake_tv_hud_yscale = 1
 		fake_tv_hud_x = 845
 		fake_tv_hud_y = 80
+		key_inv_x = 41
+		key_inv_y = 150
+		hud_x = 121
+		hud_y = 70
 		paletteselect = 1
 		escapemusic = mu_pizzatime
 		lap2music = mu_chase
+		sfx_mach1snd = sfx_mach1
+		sfx_mach2snd = sfx_mach2
+		sfx_mach3snd = sfx_mach3
+		sfx_mach4snd = sfx_mach4
+		sfx_knightslidesnd = sfx_knightslide
+		sfx_bombpep1snd = sfx_bombpep1
+		sfx_tumble1snd = sfx_tumble1
+		sfx_tumble2snd = sfx_tumble2
+		sfx_tumble3snd = sfx_tumble3
+		escapetimer_x = 327
+		escapetimer_y = 464
 	}
 	if (character == "S") {
 		spr_idle = spr_snick_idle
@@ -1309,8 +1369,23 @@ function scr_characterspr() {
 		fake_tv_hud_yscale = 1
 		fake_tv_hud_x = 845
 		fake_tv_hud_y = 80
+		key_inv_x = 41
+		key_inv_y = 150
+		hud_x = 121
+		hud_y = 70
 		escapemusic = mu_pizzatime
 		lap2music = mu_chase
+		sfx_mach1snd = sfx_mach1
+		sfx_mach2snd = sfx_mach2
+		sfx_mach3snd = sfx_mach3
+		sfx_mach4snd = sfx_mach4
+		sfx_knightslidesnd = sfx_knightslide
+		sfx_bombpep1snd = sfx_bombpep1
+		sfx_tumble1snd = sfx_tumble1
+		sfx_tumble2snd = sfx_tumble2
+		sfx_tumble3snd = sfx_tumble3
+		escapetimer_x = 327
+		escapetimer_y = 464
 	}
 	exit;
 }

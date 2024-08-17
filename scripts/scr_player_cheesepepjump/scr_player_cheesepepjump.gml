@@ -10,13 +10,25 @@ function scr_player_cheesepepjump()
 	}
 	hsp = movespeed
 	move = (key_left + key_right)
-	if ((!key_jump2) && (!jumpstop) && vsp < 0)
-	{
-		jumpstop = 1
-		vsp /= 10
+	if(!finalmoveset){
+		if ((!key_jump2) && (!jumpstop) && vsp < 0)
+		{
+			jumpstop = 1
+			vsp /= 10
+		}
+		if key_jump
+			input_buffer_jump = 0
+	} else {
+		if ((input_buffer_jump > 0) && can_jump && (!grounded))
+	    {
+	        create_particle(x, y, (3 << 0))
+	        vsp = -11
+	        image_index = 0
+	        sprite_index = spr_cheesepepjump
+	        state = states.cheesepepjump
+	        //scr_soundeffect(sfx_cheesejump)
+	    }
 	}
-	if key_jump
-		input_buffer_jump = 0
 	if (move != 0)
 		movespeed = Approach(movespeed, (move * 3), 0.5)
 	else

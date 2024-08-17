@@ -1,3 +1,4 @@
+scr_initenemy()
 hsp = 0
 vsp = 0
 hsp_carry = 0

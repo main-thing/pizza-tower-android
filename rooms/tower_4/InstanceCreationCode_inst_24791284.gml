@@ -1,1 +1,1 @@
-targetRoom = street_1
+targetRoom = street_intro

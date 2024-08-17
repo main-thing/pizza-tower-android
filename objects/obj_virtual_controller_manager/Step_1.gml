@@ -1,5 +1,4 @@
 var _max_devices = 4;
-
 for (var i = 0; i < _max_devices; i++)
 {
     var _touch_x = device_mouse_x_to_gui(i);

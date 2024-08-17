@@ -2,7 +2,7 @@ function scr_player_cheesepepstick()
 {
 	hsp = 0
 	vsp = 0
-	if key_jump
+	if key_jump && !finalmoveset
 		input_buffer_jump = 0
 	if ((!grounded) && (!(place_meeting((x + 1), y, obj_solid))) && (!(place_meeting((x - 1), y, obj_solid))))
 	{
@@ -18,21 +18,38 @@ function scr_player_cheesepepstick()
 		landAnim = 1
 	}
 	move = (key_left + key_right)
-	if (input_buffer_jump < 8 && sprite_index != spr_cheesepepjumpstart && sprite_index != spr_cheesepepland)
+	if(!finalmoveset)
 	{
-		image_index = 0
-		sprite_index = spr_cheesepepjumpstart
-	}
-	if (sprite_index == spr_cheesepepjumpstart && floor(image_index) == (image_number - 1))
-	{
-		scr_soundeffect(sfx_jump)
-		xscale *= -1
-		dir = xscale
-		state = states.cheesepepjump
-		sprite_index = spr_cheesepepjump
-		image_index = 0
-		movespeed = (xscale * 3)
-		vsp = -11
+		if (input_buffer_jump < 8 && sprite_index != spr_cheesepepjumpstart && sprite_index != spr_cheesepepland)
+		{
+			image_index = 0
+			sprite_index = spr_cheesepepjumpstart
+		}
+		if (sprite_index == spr_cheesepepjumpstart && floor(image_index) == (image_number - 1))
+		{
+			scr_soundeffect(sfx_jump)
+			xscale *= -1
+			dir = xscale
+			state = states.cheesepepjump
+			sprite_index = spr_cheesepepjump
+			image_index = 0
+			movespeed = (xscale * 3)
+			vsp = -11
+		}
+	} else {
+		if ((input_buffer_jump > 0))
+	    {
+	        input_buffer_jump = 0
+			scr_soundeffect(sfx_jump)
+	        xscale *= -1
+	        dir = xscale
+	        state = states.cheesepepjump
+	        sprite_index = spr_cheesepepjump
+	        image_index = 0
+	        movespeed = (xscale * 3)
+	        if (!key_down)
+	            vsp = -11
+	    }
 	}
 	exit;
 }
@@ -50,10 +67,13 @@ function scr_player_cheesepepstickside()
 		yscale = (-move)
 	hsp = 0
 	vsp = (move * movespeed)
-	if key_jump
-		input_buffer_jump = 0
-	if (input_buffer_jump < 8)
-		input_buffer_jump++
+	if(!finalmoveset)
+	{
+		if (key_jump)
+			input_buffer_jump = 0
+		if (input_buffer_jump < 8)
+			input_buffer_jump++
+	}
 	if (move != 0)
 	{
 		if (movespeed < 6)
@@ -67,12 +87,13 @@ function scr_player_cheesepepstickside()
 		xscale = 1
 	else if place_meeting((x + 1), y, obj_solid)
 		xscale = -1
-	if (input_buffer_jump < 8 && (!(scr_solid(x, (y - 16)))))
+	if (finalmoveset ? (input_buffer_jump > 0) : (input_buffer_jump < 8) && (!(scr_solid(x, (y - 16)))))
 	{
 		sprite_index = spr_cheesepepjump
 		input_buffer_jump = 8
 		x += xscale
-		vsp = -11
+		if (!key_down && finalmoveset)
+			vsp = -11
 		image_index = 0
 		state = states.cheesepep
 		hsp = (move * movespeed)
@@ -165,10 +186,13 @@ function scr_player_cheesepepstickup()
 	}
 	if (move != 0)
 		xscale = sign(move)
-	if key_jump
-		input_buffer_jump = 0
-	if (input_buffer_jump < 8)
-		input_buffer_jump++
+	if(!finalmoveset)
+	{
+		if key_jump
+			input_buffer_jump = 0
+		if (input_buffer_jump < 8)
+			input_buffer_jump++
+	}
 	if (move != 0)
 	{
 		if (movespeed < 6)
@@ -185,7 +209,7 @@ function scr_player_cheesepepstickup()
 		state = states.cheesepepstickside
 		vsp = (move * movespeed)
 	}
-	if (input_buffer_jump < 8 && (!((place_meeting(x, (y + 1), obj_solid) && place_meeting(x, (y - 1), obj_solid)))))
+	if (finalmoveset ? (input_buffer_jump > 0) : (input_buffer_jump < 8) && (!((place_meeting(x, (y + 1), obj_solid) && place_meeting(x, (y - 1), obj_solid)))))
 	{
 		mask_index = spr_player_mask
 		if place_meeting(x, y, obj_solid)
@@ -193,7 +217,7 @@ function scr_player_cheesepepstickup()
 			while place_meeting(x, y, obj_solid)
 				y++
 		}
-		input_buffer_jump = 8
+		input_buffer_jump = finalmoveset ? 0 : 8
 		state = states.cheesepep
 		cheesepep_buffer = 0
 		vsp = 2

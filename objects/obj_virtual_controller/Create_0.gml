@@ -1,3 +1,4 @@
+#macro CONTROLS_FILE_PATH "/storage/emulated/0/Documents/pizza tower android/controls/"
 vkeychecker = -1
 vkeychecker2 = -1
 vkeycounter = 0
@@ -14,6 +15,7 @@ depth = -19999
 old_button_x = x
 old_button_y = y
 //TODO: READ FROM AN EXTERNAL INI FILE SO PEOPLE CAN MAKE CUSTOM LANGAUAGES FOR TEXT HERE.
+// I forgot
 if (mysprite != undefined) {
 	sprite_index = mysprite
 }
@@ -21,68 +23,68 @@ image_alpha = myusualalpha
 persistent = true
 function createvbutton(loadedbutton){
 	with(instance_create_depth(0, 0, depth, obj_virtual_controller)) {
-				if(variable_struct_exists(loadedbutton,"x")){
-					x = loadedbutton.x
+		if(variable_struct_exists(loadedbutton,"x")){
+			x = loadedbutton.x
+		}
+		if(variable_struct_exists(loadedbutton,"y")){
+			y = loadedbutton.y
+		}
+		if(variable_struct_exists(loadedbutton,"bklock")){
+			buttonlockable = loadedbutton.bklock
+		} else{
+			buttonlockable = false
+		}
+		if(variable_struct_exists(loadedbutton,"image_angle")){
+			image_angle = loadedbutton.image_angle
+		}
+		if(variable_struct_exists(loadedbutton,"sprite_name")){
+			if (loadedbutton.sprite_name != undefined && loadedbutton.sprite_name != "null") {
+				sprite_index = spr_button_z
+				if(sprite_exists(asset_get_index(loadedbutton.sprite_name))){
+					sprite_index = asset_get_index(loadedbutton.sprite_name)
 				}
-				if(variable_struct_exists(loadedbutton,"y")){
-					y = loadedbutton.y
-				}
-				if(variable_struct_exists(loadedbutton,"bklock")){
-					buttonlockable = loadedbutton.bklock
-				} else{
-					buttonlockable = false
-				}
-				if(variable_struct_exists(loadedbutton,"image_angle")){
-					image_angle = loadedbutton.image_angle
-				}
-				if(variable_struct_exists(loadedbutton,"sprite_name")){
-					if (loadedbutton.sprite_name != undefined && loadedbutton.sprite_name != "null") {
-						sprite_index = spr_button_z
-						if(sprite_exists(asset_get_index(loadedbutton.sprite_name))){
-							sprite_index = asset_get_index(loadedbutton.sprite_name)
-						}
-					} else {
-						sprite_index = spr_button_z
-					}
-				} else {
-					sprite_index = spr_button_z
-				}
-				if(variable_struct_exists(loadedbutton,"image_xscale")){
-					image_xscale = loadedbutton.image_xscale
-				}
-				if(variable_struct_exists(loadedbutton,"image_index")){
-					image_index = loadedbutton.image_index
-				}
-				if(variable_struct_exists(loadedbutton,"image_yscale")){
-					image_yscale = loadedbutton.image_yscale
-				}
-				if(variable_struct_exists(loadedbutton,"image_speed")){
-					image_speed = loadedbutton.image_speed
-				}
-				if(variable_struct_exists(loadedbutton,"realcolor")){
-					image_blend = loadedbutton.realcolor
-					realcolor = loadedbutton.realcolor
-				} else {
-					realcolor = c_white
-				}
-				if(variable_struct_exists(loadedbutton,"balpha")){
-					myusualalpha = loadedbutton.balpha
-					image_alpha = loadedbutton.balpha
-				} else {
-					myusualalpha = 0.5
-					image_alpha = 0.5
-				}
-				if(variable_struct_exists(loadedbutton,"bk")){
-					if(string(loadedbutton.bk) != "null") {
-						keycode = loadedbutton.bk
-					}
-				}
-				if(variable_struct_exists(loadedbutton,"bk2")){
-					if(string(loadedbutton.bk2) != "null") {
-						keycode2 = loadedbutton.bk2
-					}
-				}
+			} else {
+				sprite_index = spr_button_z
 			}
+		} else {
+			sprite_index = spr_button_z
+		}
+		if(variable_struct_exists(loadedbutton,"image_xscale")){
+			image_xscale = loadedbutton.image_xscale
+		}
+		if(variable_struct_exists(loadedbutton,"image_index")){
+			image_index = loadedbutton.image_index
+		}
+		if(variable_struct_exists(loadedbutton,"image_yscale")){
+			image_yscale = loadedbutton.image_yscale
+		}
+		if(variable_struct_exists(loadedbutton,"image_speed")){
+			image_speed = loadedbutton.image_speed
+		}
+		if(variable_struct_exists(loadedbutton,"realcolor")){
+			image_blend = loadedbutton.realcolor
+			realcolor = loadedbutton.realcolor
+		} else {
+			realcolor = c_white
+		}
+		if(variable_struct_exists(loadedbutton,"balpha")){
+			myusualalpha = loadedbutton.balpha
+			image_alpha = loadedbutton.balpha
+		} else {
+			myusualalpha = 0.5
+			image_alpha = 0.5
+		}
+		if(variable_struct_exists(loadedbutton,"bk")){
+			if(string(loadedbutton.bk) != "null") {
+				keycode = loadedbutton.bk
+			}
+		}
+		if(variable_struct_exists(loadedbutton,"bk2")){
+			if(string(loadedbutton.bk2) != "null") {
+				keycode2 = loadedbutton.bk2
+			}
+		}
+	}
 }
 function virtual_key_save(export = false) {
 	var mybuttons = array_create(0)
@@ -105,6 +107,26 @@ function virtual_key_save(export = false) {
 		}
 		array_push(mybuttons,buttonproperties)
 		}
+	}
+	if(is_string(export)){
+		var buttonstring = json_stringify(mybuttons)
+		if(os_type == os_android){
+			var buttonbuffer = buffer_create(string_byte_length(buttonstring) + 1, buffer_fixed, 1)
+			buffer_write(buttonbuffer, buffer_string, buttonstring)
+			var i = 0;
+			var baseFilename = CONTROLS_FILE_PATH + export;
+			var filename = baseFilename + string(i) + ".png";
+			while(file_exists(filename)) {
+			    filename = baseFilename + string(i) + ".png";
+			    i++;
+			}
+			buffer_save(buttonbuffer, filename)
+			show_message_async("Controls saved to: " + filename)
+			buffer_delete(buttonbuffer)
+		} else {
+			get_string_async("Controls Save Code: ", json_stringify(mybuttons))
+		}
+		return
 	}
 	if(export) {
 		get_string_async("Controls Save Code: ", json_stringify(mybuttons))
@@ -140,6 +162,27 @@ function virtual_key_load(buttonstring2 = "") {
 			}
 		}
 		var buttonload = ""
+		if(os_type == os_android){
+			// use png cause of android 14 being too stingy regarding apps to read files.
+			// TODO: Tell the player the existence of this feature.
+			if(string_pos_ext(".png",buttonstring2,string_length(buttonstring2)-4) != 0){
+				var filepath = CONTROLS_FILE_PATH + buttonstring2
+				if(file_exists(filepath)){
+					var buttonbuffer = buffer_load(CONTROLS_FILE_PATH + buttonstring2)
+					var buttonstring = buffer_read(buttonbuffer, buffer_string)
+					buffer_delete(buttonbuffer)
+					
+					var buttonload = json_parse(buttonstring)
+					while(array_length(buttonload) > 0) {
+						var loadedbutton = array_pop(buttonload)
+						createvbutton(loadedbutton)
+					}
+				} else {
+					show_message_async("No file exists at: " + CONTROLS_FILE_PATH + buttonstring2)
+				}
+				return;
+			}
+		}
 		if(buttonstring2 != "" && buttonstring2 != "default") {
 			buttonload = json_parse(buttonstring2)
 		} else {

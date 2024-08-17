@@ -56,7 +56,7 @@ function scr_player_firemouth()
 			other.vsp = -11
 		jumpstop = 0
 	}
-	if key_jump
+	if key_jump && !finalmoveset
 		input_buffer_jump = 0
 	if ((!key_jump2) && jumpstop == 0 && vsp < 0.5 && stompAnim == 0)
 	{
@@ -159,11 +159,26 @@ function scr_player_firemouth()
 		sprite_index = spr_idle
 		image_index = 0
 	}
-	if (input_buffer_jump < 8 && grounded && sprite_index != spr_firemouthintro && sprite_index != spr_firemouthend)
-	{
-		with (instance_create(x, y, obj_highjumpcloud2))
-			sprite_index = spr_player_firemouthjumpdust
-		vsp = -15
+	if(!finalmoveset){
+		if (input_buffer_jump < 8 && grounded && sprite_index != spr_firemouthintro && sprite_index != spr_firemouthend)
+		{
+			with (instance_create(x, y, obj_highjumpcloud2))
+				sprite_index = spr_player_firemouthjumpdust
+			vsp = -15
+		}
+	} else {
+		if ((input_buffer_jump > 0) && can_jump && (sprite_index != spr_firemouthintro) && (sprite_index != spr_firemouthend))
+	    {
+	        GamepadSetVibration(0, 0.2, 0.2, 0.4)
+	        input_buffer_jump = 0
+	        //scr_soundeffect(sfx_jump)
+	        with (instance_create(x, y, obj_highjumpcloud2))
+	            sprite_index = spr_player_firemouthjumpdust
+	        //repeat (5)
+	        //    instance_create(x, y, obj_firemouthflame)
+	        vsp = -15
+			// TODO: deal with this later
+	    }
 	}
 	if (sprite_index == spr_firemouth)
 	{

@@ -59,3 +59,7 @@ if(string_pos("dragonlair_",room_get_name(room)) != 0){
 	escapemusic = mu_dragonlair
 	lap2music = mu_dragonlair
 }
+if(string_pos("tower_",room_get_name(room)) != 0){
+	escapemusic = mu_finalescape
+	lap2music = mu_finalescape
+}

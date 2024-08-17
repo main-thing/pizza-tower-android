@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_buyweapon",
-  "duration": 0.819,
+  "duration": 0.819955,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",

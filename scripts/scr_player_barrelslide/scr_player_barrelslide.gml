@@ -13,20 +13,32 @@ function scr_player_barrelslide()
 		if (sprite_index == spr_barrelslipnslide)
 			sprite_index = spr_barrelroll
 	}
-	if key_jump
+	if key_jump && !finalmoveset
 		input_buffer_jump = 0
 	if ((!jumpstop) && (!key_jump2) && vsp < 0)
 	{
 		jumpstop = 1
 		vsp /= 20
 	}
-	if (input_buffer_jump < 8 && grounded)
+	if(!finalmoveset)
 	{
-		scr_soundeffect(sfx_jump)
-		input_buffer_jump = 8
-		vsp = -8.5
-		jumpstop = 0
-		create_particle(x, y, particle.highjumpcloud1, 0)
+		if (input_buffer_jump < 8 && grounded)
+		{
+			scr_soundeffect(sfx_jump)
+			input_buffer_jump = 8
+			vsp = -8.5
+			jumpstop = 0
+			create_particle(x, y, particle.highjumpcloud1, 0)
+		}
+	} else {
+		if ((input_buffer_jump > 0) && can_jump)
+	    {
+	        scr_soundeffect(sfx_jump)
+	        input_buffer_jump = 0
+	        vsp = -8.5
+	        jumpstop = false
+	        create_particle(x, y, (3 << 0), 0)
+	    }
 	}
 	if ((!key_attack) && (!(place_meeting(x, (y + 1), obj_current))) && (!(scr_solid(x, (y - 16)))) && (!(scr_solid(x, (y - 32)))))
 	{
@@ -64,7 +76,7 @@ function scr_player_barrelslide()
 			instance_create((x + (xscale * 10)), (y + 10), obj_bumpeffect)
 			if place_meeting(x, (y + 1), obj_current)
 			{
-				input_buffer_jump = 8
+				input_buffer_jump = finalmoveset ? 0 : 8
 				vsp = -8.5
 				jumpstop = 1
 				create_particle(x, y, particle.highjumpcloud1, 0)

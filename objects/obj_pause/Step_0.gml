@@ -122,7 +122,7 @@ if (pause && (!instance_exists(obj_option)))
 					obj_player1.targetDoor = "D"
 					if instance_exists(obj_player2)
 						obj_player2.targetDoor = "D"
-					room = rm_levelselect
+					room = global.hubroom
 					alarm[0] = 2
 				}
 				break

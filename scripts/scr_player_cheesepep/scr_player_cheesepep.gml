@@ -13,7 +13,7 @@ function scr_player_cheesepep()
 		var _railinst = instance_place(x, (y + 1), obj_railparent)
 		hsp = ((xscale * movespeed) + (_railinst.movespeed * _railinst.dir))
 	}
-	if key_jump
+	if(key_jump && !finalmoveset)
 		input_buffer_jump = 0
 	if (grounded && move != 0 && sprite_index == spr_cheesepepidle)
 		sprite_index = spr_cheesepepwalk
@@ -46,10 +46,25 @@ function scr_player_cheesepep()
 				sprite_index = spr_cheesepepidle
 		}
 	}
-	if (input_buffer_jump < 8 && sprite_index != spr_cheesepepjumpstart && sprite_index != spr_cheesepepland)
+	if(!finalmoveset)
 	{
-		image_index = 0
-		sprite_index = spr_cheesepepjumpstart
+		if (input_buffer_jump < 8 && sprite_index != spr_cheesepepjumpstart && sprite_index != spr_cheesepepland)
+		{
+			image_index = 0
+			sprite_index = spr_cheesepepjumpstart
+		}
+	} else {
+		if (input_buffer_jump > 0 && (sprite_index != spr_cheesepepjumpstart))
+	    {
+	        if ((sprite_index != spr_cheesepepland))
+	        {
+	            input_buffer_jump = 0
+	            image_index = 0
+	            sprite_index = spr_cheesepepjumpstart
+	        }
+	        else
+	            input_buffer_jump = 8
+	    }
 	}
 	if (sprite_index == spr_cheesepepjumpstart && floor(image_index) == (image_number - 1))
 	{

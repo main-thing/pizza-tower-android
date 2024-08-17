@@ -8,6 +8,7 @@ with (other)
 		obj_player2.lastroom = room
 		obj_player1.targetDoor = other.targetDoor
 		obj_player1.targetRoom = other.targetRoom
+		
 		if(variable_instance_exists(other,"target_x")){
 			target_x = other.target_x
 		} else {

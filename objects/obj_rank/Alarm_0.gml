@@ -3,8 +3,8 @@ scr_playerreset()
 with (obj_player)
 {
 	targetDoor = "A"
-	targetRoom = rm_levelselect
-	room = rm_levelselect
+	targetRoom = global.hubroom
+	room = global.hubroom
 	x = -100
 	y = -100
 	state = states.titlescreen

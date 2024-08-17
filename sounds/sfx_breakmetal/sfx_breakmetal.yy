@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_breakmetal",
-  "duration": 4.968,
+  "duration": 4.968753,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",

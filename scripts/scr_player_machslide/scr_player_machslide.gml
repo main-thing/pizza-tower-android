@@ -68,6 +68,18 @@ function scr_player_machslide()
 		state = states.normal
 		sprite_index = spr_facehurtup
 	}
+	if(finalmoveset)
+	{
+		if (input_buffer_shoot > 0 && character != "V" && character != "S")
+	    {
+	        if shotgunAnim
+	        {
+	            if ((move != 0))
+	                xscale = move
+	            scr_shotgunshoot()
+	        }
+	    }
+	}
 	if ((!instance_exists(dashcloudid)) && grounded && (!(place_meeting(x, (y + 1), obj_water))))
 	{
 		with (instance_create(x, y, obj_dashcloud2))

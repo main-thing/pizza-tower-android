@@ -158,6 +158,10 @@ if (fadealpha > 1)
 					case obj_hallway_editor:
 						x = (other.xx + other.xscale)
 						y = (other.yy)
+						movespeed = tauntstoredmovespeed
+						vsp = tauntstoredvsp
+						sprite_index = tauntstoredsprite
+						state = tauntstoredstate
 					break
 					case obj_lapportal_editor:
 						x = (other.xx)

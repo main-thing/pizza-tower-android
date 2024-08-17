@@ -1,52 +1,57 @@
-if (mouse_check_button_pressed(mb_left) && position_meeting(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),self)) {
-	if(global.forceshowcontrols || !global.forcehidecontrols){
-		if (keycode == "edit") {
-			if(global.movingvkeys == 1) {
-				global.movingvkeys = 0
-				virtual_key_save()
-			} else {
-				global.movingvkeys = 1
-			}
-		}
-		if(global.movingvkeys){
-			if (keycode == "addbutton") {
-				hduei = get_string_async("Choose button ( up, down, left, right, up+left, up+right, down+left, down+right, shift, z, x, c, shift_dash_lock, escape, shoot, debug, bind <value> )", nejdmsx)
-			}
-			if (keycode == "delete") {
-				if (global.selectedvbutton != undefined) {
-					instance_destroy(global.selectedvbutton)
+if(!instance_exists(obj_virtual_controller_manager)){
+	instance_create(0,0,obj_virtual_controller_manager)
+}
+if(keycode == "edit" || keycode == "addbutton" || keycode == "delete" || keycode == "load" || keycode == "save" || keycode == "color" || keycode == "grid" || keycode == "debug"){
+	if (mouse_check_button_pressed(mb_left) && position_meeting(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),self)) {
+		if(global.forceshowcontrols || !global.forcehidecontrols){
+			if (keycode == "edit") {
+				if(global.movingvkeys == 1) {
+					global.movingvkeys = 0
+					virtual_key_save()
+				} else {
+					global.movingvkeys = 1
 				}
 			}
-			if (keycode == "load") {
-				if(clipboard_has_text()){
-						if(string_pos("[",clipboard_get_text()) == 1) {
-							djoiksa = get_string_async("load buttons: load, default, [{\"x\": 928.0,...}]",clipboard_get_text())
-						} else {
-							djoiksa = get_string_async("load buttons: load, default, [{\"x\": 928.0,...}]","")
-						}
-					} else{
-						djoiksa = get_string_async("load buttons: load, default, [{\"x\": 928.0,...}]","")
+			if(global.movingvkeys){
+				if (keycode == "addbutton") {
+					hduei = get_string_async("Choose button ( up, down, left, right, up+left, up+right, down+left, down+right, shift, z, x, c, shift_dash_lock, escape, shoot, debug, bind <value> )", nejdmsx)
+				}
+				if (keycode == "delete") {
+					if (global.selectedvbutton != undefined) {
+						instance_destroy(global.selectedvbutton)
 					}
 				}
-			if (keycode == "save") {
-				virtual_key_save(true)
-			}
-			if (keycode == "color") {
-				ndskld = get_string_async("edit selected button(color <red green blue>, sprite <sprite name>, scale <int / float>, alpha <int / float>, image_speed <int / float>, framenumber <int>, gridsize <int / float>)", nejdmsx)
-			}
+				if (keycode == "load") {
+					if(clipboard_has_text()){
+							if(string_pos("[",clipboard_get_text()) == 1) {
+								djoiksa = get_string_async("load buttons: help, load, default, controls.png, [{\"x\": 928.0,...}]",clipboard_get_text())
+							} else {
+								djoiksa = get_string_async("load buttons: help, load, default, controls.png, [{\"x\": 928.0,...}]","")
+							}
+						} else{
+							djoiksa = get_string_async("load buttons: help, load, default, controls.png, [{\"x\": 928.0,...}]","")
+						}
+					}
+				if (keycode == "save") {
+					virtual_key_save("controls")
+				}
+				if (keycode == "color") {
+					ndskld = get_string_async("edit selected button(color <red green blue>, sprite <sprite name>, scale <int / float>, alpha <int / float>, image_speed <int / float>, framenumber <int>, gridsize <int / float>)", nejdmsx)
+				}
 			
-			if (keycode == "grid") {
-				global.vkeysgridmode = !global.vkeysgridmode
-				if(global.vkeysgridmode) {
-					sprite_index = spr_pressed
-				} else {
-					sprite_index = mysprite
+				if (keycode == "grid") {
+					global.vkeysgridmode = !global.vkeysgridmode
+					if(global.vkeysgridmode) {
+						sprite_index = spr_pressed
+					} else {
+						sprite_index = mysprite
+					}
 				}
 			}
-		}
-		if (keycode == "debug") {	
-			if (global.movingvkeys == 0) {
-					dwnxed = get_string_async("Debug ( help )", nejdmsx)
+			if (keycode == "debug") {	
+				if (global.movingvkeys == 0) {
+						dwnxed = get_string_async("Debug ( help )", nejdmsx)
+				}
 			}
 		}
 	}

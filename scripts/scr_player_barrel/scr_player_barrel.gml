@@ -7,7 +7,7 @@ function scr_player_barrel()
 		image_speed = 0.85
 	hsp = movespeed
 	move = (key_right + key_left)
-	if key_jump
+	if key_jump && !finalmoveset
 		input_buffer_jump = 0
 	if (move != 0)
 	{
@@ -39,21 +39,40 @@ function scr_player_barrel()
 					other.movespeed = Approach(other.movespeed, (other.xscale * 12), 0.5)
 			}
 		}
-		if (input_buffer_jump < 8 && (!key_down))
-		{
-			scr_soundeffect(sfx_jump)
-			input_buffer_jump = 8
-			vsp = -8.5
-			if (move != xscale && move != 0)
+		if(!finalmoveset){
+			if (input_buffer_jump < 8 && (!key_down))
 			{
-				if (sign(movespeed) == 1)
-					xscale = move
+				scr_soundeffect(sfx_jump)
+				input_buffer_jump = 8
+				vsp = -8.5
+				if (move != xscale && move != 0)
+				{
+					if (sign(movespeed) == 1)
+						xscale = move
+				}
+				state = states.barreljump
+				sprite_index = spr_barreljump
+				image_index = 0
+				jumpstop = 0
+				create_particle(x, y, particle.highjumpcloud1, 0)
 			}
-			state = states.barreljump
-			sprite_index = spr_barreljump
-			image_index = 0
-			jumpstop = 0
-			create_particle(x, y, particle.highjumpcloud1, 0)
+		} else {
+			if ((input_buffer_jump > 0) && (!key_down) && (vsp > 0))
+	        {
+	            input_buffer_jump = 0
+	            scr_fmod_soundeffect(jumpsnd, x, y)
+	            vsp = -8.5
+	            if ((move != xscale) && (move != 0))
+	            {
+	                if ((sign(movespeed) == 1))
+	                    xscale = move
+	            }
+	            state = states.barreljump
+	            sprite_index = spr_player_barreljump
+	            image_index = 0
+	            jumpstop = false
+	            create_particle(x, y, (3 << 0), 0)
+	        }
 		}
 		if key_attack
 		{

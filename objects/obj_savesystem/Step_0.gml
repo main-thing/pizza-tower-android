@@ -4,7 +4,7 @@ if (room == hub_loadingscreen && state != 2 && (!instance_exists(obj_fadeout)))
 	{
 		targetRoom = hub_reception
 		targetDoor = "D"
-		targetRoom = rm_eggplantdisclaimer
+		targetRoom = global.hubroom
 		targetDoor = "A"
 	}
 	instance_create(x, y, obj_fadeout)

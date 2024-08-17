@@ -56,7 +56,7 @@ function scr_collide_destructibles()
 					instance_destroy()
 				}
 			}
-			if (state == states.trashroll or state == states.boxxedpepspin or ratmount_movespeed == 12 or state == states.ratmountpunch or state == states.ratmounttumble or state == states.punch or state == states.handstandjump or state == states.ratmountattack or state == states.lungeattack or state == states.cheeseball or state == states.bombpepside or state == states.rocket or state == states.shotgundash or state == states.faceplant or state == states.slipnslide or state == states.tacklecharge or sprite_index == spr_barrelroll or state == states.chainsawbump or state == states.mach3 or state == states.knightpep or state == states.machroll or state == states.knightpepslopes or state == states.knightpepattack or state == states.tumble or state == states.hookshot or state == states.shoulderbash)
+			if (state == states.trashroll or state == states.boxxedpepspin or ratmount_movespeed == 12 or state == states.ratmountpunch or state == states.ratmounttumble or state == states.punch or state == states.handstandjump or state == states.ratmountattack or state == states.lungeattack or state == states.cheeseball or state == states.bombpepside or state == states.rocket or state == states.shotgundash or state == states.faceplant or state == states.slipnslide or state == states.tacklecharge or sprite_index == spr_barrelroll or state == states.chainsawbump or state == states.mach3 or state == states.knightpep or state == states.machroll or state == states.knightpepslopes or state == states.knightpepattack or state == states.tumble or state == states.hookshot or state == states.shoulderbash or state == states.motorcycle)
 			{
 				if place_meeting((x + hsp), y, obj_destructibles)
 				{
@@ -83,7 +83,7 @@ function scr_collide_destructibles()
 					}
 				}
 			}
-			if ((state == states.knightpep or sprite_index == spr_lonegustavo_groundpoundstart or sprite_index == spr_lonegustavo_groundpound or state == states.jetpackjump or state == states.firemouth or state == states.slipbanan or state == states.superslam or state == states.hookshot or (state == states.bombpepup && bombup_dir == 1)) && vsp > 0)
+			if ((state == states.knightpep or sprite_index == spr_lonegustavo_groundpoundstart or sprite_index == spr_lonegustavo_groundpound or state == states.jetpackjump or state == states.firemouth or state == states.slipbanan or state == states.superslam or state == states.hookshot or (state == states.bombpepup && bombup_dir == 1)) && vsp > 0 or state == states.motorcycle)
 			{
 				if place_meeting(x, (y + 1), obj_destructibles)
 				{
@@ -104,6 +104,39 @@ function scr_collide_destructibles()
 						jumpstop = 0
 					}
 				}
+			}
+			if(finalmoveset){
+				if (state == states.firemouth)
+					{
+						with (instance_place(x + xscale, y, obj_tntblock))
+						{
+							instance_destroy();
+							if (other.vsp > -11)
+								other.vsp = -11;
+							jumpstop = false;
+						}
+						with (instance_place(x, y + vsp, obj_tntblock))
+						{
+							instance_destroy();
+							if (other.vsp > -11)
+								other.vsp = -11;
+							jumpstop = false;
+						}
+						with (instance_place(x, y + 1, obj_tntblock))
+						{
+							instance_destroy();
+							if (other.vsp > -11)
+								other.vsp = -11;
+							jumpstop = false;
+						}
+						with (instance_place(x, y - 1, obj_tntblock))
+						{
+							instance_destroy();
+							if (other.vsp > -11)
+								other.vsp = -11;
+							jumpstop = false;
+						}
+					}
 			}
 			var num = instance_place_list(x, (y + 1), obj_destructibleplatform, global.instancelist, 0)
 			for (var k = 0; k < num; k++)

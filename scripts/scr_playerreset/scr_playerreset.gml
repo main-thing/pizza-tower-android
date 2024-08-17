@@ -306,6 +306,7 @@ function scr_playerreset()
 			brick = 0
 			isgustavo = 0
 			controllableSjump = 0
+			fling = 0
 		}
 	}
 	with (obj_player2)

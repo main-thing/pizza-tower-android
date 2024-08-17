@@ -5,7 +5,7 @@ function scr_player_barreljump()
 	move = (key_right + key_left)
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_barreljump)
 		sprite_index = spr_barrelfall
-	if key_jump
+	if key_jump && !finalmoveset
 		input_buffer_jump = 0
 	if ((!jumpstop) && (!key_jump2) && vsp < 0)
 	{
@@ -23,6 +23,24 @@ function scr_player_barreljump()
 	}
 	else
 		movespeed = Approach(movespeed, 0, 0.5)
+	if(finalmoveset){
+		if ((input_buffer_jump > 0) && (!key_down) && (vsp > 0) && can_jump)
+	    {
+	        input_buffer_jump = 0
+	        scr_soundeffect(sfx_jump)
+	        vsp = -8.5
+	        if ((move != xscale) && (move != 0))
+	        {
+	            if ((sign(movespeed) == 1))
+	                xscale = move
+	        }
+	        state = states.barreljump
+	        sprite_index = spr_barreljump
+	        image_index = 0
+	        jumpstop = false
+	        create_particle(x, y, (3 << 0), 0)
+	    }
+	}
 	if grounded
 	{
 		state = states.barrel

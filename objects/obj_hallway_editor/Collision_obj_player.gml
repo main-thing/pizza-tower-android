@@ -11,6 +11,19 @@ with (other)
 		obj_player2.lastroom = room
 		obj_player1.hallway = 1
 		obj_player1.hallwaydirection = other.image_xscale
+		
+		obj_player1.tauntstoredmovespeed = obj_player1.movespeed
+		obj_player1.tauntstoredvsp = obj_player1.vsp
+		obj_player1.tauntstoredsprite = obj_player1.sprite_index
+		obj_player1.tauntstoredstate = obj_player1.state
+		obj_player1.state = states.titlescreen
+		
+		obj_player2.tauntstoredmovespeed = obj_player2.movespeed
+		obj_player2.tauntstoredvsp = obj_player2.vsp
+		obj_player2.tauntstoredsprite = obj_player2.sprite_index
+		obj_player2.tauntstoredstate = obj_player2.state
+		obj_player2.state = states.titlescreen
+		
 		if instance_exists(obj_player2)
 		{
 			obj_player2.hallway = 1

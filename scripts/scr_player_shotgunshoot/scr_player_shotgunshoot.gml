@@ -28,12 +28,17 @@ function scr_player_shotgunshoot()
 			momemtum = 1
 		}
 	}
-	if key_jump
-		input_buffer_jump = 0
-	if key_slap2
-		input_buffer_slap = 0
-	if (key_shoot2 && image_index > (image_number - 3))
-		scr_shotgunshoot()
+	if(!finalmoveset){
+		if key_jump
+			input_buffer_jump = 0
+		if key_slap2
+			input_buffer_slap = 0
+		if (key_shoot2 && image_index > (image_number - 3))
+			scr_shotgunshoot()
+	} else {
+		if ((input_buffer_slap > 0) && (image_index > (image_number - 3)))
+			scr_shotgunshoot()
+	}
 	exit;
 }
 

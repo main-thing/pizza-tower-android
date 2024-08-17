@@ -92,11 +92,17 @@ function scr_player_slap()
 	{
 		if (sprite_index == spr_player_slapup)
 		{
-			with (instance_create(x, y, obj_slaphitbox2))
+			with (instance_create(x, y, obj_slaphitbox2)){
 				sprite_index = spr_player_hitboxslapup
+				playerid = obj_player1
+			}
 		}
-		else
-			instance_create(x, y, obj_slaphitbox2)
+		else {
+			with(instance_create(x, y, obj_slaphitbox2))
+			{
+				playerid = obj_player1
+			}
+		}
 	}
 	if (floor(image_index) == (image_number - 1) && slapbuffer == 8)
 	{

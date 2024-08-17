@@ -152,18 +152,33 @@ function scr_player_grab()
 	}
 	if (movespeed == 2 && sprite_index == spr_swingding)
 		sprite_index = spr_haulingidle
-	if key_jump
+	if key_jump && !finalmoveset
 		input_buffer_jump = 0
-	if (grounded && input_buffer_jump < 8 && (!key_down) && (!key_attack) && vsp > 0 && sprite_index != spr_swingding)
-	{
-		scr_soundeffect(sfx_jump)
-		sprite_index = spr_haulingjump
-		instance_create(x, y, obj_highjumpcloud2)
-		if (heavy == 0)
-			vsp = -11
-		else
-			vsp = -6
-		image_index = 0
+	if(!finalmoveset){
+		if (grounded && input_buffer_jump < 8 && (!key_down) && (!key_attack) && vsp > 0 && sprite_index != spr_swingding)
+		{
+			scr_soundeffect(sfx_jump)
+			sprite_index = spr_haulingjump
+			instance_create(x, y, obj_highjumpcloud2)
+			if (heavy == 0)
+				vsp = -11
+			else
+				vsp = -6
+			image_index = 0
+		}
+	} else {
+		if (can_jump && (input_buffer_jump > 0) && (!key_down) && (!key_attack) && (vsp > 0) && (sprite_index != spr_swingding))
+	    {
+	        input_buffer_jump = 0
+	        scr_soundeffect(sfx_jump)
+	        sprite_index = spr_haulingjump
+	        instance_create(x, y, obj_highjumpcloud2)
+	        if ((heavy == false))
+	            vsp = -11
+	        else
+	            vsp = -6
+	        image_index = 0
+	    }
 	}
 	if (grounded && move != 0 && sprite_index == spr_haulingidle)
 		sprite_index = spr_haulingwalk

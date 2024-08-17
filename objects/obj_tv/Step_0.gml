@@ -1,4 +1,11 @@
 if(global.oldhud){
+	if (room == Realtitlescreen or room == rm_eggplantdisclaimer or room == rank_room or room == rm_levelselect or room == timesuproom or room == boss_room1 or room == characterselect or room == hub_loadingscreen)
+	{
+		visible = false
+		sprite_index = spr_tv_off
+	}
+	else
+		visible = true
 	if(tvsprite==spr_tv_idle){
 		tvsprite=spr_tvdefault
 	}
@@ -279,6 +286,9 @@ switch state
 			case states.cheesepepstick:
 			case states.cheesepepstickside:
 			case states.cheesepepstickup:
+			case states.cheesepepjump:
+			case states.cheesepepfling:
+			case states.cheesepeplaunch:
 				idlespr = obj_player1._spr_tv_cheesepep
 				break
 			case states.boxxedpep:
@@ -653,13 +663,5 @@ else
 	combo_state = 0
 }
 combofill_index += 0.35
-if(instance_exists(obj_player1)){
-	tv_x = obj_player1.tv_hud_x
-	tv_y = obj_player1.tv_hud_y
-	fake_tv_x = obj_player1.fake_tv_hud_x
-	fake_tv_y = obj_player1.fake_tv_hud_y
-	tv_bg_sprite = obj_player1._spr_tv_bg
-	tv_overlay_sprite = obj_player1._spr_tv_empty
-}
 if (combofill_index > (sprite_get_number(spr_tv_combobubblefill) - 1))
 	combofill_index = frac(combofill_index)

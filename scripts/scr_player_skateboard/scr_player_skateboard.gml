@@ -3,6 +3,9 @@ function scr_player_skateboard()
 	machhitAnim = 0
 	crouchslideAnim = 1
 	hsp = (xscale * movespeed)
+	if(movespeed < 5){
+		movespeed = 5
+	}
 	if key_jump
 	{
 		state = states.mach2

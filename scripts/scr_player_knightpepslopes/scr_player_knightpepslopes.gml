@@ -9,7 +9,7 @@ function scr_player_knightpepslopes()
 	if (knightmiddairstop == 0)
 		hsp = (xscale * movespeed)
 	image_speed = 0.35
-	if key_jump
+	if key_jump && !finalmoveset
 		input_buffer_jump = 0
 	if ((!key_jump2) && jumpstop == 0 && vsp < 0.5 && stompAnim == 0)
 	{
@@ -22,21 +22,55 @@ function scr_player_knightpepslopes()
 		sprite_index = spr_knightpepcharge
 	if scr_slope()
 		sprite_index = spr_knightpepdownslope
-	if (input_buffer_jump < 8)
+	if(!finalmoveset)
 	{
-		if (grounded or (!doublejump))
+		if (input_buffer_jump < 8)
 		{
-			vsp = -11
-			sprite_index = spr_knightpepfly
-			image_index = 0
-			input_buffer_jump = 8
-			if (!grounded)
+			if (grounded or (!doublejump))
 			{
 				vsp = -11
-				doublejump = 1
-				sprite_index = spr_knightpepdoublejump
+				sprite_index = spr_knightpepfly
+				image_index = 0
+				input_buffer_jump = 8
+				if (!grounded)
+				{
+					vsp = -11
+					doublejump = 1
+					sprite_index = spr_knightpepdoublejump
+				}
 			}
 		}
+	} else {
+		if ((input_buffer_jump > 0))
+	    {
+	        if (can_jump || (!doublejump))
+	        {
+	            scr_soundeffect(sfx_jump)
+	            vsp = -11
+	            sprite_index = spr_knightpepfly
+	            image_index = 0
+	            input_buffer_jump = 0
+	            if (!can_jump)
+	            {
+	                repeat (4)
+	                {
+	                    with (instance_create((x + random_range(-50, 50)), (y + random_range(0, 50)), obj_highjumpcloud2))
+	                    {
+	                        vspeed = 2
+	                        sprite_index = spr_cloudeffect
+	                    }
+	                }
+	                vsp = -11
+	                doublejump = true
+	                sprite_index = spr_knightpepdoublejump
+	            }
+	            if (!doublejump)
+	            {
+	                particle_set_scale((5 << 0), xscale, 1)
+	                create_particle(x, y, (5 << 0), 0)
+	            }
+	        }
+	    }
 	}
 	if ((sprite_index == spr_knightpepdoublejump or sprite_index == spr_knightpepfly) && floor(image_index) == (image_number - 1))
 		image_index = (image_number - 1)

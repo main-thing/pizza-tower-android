@@ -34,40 +34,79 @@ function scr_player_mortjump()
 		else if (sprite_index == spr_mortdoublejump or sprite_index == spr_mortdoublejumpstart)
 			sprite_index = spr_mortdoublejump
 	}
-	if (grounded && vsp > 0.5)
-	{
-		if (input_buffer_jump < 8)
+	if(!finalmoveset) {
+		if (grounded && vsp > 0.5)
 		{
-			input_buffer_jump = 8
-			state = states.mortjump
-			vsp = -14
-			sprite_index = spr_mortdoublejumpstart
-			image_index = 0
-			doublejump = 0
-			jumpstop = 0
+			if (input_buffer_jump < 8)
+			{
+				input_buffer_jump = 8
+				state = states.mortjump
+				vsp = -14
+				sprite_index = spr_mortdoublejumpstart
+				image_index = 0
+				doublejump = 0
+				jumpstop = 0
+				scr_soundeffect(sfx_jump)
+				create_particle(x, y, particle.jumpdust, 0)
+			}
+			else
+			{
+				state = states.mort
+				landAnim = 1
+				sprite_index = spr_land
+				image_index = 0
+			}
+		}
+		else if ((!doublejump) && key_jump)
+		{
 			scr_soundeffect(sfx_jump)
-			create_particle(x, y, particle.jumpdust, 0)
-		}
-		else
-		{
-			state = states.mort
-			landAnim = 1
-			sprite_index = spr_land
+			jumpstop = 0
+			input_buffer_jump = 8
+			doublejump = 1
+			state = states.mortjump
+			sprite_index = spr_mortdoublejump
 			image_index = 0
+			vsp = -11
+			repeat (4)
+				create_debris(x, y, spr_feather)
 		}
-	}
-	else if ((!doublejump) && key_jump)
-	{
-		scr_soundeffect(sfx_jump)
-		jumpstop = 0
-		input_buffer_jump = 8
-		doublejump = 1
-		state = states.mortjump
-		sprite_index = spr_mortdoublejump
-		image_index = 0
-		vsp = -11
-		repeat (4)
-			create_debris(x, y, spr_feather)
+	} else {
+		var dj = true
+	    if ((input_buffer_jump > 0) && can_jump)
+	    {
+	        dj = false
+	        input_buffer_jump = 0
+	        state = states.mortjump
+	        vsp = -11
+	        sprite_index = spr_mortdoublejumpstart
+	        image_index = 0
+	        doublejump = false
+	        jumpstop = false
+	        scr_soundeffect(sfx_jump)
+	        create_particle(x, y, (5 << 0), 0)
+	    }
+	    if (grounded && (vsp > 0))
+	    {
+	        state = states.mort
+	        landAnim = true
+	        sprite_index = spr__mortland
+	        image_index = 0
+	    }
+	    else if ((!doublejump) && key_jump && dj)
+	    {
+	        scr_soundeffect(sfx_jump)
+			//scr_soundeffect(sfx_mortdoublejump)
+			// TODO: deal with later
+	        jumpstop = false
+	        input_buffer_jump = 0
+	        doublejump = true
+	        state = states.mortjump
+	        sprite_index = spr_mortdoublejump
+	        image_index = 0
+	        vsp = -11
+	        repeat (4)
+	            create_debris(x, y, spr_feather)
+	    }
 	}
 	mort_attack()
 	exit;

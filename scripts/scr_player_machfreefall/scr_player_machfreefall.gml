@@ -35,7 +35,7 @@ function scr_player_machfreefall()
 		image_index = 0
 		instance_create((x - 10), (y + 10), obj_bumpeffect)
 	}
-	if (grounded && (!(input_buffer_jump < 8)))
+	if (grounded && (finalmoveset ? !(input_buffer_jump > 0) : !(input_buffer_jump < 8)))
 	{
 		with (obj_camera)
 		{
@@ -65,20 +65,36 @@ function scr_player_machfreefall()
 	audio_sound_gain(sfx_mach2, 0.7, 0)
 	if (!audio_is_playing(sfx_mach2))
 		audio_play_sound(sfx_mach2, 1, false)
-	if (grounded && input_buffer_jump < 8 && vsp > 0)
-	{
-		sprite_index = spr_player_hanstandjump
-		stompAnim = 0
-		hsp = 0
-		state = states.handstandjump
-		jumpAnim = 1
-		jumpstop = 0
-		image_index = 0
-		create_particle(x, y, particle.landcloud, 0)
-		freefallstart = 0
+	if(!finalmoveset){
+		if (grounded && input_buffer_jump < 8 && vsp > 0)
+		{
+			sprite_index = spr_player_hanstandjump
+			stompAnim = 0
+			hsp = 0
+			state = states.handstandjump
+			jumpAnim = 1
+			jumpstop = 0
+			image_index = 0
+			create_particle(x, y, particle.landcloud, 0)
+			freefallstart = 0
+		}
+		if key_jump
+			input_buffer_jump = 0
+	} else {
+		if (can_jump && (input_buffer_jump > 0) && (vsp > 0))
+	    {
+	        input_buffer_jump = 0
+	        sprite_index = spr_player_hanstandjump
+	        stompAnim = false
+	        hsp = 0
+	        state = states.handstandjump
+	        jumpAnim = true
+	        jumpstop = false
+	        image_index = 0
+	        create_particle(x, y, (12 << 0), 0)
+	        freefallstart = 0
+	    }
 	}
-	if key_jump
-		input_buffer_jump = 0
 	image_speed = 0.5
 	exit;
 }

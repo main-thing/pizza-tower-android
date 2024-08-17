@@ -14,11 +14,8 @@ function nsp_list_remove(argument0, argument1, argument2, argument3) {
 	s = argument0;
 	e = argument1;
 
-	repeat (e+1-s) {
+	repeat(e+1-s) {
 	 ds_list_delete(nspListStr, s);
 	 ds_list_delete(nspListPar, s);
-	 }
-
-
-
+	}
 }

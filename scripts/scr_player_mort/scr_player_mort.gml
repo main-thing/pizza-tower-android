@@ -5,7 +5,7 @@ function scr_player_mort()
 	mort = 0
 	doublejump = 0
 	jumpstop = 0
-	if key_jump
+	if key_jump && !finalmoveset
 		input_buffer_jump = 0
 	if (move != 0)
 	{
@@ -48,21 +48,40 @@ function scr_player_mort()
 		else
 			sprite_index = spr__mortidle
 	}
-	if (!grounded)
-	{
-		state = states.mortjump
-		sprite_index = spr_mortjump
-	}
-	else if (input_buffer_jump < 8)
-	{
-		input_buffer_jump = 0
-		state = states.mortjump
-		doublejump = 0
-		vsp = -11
-		sprite_index = spr_mortdoublejumpstart
-		image_index = 0
-		scr_soundeffect(sfx_jump)
-		create_particle(x, y, particle.jumpdust, 0)
+	if(!finalmoveset){
+		if (!grounded)
+		{
+			state = states.mortjump
+			sprite_index = spr_mortjump
+		}
+		else if (input_buffer_jump < 8)
+		{
+			input_buffer_jump = 0
+			state = states.mortjump
+			doublejump = 0
+			vsp = -11
+			sprite_index = spr_mortdoublejumpstart
+			image_index = 0
+			scr_soundeffect(sfx_jump)
+			create_particle(x, y, particle.jumpdust, 0)
+		}
+	} else {
+		if (!grounded)
+	    {
+	        state = states.mortjump
+	        sprite_index = spr_mortjump
+	    }
+	    else if ((input_buffer_jump > 0))
+	    {
+	        input_buffer_jump = 0
+	        state = states.mortjump
+	        doublejump = false
+	        vsp = -11
+	        sprite_index = spr_mortdoublejumpstart
+	        image_index = 0
+			scr_soundeffect(sfx_jump)
+	        create_particle(x, y, (4 << 0), 0)
+	    }
 	}
 	mort_attack()
 	exit;
