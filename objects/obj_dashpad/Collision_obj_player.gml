@@ -76,6 +76,7 @@ with (other)
 	                create_particle(x, y, (5 << 0), 0)
 	                xscale = sign(other.image_xscale)
 	                dir = xscale
+					var t = self
 	                with (instance_create(x, y, obj_crazyrunothereffect))
 	                    image_xscale = t.image_xscale
 	                with (instance_create(x, y, obj_superdashcloud))

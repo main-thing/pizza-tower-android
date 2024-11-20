@@ -37,7 +37,7 @@ function Instakill()
 			global.heattime = 60
 		}
 		global.hit += 1
-		if ((!grounded) && state != states.boxxedpepspin && state != states.freefall && (key_jump2 or input_buffer_jump == 0))
+		if ((!grounded) && state != states.boxxedpepspin && state != states.freefall && (finalmoveset ? (input_buffer_jump > 0 or key_jump2) : (input_buffer_jump < 8 or key_jump)))
 		{
 			if (state == states.mach3 && fightball == 0)
 				sprite_index = spr_mach2jump
@@ -76,12 +76,11 @@ function Instakill()
 			sprite_index = spr_player_chainsawhit
 			image_index = 0
 		}
-		var lag = 5
-		other.baddieID.hitLag = lag
+		other.baddieID.hitLag = hitlag_custom
 		other.baddieID.hitX = other.baddieID.x
 		other.baddieID.hitY = other.baddieID.y
 		other.baddieID.hp -= 1
-		hitLag = lag
+		hitLag = hitlag_custom
 		hitX = x
 		hitY = y
 		instance_create(other.baddieID.x, other.baddieID.y, obj_parryeffect)

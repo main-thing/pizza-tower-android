@@ -8,7 +8,7 @@ function scr_player_animatronic()
 		jumpstop = 1
 		vsp /= 10
 	}
-	if key_jump
+	if key_jump && !finalmoveset
 		input_buffer_jump = 0
 	if (move != 0)
 	{
@@ -37,9 +37,9 @@ function scr_player_animatronic()
 				create_debris(x, y, choose(spr_shroomcollect, spr_cheesecollect, spr_tomatocollect, spr_pineapplecollect, spr_sausagecollect), 1)
 		}
 	}
-	if (grounded && vsp > 0 && input_buffer_jump < 8)
+	if ((finalmoveset ? can_jump : grounded) && (finalmoveset ? (input_buffer_jump > 0) : (input_buffer_jump < 8)) && vsp > 0)
 	{
-		input_buffer_jump = 8
+		input_buffer_jump = finalmoveset ? 0 : 8
 		vsp = -11
 		jumpstop = 0
 	}

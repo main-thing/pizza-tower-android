@@ -35,7 +35,11 @@ function scr_player_transitioncutscene()
 				global.rank = "c"
 			else
 				global.rank = "d"
-			ini_open("saveData.ini")
+			if(os_type == os_android)
+			{
+				ini_open("/storage/emulated/0/Documents/pizza tower android/saves/saveData.ini.png");
+			} 
+			else ini_open("saveData.ini")
 			if (!instance_exists(obj_endlevelfade))
 				instance_create(x, y, obj_endlevelfade)
 			if (state != states.door)

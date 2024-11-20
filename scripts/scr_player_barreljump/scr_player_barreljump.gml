@@ -37,7 +37,7 @@ function scr_player_barreljump()
 	        state = states.barreljump
 	        sprite_index = spr_barreljump
 	        image_index = 0
-	        jumpstop = false
+	        jumpstop = 0
 	        create_particle(x, y, (3 << 0), 0)
 	    }
 	}

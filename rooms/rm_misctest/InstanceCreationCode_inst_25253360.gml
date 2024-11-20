@@ -1,1 +1,1 @@
-text = "clown"
+text = "skateboard"

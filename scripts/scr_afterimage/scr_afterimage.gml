@@ -125,6 +125,20 @@ function create_blue_afterimage(argument0, argument1, argument2, argument3, argu
 		alpha = 1.25
 	}
 }
+
+function create_custom_afterimage(argument0, argument1, argument2, argument3, argument4, argument5, argument6)
+{
+	with create_afterimage(argument0, argument1, argument2, argument3)
+	{
+		identifier = afterimage.custom
+		alarm[0] = -1
+		alarm[1] = -1
+		alarm[2] = -1
+		image_xscale = argument4
+		image_blend = argument5
+		alpha = argument6
+	}
+}
 function create_red_afterimage(_x, _y, _sprite, _image_index, _xscale)
 {
 	with create_afterimage(argument0, argument1, argument2, argument3)

@@ -79,11 +79,12 @@ function scr_player_handstandjump() {
 			vsp = -11
 			state = states.mach2
 			sprite_index = spr_longjump
+			audio_stop_sound(suplexdashsnd)
 		}
 	} else {
 		if ((input_buffer_jump > 0) && can_jump && (!key_down) && (global.attackstyle != 2))
 	    {
-	        scr_soundeffect(sfx_rollgetup)
+	        //scr_soundeffect(sfx_rollgetup)
 	        input_buffer_jump = 0
 			input_buffer_slap = 0 // HACK: not exactly like the final game but this will suffice
 	        particle_set_scale((5 << 0), xscale, 1)
@@ -93,6 +94,9 @@ function scr_player_handstandjump() {
 	        vsp = -11
 	        state = states.mach2
 	        sprite_index = spr_longjump
+			longjumpsnd = audio_play_sound(sfx_rollgetup, 1, false)
+			sfx_gain(longjumpsnd)
+			audio_stop_sound(suplexdashsnd)
 	    }
 	}
 	if (sprite_index == attackdash && (!grounded)) {
@@ -102,7 +106,9 @@ function scr_player_handstandjump() {
 	if (grounded && sprite_index == airattackdash && ((!key_attack) or character == "N") && global.attackstyle != 2) {
 		if (global.attackstyle != 3) {
 			state = states.normal
-			if (move != xscale) movespeed = 2
+			if (move != xscale){ 
+				movespeed = 2
+			}
 		} else {
 			sprite_index = attackdash
 			image_index = (image_number - 6)
@@ -142,6 +148,7 @@ function scr_player_handstandjump() {
 				machhitAnim = 0;
 				state = states.tumble;
 			}
+			audio_stop_sound(suplexdashsnd)
 		}
 		mask_index = spr_player_mask
 		if(!finalmoveset){
@@ -182,11 +189,16 @@ function scr_player_handstandjump() {
 				jumpAnim = 1
 				grav = 0.5
 				state = states.jump
+				if(finalmoveset)
+					input_buffer_slap = 0
 			} else {
 				state = states.normal
 				movespeed = 2
 				grav = 0.5
+				if(finalmoveset)
+					input_buffer_slap = 0
 			}
+			audio_stop_sound(suplexdashsnd)
 		}
 	}
 	if (character == "S") {

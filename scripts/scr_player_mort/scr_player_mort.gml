@@ -75,7 +75,7 @@ function scr_player_mort()
 	    {
 	        input_buffer_jump = 0
 	        state = states.mortjump
-	        doublejump = false
+	        doublejump = 0
 	        vsp = -11
 	        sprite_index = spr_mortdoublejumpstart
 	        image_index = 0

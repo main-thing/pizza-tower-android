@@ -108,6 +108,7 @@ function scr_player_mach3()
 		} else {
 			if (input_buffer_jump > 0 && grounded && (!((move == 1 && xscale == -1))) && (!((move == -1 && xscale == 1))))
 			{
+				input_buffer_jump = 0
 				scr_soundeffect(sfx_jump)
 				image_index = 0
 				sprite_index = spr_mach3jump
@@ -155,7 +156,7 @@ function scr_player_mach3()
 		image_speed = 0.75
 	else if (sprite_index == spr_rollgetup || sprite_index == spr_mach3hit || sprite_index == spr_dashpadmach)
 		image_speed = 0.4
-	if key_jump
+	if key_jump && !finalmoveset
 		input_buffer_jump = 0
 	if (((!key_attack) && fightball == 0 && (!launched) && sprite_index != spr_dashpadmach && grounded && (character == "P" || character == "N"  || character == "V")) || (character == "S" && (move == 0 || move != xscale) && grounded && fightball == 0))
 	{
@@ -238,7 +239,7 @@ function scr_player_mach3()
 			{
 				input_buffer_slap = 0;
 				sprite_index = spr_suplexdash;
-				suplexmove = true;
+				suplexmove = 1;
 				suplexdashsnd = audio_play_sound(sfx_suplexdash, 1, false)
 				sfx_gain(suplexdashsnd)
 				particle_set_scale(particle.jumpdust, xscale, 1);

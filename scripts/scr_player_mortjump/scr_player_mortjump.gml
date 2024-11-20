@@ -80,15 +80,15 @@ function scr_player_mortjump()
 	        vsp = -11
 	        sprite_index = spr_mortdoublejumpstart
 	        image_index = 0
-	        doublejump = false
-	        jumpstop = false
+	        doublejump = 0
+	        jumpstop = 0
 	        scr_soundeffect(sfx_jump)
 	        create_particle(x, y, (5 << 0), 0)
 	    }
 	    if (grounded && (vsp > 0))
 	    {
 	        state = states.mort
-	        landAnim = true
+	        landAnim = 1
 	        sprite_index = spr__mortland
 	        image_index = 0
 	    }
@@ -97,9 +97,9 @@ function scr_player_mortjump()
 	        scr_soundeffect(sfx_jump)
 			//scr_soundeffect(sfx_mortdoublejump)
 			// TODO: deal with later
-	        jumpstop = false
+	        jumpstop = 0
 	        input_buffer_jump = 0
-	        doublejump = true
+	        doublejump = 1
 	        state = states.mortjump
 	        sprite_index = spr_mortdoublejump
 	        image_index = 0

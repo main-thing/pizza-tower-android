@@ -8,12 +8,12 @@ function scr_player_motorcycle()
 	image_speed = 0.35
 	if grounded
 		jumped = 0
-	if key_jump
+	if key_jump && !finalmoveset
 		input_buffer_jump = 0
-	if (grounded && input_buffer_jump < 8 && vsp > 0)
+	if ((finalmoveset ? can_jump : grounded) && (finalmoveset ? (input_buffer_jump > 0): (input_buffer_jump < 8)) && vsp > 0)
 	{
 		scr_soundeffect(sfx_jump)
-		input_buffer_jump = 8
+		input_buffer_jump = finalmoveset ? 0 : 8
 		vsp = -11
 		jumped = 1
 		jumpstop = 0

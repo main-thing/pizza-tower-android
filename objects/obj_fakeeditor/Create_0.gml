@@ -9,7 +9,6 @@ variabletochange = ""
 funnyx = 0
 swipemode = false
 transfotip = noone
-srank = 2000
 global.fake_ed_tilemenu = 0
 //page1 = [obj_solid, obj_slope, obj_metalblock]
 with(obj_player1){

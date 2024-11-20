@@ -33,12 +33,13 @@ if(instance_exists(obj_fakeeditor)){
 		draw_self()
 	}
 	if(!obj_fakeeditor.in_play_mode && !global.fake_ed_tilemenu){
-		if(mouse_check_button_pressed(mb_left) && position_meeting(mouse_x, mouse_y, id)){
+		if(mouse_check_button_pressed(mb_left) && position_meeting(mouse_x, mouse_y, id) && !position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), obj_fakeeditor_button)){
 			fake_ed_old_sprite_x = x - device_mouse_x_to_gui(0)
 			fake_ed_old_sprite_y = y - device_mouse_y_to_gui(0)
 			fake_ed_click_x = x
 			fake_ed_click_y = y
 			fake_ed_sprite_clicked = true
+			// why is this even in the draw event?
 			with(obj_fakeeditor){	
 				selectedent = other.id
 				if(instance_exists(transfotip)){

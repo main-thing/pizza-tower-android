@@ -141,7 +141,7 @@ if (fadealpha > 1)
 			    }
             }
             with (obj_player)
-            {
+            {	
 				switch(other.object){
 					case obj_door_editor:
 						x = (other.xx + 50)
@@ -168,11 +168,16 @@ if (fadealpha > 1)
 						y = (other.yy)
 					break
 				}
+				roomstartx = x
+				roomstarty = y
             }
 			with(obj_fakeeditor_trigger_base){
 				event_perform(ev_other,ev_room_start)
 			}
 			with(obj_fakeeditor_trigger_door_base){
+				event_perform(ev_other,ev_room_start)
+			}
+			with(obj_enemyspawn){
 				event_perform(ev_other,ev_room_start)
 			}
 		}

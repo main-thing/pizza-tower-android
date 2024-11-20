@@ -25,7 +25,7 @@ function scr_player_hurt()
 	turning = 0
 	skateboarding = 0
 	alarm[5] = 2
-	alarm[7] = 20
+	alarm[7] = (finalmoveset ? 80 : 20)
 	if (grounded && vsp > 0)
 	{
 		movespeed = 0

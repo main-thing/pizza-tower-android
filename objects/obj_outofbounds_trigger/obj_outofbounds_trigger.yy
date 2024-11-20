@@ -7,7 +7,7 @@
     "path": "sprites/spr_outofbounds_trigger/spr_outofbounds_trigger.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,

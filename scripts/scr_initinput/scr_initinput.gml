@@ -1,7 +1,10 @@
 function scr_initinput()
 {
-	ini_open("saveData.ini")
-	
+	if(os_type == os_android)
+	{
+		ini_open("/storage/emulated/0/Documents/pizza tower android/saves/saveData.ini.png");
+	} 
+	else ini_open("saveData.ini")
 	global.key_up = ini_read_string("ControlsKeys", "up", vk_up)
 	global.key_right = ini_read_string("ControlsKeys", "right", vk_right)
 	global.key_left = ini_read_string("ControlsKeys", "left", vk_left)

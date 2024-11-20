@@ -4,7 +4,6 @@ button_name = "undefined"
 button_pressed = false
 fakeeditor_obj = undefined
 fakeeditor_edit = undefined
-fakeeditor_rank = undefined
 fakeed_istilemenu = false
 nejdmssx = ""
 amogustextlol = undefined

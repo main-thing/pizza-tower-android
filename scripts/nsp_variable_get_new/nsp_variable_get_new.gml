@@ -32,6 +32,19 @@ function nsp_variable_get_new() {
   
 	  }
 	switch(varname){
+		
+	 // keyboard stuff:
+		case "keyboard_key": return keyboard_key;
+		case "keyboard_lastchar": return keyboard_lastchar;
+		case "keyboard_lastkey": return keyboard_lastkey;
+		case "keyboard_string": return keyboard_string;
+	 //rooms:
+		case "room": return room;
+		case "room_first": return room_first;
+		case "room_last": return room_last;
+		case "room_height": return room_height;
+		case "room_width": return room_width;
+		
 		case "view_enabled":
 			return view_enabled
 		break
@@ -102,7 +115,7 @@ function nsp_variable_get_new() {
 	  NSP_notify("SCRIPT: nsp_variable_get_new. ERROR: Trying to fetch a non-existant variable ( "+varname+" ).");
 	  return nspToken[NSP_TOK.abort];
 
-	  }
+	}
 
 	return variable_instance_get(inst, varname);
 

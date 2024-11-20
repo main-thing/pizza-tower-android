@@ -36,6 +36,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 			
 			case afterimage.firemouth:
 			case afterimage.blue:
+			case afterimage.custom:
 			case afterimage.fakepep:
 				alpha -= 0.05
 				if (alpha <= 0 && alarm[0] != 0)

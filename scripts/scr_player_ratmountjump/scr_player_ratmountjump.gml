@@ -5,7 +5,7 @@ function scr_player_ratmountjump()
 		image_speed = 0.6
 	else
 		image_speed = 0.35
-	if key_jump
+	if (key_jump && !finalmoveset)
 		input_buffer_jump = 0
 	if ((!jumpstop) && vsp < 0.5 && (!key_jump2))
 	{
@@ -13,13 +13,49 @@ function scr_player_ratmountjump()
 		jumpstop = 1
 	}
 	hsp = movespeed
-	if ((place_meeting((x + xscale), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_destructibles)))) or (abs(movespeed) < 8 && move != xscale) or abs(movespeed) <= 6)
+	if(!finalmoveset) 
 	{
-		gustavodash = 0
-		ratmount_movespeed = 8
+		if ((place_meeting((x + xscale), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_destructibles)))) or (abs(movespeed) < 8 && move != xscale) or abs(movespeed) <= 6)
+		{
+			gustavodash = 0
+			ratmount_movespeed = 8
+		}
+		if (place_meeting((x + hsp), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_slope))) && (!(place_meeting((x + hsp), y, obj_destructibles))) && gustavodash != 51)
+			movespeed = 0
+	} else {
+		var r = ratmount_movespeed
+	    if ((place_meeting((x + xscale), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_destructibles)))) || ((abs(movespeed) < 8) && (move != xscale)) || (abs(movespeed) <= 6))
+	    {
+	        gustavodash = 0
+	        ratmount_movespeed = 8
+	    }
+	    if (place_meeting((x + hsp), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_slope))) && (!(place_meeting((x + hsp), y, obj_destructibles))) && (gustavodash != 51))
+	    {
+	        movespeed = 0
+	        if ((r >= 12))
+	        {
+	            var _bump = ledge_bump(((vsp >= 0) ? 32 : 22))
+	            if _bump
+	            {
+	                scr_soundeffect(sfx_groundpound)
+	                state = states.bump
+	                if brick
+	                    sprite_index = spr_player_ratmountbump
+	                else
+	                    sprite_index = spr_lonegustavo_bump
+	                image_index = 0
+	                hsp = ((-xscale) * 4)
+	                vsp = -5
+	                with (obj_camera)
+	                {
+	                    shake_mag = 4
+	                    shake_mag_acc = (5 / room_speed)
+	                }
+	                return;
+	            }
+	        }
+	    }
 	}
-	if (place_meeting((x + hsp), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_slope))) && (!(place_meeting((x + hsp), y, obj_destructibles))) && gustavodash != 51)
-		movespeed = 0
 	if (move != 0)
 	{
 		if (move == xscale)

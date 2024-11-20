@@ -41,16 +41,12 @@ if(keycode == "edit" || keycode == "addbutton" || keycode == "delete" || keycode
 			
 				if (keycode == "grid") {
 					global.vkeysgridmode = !global.vkeysgridmode
-					if(global.vkeysgridmode) {
-						sprite_index = spr_pressed
-					} else {
-						sprite_index = mysprite
-					}
+					sprite_index = global.vkeysgridmode ? spr_pressed : mysprite
 				}
 			}
 			if (keycode == "debug") {	
 				if (global.movingvkeys == 0) {
-						dwnxed = get_string_async("Debug ( help )", nejdmsx)
+					dwnxed = get_string_async("Debug ( help )", nejdmsx)
 				}
 			}
 		}
@@ -76,7 +72,6 @@ if(!global.movingvkeys) {
 	global.selectedvbutton = undefined
 	image_alpha = myusualalpha
 	image_blend = realcolor
-	pulse = 1
 }
 if(!global.forceshowcontrols){
 	if(!global.forcehidecontrols){
@@ -109,31 +104,15 @@ if(!global.forceshowcontrols){
 		visible = false
 	}
 }
-if(string_pos("togglebinds",string_lower(string(keycode2))) == 0){
-	if(keycode == "bind"){
-		if(global.showbinds){
-			image_alpha = myusualalpha
-		} else {
-			image_alpha = 0
-		}
-	}
+if(keycode == "bind"){
+	if(string_pos("togglebinds",string(keycode2)) == 0){
+		image_alpha = global.showbinds ? myusualalpha : 0
+	} 
 }
 if (global.movingvkeys == 1) {
+	image_alpha = myusualalpha
 	if (global.selectedvbutton == self) {
-		if (pulse == 1) {
-			image_alpha += 0.01
-			image_blend = realcolor
-			if (image_alpha == 1) {
-				pulse = 0
-			}
-		}
-		if (pulse == 0) {
-			image_alpha -= 0.01
-			image_blend = realcolor
-			if (image_alpha == myusualalpha) {
-				pulse = 1
-			}
-		}
+		image_alpha = Wave(0.3, 1, 3, 0)
 	}
 	if(!buttonlockable) {
 		if(vkeychecker > -1) {
@@ -178,8 +157,4 @@ if (global.movingvkeys == 1) {
 		}
 	}
 }
-if(pressed) {
-	image_blend = make_color_hsv(0,255,255)
-} else {
-	image_blend = realcolor
-}
+image_blend = pressed ? make_color_hsv(0,255,255) : realcolor

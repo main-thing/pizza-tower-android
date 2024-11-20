@@ -8,7 +8,7 @@ function scr_player_boxxedpep()
 	doublejump = 0
 	if (abs(hsp) <= 2)
 		boxxeddash = 0
-	if key_jump
+	if key_jump && !finalmoveset 
 		input_buffer_jump = 0
 	if ((!key_jump2) && jumpstop == 0 && vsp < 0.5 && stompAnim == 0)
 	{
@@ -34,7 +34,7 @@ function scr_player_boxxedpep()
 		movespeed = 0
 	if (scr_solid((x + sign(hsp)), y) && xscale == -1 && move == -1 && ((!(place_meeting((x - 1), y, obj_slope))) or scr_solid_slope((x - 1), y)))
 		movespeed = 0
-	if (grounded && input_buffer_jump < 8 && vsp > 0 && (!(scr_solid(x, (y - 16)))) && (!(scr_solid(x, (y - 32)))))
+	if ((finalmoveset ? can_jump : grounded) && (finalmoveset ? (input_buffer_jump > 0): (input_buffer_jump < 8)) && vsp > 0 && (!(scr_solid(x, (y - 16)))) && (!(scr_solid(x, (y - 32)))))
 	{
 		instance_create(x, y, obj_highjumpcloud2)
 		vsp = (-boxxedpepjump)

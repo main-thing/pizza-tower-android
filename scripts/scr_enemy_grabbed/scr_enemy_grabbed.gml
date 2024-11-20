@@ -118,12 +118,12 @@ function scr_enemy_grabbed()
 			state = states.stun
 			if (_obj_player.sprite_index == _obj_player.spr_shoulder)
 				vsp = 15
-			if (_obj_player.sprite_index == spr_player_diagonaldownthrow)
+			if (_obj_player.sprite_index == spr_diagonaldownthrow)
 			{
 				hsp = ((-image_xscale) * 10)
 				vsp = 15
 			}
-			if (_obj_player.sprite_index == spr_player_diagonalupthrow)
+			if (_obj_player.sprite_index == spr_diagonalupthrow)
 			{
 				hsp = ((-image_xscale) * 10)
 				vsp = -15

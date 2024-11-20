@@ -2,8 +2,8 @@ if (room == hub_loadingscreen && state != 2 && (!instance_exists(obj_fadeout)))
 {
 	with (obj_player)
 	{
-		targetRoom = hub_reception
-		targetDoor = "D"
+		//targetRoom = hub_reception
+		//targetDoor = "D"
 		targetRoom = global.hubroom
 		targetDoor = "A"
 	}

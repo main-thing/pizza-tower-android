@@ -147,8 +147,7 @@ if(global.oldhud){
 	        alpha = 0.5
 	    else
 	        alpha = 1
-	    font = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.1234567890:", 1, 0)
-	    draw_set_font(font)
+	    draw_set_font(global.bigfont)
 	    draw_set_halign(fa_center)
 	    draw_set_color(c_white)
 	    if (global.panic == 1 || global.snickchallenge == 1)
@@ -160,7 +159,7 @@ if(global.oldhud){
 				seconds = concat("0", seconds);
 			else
 				seconds = string(seconds);
-	        if (global.minutes < 1)
+	        if (minutes < 1)
 	            draw_set_color(c_red)
 	        else
 	            draw_set_color(c_white)

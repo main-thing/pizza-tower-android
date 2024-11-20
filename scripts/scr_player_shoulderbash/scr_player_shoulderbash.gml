@@ -1,5 +1,6 @@
 function scr_player_shoulderbash()
 {
+	image_speed = 0.35
 	movespeed = (sprite_index == spr_pepperman_shoulderstart ? shoulderbash_mspeed_start : Approach(movespeed, shoulderbash_mspeed_loop, 0.5))
 	hsp = (xscale * movespeed)
 	if (!instance_exists(chargeeffectid))
@@ -18,7 +19,7 @@ function scr_player_shoulderbash()
 		state = states.normal
 		image_index = 0
 	}
-	if key_jump
+	if key_jump && !finalmoveset
 		input_buffer_jump = 0
 	if grounded
 		jumpstop = 0
@@ -27,7 +28,7 @@ function scr_player_shoulderbash()
 		vsp /= 20
 		jumpstop = 1
 	}
-	if (input_buffer_jump < 8 && grounded)
+	if ((finalmoveset ? (input_buffer_jump > 0): (input_buffer_jump < 8)) && grounded)
 	{
 		vsp = (-shoulderbash_jumpspeed)
 		scr_soundeffect(sfx_jump)

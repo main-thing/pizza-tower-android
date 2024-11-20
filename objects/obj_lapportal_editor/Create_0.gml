@@ -3,3 +3,4 @@ playerid = -4
 index = -1
 start = 0
 active = 0
+forceshow = false

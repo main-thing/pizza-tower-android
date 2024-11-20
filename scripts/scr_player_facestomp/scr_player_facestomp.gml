@@ -66,11 +66,11 @@ function scr_player_facestomp()
 	    {
 	        input_buffer_jump = 0
 	        sprite_index = spr_hanstandjump
-	        stompAnim = false
+	        stompAnim = 0
 	        hsp = 0
 	        state = states.handstandjump
-	        jumpAnim = true
-	        jumpstop = false
+	        jumpAnim = 1
+	        jumpstop = 0
 	        image_index = 0
 	        create_particle(x, y, (12 << 0), 0)
 	        freefallstart = 0

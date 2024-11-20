@@ -78,11 +78,9 @@ function scr_player_knightpep()
 				movespeed = 6
 		}
 	} else {
-		var dj = true
-	    if ((input_buffer_jump > 0) && (vsp > 0) && can_jump && ((sprite_index == spr_knightpepidle) || (sprite_index == spr_knightpep_downtrust) || (sprite_index == spr_knightpepland) || (sprite_index == spr_knightpepwalk) || (sprite_index == spr_knightpepfall)))
+	    if (input_buffer_jump > 0 && vsp > 0 && can_jump && ((sprite_index == spr_knightpepidle) || (sprite_index == spr_knightpepdowntrust) || (sprite_index == spr_knightpepland) || (sprite_index == spr_knightpepwalk) || (sprite_index == spr_knightpepfall)))
 	    {
 	        create_particle(x, y, (3 << 0))
-	        dj = false
 	        input_buffer_jump = 0
 	        image_index = 0
 	        sprite_index = spr_knightpepjumpstart
@@ -98,7 +96,7 @@ function scr_player_knightpep()
 		sprite_index = spr_knightpepjump
 	if ((floor(image_index) == (image_number - 1) && sprite_index == spr_knightpepjump) or ((!grounded) && sprite_index != spr_knightpepjumpstart && sprite_index != spr_knightpepjump && sprite_index != spr_knightpepthunder && sprite_index != spr_knightpepdowntrust && sprite_index != spr_knightpepdoublejump))
 		sprite_index = spr_knightpepfall
-	if ((sprite_index == spr_knightpepdowntrust or sprite_index == spr_knightpepfall or sprite_index == spr_knightpep_doublejump) && grounded && vsp > 0 && (!scr_slope()))
+	if ((sprite_index == spr_knightpepdowntrust or sprite_index == spr_knightpepfall or sprite_index == spr_knightpepdoublejump) && grounded && vsp > 0 && (!scr_slope()))
 	{
 		with (obj_baddie)
 		{

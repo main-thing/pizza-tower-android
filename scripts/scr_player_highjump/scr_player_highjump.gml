@@ -61,8 +61,8 @@ function scr_player_highjump()
 	        input_buffer_jump = 0
 	        vsp = -9
 	        state = states.jump
-	        jumpAnim = true
-	        jumpstop = false
+	        jumpAnim = 1
+	        jumpstop = 0
 	        image_index = 0
 	        freefallstart = 0
 	    }

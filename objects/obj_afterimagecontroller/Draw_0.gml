@@ -20,6 +20,14 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 					shader_set(shd_blue_afterimage)
 				}
 			}
+			else if identifier == afterimage.custom
+			{
+				a = alpha
+				if(global.usecustomafterimageshaders){
+					//shader_set_uniform_i(other._uniformcolor, image_blend);
+					shader_set(shd_custom_afterimage)
+				}
+			}
 			else if identifier == afterimage.blur
 			{
 				a = alpha
@@ -40,7 +48,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 			}
 			
 			draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, 1, 0, image_blend, a)
-			if identifier == afterimage.firemouth or identifier == afterimage.blue or (identifier == afterimage.blur && playerid != noone)
+			if identifier == afterimage.firemouth or identifier == afterimage.blue or identifier == afterimage.custom or (identifier == afterimage.blur && playerid != noone)
 				shader_reset()
 		}
 	}

@@ -154,7 +154,7 @@ function point_in_camera_ext(argument0, argument1, argument2, argument3, argumen
 	var cam_h = camera_get_view_height(argument2)
 	return point_in_rectangle(argument0, argument1, (cam_x - argument3), (cam_y - argument4), ((cam_x + cam_w) + argument3), ((cam_y + cam_h) + argument4));
 }
-
+// camera, padding
 function bbox_in_camera(argument0, argument1)
 {
 	if is_undefined(argument1)

@@ -12,7 +12,7 @@ function scr_player_bombgrab()
 		dir = xscale
 		movespeed = 0
 	}
-	if key_jump
+	if key_jump && !finalmoveset
 		input_buffer_jump = 0
 	if grounded
 		jumpstop = 0
@@ -46,10 +46,10 @@ function scr_player_bombgrab()
 			else
 				sprite_index = spr_haulingidle
 		}
-		if (input_buffer_jump < 8 && grounded && vsp > 0)
+		if ((finalmoveset ? can_jump : grounded) && (finalmoveset ? (input_buffer_jump > 0) : (input_buffer_jump < 8)) && vsp > 0)
 		{
 			vsp = -11
-			input_buffer_jump = 8
+			input_buffer_jump = finalmoveset ? 0 : 8
 			sprite_index = spr_haulingjump
 			image_index = 0
 		}
@@ -233,7 +233,7 @@ function scr_player_bombpep()
 	alarm[8] = 60
 	alarm[7] = 120
 	hurted = 1
-	if key_jump
+	if key_jump && !finalmoveset
 		input_buffer_jump = 0
 	if ((!key_jump2) && jumpstop == 0 && vsp < 0.5 && stompAnim == 0)
 	{
@@ -298,7 +298,7 @@ function scr_player_bombpep()
 		xscale *= -1
 		GamepadSetVibration((object_index == obj_player1 ? 0 : 1), 0.2, 0.2, 0.4)
 	}
-	if (input_buffer_jump < 8 && grounded && hsp != 0)
+	if ((finalmoveset ? can_jump : grounded) && (finalmoveset ? (input_buffer_jump > 0): (input_buffer_jump < 8)) && hsp != 0)
 		vsp = -11
 	if (movespeed < 4)
 		image_speed = 0.35

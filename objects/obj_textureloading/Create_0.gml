@@ -1,5 +1,6 @@
 tex_list = -4
 draw_flush()
+//var group_arr = ["playergroup", "backgroundgroup", "hudgroup", "smallgroup", "baddiegroup", "levelstructuregroup"]
 var group_arr = ["playergroup"]
 tex_list = ds_list_create()
 tex_pos = 0

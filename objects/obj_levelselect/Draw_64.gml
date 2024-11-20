@@ -10,7 +10,8 @@ var xx = 405
 var yy = 380
 var c = c_white
 ini_open_from_string(obj_savesystem.ini_str)
-draw_text(480, yy - 38, ini_read_real("Highscore", _levelinfo[2], 0))
+if(_levelinfo[1] != characterselect)
+	draw_text(480, yy - 38, ini_read_real("Highscore", _levelinfo[2], 0))
 if(_levelinfo[1] != characterselect && _levelinfo[1] != dragonlair_1){
 	for (var i = 0; i < array_length(toppin_info); i++)
 	{

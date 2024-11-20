@@ -40,21 +40,48 @@ for (var i = 0; i < 2; i++)
 							vsp = 5
 						}
 					}
-					if key_jump2
-					{
-						instance_create(x, (y + 50), obj_stompeffect)
-						stompAnim = 1
-						vsp = -14
-						if (state == states.jump)
-							sprite_index = spr_stompprep
+					if(finalmoveset){
+						if (key_jump2 || (input_buffer_jump > 0))
+			            {
+			                instance_create(x, (y + 50), obj_stompeffect)
+			                stompAnim = 1
+			                vsp = -14
+			                if ((state == states.jump))
+			                {
+			                    jumpstop = 1
+			                    sprite_index = spr_stompprep
+			                }
+			            }
+			            else
+			            {
+			                instance_create(x, (y + 50), obj_stompeffect)
+			                stompAnim = 1
+			                vsp = -9
+			                if ((state == states.jump))
+			                {
+			                    jumpstop = true
+			                    sprite_index = spr_stompprep
+			                }
+			            }
 					}
-					else
+					else 
 					{
-						instance_create(x, (y + 50), obj_stompeffect)
-						stompAnim = 1
-						vsp = -9
-						if (state == states.jump)
-							sprite_index = spr_stompprep
+						if key_jump2
+						{
+							instance_create(x, (y + 50), obj_stompeffect)
+							stompAnim = 1
+							vsp = -14
+							if (state == states.jump)
+								sprite_index = spr_stompprep
+						}
+						else
+						{
+							instance_create(x, (y + 50), obj_stompeffect)
+							stompAnim = 1
+							vsp = -9
+							if (state == states.jump)
+								sprite_index = spr_stompprep
+						}
 					}
 				}
 				if (instance_exists(other.baddieID) && state == states.lungegrab)

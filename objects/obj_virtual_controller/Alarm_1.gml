@@ -28,11 +28,11 @@ with(obj_platform){
 	}
 }
 with(obj_enemyspawn){
-		visible = global.showcollisions
+	visible = global.showcollisions
 }
 with(obj_fakeeditor_trigger_base){
-		visible = global.showcollisions
+	visible = global.showcollisions
 }
 with(obj_fakeeditor_trigger_door_base){
-		visible = global.showcollisions
+	visible = global.showcollisions
 }

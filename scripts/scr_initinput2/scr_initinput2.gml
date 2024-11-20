@@ -1,6 +1,10 @@
 function scr_initinput2()
 {
-	ini_open("saveData.ini")
+	if(os_type == os_android)
+	{
+		ini_open("/storage/emulated/0/Documents/pizza tower android/saves/saveData.ini.png");
+	} 
+	else ini_open("saveData.ini")
 	
 	// I can't be bothered please
 	global.key_upN = ini_read_string("ControlsKeys2", "up", 87)

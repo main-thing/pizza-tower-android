@@ -86,6 +86,7 @@ function docommand(commandstring,silentcommand = false,is_trigger = false) {
 	}
 	if (string_pos("savecommand", string_lower(commandstring)) == 1) {
 		var code = string_delete(commandstring,1,12);
+		var i = 0
 		if(string_length(code) > 2){
 			var baseFilename = COMMANDS_FILE_PATH + "command";
 			var filename = baseFilename + string(i) + ".png";
@@ -587,8 +588,8 @@ function docommand(commandstring,silentcommand = false,is_trigger = false) {
 		if (string_pos("exec", string_lower(commandstring)) == 1) {
 				var _filename = string_delete(commandstring, 0,5);
 				if(os_type == os_android){
-					if(file_exists(COMMANDS_FILE_PATH + _filename)) {
-						var _file = file_text_open_read(COMMANDS_FILE_PATH + _filename)
+					if(file_exists(_filename)) {
+						var _file = file_text_open_read(_filename)
 						var _cmd = file_text_read_string(_file)
 						if(string_pos("*",_cmd) == 1){
 							_cmd = base64_decode(string_delete(_cmd,1,1))
@@ -596,9 +597,18 @@ function docommand(commandstring,silentcommand = false,is_trigger = false) {
 						docommand(_cmd,true)
 						file_text_close(_file)
 						//TODO: test if this even works
+					} else {
+						show_message_async("No command file found at: " + _filename)
 					}
 				} else {
-					show_message_async("This command is only available in the android target.") //for now.
+					file = get_open_filename("commands file|*.txt|*.png", "");
+					if (file != "")
+					{
+					    var _file = file_text_open_read(file);
+						var _cmd = file_text_read_string(_file)
+						docommand(_cmd,true)
+						file_text_close(_file)
+					}
 				}
 		}
 		switch (string_lower(commandstring)) {
@@ -683,16 +693,22 @@ function docommand(commandstring,silentcommand = false,is_trigger = false) {
 				case "finalmoveset true":
 					with(obj_player){
 						finalmoveset = true
+						input_buffer_jump = 0
+						input_buffer_slap = 0
 					}
 				break
 				case "finalmoveset false":
 					with(obj_player){
 						finalmoveset = false
+						input_buffer_jump = 8
+						input_buffer_slap = 8
 					}
 				break
 				case "finalmoveset":
 					with(obj_player){
 						finalmoveset = !finalmoveset
+						input_buffer_jump = finalmoveset ? 0 : 8
+						input_buffer_slap = finalmoveset ? 0 : 8
 					}
 				break
 				case "enablerank true":
@@ -731,6 +747,7 @@ function docommand(commandstring,silentcommand = false,is_trigger = false) {
 					layer_set_visible(layer_get_id("Tiles_Foreground1"),true)
 					layer_set_visible(layer_get_id("Tiles_Foreground2"),true)
 					layer_set_visible(layer_get_id("Tiles_Foreground3"),true)
+					// why
 				break
 				case "toggletile":
 				case "toggletiles":

@@ -329,6 +329,19 @@ function scr_characterspr() {
 		spr_pogostart = spr_playerN_pogostart
 		spr_wallcling = spr_playerN_wallcling
 		spr_wallclingstart = spr_playerN_wallclingstart
+		spr_diagonaldownthrow = spr_player_diagonaldownthrow
+		spr_diagonalupthrow = spr_player_diagonalupthrow
+		spr_groundpoundjump = spr_player_groundpoundjump
+		spr_mrpinch = spr_player_mrpinch
+		spr_kungfu1 = spr_player_kungfu1
+		spr_kungfu2 = spr_player_kungfu2
+		spr_kungfu3 = spr_player_kungfu3
+		spr_kungfuair1 = spr_player_kungfuair1
+		spr_kungfuair2 = spr_player_kungfuair2
+		spr_kungfuair3 = spr_player_kungfuair3
+		spr_kungfuair1transition = spr_player_kungfuair1transition
+		spr_kungfuair2transition = spr_player_kungfuair2transition
+		spr_kungfuair3transition = spr_player_kungfuair3transition
 		_spr_tv_barrel = spr_tv_barrel
 		_spr_tv_bg = spr_tv_bg
 		_spr_tv_bombpep = spr_tv_bombpep
@@ -389,6 +402,7 @@ function scr_characterspr() {
 		sfx_tumble3snd = sfx_tumble3
 		escapetimer_x = 327
 		escapetimer_y = 464
+		hitlag_custom = 5
 	}
 	if (character == "N"
 		or(character == "P" && (!ispeppino))) {
@@ -708,6 +722,7 @@ function scr_characterspr() {
 		sfx_tumble3snd = sfx_tumble3
 		escapetimer_x = 327
 		escapetimer_y = 464
+		hitlag_custom = 5
 	}
 	if (character == "V") {
 		spr_idle = spr_playerV_idle
@@ -952,6 +967,7 @@ function scr_characterspr() {
 		sfx_tumble3snd = sfx_tumble3
 		escapetimer_x = 327
 		escapetimer_y = 464
+		hitlag_custom = 5
 	}
 	if (character == "M") {
 		spr_idle = spr_pepperman_idle
@@ -1194,6 +1210,7 @@ function scr_characterspr() {
 		sfx_tumble3snd = sfx_tumble3
 		escapetimer_x = 327
 		escapetimer_y = 464
+		hitlag_custom = 5
 	}
 	if (character == "S") {
 		spr_idle = spr_snick_idle
@@ -1386,6 +1403,7 @@ function scr_characterspr() {
 		sfx_tumble3snd = sfx_tumble3
 		escapetimer_x = 327
 		escapetimer_y = 464
+		hitlag_custom = 5
 	}
 	exit;
 }

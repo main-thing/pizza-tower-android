@@ -84,12 +84,6 @@ function nsp_get_constant(argument0) {
 		case "vk_subtract": return vk_subtract;
 		case "vk_tab": return vk_tab;
 		case "vk_up": return vk_up;
-	 //rooms:
-		case "room": return room;
-		case "room_first": return room_first;
-		case "room_last": return room_last;
-		case "room_height": return room_height;
-		case "room_width": return room_width;
 		
 	 //Colours:
 		case "c_aqua": return c_aqua;
@@ -123,8 +117,12 @@ function nsp_get_constant(argument0) {
 		case "buffer_s8": return buffer_s8;
 		case "buffer_s16": return buffer_s16;
 		case "buffer_s32": return buffer_s32;
+		case "buffer_string": return buffer_string;
+		case "buffer_seek_end": return buffer_seek_end;
+		case "buffer_seek_relative": return buffer_seek_relative;
+		case "buffer_seek_start": return buffer_seek_start;
 		
-	 // views:
+	 // os stuff:
 		case "os_windows": return os_windows;
 		case "os_linux": return os_linux;
 		case "os_macosx": return os_macosx;
@@ -145,6 +143,7 @@ function nsp_get_constant(argument0) {
 		case "fa_readonly": return fa_readonly;
 		case "fa_sysfile": return fa_sysfile;
 		case "fa_volumeid": return fa_volumeid;
+		case "ptem_data": return ((os_type == os_android) ? "/storage/emulated/0/Documents/pizza tower android/" : "");
 		
 	 // alignment:
 		case "fa_bottom": return fa_bottom;

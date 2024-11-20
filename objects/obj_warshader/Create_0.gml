@@ -1,5 +1,4 @@
 alpha = 0
-pulse = 0
-maxalpha = 0.5
+maxalpha = 0.2
 minalpha = 0
-pulserate = 0.01
+pulserate = 5

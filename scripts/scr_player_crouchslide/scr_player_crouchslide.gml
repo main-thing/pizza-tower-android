@@ -34,7 +34,7 @@ function scr_player_crouchslide()
 		if (can_jump && (input_buffer_jump > 0) && (!(scr_solid((x + 27), (y - 32)))) && (!(scr_solid((x - 27), (y - 32)))) && (!(scr_solid(x, (y - 32)))) && (!(scr_solid(x, (y - 16)))))
 	    {
 	        input_buffer_jump = 0
-	        sprite_index = spr_player_jumpdive1
+	        sprite_index = spr_jumpdive1
 	        image_index = 0
 	        vsp = -11
 	        with (instance_create(x, y, obj_superdashcloud))

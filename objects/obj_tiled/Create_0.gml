@@ -33,8 +33,13 @@ middle_y = 160
 
 tile_width = 32
 tile_height = 32
+
+tile_xoffset = 0
 tile_yoffset = 0
 
-shoulddraw = true
+tile_xborder = 0
+tile_yborder = 0
+
+shoulddraw = false
 
 holdclick = 0

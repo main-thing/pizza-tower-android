@@ -377,7 +377,3 @@ global.loadeditor = 0
 room_goto(hub_loadingscreen)
 instance_destroy(obj_cutscene_handler)
 gamesave_async_load()
-if(!variable_instance_exists(obj_player1,"__checkedstartup")){
-	scr_startupcommand()
-	obj_player1.__checkedstartup = 1
-}

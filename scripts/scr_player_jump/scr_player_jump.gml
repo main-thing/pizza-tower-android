@@ -187,7 +187,7 @@ function state_player_jump()
 	            if ((sprite_index != spr_shotgunshoot))
 	                image_index = 0
 	            input_buffer_secondjump = 0
-	            state = (0 << 0)
+	            state = states.normal
 	            jumpAnim = 1
 	            jumpstop = 0
 	            freefallstart = 0
@@ -232,7 +232,7 @@ function state_player_jump()
 				case spr_suplexcancel:
 					sprite_index = spr_fall
 					break
-				case spr_player_backflip:
+				case spr_suplexland:
 					sprite_index = spr_fall
 					break
 				case spr_player_Sjumpstart:
@@ -250,7 +250,7 @@ function state_player_jump()
 				case spr_stompprep:
 					sprite_index = spr_stomp
 					break
-				case spr_player_groundpoundjump:
+				case spr_groundpoundjump:
 					sprite_index = spr_fall
 					break
 			}
@@ -557,8 +557,9 @@ function state_player_jump()
 
 	if ((!key_attack) or move != xscale)
 		mach2 = 0
-	if (floor(image_index) == (image_number - 1))
+	if (floor(image_index) == (image_number - 1)){
 		jumpAnim = 0
+	}
 	scr_dotaunt()
 	if (sprite_index == spr_shotgunshoot)
 	{

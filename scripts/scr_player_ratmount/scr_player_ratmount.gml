@@ -5,14 +5,51 @@ function scr_player_ratmount()
 	if (ratgrabbedID != noone && (!instance_exists(ratgrabbedID)))
 		ratgrabbedID = noone
 	hsp = movespeed
-	if ((place_meeting((x + xscale), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_destructibles)))) or (abs(movespeed) < 8 && move != xscale) or (!key_attack) or abs(movespeed) <= 6)
+	if(!finalmoveset)
 	{
-		gustavodash = 0
-		ratmount_movespeed = 8
+		if ((place_meeting((x + xscale), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_destructibles)))) or (abs(movespeed) < 8 && move != xscale) or (!key_attack) or abs(movespeed) <= 6)
+		{
+			gustavodash = 0
+			ratmount_movespeed = 8
+		}
+		if (place_meeting((x + hsp), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_slope))) && (!(place_meeting((x + hsp), y, obj_destructibles))) && gustavodash != 51)
+			movespeed = 0
+	} else {
+		var r = ratmount_movespeed
+	    if ((place_meeting((x + xscale), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_destructibles)))) || ((abs(movespeed) < 8) && (move != xscale)) || (!key_attack) || (abs(movespeed) <= 6))
+	    {
+	        gustavodash = 0
+	        ratmount_movespeed = 8
+	    }
+	    if (place_meeting((x + hsp), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_slope))) && (!(place_meeting((x + hsp), y, obj_destructibles))) && (gustavodash != 51))
+	    {
+	        movespeed = 0
+	        if ((r >= 12))
+	        {
+	            var _bump = ledge_bump(((vsp >= 0) ? 32 : 22))
+	            if _bump
+	            {
+	                scr_soundeffect(sfx_groundpound)
+	                state = states.bump
+	                if brick
+	                    sprite_index = spr_player_ratmountbump
+	                else
+	                    sprite_index = spr_lonegustavo_bump
+	                image_index = 0
+	                instance_create((x + (xscale * 15)), (y + 10), obj_bumpeffect)
+	                hsp = ((-xscale) * 4)
+	                vsp = -5
+	                with (obj_camera)
+	                {
+	                    shake_mag = 4
+	                    shake_mag_acc = (5 / room_speed)
+	                }
+	                return;
+	            }
+	        }
+	    }
 	}
-	if (place_meeting((x + hsp), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_slope))) && (!(place_meeting((x + hsp), y, obj_destructibles))) && gustavodash != 51)
-		movespeed = 0
-	if (ratmount_movespeed == 12 && gustavodash != 51)
+	if ((finalmoveset ? (ratmount_movespeed >= 12) : (ratmount_movespeed == 12)) && gustavodash != 51)
 	{
 		ratmount_movespeed = finalmoveset ? ratmount_movespeed : 12
 		instance_create(x, y, obj_jumpdust)
@@ -144,7 +181,7 @@ function scr_player_ratmount()
 				}
 			}
 		}
-		if (floor(image_index) == (image_number - 1))
+		if (floor(image_index) == (image_number - 1) || (sprite_index == spr_player_ratmountbump && grounded))
 		{
 			landAnim = 0
 				if (sprite_index == spr_player_ratmountland)

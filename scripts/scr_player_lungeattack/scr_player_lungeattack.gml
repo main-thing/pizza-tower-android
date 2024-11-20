@@ -1,6 +1,6 @@
 function scr_player_lungeattack()
 {
-	if (sprite_index != spr_player_backflip)
+	if (sprite_index != spr_suplexland)
 	{
 		image_speed = 0.35
 		hsp = (xscale * movespeed)

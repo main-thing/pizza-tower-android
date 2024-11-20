@@ -61,7 +61,7 @@ function scr_player_knightpepslopes()
 	                    }
 	                }
 	                vsp = -11
-	                doublejump = true
+	                doublejump = 1
 	                sprite_index = spr_knightpepdoublejump
 	            }
 	            if (!doublejump)

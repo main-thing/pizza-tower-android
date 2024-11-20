@@ -1,1 +1,5 @@
-almost there.
+
+
+roomstart_event='if(array_get_index(room,john_array)!=-1){}'
+// this is command that does things that command is to command to spawn things with command and command to command
+gml with(instance_create(0,0,obj_custom_object)){john_array=array_create();array_push(john_array,entrance_10,medieval_10,ruin_11,dungeon_10,badland_9,graveyard_6,farm_11,saloon_6,plage_cavern2,forest_john,space_9,minigolf_8,street_john,sewer_8,industrial_5,freezer_escape1,chateau_9,kidsparty_john);output='';h='#';c=',';i=0;step_event='if(i<array_length(john_array)){room_goto(array_get(john_array,i));if(instance_exists(obj_hungrypillar)){output+=room_get_name(room)+h+string(obj_hungrypillar.x)+c+string(obj_hungrypillar.y)+h};i+=1}if(i>=array_length(john_array)){get_string(h,string_hash_to_newline(output));instance_destroy()}';persistent=1;docommand('reload_gml',1,1)}

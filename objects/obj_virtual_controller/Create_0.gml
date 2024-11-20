@@ -1,10 +1,9 @@
-#macro CONTROLS_FILE_PATH "/storage/emulated/0/Documents/pizza tower android/controls/"
+#macro CONTROLS_FILE_PATH "/storage/emulated/0/Documents/pizza tower android/controls/" //todo: detect user id 
 vkeychecker = -1
 vkeychecker2 = -1
 vkeycounter = 0
 mouseon = 0
 pressed = false 
-pulse = 1
 hduei = undefined
 djoiksa = undefined
 dwnxed = undefined
@@ -14,7 +13,7 @@ dsnxjk = undefined
 depth = -19999
 old_button_x = x
 old_button_y = y
-//TODO: READ FROM AN EXTERNAL INI FILE SO PEOPLE CAN MAKE CUSTOM LANGAUAGES FOR TEXT HERE.
+//TODO: READ FROM AN EXTERNAL LANGUAGE FILE SO PEOPLE CAN MAKE CUSTOM LANGAUAGES FOR TEXT HERE.
 // I forgot
 if (mysprite != undefined) {
 	sprite_index = mysprite
@@ -122,6 +121,7 @@ function virtual_key_save(export = false) {
 			}
 			buffer_save(buttonbuffer, filename)
 			show_message_async("Controls saved to: " + filename)
+			clipboard_set_text(buttonstring)
 			buffer_delete(buttonbuffer)
 		} else {
 			get_string_async("Controls Save Code: ", json_stringify(mybuttons))
@@ -240,23 +240,26 @@ function doedit(commandstring){
 		var _red = 0
 		var _green = 0
 		var _blue = 0
+		var _error = false
 		for (var i = 1;i < array_length(commands);i++) {
-				if(i == 2){
-					_red = int64(commands[i])
-					argcount++
-				}
-				if(i == 3){
-					_green = int64(commands[i])
-					argcount++
-				}
-				if(i == 4){
-					_blue = int64(commands[i])
-					argcount++
-				}
-				if(i >= 4){
-					break
-				}
+			if(i == 2){
+				try{_red = int64(commands[i])}catch(err){_error = true}
+				argcount++
 			}
+			if(i == 3){
+				try{_green = int64(commands[i])}catch(err){_error = true}
+				argcount++
+			}
+			if(i == 4){
+				try{_blue = int64(commands[i])}catch(err){_error = true}
+				argcount++
+			}
+			if(i >= 4){
+				break
+			}
+		}
+		if(_error)
+			show_message_async("usage: \"color 255 0 0\" in RGB format.")
 		if(argcount == 3){
 			with(global.selectedvbutton){
 				realcolor = make_color_rgb(_red, _green, _blue)
@@ -366,7 +369,7 @@ function doedit(commandstring){
 input = function (_touch_id, _touch_x, _touch_y, _click)
 {
 	if(!_click){
-		return;
+		exit;
 	}
 	if(buttonlockable || keycode == "bind"){
 		if (buttonlockable && !global.movingvkeys) {

@@ -78,9 +78,9 @@ function scr_player_Sjump()
 		} else {
 			if (floor(image_index) == (image_number - 1))
 			{
-				jumpstop = true;
+				jumpstop = 1;
 				vsp = -4;
-				flash = true;
+				flash = 1;
 				movespeed = 13;
 				image_index = 0;
 				sprite_index = spr_Sjumpcancel;

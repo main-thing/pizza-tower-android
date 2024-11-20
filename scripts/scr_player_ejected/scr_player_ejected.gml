@@ -17,7 +17,7 @@ function scr_player_ejected()
 			landAnim = 0
 			instance_create(x, y, obj_fadeout)
 			targetRoom = lastroom
-			state = states.normal
+			state = states.policetaxi
 			global.seconds = 20
 			obj_camera.ded = 0
 		}
@@ -27,7 +27,7 @@ function scr_player_ejected()
 			{
 				landAnim = 0
 				targetRoom = lastroom
-				state = states.normal
+				state = states.policetaxi
 				global.seconds = 20
 				obj_camera.ded = 0
 			}

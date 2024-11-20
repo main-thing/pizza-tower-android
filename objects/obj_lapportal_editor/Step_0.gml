@@ -1,7 +1,7 @@
 if(index == -1)
     exit;
 if(start == 1){
-	if global.panic
+	if global.panic || forceshow
 	{
 		image_alpha = 1
 		if (sprite_index == spr_pizzaportal)

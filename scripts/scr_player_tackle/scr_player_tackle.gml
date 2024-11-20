@@ -11,7 +11,7 @@ function scr_player_tackle()
 	stopAnim = 1
 	crouchslideAnim = 1
 	crouchAnim = 1
-	if(sprite_index != spr_lungehit && sprite_index != spr_player_kungfu1 && sprite_index != spr_player_kungfu2 && sprite_index != spr_player_kungfu3){
+	if(sprite_index != spr_lungehit && sprite_index != spr_kungfu1 && sprite_index != spr_kungfu2 && sprite_index != spr_kungfu3){
 		if (sprite_index != spr_golfswing)
 		{
 			if (grounded && vsp > 0.5)

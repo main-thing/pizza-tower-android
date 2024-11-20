@@ -94,10 +94,8 @@ function scr_noise_punch()
 	exit;
 }
 
-function scr_noise_do_jump(argument0)
+function scr_noise_do_jump(argument0 = 1)
 {
-	if (argument0 == undefined)
-		argument0 = 1
 	var found = 0
 	var nearest = (room_width * room_height)
 	b = noone

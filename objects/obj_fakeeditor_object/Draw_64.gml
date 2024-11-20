@@ -10,7 +10,12 @@ if(fake_ed_content == "obj_solid_tiled" || fake_ed_content == "obj_tiled"){
 	if(instance_exists(obj_fakeeditor)){
 		if(obj_fakeeditor.selectedent == id && fake_ed_hold_menu){
 			global.fake_ed_tilemenu = 1
-			draw_tileset_picker(tileset)
+			var _tileset = asset_get_index(tileset_name)
+			if(_tileset != -1){
+				draw_tileset_picker(_tileset)
+			} else {
+				draw_tileset_picker(tileset)
+			}
 		}
 	}
 }

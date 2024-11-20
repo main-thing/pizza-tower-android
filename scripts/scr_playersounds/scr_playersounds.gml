@@ -30,6 +30,16 @@ function scr_playersounds()
 		}
 		else if ((state != states.mach3 && sprite_index != spr_mach3boost) or sprite_index == spr_crazyrun)
 			audio_stop_sound(mach3snd)
+		if(finalmoveset)
+		{
+			if ((state == states.mach2) && sprite_index == spr_longjump && image_index == 0 && (!audio_is_playing(sfx_rollgetup)))
+			{
+				longjumpsnd = audio_play_sound(sfx_rollgetup, 1, false)
+				sfx_gain(longjumpsnd)
+			}
+			else if (state != states.mach2)
+				audio_stop_sound(longjumpsnd)
+		}
 		if (state == states.knightpepslopes && grounded && (!audio_is_playing(sfx_knightslidesnd)))
 		{
 			knightslide = audio_play_sound(sfx_knightslidesnd, 1, false)
@@ -75,8 +85,11 @@ function scr_playersounds()
 			audio_stop_sound(tumble2snd)
 			audio_stop_sound(tumble3snd)
 		}
-		if (audio_is_playing(suplexdashsnd) && state != states.handstandjump)
-			audio_stop_sound(suplexdashsnd)
+		if(finalmoveset)
+		{
+			if (audio_is_playing(longjumpsnd) && state != states.mach2)
+				audio_stop_sound(longjumpsnd)
+		}
 	}
 	exit;
 }

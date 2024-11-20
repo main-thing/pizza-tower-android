@@ -47,6 +47,8 @@ function fakeeditor_play_level(){
 				x = camera_get_view_x(view_camera[0]) + (camera_get_view_width(view_camera[0]) / 2)
 				y = camera_get_view_y(view_camera[0]) + (camera_get_view_height(view_camera[0]) / 2)
 			}
+			roomstartx = x
+			roomstarty = y
 		}
 	} else {
 		global.forcehidecontrols = 1
@@ -495,6 +497,44 @@ function fakeeditor_load_editor_objects(argument0)
         show_message_async("No input provided")
     else
     {
+		if(os_type == os_android){
+			// use png cause of android 14 being too stingy regarding apps to read files.
+			// TODO: Tell the player the existence of this feature.
+			if(string_pos_ext(".png",argument0,string_length(argument0)-4) != 0){
+				var filepath = LEVELS_FILE_PATH + argument0
+				if(file_exists(filepath)){
+					var objbuffer = buffer_load(LEVELS_FILE_PATH + argument0)
+					var objstring = buffer_read(objbuffer, buffer_string)
+					buffer_delete(objbuffer)
+					
+					var objload = json_parse(objstring)
+			        while(array_length(objload) > 0) {
+						var loadedobject = array_pop(objload)
+						with(instance_create(0, 0, obj_fakeeditor_object)) {
+							var var_array = variable_struct_get_names(loadedobject)
+							var i = 0
+							while (i < array_length(var_array))
+				            {
+								var tempvar = variable_struct_get(loadedobject, var_array[i])
+								if(is_string(tempvar)){
+									if(string_pos("asset|",tempvar) == 1){
+										tempvar = asset_get_index(string_replace(tempvar,"asset|",""))
+									}
+								}
+								if(tempvar == pointer_null || tempvar == pointer_invalid){
+									tempvar = undefined
+								}
+								variable_instance_set(id, var_array[i], tempvar)
+				                i++
+				            }
+						}
+					}
+				} else {
+					show_message_async("No file exists at: " + LEVELS_FILE_PATH + argument0)
+				}
+				return;
+			}
+		}
 		try {
 			json_parse(argument0)
 		} catch(err){
@@ -545,9 +585,9 @@ function draw_tileset_picker(_tilespr){
 	draw_rectangle(0, 0, sprite_get_width(_tilespr), sprite_get_height(_tilespr), false)
 	draw_set_alpha(1) 
 	draw_set_color(c_white)
-	draw_sprite(_tilespr, 0, sprite_get_xoffset(_tilespr), sprite_get_yoffset(_tilespr) )
-	var cursorposx = round(clamp(device_mouse_x_to_gui(0), 0, sprite_get_width(_tilespr)) / tile_width) * tile_width
-	var cursorposy = round(clamp(device_mouse_y_to_gui(0), 0, sprite_get_height(_tilespr)) / tile_height) * tile_height
+	draw_sprite(_tilespr, 0, sprite_get_xoffset(_tilespr), sprite_get_yoffset(_tilespr))
+	var cursorposx = round(clamp(device_mouse_x_to_gui(0), 0, sprite_get_width(_tilespr)) / (tile_width + tile_xborder)) * (tile_width + tile_xborder) + tile_xoffset
+	var cursorposy = round(clamp(device_mouse_y_to_gui(0), 0, sprite_get_height(_tilespr)) / (tile_height + tile_yborder)) * (tile_height + tile_yborder)  + tile_yoffset
 	draw_set_color(c_green)
 	draw_rectangle(topleft_x, topleft_y, topleft_x + tile_width, topleft_y + tile_height, true)
 	draw_rectangle(bottomleft_x, bottomleft_y, bottomleft_x + tile_width, bottomleft_y + tile_height, true)
@@ -611,8 +651,8 @@ obj_command_trigger -- runs any command that the debug menu can run via the comm
 obj_music_trigger -- swaps the music to what the musicname variable contains on player collide. (asset musicname mu_chase)
 obj_outofbounds_trigger -- shows technical difficulty screen and respawns player.
 obj_tvtrigger_editor -- displays the hud bubble message.
-obj_variable_trigger -- do not use it.
-obj_enemyspawn -- please do not use this, you have no reason to do so.
+obj_variable_trigger -- used to set a variable of an object (obsolete).
+obj_enemyspawn -- used to create an enemy (obsolete).
 obj_..._trigger_door -- when targetkey is pressed in its bounds, the function of the trigger is activated. (string targetkey down)
 		
 OTHER:
@@ -638,7 +678,4 @@ obj_donkey -- cow.
 		}
 	}
 	fakeed_istilemenu = false
-}
-function fakeeditor_ask_rank(){
-	fakeeditor_rank = get_string_async("S Rank Requirement (others will be auto set): ", string(obj_fakeeditor.srank))
 }

@@ -1,5 +1,1 @@
-image_xscale = abs(image_xscale)
-image_yscale = abs(image_yscale)
-if(asset_get_index(tileset_name) > -1){
-	tileset = asset_get_index(tileset_name)
-}
+event_perform_object(obj_tiled,ev_step,ev_step_normal)

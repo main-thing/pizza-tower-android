@@ -272,7 +272,7 @@ if (floor(image_index) == (image_number - 1) && sprite_index == upspr)
 {
 	if (character == 0 && global.boxhp < 3 && global.boxhp != 1)
 	{
-		with (instance_create(x, y, obj_pizzagoblinbomb))
+		with (instance_create(x, y, obj_bomb))
 		{
 			var a = 1
 			if (x != obj_player1.x)

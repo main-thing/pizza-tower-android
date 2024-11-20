@@ -7,7 +7,7 @@ function scr_player_runonball()
 		hsp = (image_xscale * movespeed)
 	jumpstop = 0
 	vsp = obj_player.vsp
-	sprite_index = spr_player_slipnslide
+	sprite_index = spr_slipnslide
 	if (key_attack && grounded)
 	{
 		if (mach2 < 35)

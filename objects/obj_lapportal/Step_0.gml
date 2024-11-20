@@ -1,4 +1,4 @@
-if global.panic
+if global.panic || forceshow
 {
 	image_alpha = 1
 	if (sprite_index == spr_pizzaportal)

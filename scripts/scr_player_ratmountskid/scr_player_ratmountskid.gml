@@ -49,10 +49,10 @@ function scr_player_ratmountskid()
 	            xscale *= -1
 	        input_buffer_jump = 0
 	        movespeed = hsp
-	        jumpAnim = true
+	        jumpAnim = 1
 	        state = states.ratmountjump
 	        vsp = -11
-	        jumpstop = false
+	        jumpstop = 0
 	    }
 	}
 	if (key_slap2 && brick)

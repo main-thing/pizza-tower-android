@@ -5,9 +5,9 @@ function scr_player_chainsaw()
 	x = (hitX + random_range(-4, 4))
 	y = (hitY + random_range(-4, 4))
 	hitLag--
-	if key_jump
+	if key_jump && !finalmoveset
 		input_buffer_jump = 0
-	if key_slap2
+	if key_slap2 && !finalmoveset
 		input_buffer_slap = 0
 	image_speed = 0
 	if key_slap2

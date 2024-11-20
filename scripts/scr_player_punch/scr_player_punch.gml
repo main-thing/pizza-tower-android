@@ -67,7 +67,7 @@ function scr_player_punch()
 						movespeed += 0.2
 				}
 				hsp = (xscale * movespeed)
-				var _kungfuground = (sprite_index == spr_player_kungfu1 or sprite_index == spr_player_kungfu2 or sprite_index == spr_player_kungfu3 or sprite_index == spr_shotgunsuplexdash)
+				var _kungfuground = (sprite_index == spr_kungfu1 or sprite_index == spr_kungfu2 or sprite_index == spr_kungfu3 or sprite_index == spr_shotgunsuplexdash)
 				var _Sjumpcancel = (sprite_index == spr_Sjumpcancel or sprite_index == spr_Sjumpcancelland or sprite_index == spr_Sjumpcancelslide)
 				if (_kungfuground && image_index > 7 && (!key_attack) && movespeed > 0)
 					movespeed -= 0.5
@@ -75,22 +75,22 @@ function scr_player_punch()
 				{
 					switch sprite_index
 					{
-						case spr_player_kungfu1:
-						case spr_player_kungfu2:
-						case spr_player_kungfu3:
+						case spr_kungfu1:
+						case spr_kungfu2:
+						case spr_kungfu3:
 						case spr_shotgunsuplexdash:
 							state = states.normal
 							if (move != xscale && move != 0)
 								movespeed = 2
 							break
-						case spr_player_kungfuair1transition:
-							sprite_index = spr_player_kungfuair1
+						case spr_kungfuair1transition:
+							sprite_index = spr_kungfuair1
 							break
-						case spr_player_kungfuair2transition:
-							sprite_index = spr_player_kungfuair2
+						case spr_kungfuair2transition:
+							sprite_index = spr_kungfuair2
 							break
-						case spr_player_kungfuair3transition:
-							sprite_index = spr_player_kungfuair3
+						case spr_kungfuair3transition:
+							sprite_index = spr_kungfuair3
 							break
 						case spr_Sjumpcancelland:
 							sprite_index = spr_Sjumpcancelslide

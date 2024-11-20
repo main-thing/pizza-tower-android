@@ -13,7 +13,7 @@ function scr_player_grabbing()
 			movespeed = 12
 	}
 	var attackdash = spr_suplexdash
-	var airattackdash = spr_suplexgrabjump
+	var airattackdash = spr_suplexdashjump
 	var airattackdashstart = spr_suplexdashjumpstart
 	if (sprite_index == attackdash && (!grounded))
 	{

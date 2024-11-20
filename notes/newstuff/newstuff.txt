@@ -1,34 +1,25 @@
-// this is not the real update text used by obj_mainmenu
-// edit the included files in the datafiles folder
-version 10:
-: Revamp the level editor. 
-: Added infinitely sized rooms to the editor.
-: Added swipe to move camera in the level editor.
-: Hide controls in level editor.
-: Added obj_camera_bounds_trigger, obj_camerabounds_trigger_door, 
-  obj_outofbounds_trigger, obj_tvtrigger_editor_door, obj_sprite_gui, 
-  obj_text_gui, obj_generic_gravity_object, obj_door_editor, 
-  obj_boxofpizza_editor, obj_secretportal_editor, obj_hallway_editor,
-  and obj_lapportal_editor.
-: Added a tileset picker for obj_solid_tiled and obj_tiled
-: Greatly optimised obj_solid_tiled and obj_tiled.
-: Moved the old editor into the "toggleoldeditor" command.
+Version 11.0.0 Release.
 
-: Added gml command, run gamemaker language code via this command.
-: Added hidetiles, showtiles, and toggletiles as commands.
-: Added startup commands, use "startupcommand panic true" to start escape
-  in the menu every time you launch the game.
-: Added obj_custom_object, which can run custom gamemaker language code.
-: Fixed "togglebinds" command from resuming every paused sound.
-: Added back the old hud. Use the "toggleoldhud" command to use it.
-: Added easier music customisation for lap 2 and above. 
-  instance_set_variable obj_player asset lap2music mu_entrance
-  instance_set_variable obj_player asset escapemusic mu_entrance
-: Added the ability to disable camera bounds via instance_set_variale
-  instance_set_variable obj_camera bool ignorebounds true
- 
-: Allowed using more than 1 command when editing a button.
-: Miscellaneous fixes added to a random pool of levels.
-: Miscellaneous fixes regarding player.
+Made the finalmoveset command more accurate to the final game.
+Fixed a bug that made oldnoise softlock when trying to use the jetpack.
+Fixed a bug that softlocks the game after losing to the noise in strongcold.
+Fixed a bug that made the strongcold miniboss music not playing.
+Fixed a bug that made the timer in the strongcold miniboss from functioning.
+Fixed a bug that ends pizzatime in strongcold.
+Readded palettes and shaders.
+Unhardcoded more sprites for the player.
+Levels, controls and savedata is now available in /storage/emulated/0/Documents/pizza tower android/
+Added new credits.
+Added new changelog.
 
-//wait how would the mainmenu render all of this? I'll deal with it later ig lmao.
+Fixed obj_custom_object not being able to be saved in the editor.
+Fixed a bug which allows selection of objects behind editor buttons.
+Fixed a bug regarding the swipe button not appearing in certain conditions in the editor.
+
+Fixed else{} not working in gml commands (partially).
+Added support for more arguments in gml function calls, you can now have a maximum of 255.
+Added the savecommand command to save a debug command to a file. Usage: savecommand spawn obj_noisey;spawn obj_pizzaface
+Added the exec command to run a debug command from a file. Usage: exec /storage/emulated/0/Documents/pizza tower android/command.png
+Added a state_get_name() function for gml commands. Example: with(obj_player1){show_message(state_get_name(state))}
+Added a create_custom_afterimage() function for gml commands. Example: with(obj_player1) {create_custom_afterimage(x,y,sprite_index,image_index,xscale,c_yellow,1.25)}
+Added a hitlag_custom variable for the player to allow changing of the time spent frozen after killing a baddie. (default 5)

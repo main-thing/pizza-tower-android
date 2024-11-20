@@ -252,6 +252,13 @@ switch state
 						other.idlespr = self._spr_tv_mort
 				}
 				break
+			case states.mort:
+			case states.mortattack:
+			case states.morthook:
+			case states.mortjump:
+			with (obj_player1)
+				other.idlespr = self._spr_tv_mort
+			break
 			case states.freefallprep:
 			case states.freefall:
 			case states.freefallland:

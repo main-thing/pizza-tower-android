@@ -173,7 +173,7 @@ function scr_player_grab()
 	        scr_soundeffect(sfx_jump)
 	        sprite_index = spr_haulingjump
 	        instance_create(x, y, obj_highjumpcloud2)
-	        if ((heavy == false))
+	        if ((heavy == 0))
 	            vsp = -11
 	        else
 	            vsp = -6

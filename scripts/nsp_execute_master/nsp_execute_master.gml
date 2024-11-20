@@ -43,23 +43,23 @@ function nsp_execute_master(argument0, argument1, argument2, argument3, argument
 	   pri_b=0;
 	   pos_1=-1;
 	   i=list_min+1
-	   // this is also horrible, but its faster
-	   for (i=list_min+1; i<=list_max; i+=1) begin
-	    if nspListStr[|i]="{"
-	     pri_b+=1;
-	     else if nspListStr[|i]="}" {
-	      if pri_b=0 {
-	       pos_1=i;       
-	       break;
-	       }
-	       else pri_b-=1;
-	      }
-	    if (i=list_max and pos_1=-1) {
-	     NSP_notify("SCRIPT: nsp_execute_master. ERROR: Syntax error, execution aborted. ",nspListStr,list_min,list_max);
-	     return undefined;
-	     }
+	   for (i=list_min+1; i<=list_max; i+=1) {
+		    if nspListStr[|i]="{" {
+		     pri_b+=1;
+			}
+		    if nspListStr[|i]="}" {
+				if pri_b=0 {
+					pos_1=i;       
+					break;
+				}
+				else pri_b-=1;
+		    }
+		   if (i=list_max and pos_1=-1) {
+		     NSP_notify("SCRIPT: nsp_execute_master. ERROR: Syntax error, execution aborted. ",nspListStr,list_min,list_max);
+		     return undefined;
+		   }
 
-	   end;
+	   };
 		/*
 	   for (i=list_min+1; i<=list_max; i+=1) begin
 	    if nspListStr[|i]="{"
@@ -229,16 +229,21 @@ function nsp_execute_master(argument0, argument1, argument2, argument3, argument
 	    if (nspListStr[|pos_3+1]="else") {
 	     pri_b=0;
 	     pos_4=-1;
-	     for (i=pos_3+1; i<=list_max; i+=1) begin
-	      if (nspListStr[|i]="{")
+	     for (i=pos_3+1; i<=list_max; i+=1) {
+	      if (nspListStr[|i]="{") {
 	       pri_b+=1;
-	       else if (nspListStr[|i]="}")
+		   //trace("found { at:" + string(i))
+		  }
+	      if (nspListStr[|i]="}") {
 	        pri_b-=1;
-	        else if ((nspListStr[|i]=";" or i=list_max) and pri_b=0) {
-	         pos_4=i;
-	         break;
-	         }     
-	      end;  
+		   //trace("found } at:" + string(i))
+		  }
+	      if ((nspListStr[|i]=";" or i=list_max) and pri_b=0) {
+	        pos_4=i;
+		    //trace("found end at:" + string(i))
+	        break;
+		  }     
+		 };  
 	     if (pos_4=-1) {
 	      NSP_notify("SCRIPT: nsp_execute_master. ERROR: Cannot find body of else statement, execution aborted.",nspListStr,list_min,list_max);
 	      return undefined;

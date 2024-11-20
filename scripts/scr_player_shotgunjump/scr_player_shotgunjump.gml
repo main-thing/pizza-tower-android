@@ -48,7 +48,7 @@ function scr_player_shotgunjump()
 	        input_buffer_jump = 8
 	        state = states.shotgunjump
 	        vsp = -11
-	        jumpstop = false
+	        jumpstop = 0
 	        sprite_index = spr_shotgunjump
 	        image_index = 0
 	    }
