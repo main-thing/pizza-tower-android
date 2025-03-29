@@ -1,12 +1,15 @@
 #macro LEVELS_FILE_PATH "/storage/emulated/0/Documents/pizza tower android/levels/"
 function fakeeditor_play_level(){
 	if(!obj_fakeeditor.in_play_mode) {
-		global.forcehidecontrols = 0
+		global.forcehidecontrols = false
+		with(obj_virtual_controller)
+			event_perform(ev_mouse, ev_global_left_button)
 		scr_resize_room(0,room_height,room_width,room_height)
 		with(obj_fakeeditor_object) {
 			visible = false
 			if(object_exists(asset_get_index(fake_ed_content))) {
 				var _myvars = variable_instance_get_names(id)
+				array_push(_myvars,"sprite_index")
 				array_push(_myvars,"image_xscale")
 				array_push(_myvars,"image_yscale")
 				var return_array = []
@@ -34,7 +37,13 @@ function fakeeditor_play_level(){
 				}
 			}
 		}
-		
+		with(all)
+		{
+			if(object_index != obj_fakeeditor || object_index != obj_virtual_controller)
+			{
+				event_perform(ev_other,ev_room_start)
+			}
+		}
 		with(obj_player1){
 			state = states.comingoutdoor
 			visible = false
@@ -51,20 +60,32 @@ function fakeeditor_play_level(){
 			roomstarty = y
 		}
 	} else {
-		global.forcehidecontrols = 1
-		with(obj_fakeeditor_object){
-			visible = true
-			if(fake_ed_instance != undefined){
-				instance_destroy(fake_ed_instance, false)
+		global.forcehidecontrols = true
+		with(obj_virtual_controller) event_perform(ev_mouse, ev_global_left_button)
+		with(obj_fakeeditor)
+		{
+			for(var i = 0;i < instances_len;i++)
+			{
+				instance_destroy(instances[i], false)
 			}
+			instances_len = 0
+			instances = []
+		}
+		with(obj_fakeeditor_object)
+		{
+			visible = true
+			if(fake_ed_instance != undefined)
+				instance_destroy(fake_ed_instance, false)
 		}
 		scr_playerreset()
 		obj_camera.ignorebounds = true
-		with(obj_player1){
+		with(obj_player1)
+		{
 			state = states.titlescreen
 			visible = false
 		}
-		with(obj_music){
+		with(obj_music)
+		{
 			audio_stop_sound(musicID)
 			music = mu_editor
 			musicID = scr_music(music)
@@ -80,8 +101,8 @@ function fakeeditor_ask_object(){
 function fakeeditor_ask_edit(){
 	var commonoptions = "save, load, help, delete level"
 	if(global.option_editor_oldedit){
-		if(instance_exists(obj_fakeeditor.oldselectedent)){
-			if(obj_fakeeditor.oldselectedent.fake_ed_content == "obj_solid_tiled" || obj_fakeeditor.oldselectedent.fake_ed_content == "obj_tiled"){
+		if(instance_exists(obj_fakeeditor.selectedent)){
+			if(obj_fakeeditor.selectedent.fake_ed_content == "obj_solid_tiled" || obj_fakeeditor.selectedent.fake_ed_content == "obj_tiled"){
 				fakeed_istilemenu = true
 				fakeeditor_edit = get_string_async("Set object variable (<type> <variablename> <new value>), " + commonoptions + ", tilemenu.", nejdmssx)
 				return;
@@ -94,6 +115,14 @@ function fakeeditor_ask_edit(){
 }
 function fakeeditor_toggle_swipe(){
 	with(obj_fakeeditor){
+		if(global.fake_ed_tilemenu)
+		{
+			swipemode = false
+			tile_swipemode = !tile_swipemode
+			exit;
+		}
+		cx = mouse_x;
+		cy = mouse_y; 
 		swipemode = !swipemode
 	}
 }
@@ -105,38 +134,37 @@ function fakeeditor_delete_object(){
 		transfotip = instance_create(0,0,obj_transfotip)
 		with(transfotip)
 		{
-			if instance_exists(other.oldselectedent)
+			if instance_exists(other.selectedent)
 			{
-				text = ("{u}DELETED " + string_upper(other.oldselectedent.fake_ed_content) + "/")
-				instance_destroy(other.oldselectedent)
+				text = ("{u}DELETED " + string_upper(other.selectedent.fake_ed_content) + "/")
+				instance_destroy(other.selectedent)
 			}
-		}
-		with(oldselectedent){
-			instance_destroy()
 		}
 	}
 }
 
 function fakeeditor_copy_object(){
 	with(obj_fakeeditor) {
-		with(oldselectedent){
+		with(selectedent){
 			instance_copy(false)
 		}
 	}
 }
 
 function fakeeditor_create_object(ob){
-	if(object_exists(asset_get_index(ob))){
+	var _object = asset_get_index(ob)
+	if(object_exists(_object)){
 		with(instance_create_depth(camera_get_view_x(view_camera[0])  + view_get_wport(view_camera[0]) / 4, camera_get_view_y(view_camera[0]) + view_get_hport(view_camera[0]) / 4, depth, obj_fakeeditor_object)){
 			var _varnames = []
 			var _varvalues = []
 			fake_ed_content = ob
-			with(instance_create_depth(x, y, depth, asset_get_index(ob))){
+			with(instance_create_depth(x, y, depth, obj_null)){
+				event_perform_object(_object,ev_create,0)
 				_varnames = variable_instance_get_names(id)
 				for(var i = 0; i < array_length(_varnames); i++){
 					_varvalues[i] = variable_instance_get(id, _varnames[i])
 				}
-				instance_destroy(id,false)
+				instance_destroy(id)
 			}
 			for(var i = 0; i < array_length(_varnames); i++){
 				variable_instance_set(id, _varnames[i], _varvalues[i])
@@ -366,11 +394,12 @@ function fakeeditor_edit_object_var(argument0) //gml_Script_edit_object_var
     }
 }
 function fakeeditor_initcamera(){
-	global.forcehidecontrols = 1
+	global.forcehidecontrols = true
+	with(obj_virtual_controller) event_perform(ev_mouse, ev_global_left_button)
 	view_w = 960
 	view_h = 540
-	cx = mouse_x
-	cy = mouse_y
+	cx = 0
+	cy = 0
 	camera_speed = 10
 	drag_speed = 0.6
 	zoom = 1
@@ -382,6 +411,7 @@ function fakeeditor_initcamera(){
 		musicID = scr_music(music)
 	}
 }
+
 function fakeeditor_camera_update()
 {
 	if(mouse_check_button_pressed(mb_left)) {
@@ -440,33 +470,20 @@ function fakeeditor_save_editor_objects()
 		array_push(var_array,"fake_ed_content")
         var i = 0
 		while (i < array_length(var_array)){
-			if(var_array[i] == "content"){
-				variable_struct_set(objectproperties,var_array[i],"asset|" + object_get_name(variable_instance_get(id,var_array[i])))
-				i++
-				continue;
-			}
-			if(var_array[i] == "targetRoom"){
-				variable_struct_set(objectproperties,var_array[i],"asset|" + room_get_name(variable_instance_get(id,var_array[i])))
-				i++
-				continue;
-			}
-			if(var_array[i] == "sprite"){
-				if(is_string(variable_instance_get(id,var_array[i])))
+			var variable = var_array[i];
+			if(variable == "musicname" || variable == "content" || variable == "targetRoom" || variable == "sprite" || variable == "tileset")
+			{
+				if(is_string(variable_instance_get(id, variable)))
 				{
-					variable_struct_set(objectproperties,var_array[i],variable_instance_get(id,var_array[i]))
+					variable_struct_set(objectproperties, variable,variable_instance_get(id, variable))
 				} else 
 				{
-					variable_struct_set(objectproperties,var_array[i],"asset|" + sprite_get_name(variable_instance_get(id,var_array[i])))
+					variable_struct_set(objectproperties, variable,"asset|" + sprite_get_name(variable_instance_get(id, variable)))
 				}
 				i++
 				continue;
 			}
-			if(var_array[i] == "tileset"){
-				variable_struct_set(objectproperties,var_array[i],"asset|" + sprite_get_name(variable_instance_get(id,var_array[i])))
-				i++
-				continue;
-			}
-			variable_struct_set(objectproperties,var_array[i],variable_instance_get(id,var_array[i]))
+			variable_struct_set(objectproperties, variable, variable_instance_get(id, variable))
 			i++
 		}
 		array_push(myobjects, objectproperties)
@@ -484,7 +501,10 @@ function fakeeditor_save_editor_objects()
 			i++;
 		}
 		buffer_save(levelbuffer, filename)
-		show_message_async("Level data saved to: " + filename)
+		if(file_exists(filename))
+			show_message_async("Level data saved to: " + filename)
+		else 
+			show_message_async("Failed to save level data.\nCopy the output below:" + liststring)
 	}
 	buffer_delete(levelbuffer)
 	if(os_type == os_windows){
@@ -580,27 +600,45 @@ function scr_resize_room(_x,_y,_width,_height){
 	*/
 }
 function draw_tileset_picker(_tilespr){
+	//if live_call(_tilespr) return live_result;
+	var offsetx = obj_fakeeditor.tilemenu_offsetx
+	var offsety = obj_fakeeditor.tilemenu_offsety
 	draw_set_alpha(0.5) 
 	draw_set_color(c_black)
-	draw_rectangle(0, 0, sprite_get_width(_tilespr), sprite_get_height(_tilespr), false)
+	draw_rectangle(0 + offsetx, 0 + offsety, sprite_get_width(_tilespr) + offsetx, sprite_get_height(_tilespr) + offsety, false)
 	draw_set_alpha(1) 
 	draw_set_color(c_white)
-	draw_sprite(_tilespr, 0, sprite_get_xoffset(_tilespr), sprite_get_yoffset(_tilespr))
-	var cursorposx = round(clamp(device_mouse_x_to_gui(0), 0, sprite_get_width(_tilespr)) / (tile_width + tile_xborder)) * (tile_width + tile_xborder) + tile_xoffset
-	var cursorposy = round(clamp(device_mouse_y_to_gui(0), 0, sprite_get_height(_tilespr)) / (tile_height + tile_yborder)) * (tile_height + tile_yborder)  + tile_yoffset
+	draw_sprite(_tilespr, 0, sprite_get_xoffset(_tilespr) + offsetx, sprite_get_yoffset(_tilespr) + offsety)
+	var cursorposx = round(clamp(device_mouse_x_to_gui(0), 0 + offsetx, sprite_get_width(_tilespr) + offsetx) / (tile_width + tile_xborder)) * (tile_width + tile_xborder) + tile_xoffset
+	var cursorposy = round(clamp(device_mouse_y_to_gui(0), 0 + offsety, sprite_get_height(_tilespr) + offsety) / (tile_height + tile_yborder)) * (tile_height + tile_yborder)  + tile_yoffset
 	draw_set_color(c_green)
-	draw_rectangle(topleft_x, topleft_y, topleft_x + tile_width, topleft_y + tile_height, true)
-	draw_rectangle(bottomleft_x, bottomleft_y, bottomleft_x + tile_width, bottomleft_y + tile_height, true)
-	draw_rectangle(topright_x, topright_y, topright_x + tile_width, topright_y + tile_height, true)
-	draw_rectangle(bottomright_x, bottomright_y, bottomright_x + tile_width, bottomright_y + tile_height, true)
-	draw_rectangle(left_x, left_y, left_x + tile_width, left_y + tile_height, true)
-	draw_rectangle(right_x, right_y, right_x + tile_width, right_y + tile_height, true)
-	draw_rectangle(bottom_x, bottom_y, bottom_x + tile_width, bottom_y + tile_height, true)
-	draw_rectangle(top_x, top_y, top_x + tile_width, top_y + tile_height, true)
-	draw_rectangle(middle_x, middle_y, middle_x + tile_width, middle_y + tile_height, true)
-	draw_rectangle(single_x, single_y, single_x + tile_width, single_y + tile_height, true)
+	draw_rectangle(topleft_x + offsetx, topleft_y + offsety, topleft_x + tile_width + offsetx, topleft_y + tile_height + offsety, true)
+	draw_rectangle(bottomleft_x + offsetx, bottomleft_y + offsety, bottomleft_x + tile_width + offsetx, bottomleft_y + tile_height + offsety, true)
+	draw_rectangle(topright_x + offsetx, topright_y + offsety, topright_x + tile_width + offsetx, topright_y + tile_height + offsety, true)
+	draw_rectangle(bottomright_x + offsetx, bottomright_y + offsety, bottomright_x + tile_width + offsetx, bottomright_y + tile_height + offsety, true)
+	draw_rectangle(left_x + offsetx, left_y + offsety, left_x + tile_width + offsetx, left_y + tile_height + offsety, true)
+	draw_rectangle(right_x + offsetx, right_y + offsety, right_x + tile_width + offsetx, right_y + tile_height + offsety, true)
+	draw_rectangle(bottom_x + offsetx, bottom_y + offsety, bottom_x + tile_width + offsetx, bottom_y + tile_height + offsety, true)
+	draw_rectangle(top_x + offsetx, top_y + offsety, top_x + tile_width + offsetx, top_y + tile_height + offsety, true)
+	draw_rectangle(middle_x + offsetx, middle_y + offsety, middle_x + tile_width + offsetx, middle_y + tile_height + offsety, true)
+	draw_rectangle(single_x + offsetx, single_y + offsety, single_x + tile_width + offsetx, single_y + tile_height + offsety, true)
 	draw_set_color(c_white)
 	draw_rectangle(cursorposx, cursorposy, cursorposx + tile_width, cursorposy + tile_height, true)
+	with(obj_fakeeditor)
+	{
+		if(tile_swipemode)
+		{
+			if(mouse_check_button_pressed(mb_left)) {
+				t_cx = mouse_x + tilemenu_offsetx;
+				t_cy = mouse_y + tilemenu_offsety; 
+			}
+			if(mouse_check_button(mb_left)) { 
+				tilemenu_offsetx = clamp(other.tile_width * -10, round((t_cx - mouse_x) / other.tile_width) * other.tile_width, sprite_get_width(_tilespr) + other.tile_width * 5)
+				tilemenu_offsety = clamp(other.tile_height * -10, round((t_cy - mouse_y) / other.tile_height) * other.tile_height, sprite_get_height(_tilespr) + other.tile_height * 5)
+			} 
+			exit;
+		}
+	}
 	holdclick += mouse_check_button(mb_left)
 	if(mouse_check_button_released(mb_left)){
 		holdclick = 0
@@ -610,10 +648,9 @@ function draw_tileset_picker(_tilespr){
 		if(os_type == os_windows){
 			mouse_clear(mb_left)
 		}
-		fake_ed_cursor_pos_x = cursorposx
-		fake_ed_cursor_pos_y = cursorposy
+		fake_ed_cursor_pos_x = cursorposx - offsetx
+		fake_ed_cursor_pos_y = cursorposy - offsety
 		fake_ed_tile_string = get_string_async("top, bottom, left, right, topleft, topright, bottomleft, bottomright, middle, single, close menu","")
-		
 	}
 }
 function fakeeditor_perfom_edit(){
@@ -670,12 +707,35 @@ obj_donkey -- cow.
 	}
 	if(nejdmssx == "tilemenu"){
 		if(fakeed_istilemenu){
-			with(obj_fakeeditor.oldselectedent){
-				obj_fakeeditor.selectedent = id
+			with(obj_fakeeditor.selectedent){
+				fake_ed_sprite_clicked = false
 				fake_ed_hold_menu = 1
 				global.fake_ed_tilemenu = 1
 			}
 		}
 	}
 	fakeed_istilemenu = false
+}
+function fakeeditor_create_scale_buttons()
+{
+	with(obj_fakeeditor_scale) 
+	{
+		instance_destroy()
+	}
+	with(instance_create(x + sprite_width - sprite_xoffset, y + (sprite_height / 2) - sprite_yoffset, obj_fakeeditor_scale))
+	{
+		dir = 0
+		depth = other.depth - 1
+		object_id = other.id
+		object_xscale = other.image_xscale
+		object_yscale = other.image_yscale
+	}
+	with(instance_create(x + (sprite_width / 2) - sprite_xoffset, y + sprite_height - sprite_yoffset , obj_fakeeditor_scale))
+	{
+		dir = 90
+		depth = other.depth - 1
+		object_id = other.id
+		object_xscale = other.image_xscale
+		object_yscale = other.image_yscale
+	}
 }

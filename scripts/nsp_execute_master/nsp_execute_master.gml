@@ -36,8 +36,7 @@ function nsp_execute_master(argument0, argument1, argument2, argument3, argument
 	} // this on change should hopefully boost frames
 	//*** PART 4: SWITCHING WITH SPECIAL WORD ***
 
-	switch (spec_str) begin
-
+	switch (spec_str) {
 	 case "{":
 	 var pos_1;
 	   pri_b=0;
@@ -269,7 +268,7 @@ function nsp_execute_master(argument0, argument1, argument2, argument3, argument
 	   var pos_1; 
    
 	   pos_1=-1;
-	   for (i=list_min+1; i<=list_max; i+=1) begin
+	   for (i=list_min+1; i<=list_max; i+=1) {
 	    if nspListStr[|i]=";" {
 	     pos_1=i;       
 	     break;
@@ -280,7 +279,7 @@ function nsp_execute_master(argument0, argument1, argument2, argument3, argument
 	     return undefined;
 	     }
 
-	   end;
+	   };
    
 	   rv=nsp_evaluate_list(list_min+1, pos_1-1, nspListStr, nspListPar);
 	   if nsp_is_equal(rv,nspToken[NSP_TOK.abort]) {
@@ -305,7 +304,7 @@ function nsp_execute_master(argument0, argument1, argument2, argument3, argument
    
 	  break;
   
-	end;
+	};
 
 	//*** PART 5: EXECUTE REMAINING CODE ***
 

@@ -66,6 +66,7 @@ room_arr = [
 	[rm_swedish, mu_ufo, mu_pinballsecret, false], 
 	[tower_tutorial1, mu_funiculi, mu_funiculi, false], 
 	[boss_fakepep, mu_fakepep, mu_fakepep, false], 
+	[boss_fakepephallway, mu_PIZZA_TOWER_THyrzzryzryEME_SONG, mu_PIZZA_TOWER_THyrzzryzryEME_SONG, false], 
 	[rm_editor_big, mu_snickchallenge, mu_medievalsecret, false], 
 	[dragonlair_1, mu_dungeondepth, mu_medievalsecret, false], 
 	[tutorial_room1, mu_tutorial, mu_medievalsecret, false], 

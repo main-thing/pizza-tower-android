@@ -7,13 +7,9 @@ function nsp_list_remove(argument0, argument1, argument2, argument3) {
 	/*
 	Underlying NSP script.
 	*/
-	var nspListStr = argument2,
-	    nspListPar = argument3;
-	var s,e;
-
-	s = argument0;
-	e = argument1;
-
+	var nspListStr = argument2, nspListPar = argument3;
+	var s = argument0;
+	var e = argument1;
 	repeat(e+1-s) {
 	 ds_list_delete(nspListStr, s);
 	 ds_list_delete(nspListPar, s);

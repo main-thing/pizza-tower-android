@@ -47,10 +47,9 @@ else
 	p2pdistancex = 0
 if (floor(image_index) == 10)
 	shoving = 0
+visible = true
 if (room == strongcold_endscreen or room == rm_eggplantdisclaimer or room == rm_levelselect or room == rank_room or room == timesuproom or room == Realtitlescreen or room == characterselect or room == hub_loadingscreen)
 	visible = false
-else
-	visible = true
 if (instance_exists(obj_debugcontroller) && (!obj_debugcontroller.showhud))
 	visible = false
 if (global.combo >= 10)

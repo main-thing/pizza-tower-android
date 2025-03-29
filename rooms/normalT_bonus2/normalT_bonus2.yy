@@ -67,6 +67,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6B578BB4","properties":[],"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":4.0,"scaleY":2.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1312.0,"y":800.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3750E0AA","properties":[],"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":3.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1440.0,"y":832.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_75362F16","properties":[],"isDnd":false,"objectId":{"name":"obj_doorA","path":"objects/obj_doorA/obj_doorA.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":640.0,"y":832.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_57C1728C","properties":[],"isDnd":false,"objectId":{"name":"obj_wave","path":"objects/obj_wave/obj_wave.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":160.0,"y":448.0,},
       ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Tiles_Depth1","assets":[
         {"resourceType":"GMRGraphic","resourceVersion":"1.0","name":"","spriteId":{"name":"bonus_tiles","path":"sprites/bonus_tiles/bonus_tiles.yy",},"w":32,"h":32,"u0":128,"v0":128,"u1":160,"v1":160,"colour":4294967295,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1152.0,"y":768.0,},
@@ -1454,6 +1455,7 @@
     {"name":"inst_6B578BB4","path":"rooms/normalT_bonus2/normalT_bonus2.yy",},
     {"name":"inst_3750E0AA","path":"rooms/normalT_bonus2/normalT_bonus2.yy",},
     {"name":"inst_75362F16","path":"rooms/normalT_bonus2/normalT_bonus2.yy",},
+    {"name":"inst_57C1728C","path":"rooms/normalT_bonus2/normalT_bonus2.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

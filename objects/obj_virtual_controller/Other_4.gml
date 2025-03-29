@@ -10,4 +10,3 @@ if (!variable_instance_exists(self, "gamestartedlmao")) {
 		}
 	}
 }
-alarm[1] = 1

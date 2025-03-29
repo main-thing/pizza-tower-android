@@ -1,0 +1,9 @@
+{
+  "extensionId": {
+    "name": "GMLive_fallback",
+    "path": "extensions/GMLive_fallback/GMLive_fallback.yy"
+  },
+  "resourceVersion": "1.0",
+  "resourceType": "GMExtensionConfigSet",
+  "configurables": null
+}

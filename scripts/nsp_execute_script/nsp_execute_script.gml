@@ -43,10 +43,11 @@ function nsp_execute_script(argument0, argument1) {
 			break
 		}
 	}
-	if(global.___nspfunctions[$string(argument0)] != undefined){
+	if(global.___nspfunctions[$ string(argument0)] != undefined){
 		// this has to be done as script_execute is REALLY buggy regarding some built-in functions. 
 		// for example tilemap_tileset(tilemap, tilespr) 
 		// which turns into tilemap_tileset() ???
+		/*
 		switch(a){
 			case 0:
 				return global.___nspfunctions[$string(argument0)]()
@@ -820,6 +821,20 @@ function nsp_execute_script(argument0, argument1) {
 				NSP_notify("SCRIPT: nsp_execute_script. ERROR: Too many arguments. (Max 255)");
 				return nspToken[NSP_TOK.abort];
 			break
+		}
+		*/
+
+		switch(a) 
+		{
+
+		 case 0:
+			return script_execute(global.___nspfunctions[$ string(argument0)]);
+		  break;
+	  
+		 default:
+			return script_execute_ext(global.___nspfunctions[$ string(argument0)],argument1,0,a)
+		 break;
+ 
 		}
 	}
 	if asset_get_type(argument0) != asset_script {

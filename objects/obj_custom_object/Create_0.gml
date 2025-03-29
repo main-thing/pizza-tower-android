@@ -8,4 +8,6 @@ roomend_event = ""
 step_event_saved = undefined
 draw_event_saved = undefined
 drawgui_event_saved = undefined
+roomstart_event_saved = undefined
+roomend_event_saved = undefined
 spriteids = 0

@@ -30,6 +30,7 @@ if (!instance_exists(obj_option))
 					virtual_key_delete(close_key)
 				credits = 0
 				global.forcehidecontrols = 0
+				with(obj_virtual_controller) event_perform(ev_mouse, ev_global_left_button)
 			}
 		}
     }
@@ -56,6 +57,7 @@ if (!instance_exists(obj_option))
 			{
 				newstuff = 1
 				global.forcehidecontrols = 1
+				with(obj_virtual_controller) event_perform(ev_mouse, ev_global_left_button)
 				up_key = virtual_key_add(2, 388, 64, 64, vk_up)
 				down_key = virtual_key_add(2, 452, 64, 64, vk_down)
 				close_key = virtual_key_add(2356 * 0.01-16, 1080 * 0.02-16, 32, 32, ord("X"))
@@ -64,6 +66,7 @@ if (!instance_exists(obj_option))
 			{
 				credits = 1
 				global.forcehidecontrols = 1
+				with(obj_virtual_controller) event_perform(ev_mouse, ev_global_left_button)
 				close_key = virtual_key_add(2356 * 0.01-16, 1080 * 0.02-16, 32, 32, ord("X"))
 			}
 			if (selected_option == 3)

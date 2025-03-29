@@ -81,7 +81,7 @@ function nsp_execute_single(argument0, argument1, argument2, argument3) {
 	    varname=string_replace(nspListStr[|as_var_max],".","");
     
 	    //Check if it's DSM:
-	    if (list_min=as_var_max-1 and nspListStr[|list_min]=nspToken[NSP_TOK.dsm_name]) {
+	    if (list_min==as_var_max-1 and nspListStr[|list_min]==nspToken[NSP_TOK.dsm_name]) {
 	     mode=3;
 	     }
 	     else {

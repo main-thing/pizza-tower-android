@@ -5,7 +5,7 @@ global.___nspfunctions = {}; // Edit this global all you want just call nsp_rese
 		var name = script_get_name(i);
 		if (string_char_at(name, 1) == "<") break;
 		if (string_char_at(name, 1) == "@") continue;
-		global.___nspfunctions[$name] = i
+		global.___nspfunctions[$ name] = i
 	}
 }
 nsp_reset_functionslist()

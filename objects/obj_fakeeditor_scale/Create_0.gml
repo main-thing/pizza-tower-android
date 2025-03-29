@@ -1,0 +1,10 @@
+image_alpha = 0.5
+old_click_x = x
+old_click_y = y
+click_x = y
+click_y = 0
+dragging = false
+object_id = noone
+dir = 0
+object_xscale = 1
+object_yscale = 1

@@ -1,5 +1,5 @@
 if(single && has_touched_player){
-	return
+	exit;
 }
 if(variable_instance_get(other,variable_internal)) {
 	var _sprite = spr_tv_idle

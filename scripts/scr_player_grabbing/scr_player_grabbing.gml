@@ -92,6 +92,7 @@ function scr_player_grabbing()
 			state = states.normal
 			grav = 0.5
 		}
+		audio_stop_sound(sfx_suplexdash)
 	}
 	exit;
 }

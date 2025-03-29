@@ -182,7 +182,7 @@ function scr_player_mach2()
 			else
 				sprite_index = spr_machroll
 			if (character == "V")
-				sprite_index = spr_playerV_divekickstart
+				sprite_index = spr_machroll
 		}
 	}
 	if (key_attack && (!(place_meeting((x + xscale), y, obj_solid))) && character == "S" && grounded)

@@ -1,0 +1,1 @@
+keyboard_clear(vk_shift)

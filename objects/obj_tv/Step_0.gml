@@ -2,7 +2,7 @@ if(global.oldhud){
 	if (room == Realtitlescreen or room == rm_eggplantdisclaimer or room == rank_room or room == rm_levelselect or room == timesuproom or room == boss_room1 or room == characterselect or room == hub_loadingscreen)
 	{
 		visible = false
-		sprite_index = spr_tv_off
+		sprite_index = obj_player1._spr_tv_off
 	}
 	else
 		visible = true
@@ -157,7 +157,7 @@ if(global.oldhud){
 if (room == Realtitlescreen or room == rm_eggplantdisclaimer or room == rank_room or room == rm_levelselect or room == timesuproom or room == boss_room1 or room == characterselect or room == hub_loadingscreen)
 {
 	visible = false
-	sprite_index = spr_tv_off
+	sprite_index = obj_player1._spr_tv_off
 }
 else
 	visible = true
@@ -171,7 +171,7 @@ if (targetgolf != -4 && (!view_visible[1]))
 	view_visible[1] = true
 	view_enabled = true
 }
-if (bubblespr != -4 && bubblespr != spr_tv_bubbleclosed)
+if (bubblespr != -4 && bubblespr != _spr_tv_bubbleclosed)
 {
 	if (prompt != noone)
 		prompt_buffer = 2
@@ -181,11 +181,11 @@ if (bubblespr != -4 && bubblespr != spr_tv_bubbleclosed)
 		bubbleindex = 0
 		switch bubblespr
 		{
-			case spr_tv_bubbleopen:
-				bubblespr = spr_tv_bubble
+			case _spr_tv_bubbleopen:
+				bubblespr = _spr_tv_bubble
 				break
-			case spr_tv_bubbleclose:
-				bubblespr = spr_tv_bubbleclosed
+			case _spr_tv_bubbleclose:
+				bubblespr = _spr_tv_bubbleclosed
 				if (prompt == noone or prompt == "")
 					bubblespr = noone
 				break
@@ -386,7 +386,7 @@ switch state
 				sprite_index = idlespr
 		}
 
-		if (sprite_index != spr_tv_open)
+		if (sprite_index != obj_player1._spr_tv_open)
 		{
 			if (!ds_list_empty(tvprompts_list))
 			{
@@ -394,7 +394,7 @@ switch state
 				prompt_buffer = prompt_max
 				if (b[0] != "" && b[0] != noone)
 				{
-					bubblespr = spr_tv_bubbleopen
+					bubblespr = _spr_tv_bubbleopen
 					bubbleindex = 0
 					prompt = b[0]
 					promptspd = b[3]
@@ -402,9 +402,9 @@ switch state
 				}
 				else
 				{
-					if (bubblespr != -4 && bubblespr != spr_tv_bubbleclosed)
-						bubblespr = spr_tv_bubbleclose
-					if (bubblespr == spr_tv_bubbleclosed)
+					if (bubblespr != -4 && bubblespr != _spr_tv_bubbleclosed)
+						bubblespr = _spr_tv_bubbleclose
+					if (bubblespr == _spr_tv_bubbleclosed)
 						bubblespr = -4
 					bubbleindex = 0
 					promptx = promptxstart
@@ -670,5 +670,5 @@ else
 	combo_state = 0
 }
 combofill_index += 0.35
-if (combofill_index > (sprite_get_number(spr_tv_combobubblefill) - 1))
+if (combofill_index > (sprite_get_number(obj_player1.combobubblefillspr) - 1))
 	combofill_index = frac(combofill_index)

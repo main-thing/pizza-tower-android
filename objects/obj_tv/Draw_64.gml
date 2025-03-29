@@ -51,7 +51,18 @@ if(global.oldhud){
 	        draw_text(832, 60, string_hash_to_newline(global.collect))
 		}
 	}
-	if instance_exists(obj_pizzaball)
+	if(show_combobar)
+	{
+		var barxx = -26
+		var baryy = 30
+		draw_sprite(spr_barpop, 0, (832 + barxx), (250 + baryy))
+		var sw = sprite_get_width(spr_barpop)
+		var sh = sprite_get_height(spr_barpop)
+		var b = global.combotime / 61
+		draw_sprite_part(spr_barpop, 1, 0, 0, (sw * b), sh, (832 + barxx), (250 + baryy))
+	}
+	
+	if(show_golf)
 	    draw_text(832, 300, string_hash_to_newline(((string(global.golfhit) + " ") + "GOLF HIT")))
 	exit;
 }
@@ -64,8 +75,8 @@ var _minX = (_cx - 56)
 var _maxX = (_cx + 59)
 combofill_x = lerp(combofill_x, (_minX + ((_maxX - _minX) * _perc)), 0.5)
 combofill_y = _cy
-draw_sprite(spr_tv_combobubblefill, combofill_index, combofill_x, combofill_y)
-draw_sprite(spr_tv_combobubble, -1, _cx, _cy)
+draw_sprite(obj_player1.combobubblefillspr, combofill_index, combofill_x, combofill_y)
+draw_sprite(obj_player1.combobubblespr, -1, _cx, _cy)
 draw_set_font(global.combofont2)
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)
@@ -87,13 +98,13 @@ if (room != strongcold_endscreen)
 		shader_set(global.Pal_Shader)
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false)
 		draw_sprite_ext(sprite_index, image_index, (tv_x + collect_x), ((tv_y + collect_y) + hud_posY), obj_player1.tv_hud_xscale, obj_player1.tv_hud_yscale, 0, c_white, alpha)
-		if(obj_player1.faketv){
+		if(obj_player1.faketv && sprite_index != obj_player1._spr_tv_open && sprite_index != obj_player1._spr_tv_off){
 			draw_sprite_ext(tv_overlay_sprite, 0, (fake_tv_x + collect_x), ((fake_tv_y + collect_y) + hud_posY), obj_player1.fake_tv_hud_xscale, obj_player1.fake_tv_hud_yscale, 0, c_white, alpha)
 		}
 		shader_reset()
 	} else{
 		draw_sprite_ext(sprite_index, image_index, (tv_x + collect_x), ((tv_y + collect_y) + hud_posY), obj_player1.tv_hud_xscale, obj_player1.tv_hud_yscale, 0, c_white, alpha)
-		if(obj_player1.faketv){
+		if(obj_player1.faketv && sprite_index != obj_player1._spr_tv_open && sprite_index != obj_player1._spr_tv_off){
 			draw_sprite_ext(tv_overlay_sprite, 0, (fake_tv_x + collect_x), ((fake_tv_y + collect_y) + hud_posY), obj_player1.fake_tv_hud_xscale, obj_player1.fake_tv_hud_yscale, 0, c_white, alpha)
 		}
 	}
@@ -105,15 +116,15 @@ if (!surface_exists(promptsurface))
 	promptsurface = surface_create(290, 102)
 surface_set_target(promptsurface)
 draw_clear_alpha(c_black, 0)
-draw_set_font(font1)
+draw_set_font(bubblefont)
 draw_set_halign(fa_left)
 draw_set_valign(fa_middle)
-if (bubblespr == spr_tv_bubble)
+if (bubblespr == _spr_tv_bubble)
 {
 	promptx -= promptspd
-	if (bubblespr != spr_tv_bubbleclose && promptx < (350 - string_width(prompt)))
+	if (bubblespr != _spr_tv_bubbleclose && promptx < (350 - string_width(prompt)))
 	{
-		bubblespr = spr_tv_bubbleclose
+		bubblespr = _spr_tv_bubbleclose
 		bubbleindex = 0
 	}
 	draw_text_color((promptx - 350), 50, prompt, c_black, c_black, c_black, c_black, 1)
@@ -123,7 +134,7 @@ surface_reset_target()
 draw_surface(promptsurface, 350, 0)
 draw_set_font(global.smallnumber_fnt)
 draw_set_halign(fa_center)
-if instance_exists(obj_pizzaball)
+if show_golf
 	draw_text(832, 300, ((string(global.golfhit) + " ") + "GOLF HIT"))
 if global.panic
 {

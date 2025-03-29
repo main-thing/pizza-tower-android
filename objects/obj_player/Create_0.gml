@@ -8,6 +8,7 @@ global.throwarc = 1
 global.hidetiles = 0
 global.leveltosave = -4
 global.leveltorestart = -4
+pizzahead = 0
 fling = 0
 ghostdash = 0
 finalmoveset = 0

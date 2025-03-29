@@ -268,7 +268,34 @@ function scr_player_mach3()
 	        }
 		}
 	}
-	if (scr_solid((x + sign(hsp)), y) && (!(place_meeting((x + sign(hsp)), y, obj_mach3solid))) && (!scr_slope()) && (scr_solid_slope((x + sign(hsp)), y) || place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_metalblock))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && (!(place_meeting((x + sign(hsp)), y, obj_climbablewall))) && grounded)
+	if(character == "V")
+	{
+		if (key_shoot2 && (!instance_exists(dynamite_inst)))
+		{
+			if (move == 0)
+				movespeed = 0
+			state = states.dynamite
+			sprite_index = spr_playerV_dynamitethrow
+			image_index = 0
+			with (instance_create(x, y, obj_dynamite))
+			{
+				image_xscale = other.xscale
+				movespeed = 6
+				vsp = -6
+				other.dynamite_inst = id
+				playerid = other.id
+			}
+		}
+		if key_slap2
+		{
+			if (move == 0)
+				movespeed = 0
+			sprite_index = spr_playerV_revolverstart
+			image_index = 0
+			state = states.revolver
+		}
+	}
+	if (scr_solid((x + sign(hsp)), y) && (!(place_meeting((x + sign(hsp)), y, obj_mach3solid))) && (!scr_slope()) && (scr_solid_slope((x + sign(hsp)), y) || place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_metalblock) && character != "V")) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && (!(place_meeting((x + sign(hsp)), y, obj_climbablewall))) && grounded)
 	{
 		var _bump = ledge_bump((vsp >= 0 ? 32 : 22))
 		if _bump

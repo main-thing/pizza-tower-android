@@ -153,7 +153,7 @@ function scr_hurtplayer(argument0)
 			if instance_exists(obj_hardmode)
 				global.heatmeter_count = ((global.heatmeter_threshold - 1) * global.heatmeter_threshold_count)
 			_hurt = 1
-			if (character == "V")
+			if (usehp)
 				global.playerhealth -= 25
 			if (state == states.barrel or state == states.barrelclimbwall or state == states.barreljump or state == states.barrelslide)
 			{

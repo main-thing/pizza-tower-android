@@ -1,1 +1,1 @@
-combobubblevisible = (!combobubblevisible)
+combobubblevisible = !combobubblevisible

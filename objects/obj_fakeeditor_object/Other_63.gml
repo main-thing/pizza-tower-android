@@ -12,7 +12,12 @@ if (i_d == fake_ed_edit_var)
 					}
 				} else {
 					if(fake_ed_edit_string == "tilemenu"){
+						tilemenu_offsetx = 0
+						tilemenu_offsety = 0
 						fake_ed_hold_menu = 1
+						with(obj_fakeeditor){
+							swipemode = false
+						}
 						global.fake_ed_tilemenu = 1
 					}
 				}

@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_punch",
-  "duration": 0.486,
+  "duration": 0.486168,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",

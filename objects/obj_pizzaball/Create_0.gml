@@ -44,3 +44,4 @@ spr_palette = palette_cheeseslime
 grabbedby = 0
 stuntouchbuffer = 0
 scaredbuffer = 0
+obj_tv.show_golf = true

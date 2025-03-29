@@ -533,6 +533,9 @@ switch state
 	case states.antigrav:
 		scr_player_antigrav()
 		break
+	case states.supergrab:
+		scr_player_supergrab()
+		break
 }
 
 if (prevstate != state)
@@ -774,7 +777,7 @@ if (state == states.gameover && y > (room_height * 2))
 }
 if (baddiegrabbedID == obj_null && (state == states.grab or state == states.superslam or state == states.tacklecharge))
 	state = states.normal
-if (!((state == states.grab or state == states.superslam or state == states.mach2)))
+if ((!((state == states.grab or state == states.superslam or state == states.mach2))) && !instance_exists(obj_bosscontroller_1))
 {
 	baddiegrabbedID = obj_null
 	heavy = 0

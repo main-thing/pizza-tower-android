@@ -126,7 +126,7 @@ function create_blue_afterimage(argument0, argument1, argument2, argument3, argu
 	}
 }
 
-function create_custom_afterimage(argument0, argument1, argument2, argument3, argument4, argument5, argument6)
+function create_custom_afterimage(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7 = 1)
 {
 	with create_afterimage(argument0, argument1, argument2, argument3)
 	{
@@ -135,22 +135,15 @@ function create_custom_afterimage(argument0, argument1, argument2, argument3, ar
 		alarm[1] = -1
 		alarm[2] = -1
 		image_xscale = argument4
+		image_yscale = argument7
 		image_blend = argument5
 		alpha = argument6
 	}
 }
 function create_red_afterimage(_x, _y, _sprite, _image_index, _xscale)
 {
-	with create_afterimage(argument0, argument1, argument2, argument3)
-	{
-		identifier = afterimage.fakepep;
-		alarm[0] = -1
-		alarm[1] = -1
-		alarm[2] = -1
-		image_xscale = argument4
-		image_blend = make_color_rgb(223, 47, 0)
-		alpha = 1.25
-	}
+	
+	create_custom_afterimage(_x, _y, _sprite, _image_index, _xscale, make_color_rgb(223, 47, 0), 1.25)
 }
 function create_blur_afterimage(argument0, argument1, argument2, argument3, argument4)
 {

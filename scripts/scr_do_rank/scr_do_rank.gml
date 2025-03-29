@@ -7,7 +7,7 @@ function scr_is_p_rank()
 }
 function scr_do_rank(showtoppins = true, boss = false)
 {
-	audio_stop_sound(global.snd_escaperumble);
+	//audio_stop_sound(global.snd_escaperumble);
 	var ex = x;
 	var ey = y;
 	var cx = camera_get_view_x(view_camera[0])// + obj_screensizer.normal_size_fix_x;
@@ -17,12 +17,12 @@ function scr_do_rank(showtoppins = true, boss = false)
 	if (global.timeattack == 1)
 		obj_timeattack.stop = true;
 	with (obj_wartimer)
-		notification_push(notifs.wartimer_endlevel, [minutes, seconds + addseconds]);
+		notification_push((47 << 0), [minutes, seconds + addseconds]);
 	targetDoor = "none";
 	obj_camera.alarm[2] = -1;
 	var roomname = room_get_name(room);
 	var namestring = string_letters(roomname);
-	if (!global.tutorial_room)
+	if (!false) //global.tutorial_room
 	{
 		if (!boss)
 			scr_savescore(global.leveltosave);
@@ -54,7 +54,7 @@ function scr_do_rank(showtoppins = true, boss = false)
 			obj_savesystem.ini_str = ini_close();
 			gamesave_async_save();
 		}
-		notification_push(notifs.end_level, [global.leveltosave, global.secretfound, global.level_minutes, global.level_seconds]);
+		notification_push((5 << 0), [global.leveltosave, global.secretfound, global.level_minutes, global.level_seconds]);
 		with (obj_achievementtracker)
 			event_perform(3, 0);
 	}
@@ -105,7 +105,7 @@ function scr_do_rank(showtoppins = true, boss = false)
 					instance_destroy(obj_pigtotal);
 					audio_stop_all();
 					//stop_music();
-					audio_stop_sound(global.snd_rank);
+					//audio_stop_sound(global.snd_rank);
 					//fmod_event_one_shot("event:/sfx/ending/towercollapsetrack");
 				}
 				else

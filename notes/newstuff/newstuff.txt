@@ -1,25 +1,24 @@
-Version 11.0.0 Release.
+Version 12.0.0 BETA
 
-Made the finalmoveset command more accurate to the final game.
-Fixed a bug that made oldnoise softlock when trying to use the jetpack.
-Fixed a bug that softlocks the game after losing to the noise in strongcold.
-Fixed a bug that made the strongcold miniboss music not playing.
-Fixed a bug that made the timer in the strongcold miniboss from functioning.
-Fixed a bug that ends pizzatime in strongcold.
-Readded palettes and shaders.
-Unhardcoded more sprites for the player.
-Levels, controls and savedata is now available in /storage/emulated/0/Documents/pizza tower android/
-Added new credits.
-Added new changelog.
+==============CONTROLS==============
+Attempted code optimisation for controls
+Added the joystick (deadzone, scale, and sprites are customisable)
+Added new sets of sprites to the controls, courtesy of @primary_thing
 
-Fixed obj_custom_object not being able to be saved in the editor.
-Fixed a bug which allows selection of objects behind editor buttons.
-Fixed a bug regarding the swipe button not appearing in certain conditions in the editor.
+==============GAMEPLAY==============
+Fixed cheeseslimes self destructing in strongcold
+Added back christmas skins of collectables and obj_boxofpizza in strongcold
+Unhardcoded the old hud
 
-Fixed else{} not working in gml commands (partially).
-Added support for more arguments in gml function calls, you can now have a maximum of 255.
-Added the savecommand command to save a debug command to a file. Usage: savecommand spawn obj_noisey;spawn obj_pizzaface
-Added the exec command to run a debug command from a file. Usage: exec /storage/emulated/0/Documents/pizza tower android/command.png
-Added a state_get_name() function for gml commands. Example: with(obj_player1){show_message(state_get_name(state))}
-Added a create_custom_afterimage() function for gml commands. Example: with(obj_player1) {create_custom_afterimage(x,y,sprite_index,image_index,xscale,c_yellow,1.25)}
-Added a hitlag_custom variable for the player to allow changing of the time spent frozen after killing a baddie. (default 5)
+===============EDITOR===============
+Added drag to scale for objects in the editor
+Added tilemenu scrolling in the editor
+Fixed odd behaviour regarding moving the camera in the editor
+Fixed some objects not getting deleted after playtest
+Fixed editor objects visually dissappearing after exiting and entering the editor
+Fixed a bug which caused enemies to self destruct if placed too low or high
+
+================MISC================
+Replaced the internal GML command processor (N String Parser) with GMLive (adds more features to the gml command)
+Added obj_custom_object_ext which includes more events that can be used in gml commands
+Added the togglefps command to debug to show FPS ingame

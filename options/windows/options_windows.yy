@@ -4,7 +4,7 @@
   "name": "Windows",
   "option_windows_display_name": "PTEM",
   "option_windows_executable_name": "${project_name}.exe",
-  "option_windows_version": "1.0.0.0",
+  "option_windows_version": "12.0.0.0",
   "option_windows_company_info": "YoYo Games Ltd",
   "option_windows_product_info": "Pizza Tower Eggplant Mobile",
   "option_windows_copyright_info": "",
@@ -29,6 +29,6 @@
   "option_windows_license": "${base_options_dir}/windows/installer/license.txt",
   "option_windows_nsis_file": "${base_options_dir}/windows/installer/nsis_script.nsi",
   "option_windows_enable_steam": false,
-  "option_windows_disable_sandbox": false,
+  "option_windows_disable_sandbox": true,
   "option_windows_steam_use_alternative_launcher": false,
 }

@@ -1,8 +1,5 @@
-if(sprite_index != object_get_sprite(content) && sprite_exists(object_get_sprite(content))){
-	sprite_index = object_get_sprite(content)
+var spr = object_get_sprite(content)
+if(sprite_exists(spr) && sprite_index != spr){
+	sprite_index = spr
 }
-if(global.showcollisions){
-	visible = true
-} else {
-	visible = false
-}
+visible = global.showcollisions

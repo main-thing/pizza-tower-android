@@ -7,7 +7,15 @@ if (obj_player1.spotlight == 1)
 else
 	playerid = obj_player2
 if (global.miniboss == false)
+{
+	with(obj_music)
+	{
+		audio_stop_sound(musicID)
+		music = mu_empty
+		musicID = scr_music(music)
+	}
 	instance_destroy()
+}
 if ((sprite_index == spr_noisebomb_intro||sprite_index == spr_doisebomb_intro) && floor(image_index) == (image_number - 1))
 {
 	sprite_index = spr_noisebomb_idle

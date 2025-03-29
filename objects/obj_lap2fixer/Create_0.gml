@@ -1,3 +1,4 @@
-with(obj_baddie){
+with(obj_baddie)
+{
 	escape = true
 }

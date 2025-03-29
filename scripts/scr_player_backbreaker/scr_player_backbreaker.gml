@@ -37,7 +37,7 @@ function scr_player_backbreaker()
 				parry_inst = noone
 			}
 		}
-		if (supercharged == 1 && (sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4) && (!instance_exists(obj_tauntaftereffectspawner)))
+		if (cansupertaunt && supercharged == 1 && (sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4) && (!instance_exists(obj_tauntaftereffectspawner)))
 		{
 			instance_create(x, y, obj_tauntaftereffectspawner)
 			var c = 0

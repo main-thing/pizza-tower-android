@@ -1,34 +1,35 @@
-if(!instance_exists(obj_fakeeditor)){
-	return 0;
-}
-if (instance_exists(selectedent) && editormode && !in_play_mode)
+if(editormode)
 {
-	var _myvars = variable_instance_get_names(selectedent)
-	var return_array = [];
-	var clean_index = 0; // Iterate through array1
-	for (var i = 0; i < array_length(_myvars); i++) {
-		var item = _myvars[i];
-		var found = false;
+	if (instance_exists(selectedent) && !in_play_mode)
+	{
+		var _myvars = variable_instance_get_names(selectedent)
+		var return_array = [];
+		var clean_index = 0; // Iterate through array1
+		for (var i = 0; i < array_length(_myvars); i++) {
+			var item = _myvars[i];
+			var found = false;
     
-		// Check if the current item of array1 is in array2
-		for (var j = 0; j < array_length(global.fake_ed_remove_vars); j++) {
-			if (item == global.fake_ed_remove_vars[j]) {
-				found = true;
-				break; // Exit the loop if the item is found in array2
+			// Check if the current item of array1 is in array2
+			for (var j = 0; j < array_length(global.fake_ed_remove_vars); j++) {
+				if (item == global.fake_ed_remove_vars[j]) {
+					found = true;
+					break; // Exit the loop if the item is found in array2
+				}
+			}
+			// If the item is not found in array2, add it to return_array
+			if (!found) {
+				return_array[clean_index] = item;
+				clean_index++;
 			}
 		}
-		// If the item is not found in array2, add it to return_array
-		if (!found) {
-			return_array[clean_index] = item;
-			clean_index++;
-		}
+		_myvars = return_array;
+	    draw_set_font(font0)
+	    draw_set_alpha(1)
+	    draw_set_color(c_white)
+	    draw_set_halign(fa_left)
+	    for (var i = 0; i <= array_length(_myvars)-1; i++)
+	        draw_text_transformed(0, ((i * 10) + 100), ((_myvars[i] + " = ") + string(variable_instance_get(selectedent, _myvars[i]))), 0.8, 0.8, 0)
 	}
-	_myvars = return_array;
-    draw_set_font(font0)
-    draw_set_color(c_white)
-    draw_set_halign(fa_left)
-    for (var i = 0; i <= array_length(_myvars)-1; i++)
-        draw_text_transformed(0, ((i * 10) + 100), ((_myvars[i] + " = ") + string(variable_instance_get(selectedent, _myvars[i]))), 0.8, 0.8, 0)
 }
 /*
 if(!surface_exists(tileselectsurf)){

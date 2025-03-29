@@ -1,7 +1,7 @@
 if(!instance_exists(obj_fakeeditor)){
 	return instance_destroy()
 }
-if(button_name == "play"){
+if(button_name == button_names.play){
 	if(mouse_check_button_pressed(mb_left) && position_meeting(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),id)){
 		button_pressed = true
 		fakeeditor_play_level()
@@ -15,7 +15,7 @@ if(button_name == "play"){
 		sprite_index = spr_edbutton_play
 	}
 }
-if(button_name == "object"){
+if(button_name == button_names.object){
 	if(!obj_fakeeditor.in_play_mode){
 		if(mouse_check_button_pressed(mb_left) && position_meeting(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),id)){
 			button_pressed = true
@@ -32,7 +32,7 @@ if(button_name == "object"){
 	}
 }
 
-if(button_name == "grid"){
+if(button_name == button_names.grid){
 	if(!obj_fakeeditor.in_play_mode){
 		if(mouse_check_button_pressed(mb_left) && position_meeting(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),id)){
 			fakeeditor_toggle_grid()
@@ -46,7 +46,7 @@ if(button_name == "grid"){
 	
 }
 
-if(button_name == "edit"){
+if(button_name == button_names.edit){
 	if(!obj_fakeeditor.in_play_mode){
 		if(mouse_check_button_pressed(mb_left) && position_meeting(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),id)){
 			button_pressed = true
@@ -62,7 +62,7 @@ if(button_name == "edit"){
 		sprite_index = spr_edbutton_edit
 	}
 }
-if(button_name == "delete"){
+if(button_name == button_names.del){
 	if(!obj_fakeeditor.in_play_mode){
 		if(mouse_check_button_pressed(mb_left) && position_meeting(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),id)){
 			button_pressed = true
@@ -78,7 +78,7 @@ if(button_name == "delete"){
 		sprite_index = spr_edbutton_delete
 	}
 }
-if(button_name == "copy"){
+if(button_name == button_names.copy){
 	if(!obj_fakeeditor.in_play_mode){
 		if(mouse_check_button_pressed(mb_left) && position_meeting(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),id)){
 			button_pressed = true
@@ -94,7 +94,7 @@ if(button_name == "copy"){
 		sprite_index = spr_edbutton_copy
 	}
 }
-if(button_name == "swipe"){
+if(button_name == button_names.swipe){
 	if(!obj_fakeeditor.in_play_mode){
 		if(mouse_check_button_pressed(mb_left) && position_meeting(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),id)){
 			button_pressed = true
@@ -104,7 +104,7 @@ if(button_name == "swipe"){
 			button_pressed = false
 		}
 	}
-	if(obj_fakeeditor.swipemode){
+	if(obj_fakeeditor.swipemode || obj_fakeeditor.tile_swipemode){
 		sprite_index = spr_edbutton_swipe_pressed
 	} else {
 		sprite_index = spr_edbutton_swipe
@@ -113,17 +113,10 @@ if(button_name == "swipe"){
 
 if(obj_fakeeditor.in_play_mode){
 	image_alpha = 0
-	if(button_name = "play"){
+	if(button_name = button_names.play)
+	{
 		image_alpha = 0.5
 	}
 } else {
-	image_alpha = 1
-}
-if(mouse_check_button_pressed(mb_left) && position_meeting(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),id)){
-	with(obj_fakeeditor){
-		selectedent = oldselectedent
-		if(instance_exists(selectedent)){
-			selectedent.fake_ed_sprite_clicked = false
-		}
-	}
+	image_alpha = 0.6
 }

@@ -12,6 +12,8 @@ with (other)
 }
 if (obj_player.character == "S")
 	sprite_index = spr_snickcollectible1
+if (global.leveltorestart == strongcold_10)
+	sprite_index = choose(spr_xmastopping1, spr_xmastopping2, spr_xmastopping3, spr_xmastopping4, spr_xmastopping5)
 depth = 11
 gotowardsplayer = 0
 movespeed = 5

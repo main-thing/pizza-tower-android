@@ -37,7 +37,7 @@ function scr_boss_grabbed()
 			supergrabx = other.x - x;
 			supergraby = other.y - y;
 			camzoom = other.camzoom;
-			baddiegrabbedID = other.id;
+			baddiegrabbedID = other;
 			state = states.supergrab;
 			supergrabstate = states.punch;
 			sprite_index = choose(spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_suplexmash5, spr_suplexmash6, spr_suplexmash7);

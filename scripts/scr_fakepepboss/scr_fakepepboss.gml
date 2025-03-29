@@ -24,7 +24,7 @@ function fakepep_set_attack(phase, wastedhits, _attack, _cooldown, _deformed_tim
 }
 function fakepep_get_attack(phase, wastedhits)
 {
-	if(phase >= 6){
+	if(phase >= 5){
 		phase = 5
 	}
 	return attack_list[phase][wastedhits];

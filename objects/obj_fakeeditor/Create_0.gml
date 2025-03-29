@@ -7,12 +7,17 @@ selectedent = undefined
 oldselectedent = undefined
 variabletochange = ""
 funnyx = 0
+tilemenu_offsetx = 0
+tilemenu_offsety = 0
+tile_swipemode = false
 swipemode = false
 transfotip = noone
+instances = []
+instances_len = 0
+drag_id = undefined
 global.fake_ed_tilemenu = 0
-//page1 = [obj_solid, obj_slope, obj_metalblock]
-with(obj_player1){
-	state = states.titlescreen
-	visible = false
+with(obj_fakeeditor_object)
+{
+	visible = true
 }
-fakeeditor_initcamera()
+alarm[0] = 1

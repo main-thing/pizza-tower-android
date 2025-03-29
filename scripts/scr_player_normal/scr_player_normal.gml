@@ -1,5 +1,6 @@
 function state_player_normal()
 {
+	var taunt_key = (finalmoveset ? key_taunt : key_up)
 	mach2 = 0
 	move = (key_left + key_right)
 	skateboarding = 0
@@ -18,7 +19,7 @@ function state_player_normal()
 		input_up_buffer = 0
 		input_down_buffer = 0
 	}
-	if ((finalmoveset ? key_taunt : key_up) && character != "S" && !shotgunAnim)
+	if ((taunt_key) && canbreakdance && !shotgunAnim)
 		breakdance_speed = Approach(breakdance_speed, 0.6, 0.005)
 	else
 		breakdance_speed = 0.25
@@ -69,8 +70,8 @@ function state_player_normal()
 				sprite_index = spr_pistolwalk
 			else if mort
 				sprite_index = spr__mortwalk
-			else if((finalmoveset ? key_taunt : key_up)){
-				if(character != "S" && !shotgunAnim){
+			else if(taunt_key && canbreakdance){
+				if(!shotgunAnim){
 					sprite_index = spr_breakdance
 				}
 			}
@@ -102,9 +103,9 @@ function state_player_normal()
 		movespeed = 0
 		if ((!machslideAnim) && (!landAnim) && (!shotgunAnim))
 		{
-			if (idle < 400 && (!(finalmoveset ? key_taunt : key_up)))
+			if (idle < 400 && (!taunt_key && canbreakdance))
 				idle++
-			if (idle >= 150 && (!(finalmoveset ? key_taunt : key_up)))
+			if (idle >= 150 && (!taunt_key && canbreakdance))
 			{
 				if (sprite_index != spr_idle && floor(image_index) == (image_number - 1))
 				{
@@ -139,8 +140,8 @@ function state_player_normal()
 						sprite_index = spr_player_pistolidle
 					else if mort
 						sprite_index = spr__mortidle
-					else if((finalmoveset ? key_taunt : key_up)){
-							if(character != "S" && !shotgunAnim){
+					else if((taunt_key)){
+							if(canbreakdance && !shotgunAnim){
 								sprite_index = spr_breakdance
 						}
 					}	
@@ -160,8 +161,8 @@ function state_player_normal()
 					idle = 0
 					windingAnim--
 					sprite_index = spr_winding
-					if((finalmoveset ? key_taunt : key_up)){
-						if(character != "S" && !shotgunAnim){
+					if((taunt_key)){
+						if(canbreakdance && !shotgunAnim){
 							sprite_index = spr_breakdance
 						}
 					}
@@ -171,8 +172,8 @@ function state_player_normal()
 			{
 				windingAnim = 0
 				sprite_index = spr_facehurt
-				if(finalmoveset ? key_taunt : key_up){
-					if(character != "S" && !shotgunAnim){
+				if(taunt_key){
+					if(canbreakdance && !shotgunAnim){
 						sprite_index = spr_breakdance
 					}
 				}
