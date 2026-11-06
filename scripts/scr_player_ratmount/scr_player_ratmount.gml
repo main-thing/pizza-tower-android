@@ -55,7 +55,7 @@ function scr_player_ratmount()
 		instance_create(x, y, obj_jumpdust)
 		gustavodash = 51
 	}
-	if(finalmoveset){
+	if(finalmoveset) {
 		if ((ratmount_movespeed >= 12) || (gusdashpadbuffer > 0))
 	    {
 	        if (!instance_exists(chargeeffectid))
@@ -192,7 +192,7 @@ function scr_player_ratmount()
 	}
 	else
 	{
-		if(!finalmoveset){
+		if(!finalmoveset) {
 			if (hsp != 0)
 			{
 				if (ratmount_movespeed >= 12)

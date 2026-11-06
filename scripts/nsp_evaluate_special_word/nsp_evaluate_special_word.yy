@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Evaluator",
-    "path": "folders/Scripts/N String Parser v2_6_6/Evaluator.yy",
+    "path": "folders/Objects/Game settings/Scripts/N String Parser v2_6_6/Evaluator.yy",
   },
 }

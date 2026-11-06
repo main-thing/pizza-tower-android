@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (other.key_up && electricity && global.hatcutscene2 && !global.hatcutscene3 && !place_meeting(x, y, obj_hubwater))
 {
 	global.hatcutscene3 = true;

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 enum notification_type
 {
 	unknown_value0,

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var _actor = 0
 with (obj_player)
 {
@@ -27,7 +28,7 @@ if (!(place_meeting(x, y, obj_doorblocked)))
 			obj_player1.targetRoom = other.targetRoom
 			obj_player2.targetDoor = other.targetDoor
 			obj_player2.targetRoom = other.targetRoom
-			if(variable_instance_exists(other,"target_x")){
+			if(variable_instance_exists(other,"target_x")) {
 				obj_player1.target_x = other.target_x
 				obj_player2.target_x = other.target_x
 				target_x = other.target_x
@@ -36,7 +37,7 @@ if (!(place_meeting(x, y, obj_doorblocked)))
 				obj_player2.target_x = "null"
 				target_x = "null"
 			}
-			if(variable_instance_exists(other,"target_y")){
+			if(variable_instance_exists(other,"target_y")) {
 				obj_player1.target_y = other.target_y
 				obj_player2.target_y = other.target_y
 				target_y = other.target_y

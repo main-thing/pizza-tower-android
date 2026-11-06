@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 128,
   "height": 192,
   "textureGroupId": {
@@ -80,6 +81,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Space",
-    "path": "folders/Sprites/Backgrounds/Space.yy",
+    "path": "folders/Sprites/Decorations/Space.yy",
   },
 }

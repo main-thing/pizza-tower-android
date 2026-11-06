@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 scene = 0
 timer = 0
 loop = 0

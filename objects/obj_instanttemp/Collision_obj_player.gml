@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 instance_destroy(obj_iceblock)
 instance_destroy(obj_iceblockslope)
 if (sprite_index != spr_heater2)

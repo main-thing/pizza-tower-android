@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 instance_create((x + (obj_player.xscale * 40)), y, obj_punchdust)
 state = states.grabbed
 obj_player.state = states.grab

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 state = states.normal
 dir = 1
 playerxoffset = 0

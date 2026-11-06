@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 image_index = random_range(0, (image_number - 1))
 image_speed = 0
 hsp = random_range(-2, 2)

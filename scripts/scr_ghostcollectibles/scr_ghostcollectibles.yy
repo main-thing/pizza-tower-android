@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Utilities",
-    "path": "folders/Scripts/Utilities.yy",
+    "path": "folders/Objects/Game settings/Scripts/Utilities.yy",
   },
 }

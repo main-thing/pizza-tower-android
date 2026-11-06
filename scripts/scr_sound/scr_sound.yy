@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Sound",
-    "path": "folders/Scripts/Sound.yy",
+    "path": "folders/Objects/Game settings/Scripts/Sound.yy",
   },
 }

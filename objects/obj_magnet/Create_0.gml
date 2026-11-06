@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 cooldown = 0
 state = states.normal
 ballID = -4

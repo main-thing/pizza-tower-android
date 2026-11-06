@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 scr_initenemy()
 is_controllable = 1
 shot = 0

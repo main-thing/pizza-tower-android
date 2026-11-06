@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var _block = id
 with (obj_player)
 {

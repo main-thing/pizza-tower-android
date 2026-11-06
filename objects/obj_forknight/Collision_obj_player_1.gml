@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (stun == 0 && obj_player.y >= y && obj_player.attacking == 0 && obj_player.state != states.hurt && obj_player.state != states.bump && obj_player.state != states.tackle && (!(vsp < 0)) && obj_player.instakillmove == 0)
 {
     obj_player.image_index = 0

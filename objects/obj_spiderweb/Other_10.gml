@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 active = 0
 var xx = (room_width + 64)
 var _dir = -1

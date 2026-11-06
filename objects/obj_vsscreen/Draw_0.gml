@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (noisex != 545)
 	image_blend = c_black
 else

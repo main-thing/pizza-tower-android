@@ -9,7 +9,8 @@ function scr_shotgunshoot()
 	jumpAnim = 1
 	image_index = 0
 	input_buffer_shoot = 0
-	if(global.oldsprites){
+	if(!finalmoveset)
+	{
 		with (instance_create((x + (xscale * 20)), (y + 20), obj_shotgunbullet))
 		{
 			image_xscale = other.xscale
@@ -39,7 +40,9 @@ function scr_shotgunshoot()
 			spdh = -2
 			shotgun = 1
 		}
-	} else {
+	} 
+	else 
+	{
 		with (instance_create(x + (xscale * 46), y + 6, obj_shotgunblast))
 		{
 			image_xscale = other.xscale;

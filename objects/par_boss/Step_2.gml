@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (inv_timer > 0)
 	inv_timer--
 else if (inv_timer == 0)

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 ds_list_add(global.saveroom, id);
 global.gerome = true;
 fmod_event_one_shot_3d("event:/sfx/voice/geromegot", x, y);

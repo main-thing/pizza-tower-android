@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!instance_exists(obj_fadeout))
     instance_create(x, y, obj_fadeout)
 with (obj_player)

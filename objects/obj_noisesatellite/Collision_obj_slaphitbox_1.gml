@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (state == states.stun && hp == 0 && stunned > 40 && slapped == 0)
 {
 	slapped = true;

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (obj_player)
 {
     if (key_up && ladderbuffer == 0 && (state == states.normal || state == states.shotgunjump || state == states.jump || state == states.highjump) && state != states.hurt && state != states.mach1 && state != states.mach2 && state != states.machslide && state != states.freefall && state != states.freefallland)

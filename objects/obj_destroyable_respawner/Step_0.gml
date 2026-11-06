@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (spawn_buffer > 0)
 	spawn_buffer--
 else if (content != noone)

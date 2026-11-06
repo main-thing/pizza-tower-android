@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 grav = 0.5
 hsp = 0
 vsp = 0

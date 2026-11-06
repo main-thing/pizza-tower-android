@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 ini_open("saveData.ini")
 global.treasure1 = ini_read_real("Treasure", "t1", 0)
 global.treasure2 = ini_read_real("Treasure", "t2", 0)

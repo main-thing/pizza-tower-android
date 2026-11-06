@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if ((!instance_exists(bossID)) && bossID != noone && state != states.victory && (!fakedeath))
 {
 	state = states.victory

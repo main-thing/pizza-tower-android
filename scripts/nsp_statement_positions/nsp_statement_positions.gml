@@ -3,17 +3,17 @@
 /// @param  End
 /// @param  Statement
 /// @param  StrList
-function nsp_statement_positions(argument0, argument1, argument2, argument3) {
+function nsp_statement_positions(_a0, _a1, _a2, _a3) {
 	/*
 	Underlying NSP script.
 	*/
-	var nspListStr = argument3,
+	var nspListStr = _a3,
 	    nspToken = global.nspToken;
 	var a,i,pos_1,pos_2,pos_3,list_min,list_max;
 
 	//Set up:
-	list_min=argument0;
-	list_max=argument1;
+	list_min=_a0;
+	list_max=_a1;
 
 	//Searching:
 	   pos_1=-1;
@@ -24,7 +24,7 @@ function nsp_statement_positions(argument0, argument1, argument2, argument3) {
 	     }
      
 	    if i=list_max {
-	     NSP_notify("SCRIPT: nsp_statement_positions. ERROR: (1) Syntax error ("+argument2+" statement).",nspListStr,list_min,list_max);
+	     NSP_notify("SCRIPT: nsp_statement_positions. ERROR: (1) Syntax error ("+_a2+" statement).",nspListStr,list_min,list_max);
 	     return nspToken[NSP_TOK.abort];
 	     }
 	   end;
@@ -43,7 +43,7 @@ function nsp_statement_positions(argument0, argument1, argument2, argument3) {
 	      }
       
 	    if i=list_max {
-	     NSP_notify("SCRIPT: nsp_statement_positions. ERROR: (2) Syntax error ("+argument2+" statement).",nspListStr,list_min,list_max);
+	     NSP_notify("SCRIPT: nsp_statement_positions. ERROR: (2) Syntax error ("+_a2+" statement).",nspListStr,list_min,list_max);
 	     return nspToken[NSP_TOK.abort];
 	     }
 	   end;
@@ -64,7 +64,7 @@ function nsp_statement_positions(argument0, argument1, argument2, argument3) {
 	     }
         
 	    if i=list_max and pos_3=-1 {
-	     NSP_notify("SCRIPT: nsp_statement_positions. ERROR: (3) Syntax error ("+argument2+" statement).",nspListStr,list_min,list_max);
+	     NSP_notify("SCRIPT: nsp_statement_positions. ERROR: (3) Syntax error ("+_a2+" statement).",nspListStr,list_min,list_max);
 	     return nspToken[NSP_TOK.abort];
 	     }  
 	   end;

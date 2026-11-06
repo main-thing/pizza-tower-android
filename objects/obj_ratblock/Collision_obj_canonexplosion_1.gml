@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (sprite_index != spr_rattumbleblock && other.rat && other.sprite_index != spr_dynamiteexplosion)
 {
 	if (other.baddie)

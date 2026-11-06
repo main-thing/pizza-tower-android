@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 101,
   "height": 74,
   "textureGroupId": {
@@ -71,7 +72,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Unsorted or unused",
-    "path": "folders/Sprites/Unsorted or unused.yy",
+    "name": "Final game",
+    "path": "folders/Sprites/HUD/Final game.yy",
   },
 }

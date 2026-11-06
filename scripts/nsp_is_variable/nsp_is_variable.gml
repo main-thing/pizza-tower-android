@@ -1,6 +1,6 @@
 /// @description nsp_is_variable(String)
 /// @param String
-function nsp_is_variable(argument0) {
+function nsp_is_variable(_a0) {
 	/*
 	Underlying NSP script.
 	Returns: 0 - not a variable, 1 - simple local, 2 - complex local, 3 - global.
@@ -8,9 +8,9 @@ function nsp_is_variable(argument0) {
 	var nspToken=global.nspToken;
 	var i,work_str,temp_str,pri_q,pri_d;
 
-	work_str=argument0;
+	work_str=_a0;
 
-	if nsp_gm_nom(argument0)=true
+	if nsp_gm_nom(_a0)=true
 	 return 1;
 
 	//Look for a dot:
@@ -38,7 +38,7 @@ function nsp_is_variable(argument0) {
 
 	//Error checking:
 	if dot_pos=0 {
-	 //nsp_notify("SCRIPT: nsp_is_variable. ERROR: No dot found and nomenclature mismatch ("+argument0+").");
+	 //nsp_notify("SCRIPT: nsp_is_variable. ERROR: No dot found and nomenclature mismatch ("+_a0+").");
 	 //return nspToken[NSP_TOK.abort];
 	 return 0;
 	 }

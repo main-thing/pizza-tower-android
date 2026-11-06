@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (instance_number(object_index) > 1)
 {
 	instance_destroy();
@@ -7,8 +8,6 @@ global.bossplayerhurt = false;
 global.playerhit = 0;
 global.extrahats = 0;
 global.hats = 0;
-SCREEN_WIDTH = display_get_gui_width()
-SCREEN_HEIGHT = display_get_gui_height()
 bossID = -4;
 bossdead = false;
 particlelist = ds_list_create();

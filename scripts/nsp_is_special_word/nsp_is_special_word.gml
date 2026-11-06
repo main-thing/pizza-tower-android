@@ -1,11 +1,11 @@
 /// @description nsp_is_special_word(String)
 /// @param String
-function nsp_is_special_word(argument0) {
+function nsp_is_special_word(_a0) {
 	/*
 	Underlying NSP script.
 	*/
 
-	switch (argument0) begin
+	switch (_a0) begin
 
 	 case "self": return true;
  

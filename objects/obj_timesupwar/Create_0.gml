@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 timermax = 30
 explosionsnum = 1
 alarm[0] = 5

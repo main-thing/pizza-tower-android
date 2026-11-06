@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if ((!instance_exists(followid)) or followid.sprite_index != followid.scaredspr)
 	instance_destroy()
 image_speed = 0.35

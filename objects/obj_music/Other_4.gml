@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!global.panic)
 {
 	for(var i = 0; i < array_length(room_arr); i++)
@@ -28,17 +29,20 @@ if (!global.panic)
 		audio_sound_gain(pillarmusicID, 0, 0)
 	}
 }
-if secret
+if (!instance_exists(obj_randomsecret))
 {
-	secretmusicID = scr_music(secretmusic)
-	audio_sound_set_track_position(secretmusicID, audio_sound_get_track_position(musicID))
-	audio_pause_sound(musicID)
-}
-else if secretend
-{
-	secretend = 0
-	audio_resume_sound(musicID)
-	audio_stop_sound(secretmusicID)
+	if secret
+	{
+		secretmusicID = scr_music(secretmusic)
+		audio_sound_set_track_position(secretmusicID, audio_sound_get_track_position(musicID))
+		audio_pause_sound(musicID)
+	}
+	else if secretend
+	{
+		secretend = 0
+		audio_resume_sound(musicID)
+		audio_stop_sound(secretmusicID)
+	}
 }
 if (room == rank_room)
 {
@@ -49,17 +53,13 @@ if (room == rank_room)
 	secretmusicID = -4
 	pillarmusicID = -4
 }
-if(obj_player1.escapemusic != undefined){
+if(obj_player1.escapemusic != undefined) {
 	escapemusic = obj_player1.escapemusic
 }
-if(obj_player1.lap2music != undefined){
+if(obj_player1.lap2music != undefined) {
 	lap2music = obj_player1.lap2music
 }
-if(string_pos("dragonlair_",room_get_name(room)) != 0){
+if(string_pos("dragonlair_", room_get_name(room)) != 0)
 	escapemusic = mu_dragonlair
-	lap2music = mu_dragonlair
-}
-if(string_pos("tower_",room_get_name(room)) != 0){
+if(string_pos("tower_", room_get_name(room)) != 0)
 	escapemusic = mu_finalescape
-	lap2music = mu_finalescape
-}

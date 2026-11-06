@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 text = ""
 textcolor = c_white
 font = 1

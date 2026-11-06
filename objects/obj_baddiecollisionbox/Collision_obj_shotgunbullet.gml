@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (instance_exists(baddieID) && baddieID.invtime == 0 && baddieID.state != states.grabbed && baddieID.state != states.hit && (!baddieID.invincible) && baddieID.instantkillable)
 {
 	scr_soundeffect(sfx_punch)

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (targetplayer.id != other.id)
 	exit;
 obj_player1.visible = false

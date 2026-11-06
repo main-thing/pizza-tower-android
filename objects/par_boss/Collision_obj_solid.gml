@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!colliding)
 	exit;
 var ty = try_solid(0, -1, 312, 64)

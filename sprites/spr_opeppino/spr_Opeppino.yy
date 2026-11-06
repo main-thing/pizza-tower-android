@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 235,
   "height": 240,
   "textureGroupId": {
@@ -71,7 +72,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Unsorted or unused",
-    "path": "folders/Sprites/Unsorted or unused.yy",
+    "name": "Old HUD",
+    "path": "folders/Sprites/HUD/Old HUD.yy",
   },
 }

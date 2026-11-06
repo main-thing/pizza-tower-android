@@ -8,7 +8,7 @@ function scr_pizzagoblin_throw()
         global.throw_data[obj_cheeserobot] = [6, spr_cheeserobot_attack, 200];
         global.throw_data[obj_spitcheese] = [2, spr_spitcheese_spit, 100];
         global.throw_data[obj_bazookabaddie] = [7, spr_tank_shoot, 400];
-        global.throw_data[obj_trash] = [2, spr_trash_throw, 100];
+        global.throw_data[obj_trashOLD] = [2, spr_trash_throw, 100];
         global.throw_data[obj_invtrash] = [2, spr_invtrash_throw, 100];
         global.throw_data[obj_robot] = [2, spr_robot_attack, 150];
         global.throw_data[obj_kentukykenny] = [8, spr_kentukykenny_throw, 200];
@@ -100,7 +100,7 @@ function scr_pizzagoblin_throw()
 					}
 				}
 				break
-			case obj_trash:
+			case obj_trashOLD:
 			case obj_invtrash:
 				with (instance_create((x + (image_xscale * 6)), (y - 6), obj_cheeseball))
 				{
@@ -217,8 +217,6 @@ function scr_pizzagoblin_throw()
 				break
 			case obj_miniufo:
 				instance_create(x, y, obj_warplaser)
-			case obj_trashOLD:
-				instance_create(x, y, obj_cheeseball)
 				break
 			case obj_miniufo_grounded:
 				with (instance_create((x + (8 * image_xscale)), y, obj_enemybullet))

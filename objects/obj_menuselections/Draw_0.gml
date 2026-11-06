@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (levelselect == 1)
 {
 	draw_set_font(global.bigfont)

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (state != states.titlescreen && other.grounded && other.key_up2)
 {
 	if (other.isgustavo)

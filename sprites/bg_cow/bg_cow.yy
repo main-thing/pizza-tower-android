@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 128,
   "height": 96,
   "textureGroupId": {
@@ -71,7 +72,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Farm",
-    "path": "folders/Sprites/Backgrounds/Farm.yy",
+    "name": "Decorations",
+    "path": "folders/Sprites/Decorations.yy",
   },
 }

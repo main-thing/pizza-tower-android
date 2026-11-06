@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 draw_self()
 if instance_exists(obj_monstertrackingrooms)
 {

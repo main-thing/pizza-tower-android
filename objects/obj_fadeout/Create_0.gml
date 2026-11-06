@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 fadealpha = 0
 custom_level = 0
 roomreset = 0

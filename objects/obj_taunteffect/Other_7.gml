@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 instance_destroy()
 if (obj_player1.character == "N")
 {

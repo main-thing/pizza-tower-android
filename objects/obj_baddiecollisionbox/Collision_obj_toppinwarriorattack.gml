@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if instance_exists(baddieID)
 {
 	if (baddieID.vsp > 0 && baddieID.state != states.grabbed)

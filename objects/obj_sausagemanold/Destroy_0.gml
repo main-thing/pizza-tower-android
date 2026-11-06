@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (ds_list_find_index(global.baddieroom, id) == -1)
 {
 	obj_tv.image_index = random_range(0, 4)

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 x = obj_player.x
 y = ((sprite_get_bbox_top(obj_player.sprite_index) + obj_player.y) - 40)
 image_xscale = obj_player.xscale

@@ -1,129 +1,57 @@
-if (!instance_exists(obj_option))
+ADD_OBJECT_EVENT_GML_HOOK;
+live_auto_call;
+if(!instance_exists(obj_option))
 {
     scr_getinput()
-    if (!instance_exists(obj_fadeout))
+    if(!instance_exists(obj_fadeout))
     {
-		if (!newstuff && !credits) 
-		{
-	        var _input = (key_down2 - key_up2)
-	        selected_option += _input
-	        if (_input != 0)
-	            scr_soundeffect(sfx_step)
-	        if (selected_option > max_options)
-	            selected_option = 0
-	        else if (selected_option < 0)
-	            selected_option = max_options
-		}
-		if (newstuff || credits) 
-		{
-	        if (key_slap) 
-			{
-	            scr_soundeffect(sfx_enemyprojectile)
-				if(newstuff) 
-				{
-					virtual_key_delete(up_key)
-					virtual_key_delete(down_key)
-					virtual_key_delete(close_key)
-				}
-				newstuff = 0
-				if(credits)
-					virtual_key_delete(close_key)
-				credits = 0
-				global.forcehidecontrols = 0
-				with(obj_virtual_controller) event_perform(ev_mouse, ev_global_left_button)
-			}
+		if(page == noone)
+		{	
+			var _input = (key_down2 - key_up2);
+		
+			if(_input != 0)
+				scr_soundeffect(sfx_step);
+			
+			selected_option += _input;
+			
+			selected_option = clamp(selected_option, 0, max_options);
 		}
     }
-    if instance_exists(obj_fadeout)
-    {
-        with (obj_player)
-            image_index = 0
-    }
-    with (obj_player)
-    {
-        movespeed = 0
-        hsp = 0
-        vsp = 0
-    }
-	if (!newstuff && !credits){
-		if (key_jump2 && prev_key_jump2 != key_jump2) 
-		{
-			if (selected_option == 0)
-			{
-				instance_create(x, y, obj_levelselect)
-				instance_destroy()
-			}
-			if (selected_option == 1)
-			{
-				newstuff = 1
-				global.forcehidecontrols = 1
-				with(obj_virtual_controller) event_perform(ev_mouse, ev_global_left_button)
-				up_key = virtual_key_add(2, 388, 64, 64, vk_up)
-				down_key = virtual_key_add(2, 452, 64, 64, vk_down)
-				close_key = virtual_key_add(2356 * 0.01-16, 1080 * 0.02-16, 32, 32, ord("X"))
-			}
-			if (selected_option == 2)
-			{
-				credits = 1
-				global.forcehidecontrols = 1
-				with(obj_virtual_controller) event_perform(ev_mouse, ev_global_left_button)
-				close_key = virtual_key_add(2356 * 0.01-16, 1080 * 0.02-16, 32, 32, ord("X"))
-			}
-			if (selected_option == 3)
-			{
-				if(irandom_range(0,99))
-				{
-					discorddialogue = show_question_async("Do you really want to join the chaos of the discord?")
-				} 
-				else 
-				{
-					discorddialogue = show_question_async("Do you accept the terms and conditions of your cars warranty?")
-				}
-			}
-		}
-	} else {
-		if (newstuff)
-		{
-			move = (key_up * -1 + key_down) * scrollspeed
-			stringoffset -= move
-		}
-	}
-	prev_key_jump2 = key_jump2
-}
-if(room == rm_levelselect){
-	if(newstuff || credits){
-		var lay_id = layer_get_id("Assets_1");
-		layer_set_visible(lay_id, false);
-	} else {
-		var lay_id = layer_get_id("Assets_1");
-		layer_set_visible(lay_id, true);
-		stringoffset = 0
-	}
-	if(credits){
-		var lay_id = layer_get_id("Backgrounds_1");
-		layer_set_visible(lay_id, false);
-		var lay_id = layer_get_id("Backgrounds_stillscroll");
-		layer_set_visible(lay_id, true);
-		//var lay_id = layer_get_id("Backgrounds_2");
-		//layer_set_visible(lay_id, true);
-	} else {
-		var lay_id = layer_get_id("Backgrounds_1");
-		layer_set_visible(lay_id, true);
-		var lay_id = layer_get_id("Backgrounds_stillscroll");
-		layer_set_visible(lay_id, false);
-		//var lay_id = layer_get_id("Backgrounds_2");
-		//layer_set_visible(lay_id, false);
-	}
-	if(newstuff){
-		var lay_id = layer_get_id("Backgrounds_1");
-		layer_set_visible(lay_id, false);
-		var lay_id = layer_get_id("Backgrounds_2");
-		layer_set_visible(lay_id, true);
-	} else {
-		var lay_id = layer_get_id("Backgrounds_1");
-		layer_set_visible(lay_id, true);
-		var lay_id = layer_get_id("Backgrounds_2");
-		layer_set_visible(lay_id, false);
 	
+	var _option = text_arr[selected_option];
+	with(_option)
+	{
+		if(other.key_jump)
+		{
+			if(click_func != noone && other.page == noone)
+			{
+				var _snip = USE_GMLIVE ? live_snippet_call : NSP_execute_saved;
+				// this is stupid
+				var is_snippet = is_struct(click_func) && !is_method(click_func);
+				if(is_snippet)
+					_snip(click_func)
+				else
+					script_execute(asset_get_index(script_get_name(click_func)));
+			}
+			
+			if(page_draw_func == noone)
+				break;
+				
+			with(other)
+				page = selected_option;
+		}
+		
+		if(step_func != noone && other.page == other.selected_option)
+		{
+			var _snip = USE_GMLIVE ? live_snippet_call : NSP_execute_saved;
+			// this is stupid
+			var is_snippet = is_struct(step_func) && !is_method(step_func);
+			if(is_snippet)
+				_snip(step_func)
+			else
+				script_execute(asset_get_index(script_get_name(step_func)));
+		}
 	}
+
+	prev_key_jump2 = key_jump2
 }

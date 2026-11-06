@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 301,
   "height": 181,
   "textureGroupId": {
@@ -111,7 +112,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Phase 2",
-    "path": "folders/Sprites/Boss/Pizzaface/Phase 2.yy",
+    "name": "Pizzaface",
+    "path": "folders/Sprites/Boss/Pizzaface.yy",
   },
 }

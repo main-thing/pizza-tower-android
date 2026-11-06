@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 448,
   "height": 574,
   "textureGroupId": {
@@ -68,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Farm",
-    "path": "folders/Sprites/Backgrounds/Farm.yy",
+    "path": "folders/Sprites/Tilesets/Farm.yy",
   },
 }

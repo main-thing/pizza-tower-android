@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (instance_exists(baddieID) && baddieID.stun == 1 && (other.state == states.handstandjump or other.state == states.punch or other.instakillmove == 1))
 {
 	with (other)

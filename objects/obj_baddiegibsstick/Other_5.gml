@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!collisioned)
 {
 	var col = collision_line(x, y, x, (y + room_height), obj_solid, false, true)

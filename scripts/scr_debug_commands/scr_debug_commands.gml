@@ -1,12 +1,12 @@
-function string_split(argument0, argument1)
+function string_split(_a0, _a1)
 {
-	argument0 += " "
+	_a0 += " "
 	var _current_str = ""
 	var _list = [0]
-	for (var i = 1; i < string_length(argument0) + 1; i++)
+	for (var i = 1; i < string_length(_a0) + 1; i++)
 	{
-		var _char = string_char_at(argument0, i)
-		if _char != argument1
+		var _char = string_char_at(_a0, i)
+		if _char != _a1
 			_current_str += _char
 		else
 		{
@@ -65,7 +65,7 @@ function DebugCommand(command_ident, command_description, command_format, comman
 	}
 }
 
-function TextList_Add(argument0, argument1)
+function TextList_Add(_a0, _a1)
 {
 	with obj_debugcontroller
 	{

@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 192,
   "height": 176,
   "textureGroupId": {
@@ -68,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Desert",
-    "path": "folders/Sprites/Backgrounds/Desert.yy",
+    "path": "folders/Sprites/Decorations/Desert.yy",
   },
 }

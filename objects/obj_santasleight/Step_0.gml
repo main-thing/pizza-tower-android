@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if place_meeting(x, y, obj_file1)
 {
 	sprite_index = spr_santasleightpep

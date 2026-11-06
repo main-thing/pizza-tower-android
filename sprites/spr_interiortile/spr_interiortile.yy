@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 640,
   "height": 1088,
   "textureGroupId": {
@@ -87,11 +88,11 @@
       0,
     ],
     "resourceVersion": "1.0",
-    "loadedVersion": null,
+    "loadedVersion": {},
     "resourceType": "GMNineSliceData",
   },
   "parent": {
     "name": "Street",
-    "path": "folders/Sprites/Backgrounds/Street.yy",
+    "path": "folders/Sprites/Tilesets/Street.yy",
   },
 }

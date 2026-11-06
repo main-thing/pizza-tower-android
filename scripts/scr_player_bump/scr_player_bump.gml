@@ -48,7 +48,7 @@ function scr_player_bump()
 			state = states.normal
 		image_speed = 0.35
 	}
-	if(finalmoveset){
+	if(finalmoveset) {
 		if ((state == states.normal) && isgustavo)
 			state = states.ratmount
 	}

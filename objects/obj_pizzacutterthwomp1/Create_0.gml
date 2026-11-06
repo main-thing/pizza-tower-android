@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 ydown = (y + 40)
 yup = y
 vsp = 1

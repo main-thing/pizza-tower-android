@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 image_xscale = obj_player.xscale
 if (obj_player.state == states.chainsaw)
 {

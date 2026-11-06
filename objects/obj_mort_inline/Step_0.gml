@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (obj_player)
 {
 	if ((object_index != obj_player2 or global.coop) && state != states.actor && (!instance_exists(obj_dialogcontroller)))

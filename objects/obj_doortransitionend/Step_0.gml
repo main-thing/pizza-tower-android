@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (image_xscale < 51)
 {
 	image_xscale += 0.5

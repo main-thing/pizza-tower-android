@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (player == 1)
 {
 	if (got && obj_player1.state != states.gottreasure)
@@ -22,7 +23,7 @@ if (player == 0 && place_meeting(x, y, obj_player))
 				treasure_y = y
 				treasure_room = room
 				global.combotime = 60
-				if(grounded || !global.oldsprites)
+				if (grounded || !global.oldsprites)
 				{
 					ds_list_add(global.saveroom, other.id)
 					global.treasure = 1
@@ -30,9 +31,18 @@ if (player == 0 && place_meeting(x, y, obj_player))
 					vsp = 0
 					if (!other.got)
 					{
-						other.alarm[0] = 150
 						state = states.gottreasure
-						scr_soundeffect(sfx_secretfound)
+						with (other) {
+							if (!oldblock) {
+								scr_soundeffect(sfx_secretfound)
+								alarm[0] = 150
+							}
+							else {
+								scr_soundeffect(sfx_level100percent)
+								alarm[0] = 300
+								image_speed = 0
+							}
+						}
 					}
 					other.got = 1
 					other.x = (x - 18)
@@ -44,7 +54,6 @@ if (player == 0 && place_meeting(x, y, obj_player))
 					obj_tv.alarm[0] = 200
 					other.player = (object_index == obj_player1 ? 1 : 2)
 				}
-				//ds_list_clear(global.instancelist)
 			}
 		}
 	}

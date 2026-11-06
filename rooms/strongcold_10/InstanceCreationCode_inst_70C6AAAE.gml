@@ -1,1 +1,0 @@
-targetRoom = strongcold_1

@@ -1,7 +1,7 @@
 /// @description nsp_list_tidy_and_verify(Token List, Param List)
 /// @param Token List
 /// @param  Param List
-function nsp_list_tidy_and_verify(argument0, argument1) {
+function nsp_list_tidy_and_verify(_a0, _a1) {
 	/*
 
 	Returns: 1 = Success, 0 = Failure
@@ -11,8 +11,8 @@ function nsp_list_tidy_and_verify(argument0, argument1) {
 	var a, tok_list, typ_list;
 	var i, last;
 
-	tok_list = argument0;
-	typ_list = argument1;
+	tok_list = _a0;
+	typ_list = _a1;
 
 	last = ds_list_size(tok_list)-1;
 	i = last;

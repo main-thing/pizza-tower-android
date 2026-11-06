@@ -1,4 +1,5 @@
-if(global.usepaletteshaders){
+ADD_OBJECT_EVENT_GML_HOOK;
+if(global.usepaletteshaders) {
 	shader_set(global.Pal_Shader)
 }
 if (obj_player1.spotlight == 0 && global.usepaletteshaders)

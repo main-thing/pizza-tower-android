@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (obj_player)
 {
     if (state != states.hurt && state != states.barrelroll && state != states.bump && hurted == 0 && barrel == 0)

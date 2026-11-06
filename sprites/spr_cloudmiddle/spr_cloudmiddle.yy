@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 64,
   "height": 64,
   "textureGroupId": {
@@ -73,7 +74,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Secret",
-    "path": "folders/Sprites/Backgrounds/Secret.yy",
+    "name": "Platform clouds",
+    "path": "folders/Sprites/Decorations/Platform clouds.yy",
   },
 }

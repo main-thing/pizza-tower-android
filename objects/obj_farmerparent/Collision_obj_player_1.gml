@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 instance_destroy();
 global.hasfarmer[pos] = true;
 other.farmerpos = pos;

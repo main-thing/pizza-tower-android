@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 96,
   "height": 32,
   "textureGroupId": {
@@ -87,11 +88,11 @@
       0,
     ],
     "resourceVersion": "1.0",
-    "loadedVersion": null,
+    "loadedVersion": {},
     "resourceType": "GMNineSliceData",
   },
   "parent": {
     "name": "Space",
-    "path": "folders/Sprites/Backgrounds/Space.yy",
+    "path": "folders/Sprites/Tilesets/Space.yy",
   },
 }

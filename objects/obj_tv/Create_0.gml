@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 enum tvprompt
 {
 	normal,
@@ -78,9 +79,10 @@ fake_tv_y = 80
 tv_overlay_sprite = spr_tv_empty
 tv_bg_sprite = spr_tv_bg
 show_golf = false
-show_combobar = false
+show_combobar = true
 bubblefont = font1
-_spr_tv_bubble = spr_tv_bubble
-_spr_tv_bubbleopen = spr_tv_bubbleopen
-_spr_tv_bubbleclose = spr_tv_bubbleclose
-_spr_tv_bubbleclosed = spr_tv_bubbleclosed
+tv_bubble = spr_tv_bubble
+tv_bubbleopen = spr_tv_bubbleopen
+tv_bubbleclose = spr_tv_bubbleclose
+tv_bubbleclosed = spr_tv_bubbleclosed
+player = obj_player1;

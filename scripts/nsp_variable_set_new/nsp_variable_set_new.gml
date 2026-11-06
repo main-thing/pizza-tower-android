@@ -32,7 +32,7 @@ function nsp_variable_set_new() {
 	  exit;
  
 	  }
-	switch(varname){
+	switch(varname) {
 		case "view_enabled":
 			 return view_enabled = val
 		break

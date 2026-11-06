@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 768,
   "height": 2656,
   "textureGroupId": {
@@ -87,11 +88,11 @@
       0,
     ],
     "resourceVersion": "1.0",
-    "loadedVersion": null,
+    "loadedVersion": {},
     "resourceType": "GMNineSliceData",
   },
   "parent": {
     "name": "Desert",
-    "path": "folders/Sprites/Backgrounds/Desert.yy",
+    "path": "folders/Sprites/Tilesets/Desert.yy",
   },
 }

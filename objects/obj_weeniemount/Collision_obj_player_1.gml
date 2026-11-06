@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (other)
 {
 	if (other.buffer <= 0 && state == states.handstandjump)

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (instance_create(1632, 1824, obj_boilingsauce))
 	image_xscale = 4
 with (obj_camera)

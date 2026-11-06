@@ -1,6 +1,6 @@
 /// @description nsp_dsm_get(Name)
 /// @param Name
-function nsp_dsm_get(argument0) {
+function nsp_dsm_get(_a0) {
 	/*
 	Underlying NSP script.
 	*/
@@ -8,10 +8,10 @@ function nsp_dsm_get(argument0) {
 
 	if nspToken[NSP_TOK.dsm_allowed]=1
 	&& ds_exists(global.nspDsMap,ds_type_map)
-	&& ds_map_exists(global.nspDsMap,argument0)
-	 return ds_map_find_value(global.nspDsMap,argument0)
+	&& ds_map_exists(global.nspDsMap,_a0)
+	 return ds_map_find_value(global.nspDsMap,_a0)
 	 else {
-	  NSP_notify("SCRIPT: nsp_dsm_get. ERROR: Value does not exist ("+argument0+").");
+	  NSP_notify("SCRIPT: nsp_dsm_get. ERROR: Value does not exist ("+_a0+").");
 	  return nspToken[NSP_TOK.abort];
 	  }
 

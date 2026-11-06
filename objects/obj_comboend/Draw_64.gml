@@ -1,4 +1,6 @@
-if(!global.oldsprites){
+ADD_OBJECT_EVENT_GML_HOOK;
+if(!global.oldhud && !global.oldsprites)
+{
 	/*if (!global.option_hud || (instance_exists(obj_debugcontroller) && !obj_debugcontroller.showhud))
 		exit;*/
 	var xx = x;
@@ -21,3 +23,6 @@ if(!global.oldsprites){
 	if (very)
 		draw_sprite(spr_combovery, 0, xx - 65, (yy - 6) + 30);
 }
+
+if (global.oldhud)
+	exit;

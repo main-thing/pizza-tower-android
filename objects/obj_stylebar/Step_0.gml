@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 visible = obj_tv.visible
 switch global.stylethreshold
 {

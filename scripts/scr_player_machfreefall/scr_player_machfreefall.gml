@@ -65,7 +65,7 @@ function scr_player_machfreefall()
 	audio_sound_gain(sfx_mach2, 0.7, 0)
 	if (!audio_is_playing(sfx_mach2))
 		audio_play_sound(sfx_mach2, 1, false)
-	if(!finalmoveset){
+	if(!finalmoveset) {
 		if (grounded && input_buffer_jump < 8 && vsp > 0)
 		{
 			sprite_index = spr_player_hanstandjump

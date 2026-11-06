@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (room == characterselect)
 {
 	if (player_input_device[1] < -1)

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (floor(image_index) == (image_number - 1) && sprite_index == spr_mortspawn)
 	sprite_index = spr_mortfall
 if (grounded && sprite_index == spr_mortfall)

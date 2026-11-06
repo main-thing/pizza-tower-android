@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 ini_open_from_string(obj_savesystem.ini_str)
 global.entrancetime = ini_read_string("Time", "entrance", "none")
 global.medievaltime = ini_read_string("Time", "medieval", "none")

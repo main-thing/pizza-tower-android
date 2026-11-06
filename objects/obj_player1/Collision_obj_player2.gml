@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (other.cutscene == 0 && other.state != states.actor && state != states.actor && other.state != states.gotoplayer && state != states.gotoplayer)
 {
 	if (hurted == 0 && other.hurted == 0 && fightballadvantage == 1 && (state == states.handstandjump or state == states.punch) && (other.state == states.handstandjump or other.state == states.punch))

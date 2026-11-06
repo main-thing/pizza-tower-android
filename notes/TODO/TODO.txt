@@ -1,0 +1,11 @@
+TODO:
+- Update some virtual controller debug commands.
+- Add backwards compatibility for old controls.
+- Update obj_mainmenu a bit
+- Import some fonts
+- Improve level editor ui
+- Update the public virtual controller package
+
+- fix obj_secrettile not liking being stretched out of bounds
+- scr_gmlhelper windblown stuff fix
+- fix wave background going fast or something

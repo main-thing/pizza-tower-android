@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 hooked = 0
 depth = 12
 startx = x

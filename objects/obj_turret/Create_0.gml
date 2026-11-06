@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 charge_buffer = 0
 charge_max = 30
 can_fire = 1

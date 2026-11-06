@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (elitehit == 1)
 {
 	repeat irandom_range(1, 3)

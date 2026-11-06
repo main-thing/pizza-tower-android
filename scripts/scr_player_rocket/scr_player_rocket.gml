@@ -41,11 +41,23 @@ function scr_player_rocket()
 		jumpstop = 0
 		vsp = -11
 		instance_create(x, y, obj_jumpdust)
-		with (instance_create(x, (y + 12), obj_rocketdead))
+		if (character == "PZ")
 		{
-			hsp = (other.xscale * 6)
-			vsp = 5
-			image_xscale = sign(hsp)
+			with (instance_create(x, (y + 12), obj_parryeffect))
+			{
+				scr_soundeffect(sfx_explosion)
+				image_index = 0
+				sprite_index = spr_bombexplosion
+			}
+		}
+		else
+		{
+			with (instance_create(x, (y + 12), obj_rocketdead))
+			{
+				hsp = (other.xscale * 6)
+				vsp = 5
+				image_xscale = sign(hsp)
+			}
 		}
 	}
 	if (fightball == 0)

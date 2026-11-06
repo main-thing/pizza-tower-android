@@ -1,6 +1,6 @@
 /// @description NSP_execute_string(String)
 /// @param String
-function NSP_execute_string(argument0) {
+function NSP_execute_string(_a0) {
 	/*
 
 	Executes a string of GML code.
@@ -11,12 +11,12 @@ function NSP_execute_string(argument0) {
 	*/
 	var nspListStr, nspListPar, rv, succ;
 
-	if (argument0 == "") return undefined;
+	if (_a0 == "") return undefined;
 
 	nspListStr = ds_list_create();
 	nspListPar = ds_list_create();
 
-	succ = nsp_convert_to_list(argument0, nspListStr, nspListPar);
+	succ = nsp_convert_to_list(_a0, nspListStr, nspListPar);
 
 	if (!succ) {
 

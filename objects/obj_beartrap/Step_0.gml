@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (press >= 8 && drop == 0)
 {
 	obj_player.image_index = 0

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 bg = bg_desert
 bg2 = bg_null
 bg3 = bg_null
@@ -16,6 +17,6 @@ bg_2yoffset = 0
 fg1_x = 0
 fg1_y = 0
 backgrounds = ["Backgrounds_still1", "Backgrounds_still2"]
-if(instance_number(object_index) > 1){
+if(instance_number(object_index) > 1) {
 	instance_destroy()
 }

@@ -39,7 +39,7 @@ function scr_player_barrel()
 					other.movespeed = Approach(other.movespeed, (other.xscale * 12), 0.5)
 			}
 		}
-		if(!finalmoveset){
+		if(!finalmoveset) {
 			if (input_buffer_jump < 8 && (!key_down))
 			{
 				scr_soundeffect(sfx_jump)

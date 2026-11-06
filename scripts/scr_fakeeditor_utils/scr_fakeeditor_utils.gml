@@ -1,36 +1,46 @@
 #macro LEVELS_FILE_PATH "/storage/emulated/0/Documents/pizza tower android/levels/"
-function fakeeditor_play_level(){
-	if(!obj_fakeeditor.in_play_mode) {
+function fakeeditor_play_level()
+{
+	if(!obj_fakeeditor.in_play_mode) 
+	{
 		global.forcehidecontrols = false
 		with(obj_virtual_controller)
 			event_perform(ev_mouse, ev_global_left_button)
 		scr_resize_room(0,room_height,room_width,room_height)
-		with(obj_fakeeditor_object) {
+		with(obj_fakeeditor_object) 
+		{
 			visible = false
-			if(object_exists(asset_get_index(fake_ed_content))) {
+			if(object_exists(fake_ed_content)) 
+			{
 				var _myvars = variable_instance_get_names(id)
 				array_push(_myvars,"sprite_index")
 				array_push(_myvars,"image_xscale")
 				array_push(_myvars,"image_yscale")
 				var return_array = []
 				var clean_index = 0
-				for (var i = 0; i < array_length(_myvars); i++) {
+				for (var i = 0; i < array_length(_myvars); i++) 
+				{
 					var item = _myvars[i]
 					var found = false
-					for (var j = 0; j < array_length(global.fake_ed_remove_vars); j++) {
-					    if (item == global.fake_ed_remove_vars[j]) {
+					for (var j = 0; j < array_length(global.fake_ed_remove_vars); j++) 
+					{
+					    if (item == global.fake_ed_remove_vars[j]) 
+						{
 					        found = true
 					        break
 					    }
 					}
-					if (!found) {
+					if (!found) 
+					{
 					    return_array[clean_index] = item
 					    clean_index++
 					}
 				}
 				_myvars = return_array;
-				with(instance_create_depth(x, y, depth, asset_get_index(fake_ed_content))){
-					for (i = 0; i < array_length(_myvars); i++) {
+				with(instance_create_depth(x, y, depth, fake_ed_content))
+				{
+					for (i = 0; i < array_length(_myvars); i++) 
+					{
 						variable_instance_set(id, _myvars[i], variable_instance_get(other.id,_myvars[i]))
 					}
 					other.fake_ed_instance = id
@@ -39,29 +49,36 @@ function fakeeditor_play_level(){
 		}
 		with(all)
 		{
-			if(object_index != obj_fakeeditor || object_index != obj_virtual_controller)
+			if(object_index != obj_fakeeditor)
 			{
-				event_perform(ev_other,ev_room_start)
+				event_perform(ev_other, ev_room_start)
 			}
 		}
-		with(obj_player1){
+		with(obj_player1)
+		{
 			state = states.comingoutdoor
 			visible = false
 			sprite_index = spr_walkfront
 			image_index = 0
-			if(instance_exists(obj_exitgate)){
+			if(instance_exists(obj_exitgate))
+			{
 				x = obj_exitgate.x
 				y = obj_exitgate.y + 82
-			} else {
+			} 
+			else 
+			{
 				x = camera_get_view_x(view_camera[0]) + (camera_get_view_width(view_camera[0]) / 2)
 				y = camera_get_view_y(view_camera[0]) + (camera_get_view_height(view_camera[0]) / 2)
 			}
 			roomstartx = x
 			roomstarty = y
 		}
-	} else {
+	} 
+	else 
+	{
 		global.forcehidecontrols = true
-		with(obj_virtual_controller) event_perform(ev_mouse, ev_global_left_button)
+		with(obj_virtual_controller) 
+			event_perform(ev_mouse, ev_global_left_button)
 		with(obj_fakeeditor)
 		{
 			for(var i = 0;i < instances_len;i++)
@@ -91,30 +108,40 @@ function fakeeditor_play_level(){
 			musicID = scr_music(music)
 		}
 	}
-	with(obj_fakeeditor){
+	with(obj_fakeeditor)
+	{
 		in_play_mode = !in_play_mode
 	}
 }
-function fakeeditor_ask_object(){
+function fakeeditor_ask_object()
+{
 	fakeeditor_obj = get_string_async("Object Name", nejdmssx)
 }
-function fakeeditor_ask_edit(){
+function fakeeditor_ask_edit()
+{
 	var commonoptions = "save, load, help, delete level"
-	if(global.option_editor_oldedit){
-		if(instance_exists(obj_fakeeditor.selectedent)){
-			if(obj_fakeeditor.selectedent.fake_ed_content == "obj_solid_tiled" || obj_fakeeditor.selectedent.fake_ed_content == "obj_tiled"){
-				fakeed_istilemenu = true
-				fakeeditor_edit = get_string_async("Set object variable (<type> <variablename> <new value>), " + commonoptions + ", tilemenu.", nejdmssx)
+	if(global.option_editor_oldedit)
+	{
+		with(obj_fakeeditor.selectedent)
+		{
+			if(fake_ed_content == obj_solid_tiled || fake_ed_content == obj_tiled)
+			{
+				other.fakeed_istilemenu = true
+				other.fakeeditor_edit = get_string_async("Set object variable (<type> <variablename> <new value>), " + commonoptions + ", tilemenu.", nejdmssx)
 				return;
 			}
 		}
 		fakeeditor_edit = get_string_async("Set object variable (<type> <variablename> <new value>), " + commonoptions + ".", nejdmssx)
-	} else {
+	} 
+	else 
+	{
 		fakeeditor_edit = get_string_async(commonoptions + ".", nejdmssx)
 	}
 }
-function fakeeditor_toggle_swipe(){
-	with(obj_fakeeditor){
+function fakeeditor_toggle_swipe()
+{
+	with(obj_fakeeditor)
+	{
 		if(global.fake_ed_tilemenu)
 		{
 			swipemode = false
@@ -126,9 +153,9 @@ function fakeeditor_toggle_swipe(){
 		swipemode = !swipemode
 	}
 }
-function fakeeditor_delete_object(){
-	with(obj_fakeeditor){
-		if(instance_exists(transfotip)){
+function fakeeditor_delete_object() {
+	with(obj_fakeeditor) {
+		if(instance_exists(transfotip)) {
 			instance_destroy(transfotip)
 		}
 		transfotip = instance_create(0,0,obj_transfotip)
@@ -136,44 +163,47 @@ function fakeeditor_delete_object(){
 		{
 			if instance_exists(other.selectedent)
 			{
-				text = ("{u}DELETED " + string_upper(other.selectedent.fake_ed_content) + "/")
+				text = ("{u}DELETED " + string_upper(object_get_name(other.selectedent.fake_ed_content)) + "/")
 				instance_destroy(other.selectedent)
 			}
 		}
 	}
 }
 
-function fakeeditor_copy_object(){
-	with(obj_fakeeditor) {
-		with(selectedent){
+function fakeeditor_copy_object()
+{
+	with(obj_fakeeditor) 
+	{
+		with(selectedent)
 			instance_copy(false)
-		}
 	}
 }
 
-function fakeeditor_create_object(ob){
+function fakeeditor_create_object(ob)
+{
 	var _object = asset_get_index(ob)
-	if(object_exists(_object)){
-		with(instance_create_depth(camera_get_view_x(view_camera[0])  + view_get_wport(view_camera[0]) / 4, camera_get_view_y(view_camera[0]) + view_get_hport(view_camera[0]) / 4, depth, obj_fakeeditor_object)){
+	if(object_exists(_object))
+	{
+		with(instance_create_depth(camera_get_view_x(view_camera[0])  + view_get_wport(view_camera[0]) / 4, camera_get_view_y(view_camera[0]) + view_get_hport(view_camera[0]) / 4, depth, obj_fakeeditor_object))
+		{
 			var _varnames = []
 			var _varvalues = []
-			fake_ed_content = ob
-			with(instance_create_depth(x, y, depth, obj_null)){
+			fake_ed_content = asset_get_index(ob)
+			with(instance_create_depth(x, y, depth, obj_null))
+			{
 				event_perform_object(_object,ev_create,0)
 				_varnames = variable_instance_get_names(id)
-				for(var i = 0; i < array_length(_varnames); i++){
+				for(var i = 0; i < array_length(_varnames); i++)
 					_varvalues[i] = variable_instance_get(id, _varnames[i])
-				}
 				instance_destroy(id)
 			}
-			for(var i = 0; i < array_length(_varnames); i++){
+			for(var i = 0; i < array_length(_varnames); i++)
 				variable_instance_set(id, _varnames[i], _varvalues[i])
-			}
 		}
-		with(obj_fakeeditor){	
-			if(instance_exists(transfotip)){
+		with(obj_fakeeditor)
+		{	
+			if(instance_exists(transfotip))
 				instance_destroy(transfotip)
-			}
 			transfotip = instance_create(0,0,obj_transfotip)
 			with(transfotip)
 			{
@@ -182,15 +212,21 @@ function fakeeditor_create_object(ob){
 		}
 	}
 }
-function fakeeditor_toggle_grid(){
+
+function fakeeditor_toggle_grid()
+{
 	obj_fakeeditor.grid_mode = !obj_fakeeditor.grid_mode
 }
-function fakeeditor_edit_object_var(argument0) //gml_Script_edit_object_var
+function fakeeditor_edit_object_var(_a0) //gml_Script_edit_object_var
 {
-	var commandstring = argument0
-	try{
+	var commandstring = _a0
+	// not sure if i can remove the braces here
+	try
+	{
 		string_split(commandstring, " ");
-	} catch(err){
+	} 
+	catch(err)
+	{
 		return get_string_async("string splitting failed, aborting...", err);
 	}
     var commands = string_split(commandstring, " ")
@@ -393,9 +429,11 @@ function fakeeditor_edit_object_var(argument0) //gml_Script_edit_object_var
         }
     }
 }
-function fakeeditor_initcamera(){
+function fakeeditor_initcamera()
+{
 	global.forcehidecontrols = true
-	with(obj_virtual_controller) event_perform(ev_mouse, ev_global_left_button)
+	with(obj_virtual_controller) 
+		event_perform(ev_mouse, ev_global_left_button)
 	view_w = 960
 	view_h = 540
 	cx = 0
@@ -404,8 +442,9 @@ function fakeeditor_initcamera(){
 	drag_speed = 0.6
 	zoom = 1
 	obj_camera.ignorebounds = true
-	scr_resize_room(0,room_height,room_width,room_height) // dont ask
-	with(obj_music){
+	scr_resize_room(0, room_height, room_width, room_height) // dont ask
+	with(obj_music)
+	{
 		audio_stop_sound(musicID)
 		music = mu_editor
 		musicID = scr_music(music)
@@ -414,35 +453,38 @@ function fakeeditor_initcamera(){
 
 function fakeeditor_camera_update()
 {
-	if(mouse_check_button_pressed(mb_left)) {
+	if(mouse_check_button_pressed(mb_left)) 
+	{
 		cx = mouse_x;
 		cy = mouse_y; 
 	}
-	if(mouse_check_button(mb_left)) { 
+	if(mouse_check_button(mb_left)) 
+	{ 
 		camera_set_view_pos(view_camera[0], cx - (mouse_x - camera_get_view_x(view_camera[0])), cy - (mouse_y - camera_get_view_y(view_camera[0])))
 	} 
 }
 
-function fakeeditor_draw_grid() {
+function fakeeditor_draw_grid() 
+{
 	startX = max(0, floor(camera_get_view_x(view_camera[0]) / grid_size) * grid_size);
 	startY = max(0, floor(camera_get_view_y(view_camera[0]) / grid_size) * grid_size);
 	endX = camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]);
 	endY = camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]);
-    for (var _x = startX; _x <= endX; _x += grid_size) {
+    for (var _x = startX; _x <= endX; _x += grid_size) 
 		draw_line(_x, startY, _x, endY);
-	}
-	for (var _y = startY; _x <= endY; _y += grid_size) {
+	for (var _y = startY; _x <= endY; _y += grid_size)
 	    draw_line(startX, _y, endX, _y);
-	}
 }
 function fakeeditor_save_editor_objects()
 {
 	var myobjects = array_create(0)
     with(obj_fakeeditor_object)
     {
-        var objectproperties = {
+        var objectproperties = 
+		{
 			x: x,
 			y: y,
+			sprite_index: sprite_index,
 			image_angle: image_angle,
 			image_xscale: image_xscale,
 			image_yscale: image_yscale,
@@ -450,15 +492,18 @@ function fakeeditor_save_editor_objects()
 			image_blend: image_blend,
 			persistent: persistent,
 			depth: depth,
-			fake_ed_content: fake_ed_content,
+			fake_ed_content: object_get_name(fake_ed_content),
 		}
         var var_array = variable_instance_get_names(id)
 		var return_array = [];
 		var clean_index = 0; // Iterate through array1
-		for (var i = 0; i < array_length(var_array); i++) {
+		for (var i = 0; i < array_length(var_array); i++) 
+		{
 			var item = var_array[i];
 			var found = false;
-			if(array_get_index(item,global.fake_ed_remove_vars) != -1){
+			
+			if(array_contains(global.fake_ed_remove_vars, item))
+			{
 				found = true	
 			}
 			if (!found) {
@@ -467,9 +512,9 @@ function fakeeditor_save_editor_objects()
 			}
 		}
 		var_array = return_array;
-		array_push(var_array,"fake_ed_content")
         var i = 0
-		while (i < array_length(var_array)){
+		while (i < array_length(var_array))
+		{
 			var variable = var_array[i];
 			if(variable == "musicname" || variable == "content" || variable == "targetRoom" || variable == "sprite" || variable == "tileset")
 			{
@@ -492,7 +537,8 @@ function fakeeditor_save_editor_objects()
 	var levelbuffer = buffer_create(string_byte_length(liststring) + 1, buffer_fixed, 1)
 	buffer_write(levelbuffer, buffer_string, liststring)
 	buffer_save(levelbuffer, "levels/level.txt")
-	if(os_type == os_android){
+	if(os_type == os_android)
+	{
 		var i = 0;
 		var baseFilename = LEVELS_FILE_PATH + "level";
 		var filename = baseFilename + string(i) + ".png";
@@ -507,77 +553,85 @@ function fakeeditor_save_editor_objects()
 			show_message_async("Failed to save level data.\nCopy the output below:" + liststring)
 	}
 	buffer_delete(levelbuffer)
-	if(os_type == os_windows){
+	if(os_type == os_windows)
+	{
 		get_string_async("copy into browser","file:///" + game_save_id + "levels/level.txt")
 	}
 }
-function fakeeditor_load_editor_objects(argument0)
+function fakeeditor_load_editor_objects(_argument0)
 {
-    if ((!is_string(argument0)) || argument0 == "")
+    if ((!is_string(_argument0)) || _argument0 == "")
         show_message_async("No input provided")
     else
     {
-		if(os_type == os_android){
+		if(os_type == os_android) {
 			// use png cause of android 14 being too stingy regarding apps to read files.
 			// TODO: Tell the player the existence of this feature.
-			if(string_pos_ext(".png",argument0,string_length(argument0)-4) != 0){
-				var filepath = LEVELS_FILE_PATH + argument0
-				if(file_exists(filepath)){
-					var objbuffer = buffer_load(LEVELS_FILE_PATH + argument0)
+			// TODO: Add a file picker, or at least a permission to manage all files and invalidate
+			//       the issue above.
+			if(string_pos_ext(".png",_argument0,string_length(_argument0)-4) != 0)
+			{
+				var filepath = LEVELS_FILE_PATH + _argument0
+				if(file_exists(filepath))
+				{
+					var objbuffer = buffer_load(LEVELS_FILE_PATH + _argument0)
 					var objstring = buffer_read(objbuffer, buffer_string)
 					buffer_delete(objbuffer)
 					
 					var objload = json_parse(objstring)
-			        while(array_length(objload) > 0) {
+			        while(array_length(objload) > 0) 
+					{
 						var loadedobject = array_pop(objload)
-						with(instance_create(0, 0, obj_fakeeditor_object)) {
+						with(instance_create(0, 0, obj_fakeeditor_object)) 
+						{
 							var var_array = variable_struct_get_names(loadedobject)
 							var i = 0
 							while (i < array_length(var_array))
 				            {
 								var tempvar = variable_struct_get(loadedobject, var_array[i])
-								if(is_string(tempvar)){
-									if(string_pos("asset|",tempvar) == 1){
+								if(is_string(tempvar)) {
+									if(string_pos("asset|",tempvar) == 1)
 										tempvar = asset_get_index(string_replace(tempvar,"asset|",""))
-									}
 								}
-								if(tempvar == pointer_null || tempvar == pointer_invalid){
+								if(tempvar == pointer_null || tempvar == pointer_invalid)
 									tempvar = undefined
-								}
 								variable_instance_set(id, var_array[i], tempvar)
 				                i++
 				            }
 						}
 					}
-				} else {
-					show_message_async("No file exists at: " + LEVELS_FILE_PATH + argument0)
 				}
+				else 
+					show_message_async("No file exists at: " + LEVELS_FILE_PATH + _argument0)
 				return;
 			}
 		}
-		try {
-			json_parse(argument0)
-		} catch(err){
+		try 
+		{
+			json_parse(_argument0)
+		} catch(err)
+		{
 			get_string_async("JSON ERROR",string(err))
 			return;
 		}
-        var objload = json_parse(argument0)
-        while(array_length(objload) > 0) {
+        var objload = json_parse(_argument0)
+        while(array_length(objload) > 0) 
+		{
 			var loadedobject = array_pop(objload)
-			with(instance_create(0, 0, obj_fakeeditor_object)) {
+			with(instance_create(0, 0, obj_fakeeditor_object)) 
+			{
 				var var_array = variable_struct_get_names(loadedobject)
 				var i = 0
 				while (i < array_length(var_array))
 	            {
 					var tempvar = variable_struct_get(loadedobject, var_array[i])
-					if(is_string(tempvar)){
-						if(string_pos("asset|",tempvar) == 1){
+					if(is_string(tempvar))
+					{
+						if(string_pos("asset|",tempvar) == 1)
 							tempvar = asset_get_index(string_replace(tempvar,"asset|",""))
-						}
 					}
-					if(tempvar == pointer_null || tempvar == pointer_invalid){
+					if(tempvar == pointer_null || tempvar == pointer_invalid)
 						tempvar = undefined
-					}
 					variable_instance_set(id, var_array[i], tempvar)
 	                i++
 	            }
@@ -585,21 +639,24 @@ function fakeeditor_load_editor_objects(argument0)
 		}
 	}    
 }
-function scr_resize_room(_x,_y,_width,_height){
-	with(obj_camera){
+function scr_resize_room(_x,_y,_width,_height)
+{
+	with(obj_camera)
+	{
 		fakex = _x
 		fakey = _y
 		fakewidth = _width
 		fakeheight = _height
 	}
 	/*
-	with(instance_create(_x,_y,obj_1x1)){
+	with(instance_create(_x,_y,obj_1x1)) {
 		image_xscale = _width
 		image_yscale = _height
 	}
 	*/
 }
-function draw_tileset_picker(_tilespr){
+function draw_tileset_picker(_tilespr)
+{
 	//if live_call(_tilespr) return live_result;
 	var offsetx = obj_fakeeditor.tilemenu_offsetx
 	var offsety = obj_fakeeditor.tilemenu_offsety
@@ -628,11 +685,13 @@ function draw_tileset_picker(_tilespr){
 	{
 		if(tile_swipemode)
 		{
-			if(mouse_check_button_pressed(mb_left)) {
+			if(mouse_check_button_pressed(mb_left)) 
+			{
 				t_cx = mouse_x + tilemenu_offsetx;
 				t_cy = mouse_y + tilemenu_offsety; 
 			}
-			if(mouse_check_button(mb_left)) { 
+			if(mouse_check_button(mb_left)) 
+			{ 
 				tilemenu_offsetx = clamp(other.tile_width * -10, round((t_cx - mouse_x) / other.tile_width) * other.tile_width, sprite_get_width(_tilespr) + other.tile_width * 5)
 				tilemenu_offsety = clamp(other.tile_height * -10, round((t_cy - mouse_y) / other.tile_height) * other.tile_height, sprite_get_height(_tilespr) + other.tile_height * 5)
 			} 
@@ -640,35 +699,34 @@ function draw_tileset_picker(_tilespr){
 		}
 	}
 	holdclick += mouse_check_button(mb_left)
-	if(mouse_check_button_released(mb_left)){
+	if(mouse_check_button_released(mb_left))
 		holdclick = 0
-	}
-	if(holdclick > 30){
+	if(holdclick > 30)
+	{
 		holdclick = 0
-		if(os_type == os_windows){
+		if(os_type == os_windows)
 			mouse_clear(mb_left)
-		}
 		fake_ed_cursor_pos_x = cursorposx - offsetx
 		fake_ed_cursor_pos_y = cursorposy - offsety
 		fake_ed_tile_string = get_string_async("top, bottom, left, right, topleft, topright, bottomleft, bottomright, middle, single, close menu","")
 	}
 }
-function fakeeditor_perfom_edit(){
-	if(nejdmssx == "save"){
+function fakeeditor_perfom_edit()
+{
+	if(nejdmssx == "save")
 		fakeeditor_save_editor_objects()
-	}
-	if(nejdmssx == "load"){
+	if(nejdmssx == "load")
+	{
 					
-		if(clipboard_has_text()){
+		if(clipboard_has_text())
 			amogustextlol = get_string_async("load code / filename: ", clipboard_get_text())
-		} else{
-				amogustextlol = get_string_async("load code / filename: ","")
-		}
+		else
+			amogustextlol = get_string_async("load code / filename: ","")
 	}
-	/*if(nejdmssx == "setrank"){
-		fakeeditor_ask_rank()
-	}*/
-	if(nejdmssx == "help"){
+	/*if(nejdmssx == "setrank")
+		fakeeditor_ask_rank()*/
+	if(nejdmssx == "help")
+	{
 		get_string_async("",@"
 TILES:
 obj_solid_tiled -- use the tilemenu command when it is selected to pick tiles (tap and hold to select them).
@@ -700,14 +758,17 @@ obj_platform -- generic platform that the player can stand on.
 obj_donkey -- cow.
 		")
 	}
-	if(nejdmssx == "delete level"){
-		with(obj_fakeeditor_object){
+	if(nejdmssx == "delete level")
+	{
+		with(obj_fakeeditor_object)
 			instance_destroy()
-		}
 	}
-	if(nejdmssx == "tilemenu"){
-		if(fakeed_istilemenu){
-			with(obj_fakeeditor.selectedent){
+	if(nejdmssx == "tilemenu")
+	{
+		if(fakeed_istilemenu)
+		{
+			with(obj_fakeeditor.selectedent)
+			{
 				fake_ed_sprite_clicked = false
 				fake_ed_hold_menu = 1
 				global.fake_ed_tilemenu = 1
@@ -720,7 +781,7 @@ function fakeeditor_create_scale_buttons()
 {
 	with(obj_fakeeditor_scale) 
 	{
-		instance_destroy()
+		instance_destroy();
 	}
 	with(instance_create(x + sprite_width - sprite_xoffset, y + (sprite_height / 2) - sprite_yoffset, obj_fakeeditor_scale))
 	{
@@ -737,5 +798,26 @@ function fakeeditor_create_scale_buttons()
 		object_id = other.id
 		object_xscale = other.image_xscale
 		object_yscale = other.image_yscale
+	}
+	if(fake_ed_content == obj_camera_bounds_trigger || fake_ed_content == obj_camera_bounds_trigger_door)
+	{		
+		with(instance_create(x + camera_width + camera_x, y - (camera_height / 2) + camera_y, obj_fakeeditor_scale))
+		{
+			dir = 0
+			depth = other.depth - 1
+			object_id = other.id
+			object_xscale = other.camera_width
+			object_yscale = other.camera_height
+			camera_trigger = true
+		}
+		with(instance_create(x + (camera_width / 2) + camera_x, y + camera_y, obj_fakeeditor_scale))
+		{
+			dir = 90
+			depth = other.depth - 1
+			object_id = other.id
+			object_xscale = other.camera_width
+			object_yscale = other.camera_height
+			camera_trigger = true
+		}
 	}
 }

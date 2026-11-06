@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var poo = 5
 if (drop == 1)
 	poo = 10

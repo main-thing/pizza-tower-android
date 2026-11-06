@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "tile_ball_tileset",
   "spriteId": {
-    "name": "tilespr_tile_ball_tileset",
-    "path": "sprites/tilespr_tile_ball_tileset/tilespr_tile_ball_tileset.yy",
+    "name": "tile_ball",
+    "path": "sprites/tile_ball/tile_ball.yy",
   },
   "tileWidth": 32,
   "tileHeight": 32,
@@ -135,7 +135,7 @@
     "TileSerialiseData": [],
   },
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "2019",
+    "path": "folders/Tile Sets/2019.yy",
   },
 }

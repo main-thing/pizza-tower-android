@@ -1,7 +1,8 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (ds_list_find_index(global.saveroom, id) == -1)
 {
 	var objectlist = ds_list_create()
-	ds_list_add(objectlist, 407, 534, 545)
+	ds_list_add(objectlist, obj_baddie, obj_collect, obj_bigcollect)
 	var instancelist = ds_list_create()
 	for (var i = 0; i < ds_list_size(objectlist); i++)
 	{

@@ -10,7 +10,7 @@ function scr_player_cheesepepjump()
 	}
 	hsp = movespeed
 	move = (key_left + key_right)
-	if(!finalmoveset){
+	if(!finalmoveset) {
 		if ((!key_jump2) && (!jumpstop) && vsp < 0)
 		{
 			jumpstop = 1

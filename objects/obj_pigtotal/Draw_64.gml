@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 draw_sprite(spr_pigtotal, -1, 860, 440)
 draw_set_font(global.bigfont)
 draw_set_halign(fa_center)

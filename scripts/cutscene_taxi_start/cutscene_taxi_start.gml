@@ -1,6 +1,6 @@
-function cutscene_taxi_start(argument0)
+function cutscene_taxi_start(_a0)
 {
-	var player = argument0
+	var player = _a0
 	with (player)
 	{
 		global.failcutscene = 1

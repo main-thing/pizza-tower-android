@@ -1,4 +1,24 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if(event.pre_draw[0] == "")
 	return;
 if(event.pre_draw[1] != undefined)
-	if(live_snippet_call(event.pre_draw[1])){}else{get_string_async("AN ERROR HAS OCCURRED", live_result)}
+{
+	if(USE_GMLIVE)
+	{
+		if(live_snippet_call(event.pre_draw[1])) {}else{get_string_async("AN ERROR HAS OCCURRED", live_result)}
+	}
+	else
+	{
+		if(NSP_check_saved(event.pre_draw[1]))
+		{
+			try 
+			{
+				NSP_execute_saved(event.pre_draw[1])
+			} 
+			catch(err)
+			{
+				get_string_async("AN ERROR HAS OCCURRED", err)
+			}
+		}
+	}
+}

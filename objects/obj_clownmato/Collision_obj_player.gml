@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (other)
 {
 	if (((!instakillmove) or state == states.mach2) && state != states.bump && other.state == states.walk && state != states.chainsaw)

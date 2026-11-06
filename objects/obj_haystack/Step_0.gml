@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 mask_index = spr_haystack
 if (sprite_index != spr_haystackburning && sprite_index != spr_haystackburningup)
 {
@@ -65,7 +66,7 @@ else if (sprite_index == spr_haystackburning)
 				scr_losepoints()
 				scr_soundeffect(sfx_scream3)
 				if (state != states.fireass)
-					tv_push_prompt_once(tv_create_prompt("This is the fireass transformation text", tvprompt.transfo, self._spr_tv_fireass, 3), "fireass")
+					tv_push_prompt_once(tv_create_prompt("This is the fireass transformation text", tvprompt.transfo, self.tv_fireass, 3), "fireass")
 				state = states.fireass
 				image_index = 0
 				vsp = -5

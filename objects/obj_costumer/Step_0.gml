@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 cutscenetimer--
 if (cutscenetimer < 0 && moving == 0 && throwcoin == 0)
 {

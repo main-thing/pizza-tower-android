@@ -1,31 +1,31 @@
-function Vector2(argument0, argument1) constructor
+function Vector2(_a0, _a1) constructor
 {
-	x = argument0
-	y = argument1
+	x = _a0
+	y = _a1
 }
 
-function cycle(argument0, argument1, argument2)
+function cycle(_a0, _a1, _a2)
 {
-	var delta = (argument2 - argument1)
-	var result = ((argument0 - argument1) % delta)
+	var delta = (_a2 - _a1)
+	var result = ((_a0 - _a1) % delta)
 	if (result < 0)
 		result += delta
-	return (result + argument1);
+	return (result + _a1);
 }
 
-function angle_rotate(argument0, argument1, argument2)
+function angle_rotate(_a0, _a1, _a2)
 {
-	var diff = cycle((argument1 - argument0), -180, 180)
-	if (diff < (-argument2))
-		return (argument0 - argument2);
-	if (diff > argument2)
-		return (argument0 + argument2);
-	return argument1;
+	var diff = cycle((_a1 - _a0), -180, 180)
+	if (diff < (-_a2))
+		return (_a0 - _a2);
+	if (diff > _a2)
+		return (_a0 + _a2);
+	return _a1;
 }
 
-function get_velocity(argument0, argument1)
+function get_velocity(_a0, _a1)
 {
-	return (argument0 / argument1);
+	return (_a0 / _a1);
 }
 
 function Wave(from, to, duration, offset, time = noone)
@@ -39,22 +39,22 @@ function Wave(from, to, duration, offset, time = noone)
 	return from + a4 + (sin((((t * 0.001) + (duration * offset)) / duration) * (pi * 2)) * a4);
 }
 
-function distance_to_pos(argument0, argument1, argument2, argument3, argument4, argument5)
+function distance_to_pos(_a0, _a1, _a2, _a3, _a4, _a5)
 {
-	return (abs((argument0 - argument2)) <= argument4 && abs((argument1 - argument3)) <= argument5);
+	return (abs((_a0 - _a2)) <= _a4 && abs((_a1 - _a3)) <= _a5);
 }
 
-function distance_between_points(argument0, argument1, argument2, argument3)
+function distance_between_points(_a0, _a1, _a2, _a3)
 {
-	return sqrt((sqr((argument2 - argument0)) + sqr((argument3 - argument1))));
+	return sqrt((sqr((_a2 - _a0)) + sqr((_a3 - _a1))));
 }
 
-function calculate_jump_velocity_alt(argument0, argument1, argument2, argument3)
+function calculate_jump_velocity_alt(_a0, _a1, _a2, _a3)
 {
-	var xx = (argument0 - x)
-	var yy = (argument1 - y)
-	var g = argument3
-	var tmp = (power(argument2, 4) - (g * ((g * power(xx, 2)) + ((2 * yy) * power(argument2, 2)))))
+	var xx = (_a0 - x)
+	var yy = (_a1 - y)
+	var g = _a3
+	var tmp = (power(_a2, 4) - (g * ((g * power(xx, 2)) + ((2 * yy) * power(_a2, 2)))))
 	if (tmp > 0)
 	{
 		if (xx == 0)
@@ -67,11 +67,11 @@ function calculate_jump_velocity_alt(argument0, argument1, argument2, argument3)
 		}
 		else
 		{
-			a1 = arctan2((power(argument2, 2) + sqrt(tmp)), (g * xx))
-			a2 = arctan2((power(argument2, 2) - sqrt(tmp)), (g * xx))
+			a1 = arctan2((power(_a2, 2) + sqrt(tmp)), (g * xx))
+			a2 = arctan2((power(_a2, 2) - sqrt(tmp)), (g * xx))
 		}
-		hsp = ((cos(a1) * argument2) * 1.2)
-		vsp = (cos(a2) * argument2)
+		hsp = ((cos(a1) * _a2) * 1.2)
+		vsp = (cos(a2) * _a2)
 		if (vsp > 0)
 			vsp *= -1
 		hsp = (abs(hsp) * sign(xx))
@@ -79,23 +79,23 @@ function calculate_jump_velocity_alt(argument0, argument1, argument2, argument3)
 	exit;
 }
 
-function calculate_jump_velocity(argument0, argument1, argument2, argument3)
+function calculate_jump_velocity(_a0, _a1, _a2, _a3)
 {
-	var a = get_projectile_angle(x, y, argument0, argument1, argument2, argument3)
-	hsp = lengthdir_x(argument2, a)
-	vsp = lengthdir_y(argument2, a)
+	var a = get_projectile_angle(x, y, _a0, _a1, _a2, _a3)
+	hsp = lengthdir_x(_a2, a)
+	vsp = lengthdir_y(_a2, a)
 	exit;
 }
 
-function get_projectile_angle(argument0, argument1, argument2, argument3, argument4, argument5)
+function get_projectile_angle(_a0, _a1, _a2, _a3, _a4, _a5)
 {
-	var xt = floor((argument2 - argument0))
-	var yt = (-(floor((argument3 - argument1))))
-	var root = (power(argument4, 4) - (argument5 * ((argument5 * sqr(xt)) + ((2 * sqr(argument4)) * yt))))
+	var xt = floor((_a2 - _a0))
+	var yt = (-(floor((_a3 - _a1))))
+	var root = (power(_a4, 4) - (_a5 * ((_a5 * sqr(xt)) + ((2 * sqr(_a4)) * yt))))
 	var angle = 0
 	if (root > 0)
 	{
-		angle = radtodeg(arctan(((sqr(argument4) + sqrt(root)) / (argument5 * xt))))
+		angle = radtodeg(arctan(((sqr(_a4) + sqrt(root)) / (_a5 * xt))))
 		if (xt < 0)
 			angle -= 180
 	}

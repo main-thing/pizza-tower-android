@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Debug",
-    "path": "folders/Scripts/Debug.yy",
+    "path": "folders/Objects/Game settings/Scripts/Debug.yy",
   },
 }

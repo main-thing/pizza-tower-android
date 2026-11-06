@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 totem_clear(id)
 var empty = totem_empty(id)
 if empty

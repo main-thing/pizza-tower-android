@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 250,
   "height": 250,
   "textureGroupId": {
@@ -119,11 +120,11 @@
       0,
     ],
     "resourceVersion": "1.0",
-    "loadedVersion": null,
+    "loadedVersion": {},
     "resourceType": "GMNineSliceData",
   },
   "parent": {
-    "name": "Effects and particles",
-    "path": "folders/Sprites/Effects and particles.yy",
+    "name": "Effects & particles",
+    "path": "folders/Sprites/Effects & particles.yy",
   },
 }

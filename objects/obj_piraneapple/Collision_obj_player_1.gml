@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 attack = 1
 alarm[0] = 50
 image_xscale = (-(sign((x - other.x))))

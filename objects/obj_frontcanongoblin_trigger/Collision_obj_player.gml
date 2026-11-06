@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if ((!active) && (!instance_exists(obj_frontcanongoblin)))
 {
 	active = 1

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (other)
 {
 	if (instance_exists(baddieID) && baddieID.state != states.grabbed && baddieID.object_index != obj_tank && (!baddieID.invincible))

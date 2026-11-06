@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (cooldown == 0 && (!instance_exists(boulderID)))
 {
 	with (instance_create(x, y, obj_boulder))

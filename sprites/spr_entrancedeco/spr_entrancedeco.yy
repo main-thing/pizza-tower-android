@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 640,
   "height": 1120,
   "textureGroupId": {
@@ -68,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Entrance",
-    "path": "folders/Sprites/Backgrounds/Entrance.yy",
+    "path": "folders/Sprites/Tilesets/Entrance.yy",
   },
 }

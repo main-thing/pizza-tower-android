@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 scr_initenemy()
 substate = states.walk
 substate_max = (3 * room_speed)

@@ -101,8 +101,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_34FE1DDD","properties":[],"isDnd":false,"objectId":{"name":"obj_onewaybigblock","path":"objects/obj_onewaybigblock/obj_onewaybigblock.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":512.0,"y":1856.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B9A18B45","properties":[],"isDnd":false,"objectId":{"name":"obj_platform","path":"objects/obj_platform/obj_platform.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":3.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":512.0,"y":704.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B1E73E2","properties":[],"isDnd":false,"objectId":{"name":"obj_priest","path":"objects/obj_priest/obj_priest.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":800.0,"y":562.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_50D0C169","properties":[],"isDnd":false,"objectId":{"name":"obj_lap2fixer","path":"objects/obj_lap2fixer/obj_lap2fixer.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":544.0,"y":3072.0,},
-      ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
+      ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritVisibility":true,"inheritSubLayers":true,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","tilesetId":{"name":"tileset_medieval2","path":"tilesets/tileset_medieval2/tileset_medieval2.yy",},"x":0,"y":0,"tiles":{"TileDataFormat":1,"SerialiseWidth":32,"SerialiseHeight":110,"TileCompressedData":[
 -70,18,-24,22,-8,18,2,22,51,-20,32,2,53,22,-8,18,2,22,23,-20,0,2,21,22,-8,18,2,22,23,-20,0,2,
 21,22,-8,18,2,22,23,-20,0,2,21,22,-8,18,2,22,23,-20,0,2,21,22,-8,18,2,22,23,-20,0,2,21,22,
@@ -141,8 +140,8 @@
 22,5,23,0,0,21,22,-14,18,2,22,51,-11,32,5,33,0,0,21,22,-14,18,2,22,23,-14,0,2,21,22,-14,18,
 2,22,23,-14,0,2,21,22,-14,18,2,22,23,-14,0,2,21,22,-14,18,2,22,23,-14,0,2,21,22,-14,18,2,22,
 23,-12,0,4,56,57,21,22,-14,18,2,22,23,-12,0,4,66,67,73,22,-14,18,2,22,71,-13,12,3,73,22,22,-14,
-18,-17,22,-201,18,],},"visible":true,"depth":100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
-    {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Backgrounds_1","spriteId":{"name":"bg_medievallibrairy1","path":"sprites/bg_medievallibrairy1/bg_medievallibrairy1.yy",},"colour":4294967295,"x":0,"y":0,"htiled":true,"vtiled":true,"hspeed":0.0,"vspeed":0.0,"stretch":false,"animationFPS":15.0,"animationSpeedType":0,"userdefinedAnimFPS":false,"visible":true,"depth":200,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
+18,-17,22,-201,18,],},"visible":true,"depth":100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritVisibility":true,"inheritSubLayers":true,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
+    {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Backgrounds_1","spriteId":{"name":"bg_medievallibrairy1","path":"sprites/bg_medievallibrairy1/bg_medievallibrairy1.yy",},"colour":4294967295,"x":0,"y":0,"htiled":true,"vtiled":true,"hspeed":0.0,"vspeed":0.0,"stretch":false,"animationFPS":15.0,"animationSpeedType":0,"userdefinedAnimFPS":false,"visible":true,"depth":200,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritVisibility":true,"inheritSubLayers":true,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
   ],
   "inheritLayers": false,
   "creationCodeFile": "${project_dir}/rooms/dragonlair_5/RoomCreationCode.gml",
@@ -232,7 +231,6 @@
     {"name":"inst_34FE1DDD","path":"rooms/dragonlair_5/dragonlair_5.yy",},
     {"name":"inst_B9A18B45","path":"rooms/dragonlair_5/dragonlair_5.yy",},
     {"name":"inst_B1E73E2","path":"rooms/dragonlair_5/dragonlair_5.yy",},
-    {"name":"inst_50D0C169","path":"rooms/dragonlair_5/dragonlair_5.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
@@ -256,7 +254,7 @@
     "PhysicsWorldPixToMetres": 0.1,
   },
   "parent": {
-    "name": "Dragonlair",
-    "path": "folders/Rooms/Old Levels/Dragonlair.yy",
+    "name": "Dragon's Lair",
+    "path": "folders/Rooms/Levels/Old Levels/Scrapped/Dragon's Lair.yy",
   },
 }

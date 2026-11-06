@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 global.style = 0
 global.stylethreshold = 0
 global.stylemultiplier = 0

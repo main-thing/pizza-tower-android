@@ -1,9 +1,9 @@
-function scr_get_tutorial_key(argument0) //gml_Script_scr_get_tutorial_key
+function scr_get_tutorial_key(_a0) //gml_Script_scr_get_tutorial_key
 {
     var spr = -4
     var ix = 0
     var txt = -4
-    switch argument0
+    switch _a0
     {
         case 37:
             spr = spr_tutorialgamepad
@@ -38,7 +38,7 @@ function scr_get_tutorial_key(argument0) //gml_Script_scr_get_tutorial_key
         default:
             spr = spr_tutorialkey
             ix = 0
-            txt = chr(argument0)
+            txt = chr(_a0)
             break
     }
 

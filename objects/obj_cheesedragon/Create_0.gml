@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 image_speed = 0.35
 attackcycle = 2
 alarm[0] = 400

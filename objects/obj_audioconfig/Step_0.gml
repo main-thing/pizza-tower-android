@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 scr_getinput()
 if (updown_buffer > 0)
 {

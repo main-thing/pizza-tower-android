@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (room != rank_room)
 {
 	instance_destroy(obj_fadeout)
@@ -9,11 +10,8 @@ if (room != rank_room)
 		sprite_index = spr_Timesup
 		image_index = 0
 		audio_stop_all()
-		if (global.oldsprites == true) {
-			scr_soundeffect(mu_timesup)
-		} else {
-			scr_soundeffect(mu_Your_Fat_Ass_Slows_You_Down)
-		}
+		scr_soundeffect(global.oldsprites ? mu_timesup : mu_fatass);
+
 	}
 	instance_create(0, 0, obj_timesupwar)
 	instance_destroy()

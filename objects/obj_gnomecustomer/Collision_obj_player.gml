@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (other.state == states.gotoplayer)
 	exit;
 if (!instance_exists(obj_deliverytimer))

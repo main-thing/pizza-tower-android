@@ -7,7 +7,7 @@ function scr_player_fireass()
 		instance_destroy()
 	if place_meeting((x + hsp), y, obj_solid)
 		image_xscale *= -1
-	if (sprite_index == spr_fireass or sprite_index == spr_scaredjump1 or sprite_index == spr_scaredjump2)
+	if (sprite_index == spr_fireass or sprite_index == spr_scaredjump1 or sprite_index == spr_scaredjump2 or sprite_index == spr_player_PZ_fireAss_intro)
 	{
 		if (floor(image_index) == (image_number - 1) && sprite_index == spr_fireass)
 			create_particle(x, (y + 25), states.ejected, 0)
@@ -29,7 +29,7 @@ function scr_player_fireass()
 		else if (grounded && vsp > 0 && (!(place_meeting(x, (y + 1), obj_ratblock))))
 		{
 			movespeed = 6
-			if (sprite_index == spr_fireass)
+			if (sprite_index == spr_fireass or sprite_index == spr_player_PZ_fireAss_intro)
 				sprite_index = spr_fireassground
 			else
 			{
@@ -47,6 +47,8 @@ function scr_player_fireass()
 	}
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_scaredjump1)
 		sprite_index = spr_scaredjump2
+	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_PZ_fireAss_intro)
+		sprite_index = spr_fireass
 	if (sprite_index == spr_fireassground)
 	{
 		hsp = (xscale * movespeed)

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 event_inherited()
 idle = 0
 landspr = spr_peasanto_idle

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (sprite_index == spr_gerome_idle1)
 {
 	with (obj_geromefollow)

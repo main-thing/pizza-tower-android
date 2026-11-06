@@ -1,10 +1,10 @@
-function scr_solid_player(argument0, argument1)
+function scr_solid_player(_a0, _a1)
 {
-	if(!finalmoveset){
+	if(!finalmoveset) {
 		var old_x = x
 		var old_y = y
-		x = argument0
-		y = argument1
+		x = _a0
+		y = _a1
 		if place_meeting(x, y, obj_solid)
 		{
 			var num = instance_place_list(x, y, obj_solid, global.instancelist, 0)
@@ -91,8 +91,8 @@ function scr_solid_player(argument0, argument1)
 	} else {
 		var old_x = x;
 		var old_y = y;
-		x = argument0;
-		y = argument1;
+		x = _a0;
+		y = _a1;
 		ds_list_clear(global.instancelist);
 		var num = instance_place_list(x, y, obj_solid, global.instancelist, false);
 		var _collided = false;
@@ -167,9 +167,9 @@ function scr_solid_player(argument0, argument1)
 	}
 }
 
-function check_slope_player(argument0)
+function check_slope_player(_a0)
 {
-	var slope = instance_place(x, y, argument0)
+	var slope = instance_place(x, y, _a0)
 	if slope
 	{
 		with (slope)

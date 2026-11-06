@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 depth = (obj_drawcontroller.depth + 2)
 function get_player_hp()
 {

@@ -1,9 +1,9 @@
-function EditorRoom(argument0, argument1) constructor
+function EditorRoom(_a0, _a1) constructor
 {
-	if (argument0 == undefined)
-		argument0 = 960
-	if (argument1 == undefined)
-		argument1 = 544
-	width = argument0
-	height = argument1
+	if (_a0 == undefined)
+		_a0 = 960
+	if (_a1 == undefined)
+		_a1 = 544
+	width = _a0
+	height = _a1
 }

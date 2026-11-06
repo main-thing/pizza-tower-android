@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var _hide = false;
 wave_timer += 20;
 with obj_tutorialbook

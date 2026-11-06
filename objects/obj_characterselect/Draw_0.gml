@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (ready == 0)
 {
 	var gp_num = gamepad_get_device_count()

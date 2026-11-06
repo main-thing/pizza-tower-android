@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var accel = 0.015
 if (!fadeout)
 {

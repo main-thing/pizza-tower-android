@@ -847,6 +847,12 @@ function nsp_states_get_new() {
 		case "duel":
 			return states.duel
 		break
+		case "slipnslideOLD":
+			return states.slipnslideOLD
+		break
+		case "golfidleOLD":
+			return states.golfidleOLD
+		break
   
 	 default:
 	   NSP_notify("SCRIPT: nsp_variable_global_get_new. ERROR: Trying to fetch a non-existant state ("+varname+").");

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var player = instance_nearest(x, y, obj_player)
 switch state
 {

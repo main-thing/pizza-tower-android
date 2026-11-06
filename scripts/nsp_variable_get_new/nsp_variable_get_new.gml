@@ -31,7 +31,7 @@ function nsp_variable_get_new() {
 	  return nspToken[NSP_TOK.abort];
   
 	  }
-	switch(varname){
+	switch(varname) {
 		
 	 // keyboard stuff:
 		case "keyboard_key": return keyboard_key;

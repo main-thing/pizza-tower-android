@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 164,
   "height": 177,
   "textureGroupId": {
@@ -77,7 +78,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Old Peppino",
-    "path": "folders/Sprites/HUD/Old Peppino.yy",
+    "name": "Peppino",
+    "path": "folders/Sprites/HUD/Old HUD/Peppino.yy",
   },
 }

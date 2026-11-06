@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 platformid = -4
 hsp_carry = 0
 vsp_carry = 0

@@ -11,7 +11,7 @@ function scr_player_ratmountskid()
 	image_speed = 0.4
 	if (movespeed <= 0)
 		state = states.ratmount
-	if(!finalmoveset){
+	if(!finalmoveset) {
 		if (key_jump && (!key_up))
 			input_buffer_jump = 0
 		if (input_buffer_jump < 8 && grounded && sprite_index != spr_player_ratmountswallow)

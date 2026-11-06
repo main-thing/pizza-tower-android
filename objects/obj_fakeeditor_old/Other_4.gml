@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (all)
 {
     if (variable_instance_exists(id, "createdbyeditor") && variable_instance_exists(id, "editorplacedroom") && variable_instance_exists(id, "oldinstanceeditor"))
@@ -35,7 +36,7 @@ with (all)
             _yscale = image_yscale
             for (i = 0; i < array_length(myvars); i++)
                 myvarsvalues[i] = variable_instance_get(id, myvars[i])
-			if(is_string(oldinstanceeditor)){
+			if(is_string(oldinstanceeditor)) {
 				instance_change(asset_get_index(oldinstanceeditor), false)
 			} else {
 				instance_change(oldinstanceeditor, false)

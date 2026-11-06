@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (cooldown == 0)
 {
 	notification_push(notifs.cow_kick, [room]);

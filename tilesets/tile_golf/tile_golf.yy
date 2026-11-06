@@ -135,7 +135,7 @@
     "TileSerialiseData": [],
   },
   "parent": {
-    "name": "Golf",
-    "path": "folders/Tile Sets/Golf.yy",
+    "name": "2019",
+    "path": "folders/Tile Sets/2019.yy",
   },
 }

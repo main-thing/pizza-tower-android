@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 wave_x = 0
 crosshair_x = x
 crosshair_y = y

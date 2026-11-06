@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 239,
   "height": 225,
   "textureGroupId": {
@@ -69,7 +70,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Control tutorial",
-    "path": "folders/Sprites/Misc/Control tutorial.yy",
+    "name": "Control tutorial ok",
+    "path": "folders/Sprites/Menu/Control tutorial ok.yy",
   },
 }

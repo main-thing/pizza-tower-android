@@ -1,6 +1,6 @@
 function scr_collide_player()
 {
-	if(!finalmoveset){
+	if(!finalmoveset) {
 		grounded = false
 		grinding = 0
 		var vsp_final = (vsp + vsp_carry)

@@ -1,6 +1,6 @@
-function cutscene_player_float(argument0)
+function cutscene_player_float(_a0)
 {
 	with (obj_player)
-		float = argument0
+		float = _a0
 	cutscene_end_action()
 }

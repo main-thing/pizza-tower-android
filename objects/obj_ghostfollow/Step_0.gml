@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (obj_player1.state != states.ghost)
 {
 	targetplayer = (global.coop ? instance_nearest(x, y, obj_player) : obj_player1)

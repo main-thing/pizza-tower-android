@@ -1,6 +1,6 @@
-function scr_anybutton_pressed(argument0)
+function scr_anybutton_pressed(_a0)
 {
-	var _index = argument0
+	var _index = _a0
 	if keyboard_check_pressed(vk_anykey)
 		return -1;
 	else if gamepad_is_connected(_index)

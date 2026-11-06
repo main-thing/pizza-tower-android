@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Retro Palette Swapper",
-    "path": "folders/Scripts/Retro Palette Swapper.yy",
+    "path": "folders/Objects/Game settings/Scripts/Retro Palette Swapper.yy",
   },
 }

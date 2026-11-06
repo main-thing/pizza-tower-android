@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (other)
 {
 	if (state != states.Sjump && state != states.gotoplayer && state != states.actor)
@@ -34,6 +35,6 @@ with (other)
 			sprite_index = spr_rockethitwall
 		}
 		other.image_index = 0
-		other.sprite_index = spr_presentbox_activate
+		other.sprite_index = other.spr_activate
 	}
 }

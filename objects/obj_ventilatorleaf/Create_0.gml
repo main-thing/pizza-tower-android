@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 destroy = 0
 vsp = (-(random_range(1, 5)))
 image_speed = 0

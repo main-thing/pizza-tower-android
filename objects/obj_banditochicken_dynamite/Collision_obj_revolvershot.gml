@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (instance_create(x, (y - 2), obj_banditochicken_projectile))
 {
 	vsp = -9

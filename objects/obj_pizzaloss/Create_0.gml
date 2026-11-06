@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 sprite_index = choose(spr_shroomcollect, spr_cheesecollect, spr_tomatocollect, spr_sausagecollect, spr_pineapplecollect)
 sprite_index = choose(spr_halloweencollectibles1, spr_halloweencollectibles2, spr_halloweencollectibles3, spr_halloweencollectibles4, spr_halloweencollectibles5)
 grav = 0.5

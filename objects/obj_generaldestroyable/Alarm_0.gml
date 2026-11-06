@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if scr_solid(x, y)
 {
 	var i = 0

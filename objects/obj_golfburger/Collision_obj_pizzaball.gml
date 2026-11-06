@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (state != states.throwing && state != states.stun && state != states.grabbed)
 {
 	if (other.state == states.walk)

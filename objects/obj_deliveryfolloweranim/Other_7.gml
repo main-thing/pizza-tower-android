@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (sprite_index == spr_gnomepizza_dead)
 {
 	image_speed = 0

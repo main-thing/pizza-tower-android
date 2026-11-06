@@ -1,2 +1,3 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 dx = 0
 dy = 0

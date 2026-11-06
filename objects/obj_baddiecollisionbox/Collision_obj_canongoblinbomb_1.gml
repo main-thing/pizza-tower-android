@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (instance_exists(baddieID) && other.team == 1 && baddieID.invtime == 0 && baddieID.state != states.grabbed && baddieID.state != states.hit && !baddieID.invincible && baddieID.instantkillable)
 {
 	fmod_event_one_shot_3d("event:/sfx/pep/punch", x, y);

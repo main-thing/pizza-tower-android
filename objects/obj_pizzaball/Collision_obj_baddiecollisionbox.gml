@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if ((vsp != 0 or hsp != 0) && instance_exists(other.baddieID) && other.baddieID.object_index != obj_bigcheese && other.baddieID.object_index != obj_golfburger && other.baddieID.destroyable && ((!other.baddieID.invincible) or other.baddieID.object_index == obj_golfdemon))
 {
 	instance_destroy(other)

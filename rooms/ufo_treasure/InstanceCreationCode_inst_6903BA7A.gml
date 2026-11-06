@@ -1,1 +1,1 @@
-playerid = obj_player1
+playerid = 323

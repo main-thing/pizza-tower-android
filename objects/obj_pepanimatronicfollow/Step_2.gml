@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 event_inherited()
 var _dist = distance_between_points(x, y, xprevious, yprevious)
 if (_dist >= 10 && _dist < 15)

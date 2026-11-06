@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 draw_set_font(font)
 draw_set_halign(xorigin)
 draw_set_valign(yorigin)

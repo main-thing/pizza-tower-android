@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 global.collect += 100
 global.pizza += 1
 instance_create(x, y, obj_100)

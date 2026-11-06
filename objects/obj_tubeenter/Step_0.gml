@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (state == states.tube)
 {
 	if (floor(image_index) >= 11)

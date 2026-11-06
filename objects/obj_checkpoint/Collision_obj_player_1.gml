@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!active)
 {
 	fmod_event_one_shot_3d("event:/sfx/misc/checkpoint", x, y);

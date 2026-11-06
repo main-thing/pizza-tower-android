@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var tx = playerid.x
 var ty = (playerid.y - 60)
 var acc = 0.1

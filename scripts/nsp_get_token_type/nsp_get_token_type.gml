@@ -1,7 +1,7 @@
 /// @description nsp_get_token_type(Token, Following Token)
 /// @param Token
 /// @param  Following Token
-function nsp_get_token_type(argument0, argument1) {
+function nsp_get_token_type(_a0, _a1) {
 	/*
 	Underlying NSP script.
 	Returns: Type of provided token (-1 if unknown)
@@ -9,8 +9,8 @@ function nsp_get_token_type(argument0, argument1) {
 	var nspToken=global.nspToken;
 	var a, token, token_next;
 
-	token = argument0;
-	token_next = argument1;
+	token = _a0;
+	token_next = _a1;
  
 	 if token == "{" or token == "}"
 	 or token == "(" or token == ")"

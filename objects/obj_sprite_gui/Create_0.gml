@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 sprite = spr_player_idle
 my_image_speed = 0.3
 alpha = 1

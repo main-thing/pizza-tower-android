@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 event_inherited()
 if (ds_queue_size(spritequeue) > LAG_STEPS)
 {

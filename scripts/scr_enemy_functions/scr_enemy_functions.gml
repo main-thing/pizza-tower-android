@@ -1,6 +1,6 @@
-function create_baddiegibsticks(argument0, argument1)
+function create_baddiegibsticks(_a0, _a1)
 {
-	instance_create(argument0, argument1, obj_baddiegibsstick)
+	instance_create(_a0, _a1, obj_baddiegibsstick)
 	exit;
 }
 

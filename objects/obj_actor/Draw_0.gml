@@ -1,6 +1,7 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if use_palette
 {
-	if(global.usepaletteshaders){
+	if(global.usepaletteshaders) {
 		shader_set(global.Pal_Shader)
 		pal_swap_set(spr_palette, paletteselect, 0)
 		draw_self()

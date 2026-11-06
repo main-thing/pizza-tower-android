@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (visible == true)
 {
 	if audio_is_playing(sfx_collecttopping)
@@ -10,7 +11,7 @@ if (visible == true)
 	{
 		vsp = -14
 		state = states.jetpackjump
-		sprite_index = spr_player_jetpackstart
+		sprite_index = spr_jetpackstart
 		doublejump = 0
 		with (instance_create(x, y, obj_highjumpcloud2))
 			sprite_index = spr_player_firemouthjumpdust

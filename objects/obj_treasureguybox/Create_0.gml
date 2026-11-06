@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 current_arr = 0
 count = 15
 collectcount = 3

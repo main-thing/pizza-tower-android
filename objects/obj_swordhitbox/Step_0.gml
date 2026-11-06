@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 image_xscale = playerid.xscale
 x = playerid.x
 y = playerid.y

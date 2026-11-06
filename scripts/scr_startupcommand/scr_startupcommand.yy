@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "mobilecontrols",
+    "path": "folders/Objects/Game settings/Scripts/mobilecontrols.yy",
   },
 }

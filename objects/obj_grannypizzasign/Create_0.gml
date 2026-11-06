@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 levelarray = array_create(0);
 show = false;
 text_xscale = (960 - 64) / sprite_get_width(spr_tutorialbubble);

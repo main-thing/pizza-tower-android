@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 image_alpha = 0.5
 ventilator_index = 0
 var yy = 0

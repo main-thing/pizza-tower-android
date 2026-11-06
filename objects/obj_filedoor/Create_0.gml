@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 file = 1
 targetDoor = "A"
 targetRoom = characterselect

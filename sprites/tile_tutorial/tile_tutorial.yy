@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 640,
   "height": 640,
   "textureGroupId": {
@@ -68,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Tutorial",
-    "path": "folders/Sprites/Backgrounds/Tutorial.yy",
+    "path": "folders/Sprites/Tilesets/Tutorial.yy",
   },
 }

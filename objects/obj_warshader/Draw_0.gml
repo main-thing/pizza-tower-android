@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 alpha = Wave(minalpha, maxalpha, pulserate, 0)
 draw_set_alpha(alpha)
 draw_set_color(c_red)

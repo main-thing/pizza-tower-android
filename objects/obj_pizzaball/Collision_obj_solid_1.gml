@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var _magnet = false;
 with (obj_magnet)
 {

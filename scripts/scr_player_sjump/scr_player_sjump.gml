@@ -11,11 +11,9 @@ function scr_player_Sjump()
 	crouchslideAnim = 1
 	crouchAnim = 0
 	machhitAnim = 0
-	if ((sprite_index == spr_superjump or sprite_index == spr_superspringplayer) && (character == "N" || character == "P" || character == "S"))
+	if ((sprite_index == spr_superjump or sprite_index == spr_superspringplayer) && character != "V")
 		vsp = sjumpvsp
 	sjumpvsp -= 0.1
-	if (character == "V" && image_index > 3)
-		vsp = -11
 	if (sprite_index == spr_player_supersidejump)
 	{
 		if (a < 25)
@@ -23,8 +21,7 @@ function scr_player_Sjump()
 		hsp = (xscale * a)
 		vsp = 0
 	}
-	var block = instance_place(x,(y - 1), obj_metalblock)
-	if (scr_solid(x, (y - 1)) && (!(place_meeting(x, (y - 1), obj_destructibles))) && (!variable_instance_get(block,"oldblock")))
+	if (scr_solid(x, (y - 1)) && (!(place_meeting(x, (y - 1), obj_destructibles))))
 	{
 		pizzapepper = 0
 		a = 0
@@ -51,20 +48,17 @@ function scr_player_Sjump()
 		state = states.Sjumpland
 		machhitAnim = 0
 	}
-	else if (key_slap2 && character == "P" && sprite_index != spr_superspringplayer && sprite_index != spr_Sjumpcancelstart)
+	else if (key_slap2 && character != "N" && sprite_index != spr_superspringplayer && sprite_index != spr_Sjumpcancelstart)
 	{
 		image_index = 0
 		sprite_index = spr_Sjumpcancelstart
-	}
-	if(variable_instance_get(block,"oldblock")){
-		instance_destroy(block)
 	}
 	if (sprite_index == spr_Sjumpcancelstart)
 	{
 		vsp = 0
 		if (move != 0)
 			xscale = move
-		if(!finalmoveset){
+		if(!finalmoveset) {
 			if (floor(image_index) == (image_number - 1))
 			{
 				vsp = -5
@@ -90,29 +84,24 @@ function scr_player_Sjump()
 			}
 		}
 	}
-	if (character == "N" && key_jump2)
-	{
-		scr_soundeffect(sfx_jump)
-		scr_soundeffect(sfx_woosh)
-		jumpstop = 0
-		vsp = -15
-		state = states.jump
-		sprite_index = spr_noisebombspinjump
-		image_index = 0
-		with (instance_create(x, y, obj_jumpdust))
-			image_xscale = other.xscale
-	}
 	if (character == "N")
 	{
+		if (key_jump)
+		{
+			scr_soundeffect(sfx_jump)
+			scr_soundeffect(sfx_woosh)
+			jumpstop = 0
+			vsp = -15
+			state = states.jump
+			sprite_index = spr_noisebombspinjump
+			image_index = 0
+			with (instance_create(x, y, obj_jumpdust))
+				image_xscale = other.xscale
+		}
 		if (move == 1)
 			hsp = 3
 		if (move == -1)
 			hsp = -3
-	}
-	if (character == "V" && floor(image_index) == (image_number - 1))
-	{
-		state = states.jump
-		sprite_index = spr_playerV_fall
 	}
 	image_speed = 0.5
 	scr_collide_player()

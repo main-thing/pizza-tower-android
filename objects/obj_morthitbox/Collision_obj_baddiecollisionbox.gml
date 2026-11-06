@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if ((!other.baddieID.invincible) && other.baddieID.destroyable && playerid.state != states.chainsaw && other.baddieID.state != states.hit && (!other.baddieID.thrown))
 {
 	with (other)

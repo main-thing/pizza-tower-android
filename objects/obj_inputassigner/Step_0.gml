@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!deactivated)
 {
 	if ((!device_selected[0]) && instance_exists(obj_pause) && obj_pause.pause == 0)

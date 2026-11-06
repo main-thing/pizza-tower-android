@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 instance_create((x + (obj_player1.xscale * 40)), y, obj_punchdust)
 with (obj_player1)
 {

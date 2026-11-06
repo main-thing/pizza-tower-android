@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 start_x = obj_player.x
 start_y = obj_player.y
 appeartimer = 200

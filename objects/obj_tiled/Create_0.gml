@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 tileset_name = "tile_tower"
 tileset = tile_tower
 

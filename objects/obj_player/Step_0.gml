@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 prevhsp = hsp
 prevmove = move
 prevmovespeed = movespeed
@@ -536,6 +537,12 @@ switch state
 	case states.supergrab:
 		scr_player_supergrab()
 		break
+	case states.slipnslideOLD:
+		scr_player_slipnslideOLD()
+		break
+	case states.golfOLD:
+		scr_player_golfOLD()
+		break
 }
 
 if (prevstate != state)
@@ -832,13 +839,19 @@ if (object_index == obj_player1)
 	{
 		global.previouscombo = global.combo
 		if ((global.combo % 5) == 0 && global.combo != 0)
-		{
-			with (instance_create(x, (y - 80), obj_combotitle))
-			{
-				title = floor((global.combo / 5))
-				title = clamp(title, 0, floor((sprite_get_number(spr_comboend_title1) / 5)))
-			}
-		}
+        {
+            with (instance_create(x, y - 80, obj_combotitle))
+            {
+				title = floor(global.combo / 5);
+				if(title > (sprite_get_number(spr_comboend_title1) / 2))
+				{
+					title -= (sprite_get_number(spr_comboend_title1) / 2);
+					very = true;
+				}
+				if(global.combo >= 80)
+					very = true;
+            }
+        }
 	}
 	if (!((state == states.door or state == states.tube or state == states.taxi or state == states.gottreasure or state == states.victory or state == states.gottreasure or state == states.actor or state == states.comingoutdoor or (state == states.knightpep && (sprite_index == spr_knightpepstart or sprite_index == spr_knightpepthunder)) or instance_exists(obj_fadeout) or place_meeting(x, y, obj_secretportal) or place_meeting(x, y, obj_secretportalstart))))
 	{
@@ -859,7 +872,7 @@ if (object_index == obj_player1)
 }
 if (key_jump && (!grounded) && (state == states.mach2 or state == states.mach3) && (state != (states.climbwall & walljumpbuffer)) <= 0)
 	input_buffer_walljump = 24
-if(!finalmoveset){
+if(!finalmoveset) {
 	if (input_buffer_jump < 8)
 		input_buffer_jump++
 	if (input_buffer_slap < 8)
@@ -890,7 +903,7 @@ if (input_buffer_walljump > 0)
 	input_buffer_walljump--
 if (key_particles == 1)
 	create_particle((x + random_range(-25, 25)), (y + random_range(-35, 25)), particle.keyparticles, 0)
-if(finalmoveset){
+if(finalmoveset) {
 	if ((state != states.ratmount) && (state != states.ratmountjump) && (state != states.chainsaw))
 	{
 	    gustavodash = 0
@@ -907,7 +920,7 @@ if (state == states.throwing or state == states.backkick or state == states.shou
 	grabbing = 1
 else
 	grabbing = 0
-if ((state == states.ratmountbounce && vsp >= 0) or sprite_index == spr_player_Sjumpcancel or sprite_index == spr_swingding or sprite_index == spr_tumble or state == states.boxxedpepspin or state == states.trashroll or state == states.trashjump or state == states.shotgundash or (state == states.shotgunfreefall && (sprite_index == spr_shotgunjump2 or sprite_index == spr_shotgunjump3)) or state == states.Sjump or state == states.rocket or state == states.rocketslide or state == states.chainsawbump or state == states.punch or state == states.faceplant or state == states.rideweenie or state == states.mach3 or (state == states.jump && sprite_index == spr_playerN_noisebombspinjump) or state == states.freefall or state == states.fireass or state == states.jetpackjump or state == states.firemouth or state == states.hookshot or state == states.jetpackjump or state == states.skateboard or state == states.mach4 or state == states.Sjump or state == states.machfreefall or state == states.tacklecharge or (state == states.superslam && sprite_index == spr_piledriver) or state == states.knightpep or state == states.knightpepattack or state == states.knightpepslopes or state == states.trickjump or state == states.cheesepep or state == states.cheeseball or state == states.ratmounttumble or state == states.ratmountgroundpound or state == states.ratmountpunch or state == states.antigrav or ratmount_movespeed == 12 or state == states.slipbanan or state == states.slipnslide or state == states.shoulderbash or state == states.motorcycle)
+if ((state == states.ratmountbounce && vsp >= 0) or sprite_index == spr_player_Sjumpcancel or sprite_index == spr_swingding or sprite_index == spr_tumble or state == states.boxxedpepspin or state == states.trashroll or state == states.trashjump or state == states.shotgundash or (state == states.shotgunfreefall && (sprite_index == spr_shotgunjump2 or sprite_index == spr_shotgunjump3)) or state == states.Sjump or state == states.rocket or state == states.rocketslide or state == states.chainsawbump or state == states.punch or state == states.faceplant or state == states.rideweenie or state == states.mach3 or (state == states.jump && sprite_index == spr_playerN_noisebombspinjump) or state == states.freefall or state == states.fireass or state == states.jetpackjump or state == states.firemouth or state == states.hookshot or state == states.jetpackjump or state == states.skateboard or state == states.mach4 or state == states.Sjump or state == states.machfreefall or state == states.tacklecharge or (state == states.superslam && sprite_index == spr_piledriver) or state == states.knightpep or state == states.knightpepattack or state == states.knightpepslopes or state == states.trickjump or state == states.cheesepep or state == states.cheeseball or state == states.ratmounttumble or state == states.ratmountgroundpound or state == states.ratmountpunch or state == states.antigrav or ratmount_movespeed == 12 or state == states.slipbanan or state == states.slipnslide or state == states.shoulderbash or state == states.motorcycle or state == states.slipnslideOLD)
 	instakillmove = 1
 else
 	instakillmove = 0
@@ -946,7 +959,7 @@ if (ladderbuffer > 0)
 	ladderbuffer--
 if (state != states.jump)
 	stompAnim = 0
-if(!finalmoveset){
+if(!finalmoveset) {
 	if (state == states.mach3 or state == states.mach2 or ratmount_movespeed == 12)
 	{
 		if (macheffect == 0)

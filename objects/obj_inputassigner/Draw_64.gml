@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var _halign = draw_get_halign()
 var _valign = draw_get_halign()
 draw_set_halign(fa_center)

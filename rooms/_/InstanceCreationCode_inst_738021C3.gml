@@ -1,0 +1,1 @@
+command = "gml with(obj_player1) {scr_characterspr();global.hubroom=rm_levelselect;state=18;targetRoom=rm_levelselect;instance_create(x,y,obj_fadeout);};with(obj_pizzaface) {instance_destroy();}"

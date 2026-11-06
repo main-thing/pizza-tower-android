@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 event_inherited()
 yoffset = 0
 sprite_index = (x != xprevious ? spr_gerome_keymove : spr_gerome_keyidle)

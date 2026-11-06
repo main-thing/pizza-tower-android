@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if ((!other.active) && active && other.id == webID)
 {
 	other.active = 1

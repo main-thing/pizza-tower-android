@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 scr_initenemy()
 hp = 3
 grav = 0.5

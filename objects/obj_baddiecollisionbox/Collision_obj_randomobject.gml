@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if ((other.hsp != 0 or other.vsp != 0) && instance_exists(baddieID) && baddieID.destroyable)
 {
 	instance_destroy(baddieID)

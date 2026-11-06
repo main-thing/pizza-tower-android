@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!(ds_exists(tex_list, 2)))
 	exit;
 if (!ds_list_empty(tex_list))

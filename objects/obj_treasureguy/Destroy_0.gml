@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (ds_list_find_index(global.baddieroom, id) == -1 && important == 0)
 {
 	with (instance_create(x, y, obj_treasureguybox))

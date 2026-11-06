@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (global.timedgate == 1)
 {
 	global.timedgate = 0
@@ -18,7 +19,7 @@ if (global.miniboss == true)
 		if (global.oldsprites == true) {
 			scr_soundeffect(mu_timesup)
 		} else {
-			scr_soundeffect(mu_Your_Fat_Ass_Slows_You_Down)
+			scr_soundeffect(mu_fatass)
 		}
 	}
 	alarm[2] = -1

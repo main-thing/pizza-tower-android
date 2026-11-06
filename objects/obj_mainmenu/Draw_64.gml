@@ -1,55 +1,107 @@
-if(newstuff){
+ADD_OBJECT_EVENT_GML_HOOK;
+live_auto_call;
+
+if(page != noone)
+{
+	var _option = text_arr[page];
+	
+	with(_option)
+	{
+		if(page_draw_func != noone)
+		{
+			var _snip = USE_GMLIVE ? live_snippet_call : NSP_execute_saved;
+			// this is stupid
+			var is_snippet = is_struct(page_draw_func) && !is_method(page_draw_func);
+			if(is_snippet)
+				_snip(page_draw_func)
+			else
+				script_execute(asset_get_index(script_get_name(page_draw_func)));
+		}
+	}
+	exit;
+}
+
+
+draw_set_color(c_white);
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
+draw_set_font(subtextfont);
+draw_text(10, 520, "V" + GM_version + " BETA");
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_set_font(titlefont);
+
+var current_option = text_arr[selected_option];
+var cursoroffset = current_option.x - (string_width(current_option.title) / 2) - string_width("WW");
+for(var i = 0; i < array_length(text_arr); i++)
+{
+	current_option = text_arr[i];
+	draw_set_color((selected_option == i) ? c_white : c_gray);
+	draw_text(current_option.x, current_option.y, current_option.title);
+}
+
+draw_set_color(c_white)
+cursorindex += 0.35
+if cursorindex > sprite_get_number(spr_cursor)
+	cursorindex = frac(cursorindex)
+draw_sprite(spr_cursor, cursorindex, cursoroffset, (350 + (selected_option * 40)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+if(newstuff) {
 	draw_set_halign(fa_center)
 	draw_set_valign(fa_left)
 	draw_set_color(c_white)
 	draw_set_font(titlefont)
 	draw_set_alpha(0.5)
 	draw_set_font(subtextfont2)
-	draw_roundrect_color_ext(50, 80 + stringoffset, 910, 100 + (string_height_ext(string_upper(textstring),36,1600) / 2) + stringoffset, 10, 10, c_black, c_black, false)
+	draw_roundrect_color_ext(50, 80 + stringoffset, 910, 100 + (string_height_ext(textstring,36,1600)) + stringoffset, 10, 10, c_black, c_black, false)
 	draw_set_font(titlefont)
 	draw_roundrect_color_ext(50, 25 + stringoffset, 910, 75 + stringoffset, 10, 10, c_black, c_black, false)
 	draw_set_alpha(1)
 	draw_text(480, 35 + stringoffset, "NEW STUFF")
-	draw_set_font(subtextfont2)
-	/*
-	var i = 0
-	var previndex_1 = 0
-	var previndex_2 = 0
-	*/
-	//var tempstring = textstring
-	/*if string_count("[",textstring) == string_count("]",textstring){	
-		while(i < string_count("[",textstring)){
-			previndex_1 = string_pos_ext("[",textstring,previndex_1)
-			previndex_2 = string_pos_ext("]",textstring,previndex_2)
-			//show_message(string_copy(textstring, previndex_1 + 1, previndex_2 - previndex_1 - 1) + "\n previndex_2:" + string(previndex_2) + "\n previndex_1:" + string(previndex_1))
-			draw_sprite(asset_get_index(string_copy(textstring,	previndex_1 + 1, previndex_2 - previndex_1 - 1)) , 0 , string_width(tempstring) * 5, 0)
-			tempstring = string_delete(textstring, previndex_1, previndex_2 - previndex_1)
-			i++
-		}
-	}*/
+	
 	draw_set_halign(fa_left)
-	draw_text_ext_transformed(80, 90 + stringoffset, string_upper(textstring), 36, 1600, 0.5, 0.5, 0)
+	draw_set_font(global.creditsfont)
+	draw_text_ext(80, 90 + stringoffset, textstring2, 36, 1600)
+	
+	draw_set_font(subtextfont2)
+	draw_text_ext(80, 90 + stringoffset, textstring, 36, 1600)
 	draw_sprite_ext(spr_virtual_controller, 0, 38, 432, 1, 1, 0, c_white, 0.5)
 	draw_sprite_ext(spr_virtual_controller, 0, 38, 498, 1, 1, 180, c_white, 0.5)
-	draw_sprite_ext(spr_button_escape, 0, 2356 * 0.01, 1080 * 0.02, 1, 1, 0, c_white, 0.5)
+	draw_sprite_ext(spr_button_escape_big, 0, 2356 * 0.01, 1080 * 0.02, 1, 1, 0, c_white, 0.5)
 	exit;
 }
 // TODO: replace with new credits
-if(credits){
-	/*
-	draw_set_halign(fa_center)
-	draw_set_valign(fa_left)
-	draw_set_color(c_white)
-	draw_set_font(titlefont)
-	draw_text(display_get_gui_width() / 2, 50 + stringoffset, "CREDITS")
-	draw_set_font(subtextfont2)
-	draw_text(display_get_gui_width() / 2, 140, "TOUR DE PIZZA: FOR PIZZA TOWER")
-	draw_sprite(mcpigicon, 0, display_get_gui_width() / 2 - sprite_get_width(mcpigicon) + mcpigiconoffsetx, 140 + mcpigiconoffsety)
-	draw_text(display_get_gui_width() / 2, 220, "TNG: SUGGESTIONS ASSETS AND LOGO")
-	draw_sprite(tngicon, 0, display_get_gui_width() / 2 - sprite_get_width(tngicon) + tngiconoffsetx, 220 + tngiconoffsety)
-	draw_text(display_get_gui_width() / 2, 300, "THE COMMUNITY: FOR SUPPORTING THIS PROJECT")
-	draw_sprite(communityicon, 0, display_get_gui_width() / 2 - sprite_get_width(communityicon) + communityiconoffsetx, 300 + communityiconoffsety)
-	*/
+if(credits) {
 	draw_set_alpha(0.8)
 	draw_set_color(c_black)
 	//left
@@ -69,7 +121,7 @@ if(credits){
 	//draw_sprite(spr_emptyicon, 0, 2356 * 0.25, 1080 * 0.37)
 	//draw_sprite(spr_treasure_eggplant, 0, 2356 * 0.27 - 66, 1080 * 0.37 + 6)
 	//draw_sprite(spr_roomnamebg, 0, 2356 * 0.21, 1080 * 0.45)
-	draw_sprite_ext(spr_button_escape, 0, 2356 * 0.01, 1080 * 0.02, 1, 1, 0, c_white, 0.5)
+	draw_sprite_ext(spr_button_escape_big, 0, 2356 * 0.01, 1080 * 0.02, 1, 1, 0, c_white, 0.5)
 		
 	//draw_set_font(global.bigfont)
 	//draw_text(2356 * 0.21, 1080 * 0.458, "CREDITS")
@@ -100,28 +152,4 @@ concepts.")
 	draw_text(2356 * 0.27, 1080 * 0.22, "For the shader fix aswell.")
 	//draw_text(2356 * 0.27, 1080 * 0.39, "For supporting the project.")
 	exit;	
-}
-draw_set_color(c_white)
-draw_set_halign(fa_left)
-draw_set_valign(fa_middle)
-draw_set_font(subtextfont)
-draw_text(10, 520, "V" + GM_version + " BETA")
-draw_set_halign(fa_center)
-draw_set_valign(fa_middle)
-draw_set_font(titlefont)
-draw_set_color((selected_option == 0) ? c_white : c_gray)
-draw_text(480, 350, "LEVEL SELECT")
-draw_set_color((selected_option == 1) ? c_white : c_gray)
-draw_text(480, 390, "WHATS NEW")
-draw_set_color((selected_option == 2) ? c_white : c_gray)
-draw_text(480, 430, "CREDITS")
-draw_set_color((selected_option == 3) ? c_white : c_gray)
-draw_text(480, 470, "DISCORD")
-draw_set_color(c_white)
-cursorindex += 0.35
-if cursorindex > sprite_get_number(spr_cursor)
-	cursorindex = frac(cursorindex)
-var cursoroffset = 280
-if(selected_option == 1) cursoroffset = 320
-if(selected_option > 1) cursoroffset = 360
-draw_sprite(spr_cursor, cursorindex, cursoroffset, (350 + (selected_option * 40)))
+}*/

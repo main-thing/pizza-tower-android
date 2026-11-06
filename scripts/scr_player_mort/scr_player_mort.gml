@@ -48,7 +48,7 @@ function scr_player_mort()
 		else
 			sprite_index = spr__mortidle
 	}
-	if(!finalmoveset){
+	if(!finalmoveset) {
 		if (!grounded)
 		{
 			state = states.mortjump

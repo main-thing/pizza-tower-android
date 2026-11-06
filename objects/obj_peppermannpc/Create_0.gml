@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 event_inherited()
 dialog[0] = dialog_create("Stop right there fella, if you wanna get pass this point you're gonna have to beat me.")
 dialog[1] = dialog_create("Not right here though. As I am not comfortable in this environment, pardon me.")

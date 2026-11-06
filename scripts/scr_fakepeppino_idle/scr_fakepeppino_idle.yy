@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Fakepep States",
-    "path": "folders/Scripts/Fakepep States.yy",
+    "path": "folders/Objects/Game settings/Scripts/Fakepep States.yy",
   },
 }

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (room == rank_room or room == timesuproom)
 	visible = false
 if (obj_player1.spotlight == 1)

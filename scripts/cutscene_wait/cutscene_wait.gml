@@ -1,7 +1,7 @@
-function cutscene_wait(argument0)
+function cutscene_wait(_a0)
 {
 	timer++
-	if (timer >= argument0)
+	if (timer >= _a0)
 	{
 		timer = 0
 		cutscene_end_action()

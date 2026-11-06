@@ -50,7 +50,7 @@ function scr_do_rank(showtoppins = true, boss = false)
 				_rank = "c";
 			global.rank = _rank;
 			//scr_write_rank(global.leveltosave);
-			scr_play_rank_music();
+			//scr_play_rank_music();
 			obj_savesystem.ini_str = ini_close();
 			gamesave_async_save();
 		}
@@ -77,7 +77,7 @@ function scr_do_rank(showtoppins = true, boss = false)
 		global.combotime = 0;
 		global.combo = 0;
 		obj_camera.alarm[4] = -1;
-		for (var i = 0; i < global.comboscore; i += 10)
+		for (var i = 0; i < global.comboscore; i += 10 && !global.oldhud)
 			create_collect(obj_player1.x + irandom_range(-60, 60), (obj_player1.y - 100) + irandom_range(-60, 60), choose(spr_shroomcollect, spr_tomatocollect, spr_cheesecollect, spr_sausagecollect, spr_pineapplecollect), 10);
 		global.comboscore = 0;
 	}

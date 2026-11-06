@@ -1,4 +1,5 @@
-if(!countup){
+ADD_OBJECT_EVENT_GML_HOOK;
+if(!countup) {
 	seconds--
 } else {
 	seconds++

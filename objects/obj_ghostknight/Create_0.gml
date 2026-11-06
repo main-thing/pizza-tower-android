@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 scr_initenemy()
 image_alpha = 0.5
 parryable = 0

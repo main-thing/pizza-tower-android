@@ -11,14 +11,14 @@ function scr_player_tumble()
 	mask_index = spr_crouchmask
 	if (sprite_index == spr_tumblestart)
 		movespeed = 6
-	if(!finalmoveset){
+	if(!finalmoveset) {
 		if ((!grounded) && (sprite_index == spr_machroll or sprite_index == spr_mach2jump or sprite_index == spr_backslide or sprite_index == spr_backslideland))
 		{
 			vsp = 10
 			sprite_index = spr_dive
 		}
 	}
-	if(finalmoveset){
+	if(finalmoveset) {
 		if (!grounded && (sprite_index == spr_crouchslip || sprite_index == spr_machroll || sprite_index == spr_mach2jump || sprite_index == spr_backslide || sprite_index == spr_backslideland))
 		{
 			vsp = 10;
@@ -43,7 +43,7 @@ function scr_player_tumble()
 		movespeed -= 0.05
 	if (sprite_index == spr_dive && key_jump)
 	{
-		sprite_index = spr_poundcancel1
+		sprite_index = (character == "PZ" ? spr_player_PZ_divebomb_start : spr_poundcancel1)
 		image_index = 0
 		state = states.freefall
 		vsp = -6

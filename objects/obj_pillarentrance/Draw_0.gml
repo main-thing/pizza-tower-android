@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var shakex = 0
 if (touched == 1)
 	shakex = random_range(-3, 3)

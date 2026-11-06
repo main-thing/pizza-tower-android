@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 shot = 0
 if (objectlist != -4 && count < array_length(objectlist[wave]) && objectlist[wave] != -4)
 {

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 sprite_index = spr_taximove
 hsp = 10
 playerid = 0

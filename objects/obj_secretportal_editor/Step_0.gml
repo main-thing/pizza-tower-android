@@ -1,7 +1,8 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 image_speed = 0.35
 if(index == -1)
 	return;
-if(start == 1 || start == 2){
+if(start == 1 || start == 2) {
 	if active
 	{
 		if (sprite_index == spr_secretportal_close && (!touched))

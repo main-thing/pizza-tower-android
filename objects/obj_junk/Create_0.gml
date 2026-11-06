@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 ratgrabbed = 0
 grabbed = 0
 state = states.normal

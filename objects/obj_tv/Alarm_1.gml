@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (room == custom_lvl_room)
 {
 	global.srank = obj_score_set.x

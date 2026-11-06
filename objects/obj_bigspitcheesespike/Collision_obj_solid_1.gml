@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (instance_create(x, y - 15, obj_spitcheesespike))
 {
 	hsp = -5;

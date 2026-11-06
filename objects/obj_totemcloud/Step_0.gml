@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var found_active = 0
 with (obj_totem)
 {

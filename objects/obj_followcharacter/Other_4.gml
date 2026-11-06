@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 ds_queue_clear(followqueue)
 space = 0
 x = obj_player1.x

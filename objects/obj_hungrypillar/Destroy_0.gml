@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if room == rm_editor
 	exit;
 
@@ -154,7 +155,7 @@ if ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == fal
 			break
 	}
 	global.fill = ((global.minutes * 60) + global.seconds) * 12
-	with(obj_tv){
+	with(obj_tv) {
 		chunkmax = global.fill
 	}
 	ds_list_add(global.saveroom, id)

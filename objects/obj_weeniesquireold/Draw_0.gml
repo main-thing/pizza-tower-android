@@ -1,7 +1,8 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 if flash
 {
-	if(global.usehitshaders){
+	if(global.usehitshaders) {
 		shader_set(shd_hit)
 		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 		shader_reset()

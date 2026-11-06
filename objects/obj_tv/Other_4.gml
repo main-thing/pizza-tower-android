@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 hide = 0
 if (special_prompts == -4 && room != Realtitlescreen && room != characterselect)
 {
@@ -23,7 +24,8 @@ if (room == Realtitlescreen)
 		ds_map_destroy(special_prompts)
 	special_prompts = -4
 }
-if(global.oldsprites){
+if(global.oldsprites)
+{
 	if (room == entrance_1)
 	{
 		global.srank = 11500
@@ -122,91 +124,93 @@ if(global.oldsprites){
 		global.brank = (global.srank - ((global.srank / 4) * 2))
 		global.crank = (global.srank - ((global.srank / 4) * 3))
 	}
-} else{
-	switch (room)
+} 
+else
 {
-	case entrance_1:
-		global.srank = 16000;
-		break;
-	case medieval_1:
-		global.srank = 20000;
-		break;
-	case ruin_1:
-		global.srank = 17000;
-		break;
-	case dungeon_1:
-		global.srank = 18500;
-		break;
-	case badland_1:
-		global.srank = 19500;
-		break;
-	case graveyard_1:
-		global.srank = 20500;
-		break;
-	case saloon_1:
-		global.srank = 20000;
-		break;
-	case farm_2:
-		global.srank = 19000;
-		break;
-	case plage_entrance:
-		global.srank = 23000;
-		break;
-	case forest_1:
-		global.srank = 19000;
-		break;
-	case space_1:
-		global.srank = 20000;
-		break;
-	case minigolf_1:
-		global.srank = 23000;
-		break;
-	case street_intro:
-		global.srank = 20000;
-		break;
-	case sewer_1:
-		global.srank = 20000;
-		break;
-	case industrial_1:
-		global.srank = 20000;
-		break;
-	case freezer_1:
-		global.srank = 18200;
-		break;
-	case chateau_1:
-		global.srank = 18000;
-		break;
-	case kidsparty_1:
-		global.srank = 22000;
-		break;
-	case war_1:
-		global.srank = 21500;
-		break;
-	case tower_finalhallway:
-		global.srank = 5500;
-		break;
-	case boss_pepperman:
-		global.srank = 6;
-		break;
-	case boss_vigilante:
-		global.srank = 6;
-		break;
-	case boss_noise:
-		global.srank = 5;
-		break;
-	case tutorial_room1:
-		global.srank = 11000;
-		break;
-	case dragonlair_1:
-		global.srank = 4500
-		break;
-	case strongcold_10:
-		global.srank = 9000
-		break;
-}
-global.arank = floor(global.srank / 2);
-global.brank = floor(global.arank / 2);
-global.crank = floor(global.brank / 2);
+	switch (room)
+	{
+		case entrance_1:
+			global.srank = 16000;
+			break;
+		case medieval_1:
+			global.srank = 20000;
+			break;
+		case ruin_1:
+			global.srank = 17000;
+			break;
+		case dungeon_1:
+			global.srank = 18500;
+			break;
+		case badland_1:
+			global.srank = 19500;
+			break;
+		case graveyard_1:
+			global.srank = 20500;
+			break;
+		case saloon_1:
+			global.srank = 20000;
+			break;
+		case farm_2:
+			global.srank = 19000;
+			break;
+		case plage_entrance:
+			global.srank = 23000;
+			break;
+		case forest_1:
+			global.srank = 19000;
+			break;
+		case space_1:
+			global.srank = 20000;
+			break;
+		case minigolf_1:
+			global.srank = 23000;
+			break;
+		case street_intro:
+			global.srank = 20000;
+			break;
+		case sewer_1:
+			global.srank = 20000;
+			break;
+		case industrial_1:
+			global.srank = 20000;
+			break;
+		case freezer_1:
+			global.srank = 18200;
+			break;
+		case chateau_1:
+			global.srank = 18000;
+			break;
+		case kidsparty_1:
+			global.srank = 22000;
+			break;
+		case war_1:
+			global.srank = 21500;
+			break;
+		case tower_finalhallway:
+			global.srank = 5500;
+			break;
+		case boss_pepperman:
+			global.srank = 6;
+			break;
+		case boss_vigilante:
+			global.srank = 6;
+			break;
+		case boss_noise:
+			global.srank = 5;
+			break;
+		case tutorial_room1:
+			global.srank = 11000;
+			break;
+		case dragonlair_1:
+			global.srank = 4500
+			break;
+		case strongcold_10:
+			global.srank = 9000
+			break;
+	}
+	global.arank = floor(global.srank / 2);
+	global.brank = floor(global.arank / 2);
+	global.crank = floor(global.brank / 2);
 }
 if (room == custom_lvl_room)
 	alarm[1] = 4

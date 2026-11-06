@@ -7,7 +7,7 @@ function scr_player_dynamite()
 			movespeed -= 0.1
 	}
 	if grounded
-		hsp /= 2
+		hsp = 0
 	landAnim = 0
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerV_dynamitethrow)
 	{

@@ -109,7 +109,7 @@ function state_player_jump()
 			mort = 1
 		}
 	}
-	if(!finalmoveset){
+	if(!finalmoveset) {
 		if grounded
 		{
 			if (input_buffer_jump < 8 && (!key_down) && (!key_attack) && vsp > 0 && (!((sprite_index == spr_facestomp or sprite_index == spr_freefall))))
@@ -199,7 +199,7 @@ function state_player_jump()
 		input_buffer_jump = 0
 	if (vsp > 5 && sprite_index != spr_mortdoublejump)
 		fallinganimation++
-	if(character != "S"){
+	if(character != "S") {
 		if (fallinganimation >= 40 && fallinganimation < 80)
 			sprite_index = spr_facestomp
 		else if (fallinganimation >= 80)
@@ -260,7 +260,7 @@ function state_player_jump()
 		sprite_index = spr_stomp
 	if (key_down2 && (!global.kungfu))
 	{
-		if(!finalmoveset){
+		if(!finalmoveset) {
 			input_buffer_slap = 8
 		} else {
 			input_buffer_slap = 0
@@ -279,7 +279,8 @@ function state_player_jump()
 			image_index = 0
 			state = states.freefall
 			vsp = -11
-			if(global.oldsprites){
+			if(!finalmoveset)
+			{
 				with (instance_create((x + (xscale * 30)), (y + 60), obj_shotgunbullet))
 				{
 					image_xscale = other.xscale
@@ -304,7 +305,9 @@ function state_player_jump()
 					spd = -5
 					shotgun = 1
 				}
-			} else{
+			} 
+			else
+			{
 				with (instance_create(x, y, obj_shotgunblast))
 				{
 					sprite_index = spr_shotgunblastdown;
@@ -359,7 +362,7 @@ function state_player_jump()
 				movespeed = 5
 			}
 		}
-		if(finalmoveset){
+		if(finalmoveset) {
 			if (input_buffer_slap > 0 && !key_up && sprite_index != spr_suplexbump)
 			{
 				input_buffer_slap = 0;
@@ -464,7 +467,7 @@ function state_player_jump()
 	}
 	switch character
 	{
-		case "P":
+		default:
 			if (key_attack && grounded && fallinganimation < 40)
 			{
 				sprite_index = spr_mach1
@@ -491,8 +494,9 @@ function state_player_jump()
 				{
 					sprite_index = spr_mach1
 					image_index = 0
-					movespeed = 6
-					state = states.mach1
+					state = states.mach2
+					if (movespeed < 6)
+						movespeed = 6
 				}
 				else
 				{
@@ -501,37 +505,10 @@ function state_player_jump()
 					state = states.mach3
 				}
 			}
-			if (key_shoot2 && (!instance_exists(dynamite_inst)))
-			{
-				sprite_index = spr_playerV_dynamitethrow
-				image_index = 0
-				if (move == 0)
-					movespeed = 0
-				state = states.dynamite
-				with (instance_create(x, y, obj_dynamite))
-				{
-					image_xscale = other.xscale
-					other.dynamite_inst = id
-					playerid = other.id
-					movespeed = 6
-					vsp = -6
-				}
-			}
 			if (sprite_index == spr_playerV_superjump && floor(image_index) == (image_number - 1))
 				create_particle(x, (y + 25), states.ejected, 0)
-			if key_slap2
-			{
-				sprite_index = spr_playerV_airrevolver
-				image_index = 0
-				vsp = -5
-				state = states.revolver
-				with (instance_create((x + (xscale * 20)), (y + 20), obj_shotgunbullet))
-				{
-					is_solid = 0
-					image_xscale = other.xscale
-				}
-				scr_soundeffect(sfx_killingblow)
-			}
+			scr_dynamite()
+			scr_airrevolver()
 			break
 		case "N":
 			if (key_attack2 && (pogochargeactive or pizzapepper > 0))
@@ -557,7 +534,7 @@ function state_player_jump()
 
 	if ((!key_attack) or move != xscale)
 		mach2 = 0
-	if (floor(image_index) == (image_number - 1)){
+	if (floor(image_index) == (image_number - 1)) {
 		jumpAnim = 0
 	}
 	scr_dotaunt()

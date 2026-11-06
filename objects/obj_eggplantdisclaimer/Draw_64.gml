@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 display_set_gui_size(960, 540)
 draw_set_alpha(fade)
 draw_rectangle_color(0, 0, 960, 540, c_black, c_black, c_black, c_black, 0)

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 switch state
 {
 	case states.idle:
@@ -28,35 +29,24 @@ switch state
 		scr_enemy_grabbed()
 		break
 }
-if(is_noise){
-	walkspr = (phase == 0 ? spr_doisey_walk : spr_doisey_bouncefall)
-} else {
-	walkspr = (phase == 0 ? spr_noisey_walk : spr_noisey_bouncefall)
-}
+walkspr = (phase == 0) ? spr_noisey_walk : spr_noisey_bouncefall;
 if (state == states.walk)
 {
-	if (object_index == obj_noisey && phase == 1)
-	{
-		if (grounded && sprite_index != spr_noisey_bounceland && sprite_index != spr_doisey_bounceland && vsp > 0)
-		{
-			image_index = 0
-			sprite_index = spr_noisey_bounceland
-			if(is_noise){
-				sprite_index = spr_doisey_bounceland
-			}
-		}
-		if (sprite_index == spr_noisey_bounceland || sprite_index == spr_doisey_bounceland)
-		{
-			if (floor(image_index) == (image_number - 1)){
-				sprite_index = spr_noisey_bouncefall
-				if(is_noise){
-					sprite_index = spr_doisey_bouncefall
-				}
-			}
-			if (floor(image_index) == 4)
-				vsp = -6
-		}
-	}
+    if (object_index == obj_noisey && phase == 1)
+    {
+        if (grounded && sprite_index != spr_noisey_bounceland && vsp > 0)
+        {
+            image_index = 0
+            sprite_index = spr_noisey_bounceland
+        }
+        if (sprite_index == spr_noisey_bounceland)
+        {
+            if (floor(image_index) == (image_number - 1))
+                sprite_index = spr_noisey_bouncefall
+            if (floor(image_index) == 4)
+                vsp = -6
+        }
+    }
 }
 if (lasthp != hp && phase == 0 && state == states.stun && grounded)
 {

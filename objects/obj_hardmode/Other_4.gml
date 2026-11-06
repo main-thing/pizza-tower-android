@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (global.hardmode && (!((room == strongcold_endscreen or room == rank_room or room == timesuproom or room == Realtitlescreen or room == characterselect))))
 {
 	if (!instance_exists(obj_hardmode_ghost))

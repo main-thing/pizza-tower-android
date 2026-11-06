@@ -3,17 +3,17 @@
 /// @param  End
 /// @param  StrList
 /// @param  ParList
-function nsp_evaluate_list(argument0, argument1, argument2, argument3) {
+function nsp_evaluate_list(_a0, _a1, _a2, _a3) {
 	/*
 	Underlying NSP script.
 	*/
-	var nspListStr = argument2,
-	    nspListPar = argument3,
+	var nspListStr = _a2,
+	    nspListPar = _a3,
 	    nspToken=global.nspToken;
 	var list_min,list_max;
 
-	list_min=argument0;
-	list_max=argument1;
+	list_min=_a0;
+	list_max=_a1;
 
 	//1. If it's single, then evaluate single:
 	if (list_min=list_max)

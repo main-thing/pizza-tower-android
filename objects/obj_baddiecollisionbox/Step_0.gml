@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if ((!instance_exists(baddieID)) && room != custom_lvl_room)
 	instance_destroy()
 if instance_exists(baddieID)
@@ -40,7 +41,7 @@ for (var i = 0; i < 2; i++)
 							vsp = 5
 						}
 					}
-					if(finalmoveset){
+					if(finalmoveset) {
 						if (key_jump2 || (input_buffer_jump > 0))
 			            {
 			                instance_create(x, (y + 50), obj_stompeffect)

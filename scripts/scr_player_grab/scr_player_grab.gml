@@ -134,7 +134,7 @@ function scr_player_grab()
 			sprite_index = spr_haulingidle
 		swingdingendcooldown++
 		hsp = (xscale * movespeed)
-		if(character != "S" && character != "V"){
+		if(character != "S" && character != "V") {
 			if(!finalmoveset)
 			{
 				if (scr_solid((x + xscale), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or scr_solid_slope((x + sign(hsp)), y)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
@@ -154,7 +154,7 @@ function scr_player_grab()
 		sprite_index = spr_haulingidle
 	if key_jump && !finalmoveset
 		input_buffer_jump = 0
-	if(!finalmoveset){
+	if(!finalmoveset) {
 		if (grounded && input_buffer_jump < 8 && (!key_down) && (!key_attack) && vsp > 0 && sprite_index != spr_swingding)
 		{
 			scr_soundeffect(sfx_jump)

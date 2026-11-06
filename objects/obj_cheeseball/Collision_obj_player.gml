@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (other.state != states.gotoplayer && other.state != states.chainsaw)
 {
 	if (other.state == states.knightpep or other.state == states.knightpepslopes or other.state == states.cheeseball)

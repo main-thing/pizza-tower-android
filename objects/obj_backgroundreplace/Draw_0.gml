@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (backgroundID != -4)
 {
 	var cx = camera_get_view_x(view_camera[0])

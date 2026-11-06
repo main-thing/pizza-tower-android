@@ -2,7 +2,7 @@
 /// @param Value 1
 /// @param  Value 2
 /// @param  Token
-function nsp_arithmetic_calculate(argument0, argument1, argument2) {
+function nsp_arithmetic_calculate(_a0, _a1, _a2) {
 	/*
 	Underlying NSP script.
 	NOTE: Add error checking for incompatible data types.
@@ -10,77 +10,77 @@ function nsp_arithmetic_calculate(argument0, argument1, argument2) {
 	var nspToken=global.nspToken;
 
 	//Add:
-	if argument2=nspToken[NSP_TOK.add] {
+	if _a2=nspToken[NSP_TOK.add] {
 
 	 //DEBUG:
-	 //show_message("Arg0: "+nsp_string_force(argument0)+", isString: "+string(is_string(argument0)));
-	 //show_message("Arg1: "+nsp_string_force(argument1)+", isString: "+string(is_string(argument1)));
+	 //show_message("Arg0: "+nsp_string_force(_a0)+", isString: "+string(is_string(_a0)));
+	 //show_message("Arg1: "+nsp_string_force(_a1)+", isString: "+string(is_string(_a1)));
 
-	 if is_string(argument0) {
-	  if nsp_is_number(argument0)
-	   argument0=real(argument0)
-	   else argument0=string_delete(argument0,string_length(argument0),1);
+	 if is_string(_a0) {
+	  if nsp_is_number(_a0)
+	   _a0=real(_a0)
+	   else _a0=string_delete(_a0,string_length(_a0),1);
 	  }
  
-	 if is_string(argument1) {
-	  if nsp_is_number(argument1)
-	   argument1=real(argument1)
-	   else argument1=string_delete(argument1,1,1);
+	 if is_string(_a1) {
+	  if nsp_is_number(_a1)
+	   _a1=real(_a1)
+	   else _a1=string_delete(_a1,1,1);
 	  }
    
 	 //DEBUG: 
-	 //show_message("Arg0: "+nsp_string_force(argument0)+", isString: "+string(is_string(argument0)));
-	 //show_message("Arg1: "+nsp_string_force(argument1)+", isString: "+string(is_string(argument1)));
+	 //show_message("Arg0: "+nsp_string_force(_a0)+", isString: "+string(is_string(_a0)));
+	 //show_message("Arg1: "+nsp_string_force(_a1)+", isString: "+string(is_string(_a1)));
   
-	 return nsp_string_force(argument0+argument1);
+	 return nsp_string_force(_a0+_a1);
  
 	 }
  
-	//Convert arguments for following functions:
-	if is_string(argument0)
-	 argument0=real(argument0);
-	if is_string(argument1)
-	 argument1=real(argument1);
+	//Convert _as for following functions:
+	if is_string(_a0)
+	 _a0=real(_a0);
+	if is_string(_a1)
+	 _a1=real(_a1);
   
 	//Subtract:
-	if argument2=nspToken[NSP_TOK.subtract] {
+	if _a2=nspToken[NSP_TOK.subtract] {
 
-	   return string(argument0-argument1);
+	   return string(_a0-_a1);
    
 	   }
 
 	//Divide:
-	if argument2=nspToken[NSP_TOK.divide] {
+	if _a2=nspToken[NSP_TOK.divide] {
 
-	   return string(argument0/argument1);
+	   return string(_a0/_a1);
    
 	   }
 
 	//Multiply:
-	if argument2=nspToken[NSP_TOK.multiply] {
+	if _a2=nspToken[NSP_TOK.multiply] {
 
-	   return string(argument0*argument1);
+	   return string(_a0*_a1);
    
 	   }
    
 	//Modulo:
-	if argument2=nspToken[NSP_TOK._mod] {
+	if _a2=nspToken[NSP_TOK._mod] {
 
-	   return string(argument0 mod argument1);
+	   return string(_a0 mod _a1);
    
 	   }
    
 	//Div:
-	if argument2=nspToken[NSP_TOK._div] {
+	if _a2=nspToken[NSP_TOK._div] {
 
-	   return string(argument0 div argument1);
+	   return string(_a0 div _a1);
    
 	   }
    
 	//Power:
-	if argument2=nspToken[NSP_TOK._power] {
+	if _a2=nspToken[NSP_TOK._power] {
 
-	   return string(power(argument0,argument1));
+	   return string(power(_a0,_a1));
    
 	   }
 

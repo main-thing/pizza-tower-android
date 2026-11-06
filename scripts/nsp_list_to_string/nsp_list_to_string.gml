@@ -3,7 +3,7 @@
 /// @param  Start
 /// @param  End
 /// @param  Separator
-function nsp_list_to_string(argument0, argument1, argument2, argument3) {
+function nsp_list_to_string(_a0, _a1, _a2, _a3) {
 	/*
 	Underlying NSP script.
 	*/
@@ -11,9 +11,9 @@ function nsp_list_to_string(argument0, argument1, argument2, argument3) {
 	var i,s;
 
 	s="";
-	for (i=argument1; i<=argument2; i+=1) begin
+	for (i=_a1; i<=_a2; i+=1) begin
 
-	 s+=argument0[|i]+argument3;
+	 s+=_a0[|i]+_a3;
 
 	end;
 

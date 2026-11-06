@@ -9,4 +9,4 @@ function pal_swap_init_system()
 		global.Pal_Map = ds_map_create()
 	exit;
 }
-
+pal_swap_init_system(shd_pal_swapper)

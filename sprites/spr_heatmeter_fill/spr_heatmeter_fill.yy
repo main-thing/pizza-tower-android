@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 187,
   "height": 35,
   "textureGroupId": {
@@ -89,7 +90,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Heat meter",
-    "path": "folders/Sprites/HUD/Heat meter.yy",
+    "name": "Heatmeter",
+    "path": "folders/Sprites/HUD/Heatmeter.yy",
   },
 }

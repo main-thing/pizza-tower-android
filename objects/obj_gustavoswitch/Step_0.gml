@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (sprite_index == spr_gustavoswitch2 && floor(image_index) == (image_number - 1))
 {
 	with (obj_player1)

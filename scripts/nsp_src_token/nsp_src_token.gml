@@ -2,14 +2,12 @@
 /// @param String
 /// @param  Position
 /// @param  Token
-function nsp_src_token(argument0, argument1, argument2) {
+function nsp_src_token(_a0, _a1, _a2) {
 	/*
 	Underlying NSP script.
 	*/
 	var nspToken=global.nspToken;
 
-	return string_copy(argument0,argument1,string_length(nspToken[argument2]))==nspToken[argument2];
-
-
+	return string_copy(_a0, _a1, string_length(nspToken[_a2]))==nspToken[_a2];
 
 }

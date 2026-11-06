@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (baddieID)
 {
 	if (alarm[5] != -1 or state == states.punch)

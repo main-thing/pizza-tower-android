@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 dir = 1
 collisioned = 0
 targetplayer = -4

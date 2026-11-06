@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 following_character_init()
 image_speed = 0.35
 depth = -6

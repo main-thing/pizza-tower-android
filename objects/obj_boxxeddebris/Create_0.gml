@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 image_speed = 0
 vsp = random_range(-10, -5)
 hsp = ((-obj_player.xscale) * random_range(4, 8))

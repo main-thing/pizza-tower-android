@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (global.panic && !donepanic)
 {
 	donepanic = true;
@@ -17,15 +18,15 @@ if (showgranny)
 		voicecooldown = 0;
 	if (place_meeting(x, y, obj_player))
 	{
-		sprite_index = spr_tutorialgranny_talk;
+		sprite_index = spr_talk;
 		if (voicecooldown == 0)
 		{
-			scr_soundeffect(sfx_pizzagranny1,sfx_pizzagranny2,sfx_pizzagranny3)
+			scr_soundeffect(snd_speech1,snd_speech2,snd_speech3)
 			voicecooldown = 100;
 		}
 	}
 	else
-		sprite_index = spr_tutorialgranny_sleep;
+		sprite_index = spr_idle;
 }
 
 var _hide = false;

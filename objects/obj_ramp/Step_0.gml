@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if used
 	image_index = 1
 else
@@ -17,7 +18,7 @@ if place_meeting(x, (y - s), obj_player)
 		{
 			vsp = -12
 			movespeed = 14
-			sprite_index = spr_player_rampjump
+			sprite_index = spr_rampjump
 			image_index = 0
 			if isgustavo
 			{

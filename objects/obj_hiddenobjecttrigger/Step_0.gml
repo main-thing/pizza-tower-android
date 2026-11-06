@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var _sound = 0
 if place_meeting(x, y, obj_player)
 {

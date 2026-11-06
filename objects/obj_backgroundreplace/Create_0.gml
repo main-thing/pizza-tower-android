@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 backgroundID = -4
 backgroundBG_ID = -4
 background_name = ""

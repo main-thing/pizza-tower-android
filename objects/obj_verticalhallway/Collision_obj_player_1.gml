@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (obj_player1.state == states.debugstate)
 	exit;
 if (obj_player1.state == states.backtohub)

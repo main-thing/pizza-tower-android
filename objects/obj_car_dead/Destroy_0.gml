@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 instance_create((x + 32), (y + 16), obj_playerexplosion)
 instance_create((x - 32), (y - 8), obj_playerexplosion)
 with (instance_create(x, y, obj_pizzaslice))

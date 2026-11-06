@@ -1,6 +1,6 @@
 /// @description NSP_save(String)
 /// @param String
-function NSP_save(argument0) {
+function NSP_save(_a0) {
 	/*
 
 	Converts a string into a ds_list, so that it can be executed / evaluated
@@ -15,7 +15,7 @@ function NSP_save(argument0) {
 	list_2 = ds_list_create();
 	list_3 = ds_list_create();
 
-	rv = nsp_convert_to_list(argument0, list_1, list_2);
+	rv = nsp_convert_to_list(_a0, list_1, list_2);
 
 	list_3[|2] = rv;
 	list_3[|1] = list_2;

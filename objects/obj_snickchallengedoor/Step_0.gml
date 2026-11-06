@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (visited == 1 && sprite_index != spr_pepperdoor)
 	sprite_index = spr_goldendoorvisited
 if instance_exists(obj_noisesatellite)

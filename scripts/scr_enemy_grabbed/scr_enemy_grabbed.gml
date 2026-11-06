@@ -463,21 +463,21 @@ function scr_enemy_grabbed()
 	exit;
 }
 
-function check_grabbed_solid(argument0)
+function check_grabbed_solid(_a0)
 {
 	if instakilled
 		exit;
-	if ((!(place_meeting(x, y, obj_destructibles))) && (scr_solid(x, y) or collision_line(x, y, argument0.x, argument0.y, obj_solid, false, true) != -4))
+	if ((!(place_meeting(x, y, obj_destructibles))) && (scr_solid(x, y) or collision_line(x, y, _a0.x, _a0.y, obj_solid, false, true) != -4))
 	{
 		var _dist = abs((x - obj_player.x))
-		x = argument0.x
-		y = argument0.y
-		if (!(scr_solid((x + argument0.xscale), y)))
+		x = _a0.x
+		y = _a0.y
+		if (!(scr_solid((x + _a0.xscale), y)))
 		{
 			var i = 0
-			while (!(scr_solid((x + argument0.xscale), y)))
+			while (!(scr_solid((x + _a0.xscale), y)))
 			{
-				x += argument0.xscale
+				x += _a0.xscale
 				i++
 				if (i > _dist)
 					break
@@ -489,7 +489,7 @@ function check_grabbed_solid(argument0)
 				i = 0
 				while scr_solid(x, y)
 				{
-					x -= argument0.xscale
+					x -= _a0.xscale
 					i++
 					if (i > _dist)
 						break

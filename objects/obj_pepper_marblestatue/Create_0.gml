@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 hp = 3
 parentID = -4
 spotID = -4

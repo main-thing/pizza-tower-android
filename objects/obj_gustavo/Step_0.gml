@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (sprite_index == spr_gustavo_showpizza)
 {
 	if (image_index > (image_number - 1))

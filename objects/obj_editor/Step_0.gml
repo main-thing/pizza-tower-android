@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 scr_editor_get_input()
 scr_editor_camera_update()
 scr_editor_update_buttons()

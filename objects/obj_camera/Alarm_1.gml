@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (global.panic == true or global.snickchallenge == 1)
 {
 	global.seconds -= 1

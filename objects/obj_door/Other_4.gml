@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (place_meeting(x, y, obj_player) && (!(ds_list_find_index(global.saveroom, id))))
 	ds_list_add(global.saveroom, id)
 if ds_list_find_index(global.saveroom, id)

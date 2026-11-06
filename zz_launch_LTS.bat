@@ -1,0 +1,1 @@
+"C:\Program Files\GameMaker-LTS\GameMaker-LTS.exe" "%~dp0PizzaTower_Deggcomplantedshaderless3whydiditcorruptatthelastupdate.yyp"

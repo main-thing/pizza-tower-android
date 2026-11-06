@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (count < countmax)
 {
 	with (instance_place(x, (y - 1), obj_weenie))

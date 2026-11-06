@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (global.panic == true && escape == true && global.gerome == 0)
 {
 	image_xscale *= -1

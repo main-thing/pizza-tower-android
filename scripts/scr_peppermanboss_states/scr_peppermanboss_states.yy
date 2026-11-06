@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Boss",
-    "path": "folders/Scripts/Boss.yy",
+    "path": "folders/Objects/Game settings/Scripts/Boss.yy",
   },
 }

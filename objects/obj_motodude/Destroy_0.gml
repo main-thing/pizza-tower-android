@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var i = 0
 repeat sprite_get_number(spr_pizzacar_debris)
 {

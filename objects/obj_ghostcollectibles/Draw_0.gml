@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 draw_set_color(c_white)
 for (var i = 0; i < ds_list_size(collectiblelist); i++)
 {

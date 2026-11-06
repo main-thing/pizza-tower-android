@@ -3,17 +3,17 @@
 /// @param  End
 /// @param  StrList
 /// @param  ParList
-function nsp_execute_single(argument0, argument1, argument2, argument3) {
+function nsp_execute_single(_a0, _a1, _a2, _a3) {
 	/*
 	Underlying NSP script.
 	*/
-	var nspListStr = argument2,
-	    nspListPar = argument3,
+	var nspListStr = _a2,
+	    nspListPar = _a3,
 	    nspToken=global.nspToken;
 	var i,av,list_min,list_max,pos,op_char,as_var_max,exec_code_min;
 
-	list_min=argument0;
-	list_max=argument1;
+	list_min=_a0;
+	list_max=_a1;
 
 	if nspListStr[|list_max]=";"
 	 list_max-=1;

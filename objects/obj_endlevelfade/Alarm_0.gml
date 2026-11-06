@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 instance_create((room_width / 2), (room_height / 2), obj_rank)
 if instance_exists(obj_treasureviewer)
 	exit;

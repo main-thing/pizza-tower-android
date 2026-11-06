@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (obj_mainmenuselect.optionselected == 1)
 	sprite_index = spr_file2
 else

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (instance_number(obj_monstertrackingrooms) > 1)
 {
 	instance_destroy()
@@ -66,7 +67,7 @@ effect_buffer = 0
 effect_max = 1800
 player_posX = ds_grid_value_x(room_grid, 0, 0, (map_width - 1), (map_height - 1), room_get_name(room))
 player_posY = ds_grid_value_y(room_grid, 0, 0, (map_width - 1), (map_height - 1), room_get_name(room))
-function robot_create(argument0, argument1)
+function robot_create(_a0, _a1)
 {
 	if (!instance_exists(obj_robotmonster))
 	{
@@ -74,8 +75,8 @@ function robot_create(argument0, argument1)
 		var _dir = monster_dir[0]
 		with (_inst)
 		{
-			fake = argument1
-			if argument0
+			fake = _a1
+			if _a0
 			{
 				var _hinst = noone
 				with (obj_hallwaymonster)
@@ -117,7 +118,7 @@ function robot_create(argument0, argument1)
 	exit;
 }
 
-function blob_create(argument0, argument1)
+function blob_create(_a0, _a1)
 {
 	if (!instance_exists(obj_blobmonster))
 	{
@@ -125,8 +126,8 @@ function blob_create(argument0, argument1)
 		_dir = monster_dir[1]
 		with (_inst)
 		{
-			fake = argument1
-			if argument0
+			fake = _a1
+			if _a0
 			{
 				_hinst = noone
 				with (obj_hallwaymonster)
@@ -178,13 +179,13 @@ function blob_create(argument0, argument1)
 	exit;
 }
 
-function puppet_create(argument0, argument1)
+function puppet_create(_a0, _a1)
 {
 	instance_create_unique(0, 0, obj_puppetmonster)
 	exit;
 }
 
-function hillbilly_create(argument0, argument1)
+function hillbilly_create(_a0, _a1)
 {
 	if (!instance_exists(obj_hillbillymonster))
 	{
@@ -192,8 +193,8 @@ function hillbilly_create(argument0, argument1)
 		_dir = monster_dir[3]
 		with (_inst)
 		{
-			fake = argument1
-			if argument0
+			fake = _a1
+			if _a0
 			{
 				_hinst = noone
 				with (obj_hallwaymonster)
@@ -235,30 +236,30 @@ function hillbilly_create(argument0, argument1)
 	exit;
 }
 
-function grid_meeting(argument0, argument1)
+function grid_meeting(_a0, _a1)
 {
-	if (argument0 < 0 or argument0 > (map_width - 1) or argument1 < 0 or argument1 > (map_height - 1))
+	if (_a0 < 0 or _a0 > (map_width - 1) or _a1 < 0 or _a1 > (map_height - 1))
 		return false;
-	if (ds_grid_get(room_grid, argument0, argument1) != -4)
+	if (ds_grid_get(room_grid, _a0, _a1) != -4)
 		return true;
 	return false;
 }
 
-function grid_length_x(argument0, argument1, argument2)
+function grid_length_x(_a0, _a1, _a2)
 {
 	var count = 0
-	while grid_meeting((argument0 + argument2), argument1)
+	while grid_meeting((_a0 + _a2), _a1)
 	{
 		count++
-		argument0 += argument2
+		_a0 += _a2
 	}
 	return count;
 }
 
-function room_place(argument0, argument1)
+function room_place(_a0, _a1)
 {
-	if (argument0 < 0 or argument0 > (map_width - 1) or argument1 < 0 or argument1 > (map_height - 1))
+	if (_a0 < 0 or _a0 > (map_width - 1) or _a1 < 0 or _a1 > (map_height - 1))
 		return -4;
-	return ds_grid_get(room_grid, argument0, argument1);
+	return ds_grid_get(room_grid, _a0, _a1);
 }
 

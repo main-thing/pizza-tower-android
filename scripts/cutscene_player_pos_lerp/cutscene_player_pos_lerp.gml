@@ -1,4 +1,4 @@
-function cutscene_player_pos_lerp(argument0, argument1, argument2)
+function cutscene_player_pos_lerp(_a0, _a1, _a2)
 {
 	var _finish = 0
 	with (obj_player)
@@ -7,9 +7,9 @@ function cutscene_player_pos_lerp(argument0, argument1, argument2)
 		vsp = 0
 		if (object_index != obj_player2 or global.coop)
 		{
-			x = lerp(x, argument0, argument2)
-			y = lerp(y, argument1, argument2)
-			if (x > (argument0 - 4) && x < (x + 4) && y > (argument1 - 4) && y < (argument1 + 4))
+			x = lerp(x, _a0, _a2)
+			y = lerp(y, _a1, _a2)
+			if (x > (_a0 - 4) && x < (x + 4) && y > (_a1 - 4) && y < (_a1 + 4))
 				_finish = 1
 		}
 	}

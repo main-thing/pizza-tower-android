@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (instance_exists(obj_pizzafaceboss_p3intro) || instance_exists(obj_blackoutline))
 	exit;
 if (image_alpha <= 0)
@@ -51,7 +52,7 @@ switch (state)
 				bx = SCREEN_WIDTH;
 			if (by < SCREEN_HEIGHT)
 				by = SCREEN_HEIGHT;
-			if(global.usepaletteshaders){
+			if(global.usepaletteshaders) {
 				shader_set(global.Pal_Shader);
 				//pattern_set(global.Base_Pattern_Color, playerspr, 0, 1, 1, global.palettetexture);
 				pal_swap_set(spr_peppalette, obj_player1.paletteselect, false);
@@ -60,12 +61,12 @@ switch (state)
 			if (bossspr == spr_vsfakepep || bossspr == spr_vsfakepep2)
 			{
 				//pattern_set(global.Base_Pattern_Color, bossspr, 0, _xs, _ys, global.palettetexture);
-				if(global.usepaletteshaders){
+				if(global.usepaletteshaders) {
 					pal_swap_set(spr_peppalette, obj_player1.paletteselect, false);
 				}
 			}
 			else{
-				if(global.usepaletteshaders){
+				if(global.usepaletteshaders) {
 					pal_swap_set(spr_peppalette, 0, false);
 				}
 			}
@@ -82,7 +83,7 @@ switch (state)
 	
 	case states.normal:
 	case states.victory:
-		if(global.usepaletteshaders){
+		if(global.usepaletteshaders) {
 			shader_set(global.Pal_Shader);
 		}
 		scr_bosscontroller_draw_health(spr_bossfight_playerhp, player_rowmax, player_columnmax, player_hp, player_maxhp, player_hp_x, player_hp_y, player_xpad, player_ypad, player_index, image_alpha, spr_peppalette, obj_player1.paletteselect, global.palettetexture);
@@ -111,7 +112,7 @@ switch (state)
 						ds_list_delete(other.particlelist, i--);
 					else
 					{
-						if(global.usepaletteshaders){
+						if(global.usepaletteshaders) {
 						//if (palettetexture != -4)
 							//pattern_set(global.Base_Pattern_Color, sprite_index, image_index, 1, 1, palettetexture);
 							pal_swap_set(spr_palette, paletteselect, false);
@@ -127,7 +128,7 @@ switch (state)
                     else
                     {
                         image_index += image_speed;
-						if(global.usepaletteshaders){
+						if(global.usepaletteshaders) {
 							pal_swap_set(spr_palette, paletteselect, 0);
 						}
                         draw_sprite(sprite_index, image_index, x, y);

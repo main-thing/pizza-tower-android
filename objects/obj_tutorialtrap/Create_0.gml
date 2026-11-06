@@ -1,0 +1,2 @@
+ADD_OBJECT_EVENT_GML_HOOK;
+layer_name = "Compatibility_Background_2_bg_trapscreen"

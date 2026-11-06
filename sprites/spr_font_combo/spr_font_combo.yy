@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 45,
   "height": 73,
   "textureGroupId": {
@@ -89,7 +90,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "HUD",
-    "path": "folders/Sprites/HUD.yy",
+    "name": "Fonts",
+    "path": "folders/Sprites/HUD/Fonts.yy",
   },
 }

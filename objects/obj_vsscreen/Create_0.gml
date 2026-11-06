@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 alarm[0] = 300
 image_speed = 0.1
 pepx = -415

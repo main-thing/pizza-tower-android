@@ -1,6 +1,6 @@
 /// @description NSP_check_saved(List ID)
 /// @param List ID
-function NSP_check_saved(argument0) {
+function NSP_check_saved(_a0) {
 	/*
 
 	Checks whether a saved (converted) string passed validation.
@@ -9,7 +9,7 @@ function NSP_check_saved(argument0) {
 
 	*/
 
-	return (argument0[|2] != 0);
+	return (_a0[|2] != 0);
 
 
 

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var puppet_pos = monster_pos[2]
 if (player_posX != -1 && player_posY != -1 && player_posY == puppet_pos.y && sound_pos.x != -1 && sound_pos.y != -1)
 {

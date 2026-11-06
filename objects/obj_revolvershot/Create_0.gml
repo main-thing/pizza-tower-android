@@ -1,20 +1,21 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 event_inherited()
 dmg = 30
 spd = 25
 parryable = 1
-function player_hurt(argument0, argument1)
+function player_hurt(_a0, _a1)
 {
 	if (!collisioned)
 	{
-		var prevstate = argument1.state
-		SUPER_player_hurt(argument0, argument1)
-		argument1.xscale = (-image_xscale)
-		argument1.hitxscale = (-image_xscale)
+		var prevstate = _a1.state
+		SUPER_player_hurt(_a0, _a1)
+		_a1.xscale = (-image_xscale)
+		_a1.hitxscale = (-image_xscale)
 		if (prevstate == states.boss_superattack)
 		{
-			argument1.hithsp = 0
-			argument1.hitvsp = 0
-			argument1.hitstate = states.boss_superattack
+			_a1.hithsp = 0
+			_a1.hitvsp = 0
+			_a1.hitstate = states.boss_superattack
 			with (obj_vigilanteboss)
 				duel_buffer = (duel_max + irandom(duel_random))
 		}

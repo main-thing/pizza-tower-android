@@ -6,7 +6,7 @@
     "name": "spr_gerome_idle1",
     "path": "sprites/spr_gerome_idle1/spr_gerome_idle1.yy",
   },
-  "solid": true,
+  "solid": false,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,

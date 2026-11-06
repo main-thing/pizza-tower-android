@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 100,
   "height": 100,
   "textureGroupId": {
@@ -85,7 +86,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Golf",
-    "path": "folders/Sprites/Backgrounds/Golf.yy",
+    "name": "Gustavo deco",
+    "path": "folders/Sprites/Decorations/Gustavo deco.yy",
   },
 }

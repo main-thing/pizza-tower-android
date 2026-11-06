@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (sprite_index == spr_kingghost_pinball3 && floor(image_index) == (image_number - 1))
 	sprite_index = spr_kingghost_pinball2
 image_speed = 0.35

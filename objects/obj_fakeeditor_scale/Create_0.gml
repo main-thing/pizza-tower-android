@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 image_alpha = 0.5
 old_click_x = x
 old_click_y = y
@@ -8,3 +9,4 @@ object_id = noone
 dir = 0
 object_xscale = 1
 object_yscale = 1
+camera_trigger = false

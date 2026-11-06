@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var spd = 0.02
 image_xscale = Approach(image_xscale, 0, spd)
 image_yscale = Approach(image_yscale, 0, spd)

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 hdir = sign(hmovespeed)
 vdir = sign(vmovespeed)
 if (hdir != 0)

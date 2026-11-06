@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (storedx != -4 && storedy != -4)
 {
 	var i = 0

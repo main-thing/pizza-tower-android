@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if instance_exists(obj_weaponmachine)
 	visible = true
 else if (show == 0)

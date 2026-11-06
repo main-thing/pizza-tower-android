@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Cutscene",
-    "path": "folders/Scripts/Cutscene.yy",
+    "path": "folders/Objects/Game settings/Scripts/Cutscene.yy",
   },
 }

@@ -19,10 +19,10 @@ function scr_editor_state_objects()
 	}
 }
 
-function scr_editor_get_object_mouse(argument0, argument1)
+function scr_editor_get_object_mouse(_a0, _a1)
 {
 	scr_editor_clear_selectedobjects()
-	var num = instance_place_list(argument0, argument1, obj_fakeobject, global.instancelist, 1)
+	var num = instance_place_list(_a0, _a1, obj_fakeobject, global.instancelist, 1)
 	var o = noone
 	for (i = 0; i < num; i++)
 	{

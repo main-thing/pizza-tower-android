@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var thr = 20
 if (!((captain_x > (captain_xto - thr) && captain_x < (captain_xto + thr) && captain_y > (captain_yto - thr) && captain_y < (captain_yto + thr))))
 {

@@ -88,8 +88,8 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3C58FC32","properties":[],"isDnd":false,"objectId":{"name":"obj_destroyable2","path":"objects/obj_destroyable2/obj_destroyable2.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1184.0,"y":384.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B10B79AA","properties":[],"isDnd":false,"objectId":{"name":"obj_destroyable2","path":"objects/obj_destroyable2/obj_destroyable2.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1152.0,"y":384.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_46BFE722","properties":[],"isDnd":false,"objectId":{"name":"obj_destroyable2","path":"objects/obj_destroyable2/obj_destroyable2.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1216.0,"y":384.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2088ED15","properties":[],"isDnd":false,"objectId":{"name":"obj_priest","path":"objects/obj_priest/obj_priest.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":672.0,"y":370.0,},
-      ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_204AD71E","properties":[],"isDnd":false,"objectId":{"name":"obj_priest","path":"objects/obj_priest/obj_priest.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":640.0,"y":370.0,},
+      ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritVisibility":true,"inheritSubLayers":true,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","tilesetId":{"name":"tileset_secret_1","path":"tilesets/tileset_secret_1/tileset_secret_1.yy",},"x":0,"y":0,"tiles":{"TileDataFormat":1,"SerialiseWidth":50,"SerialiseHeight":17,"TileCompressedData":[
 -8,59,2,49,77,-34,78,2,79,49,-12,59,2,49,56,-34,0,2,89,49,-12,59,2,49,56,-34,0,2,89,49,-12,59,4,49,56,0,0,-12,47,1,44,-4,45,1,46,-6,47,1,44,-3,
 45,1,46,-3,41,2,89,49,-12,59,5,49,56,0,0,47,-11,0,1,54,-4,49,1,56,-6,0,1,54,-3,49,1,56,-3,0,2,89,49,-12,59,5,49,56,0,0,47,-11,0,1,54,-4,
@@ -97,11 +97,11 @@
 0,0,47,-23,0,5,54,49,59,49,56,-3,0,2,89,49,-12,59,5,49,56,0,0,47,-9,0,1,44,-7,45,1,75,-5,0,5,54,49,59,49,56,-3,0,2,89,49,-4,59,-9,49,4,
 56,0,0,47,-9,0,1,54,-7,49,2,97,75,-4,0,5,54,49,59,49,56,-3,0,2,89,49,-4,59,-9,65,4,66,0,0,47,-9,0,2,54,49,-5,59,-2,49,2,97,75,-3,0,1,
 54,-3,49,1,56,-3,0,2,89,49,-4,59,-22,0,2,54,49,-6,59,-2,49,5,97,75,0,0,64,-3,65,1,66,-3,0,2,89,49,-4,59,-22,0,2,54,49,-7,59,-2,49,2,97,75,
--9,0,2,89,49,-4,59,-22,45,2,99,49,-8,59,-2,49,1,97,-9,45,2,99,49,-4,59,-24,49,-9,59,-13,49,-104,59,],},"visible":true,"depth":100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
-    {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Backgrounds_scroll","spriteId":{"name":"bg_secret","path":"sprites/bg_secret/bg_secret.yy",},"colour":4294967295,"x":0,"y":0,"htiled":true,"vtiled":true,"hspeed":1.0,"vspeed":1.0,"stretch":false,"animationFPS":15.0,"animationSpeedType":0,"userdefinedAnimFPS":false,"visible":true,"depth":200,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
+-9,0,2,89,49,-4,59,-22,45,2,99,49,-8,59,-2,49,1,97,-9,45,2,99,49,-4,59,-24,49,-9,59,-13,49,-104,59,],},"visible":true,"depth":100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritVisibility":true,"inheritSubLayers":true,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
+    {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Backgrounds_scroll","spriteId":{"name":"bg_secret","path":"sprites/bg_secret/bg_secret.yy",},"colour":4294967295,"x":0,"y":0,"htiled":true,"vtiled":true,"hspeed":1.0,"vspeed":1.0,"stretch":false,"animationFPS":15.0,"animationSpeedType":0,"userdefinedAnimFPS":false,"visible":true,"depth":200,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritVisibility":true,"inheritSubLayers":true,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
   ],
   "inheritLayers": false,
-  "creationCodeFile": "${project_dir}/rooms/strongcold_secret4/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/strongcold_secret4/RoomCreationCode.gml",
   "inheritCode": false,
   "instanceCreationOrder": [
     {"name":"inst_BDCF45C0","path":"rooms/strongcold_secret4/strongcold_secret4.yy",},
@@ -175,7 +175,7 @@
     {"name":"inst_3C58FC32","path":"rooms/strongcold_secret4/strongcold_secret4.yy",},
     {"name":"inst_B10B79AA","path":"rooms/strongcold_secret4/strongcold_secret4.yy",},
     {"name":"inst_46BFE722","path":"rooms/strongcold_secret4/strongcold_secret4.yy",},
-    {"name":"inst_2088ED15","path":"rooms/strongcold_secret4/strongcold_secret4.yy",},
+    {"name":"inst_204AD71E","path":"rooms/strongcold_secret4/strongcold_secret4.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
@@ -200,6 +200,6 @@
   },
   "parent": {
     "name": "Strongcold",
-    "path": "folders/Rooms/Old Levels/Strongcold.yy",
+    "path": "folders/Rooms/Levels/Old Levels/Scrapped/Strongcold.yy",
   },
 }

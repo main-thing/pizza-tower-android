@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (state != states.transitioncutscene)
 	captain_index += 0.35
 else

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 switch object_index
 {
 	case obj_tubeexitdownexit:

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var _baddieID = other.baddieID
 if (!instance_exists(_baddieID))
 	exit;

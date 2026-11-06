@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 targetplayer = (global.coop ? instance_nearest(x, y, obj_player) : obj_player1)
 if (hp <= 0 && state != states.arenaround && state != states.boss_fistmatch)
 {

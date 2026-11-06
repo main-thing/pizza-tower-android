@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var player = other.id
 var baddie = id
 if (state == states.punch && image_index > 8 && image_index < 12)

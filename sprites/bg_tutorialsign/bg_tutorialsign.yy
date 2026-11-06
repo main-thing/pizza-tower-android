@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 100,
   "height": 100,
   "textureGroupId": {
@@ -67,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Demo events",
-    "path": "folders/Sprites/Demo events.yy",
+    "name": "Tutorial",
+    "path": "folders/Sprites/Decorations/Tutorial.yy",
   },
 }

@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 129,
   "height": 133,
   "textureGroupId": {
@@ -68,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Medieval",
-    "path": "folders/Sprites/Backgrounds/Medieval.yy",
+    "path": "folders/Sprites/Decorations/Medieval.yy",
   },
 }

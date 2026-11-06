@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (room == rm_editor)
 	exit;
 if (obj_player.state != states.hurt && global.shroomfollow == 0)

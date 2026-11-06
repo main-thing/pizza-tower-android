@@ -1,2 +1,3 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 dir = 0
 depth = 50

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 playerid = instance_place(x, y, obj_player).id
 image_speed = 0.5
 image_xscale = playerid.xscale

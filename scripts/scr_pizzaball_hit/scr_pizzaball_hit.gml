@@ -35,15 +35,15 @@ function scr_pizzaball_grabbed()
 	state = states.golf
 }
 
-function scr_pizzaball_go_to_thrown(argument0, argument1, argument2)
+function scr_pizzaball_go_to_thrown(_a0, _a1, _a2)
 {
-	if (argument2 == undefined)
-		argument2 = 1
-	hitspeed = abs(argument0)
-	if (sign(argument0) != 0)
-		image_xscale = sign(argument0)
-	jumpspeed = abs(argument1)
-	if (argument2 && jumpspeed < 12)
+	if (_a2 == undefined)
+		_a2 = 1
+	hitspeed = abs(_a0)
+	if (sign(_a0) != 0)
+		image_xscale = sign(_a0)
+	jumpspeed = abs(_a1)
+	if (_a2 && jumpspeed < 12)
 		jumpspeed = 12
 	vsp = (-jumpspeed)
 	bounced = 0

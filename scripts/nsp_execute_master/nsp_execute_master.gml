@@ -4,24 +4,24 @@
 /// @param  Read-Only
 /// @param  StrList
 /// @param  ParList
-function nsp_execute_master(argument0, argument1, argument2, argument3, argument4) {
+function nsp_execute_master(_a0, _a1, _a2, _a3, _a4) {
 	/*
 	Underlying NSP script.
 	*/
-	var nspListStr = argument3,
-	    nspListPar = argument4,
+	var nspListStr = _a3,
+	    nspListPar = _a4,
 	    nspToken = global.nspToken;
     
 	var i,list_min,list_max,spec_str,pri_b,read_only,rv;
 
 	//*** PART 1: SETUP ***
 
-	list_min = argument0;
-	list_max = argument1;
-	read_only = argument2;
+	list_min = _a0;
+	list_max = _a1;
+	read_only = _a2;
 
 	  //DEBUG:
-	  //show_message("MASTER: "+string(list_min)+", "+string(list_max)+", "+string(argument2)+" | "+list_string(nspListStr));
+	  //show_message("MASTER: "+string(list_min)+", "+string(list_max)+", "+string(_a2)+" | "+list_string(nspListStr));
 
 	//*** PART 2: FORMAT ***
 
@@ -80,7 +80,7 @@ function nsp_execute_master(argument0, argument1, argument2, argument3, argument
 	   if !is_undefined(rv) return rv;
     
 	   //Remove executed part:
-	   if argument2=false {
+	   if _a2=false {
 	    nsp_list_remove(list_min, pos_1, nspListStr, nspListPar);
 	    list_max-=(pos_1-list_min+1);
 	    }
@@ -116,7 +116,7 @@ function nsp_execute_master(argument0, argument1, argument2, argument3, argument
 	    }
     
 	   //Remove executed part:
-	   if argument2=false {
+	   if _a2=false {
 	    nsp_list_remove(list_min, pos_3, nspListStr, nspListPar);
 	    list_max-=(pos_3-list_min+1);
 	    }
@@ -152,7 +152,7 @@ function nsp_execute_master(argument0, argument1, argument2, argument3, argument
 	    }
    
 	   //Remove executed part:
-	   if argument2=false {
+	   if _a2=false {
 	    nsp_list_remove(list_min, pos_3, nspListStr, nspListPar);
 	    list_max-=(pos_3-list_min+1);   
 	    }
@@ -188,7 +188,7 @@ function nsp_execute_master(argument0, argument1, argument2, argument3, argument
 	    }
    
 	   //Remove executed part:
-	   if argument2=false {
+	   if _a2=false {
 	    nsp_list_remove(list_min, pos_3, nspListStr, nspListPar);
 	    list_max-=(pos_3-list_min+1);   
 	    }
@@ -256,7 +256,7 @@ function nsp_execute_master(argument0, argument1, argument2, argument3, argument
 	    }
    
 	   //Remove executed part:
-	   if argument2=false {
+	   if _a2=false {
 	    nsp_list_remove(list_min, pos_3, nspListStr, nspListPar);
 	    list_max-=(pos_3-list_min+1);  
 	    }
@@ -296,7 +296,7 @@ function nsp_execute_master(argument0, argument1, argument2, argument3, argument
 	   if !is_undefined(rv) return rv;
    
 	   //Remove executed part:
-		if argument2=false {
+		if _a2=false {
 			nsp_list_remove(list_min, list_max, nspListStr, nspListPar);
 			list_max-=(list_max-list_min+1);
 	    }
@@ -309,10 +309,10 @@ function nsp_execute_master(argument0, argument1, argument2, argument3, argument
 	//*** PART 5: EXECUTE REMAINING CODE ***
 
 	  //DEBUG:
-	  //show_message("MASTER (Remaining): "+string(list_min)+", "+string(list_max)+", "+string(argument2)+" | "+list_string(nspListStr));
+	  //show_message("MASTER (Remaining): "+string(list_min)+", "+string(list_max)+", "+string(_a2)+" | "+list_string(nspListStr));
 
 	if list_max>=list_min {
-	 rv=nsp_execute_master(list_min, list_max, argument2, nspListStr, nspListPar);
+	 rv=nsp_execute_master(list_min, list_max, _a2, nspListStr, nspListPar);
 	 if !is_undefined(rv) return rv;
 	 }
   

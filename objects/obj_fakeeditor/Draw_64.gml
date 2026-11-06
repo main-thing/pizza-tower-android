@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if(editormode)
 {
 	if (instance_exists(selectedent) && !in_play_mode)
@@ -28,16 +29,18 @@ if(editormode)
 	    draw_set_color(c_white)
 	    draw_set_halign(fa_left)
 	    for (var i = 0; i <= array_length(_myvars)-1; i++)
+		{
 	        draw_text_transformed(0, ((i * 10) + 100), ((_myvars[i] + " = ") + string(variable_instance_get(selectedent, _myvars[i]))), 0.8, 0.8, 0)
+		}
 	}
 }
 /*
-if(!surface_exists(tileselectsurf)){
+if(!surface_exists(tileselectsurf)) {
 	tileselectsurf = surface_create_(tileselectsurf_width,tileselectsurf_height)
 } else {
 	surface_set_target(tileselectsurf);
 	draw_clear(c_black)
-	if(keyboard_check(vk_space)){
+	if(keyboard_check(vk_space)) {
 		funnyx -= 1
 	}
 	draw_sprite(tile_secret,0,0,funnyx)

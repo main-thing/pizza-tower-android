@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var total = global.pigtotal - global.pigreduction;
 if (other.key_up2 && total >= maxscore && !unlocked)
 {

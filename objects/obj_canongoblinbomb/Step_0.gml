@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 hsp = (image_xscale * 10)
 if place_meeting((x + hsp), y, obj_solid)
 {

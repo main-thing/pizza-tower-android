@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 480,
   "height": 1056,
   "textureGroupId": {
@@ -68,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Chateau",
-    "path": "folders/Sprites/Backgrounds/Chateau.yy",
+    "path": "folders/Sprites/Tilesets/Chateau.yy",
   },
 }

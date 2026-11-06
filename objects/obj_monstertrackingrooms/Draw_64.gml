@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 draw_set_font(global.smallfont)
 draw_set_color(c_white)
 for (var i = 0; i < ds_grid_width(room_grid); i++)

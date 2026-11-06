@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (bombreset > 0)
 	bombreset--
 if (bombreset <= 0 && sprite_index == spr_invtrash_idle)

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 tex_list = -4
 draw_flush()
 //var group_arr = ["playergroup", "backgroundgroup", "hudgroup", "smallgroup", "baddiegroup", "levelstructuregroup"]
@@ -11,3 +12,7 @@ for (var i = 0; i < array_length(group_arr); i++)
 }
 tex_max = ds_list_size(tex_list)
 alarm[0] = 70
+if(!audio_group_is_loaded(audiogroup_music))
+	audio_group_load(audiogroup_music)
+if(!audio_group_is_loaded(audiogroup_sfx))
+	audio_group_load(audiogroup_sfx)

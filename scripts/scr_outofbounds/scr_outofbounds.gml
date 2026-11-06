@@ -1,4 +1,4 @@
-function scr_outofbounds(){
+function scr_outofbounds() {
 	x = roomstartx
 	y = roomstarty
 	visible = true

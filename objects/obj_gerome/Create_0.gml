@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 event_inherited()
 image_speed = 0.35
 sprite_index = choose(spr_gerome_idle1, spr_gerome_idle2, spr_gerome_idle3)
@@ -17,3 +18,4 @@ platformid = -4
 hsp_carry = 0
 vsp_carry = 0
 thrown = false
+escape = false

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 event_inherited()
 spr_hidden = spr_fakepeplimb2_hidden
 spr_idle = spr_fakepeplimb2_idle

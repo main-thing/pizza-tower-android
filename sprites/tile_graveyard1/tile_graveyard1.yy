@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 320,
   "height": 600,
   "textureGroupId": {
@@ -68,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Graveyard",
-    "path": "folders/Sprites/Backgrounds/Graveyard.yy",
+    "path": "folders/Sprites/Tilesets/Graveyard.yy",
   },
 }

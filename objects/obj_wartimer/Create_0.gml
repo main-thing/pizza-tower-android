@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 depth = -100
 minutes = 0
 seconds = 0

@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Pizzaball States",
-    "path": "folders/Scripts/Pizzaball States.yy",
+    "path": "folders/Objects/Game settings/Scripts/Pizzaball States.yy",
   },
 }

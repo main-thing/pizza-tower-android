@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Legacy",
-    "path": "folders/Scripts/N String Parser v2_6_6/Setters and Getters/Legacy.yy",
+    "path": "folders/Objects/Game settings/Scripts/N String Parser v2_6_6/Setters and Getters/Legacy.yy",
   },
 }

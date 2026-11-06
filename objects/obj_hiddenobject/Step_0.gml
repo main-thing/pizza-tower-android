@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (activated && fade != -1)
 {
 	if (fade < 1)

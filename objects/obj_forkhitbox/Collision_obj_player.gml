@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (instance_exists(ID) && ID.object_index == obj_badrat && other.state == states.tumble)
 	exit;
 var h = other.hurted

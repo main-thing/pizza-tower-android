@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if ((!instance_exists(obj_keyconfig)) && (!instance_exists(obj_audioconfig)))
 	scr_getinput()
 if ((!instance_exists(obj_keyconfig)) && (!instance_exists(obj_audioconfig)))
@@ -44,11 +45,18 @@ if (optionselected == 1)
 		var resolutionX = (_os_r == 0 ? 480 : (_os_r == 1 ? 960 : 1920))
 		var resolutionY = (_os_r == 0 ? 270 : (_os_r == 1 ? 540 : 1080))
 		window_set_size(resolutionX, resolutionY)
+		with(obj_screensizer)
+		{
+			draw_height = resolutionX
+			draw_width = resolutionY
+		}
 	}
 }
+if (buffer > 0)
+	buffer--
 if (optionselected == 2)
 {
-	if (!instance_exists(obj_keyconfig))
+	if (buffer <= 0 && !instance_exists(obj_keyconfig))
 	{
 		if (key_jump or keyboard_check_pressed(vk_return) or keyboard_check_pressed(vk_return))
 		{
@@ -58,11 +66,9 @@ if (optionselected == 2)
 		}
 	}
 }
-if (buffer > 0)
-	buffer--
 if (optionselected == 3)
 {
-	if (buffer <= 0 && (!instance_exists(obj_audioconfig)))
+	if (buffer <= 0 && !instance_exists(obj_audioconfig))
 	{
 		if (key_jump or keyboard_check_pressed(vk_return))
 		{

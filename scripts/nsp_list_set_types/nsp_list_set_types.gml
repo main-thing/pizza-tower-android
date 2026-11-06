@@ -1,15 +1,15 @@
 /// @description nsp_list_set_types(Token List, Types List)
 /// @param Token List
 /// @param  Types List
-function nsp_list_set_types(argument0, argument1) {
+function nsp_list_set_types(_a0, _a1) {
 	/*
 	Underlying NSP script.
 	Returns: 1 = Success, 0 = Failure
 	*/
 	var i, a, tok_list, typ_list;
 
-	tok_list = argument0;
-	typ_list = argument1;
+	tok_list = _a0;
+	typ_list = _a1;
 
 	for (i = 0; i < ds_list_size(tok_list)-1; i += 1) {
   

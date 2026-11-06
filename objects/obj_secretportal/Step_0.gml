@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 image_speed = 0.35
 if active
 {
@@ -49,7 +50,29 @@ if (floor(image_index) == (image_number - 1))
 						}
 						else
 							targetRoom = lastroom
+							
+						with (obj_randomsecret)
+						{
+							if (!selected)
+							{
+								var len = array_length(levels);
+								trace("Selecting random level, array length: ", len);
+		
+								if (len > 0)
+								{
+									var num = irandom(len - 1);
+									selected_level = levels[num];
+									selected = true;
+									trace("Selected random level: ", room_get_name(selected_level));
+									array_delete(levels, num, 1);
+								}
+							}
+	
+							if (selected_level != -4)
+								other.targetRoom = selected_level;
+						}
 					}
+					
 					if (!secret)
 						ds_list_add(global.saveroom, id)
 					instance_create(x, y, obj_fadeout)

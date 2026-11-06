@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 combo = 0
 comboscore = 0
 combominus = 0
@@ -12,7 +13,7 @@ with (obj_player)
 	if (!(place_meeting(x, y, obj_exitgate)))
 		global.combodropped = 1
 }
-if(!global.oldsprites){
+if(!global.oldsprites) {
 	depth = -100;
 	x = 832;
 	y = 290;

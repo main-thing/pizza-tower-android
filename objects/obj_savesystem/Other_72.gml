@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var ident = ds_map_find_value(async_load, "id")
 var status = ds_map_find_value(async_load, "status")
 var error = ds_map_find_value(async_load, "error")

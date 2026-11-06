@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var xx = x
 var yy = y
 image_speed = 0.35

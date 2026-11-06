@@ -1,19 +1,19 @@
 /// @description nsp_is_script(String)
 /// @param String
-function nsp_is_script(argument0) {
+function nsp_is_script(_a0) {
 	/*
 	Underlying NSP script.
 	*/
 	var nspToken=global.nspToken;
 	var a,i,work_str,pri_q,pri_b;
 
-	a=string_pos("(",argument0);
+	a=string_pos("(",_a0);
 
-	if a<=1 or nsp_gm_nom(string_copy(argument0,1,a-1))=false
+	if a<=1 or nsp_gm_nom(string_copy(_a0,1,a-1))=false
 	 return false;
 
 	//Find closed bracket:
-	work_str=argument0;
+	work_str=_a0;
 	pri_b=0;
 	pri_q=1;
 	for (i=a; i<=string_length(work_str); i+=1) begin

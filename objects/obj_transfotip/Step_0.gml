@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (fadeout)
 	fade = Approach(fade, 0, 0.01);
 else

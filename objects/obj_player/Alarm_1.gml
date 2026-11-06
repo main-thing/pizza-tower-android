@@ -1,1 +1,2 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 inv_frames = 0

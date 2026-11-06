@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 130,
   "height": 147,
   "textureGroupId": {
@@ -106,6 +107,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Factory",
-    "path": "folders/Sprites/Backgrounds/Factory.yy",
+    "path": "folders/Sprites/Decorations/Factory.yy",
   },
 }

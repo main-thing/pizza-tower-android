@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if instance_exists(baddieID)
 {
 	scr_soundeffect(sfx_killenemy)

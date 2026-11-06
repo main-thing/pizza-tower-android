@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "GMS1 Compatibility Scripts",
-    "path": "folders/Scripts/GMS1 Compatibility Scripts.yy",
+    "path": "folders/Objects/Game settings/Scripts/GMS1 Compatibility Scripts.yy",
   },
 }

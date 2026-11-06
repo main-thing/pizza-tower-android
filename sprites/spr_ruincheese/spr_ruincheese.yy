@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 320,
   "height": 2784,
   "textureGroupId": {
@@ -87,11 +88,11 @@
       0,
     ],
     "resourceVersion": "1.0",
-    "loadedVersion": null,
+    "loadedVersion": {},
     "resourceType": "GMNineSliceData",
   },
   "parent": {
     "name": "Ruin",
-    "path": "folders/Sprites/Backgrounds/Ruin.yy",
+    "path": "folders/Sprites/Tilesets/Ruin.yy",
   },
 }

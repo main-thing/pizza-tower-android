@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!released)
 {
 	if ((!instance_exists(inst)) && global.chase == 1)

@@ -3,16 +3,16 @@
 /// @param  End
 /// @param  StrList
 /// @param  ParList
-function nsp_build_grid(argument0, argument1, argument2, argument3) {
+function nsp_build_grid(_a0, _a1, _a2, _a3) {
 	/*
 	Underlying NSP script.
 	*/
-	var nspListStr = argument2,
-	    nspListPar = argument3;
+	var nspListStr = _a2,
+	    nspListPar = _a3;
 	var i,d,list_min,list_max,grid;
 
-	list_min=argument0;
-	list_max=argument1;
+	list_min=_a0;
+	list_max=_a1;
 
 	d=(list_max-list_min);
 

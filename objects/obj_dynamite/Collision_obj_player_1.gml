@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (obj_explosion == obj_canonexplosion)
 {
 	instance_destroy();

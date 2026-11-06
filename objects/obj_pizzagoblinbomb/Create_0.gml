@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 hsp = 0
 vsp = 0
 grav = 0.5
@@ -17,3 +18,4 @@ defused = 0
 destroy = 1
 grabbable = 1
 bomblit_spr = spr_bomblit
+old = 0

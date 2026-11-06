@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 released = 0
 inst = -4
 targetRoom = room

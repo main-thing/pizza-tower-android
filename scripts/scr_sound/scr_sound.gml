@@ -6,20 +6,20 @@ function scr_sound()
 	exit;
 }
 
-function scr_music(argument0)
+function scr_music(_a0)
 {
-	var m = audio_play_sound(argument0, 10, true)
-	audio_sound_gain(m, ((audio_sound_get_gain(argument0) * 0.8) * global.option_music_volume), 0)
+	var m = audio_play_sound(_a0, 10, true)
+	audio_sound_gain(m, ((audio_sound_get_gain(_a0) * 0.8) * global.option_music_volume), 0)
 	return m;
 }
 
-function set_master_gain(argument0)
+function set_master_gain(_a0)
 {
 	var num = audio_get_listener_count()
 	for (var i = 0; i < num; i++)
 	{
 		var info = audio_get_listener_info(i)
-		audio_set_master_gain(ds_map_find_value(info, "index"), argument0)
+		audio_set_master_gain(ds_map_find_value(info, "index"), _a0)
 		ds_map_destroy(info)
 	}
 	exit;

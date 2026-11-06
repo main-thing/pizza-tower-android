@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 event_inherited()
 tube_spr = spr_pipe_enter
 hsp = 0

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if ((other.state == states.handstandjump or other.state == states.lungeattack) && state != states.golf)
 {
 	var _player = other.id
@@ -16,7 +17,7 @@ if ((other.state == states.handstandjump or other.state == states.lungeattack) &
 				hsp = 0
 				movespeed = 0
 				slopespeed = 0
-				state = states.golf
+				state = states.golfOLD
 				_pizzaball.state = states.golf
 				_pizzaball.player = id
 				if (xscale > 0)

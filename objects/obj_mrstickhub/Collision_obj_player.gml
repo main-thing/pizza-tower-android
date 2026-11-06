@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (currentscore < maxscore && global.pigtotal >= maxscore && other.state == states.normal && other.grounded && other.key_up2)
 {
 	ini_open(concat("saveData", global.currentsavefile, ".ini"))

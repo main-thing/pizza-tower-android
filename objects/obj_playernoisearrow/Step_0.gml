@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (baddieID != noone && (!instance_exists(baddieID)))
 	exit;
 if instance_exists(baddieID)

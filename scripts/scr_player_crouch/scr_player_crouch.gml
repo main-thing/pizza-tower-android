@@ -26,7 +26,7 @@ function scr_player_crouch()
 		crouchAnim = 1
 		jumpAnim = 1
 		image_index = 0
-		if(character != "S"){
+		if(character != "S") {
 			mask_index = spr_player_mask
 		}
 	}
@@ -74,29 +74,10 @@ function scr_player_crouch()
 		crouchAnim = 1
 		jumpAnim = 1
 	}
-	if (key_shoot2 && character == "V" && (!instance_exists(dynamite_inst)))
+	if (character == "V")
 	{
-		if (move == 0)
-			movespeed = 0
-		state = states.dynamite
-		image_index = 0
-		sprite_index = spr_playerV_dynamitethrow
-		with (instance_create(x, y, obj_dynamite))
-		{
-			image_xscale = other.xscale
-			movespeed = 0
-			vsp = -6
-			other.dynamite_inst = id
-			playerid = other.id
-		}
-	}
-	if (key_slap2 && character == "V")
-	{
-		if (move == 0)
-			movespeed = 0
-		state = states.revolver
-		image_index = 0
-		sprite_index = spr_playerV_revolverstart
+		scr_revolver()
+		scr_crouchdynamite()
 	}
 	image_speed = 0.45
 	exit;

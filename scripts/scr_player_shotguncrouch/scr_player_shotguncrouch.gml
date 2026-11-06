@@ -18,7 +18,7 @@ function scr_player_shotguncrouch()
 	}
 	else if (floor(image_index) == (image_number - 1))
 		sprite_index = spr_shotgunduck
-	if(!finalmoveset){
+	if(!finalmoveset) {
 		if ((!grounded) && input_buffer_jump >= 8)
 		{
 			state = states.shotguncrouchjump

@@ -1,7 +1,8 @@
-if(waitforanim == 1){
-	with(obj_player1){
-		if(state == states.door){
-			if(floor(image_index) == (image_number - 1)){
+ADD_OBJECT_EVENT_GML_HOOK;
+if(waitforanim == 1) {
+	with(obj_player1) {
+		if(state == states.door) {
+			if(floor(image_index) == (image_number - 1)) {
 				other.waitforanim = 0
 			}
 		}
@@ -17,9 +18,9 @@ if (fadealpha > 1)
 		{
 			/*with (obj_player)
 			{
-				if(instance_place(x, y, obj_goldendoor) != noone){
-					with(instance_place(x, y, obj_goldendoor)){
-						if(!olddoor){
+				if(instance_place(x, y, obj_goldendoor) != noone) {
+					with(instance_place(x, y, obj_goldendoor)) {
+						if(!olddoor) {
 							game_restart()
 						}
 					}
@@ -77,11 +78,11 @@ if (fadealpha > 1)
             }
 			with (obj_boxofpizza_editor)
             {
-				/*with(instance_create_depth(x,y - (48 * image_yscale),-10000,obj_1x1)){
+				/*with(instance_create_depth(x,y - (48 * image_yscale),-10000,obj_1x1)) {
 					outline = 1
 					alarm[0] = 100
 				}
-				if(place_meeting(x, y - (48 * image_yscale), obj_player)){
+				if(place_meeting(x, y - (48 * image_yscale), obj_player)) {
 					image_blend = c_red
 				} else {
 					image_blend = c_white
@@ -97,7 +98,7 @@ if (fadealpha > 1)
             }
 			with (obj_secretportal_editor)
             {
-				if(other.start == 1){
+				if(other.start == 1) {
 			        if (index == other.index && start == 0 && !place_meeting(x, y, obj_player))
 			        {
 					    other.xx = x
@@ -108,7 +109,7 @@ if (fadealpha > 1)
 						sprite_index = spr_secretportal_spawnopen
 			        }
 				}
-				if(other.start == 2){
+				if(other.start == 2) {
 			        if (index == other.index && start == 1 && !place_meeting(x, y, obj_player))
 			        {
 					    other.xx = x
@@ -142,7 +143,7 @@ if (fadealpha > 1)
             }
             with (obj_player)
             {	
-				switch(other.object){
+				switch(other.object) {
 					case obj_door_editor:
 						x = (other.xx + 50)
 						y = (other.yy + 50)

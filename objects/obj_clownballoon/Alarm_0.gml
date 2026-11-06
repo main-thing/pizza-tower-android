@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (instance_create(x, y, obj_clownballoon_projectile))
 	image_xscale = 1
 with (instance_create(x, y, obj_clownballoon_projectile))

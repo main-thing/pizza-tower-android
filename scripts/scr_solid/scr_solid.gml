@@ -1,10 +1,10 @@
-function scr_solid(argument0, argument1)
+function scr_solid(_a0, _a1)
 {
-	if(!obj_player.finalmoveset){
+	if(!obj_player.finalmoveset) {
 	var old_x = x
 	var old_y = y
-	x = argument0
-	y = argument1
+	x = _a0
+	y = _a1
 	if (place_meeting(x, y, obj_solid) or place_meeting(x, y, obj_ghostwall) or place_meeting(x, y, obj_mach3solid))
 	{
 		x = old_x
@@ -41,8 +41,8 @@ function scr_solid(argument0, argument1)
 	} else {
 		var old_x = x;
 		var old_y = y;
-		x = argument0;
-		y = argument1;
+		x = _a0;
+		y = _a1;
 		if (place_meeting(x, y, obj_solid))
 		{
 			x = old_x;
@@ -79,9 +79,9 @@ function scr_solid(argument0, argument1)
 	}
 }
 
-function check_slope(argument0)
+function check_slope(_a0)
 {
-	var slope = instance_place(x, y, argument0)
+	var slope = instance_place(x, y, _a0)
 	if slope
 	{
 		with (slope)
@@ -110,12 +110,12 @@ function check_slope(argument0)
 	return false;
 }
 
-function scr_solid_slope(argument0, argument1)
+function scr_solid_slope(_a0, _a1)
 {
 	old_x = x
 	old_y = y
-	x = argument0
-	y = argument1
+	x = _a0
+	y = _a1
 	if check_slope(obj_slope)
 	{
 		var inst = instance_place(x, y, obj_slope)

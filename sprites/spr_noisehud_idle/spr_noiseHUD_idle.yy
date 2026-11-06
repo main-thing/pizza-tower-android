@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 164,
   "height": 177,
   "textureGroupId": {
@@ -103,7 +104,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Old Noise",
-    "path": "folders/Sprites/HUD/Old Noise.yy",
+    "name": "Noise",
+    "path": "folders/Sprites/HUD/Old HUD/Noise.yy",
   },
 }

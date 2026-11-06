@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 Vspeed = random_range(-1, 1)
 Hspeed = random_range(-1, 1)
 alarm[0] = 10

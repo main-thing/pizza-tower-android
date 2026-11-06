@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if showicon
 {
 	var a = clamp(icon_alpha, 0, 1)

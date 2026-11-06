@@ -4,7 +4,7 @@ function scr_player_handstandjump() {
 	move = (key_left + key_right)
 	momemtum = 1
 	dir = xscale
-	if(!finalmoveset){
+	if(!finalmoveset) {
 		if (global.attackstyle != 3) {
 			if (movespeed < 10) {
 				if ((sprite_index == spr_pistolshot or sprite_index == spr_shotgun_shot) && movespeed < 8) movespeed += 0.25
@@ -72,14 +72,13 @@ function scr_player_handstandjump() {
 		vsp /= 20
 		jumpstop = 1
 	}
-	if(!finalmoveset){
+	if(!finalmoveset) {
 		if (key_jump && grounded && (!key_down) && global.attackstyle != 2) {
 			jumpstop = 0
 			image_index = 0
 			vsp = -11
 			state = states.mach2
 			sprite_index = spr_longjump
-			audio_stop_sound(suplexdashsnd)
 		}
 	} else {
 		if ((input_buffer_jump > 0) && can_jump && (!key_down) && (global.attackstyle != 2))
@@ -96,7 +95,6 @@ function scr_player_handstandjump() {
 	        sprite_index = spr_longjump
 			longjumpsnd = audio_play_sound(sfx_rollgetup, 1, false)
 			sfx_gain(longjumpsnd)
-			audio_stop_sound(suplexdashsnd)
 	    }
 	}
 	if (sprite_index == attackdash && (!grounded)) {
@@ -106,7 +104,7 @@ function scr_player_handstandjump() {
 	if (grounded && sprite_index == airattackdash && ((!key_attack) or character == "N") && global.attackstyle != 2) {
 		if (global.attackstyle != 3) {
 			state = states.normal
-			if (move != xscale){ 
+			if (move != xscale) { 
 				movespeed = 2
 			}
 		} else {
@@ -125,7 +123,7 @@ function scr_player_handstandjump() {
 		state = states.mach2
 		grav = 0.5
 	}
-	if(character != "S"){
+	if(character != "S") {
 		if (key_down && grounded && global.attackstyle != 2) {
 			if(!finalmoveset) {
 				with(instance_create(x, y, obj_jumpdust))
@@ -148,10 +146,9 @@ function scr_player_handstandjump() {
 				machhitAnim = 0;
 				state = states.tumble;
 			}
-			audio_stop_sound(suplexdashsnd)
 		}
 		mask_index = spr_player_mask
-		if(!finalmoveset){
+		if(!finalmoveset) {
 			if (((!grounded) && (place_meeting((x + hsp), y, obj_solid) or scr_solid_slope((x + hsp), y)) && (!(place_meeting((x + hsp), y, obj_destructibles)))) or(grounded && (place_meeting((x + sign(hsp)), (y - 16), obj_solid) or scr_solid_slope((x + sign(hsp)), (y - 16))) && (!(place_meeting((x + hsp), y, obj_destructibles))) && (!(place_meeting((x + hsp), y, obj_metalblock))) && scr_slope())) {
 				if key_attack {
 					wallspeed = movespeed
@@ -198,7 +195,6 @@ function scr_player_handstandjump() {
 				if(finalmoveset)
 					input_buffer_slap = 0
 			}
-			audio_stop_sound(suplexdashsnd)
 		}
 	}
 	if (character == "S") {

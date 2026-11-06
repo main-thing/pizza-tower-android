@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 event_inherited()
 ds_map_set(player_hurtstates, states.handstandjump, 30)
 ds_map_set(player_hurtstates, states.chainsawbump, 50)
@@ -29,28 +30,28 @@ bombgrabID = -4
 knightbuffer = 0
 spawnpool = [obj_forknight, obj_cheeseslime]
 hitplayer = 0
-function player_hurt(argument0, argument1)
+function player_hurt(_a0, _a1)
 {
 	var _prevstate = state
 	if (phase < 2)
-		SUPER_player_hurt(argument0, argument1)
-	else if ((argument1.state != states.backbreaker or argument1.parry_inst == -4) && argument1.state != states.parry && ds_list_find_index(hitlist, argument1) == -1)
+		SUPER_player_hurt(_a0, _a1)
+	else if ((_a1.state != states.backbreaker or _a1.parry_inst == -4) && _a1.state != states.parry && ds_list_find_index(hitlist, _a1) == -1)
 	{
-		ds_list_add(hitlist, argument1)
-		SUPER_player_hurt(argument0, argument1)
+		ds_list_add(hitlist, _a1)
+		SUPER_player_hurt(_a0, _a1)
 		state = _prevstate
 		hitplayer = 1
 	}
 }
 
-function boss_hurt(argument0, argument1)
+function boss_hurt(_a0, _a1)
 {
 	if (phase == 0)
-		SUPER_boss_hurt(argument0, argument1)
+		SUPER_boss_hurt(_a0, _a1)
 	else
 	{
 		var _removehp = 1
-		with (argument1)
+		with (_a1)
 		{
 			if (state != states.lungeattack && state != states.knightpep)
 				scr_pummel()
@@ -68,17 +69,17 @@ function boss_hurt(argument0, argument1)
 		}
 		if _removehp
 		{
-			hp -= argument0
+			hp -= _a0
 			scr_soundeffect(sfx_killingblow)
 		}
 	}
 }
 
-function boss_hurt_noplayer(argument0)
+function boss_hurt_noplayer(_a0)
 {
 	if (inv_timer <= 0)
 	{
-		hp -= argument0
+		hp -= _a0
 		inv_timer = 10
 	}
 }

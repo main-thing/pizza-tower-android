@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (instance_create(x, y, content))
 	vsp = random_range(-1, -10)
 if (_timescount < _times)

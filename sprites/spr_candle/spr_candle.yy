@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 42,
   "height": 97,
   "textureGroupId": {
@@ -92,6 +93,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Mansion",
-    "path": "folders/Sprites/Backgrounds/Mansion.yy",
+    "path": "folders/Sprites/Decorations/Mansion.yy",
   },
 }

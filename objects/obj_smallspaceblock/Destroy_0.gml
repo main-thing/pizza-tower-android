@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (instance_create((x + 16), (y + 16), obj_sausageman_dead))
 	sprite_index = spr_doughblockdead
 scr_sleep(5)

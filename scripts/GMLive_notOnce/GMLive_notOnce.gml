@@ -20,8 +20,6 @@ if (false) {
 	live_throw_error("");
 	
 	sprite_set_live(v, 0);
-	path_set_live(v, 0);
-	animcurve_set_live(v, 0);
 	shader_set_live(v, 0);
 	room_set_live(v, 0);
 	room_goto_live(v);

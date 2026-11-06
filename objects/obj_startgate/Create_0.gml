@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 targetDoor = "A"
 depth = 50
 level = "none"

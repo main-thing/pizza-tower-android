@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 scr_initenemy()
 depth = 0
 hsp = 0
@@ -5,7 +6,7 @@ vsp = 0
 movespeed = 4
 grav = 0.5
 jumpspeed = 5
-grounded = false
+grounded = 0
 state = states.walk
 deadspr = spr_banditochicken_dead
 walkspr = spr_clownmato_fall

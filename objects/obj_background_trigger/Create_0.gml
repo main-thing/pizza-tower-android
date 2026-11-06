@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 bgname = bg_entrance1
 has_touched_player = false
 tile_bg = true

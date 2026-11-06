@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!touched)
 {
 	var xx = obj_player1.x

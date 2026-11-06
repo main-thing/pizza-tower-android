@@ -1,13 +1,13 @@
 /// @description nsp_is_dsm(String)
 /// @param String
-function nsp_is_dsm(argument0) {
+function nsp_is_dsm(_argument0) {
 	/*
 	Underlying NSP script.
 	*/
 	var nspToken=global.nspToken;
 	var work_str;
 
-	work_str=argument0;
+	work_str=_argument0;
 
 	/*if string_copy(work_str,1,string_length(nspToken[NSP_TOK.dsm_name])+1)=
 	   nspToken[NSP_TOK.dsm_name]+"."

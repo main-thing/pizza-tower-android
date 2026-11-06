@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (obj_player1.spotlight == 1)
 	playerid = obj_player1
 else

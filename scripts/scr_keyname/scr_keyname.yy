@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Input",
-    "path": "folders/Scripts/Input.yy",
+    "path": "folders/Objects/Game settings/Scripts/Input.yy",
   },
 }

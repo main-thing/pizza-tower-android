@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var _transfo = false;
 var _state = other.state;
 with (other)

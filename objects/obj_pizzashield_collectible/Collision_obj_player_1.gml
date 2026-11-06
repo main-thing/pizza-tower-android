@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (other.state != states.gotoplayer)
 {
 	scr_sound_multiple("event:/sfx/misc/collect", x, y);

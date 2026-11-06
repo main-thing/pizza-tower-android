@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (other.id != baddieID && other.state != states.tumble && other.state != states.stun)
 {
 	with (other)

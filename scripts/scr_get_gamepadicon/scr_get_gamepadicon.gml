@@ -1,6 +1,6 @@
-function scr_get_gamepadicon(argument0) //gml_Script_scr_get_gamepadicon
+function scr_get_gamepadicon(_a0) //gml_Script_scr_get_gamepadicon
 {
-    switch argument0
+    switch _a0
     {
         case 32771:
             return 0;

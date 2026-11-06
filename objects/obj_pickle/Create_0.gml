@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 scr_initenemy()
 fadeout_time = 0.05
 fadein_time = 0.05

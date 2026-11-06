@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 300,
   "height": 350,
   "textureGroupId": {
@@ -68,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Street",
-    "path": "folders/Sprites/Backgrounds/Street.yy",
+    "path": "folders/Sprites/Decorations/Street.yy",
   },
 }

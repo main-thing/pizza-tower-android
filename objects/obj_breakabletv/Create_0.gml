@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 grabbed = 0
 hsp = 0
 vsp = 0

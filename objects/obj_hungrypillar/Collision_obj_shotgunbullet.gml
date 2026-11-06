@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (other.sprite_index != spr_peppinobullet)
 	instance_destroy()
 else

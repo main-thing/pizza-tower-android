@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 global.hardmode = 0
 global.heatmeter_threshold = 0
 global.heatmeter_count = 0

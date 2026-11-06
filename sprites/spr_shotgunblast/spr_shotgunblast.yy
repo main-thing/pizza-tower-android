@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 416,
   "height": 192,
   "textureGroupId": {
@@ -93,7 +94,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Effects and particles",
-    "path": "folders/Sprites/Effects and particles.yy",
+    "name": "Effects & particles",
+    "path": "folders/Sprites/Effects & particles.yy",
   },
 }

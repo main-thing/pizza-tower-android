@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var mh_id = other.id
 with (playerid)
 {

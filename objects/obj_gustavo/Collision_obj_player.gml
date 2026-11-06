@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (sprite_index == spr_gustavo_showpizza)
 {
 	sprite_index = spr_gustavo_givepizza

@@ -1,1 +1,2 @@
-keyboard_clear(vk_shift)
+ADD_OBJECT_EVENT_GML_HOOK;
+io_clear();

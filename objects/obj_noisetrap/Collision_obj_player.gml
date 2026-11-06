@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (collision && other.brick && other.isgustavo)
 {
 	instance_destroy()

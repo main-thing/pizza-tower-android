@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (buffer == 0 && other.instakillmove == 1)
 {
 	vsp = random_range(-10, -18)

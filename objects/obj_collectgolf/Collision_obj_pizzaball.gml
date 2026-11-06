@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (room == rm_editor)
 	exit;
 if audio_is_playing(sfx_collecttopping)

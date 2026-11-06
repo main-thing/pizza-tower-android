@@ -1,5 +1,6 @@
 function scr_enemy_hit()
 {
+	live_auto_call;
 	x = (hitX + random_range(-6, 6))
 	y = (hitY + random_range(-6, 6))
 	hitLag--
@@ -9,11 +10,14 @@ function scr_enemy_hit()
 		x = hitX
 		y = hitY
 		var _player = -4
+		// do we just set this? (not set untill it's grabbed)
 		if (grabbedby == 1)
 			_player = obj_player1
 		else
 			_player = obj_player2
-		if (obj_player.tauntstoredstate == states.mach2 or obj_player.tauntstoredstate == states.tumble or obj_player.state == states.mach2 or obj_player.state == states.tumble)
+		
+		var _thrower = obj_player1; // TODO: replace this var with the proper id
+		if (_thrower.tauntstoredstate == states.mach2 or _thrower.tauntstoredstate == states.tumble or _thrower.state == states.mach2 or _thrower.state == states.tumble)
 			thrown = false
 		else
 			thrown = true

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!instance_exists(obj_keyconfig))
 {
 	if (((-obj_player.key_left2) or keyboard_check_pressed(vk_left)) && optionselected > 0)

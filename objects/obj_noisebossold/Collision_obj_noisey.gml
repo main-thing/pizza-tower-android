@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if ((!invincible) && other.thrown)
 {
 	boss_hurt_noplayer(60)

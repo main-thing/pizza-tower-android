@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!surface_exists(surface))
 	surface = surface_create(SCREEN_WIDTH, SCREEN_HEIGHT);
 surface_set_target(surface);

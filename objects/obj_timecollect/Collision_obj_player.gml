@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (other.state != states.gotoplayer)
 {
 	if (obj_player1.character == "V")

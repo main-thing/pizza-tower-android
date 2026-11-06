@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!ds_list_empty(global.debris_list))
 {
 	for (var i = 0; i < ds_list_size(global.debris_list); i++)

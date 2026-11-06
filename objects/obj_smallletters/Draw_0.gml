@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 switch negative
 {
 	case 0:
@@ -12,7 +13,7 @@ draw_set_font(global.smallfont)
 draw_set_halign(fa_center)
 if flash
 {
-	if(global.usehitshaders){
+	if(global.usehitshaders) {
 		shader_set(shd_hit)
 		draw_text(x, y, letters)
 		shader_reset()

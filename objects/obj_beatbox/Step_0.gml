@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (targetplayer.sprite_index != targetplayer.spr_breakdance)
 {
 	instance_create(x, y, obj_genericpoofeffect)

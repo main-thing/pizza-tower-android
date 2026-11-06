@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 depth = -10
 xoffset = 16
 yoffset = 0

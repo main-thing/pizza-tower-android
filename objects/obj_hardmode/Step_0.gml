@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if global.hardmode
 {
 	global.heatmeter_threshold = floor((global.heatmeter_count / global.heatmeter_threshold_count))

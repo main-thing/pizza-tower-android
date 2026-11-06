@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (state != states.parry && state != states.backbreaker)
 	exit;
 with (other)

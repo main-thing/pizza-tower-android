@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 draw_set_color(c_white)
@@ -12,7 +13,7 @@ var c = c_white
 ini_open_from_string(obj_savesystem.ini_str)
 if(_levelinfo[1] != characterselect)
 	draw_text(480, yy - 38, ini_read_real("Highscore", _levelinfo[2], 0))
-if(_levelinfo[1] != characterselect && _levelinfo[1] != dragonlair_1){
+if(_levelinfo[1] != characterselect && _levelinfo[1] != dragonlair_1) {
 	for (var i = 0; i < array_length(toppin_info); i++)
 	{
 		var b = toppin_info[i]
@@ -36,8 +37,8 @@ if _levelinfo[1] != war_1 && _levelinfo[1] != characterselect && _levelinfo[1] !
 	draw_sprite_ext(spr_treasure_eggplant, 0, 637, (yy + 26), 1, 1, 0, c, 1)
 }
 var rank = ini_read_string("Ranks", _levelinfo[2], 0)
-if(_levelinfo[1] != characterselect){
-	switch(rank){
+if(_levelinfo[1] != characterselect) {
+	switch(rank) {
 		case "p":
 			draw_sprite_ext(spr_ranks_hud, 5, 351, (yy + 26), 1, 1, 0, c_white, 1)
 		break
@@ -64,8 +65,8 @@ if(_levelinfo[1] != characterselect){
 
 draw_set_font(global.smallfont)
 var sf = ini_read_real("Secret", _levelinfo[2], 0)
-if _levelinfo[1] != war_1 && _levelinfo[1] != tutorial_room1 && _levelinfo[1] != characterselect && _levelinfo[1] != dragonlair_1
-	draw_text_color(480, (yy + 88), concat(sf, " OUT OF 3 SECRETS"), c_white, c_white, c_white, c_white, 1)
+if _levelinfo[1] != war_1 && _levelinfo[1] != characterselect && _levelinfo[1] != dragonlair_1
+	draw_text_color(480, (yy + 88), concat(sf, " OUT OF " + secretcount + " SECRETS"), c_white, c_white, c_white, c_white, 1)
 ini_close()
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var _currentbarpos = (round_timermax - round_timer)
 var _perc = (_currentbarpos / round_timermax)
 var _max_x = 430

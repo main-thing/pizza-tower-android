@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 visible = ((room == rank_room or room == timesuproom) ? false : playerid.visible)
 if (obj_player.state == states.pizzathrow)
 	visible = false
@@ -15,7 +16,7 @@ if (object_index != obj_pizzakinpineapple or (sprite_index != spr_monsterpineapp
 			if (sprite_index != spr_intro_strongcold)
 			{
 				//image_alpha = playerid.image_alpha
-				sprite_index = (yprev != y ? spr_run_strongcold : spr_idle_strongcold)
+				sprite_index = (xprev != x ? spr_run_strongcold : spr_idle_strongcold)
 				depth = -6
 			}
 			break

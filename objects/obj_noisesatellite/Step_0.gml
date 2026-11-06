@@ -1,3 +1,6 @@
+ADD_OBJECT_EVENT_GML_HOOK;
+if (room == rm_editor)
+	exit;
 switch state
 {
 	case states.idle:
@@ -18,37 +21,29 @@ switch state
 	case states.stun:
 		scr_enemy_stun()
 		break
+	case states.pizzagoblinthrow:
+		scr_pizzagoblin_throw()
+		break
 	case states.grabbed:
 		scr_enemy_grabbed()
 		break
 }
 
-if (!instance_exists(obj_slaphitbox))
-	slapped = 0
-stunned = 100
-if (cigar == 0)
-{
-	landspr = spr_noisesatellite
-	idlespr = spr_noisesatellite
-	fallspr = spr_noisesatellite
-	hitceillingspr = spr_noisesatellite
-	stunfalltransspr = spr_noisesatellite
-	hitwallspr = spr_noisesatellite
-	stunfallspr = spr_noisesatellitestun
-	rollingspr = spr_noisesatellite
-	walkspr = spr_noisesatellite
-	turnspr = spr_noisesatellite
-	flyingspr = spr_noisesatellite
-	hitspr = spr_noisesatellite
-	stunlandspr = spr_noisesatellite
-	stunspr = spr_noisesatellite
-	recoveryspr = spr_noisesatellite
-	stompedspr = spr_noisesatellite
-	grabbedspr = spr_noisesatellitestun
-}
+if (flash == 1 && alarm[2] <= 0)
+	alarm[2] = (0.15 * room_speed)
+if (state == states.walk)
+	state = states.idle
 if (state != states.grabbed)
 	depth = 0
 if (state != states.stun)
 	thrown = false
-if (flash == 1 && alarm[2] <= 0)
-	alarm[2] = (0.15 * room_speed)
+if (boundbox == 0)
+{
+	with (instance_create(x, y, obj_baddiecollisionbox))
+	{
+		sprite_index = other.sprite_index
+		mask_index = other.sprite_index
+		baddieID = other.id
+		other.boundbox = 1
+	}
+}

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var i_d = ds_map_find_value(async_load, "id")
 if(i_d == fakeeditor_obj)
 {
@@ -11,11 +12,11 @@ if(i_d == fakeeditor_edit)
 {
     if ds_map_find_value(async_load, "status")
     {
-        if (ds_map_find_value(async_load, "result") != ""){
+        if (ds_map_find_value(async_load, "result") != "") {
             nejdmssx = ds_map_find_value(async_load, "result")
-			if(global.option_editor_oldedit){
-				if(string_lower(nejdmssx) != "save" && string_lower(nejdmssx) != "load" && string_lower(nejdmssx) != "delete level" && string_lower(nejdmssx) != "help" && string_lower(nejdmssx) != "tilemenu"){
-					with(obj_fakeeditor){
+			if(global.option_editor_oldedit) {
+				if(string_lower(nejdmssx) != "save" && string_lower(nejdmssx) != "load" && string_lower(nejdmssx) != "delete level" && string_lower(nejdmssx) != "help" && string_lower(nejdmssx) != "tilemenu") {
+					with(obj_fakeeditor) {
 						fakeeditor_edit_object_var(other.nejdmssx)
 					}
 				} else{

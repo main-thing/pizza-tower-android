@@ -80,11 +80,11 @@ function achievement_unlock(achievement, tv_text, tv_spr)
 		event_perform(ev_other, ev_room_start)
 }
 
-function achievement_save_variables(argument0)
+function achievement_save_variables(_a0)
 {
-	for (var i = 0; i < ds_list_size(argument0); i++)
+	for (var i = 0; i < ds_list_size(_a0); i++)
 	{
-		var b = ds_list_find_value(argument0, i)
+		var b = ds_list_find_value(_a0, i)
 		with (b)
 		{
 			var size = ds_map_size(variables)
@@ -100,11 +100,11 @@ function achievement_save_variables(argument0)
 	}
 }
 
-function achievements_load(argument0)
+function achievements_load(_a0)
 {
-	for (var i = 0; i < ds_list_size(argument0); i++)
+	for (var i = 0; i < ds_list_size(_a0); i++)
 	{
-		var b = ds_list_find_value(argument0, i)
+		var b = ds_list_find_value(_a0, i)
 		with (b)
 		{
 			unlocked = ini_read_real("achievements", name, 0)
@@ -121,7 +121,7 @@ function achievements_load(argument0)
 	}
 }
 
-function achievement_get_struct(argument0)
+function achievement_get_struct(_a0)
 {
 	var l = obj_achievementtracker.achievements_update
 	var b = noone
@@ -129,7 +129,7 @@ function achievement_get_struct(argument0)
 	for(var i = 0; i < ds_list_size(l); i++)
 	{
 		var q = ds_list_find_value(l, i)
-		if (q.name == argument0)
+		if (q.name == _a0)
 		{
 			b = q
 			break
@@ -141,7 +141,7 @@ function achievement_get_struct(argument0)
 		for(var i = 0; i < ds_list_size(l); i++)
 		{
 			b = ds_list_find_value(l, i)
-			if (q.name == argument0)
+			if (q.name == _a0)
 			{
 				b = q
 				break

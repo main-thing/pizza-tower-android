@@ -1,7 +1,7 @@
-function cutscene_set_player_visible(argument0)
+function cutscene_set_player_visible(_a0)
 {
 	with (obj_player)
-		visible = argument0
+		visible = _a0
 	cutscene_end_action()
 	exit;
 }

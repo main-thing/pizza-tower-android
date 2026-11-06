@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if ((x + hsp) == xprevious)
 	stop_buffer--
 else

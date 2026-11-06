@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 grabbedby = noone
 elite = 0
 elitegrab = 0
@@ -46,11 +47,11 @@ attacking = 0
 destroyed = 0
 playerdestroyed = 0
 colliding = 1
-function SUPER_player_destroy(argument0)
+function SUPER_player_destroy(_a0)
 {
-	depth = argument0.depth
+	depth = _a0.depth
 	playerdestroyed = 1
-	with (argument0)
+	with (_a0)
 	{
 		camera_zoom(1, 0.1)
 		scr_soundeffect(sfx_killingblow)
@@ -86,13 +87,13 @@ function SUPER_player_destroy(argument0)
 	exit;
 }
 
-function SUPER_boss_destroy(argument0)
+function SUPER_boss_destroy(_a0)
 {
 	destroyed = 1
-	depth = argument0.depth
+	depth = _a0.depth
 	global.attackstyle = 0
 	global.savedattackstyle = 0
-	with (argument0)
+	with (_a0)
 	{
 		camera_zoom(1, 0.1)
 		if (state == states.boss_fistmatch or state == states.boss_superattack or state == states.parry or state == states.backbreaker)
@@ -144,16 +145,16 @@ function SUPER_boss_destroy(argument0)
 	exit;
 }
 
-function SUPER_boss_hurt(argument0, argument1)
+function SUPER_boss_hurt(_a0, _a1)
 {
 	if important
-		hp -= argument0
-	if (argument1.state != states.playersuperattack)
+		hp -= _a0
+	if (_a1.state != states.playersuperattack)
 	{
 		with (obj_bosscontrollerOLD)
 			super += 30
 	}
-	with (argument1)
+	with (_a1)
 	{
 		var atstate = state
 		if (state == states.handstandjump)
@@ -214,10 +215,10 @@ function SUPER_boss_hurt(argument0, argument1)
 	exit;
 }
 
-function SUPER_boss_hurt_noplayer(argument0)
+function SUPER_boss_hurt_noplayer(_a0)
 {
 	if important
-		hp -= argument0
+		hp -= _a0
 	if (obj_player.state != states.playersuperattack)
 	{
 		with (obj_bosscontrollerOLD)
@@ -251,13 +252,13 @@ function SUPER_boss_hurt_noplayer(argument0)
 	exit;
 }
 
-function SUPER_player_hurt(argument0, argument1)
+function SUPER_player_hurt(_a0, _a1)
 {
 	if instance_exists(obj_bosscontrollerOLD)
-		obj_bosscontrollerOLD.player_hp -= argument0
+		obj_bosscontrollerOLD.player_hp -= _a0
 	with (obj_bosscontrollerOLD)
 		super += 80
-	with (argument1)
+	with (_a1)
 	{
 		scr_soundeffect(sfx_killingblow)
 		lag = 8
@@ -306,33 +307,33 @@ function SUPER_player_hurt(argument0, argument1)
 	exit;
 }
 
-function player_destroy(argument0)
+function player_destroy(_a0)
 {
-	SUPER_player_destroy(argument0)
+	SUPER_player_destroy(_a0)
 	exit;
 }
 
-function boss_destroy(argument0)
+function boss_destroy(_a0)
 {
-	SUPER_boss_destroy(argument0)
+	SUPER_boss_destroy(_a0)
 	exit;
 }
 
-function player_hurt(argument0, argument1)
+function player_hurt(_a0, _a1)
 {
-	SUPER_player_hurt(argument0, argument1)
+	SUPER_player_hurt(_a0, _a1)
 	exit;
 }
 
-function boss_hurt(argument0, argument1)
+function boss_hurt(_a0, _a1)
 {
-	SUPER_boss_hurt(argument0, argument1)
+	SUPER_boss_hurt(_a0, _a1)
 	exit;
 }
 
-function boss_hurt_noplayer(argument0)
+function boss_hurt_noplayer(_a0)
 {
-	SUPER_boss_hurt_noplayer(argument0)
+	SUPER_boss_hurt_noplayer(_a0)
 	exit;
 }
 

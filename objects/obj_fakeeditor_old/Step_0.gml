@@ -1,8 +1,9 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if mouse_check_button_pressed(mb_left)
     {
         if editormode
         {
-            if (device_mouse_x_to_gui(0) < (button1x + button1width) && device_mouse_y_to_gui(0) < (button1y + button1height) && device_mouse_x_to_gui(0) >= button1x && device_mouse_y_to_gui(0) >= button1y){
+            if (device_mouse_x_to_gui(0) < (button1x + button1width) && device_mouse_y_to_gui(0) < (button1y + button1height) && device_mouse_x_to_gui(0) >= button1x && device_mouse_y_to_gui(0) >= button1y) {
                 dsxioks = get_string_async("Set object variable (<type> <variablename> <new value>), save, load, delete level.", nejdmssx)
 				return
 			}
@@ -39,8 +40,8 @@ if mouse_check_button_pressed(mb_left)
             {
 				oldselectedent = selectedent
 				selectedent = instance_position(mouse_x, mouse_y, all)
-				if(instance_exists(selectedent)){
-					if(selectedent.object_index = obj_virtual_controller){
+				if(instance_exists(selectedent)) {
+					if(selectedent.object_index = obj_virtual_controller) {
 						selectedent = oldselectedent
 					}
 				}
@@ -98,7 +99,7 @@ if mouse_check_button_pressed(mb_left)
     {
         selectedent.x = (old_object_x + mouse_x)
         selectedent.y = (old_object_y + mouse_y)
-		if(gridmode){
+		if(gridmode) {
 			selectedent.x = round(selectedent.x / grid_size) * grid_size
 			selectedent.y = round(selectedent.y / grid_size) * grid_size
 		}

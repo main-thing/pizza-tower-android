@@ -1,12 +1,12 @@
 /// @description nsp_get_constant(String)
 /// @param String
-function nsp_get_constant(argument0) {
+function nsp_get_constant(_a0) {
 	/*
 	Underlying NSP script. Can be changed by user (read NSP Documentation for more info).
 	*/
 	var work_str;
 
-	work_str = argument0;
+	work_str = _a0;
 
 	switch (work_str) begin
 
@@ -143,7 +143,7 @@ function nsp_get_constant(argument0) {
 		case "fa_readonly": return fa_readonly;
 		case "fa_sysfile": return fa_sysfile;
 		case "fa_volumeid": return fa_volumeid;
-		case "ptem_data": return ((os_type == os_android) ? "/storage/emulated/0/Documents/pizza tower android/" : "");
+		case "ptem_data": return get_ptem_data_folder();
 		
 	 // alignment:
 		case "fa_bottom": return fa_bottom;

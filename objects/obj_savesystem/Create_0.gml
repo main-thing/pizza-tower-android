@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 depth = -400
 if (instance_number(object_index) > 1)
 {

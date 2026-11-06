@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 scr_collide()
 if (grounded && vsp > 0 && (!instance_exists(blockID)) && (!(place_meeting(x, y, obj_player))))
 {

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (obj_player1.state == states.bombpep && obj_player1.sprite_index != obj_player1.spr_bombpepend && (place_meeting((x + 1), y, obj_player1) or place_meeting((x - 1), y, obj_player1) or place_meeting(x, (y - 1), obj_player1) or place_meeting(x, (y + 1), obj_player1)))
 {
 	with (obj_player1)

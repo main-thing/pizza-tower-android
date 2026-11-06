@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 instance_destroy();
 var follower = instance_create(x, y, obj_deliveryfollower);
 instance_destroy(obj_clock, false);

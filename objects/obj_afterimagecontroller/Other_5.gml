@@ -1,1 +1,2 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 ds_list_clear(global.afterimage_list)

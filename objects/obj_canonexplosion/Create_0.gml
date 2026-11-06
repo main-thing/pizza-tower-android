@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 image_speed = 0.5
 rat = 1
 if point_in_camera(x, y, view_camera[0])

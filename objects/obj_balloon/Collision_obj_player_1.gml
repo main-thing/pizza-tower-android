@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (other.state == states.gotoplayer)
 	exit;
 fmod_event_one_shot_3d("event:/sfx/misc/balloonpop", x, y);

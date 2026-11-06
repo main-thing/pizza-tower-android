@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (picy == 640)
 {
 	if (snickshotgun == 0 && global.SAGEshotgunsnick == 1)

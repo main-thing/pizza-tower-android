@@ -1,15 +1,19 @@
-layer_depth("Tiles_BG", 200)
-layer_depth("Tiles_BG2", 199)
-layer_depth("Tiles_BG3", 198)
-layer_depth("Tiles_1", 100)
-layer_depth("Tiles_2", 98)
-layer_depth("Tiles_3", 97)
-layer_depth("Tiles_4", 96)
-layer_depth("Tiles_Foreground1", -30)
-layer_depth("Tiles_Foreground2", -31)
-layer_depth("Tiles_Foreground3", -32)
-layer_depth("Assets_BG", 201)
-if(global.hidetiles){
+ADD_OBJECT_EVENT_GML_HOOK;
+if (!(room == tutorial_room1 || string_pos("normalT_", room_get_name(room))))
+{
+	layer_depth("Tiles_BG", 200)
+	layer_depth("Tiles_BG2", 199)
+	layer_depth("Tiles_BG3", 198)
+	layer_depth("Tiles_1", 100)
+	layer_depth("Tiles_2", 98)
+	layer_depth("Tiles_3", 97)
+	layer_depth("Tiles_4", 96)
+	layer_depth("Tiles_Foreground1", -30)
+	layer_depth("Tiles_Foreground2", -31)
+	layer_depth("Tiles_Foreground3", -32)
+	layer_depth("Assets_BG", 201)
+}
+if(global.hidetiles) {
 	layer_set_visible(layer_get_id("Tiles_BG"),false)
 	layer_set_visible(layer_get_id("Tiles_BG2"),false)
 	layer_set_visible(layer_get_id("Tiles_BG3"),false)

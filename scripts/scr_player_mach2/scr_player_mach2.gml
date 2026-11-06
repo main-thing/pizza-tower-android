@@ -116,7 +116,7 @@ function scr_player_mach2()
 		input_buffer_jump = 0
 	if (((!grounded) && (place_meeting((x + hsp), y, obj_solid) or scr_solid_slope((x + hsp), y)) && (!(place_meeting((x + hsp), y, obj_destructibles)))) or (grounded && (place_meeting((x + sign(hsp)), (y - 16), obj_solid) or scr_solid_slope((x + sign(hsp)), (y - 16))) && (!(place_meeting((x + hsp), y, obj_destructibles))) && (!(place_meeting((x + hsp), y, obj_metalblock))) && place_meeting(x, (y + 1), obj_slope)))
 	{
-		if(!finalmoveset){
+		if(!finalmoveset) {
 		wallspeed = movespeed
 		if (vsp > 0)
 			wallspeed -= vsp
@@ -134,7 +134,7 @@ function scr_player_mach2()
 	if ((!grounded) && place_meeting((x + sign(hsp)), y, obj_climbablewall) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && (!(place_meeting((x + sign(hsp)), y, obj_metalblock))))
 	{
 		wallspeed = movespeed
-		if(finalmoveset){
+		if(finalmoveset) {
 			grabclimbbuffer = 0;
 		}
 		state = states.climbwall
@@ -170,18 +170,16 @@ function scr_player_mach2()
 		flash = 0
 		state = states.tumble
 		vsp = 10
-		if(character != "S"){
+		if(character != "S") {
 			image_index = 0
 			if (!grounded) {
-				if(!finalmoveset){
+				if(!finalmoveset) {
 					sprite_index = spr_mach2jump
 				} else {
 					sprite_index = spr_dive
 				}
 			}
 			else
-				sprite_index = spr_machroll
-			if (character == "V")
 				sprite_index = spr_machroll
 		}
 	}
@@ -269,34 +267,10 @@ function scr_player_mach2()
 		state = states.normal
 		instance_create(x, y, obj_genericpoofeffect)
 	}
-	if (key_slap2 && character == "V")
+	if (character == "V")
 	{
-		vsp = -5
-		state = states.revolver
-		image_index = 0
-		sprite_index = spr_playerV_airrevolver
-		image_index = 0
-		with (instance_create((x + (xscale * 20)), (y + 20), obj_shotgunbullet))
-		{
-			is_solid = 0
-			image_xscale = other.xscale
-		}
-		scr_soundeffect(sfx_killingblow)
-	}
-	if (key_shoot2 && character == "V" && (!instance_exists(dynamite_inst)))
-	{
-		vsp = -5
-		state = states.dynamite
-		image_index = 0
-		sprite_index = spr_playerV_dynamitethrow
-		with (instance_create(x, y, obj_dynamite))
-		{
-			image_xscale = other.xscale
-			other.dynamite_inst = id
-			playerid = other.id
-			movespeed = (other.movespeed + 4)
-			vsp = -6
-		}
+		scr_airrevolver()
+		scr_airdynamite()
 	}
 	if (sprite_index == spr_rollgetup or sprite_index == spr_suplexdash)
 		image_speed = 0.4
@@ -307,7 +281,7 @@ function scr_player_mach2()
 		sprite_index = spr_clown
 	if mortjump
 		sprite_index = spr_mortdoublejumpstart
-	if(!finalmoveset){
+	if(!finalmoveset) {
 		if (key_shoot2 && shotgunAnim)
 			scr_shotgunshoot()
 		if ((key_slap2 or input_buffer_slap < 8) && (!key_up) && character != "V" && character != "S")

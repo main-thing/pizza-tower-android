@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (grounded && other.sprite_index == spr_swordstone && (state == states.handstandjump or state == states.punch or state == states.lungeattack))
 {
 	transformationlives = 3
@@ -12,5 +13,5 @@ if (grounded && other.sprite_index == spr_swordstone && (state == states.handsta
 	state = states.knightpep
 	hsp = 0
 	vsp = 0
-	tv_push_prompt_once(tv_create_prompt("This is the knight transformation text", tvprompt.transfo, self._spr_tv_knight, 3), "knight")
+	tv_push_prompt_once(tv_create_prompt("This is the knight transformation text", tvprompt.transfo, self.tv_knight, 3), "knight")
 }

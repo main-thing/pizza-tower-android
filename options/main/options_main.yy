@@ -10,7 +10,7 @@
   "option_window_colour": 0,
   "option_steam_app_id": "0",
   "option_sci_usesci": true,
-  "option_author": "main_thing",
+  "option_author": "main_thing & primary_thing",
   "option_collision_compatibility": true,
   "option_copy_on_write_enabled": false,
   "option_spine_licence": false,

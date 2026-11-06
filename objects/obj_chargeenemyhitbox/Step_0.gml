@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if ((!instance_exists(baddieID)) or (!baddieID.thrown) or baddieID.state != states.stun)
 {
 	instance_destroy()

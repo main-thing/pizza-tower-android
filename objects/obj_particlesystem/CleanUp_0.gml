@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 part_emitter_destroy(global.particle_system, global.part_emitter)
 for (var i = particle.enum_start; i < particle.enum_length; i++)
 {

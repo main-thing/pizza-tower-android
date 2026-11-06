@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (sprite_index == spr_arenadoor_open)
 {
 	if (floor(image_index) == 4 && (!shot))

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (instance_exists(baddieID) && other.thrown == true)
 {
 	global.hit += 1

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!(obj_player.y < y))
 {
     with (obj_player)

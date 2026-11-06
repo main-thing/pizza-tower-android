@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (state == states.walk && (!other.brick) && other.state == states.ratmountpunch)
 {
 	var s = other.state

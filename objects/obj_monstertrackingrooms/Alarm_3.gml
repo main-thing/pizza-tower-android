@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var hillbilly_pos = monster_pos[3]
 if (room_place(hillbilly_pos.x, hillbilly_pos.y) != room_get_name(room))
 {

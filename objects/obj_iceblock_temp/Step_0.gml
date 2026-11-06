@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 threshold = (maxthreshold - floor((global.temperature / 100)))
 threshold = clamp(threshold, 0, maxthreshold)
 if (threshold == 0)

@@ -76,7 +76,7 @@ function scr_player_mach1()
 			image_index = 0
 		}
 	} else {
-		if(move == 0){
+		if(move == 0) {
 			state = states.normal
 			image_index = 0
 		}
@@ -94,34 +94,8 @@ function scr_player_mach1()
 	switch character
 	{
 		case "V":
-			if key_slap2
-			{
-				scr_soundeffect(sfx_killingblow)
-				sprite_index = spr_playerV_airrevolver
-				image_index = 0
-				vsp = -5
-				state = states.revolver
-				with (instance_create((x + (xscale * 20)), (y + 20), obj_shotgunbullet))
-				{
-					is_solid = 0
-					image_xscale = other.xscale
-				}
-			}
-			if (key_shoot2 && (!instance_exists(dynamite_inst)))
-			{
-				image_index = 0
-				sprite_index = spr_playerV_dynamitethrow
-				vsp = -5
-				state = states.dynamite
-				with (instance_create(x, y, obj_dynamite))
-				{
-					image_xscale = other.xscale
-					movespeed = (other.movespeed + 4)
-					vsp = -6
-					other.dynamite_inst = id
-					playerid = other.id
-				}
-			}
+			scr_airrevolver()
+			scr_airdynamite()
 			break
 	}
 	if (key_attack && (!(place_meeting((x + xscale), y, obj_solid))) && character == "S" && grounded)

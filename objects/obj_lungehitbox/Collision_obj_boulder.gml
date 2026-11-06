@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (other.state != states.grabbed && playerid.state != states.grab)
 {
 	other.state = states.grabbed

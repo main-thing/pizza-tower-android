@@ -1,66 +1,48 @@
-if (global.movingvkeys) 
+ADD_OBJECT_EVENT_GML_HOOK;
+if(global.vkeyui_movingvkeys) 
 {
-	image_alpha = myusualalpha
-	if (global.selectedvbutton == self) 
+	image_alpha = my_usual_alpha;
+	if(global.vkeyui_selectedvbutton == self) 
+		image_alpha = dsin(current_time * 0.2) * 0.2 + 0.5;
+	
+	if(mouse_check_button_released(mb_left)) 
 	{
-		image_alpha = Wave(0.3, 1, 3, 0)
+		mouseon = false;
+		global.vkeyui_hoveringbutton = false;
 	}
-	if(!buttonlockable) 
+		
+	if(mouseon && mouse_check_button(mb_left))
 	{
-		if(vkeychecker > -1) 
+		x = (old_button_x + device_mouse_x_to_gui(0));
+        y = (old_button_y + device_mouse_y_to_gui(0));
+		
+		if(global.vkeyui_gridmode)
 		{
-			//virtual_key_hide(vkeychecker)
-			virtual_key_delete(vkeychecker)	
-			vkeychecker = -1
+			x = round(x / global.vkeyui_gridsize) * global.vkeyui_gridsize;
+			y = round(y / global.vkeyui_gridsize) * global.vkeyui_gridsize;
 		}
-		if(vkeychecker2 > -1) 
+		
+		if(is_control_blacklisted(keycodes[0]))
 		{
-			//virtual_key_hide(vkeychecker2)
-			virtual_key_delete(vkeychecker2)
-			vkeychecker2 = -1	
-		}
-	}
-	if (keycode != "delete" && keycode != "edit" && keycode != "addbutton" && keycode != "load" && keycode != "save" && keycode != "color" && keycode != "grid") 
-	{
-		if (mouse_check_button(mb_left) && position_meeting(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),self)) 
-		{
-			if(!global.vkcount)	
-			{
-				old_button_x = (x - device_mouse_x_to_gui(0))
-                old_button_y = (y - device_mouse_y_to_gui(0))
-				mouseon = 1
-				global.selectedvbutton = self
-			}
-			global.vkcount = true
-		} 
-		if (mouse_check_button_released(mb_left)) 
-		{
-			mouseon = 0
-			global.vkcount = false
-		}
-	}
-	if (is_string(keycode)) 
-	{
-		if (keycode == "addbutton" || keycode == "delete" || keycode == "load" || keycode == "save" || keycode == "color" || keycode == "grid") 
-		{
-			visible = true
-		}
-	}
-	if (mouseon == 1 && mouse_check_button(mb_left))
-	{
-		x = (old_button_x + device_mouse_x_to_gui(0))
-        y = (old_button_y + device_mouse_y_to_gui(0))
-		if(global.vkeysgridmode)
-		{
-			x = round(x / global.vkeysgrid_size) * global.vkeysgrid_size
-			y = round(y / global.vkeysgrid_size) * global.vkeysgrid_size
+			x = clamp(x, 0 + sprite_get_width(sprite_index) / 2, display_get_gui_width() - sprite_get_width(sprite_index) / 2);
+			y = clamp(y, 0 + sprite_get_height(sprite_index) / 2, display_get_gui_height() - sprite_get_height(sprite_index) / 2);
 		}
 	}
 }
-if(global.forceshowcontrols || !global.forcehidecontrols)
+
+if(is_control_blacklisted(keycodes[0])) 
 {
-	if(keycode == "bind")
-	{
-		image_alpha = ((global.showbinds || forceshowbind) ? myusualalpha : 0)
-	}
+	if(keycodes[0] == VKEYUI_KEY_TYPES.EDIT)
+		return;
+	
+	if(keycodes[0] == VKEYUI_KEY_TYPES.GRID)
+		pressed = global.vkeyui_gridmode;
+		
+	visible = global.vkeyui_movingvkeys;
+}
+
+if(global.vkeyui_forceshowcontrols || !global.vkeyui_forcehidecontrols)
+{
+	if(keycodes[0] == VKEYUI_KEY_TYPES.BIND)
+		image_alpha = ((global.vkeyui_showbinds || forceshowbind) ? my_usual_alpha : 0);
 }

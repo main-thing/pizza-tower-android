@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 old_x = x
 x += (image_xscale * 5)
 var num = collision_line_list(x, y, old_x, y, obj_player, 0, 1, global.instancelist, 0)

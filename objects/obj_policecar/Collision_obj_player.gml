@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (state == states.policetaxi)
 	exit;
 if (ds_queue_size(followqueue) < LAG_STEPS)

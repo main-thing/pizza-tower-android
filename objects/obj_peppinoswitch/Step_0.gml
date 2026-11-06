@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (global.switchbuffer > 0)
 	global.switchbuffer--
 if (sprite_index == spr_peppinoswitch2 && floor(image_index) == (image_number - 1))

@@ -1,16 +1,16 @@
 /// @description nsp_token_is_valid(Token, Surrounding)
 /// @param Token
 /// @param  Surrounding
-function nsp_token_is_valid(argument0, argument1) {
+function nsp_token_is_valid(_a0, _a1) {
 	/*
 	Underlying NSP script.
 	*/
 	var ord1, ord2;
 
-	if (string_letters(argument0) != argument0) return true;
+	if (string_letters(_a0) != _a0) return true;
 
-	ord1 = ord( string_copy(argument1,1,1) );
-	ord2 = ord( string_copy(argument1,string_length(argument1),1) );
+	ord1 = ord( string_copy(_a1,1,1) );
+	ord2 = ord( string_copy(_a1,string_length(_a1),1) );
 
 	// 65 - 90  Letters
 	// 97 - 122 Letters

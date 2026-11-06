@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if ((!graffiti) && other.state == states.backbreaker && global.graffiticutscene)
 {
 	other.state = states.graffiti

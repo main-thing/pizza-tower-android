@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (cooldown == 0 && other.state == states.freefallland)
 {
 	instance_destroy(obj_barrel)

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 draw_sprite_ext(spr_gnome_checklist, 0, xx, yy, 1, 1, image_angle, image_blend, image_alpha)
 for (var i = 0; i < array_length_1d(gnome_check); i++)
 {

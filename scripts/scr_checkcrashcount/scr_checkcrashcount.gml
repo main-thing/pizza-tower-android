@@ -1,5 +1,5 @@
-function scr_checkcrashcount(){
-	if(!file_exists(working_directory + "crashcount.txt")){
+function scr_checkcrashcount() {
+	if(!file_exists(working_directory + "crashcount.txt")) {
 		var file = file_text_open_write(working_directory + "crashcount.txt")
 		file_text_write_real(file,0)
 		file_text_close(file);

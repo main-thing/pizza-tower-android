@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (room == rm_editor)
 	exit;
 if (state != states.stun && state != states.tumble)

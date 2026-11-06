@@ -1,4 +1,5 @@
-if(global.usepaletteshaders){
+ADD_OBJECT_EVENT_GML_HOOK;
+if(global.usepaletteshaders) {
 	shader_set(global.Pal_Shader)
 	if (global.collect >= global.collectN)
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, 0)

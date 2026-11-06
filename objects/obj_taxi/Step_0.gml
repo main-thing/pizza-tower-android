@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 x += hsp
 if (hsp != 0)
 {
@@ -20,3 +21,5 @@ if place_meeting(x, y, obj_doorE)
 	targetDoor = "E"
 if place_meeting(x, y, obj_doorF)
 	targetDoor = "F"
+if place_meeting(x, y, obj_doorG)
+	targetDoor = "G"

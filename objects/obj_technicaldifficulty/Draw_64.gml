@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 draw_sprite(spr_technicaldifficulty_bg, 0, 0, 0)
 draw_sprite(sprite, 0, 300, 352)
 if use_static

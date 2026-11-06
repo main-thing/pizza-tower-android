@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (grounded or scr_solid((x + 1), y) or scr_solid((x - 1), y))
 {
 	repeat (8)

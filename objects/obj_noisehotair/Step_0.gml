@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (obj_player.x > (x - 200) && obj_player.x < (x + 200) && sprite_index != spr_noisehotairthrow && goingup == 0)
 {
 	sprite_index = spr_noisehotairthrow

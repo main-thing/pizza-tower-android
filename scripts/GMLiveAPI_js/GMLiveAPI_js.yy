@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "GMLive",
-    "path": "folders/Extensions/GMLive.yy",
+    "name": "Misc",
+    "path": "folders/Extensions/GMLive/Internal/Misc.yy",
   },
 }

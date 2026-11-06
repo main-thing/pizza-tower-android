@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (func != -4)
 	func(other.id);
 if (active && ds_list_find_index(global.saveroom, id) == -1)

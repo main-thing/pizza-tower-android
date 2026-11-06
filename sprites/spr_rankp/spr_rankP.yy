@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 960,
   "height": 540,
   "textureGroupId": {
@@ -187,7 +188,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Ranks",
-    "path": "folders/Sprites/HUD/Ranks.yy",
+    "name": "Peppino",
+    "path": "folders/Sprites/HUD/Ranks/Peppino.yy",
   },
 }

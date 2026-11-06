@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 dialog[0] = ["TEMPLATE DIALOG", noone, noone, noone]
 dialogsprite = -4
 image_speed = 0.35

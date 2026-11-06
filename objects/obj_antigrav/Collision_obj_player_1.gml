@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var p = other.id;
 with (other)
 {

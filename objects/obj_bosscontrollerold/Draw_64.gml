@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (bossID == noone)
 	exit;
 if (!instance_exists(bossID))
@@ -19,7 +20,7 @@ switch state
 		draw_sprite(vstitle, -1, xx, (vsy + yy))
 		if flash
 		{
-			if(global.usehitshaders){
+			if(global.usehitshaders) {
 				shader_set(shd_hit)
 				draw_sprite(sprplayer, -1, playerx, (room_height - sprite_get_height(sprplayer)))
 				draw_sprite(sprboss, -1, bossx, (room_height - sprite_get_height(sprboss)))

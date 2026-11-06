@@ -1,8 +1,9 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 x = median((x - maxspeed), obj_player1.x, (x + maxspeed))
 y = median((y - maxspeed), obj_player1.y, (y + maxspeed))
 if (x != obj_player.x)
 	image_xscale = (-(sign((x - obj_player.x))))
-if (global.snickchallenge == 0)
+if (global.snickchallenge == 0 && !spawn)
 	instance_destroy()
 if (hitboxcreate == 0 && obj_player1.instakillmove == 0 && obj_player1.state != states.handstandjump)
 {

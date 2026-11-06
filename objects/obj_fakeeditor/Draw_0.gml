@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (editormode && !in_play_mode)
 {
 	if(grid_mode)
@@ -23,5 +24,5 @@ if (editormode && !in_play_mode)
 		draw_sprite_ext(spr, selectedent.image_index, selectedent.x, selectedent.y, selectedent.image_xscale, selectedent.image_yscale, selectedent.image_angle, c_red, 0.3)
 	}
 	draw_set_color(c_white)
-	draw_rectangle(0,0,room_width,room_height,true)
+	draw_rectangle(0, 0, room_width, room_height, true)
 }

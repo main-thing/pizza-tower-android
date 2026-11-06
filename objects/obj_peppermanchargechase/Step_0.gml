@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 x = (obj_peppermanchase.x + (obj_peppermanchase.image_xscale * 35))
 y = (obj_peppermanchase.y + 20)
 image_xscale = obj_peppermanchase.image_xscale

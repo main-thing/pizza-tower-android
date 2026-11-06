@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "New",
-    "path": "folders/Scripts/N String Parser v2_6_6/Setters and Getters/New.yy",
+    "path": "folders/Objects/Game settings/Scripts/N String Parser v2_6_6/Setters and Getters/New.yy",
   },
 }

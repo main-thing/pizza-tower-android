@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 256,
   "height": 192,
   "textureGroupId": {
@@ -68,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Beach",
-    "path": "folders/Sprites/Backgrounds/Beach.yy",
+    "path": "folders/Sprites/Tilesets/Beach.yy",
   },
 }

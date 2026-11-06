@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 instance_destroy(instance_place(x, (y + 16), obj_destructibles))
 instance_destroy(instance_place(x, (y + vsp), obj_destructibles))
 instance_destroy(instance_place(x, (y + 16), obj_metalblock))
@@ -15,7 +16,7 @@ if (hitbox == 0)
 		visible = false
 		mask_index = spr_ratmountgroundpound
 		image_index = other.image_index
-		brickid = other.id
+		brickid = other
 		other.hitbox = 1
 	}
 }

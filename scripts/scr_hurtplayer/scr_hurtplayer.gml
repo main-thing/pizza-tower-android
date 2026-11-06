@@ -1,7 +1,7 @@
-function scr_hurtplayer(argument0)
+function scr_hurtplayer(_a0)
 {
 	var _hurt = 0
-	with (argument0)
+	with (_a0)
 	{
 		if global.failcutscene
 		{

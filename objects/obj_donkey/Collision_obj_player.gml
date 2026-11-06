@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (cooldown == 0)
 {
 	scr_soundeffect(sfx_cowkick)

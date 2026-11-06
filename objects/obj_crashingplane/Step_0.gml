@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (y > 750)
 {
 	with (obj_camera)

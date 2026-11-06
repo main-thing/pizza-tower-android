@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 closed = 0
 graffiti = 0
 if (global.factorygraffiti == -4)

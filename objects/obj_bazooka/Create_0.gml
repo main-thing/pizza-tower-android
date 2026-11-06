@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 player = instance_nearest(x, y, obj_player)
 count = 0
 direction = point_direction(x, y, player.x, player.y)

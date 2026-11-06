@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (fall && hp > 0 && other.state == states.handstandjump)
 {
 	scr_sound_multiple("event:/sfx/misc/breakblock", x, y);

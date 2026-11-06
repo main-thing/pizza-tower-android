@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 448,
   "height": 574,
   "textureGroupId": {
@@ -67,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Saloon and Pinball",
-    "path": "folders/Sprites/Backgrounds/Saloon and Pinball.yy",
+    "name": "Pinball",
+    "path": "folders/Sprites/Tilesets/Pinball.yy",
   },
 }

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 scr_initenemy()
 grav = 0.5
 hsp = 0
@@ -18,11 +19,12 @@ reset = 0
 hp = 5
 hitboxcreate = 0
 grounded = true
-idlespr = spr_pizzaball_walk
+idlespr = spr_pizzaball_idle2
+stunspr = spr_pizzaball_stun
 stunfallspr = spr_pizzaball_stun
 walkspr = spr_pizzaball_walk
 grabbedspr = spr_pizzaball_stun
-image_xscale = -1
+sprite_index = walkspr
 flash = 0
 slapped = 0
 birdcreated = 0

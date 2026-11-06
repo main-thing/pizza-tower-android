@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if place_meeting(x, (y + 1), obj_railparent)
 {
 	var _inst = instance_place(x, (y + 1), obj_railparent)

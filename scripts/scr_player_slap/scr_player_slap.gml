@@ -92,7 +92,7 @@ function scr_player_slap()
 	{
 		if (sprite_index == spr_player_slapup)
 		{
-			with (instance_create(x, y, obj_slaphitbox2)){
+			with (instance_create(x, y, obj_slaphitbox2)) {
 				sprite_index = spr_player_hitboxslapup
 				playerid = obj_player1
 			}

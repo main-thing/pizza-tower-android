@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (instance_exists(baddieID) && baddieID.invtime == 0 && baddieID.state != states.grabbed && (!baddieID.invincible) && baddieID.instantkillable)
 {
 	baddieID.invtime = 15

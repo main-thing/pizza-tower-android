@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!instance_exists(ID))
 {
 	instance_destroy()
@@ -122,14 +123,6 @@ with (ID)
 			}
 			break
 		
-		case obj_snickexe2:
-			if (obj_player1.instakillmove or obj_player1.state == states.handstandjump)
-			{
-				instance_destroy(other)
-				hitboxcreate = 0
-			}
-			break
-		
 		case obj_pickle:
 			if (state != states.pizzagoblinthrow)
 				instance_destroy(other)
@@ -144,12 +137,7 @@ with (ID)
 				hitboxcreate = 0
 				instance_destroy(other)
 			}
-			break
-        case obj_fakepepclone:
-        case obj_fakepepboss:
-            if ((state != states.Sjump) && ((state != states.Sjumpprep) || (image_index >= 11)))
-                instance_destroy(other)
-            break
+		break
 	}
 
 }

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (global.panic == true && start == 0)
 {
 	alarm[0] = 5

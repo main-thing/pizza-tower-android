@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (room == rm_editor)
 	exit;
 if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == 0)
@@ -12,10 +13,13 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == 0)
 		global.combotime += 10
 		global.combotime = clamp(global.combotime, 0, 60)
 		var val = heat_calculate(100)
+		global.collect += val
+		/*
 		if (other.object_index == obj_player1)
 			global.collect += val
 		else
 			global.collectN += val
+		*/
 		if audio_is_playing(sfx_collecttopping)
 			audio_stop_sound(sfx_collecttopping)
 		scr_soundeffect(sfx_collecttopping)

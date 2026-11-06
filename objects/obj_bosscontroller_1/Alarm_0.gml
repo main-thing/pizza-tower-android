@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (obj_bosskeyspawn)
 {
 	ini_open_from_string(obj_savesystem.ini_str);

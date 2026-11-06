@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 scr_getinput()
 if (selecting == -1)
 {
@@ -44,8 +45,12 @@ if ((key_jump2 or keyboard_check_pressed(vk_return)) && selecting == -1 && key_s
 	ini_write_string("ControlsKeys2", "taunt", global.key_tauntN)
 	ini_write_string("ControlsKeys2", "start", global.key_startN)
 	ini_close()
-	if instance_exists(obj_option)
-		obj_option.visible = true
+	with (obj_option)
+	{
+		visible = true
+		key_jump = 0
+		buffer = 15
+	}	
 	instance_destroy()
 }
 scr_getinput()

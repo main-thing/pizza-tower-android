@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 ini_open("saveData.ini")
 snickshotgun = ini_read_string("SAGE2019", "shotgunsnick", 0)
 dungeonbackup = ini_read_string("SAGE2019", "dungeonbackup", 0)

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!is_solid)
 	shotgun = 1
 if (shotgun == 1)

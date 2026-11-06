@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!grounded)
 	image_speed = 0
 else if (floor(image_index) != 8)

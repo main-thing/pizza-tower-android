@@ -1,20 +1,12 @@
 /// @description nsp_is_string(String)
 /// @param String
-function nsp_is_string(argument0) {
+function nsp_is_string(_a0) 
+{
 	/*
 	Underlying NSP script.
 	*/
 	var nspToken=global.nspToken;
-	var q;
+	var q = nspToken[NSP_TOK.quote];
 
-	q=nspToken[NSP_TOK.quote];
-
-	if string_copy(argument0,1,1)==q and string_copy(argument0,string_length(argument0),1)==q
-	&& string_pos(q,nsp_string_crop_ext(argument0,q))=0
-	 return true
-	  else return false;
-
-
-
-
+	return (string_char_at(_a0, 1) == q && string_char_at(_a0, string_length(_a0)) == q && string_pos(q, nsp_string_crop_ext(_a0, q)) == 0);
 }

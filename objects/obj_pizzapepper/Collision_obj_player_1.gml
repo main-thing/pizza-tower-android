@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (visible == 1)
 {
 	GamepadSetVibration(0, 0.9, 0.9, 0.8);

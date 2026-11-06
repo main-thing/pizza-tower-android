@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 customer_x = 32
 customer_y = 18
 player_standx = 132

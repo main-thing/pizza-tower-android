@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 vsp = 0
 hsp = 0
 grounded = false

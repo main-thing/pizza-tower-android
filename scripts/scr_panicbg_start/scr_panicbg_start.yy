@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Panic Background",
-    "path": "folders/Scripts/Utilities/Panic Background.yy",
+    "path": "folders/Objects/Game settings/Scripts/Utilities/Panic Background.yy",
   },
 }

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (instance_exists(selectedent) && editormode)
 {
     if (selectedent.sprite_index > -1 && sprite_exists(selectedent.sprite_index))

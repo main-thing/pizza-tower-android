@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 playerid = obj_player1
 image_speed = 0
 image_blend = choose(global.mach_color1, global.mach_color2)

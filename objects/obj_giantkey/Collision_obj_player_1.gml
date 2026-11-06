@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (picked == 0 && pickable == 1)
 {
 	hsp = 0;

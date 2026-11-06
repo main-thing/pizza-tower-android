@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (current_arr > (array_length(content_arr) - 1))
 	exit;
 if audio_is_playing(sfx_collecttopping)

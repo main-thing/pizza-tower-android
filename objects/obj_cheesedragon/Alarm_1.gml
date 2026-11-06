@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 instance_create((x - 50), (y + random_range(0, 100)), obj_cheesedragonflames)
 scr_soundeffect(sfx_woosh)
 if (attackcycle == 2 && floor(image_index) > 13 && floor(image_index) < 21 && sprite_index == spr_cheesedragon_flames)

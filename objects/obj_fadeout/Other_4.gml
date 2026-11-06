@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (room == Titlescreen && obj_player.state == states.titlescreen)
 {
 	obj_player1.sprite_index = spr_machfreefall

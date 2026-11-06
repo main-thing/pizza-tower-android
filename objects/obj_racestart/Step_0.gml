@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 start_index += 0.35
 if (sprite == spr_horsey_start2 && floor(start_index) == (sprite_get_number(sprite) - 1))
 	sprite = spr_horsey_start3

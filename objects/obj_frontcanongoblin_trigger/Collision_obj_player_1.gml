@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var _found = false;
 with (obj_frontcanongoblin)
 {

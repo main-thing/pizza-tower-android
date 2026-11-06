@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if ((!released) && global.panic)
 {
 	if (inst != noone && (!instance_exists(inst)))

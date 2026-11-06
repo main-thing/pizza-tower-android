@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 fake = 0
 targetRoom = obj_player1.lastroom
 targetDoor = obj_player1.targetDoor

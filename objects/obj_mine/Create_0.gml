@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 gonnajump = 0
 alarm[0] = -1
 image_index = 0

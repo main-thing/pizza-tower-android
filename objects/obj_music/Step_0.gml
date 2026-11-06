@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 prevpillar_on_camera = pillar_on_camera
 if instance_exists(obj_hungrypillar)
 {
@@ -25,8 +26,8 @@ if (prevpillar_on_camera != pillar_on_camera)
 		audio_sound_gain(musicID, (0.6 * global.option_music_volume), 2000)
 	}
 }
-if(global.lap){
-	if(!lapstart && !global.oldsprites && escapemusic != lap2music){
+if(global.lap) {
+	if(!lapstart && !global.oldsprites && escapemusic != lap2music) {
 		audio_stop_sound(musicID)
 		escapemusicID = lap2music
 		lapstart = true

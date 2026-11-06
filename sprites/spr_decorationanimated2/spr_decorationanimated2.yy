@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 128,
   "height": 128,
   "textureGroupId": {
@@ -74,6 +75,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Strongcold",
-    "path": "folders/Sprites/Backgrounds/Strongcold.yy",
+    "path": "folders/Sprites/Decorations/Strongcold.yy",
   },
 }

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (global.noisejetpack && playerid == -4)
 {
 	with (other)

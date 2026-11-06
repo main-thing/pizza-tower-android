@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Identifier",
-    "path": "folders/Scripts/N String Parser v2_6_6/Identifier.yy",
+    "path": "folders/Objects/Game settings/Scripts/N String Parser v2_6_6/Identifier.yy",
   },
 }

@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 320,
   "height": 1792,
   "textureGroupId": {
@@ -68,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Dungeon",
-    "path": "folders/Sprites/Backgrounds/Dungeon.yy",
+    "path": "folders/Sprites/Tilesets/Dungeon.yy",
   },
 }

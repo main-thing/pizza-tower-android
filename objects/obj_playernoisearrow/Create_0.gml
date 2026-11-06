@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 baddieID = instance_nearest(x, y, obj_baddie)
 if instance_exists(baddieID)
 	direction = point_direction(x, y, baddieID.x, baddieID.y)

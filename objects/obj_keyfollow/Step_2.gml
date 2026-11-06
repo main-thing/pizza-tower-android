@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 timer += 20;
 var old_x = xoffset;
 xoffset = Wave(-40, 40, 2, 10, timer);

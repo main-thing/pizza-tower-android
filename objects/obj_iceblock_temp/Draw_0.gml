@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 draw_self()
 var old_halign = draw_get_halign()
 var old_valign = draw_get_valign()

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (grounded && vspeed == 10)
 	instance_destroy()
 if (floor(image_index) == (image_number - 1))

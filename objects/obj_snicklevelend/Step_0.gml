@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (floor(image_index) == (image_number - 1) && obj_player.state != states.door)
 {
 	with (obj_player)

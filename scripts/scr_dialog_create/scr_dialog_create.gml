@@ -1,3 +1,3 @@
-function dialog_create(argument0, argument1 = noone, argument2 = noone, argument3 = noone) {
-	return [argument0, argument1, argument2, argument3];
+function dialog_create(_a0, _a1 = noone, _a2 = noone, _a3 = noone) {
+	return [_a0, _a1, _a2, _a3];
 }

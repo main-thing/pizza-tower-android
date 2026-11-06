@@ -23,7 +23,7 @@ function scr_player_barreljump()
 	}
 	else
 		movespeed = Approach(movespeed, 0, 0.5)
-	if(finalmoveset){
+	if(finalmoveset) {
 		if ((input_buffer_jump > 0) && (!key_down) && (vsp > 0) && can_jump)
 	    {
 	        input_buffer_jump = 0

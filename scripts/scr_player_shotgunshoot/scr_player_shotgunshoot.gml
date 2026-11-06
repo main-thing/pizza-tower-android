@@ -28,7 +28,7 @@ function scr_player_shotgunshoot()
 			momemtum = 1
 		}
 	}
-	if(!finalmoveset){
+	if(!finalmoveset) {
 		if key_jump
 			input_buffer_jump = 0
 		if key_slap2

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 draw_rectangle_color(0, 0, 960, 540, c_black, c_black, c_black, c_black, 0)
 draw_set_font(global.bigfont)
 draw_set_halign(fa_left)

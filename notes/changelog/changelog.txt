@@ -1,0 +1,38 @@
+Version 12.0.0
+
+#CONTROLS
+Attempted code optimisation for controls
+Added the joystick (deadzone, scale, and sprites are customisable)
+Added new sets of sprites to the controls, courtesy of @primary_thing
+
+#GAMEPLAY
+Made strongcold destroy Armor
+Fixed cheeseslimes self destructing in strongcold
+Added back christmas skins of collectables and obj_boxofpizza in strongcold
+Unhardcoded the old hud, it can be modified with variables
+Fixed the war timer numbers being offset
+Fixed some destroyables not giving score upon breaking
+
+
+#EDITOR
+Added drag to scale for objects in the editor
+Added tilemenu scrolling in the editor
+Fixed odd behaviour regarding moving the camera in the editor
+Fixed some objects not getting deleted after playtest
+Fixed editor objects visually dissappearing after exiting and entering the editor
+Fixed a bug which caused enemies to self destruct if placed too low or high
+Fixed a bug that made swipe mode persist in play mode
+
+#MISC
+Fixed a bug that made it incredibly difficult to exit the key config in the
+pause menu
+Added a new port options menu in the pause menu
+Replaced the internal GML command processor (N String Parser)
+with GMLive (adds more features to the gml command)
+Updated N String Parser to support multiline text and formatting, 
+courtesy of @thesoysauce1
+Added obj_custom_object_ext which includes more events that can be used in gml 
+commands
+Added the togglefps command to debug to show FPS ingame
+Replaced the font here with an smallfont, courtesy of @primary_thing
+Made obj_doorchoose have text autocompletion (for Enemy Test)

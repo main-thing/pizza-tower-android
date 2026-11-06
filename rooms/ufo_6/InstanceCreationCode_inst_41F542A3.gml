@@ -1,1 +1,0 @@
-seconds = 2

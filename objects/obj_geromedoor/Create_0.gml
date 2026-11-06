@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 targetRoom = sewer_5
 target_x = 0
 target_y = 0

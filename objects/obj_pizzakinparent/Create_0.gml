@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 depth = 50
 event_inherited()
 image_speed = 0.35
@@ -18,5 +19,5 @@ spr_idle_strongcold = sprite_index
 xprev = x
 yprev = y
 with (playerid) {
-	tv_do_expression(self._spr_tv_exprcollect)
+	tv_do_expression(self.tv_exprcollect)
 }

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 global.levelcomplete = 1
 scr_playerreset()
 with (obj_player)

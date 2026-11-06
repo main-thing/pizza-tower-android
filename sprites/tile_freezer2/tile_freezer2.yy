@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 640,
   "height": 1321,
   "textureGroupId": {
@@ -68,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Freezer",
-    "path": "folders/Sprites/Backgrounds/Freezer.yy",
+    "path": "folders/Sprites/Tilesets/Freezer.yy",
   },
 }

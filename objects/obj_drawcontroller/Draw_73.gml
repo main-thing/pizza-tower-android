@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (kidsparty_lightning or dark_lightning)
 {
 	var cw = (camera_get_view_width(view_camera[0]) + 32)
@@ -33,7 +34,7 @@ if (kidsparty_lightning or dark_lightning)
 				if (instance_exists(baddieID) && baddieID.state != states.stun && baddieID.state != states.grabbed && baddieID.state != states.hit && baddieID.state != states.punch)
 				{
 					var points = get_triangle_points(x, y, image_angle, len, size)
-					var c = 16777215
+					var c = c_white
 					draw_triangle_color((x - surf_x), (y - surf_y), (points[0] - surf_x), (points[1] - surf_y), (points[2] - surf_x), (points[3] - surf_y), c, c, c, 0)
 				}
 			}
@@ -87,7 +88,7 @@ if (kidsparty_lightning or dark_lightning)
 			draw_rectangle(0, 0, cw, ch, false)
 			gpu_set_blendmode(bm_subtract)
 			draw_set_color(c_white)
-			for (var i = 0; i < 2; i++)
+			for (var i = 0; i < 1; i++)
 			{
 				var _player = asset_get_index(concat("obj_player", (i + 1)))
 				draw_set_alpha(circle_alpha_out)

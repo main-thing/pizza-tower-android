@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (room == rm_editor)
 	exit;
 if audio_is_playing(sfx_collecttopping)
@@ -12,10 +13,13 @@ global.combotime = clamp(global.combotime, 0, 60)
 with (obj_camera)
 	healthshaketime = 30
 var val = heat_calculate(10)
+global.collect += val
+/*
 if (other.object_index == obj_player1)
 	global.collect += val
 else
 	global.collectN += val
+*/
 create_collect(x, y, sprite_index)
 with (instance_create((x + 16), y, obj_smallnumber))
 	number = string(val)

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 alpha = 1
 depth = -8
 tiles[0] = array_create(0)

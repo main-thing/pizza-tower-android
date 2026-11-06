@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (room == rm_editor)
 	exit;
 switch state
@@ -61,5 +62,8 @@ switch state
 			}
 			scr_collide()
 		}
+		break
+	case states.hit:
+		scr_enemy_hit()
 		break
 }

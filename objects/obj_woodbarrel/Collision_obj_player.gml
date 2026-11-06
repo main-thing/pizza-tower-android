@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if ((other.state == states.handstandjump or other.state == states.punch) && other.grounded == true)
 {
 	instance_create((x + (obj_player1.xscale * 40)), y, obj_punchdust)

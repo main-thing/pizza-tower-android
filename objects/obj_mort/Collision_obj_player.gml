@@ -1,10 +1,11 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (sprite_index != spr_mortspawn && sprite_index != spr_mortfall)
 {
 	with (other)
 	{
 		if (state != states.mort && state != states.mortjump && state != states.mortattack && state != states.morthook && state != states.ridecow)
 		{
-			tv_push_prompt_once(tv_create_prompt("This is the mort powerup text", tvprompt.transfo, self._spr_tv_mort, 3), "mort")
+			tv_push_prompt_once(tv_create_prompt("This is the mort powerup text", tvprompt.transfo, self.tv_mort, 3), "mort")
 			repeat (6)
 				create_debris(x, y, spr_feather)
 			mort = 1

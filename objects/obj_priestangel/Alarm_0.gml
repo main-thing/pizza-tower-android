@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (priestID)
 {
 	if (sprite_index != spr_angelpriest)

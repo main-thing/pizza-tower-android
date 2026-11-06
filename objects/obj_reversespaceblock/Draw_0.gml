@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 for (var yy = 0; yy < abs(image_yscale); yy++)
 {
 	for (var xx = 0; xx < abs(image_xscale); xx++)

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (phase == 0 && attacking)
 {
 	if (state == states.pizzaface_ram)

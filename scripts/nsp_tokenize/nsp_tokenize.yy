@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "List Conversion",
-    "path": "folders/Scripts/N String Parser v2_6_6/Utility/List Conversion.yy",
+    "path": "folders/Objects/Game settings/Scripts/N String Parser v2_6_6/Utility/List Conversion.yy",
   },
 }

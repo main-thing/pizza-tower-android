@@ -2,8 +2,7 @@ function scr_player_climbwall()
 {	
 	switch character
 	{
-		case "S":
-		case "P":
+		default:
 			if (windingAnim < 200)
 				windingAnim++
 			move = (key_left + key_right)
@@ -25,7 +24,7 @@ function scr_player_climbwall()
 				sprite_index = spr_clingwall
 			if (!finalmoveset) 
 			{
-				if(character != "S"){
+				if(character != "S") {
 					if ((!key_attack) && (!skateboarding))
 					{
 						state = states.normal
@@ -45,7 +44,7 @@ function scr_player_climbwall()
 			} else {
 				if (grabclimbbuffer > 0)
 					grabclimbbuffer--;
-				if(character != "S"){
+				if(character != "S") {
 					if (!key_attack && !skateboarding && grabclimbbuffer == 0)
 					{
 						state =	states.normal;
@@ -118,70 +117,6 @@ function scr_player_climbwall()
 				xscale *= -1
 				jumpstop = 0
 				walljumpbuffer = 4
-			}
-			image_speed = 0.6
-			if (!instance_exists(obj_cloudeffect))
-				instance_create(x, (y + 43), obj_cloudeffect)
-			break
-		case "V":
-			if (windingAnim < 200)
-				windingAnim++
-			move = (key_left + key_right)
-			suplexmove = 0
-			vsp = (-wallspeed)
-			if (wallspeed < 24 && move == xscale)
-				wallspeed += 0.1
-			crouchslideAnim = 1
-			sprite_index = spr_machclimbwall
-			if(!finalmoveset){
-				if (!key_attack)
-				{
-					state = states.normal
-					movespeed = 0
-				}
-			} else {
-				if (grabclimbbuffer > 0)
-					grabclimbbuffer--;
-				if (!key_attack && grabclimbbuffer == 0)
-				{
-					state = states.normal
-					movespeed = 0;
-				}
-			}
-			if (scr_solid(x, (y - 1)) && (!(place_meeting(x, (y - 1), obj_destructibles))) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or scr_solid_slope((x + sign(hsp)), y)) && (!(place_meeting((x - sign(hsp)), y, obj_slope))))
-			{
-				sprite_index = spr_superjumpland
-				scr_soundeffect(sfx_groundpound)
-				image_index = 0
-				state = states.Sjumpland
-				machhitAnim = 0
-			}
-			if ((!(scr_solid((x + xscale), y))) && (!(place_meeting(x, y, obj_verticalhallway))))
-			{
-				instance_create(x, y, obj_jumpdust)
-				vsp = 0
-				if (movespeed >= 6)
-					state = states.mach2
-				if (movespeed >= 12)
-				{
-					state = states.mach3
-					sprite_index = spr_mach4
-				}
-			}
-			if key_jump
-			{
-				movespeed = 8
-				state = states.mach2
-				image_index = 0
-				sprite_index = spr_walljumpstart
-				vsp = -11
-				xscale *= -1
-				jumpstop = 0
-			}
-			if ((grounded && wallspeed <= 0) or wallspeed <= 0)
-			{
-				state = states.jump
-				sprite_index = spr_fall
 			}
 			image_speed = 0.6
 			if (!instance_exists(obj_cloudeffect))

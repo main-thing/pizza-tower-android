@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Collision",
-    "path": "folders/Scripts/Collision.yy",
+    "path": "folders/Objects/Game settings/Scripts/Collision.yy",
   },
 }

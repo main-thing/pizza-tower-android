@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (falling == 1 && vsp > 0)
 {
     instance_create(x, y, obj_stompeffect)

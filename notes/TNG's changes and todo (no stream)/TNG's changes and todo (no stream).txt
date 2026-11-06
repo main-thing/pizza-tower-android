@@ -1,0 +1,107 @@
+# CHANGES
+
+- oldassets has been renamed to newassets
+- Unused collectibles fill combo time (giant pizza, spinning pizza slice)
+- Reverted states.dynamite sliding
+- Reverted noise's characterspr entry back to how it was in eggplant
+- Unhardcoded states.mach3, states.Sjump, states.climbwall, and states.punch. You can now add your own "character" entry without these not working.
+- Hardcoded some sounds like sfx_mach2
+- FPS counter looks like the one seen in the boss builds
+- obj_sandparticle is no longer persistent if new assets are enabled
+- Motorcycle explodes
+- Pizza goblin's bomb and vigilante's dynamite automatically explodes upon contact with bomb blocks (+stupid rats for the dynamite)
+- Old hud changes the camera's position to be fully centered on the player, removes horizontal shaking, and combo titles
+- Added strongcold noise boss hit counter to both huds
+- Dresser has been updated to get the width of the player's palette sprite. You can also find one in enemy test
+- Cleaned up scr_characterspr
+- Doise in strongcold now uses a palette instead of sprites
+- Custom boiling sauce vsp in strongcold has been changed from -30 to -25 (the value it was designed for)
+- For consistency reasons, strongcold no longer has custom collectibles and pizza boxes
+- Reverted the noclip command requiring you to be in the idle state (this was a weird extremely inconvenient change)
+
+# LEVEL CHANGES
+
+- Unmarked "visible" from some background layers that weren't supposed to be visible in entrance and ruin
+- Overhauled ETB and old desert entirely
+- Added more balloons to Dragon's Lair, removed the john blocks, and added old medieval assets for it
+- Removed lapping from dragonslair and strongcold.
+- Unfixed slope collision in medieval_3b
+
+# NEW ADDITIONS
+
+- New PTEM logo
+- Whether or not characters can use their own collectible sprites is now controlled through "global.Ncollect, global.Scollect, global.Vcollect"
+- Wall splatting for when you roll/dive into a wall in finalmoveset as well as making use of the other sounds we added
+- scr_vigi_utilities (Works like scr_dotaunt, but for vigilante's arsenal)
+- "escape" variable for gerome that makes him have his rework build behavior. Intended for some of the old levels that weren't supposed to have lap 2
+- "warningspr" and "showwarning" to obj_lapportal. Now you can change it's icon and it's no longer fully reliant on oldassets
+- "oldblock" for obj_reverseminipillar. turns it into enemyblock from ETB
+- Unhardcoded pizza granny's sounds and sprites
+
+# FIXES
+
+- Old hud ONLY giving rolling sprite in states.tumble regardless of action
+- sfx_suplexdash still playing even after cancelling a grab
+- Camera zooming (this is unused, you can see it in action if you activate coop)
+- Time attack (added obj_timeattackclock)
+- Playable vigilante and pogo noise
+- Noise boss crash
+- Missing secret music in strongcold
+- Greaseball's upward swing inaccuracy. Third golf room is no longer hell
+- Camera and charge effect delays
+- Golden door not saving it's visited sprite
+- Knight's movespeed on "oldblock" slopes
+- hard mode's randomized enemy indexes
+- obj_skateboardOLD, obj_clownmatoOLD, obj_trashOLD, obj_pizzaballOLD, obj_pizzaballOLDOLD, obj_piraneapple
+- ETB noise cutscene
+
+# REMOVALS
+
+- Fake TV (What vigilante and snick used)
+- All unnecessary custom sprites (such as bg_peppizza)
+- obj_desert_tile_fixer, obj_lap2fixer, obj_outletalt, obj_treasure1, obj_text_gui
+- off screen lap counter (this was never supposed to exist)
+- Most of the final game's SFX and noise scripts
+- rm_misctest, rm_blank, and final game tutorial rooms
+- Outlined cloud effect from new assets
+
+# ???
+
+- 2 new playable characters
+- Enemy test update
+- More levels
+
+TODO this is very lazily written so do ask me questions if you don't understand some of these
+
+- Smoked weenie
+- strongcold doise and time's up fix (compare to xmas)
+- fix and desert spawner fix and etc
+- old hud war timer
+- fix greaseball and old greaseball camera
+- pizzelle's hud, ranks, and moveset
+- bo noise
+- sewer spit cheese spike bug
+- UNIQUE PIZELLE SPRITES FOR UH PIPE JUMP AND GROUND POUNDS
+- Pizzelle BRB and tumble
+- fix xmas toppins
+- finish etb and at also consider making p rankable
+combo title end combo end yeah for old hud remove uhh new hud unfix for old asset
+peppermanbomb
+fix piraneapples
+fix at hallways
+fix it
+- read the changelogs and see what you didnt do
+- snckexe
+- ancient tower noise shit
+-finish old hud like bnf code and stuff
+- make times up change a global variable
+-split oldassets add more options
+- try to clean up code and such and organize folders and more and clean up sprites and yeah and remove custom stuff also theres 2 noises PLEASE FIX ETB rganize off western source code
+gustavoswitch scirpt shit
+remove pizzahead supergrab all boss leftovers
+flip enemy optionbut probably not getting added lmao
+ask main if we can just get rid of turning shaders off because why
+- war secrets? clock times? ewhatever?
+- consider old level
+potentially:
+- offsets for noise's parry sprites? consider

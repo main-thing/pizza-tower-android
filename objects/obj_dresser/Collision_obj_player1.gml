@@ -1,7 +1,11 @@
-if obj_player1.key_up2
+ADD_OBJECT_EVENT_GML_HOOK;
+with (obj_player1)
 {
-	if (obj_player1.paletteselect < 6)
-		obj_player1.paletteselect += 1
-	else
-		obj_player1.paletteselect = 1
+	if key_up2
+	{
+		if (paletteselect < sprite_get_width(spr_palette) - 1)
+			paletteselect += 1
+		else
+			paletteselect = 1
+	}
 }

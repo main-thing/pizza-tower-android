@@ -1,9 +1,9 @@
-function do_dialog(argument0)
+function do_dialog(_a0)
 {
 	with (instance_create(x, y, obj_dialogcontroller))
 	{
 		npcID = other.id
-		dialog = argument0
+		dialog = _a0
 		dialogsprite = dialog[0][1]
 		currenttext = scr_calculate_text(dialog[0][0])
 		dialogheight = scr_calculate_height(currenttext)
@@ -45,15 +45,15 @@ function vigilante_add_battle()
 	exit;
 }
 
-function do_dialog_cutscene(argument0, argument1, argument2)
+function do_dialog_cutscene(_a0, _a1, _a2)
 {
-	if (argument1 == undefined)
-		argument1 = 0
-	if (argument2 == undefined)
-		argument2 = 0
-	with (instance_create(argument1, argument2, obj_cutscene_handler))
+	if (_a1 == undefined)
+		_a1 = 0
+	if (_a2 == undefined)
+		_a2 = 0
+	with (instance_create(_a1, _a2, obj_cutscene_handler))
 	{
-		scene_info = argument0
+		scene_info = _a0
 		for (var i = 0; i < array_length(scene_info); i++)
 			scene_info[i][0] = method(id, scene_info[i][0])
 	}

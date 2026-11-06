@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var lay_id = layer_get_id("Backgrounds_1")
 var back_id = layer_background_get_id(lay_id)
 var lay_id2 = layer_get_id("Backgrounds_2")

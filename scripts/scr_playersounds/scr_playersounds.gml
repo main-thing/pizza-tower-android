@@ -9,7 +9,7 @@ function scr_playersounds()
 		}
 		else if (state != states.mach1 or (!grounded) or move == (-xscale))
 			audio_stop_sound(mach1snd)
-		if ((sprite_index == spr_mach or state == states.climbwall) && (!audio_is_playing(sfx_mach2snd)))
+		if (((sprite_index == spr_mach && state == states.mach2) or state == states.climbwall) && (!audio_is_playing(sfx_mach2snd)))
 		{
 			mach2snd = audio_play_sound(sfx_mach2snd, 1, false)
 			sfx_gain(mach2snd)
@@ -85,6 +85,8 @@ function scr_playersounds()
 			audio_stop_sound(tumble2snd)
 			audio_stop_sound(tumble3snd)
 		}
+		if (audio_is_playing(suplexdashsnd) && state != states.handstandjump)
+			audio_stop_sound(suplexdashsnd);
 		if(finalmoveset)
 		{
 			if (audio_is_playing(longjumpsnd) && state != states.mach2)

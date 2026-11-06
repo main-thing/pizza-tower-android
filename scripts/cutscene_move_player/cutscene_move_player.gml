@@ -1,9 +1,9 @@
-function cutscene_move_player(argument0, argument1, argument2, argument3)
+function cutscene_move_player(_a0, _a1, _a2, _a3)
 {
-	var player = argument0
-	var x_to = argument1
-	var max_hsp = argument2
-	var threshold = argument3
+	var player = _a0
+	var x_to = _a1
+	var max_hsp = _a2
+	var threshold = _a3
 	var finish = 0
 	with (player)
 	{

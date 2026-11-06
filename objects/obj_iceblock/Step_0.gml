@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if place_meeting(x, (y - 1), obj_player)
 {
 	with (obj_player)
@@ -38,4 +39,11 @@ if place_meeting(x, (y - 1), obj_player)
 			}
 		}
 	}
+}
+
+if(image_xscale == 0.5 && image_yscale == 0.5)
+{
+	image_xscale = image_xscale * 2
+	image_yscale = image_yscale * 2
+	instance_change(obj_iceblock_strongcold, false)
 }

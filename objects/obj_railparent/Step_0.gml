@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 for (var i = 0; i < array_length(objectlist); i++)
 {
 	var b = objectlist[i]

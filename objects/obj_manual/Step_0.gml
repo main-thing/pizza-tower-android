@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (obj_player.key_right2 && i < 12)
 {
 	i += 1

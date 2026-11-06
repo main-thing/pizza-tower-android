@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!audio_is_playing(obj_music_set.music_editor))
 {
 	audio_stop_all()

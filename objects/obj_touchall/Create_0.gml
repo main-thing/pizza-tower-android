@@ -1,2 +1,3 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 touched = 0
 trigger = 0

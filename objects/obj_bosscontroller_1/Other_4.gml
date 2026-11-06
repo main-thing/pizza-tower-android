@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 boss_maxhp = boss_hp;
 boss_prevhp = boss_maxhp;
 player_maxhp = player_hp;
@@ -29,8 +30,6 @@ else if (room != rank_room)
 	with (obj_vigilanteboss)
 		skipintro = true;
 	with (obj_noiseboss)
-		skipintro = true;
-	with (obj_fakepepboss)
 		skipintro = true;
 	/*with (obj_pizzafaceboss)
 		skipintro = true;*/

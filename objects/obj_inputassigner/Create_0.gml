@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 player_input_device[0] = -2
 player_input_device[1] = -2
 device_selected[0] = 0
@@ -14,20 +15,20 @@ vibration[1][0] = 0
 vibration[1][1] = 0
 vibration[1][2] = 0
 
-setVibration = function(argument0, argument1, argument2, argument3)
+setVibration = function(_a0, _a1, _a2, _a3)
 {
-	vibration[argument0][0] = argument1
-	vibration[argument0][1] = argument2
-	if (argument3 != undefined)
-		vibration[argument0][2] = argument3
+	vibration[_a0][0] = _a1
+	vibration[_a0][1] = _a2
+	if (_a3 != undefined)
+		vibration[_a0][2] = _a3
 	exit;
 }
 
-function CheckUsedIndex(argument0)
+function CheckUsedIndex(_a0)
 {
 	for (var _x = 0; _x < 2; _x++)
 	{
-		if (player_input_device[_x] == argument0)
+		if (player_input_device[_x] == _a0)
 			return true;
 	}
 	return false;

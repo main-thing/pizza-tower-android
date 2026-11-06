@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var _w = obj_camera.original_cam_width
 var _h = obj_camera.original_cam_height
 var ds_h = 0

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (floor(image_index) == (image_number - 1))
 	image_speed = 0
 if (global.collect >= global.collectN)
@@ -30,7 +31,7 @@ if (global.collect >= global.collectN)
 		if (global.rank == "d")
 			sprite_index = spr_rankND
 		if (global.rank == "p")
-			sprite_index = spr_rankP
+			sprite_index = spr_rankNP
 	}
 }
 if (global.collectN > global.collect)
@@ -63,10 +64,10 @@ if (global.collectN > global.collect)
 		if (global.rank == "d")
 			sprite_index = spr_rankND
 		if (global.rank == "p")
-			sprite_index = spr_rankP
+			sprite_index = spr_rankNP
 	}
 }
-if(!global.showrank){
+if(!global.showrank) {
 	sprite_index = spr_rankEGGPLANT
 }
 if instance_exists(obj_treasureviewer)

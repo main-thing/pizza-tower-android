@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 global.breaksound = 0
 if (obj_player1.character == "P" && obj_player1.spotlight == 1 && obj_player1.ispeppino)
 	sprite_index = spr_destroyable2

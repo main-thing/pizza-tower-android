@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (player < obj_hardmode)
 {
 	if (start == 1)

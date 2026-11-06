@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (state != states.throwing && (other.hsp != 0 or other.thrown or other.state == states.tumble))
 {
 	pizzaball = 1

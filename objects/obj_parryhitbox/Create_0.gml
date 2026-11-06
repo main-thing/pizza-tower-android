@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 collisioned = 0
 player_id = 1
 image_index = 0

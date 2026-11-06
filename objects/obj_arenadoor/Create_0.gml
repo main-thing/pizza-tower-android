@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 objectlist = -4
 count = 0
 wave = 0

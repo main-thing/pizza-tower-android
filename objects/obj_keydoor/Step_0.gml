@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if ((!global.horse) && (!instance_exists(obj_jumpscare)) && (obj_player1.state == states.normal or obj_player1.state == states.mach1 or obj_player1.state == states.pogo or obj_player1.state == states.mach2 or obj_player1.state == states.mach3 or obj_player1.state == states.Sjumpprep) && sprite_index == spr_doorkey && obj_player1.key_up && obj_player1.grounded && global.key_inv == 1 && place_meeting(x, y, obj_player1))
 {
 	ds_list_add(global.saveroom, id)
@@ -42,12 +43,12 @@ if (place_meeting(x, y, obj_player1) && (!instance_exists(obj_jumpscare)) && flo
 	{
 		obj_player1.targetDoor = other.targetDoor
 		obj_player1.targetRoom = other.targetRoom
-			if(variable_instance_exists(other,"target_x")){
+			if(variable_instance_exists(other,"target_x")) {
 				obj_player1.target_x = other.target_x
 			} else {
 				obj_player1.target_x = "null"
 			}
-			if(variable_instance_exists(other,"target_y")){
+			if(variable_instance_exists(other,"target_y")) {
 				obj_player1.target_y = other.target_y
 			} else {
 				obj_player1.target_y = "null"
@@ -56,12 +57,12 @@ if (place_meeting(x, y, obj_player1) && (!instance_exists(obj_jumpscare)) && flo
 		{
 			obj_player2.targetDoor = other.targetDoor
 			obj_player2.targetRoom = other.targetRoom
-			if(variable_instance_exists(other,"target_x")){
+			if(variable_instance_exists(other,"target_x")) {
 				obj_player2.target_x = other.target_x
 			} else {
 				obj_player2.target_x = "null"
 			}
-			if(variable_instance_exists(other,"target_y")){
+			if(variable_instance_exists(other,"target_y")) {
 				obj_player2.target_y = other.target_y
 			} else {
 				obj_player2.target_y = "null"
@@ -83,3 +84,5 @@ if place_meeting(x, y, obj_doorE)
 	targetDoor = "E"
 if place_meeting(x, y, obj_doorF)
 	targetDoor = "F"
+if place_meeting(x, y, obj_doorG)
+	targetDoor = "G"

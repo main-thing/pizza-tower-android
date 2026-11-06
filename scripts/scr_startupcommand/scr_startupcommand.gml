@@ -1,25 +1,22 @@
-function scr_startupcommand(){
-	var file = file_text_open_read(working_directory + "crashcount.txt")
-	var count = file_text_read_real(file)
-	if(count > 2){
-		file_text_close(file);
-		var file = file_text_open_write(working_directory + "crashcount.txt")
-		file_text_write_string(file,"0")
-		file_text_close(file)
-		return show_message_async("startupcommand crashed too many times. Aborting...");
-	}
-	file_text_close(file);
-	
-	if(!file_exists(working_directory + "startupcommand.txt")){
-		var file = file_text_open_write(working_directory + "startupcommand.txt")
-		file_text_write_string(file,"none")
-		file_text_close(file);
-	} else {
-		var file = file_text_open_read(working_directory + "startupcommand.txt")
-		var command = file_text_read_string(file)
-		if(is_string(command) && command != "none"){
-			docommand(command,true,true)
+// Script assets have changed for v2.3.0 see
+// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+if(ENABLE_STARTUP_COMMANDS)
+{
+	function scr_startupcommand()
+	{
+		if(file_exists(STARTUP_COMMAND_LOCATION))
+		{
+			var buff = buffer_load(STARTUP_COMMAND_LOCATION);
+			var _str = (buffer_get_size(buff) > 0) ? buffer_read(buff, buffer_string) : "";
+			buffer_delete(buff);
+			processcommand(_str);
 		}
-		file_text_close(file);
+		else
+		{
+			var buff = buffer_create(0, buffer_grow, 1);
+			buffer_save(buff, STARTUP_COMMAND_LOCATION);
+			buffer_delete(buff);
+		}
 	}
 }
+else return;

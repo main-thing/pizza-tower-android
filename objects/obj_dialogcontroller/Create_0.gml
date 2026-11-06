@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 padding = 16
 rpadding = 20
 savedstate = states.normal

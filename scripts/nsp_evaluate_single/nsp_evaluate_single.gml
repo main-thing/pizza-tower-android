@@ -1,16 +1,16 @@
 /// @description nsp_evaluate_single(String, Type)
 /// @param String
 /// @param  Type
-function nsp_evaluate_single(argument0, argument1) {
+function nsp_evaluate_single(_a0, _a1) {
 	/*
 	Underlying NSP script.
 	*/
 	var nspToken=global.nspToken;
 	var work_str,rv;
 
-	work_str=argument0;
+	work_str=_a0;
 
-	switch (argument1) begin
+	switch (_a1) begin
 
 	 //Real:
 	 case NSP_TYPE._number:
@@ -35,7 +35,7 @@ function nsp_evaluate_single(argument0, argument1) {
 	    rv=nsp_dsm_get(variable);
       
 	    if nsp_is_equal(rv,nspToken[NSP_TOK.abort]) {
-	     NSP_notify("SCRIPT: nsp_evaluate_single. ERROR: Cannot get DSM value ("+argument0+").");
+	     NSP_notify("SCRIPT: nsp_evaluate_single. ERROR: Cannot get DSM value ("+_a0+").");
 	     return nspToken[NSP_TOK.abort];
 	     }
 	    //SQ:

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (other.instakillmove)
 	instance_destroy();
 else if (other.state == states.freefall)

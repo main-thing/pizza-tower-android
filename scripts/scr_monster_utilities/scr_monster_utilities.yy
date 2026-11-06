@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Monsters",
-    "path": "folders/Scripts/Enemies/Monsters.yy",
+    "path": "folders/Objects/Game settings/Scripts/Enemies/Monsters.yy",
   },
 }

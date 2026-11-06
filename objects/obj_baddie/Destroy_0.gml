@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (room == rm_editor)
 	exit;
 if (ds_list_find_index(global.baddieroom, id) == -1 && ((!elite) or elitehit <= 0))
@@ -40,6 +41,42 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && ((!elite) or elitehit <= 
 		{
 			with (instance_create(x, y, obj_sausageman_dead))
 				sprite_index = other.spr_content_dead
+		}
+	}
+	if (object_index == obj_noisesatellite)
+	{
+		if (play_music)
+		{
+			audio_stop_all()
+			scr_soundeffect(mu_transition)
+		}
+		repeat (3)
+			instance_create(x, y, obj_slapstar)
+		instance_create(x, y, obj_bossdefeatflash)
+		with (obj_tv)
+		{
+			message = "VICTORY!!!"
+			showtext = 1
+			alarm[0] = 260
+			tvsprite = spr_tvclap
+			image_speed = 0.1
+		}
+		with (obj_player1)
+		{
+			var noise_x = (x + xscale * 662)
+			var noise_y = y
+			if (room == AT_roomboss)
+			{
+				x = 608
+				y = 498
+				noise_y += 71
+			}
+			instance_destroy(obj_wave)
+			instance_create(noise_x, noise_y, obj_noise_pushbutton)
+			hsp = 0
+			image_index = 0
+			sprite_index = spr_levelcomplete
+			state = states.bossintro
 		}
 	}
 }

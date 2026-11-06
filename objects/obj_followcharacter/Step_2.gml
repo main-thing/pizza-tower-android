@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (followid != noone && (!instance_exists(obj_player1)))
 	exit;
 playerid = obj_player1.id

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 savedhallwaydirection = hallwaydirection
 savedhallway = hallway
 savedvhallwaydirection = vhallwaydirection
@@ -105,13 +106,23 @@ if (object_index != obj_player2 or global.coop == true)
 			x = (obj_doorF.x + 16)
 		y = (obj_doorF.y - 14)
 	}
-	if(variable_instance_exists(id,"target_x")){
-		if(target_x != "null"){
+	if (targetDoor == "G" && instance_exists(obj_doorG))
+	{
+		if (hallway == 1)
+			x = (obj_doorG.x + (hallwaydirection * 100))
+		else if (box == 1)
+			x = (obj_doorG.x + 32)
+		else
+			x = (obj_doorG.x + 16)
+		y = (obj_doorG.y - 14)
+	}
+	if(variable_instance_exists(id,"target_x")) {
+		if(target_x != "null") {
 			x = target_x
 		}
 	}
-	if(variable_instance_exists(id,"target_y")){
-		if(target_y != "null"){
+	if(variable_instance_exists(id,"target_y")) {
+		if(target_y != "null") {
 			y = target_y
 		}
 	}
@@ -126,11 +137,11 @@ if verticalhallway
 		if (targetDoor == other.targetDoor)
 			_vinst = id
 	}
-	if(target_x != "null"){
+	if(target_x != "null") {
 		x = target_x
 		_vinst = noone
 	}
-	if(target_y != "null"){
+	if(target_y != "null") {
 		y = target_y
 		_vinst = noone
 	}

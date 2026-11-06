@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (stored_id != noone)
 {
 	instance_activate_object(stored_id)

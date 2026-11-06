@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 detach = 0
 detachedby = -1
 follow_golf = 0
@@ -71,6 +72,7 @@ hp_hud_y = 70
 rank_xoffset = 142
 rank_yoffset = -22
 menacing_combo_count = 3
+camera_y = 50
 
 function draw_head_sprite(spr)
 {

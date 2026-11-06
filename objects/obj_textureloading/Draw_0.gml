@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!(ds_exists(tex_list, 2)))
 	exit;
 var p = (tex_max - ds_list_size(tex_list))

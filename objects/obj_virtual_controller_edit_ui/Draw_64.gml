@@ -1,0 +1,13 @@
+ADD_OBJECT_EVENT_GML_HOOK;
+draw_self();
+draw_set_alpha(0.5);
+draw_set_color(c_black);
+draw_rectangle(x, y, x + VKEY_EDIT_UI_WIDTH, y + 64, false);
+draw_set_color(c_white);
+draw_rectangle(x, y, x + VKEY_EDIT_UI_WIDTH, y + 64, true);
+draw_sprite(spr_button_color, 0, x + 64, y + 32);
+draw_sprite(global.vkeyui_gridmode ? spr_button_grid_pressed : spr_button_grid, 0, x + 128, y + 32);
+draw_sprite(spr_button_add, 0, x + 192, y + 32);
+draw_sprite(spr_button_save, 0, x + 256, y + 32);
+draw_sprite(spr_button_load, 0, x + 320, y + 32);
+draw_sprite(spr_button_close_controls_edit, 0, x + VKEY_EDIT_UI_WIDTH, y);

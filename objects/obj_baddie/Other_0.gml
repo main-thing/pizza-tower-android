@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (y > (room_height + 100))
 {
 	trace("destroyed 1")

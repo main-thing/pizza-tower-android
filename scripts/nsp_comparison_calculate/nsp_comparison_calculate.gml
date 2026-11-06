@@ -2,7 +2,7 @@
 /// @param Value 1
 /// @param  Value 2
 /// @param  Token
-function nsp_comparison_calculate(argument0, argument1, argument2) {
+function nsp_comparison_calculate(_a0, _a1, _a2) {
 	/*
 	Underlying NSP script.
 	NOTE: Add error checking for incompatible data types.
@@ -10,55 +10,55 @@ function nsp_comparison_calculate(argument0, argument1, argument2) {
 	var nspToken=global.nspToken;
 
 	//Equal:
-	if argument2=nspToken[NSP_TOK.equal] {
+	if _a2=nspToken[NSP_TOK.equal] {
     
-	 return string( (argument0==argument1)*1.0 );
+	 return string( (_a0==_a1)*1.0 );
  
 	 }
  
 	//Unequal:
-	if argument2=nspToken[NSP_TOK.unequal] {
+	if _a2=nspToken[NSP_TOK.unequal] {
 
-	 return string( (argument0<>argument1)*1.0 );
+	 return string( (_a0<>_a1)*1.0 );
    
 	 }
-	if argument2=nspToken[NSP_TOK.notequal] {
+	if _a2=nspToken[NSP_TOK.notequal] {
 
-	 return string( (argument0!=argument1)*1.0 );
+	 return string( (_a0!=_a1)*1.0 );
    
 	 }
  
 	//Convert arguments for following functions:
-	if is_string(argument0)
-	 argument0=real(argument0);
-	if is_string(argument1)
-	 argument1=real(argument1);
+	if is_string(_a0)
+	 _a0=real(_a0);
+	if is_string(_a1)
+	 _a1=real(_a1);
   
 	//Larger:
-	if argument2=nspToken[NSP_TOK.larger] {
+	if _a2=nspToken[NSP_TOK.larger] {
 
-	 return string( (argument0>argument1)*1.0 );
+	 return string( (_a0>_a1)*1.0 );
    
 	 }
 
 	//Larger or equal:
-	if argument2=nspToken[NSP_TOK.larger_equal] {
+	if _a2=nspToken[NSP_TOK.larger_equal] {
 
-	   return string( (argument0>=argument1)*1.0 );
+	   return string( (_a0>=_a1)*1.0 );
    
 	   }
 
 	//Smaller:
-	if argument2=nspToken[NSP_TOK.smaller] {
+	if _a2=nspToken[NSP_TOK.smaller] {
 
-	 return string( (argument0<argument1)*1.0 );
+	 return string( (_a0<_a1)*1.0 );
    
 	 }
    
 	//Smaller or equal:
-	if argument2=nspToken[NSP_TOK.smaller_equal] {
+	if _a2=nspToken[NSP_TOK.smaller_equal] {
 
-	 return string( (argument0<=argument1)*1.0 );
+	 return string( (_a0<=_a1)*1.0 );
    
 	 }
 }

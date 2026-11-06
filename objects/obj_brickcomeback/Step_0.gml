@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (obj_player.isgustavo == 0)
 {
 	instance_create(x, y, obj_genericpoofeffect)

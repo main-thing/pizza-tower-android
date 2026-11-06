@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 draw_set_halign(fa_center)
 if editormode
 {

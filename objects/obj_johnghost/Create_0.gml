@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 state = states.walk
 playerid = instance_nearest(x, y, obj_player)
 targetx = (playerid.xscale > 0 ? 896 : 64)

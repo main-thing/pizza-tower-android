@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 64,
   "height": 64,
   "textureGroupId": {
@@ -68,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "objects",
-    "path": "folders/Sprites/fakeeditor/objects.yy",
+    "path": "folders/Sprites/Editor/fakeeditor/objects.yy",
   },
 }

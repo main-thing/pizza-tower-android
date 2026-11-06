@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!destroy)
 {
 	image_alpha = Approach(image_alpha, 1, 0.1)

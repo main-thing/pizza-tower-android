@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (floor(image_index) == 3 && madecheese == 0)
 {
 	instance_create((x + 32), (y + 64), obj_cheeseblob)

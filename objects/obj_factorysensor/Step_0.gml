@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 prevclosed = closed
 var _closed = 0
 if (!graffiti)

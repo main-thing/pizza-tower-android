@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (obj_pizzaball)
 {
 	with (instance_place((x + hsp), y, other))

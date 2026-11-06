@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (obj_player.state != states.bossintro)
 {
 	with (instance_create(x, (y - 75), obj_press))

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var playerid = obj_player1
 if (obj_player1.spotlight == 0)
 	playerid = obj_player2
@@ -26,7 +27,7 @@ if (place_meeting(x, y, playerid) && (!playerid.cutscene) && playerid.state != s
 		instance_create(x, y, obj_flash)
 		global.panic = true
 		global.fill = 59 * 12
-		with(obj_tv){
+		with(obj_tv) {
 			pizzaface_sprite = spr_timer_pizzaface1
 			chunkmax = global.fill
 		}
@@ -45,14 +46,10 @@ if (place_meeting(x, y, playerid) && (!playerid.cutscene) && playerid.state != s
 			sprite_index = spr_Timesup
 			image_index = 0
 			audio_stop_all()
-			if (global.oldsprites == true) {
-				scr_soundeffect(mu_timesup)
-			} else {
-				scr_soundeffect(mu_Your_Fat_Ass_Slows_You_Down)
-			}
+			scr_soundeffect(global.oldsprites == true ? mu_timesup : mu_fatass);
 		}
 	}
 	instance_destroy()
 }
-if (maxspeed < 3 && image_alpha == 1)
+if (maxspeed < speedupspeed && image_alpha == 1)
 	maxspeed += 0.01

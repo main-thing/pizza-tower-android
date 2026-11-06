@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 seconds--
 alarm[0] = 60
 if (seconds < 0)

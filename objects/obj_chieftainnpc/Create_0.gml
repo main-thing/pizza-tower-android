@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 event_inherited()
 dialog[0] = dialog_create("Have my motorcycle lol", -4, function()
 {

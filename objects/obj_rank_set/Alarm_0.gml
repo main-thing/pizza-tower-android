@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 global.srank = maxscore
 global.arank = floor(global.srank / 2);
 global.brank = floor(global.arank / 2);

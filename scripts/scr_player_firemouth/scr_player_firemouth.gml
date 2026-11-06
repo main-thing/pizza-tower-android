@@ -159,7 +159,7 @@ function scr_player_firemouth()
 		sprite_index = spr_idle
 		image_index = 0
 	}
-	if(!finalmoveset){
+	if(!finalmoveset) {
 		if (input_buffer_jump < 8 && grounded && sprite_index != spr_firemouthintro && sprite_index != spr_firemouthend)
 		{
 			with (instance_create(x, y, obj_highjumpcloud2))

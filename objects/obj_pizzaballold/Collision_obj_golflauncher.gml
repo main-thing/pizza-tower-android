@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (state == states.golf)
 	exit;
 hsp = (14 * other.image_xscale)

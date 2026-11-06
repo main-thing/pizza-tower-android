@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 {
 	var b = ds_list_find_value(global.afterimage_list, i)
@@ -9,21 +10,21 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 			if identifier == afterimage.firemouth
 			{
 				a = alpha
-				if(global.usefiremouthshaders){
+				if(global.usefiremouthshaders) {
 					shader_set(shd_firemouth_afterimage)
 				}
 			}
 			else if identifier == afterimage.blue
 			{
 				a = alpha
-				if(global.useblueafterimageshaders){
+				if(global.useblueafterimageshaders) {
 					shader_set(shd_blue_afterimage)
 				}
 			}
 			else if identifier == afterimage.custom
 			{
 				a = alpha
-				if(global.usecustomafterimageshaders){
+				if(global.usecustomafterimageshaders) {
 					//shader_set_uniform_i(other._uniformcolor, image_blend);
 					shader_set(shd_custom_afterimage)
 				}
@@ -35,7 +36,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 				{
 					if playerid != noone && playerid.object_index != obj_pepgoblin
 					{
-						if(global.usepaletteshaders){
+						if(global.usepaletteshaders) {
 							shader_set(global.Pal_Shader)
 							pal_swap_set(playerid.spr_palette, playerid.paletteselect, 0)
 						}

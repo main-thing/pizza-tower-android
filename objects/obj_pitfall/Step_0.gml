@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if instance_exists(obj_noisesatellite)
 	sprite_index = spr_doorblocked
 if place_meeting(x, y, obj_doorA)
@@ -12,3 +13,5 @@ if place_meeting(x, y, obj_doorE)
 	targetDoor = "E"
 if place_meeting(x, y, obj_doorF)
 	targetDoor = "F"
+if place_meeting(x, y, obj_doorG)
+	targetDoor = "G"

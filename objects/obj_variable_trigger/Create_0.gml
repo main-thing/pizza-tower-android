@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 is_global = false
 object = obj_player
 variable = "spr_idle"

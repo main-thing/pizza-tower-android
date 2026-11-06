@@ -105,7 +105,7 @@ function scr_collide_destructibles()
 					}
 				}
 			}
-			if(finalmoveset){
+			if(finalmoveset) {
 				if (state == states.firemouth)
 					{
 						with (instance_place(x + xscale, y, obj_tntblock))
@@ -217,6 +217,14 @@ function scr_collide_destructibles()
 				if (place_meeting(x, (y + 1), obj_metalblock) && (freefallsmash >= 10 or state == states.slipbanan))
 				{
 					with (instance_place(x, (y + 1), obj_metalblock))
+						instance_destroy()
+				}
+			}
+			if (state == states.Sjump)
+			{
+				if (place_meeting(x, (y - 1), obj_metalblock))
+				{
+					with (instance_place(x, (y - 1), obj_metalblock))
 						instance_destroy()
 				}
 			}

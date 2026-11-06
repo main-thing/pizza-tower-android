@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 sprite_index = ((!collide) ? spr_bomb : -4)
 if instance_exists(obj_bomb)
 	collide = 0

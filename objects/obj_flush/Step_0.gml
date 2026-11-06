@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (state == states.flushtransition)
 {
 	if (floor(image_index) == (image_number - 1))

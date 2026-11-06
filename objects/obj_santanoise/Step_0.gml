@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (floor(image_index) == 53 && (!instance_exists(obj_noisebomb)))
 {
 	global.minutes = 1

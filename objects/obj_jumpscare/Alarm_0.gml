@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 state++
 if (state == 1)
 {

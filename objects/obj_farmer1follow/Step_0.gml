@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var obj = obj_farmerpeasantoprojectile
 switch object_index
 {

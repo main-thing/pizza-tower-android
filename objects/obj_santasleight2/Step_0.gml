@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (x > 1200 && (!instance_exists(obj_fadeout)) && ok == 0)
 {
 	with (instance_create(x, y, obj_fadeout))

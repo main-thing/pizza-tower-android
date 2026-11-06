@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 event = 
 {
 	destroy : ["", undefined],
@@ -76,3 +77,9 @@ event =
 	audio_playback : ["", undefined],
 	system : ["", undefined],
 }
+show_in_pause = false
+var l = global.custom_object_list
+if(ds_exists(l, ds_type_list))
+	ds_list_add(l, id)
+	
+docommand("reload_gml", true, true)

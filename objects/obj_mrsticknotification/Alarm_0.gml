@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 start = true;
 if (sprite_index != spr_mrmooney_notification)
 	create_transformation_tip(lang_get_value("mrsticknotification"));

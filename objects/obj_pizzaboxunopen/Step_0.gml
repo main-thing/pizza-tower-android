@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var roomname = string_letters(room_get_name(room))
 if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen) || (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen_1)
 {
@@ -182,20 +183,27 @@ if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen) || (p
 			vsp = -5
 		}
 	}
-	if(global.oldsprites){
-	sprite_index = spr_pizzaboxopen
-	} else{
+	if(global.oldsprites)
+	{
+		sprite_index = spr_pizzaboxopen
+	} 
+	else
+	{
 		instance_destroy()
 	}
 }
-if(global.oldsprites){
-if (sprite_index == spr_pizzaboxopen && floor(image_index) == 16)
-	instance_destroy()
-} else{
+
+if(global.oldsprites)
+{
+	if (sprite_index == spr_pizzaboxopen && floor(image_index) == 16)
+		instance_destroy()
+} 
+else
+{
 	subimg += 0.35;
 	if (subimg > (sprite_get_number(spr_toppinhelp) - 1))
 	{
 		subimg = frac(subimg);
-		audio_play_sound(snd,1,false)
+		scr_soundeffect(snd);
 	}
 }

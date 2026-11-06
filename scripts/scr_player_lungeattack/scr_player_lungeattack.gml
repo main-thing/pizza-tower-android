@@ -91,13 +91,13 @@ function scr_player_lungeattack()
 	exit;
 }
 
-function randomize_animations(argument0)
+function randomize_animations(_a0)
 {
-	if (ds_list_size(animlist) >= array_length(argument0))
+	if (ds_list_size(animlist) >= array_length(_a0))
 		ds_list_clear(animlist)
-	sprite_index = argument0[irandom((array_length(argument0) - 1))]
+	sprite_index = _a0[irandom((array_length(_a0) - 1))]
 	while (ds_list_find_index(animlist, sprite_index) != -1)
-		sprite_index = argument0[irandom((array_length(argument0) - 1))]
+		sprite_index = _a0[irandom((array_length(_a0) - 1))]
 	ds_list_add(animlist, sprite_index)
 	exit;
 }

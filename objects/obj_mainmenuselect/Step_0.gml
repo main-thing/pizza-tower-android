@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (selected == 0)
 {
 	if ((obj_player1.key_right2) && optionselected < 2)

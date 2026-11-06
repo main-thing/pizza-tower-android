@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 stunned = 200
 if (place_meeting(x, y, obj_player) && state == 82 && obj_player.state == states.normal && obj_player.xscale == sign((x - other.x)) && (obj_player.x <= (x - 20) || obj_player.x >= (x + 20)))
 {

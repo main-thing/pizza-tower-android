@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 draw_set_font(global.smallnumber_fnt)
 draw_set_halign(fa_center)
 var c = (negative ? global.smallnumber_color2 : global.smallnumber_color1)

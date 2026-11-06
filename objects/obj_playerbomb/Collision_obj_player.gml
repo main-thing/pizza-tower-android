@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if ((!kick) && countdown <= 0)
 {
 	other.vsp = -14

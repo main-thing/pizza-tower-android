@@ -1,15 +1,15 @@
 /// @description nsp_variable_global_get(Name)
 /// @param Name
-function nsp_variable_global_get(argument0) {
+function nsp_variable_global_get(_a0) {
 	/*
 	Underlying NSP script..
 	*/
 	var nspToken=global.nspToken;
 	var work_str;
 
-	work_str=argument0;
+	work_str=_a0;
 
-	if string_copy(argument0,1,7)="global."
+	if string_copy(_a0,1,7)="global."
 	 work_str=string_delete(work_str,1,7);
  
 	switch (work_str) begin
@@ -21,7 +21,7 @@ function nsp_variable_global_get(argument0) {
 	  // Add more here...
   
 	 default:
-	   NSP_notify("SCRIPT: nsp_variable_global_get. ERROR: Variable not supported ("+argument0+").");
+	   NSP_notify("SCRIPT: nsp_variable_global_get. ERROR: Variable not supported ("+_a0+").");
 	   return nspToken[NSP_TOK.abort];
 	  break;
   

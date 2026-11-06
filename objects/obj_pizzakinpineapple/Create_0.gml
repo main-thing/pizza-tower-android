@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 event_inherited()
 spr_intro = spr_toppinpineapple_intro
 spr_idle = spr_toppinpineapple

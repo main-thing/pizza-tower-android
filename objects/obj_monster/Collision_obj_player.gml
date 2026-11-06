@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (state != states.robotidle && other.state != states.actor && (!other.cutscene) && other.state != states.door)
 {
 	if ((!global.panic) && (!instance_exists(obj_jumpscare)))

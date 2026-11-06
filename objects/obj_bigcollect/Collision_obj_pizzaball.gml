@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (obj_player1.character == "V")
 	global.playerhealth = clamp((global.playerhealth + 10), 0, 100)
 global.heattime = 60
@@ -7,15 +8,18 @@ scr_soundeffect(sfx_collectpizza)
 instance_destroy()
 global.combotime = 60
 var val = heat_calculate(100)
+global.collect += val
+/*
 if (other.object_index == obj_player1)
 	global.collect += val
 else
 	global.collectN += val
+*/
 create_collect(x, y, sprite_index)
 with (instance_create((x + 16), y, obj_smallnumber))
 	number = string(val)
 with (obj_player) {
 		if (check_player_coop()) {
-			tv_do_expression(self._spr_tv_exprcollect)
+			tv_do_expression(self.tv_exprcollect)
 		}
 }

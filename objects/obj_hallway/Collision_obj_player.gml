@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (obj_player1.state == states.debugstate)
 	exit;
 with (other)
@@ -9,13 +10,13 @@ with (other)
 		obj_player1.targetDoor = other.targetDoor
 		obj_player1.targetRoom = other.targetRoom
 		
-		if(variable_instance_exists(other,"target_x")){
+		if(variable_instance_exists(other,"target_x")) {
 			target_x = other.target_x
 		} else {
 			x = other.x
 			target_x = "null"
 		}
-		if(variable_instance_exists(other,"target_y")){
+		if(variable_instance_exists(other,"target_y")) {
 			target_y = other.target_y
 		} else {
 			y = (other.y + (other.sprite_height - 46))

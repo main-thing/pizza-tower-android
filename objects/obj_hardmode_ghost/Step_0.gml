@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 highest_y = -270
 var _instY = collision_line(obj_player1.x, obj_player1.y, obj_player1.x, (obj_player1.y - 270), obj_solid, false, true)
 if (_instY != noone)

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 event_inherited()
 idlespr = spr_monstercheese_idle
 walkspr = spr_monstercheese_walk

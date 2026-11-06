@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (other.state != states.gotoplayer)
 {
 	if (obj_player1.character == "V")
@@ -6,6 +7,7 @@ if (other.state != states.gotoplayer)
 	with (obj_camera)
 		healthshaketime = 120
 	scr_soundeffect(sfx_collectgiantpizza)
+	global.combotime = 60
 	var val = heat_calculate(1000)
 	if (other.object_index == obj_player1)
 		global.collect += val

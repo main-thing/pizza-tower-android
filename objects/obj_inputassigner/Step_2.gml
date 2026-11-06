@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!global.option_vibration)
 	exit;
 with (obj_player)

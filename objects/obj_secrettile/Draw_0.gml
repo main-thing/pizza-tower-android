@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!(bbox_in_camera(view_camera[0], 32)))
 	exit;
 if (array_length(tiles) > 0)

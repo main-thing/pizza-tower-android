@@ -1,3 +1,3 @@
-function scr_room_goto(argument0) {
-	room_goto(argument0)
+function scr_room_goto(_a0) {
+	room_goto(_a0)
 }

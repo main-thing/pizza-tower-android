@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 ventilator_index += 0.35
 if (ventilator_index > 4)
 	ventilator_index = frac(ventilator_index)

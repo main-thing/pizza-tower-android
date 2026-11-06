@@ -1,9 +1,9 @@
-function cutscene_set_sprite(argument0, argument1, argument2, argument3)
+function cutscene_set_sprite(_a0, _a1, _a2, _a3)
 {
-	var _obj = argument0
-	var _spr = argument1
-	var _spd = argument2
-	var _xscale = argument3
+	var _obj = _a0
+	var _spr = _a1
+	var _spd = _a2
+	var _xscale = _a3
 	with (_obj)
 	{
 		sprite_index = _spr

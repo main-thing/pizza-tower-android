@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 active = place_meeting(x, y, obj_baddie)
 if (active != preactive)
 {

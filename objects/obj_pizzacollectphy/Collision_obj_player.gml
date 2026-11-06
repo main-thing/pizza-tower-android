@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (vsp > 0)
 {
 	if (obj_player1.character == "V")

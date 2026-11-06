@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 512,
   "height": 1120,
   "textureGroupId": {
@@ -68,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Sewer",
-    "path": "folders/Sprites/Backgrounds/Sewer.yy",
+    "path": "folders/Sprites/Tilesets/Sewer.yy",
   },
 }

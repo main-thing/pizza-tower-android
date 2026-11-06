@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (text_state == states.titlescreen && text_y <= -(text_sprite_height * text_yscale))
 	exit;
 draw_sprite(spr_tutorialbubble_rope, 0, 64 + text_wave_x, text_y + text_wave_y);

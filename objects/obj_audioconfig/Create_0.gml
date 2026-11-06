@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 audio_select = 0
 audiosaved_master = (global.option_master_volume * 100)
 audiosaved_music = (global.option_music_volume * 100)

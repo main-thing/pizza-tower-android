@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 message = ""
 global.roommessage = "HELLO!"
 xi = 500

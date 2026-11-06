@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 draw_set_font(global.bigfont)
 draw_set_halign(fa_center)
 draw_set_valign(fa_top)

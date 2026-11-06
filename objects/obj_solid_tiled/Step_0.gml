@@ -1,1 +1,2 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 event_perform_object(obj_tiled,ev_step,ev_step_normal)

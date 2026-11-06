@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if instance_exists(obj_pepperman)
 {
 	if (obj_pepperman.hp <= 6 && start == 0)

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (obj_comboend)
 {
 	for (var i = 0; i < comboscore; i += comboscore)

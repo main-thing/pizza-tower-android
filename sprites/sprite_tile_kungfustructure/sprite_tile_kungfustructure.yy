@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 512,
   "height": 512,
   "textureGroupId": {
@@ -68,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Kung Fu",
-    "path": "folders/Sprites/Backgrounds/Kung Fu.yy",
+    "path": "folders/Sprites/Tilesets/Kung Fu.yy",
   },
 }

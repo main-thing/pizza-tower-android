@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if point_in_rectangle(x, y, camera_get_view_x(view_camera[0]), camera_get_view_y(view_camera[0]), (camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0])), (camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0])))
 {
 	for (i = 0; i < (array_length_1d(baddieid) - 1); i += 1)

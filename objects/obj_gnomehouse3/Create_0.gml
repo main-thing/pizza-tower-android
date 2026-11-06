@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 event_inherited()
 content = obj_pizzakintomato
 gnome_id = 2

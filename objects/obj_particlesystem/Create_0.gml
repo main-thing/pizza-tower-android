@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 enum particle
 {
 	enum_start, // don't use this

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 length = 256
 hsp = 0
 vsp = 0

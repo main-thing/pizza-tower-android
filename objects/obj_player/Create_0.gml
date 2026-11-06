@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (instance_number(object_index) > 1)
 {
 	instance_destroy()
@@ -192,6 +193,7 @@ suplexhavetomash = 0
 anger = 0
 angry = 0
 baddiegrabbedID = 0
+baddie_scare_states = ds_list_create()
 spr_palette = spr_peppalette
 character = "P"
 tauntsound = sfx_taunt
@@ -360,7 +362,7 @@ farmerpos = 0
 clowntimer = 0
 knightmiddairstop = 0
 knightmove = -1
-if (!variable_global_exists("saveroom"))
+if(!variable_global_exists("saveroom"))
 {
 	global.combodropped = 0
 	global.saveroom = ds_list_create()
@@ -457,12 +459,13 @@ if (!variable_global_exists("saveroom"))
 	global.gerome = 0
 	global.bullet = 0
 	global.fuel = 3
-	global.bigfont = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.1234567890:", 1, 0)
+	global.bigfont = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ!¡¿?.1234567890:ÁÄÃÀÂÉÈÊËÍÌÎÏÓÖÕÔÒÚÙÛÜç+_", 1, 0)
 	global.collectfont = font_add_sprite_ext(spr_font_collect, "0123456789", 1, 0)
 	global.combofont = font_add_sprite_ext(spr_font_combo, "0123456789/:", 1, 0)
 	global.combofont2 = font_add_sprite_ext(spr_tv_combobubbletext, "0123456789", 1, 0)
-	global.smallfont = font_add_sprite_ext(spr_smallerfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.:?1234567890", 1, 0)
+	global.smallfont = font_add_sprite_ext(spr_smallerfont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ!¡.:?¿1234567890ÁÄÃÀÂÉÈÊËÍÌÎÏÓÖÕÔÒÚÙÛÜç+", 1, 0)
 	global.smallfont2 = font_add_sprite_ext(spr_smallfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!._1234567890:?", 1, 0)
+	global.smallfont3 = font_add_sprite_ext(spr_smallfont_logs, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!._1234567890:?() {}[],/\\@;-+", 1, 0)
 	global.wartimerfont1 = font_add_sprite_ext(spr_wartimer_font1, "1234567890", 1, 0)
 	global.wartimerfont2 = font_add_sprite_ext(spr_wartimer_font2, "1234567890", 1, 0)
     global.tutorialfont = font_add_sprite_ext(spr_tutorialfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!,.:0123456789'?-", 1, 2)

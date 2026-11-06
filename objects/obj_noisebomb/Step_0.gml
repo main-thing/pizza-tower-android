@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (room == rank_room or room == timesuproom)
 	visible = false
 if (obj_player.state == states.pizzathrow)
@@ -9,37 +10,22 @@ else
 if (global.miniboss == false)
 {
 	with(obj_music)
-	{
 		audio_stop_sound(musicID)
-		music = mu_empty
-		musicID = scr_music(music)
-	}
 	instance_destroy()
 }
-if ((sprite_index == spr_noisebomb_intro||sprite_index == spr_doisebomb_intro) && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_noisebomb_intro && floor(image_index) == (image_number - 1))
 {
 	sprite_index = spr_noisebomb_idle
-	if(is_noise){
-		sprite_index = spr_doisebomb_idle
-	}
 	x = playerid.x
 	y = playerid.y
 }
-if (global.miniboss == true && sprite_index != spr_noisebomb_intro && sprite_index != spr_doisebomb_intro)
+if (global.miniboss == true && sprite_index != spr_noisebomb_intro)
 {
-	//image_alpha = obj_player.image_alpha
-	if (obj_player.hsp != 0){
-		sprite_index = spr_noisebomb_walk
-		if(is_noise){
-			sprite_index = spr_doisebomb_walk
-		}
-	}
-	else{
-		sprite_index = spr_noisebomb_idle
-		if(is_noise){
-			sprite_index = spr_doisebomb_idle
-		}
-	}
+	image_alpha = obj_player.image_alpha
+    if (obj_player.hsp != 0)
+        sprite_index = spr_noisebomb_walk
+    else
+        sprite_index = spr_noisebomb_idle
 	depth = -6
 	if (global.pineapplefollow == 1)
 	{

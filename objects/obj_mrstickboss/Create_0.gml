@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 event_inherited()
 boss_array[0] = -4
 boss_array[1] = [obj_peppermanOLD, 1] // [object, bossfight phase]
@@ -59,16 +60,16 @@ targetstunnedminus[4] = 30
 targetstunnedminus[5] = 30
 targetstunnedminus[6] = 30
 
-function boss_destroy(argument0)
+function boss_destroy(_a0)
 {
-	SUPER_boss_destroy(argument0)
+	SUPER_boss_destroy(_a0)
 	targetstunned = 1000
 	stunned = 1000
 	global.mrstickcutscene3 = 1
 	quick_ini_write_real(get_savefile_ini(), "cutscene", "mrstick3", 1)
 }
 
-function boss_hurt(argument0, argument1)
+function boss_hurt(_a0, _a1)
 {
 	if (targetstunned > 0)
 	{
@@ -79,11 +80,11 @@ function boss_hurt(argument0, argument1)
 	}
 	else
 		targetstunned = 150
-	SUPER_boss_hurt(argument0, argument1)
-	targetxscale = (-argument1.xscale)
+	SUPER_boss_hurt(_a0, _a1)
+	targetxscale = (-_a1.xscale)
 }
 
-function boss_hurt_noplayer(argument0)
+function boss_hurt_noplayer(_a0)
 {
 	if (targetstunned > 0)
 	{
@@ -94,18 +95,18 @@ function boss_hurt_noplayer(argument0)
 	}
 	else
 		targetstunned = 150
-	SUPER_boss_hurt_noplayer(argument0)
+	SUPER_boss_hurt_noplayer(_a0)
 }
 
-function player_hurt(argument0, argument1)
+function player_hurt(_a0, _a1)
 {
-	if ((!argument1.inv_frames) && (argument1.state != states.backbreaker or argument1.parry_inst == -4))
+	if ((!_a1.inv_frames) && (_a1.state != states.backbreaker or _a1.parry_inst == -4))
 	{
 		hitstate = state
 		hithsp = hsp
 		hitvsp = vsp
-		SUPER_player_hurt(argument0, argument1)
-		with (argument1)
+		SUPER_player_hurt(_a0, _a1)
+		with (_a1)
 		{
 			inv_frames = 1
 			alarm[1] = 15

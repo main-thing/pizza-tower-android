@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if destroy
 {
 	with (instance_create(x, y, obj_canonexplosion))

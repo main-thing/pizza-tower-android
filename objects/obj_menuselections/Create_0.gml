@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 optionselect = 0
 level[0] = "1.DESERT"
 level[1] = "2.MANSION"

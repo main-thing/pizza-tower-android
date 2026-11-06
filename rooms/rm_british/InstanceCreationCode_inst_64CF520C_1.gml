@@ -1,0 +1,9 @@
+speedupspeed = 1;
+maxspeed = 1;
+image_blend = c_gray;
+image_alpha = 0.2;
+image_xscale = 64;
+image_yscale = 64;
+sprite_index = spr_1x1;
+mask_index = spr_1x1;
+alarm[1] = 999999999999999999999999;

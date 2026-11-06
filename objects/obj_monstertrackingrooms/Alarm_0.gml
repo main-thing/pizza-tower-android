@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var robot_pos = monster_pos[0]
 if (room_place(robot_pos.x, robot_pos.y) != room_get_name(room))
 {

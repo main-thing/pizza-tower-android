@@ -1,4 +1,6 @@
-if(has_touched_player && single){
+ADD_OBJECT_EVENT_GML_HOOK;
+if(has_touched_player && single)
+{
 	exit;
 }
 has_touched_player = true

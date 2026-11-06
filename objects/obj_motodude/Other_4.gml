@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var _destroyed = 0
 if (ds_list_find_index(global.baddieroom, id) != -1)
 {

@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 256,
   "height": 192,
   "textureGroupId": {
@@ -87,11 +88,11 @@
       0,
     ],
     "resourceVersion": "1.0",
-    "loadedVersion": null,
+    "loadedVersion": {},
     "resourceType": "GMNineSliceData",
   },
   "parent": {
     "name": "Beach",
-    "path": "folders/Sprites/Backgrounds/Beach.yy",
+    "path": "folders/Sprites/Tilesets/Beach.yy",
   },
 }

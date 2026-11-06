@@ -280,7 +280,7 @@ function scr_player_bombpep()
 		scr_soundeffect(sfx_bombpep2)
 		hurted = 1
 		scr_losepoints()
-		instance_create(x, y, obj_bombexplosion)
+		instance_create(x, y, obj_bombexplosion).old = 1
 		GamepadSetVibration((object_index == obj_player1 ? 0 : 1), 1, 1, 0.9)
 		sprite_index = spr_bombpepend
 	}
@@ -320,6 +320,11 @@ function scr_player_bombpep()
 		state = states.backbreaker
 		with (instance_create((x + (xscale * 50)), y, obj_pizzagoblinbomb))
 		{
+			old = 1
+			countdown = 120
+			bomblit_spr = spr_bomblit1
+			sprite_index = spr_bomb1
+			mask_index = spr_bomb1
 			hsp = (other.xscale * 8)
 			vsp = -11
 			if scr_solid(x, y)

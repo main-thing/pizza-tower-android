@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (visible == true && obj_player.state != states.ejected)
 {
 	if place_meeting(x, (y - 1), obj_player1)

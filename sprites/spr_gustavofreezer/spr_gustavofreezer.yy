@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 120,
   "height": 100,
   "textureGroupId": {
@@ -85,7 +86,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Freezer",
-    "path": "folders/Sprites/Backgrounds/Freezer.yy",
+    "name": "Gustavo deco",
+    "path": "folders/Sprites/Decorations/Gustavo deco.yy",
   },
 }

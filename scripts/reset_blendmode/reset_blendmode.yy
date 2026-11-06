@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Systems",
-    "path": "folders/Scripts/Systems.yy",
+    "path": "folders/Objects/Game settings/Scripts/Systems.yy",
   },
 }

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (obj_baddie)
 {
 	if (place_meeting((x + hsp), y, obj_enemyblock) && thrown == true)

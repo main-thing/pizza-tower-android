@@ -2,7 +2,7 @@
 /// @param String
 /// @param  Token List
 /// @param  Types List
-function nsp_convert_to_list(argument0, argument1, argument2) {
+function nsp_convert_to_list(_a0, _a1, _a2) {
 	/*
 	Underlying NSP script.
 	Returns: 1 = Success, 0 = Failure
@@ -10,9 +10,9 @@ function nsp_convert_to_list(argument0, argument1, argument2) {
 	var work_str, token, types, succ;
 
 	//Setup:
-	work_str = argument0;
-	token = argument1;
-	types = argument2;
+	work_str = _a0;
+	token = _a1;
+	types = _a2;
 
 	if (work_str == "") {
 

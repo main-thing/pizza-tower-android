@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (inv_frame == 0 && obj_player.state != states.hurt)
 {
     instance_destroy()

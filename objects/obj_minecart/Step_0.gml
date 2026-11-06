@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 mask_index = spr_player_mask
 var _destroy = 0
 switch state

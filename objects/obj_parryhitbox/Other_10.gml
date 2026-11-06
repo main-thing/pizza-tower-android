@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var myplayer = obj_player1.id
 if (player_id == 2)
 	myplayer = obj_player2.id

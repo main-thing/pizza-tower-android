@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 fall = 0
 fallmax = 30
 fallbuffer = fallmax

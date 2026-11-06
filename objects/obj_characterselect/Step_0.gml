@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 image_speed = 0.35
 if ((obj_player1.key_right2 or (-obj_player2.key_left2)) && selected == 0 && ready == 0)
 {

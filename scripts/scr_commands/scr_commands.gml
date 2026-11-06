@@ -1,4 +1,4 @@
-function scr_do_command(argument0)
+function scr_do_command(_a0)
 {
 	with (obj_editor)
 	{
@@ -9,8 +9,8 @@ function scr_do_command(argument0)
 			ds_list_find_value(commandlist, t).ds_list_find_value(commandlist, t).OnDelete()
 			ds_list_delete(commandlist, t)
 		}
-		argument0.Do()
-		ds_list_add(commandlist, argument0)
+		_a0.Do()
+		ds_list_add(commandlist, _a0)
 	}
 }
 

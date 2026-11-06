@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var _player = other.id;
 if (ds_map_empty(player_hurtstates))
 	exit;

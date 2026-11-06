@@ -20,10 +20,10 @@ function scr_player_keyget()
 		global.keyget = 0
 		state = states.normal
 		image_index = 0
-		if(!global.oldsprites){
+		if(!global.oldsprites)
+		{
 			instance_create(x, y, obj_keyfollow);
 		}
 	}
 	exit;
 }
-

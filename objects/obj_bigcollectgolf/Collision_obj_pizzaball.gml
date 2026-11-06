@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (obj_player1.character == "V")
 	global.playerhealth = clamp((global.playerhealth + 10), 0, 100)
 global.heattime = 60

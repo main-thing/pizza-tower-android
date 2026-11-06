@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 640,
   "height": 2432,
   "textureGroupId": {
@@ -67,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Kids Party",
-    "path": "folders/Sprites/Backgrounds/Kids Party.yy",
+    "name": "Kidsparty",
+    "path": "folders/Sprites/Tilesets/Kidsparty.yy",
   },
 }

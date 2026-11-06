@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if active
 {
 	var hdeccel = (abs(h_velocity) / 24)

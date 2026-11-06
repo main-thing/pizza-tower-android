@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (!instance_exists(baddieID))
 	refresh--
 if (refresh <= 0 && (!(point_in_camera_ext(x, y, view_camera[0], 100, 100))))

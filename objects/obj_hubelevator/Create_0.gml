@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 state = states.normal
 hub_array[0] = [hub_reception, "RECEPTION"]
 hub_array[1] = [hub_pizzatowerlobby, "PIZZA TOWER LOBBY"]

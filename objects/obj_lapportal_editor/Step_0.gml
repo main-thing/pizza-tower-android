@@ -1,6 +1,7 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if(index == -1)
     exit;
-if(start == 1){
+if(start == 1) {
 	if global.panic || forceshow
 	{
 		image_alpha = 1
@@ -65,7 +66,7 @@ if(start == 1){
 	else
 		image_alpha = 0.5
 } else {
-	if(active == 0){
+	if(active == 0) {
 		visible = false
 	}
 }

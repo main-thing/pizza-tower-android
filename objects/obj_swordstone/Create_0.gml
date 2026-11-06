@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 image_index = 0.35
 if (room == rm_editor)
 {

@@ -220,16 +220,19 @@ function scr_player_knightpep()
 	}
 	if (scr_slope() && sprite_index != spr_knightpepthunder)
 	{
-		if (sprite_index == spr_knightpepdowntrust)
-			movespeed = 11
-		else
-			movespeed = 8
-		with (instance_place(x, (y + 1), obj_slope)){
-			if(!oldblock){
-				other.xscale = (-sign(image_xscale))
-				other.state = states.knightpepslopes
-				other.sprite_index = other.spr_knightpepdownslope
-				other.slope_buffer = 20
+		with (instance_place(x, (y + 1), obj_slope)) {
+			if(!oldblock) {
+				with (other) {
+					if (sprite_index == spr_knightpepdowntrust)
+						movespeed = 11
+					else
+						movespeed = 8
+			
+					xscale = (-sign(other.image_xscale))
+					state = states.knightpepslopes
+					sprite_index = spr_knightpepdownslope
+					slope_buffer = 20
+				}
 			}
 		}
 	}

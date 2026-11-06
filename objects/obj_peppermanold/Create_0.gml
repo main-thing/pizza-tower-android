@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 event_inherited()
 state = states.arenaround
 ds_map_set(player_hurtstates, states.handstandjump, 30)
@@ -75,16 +76,16 @@ fist_dmg_player = 20
 superattack_hpthreshold = 500
 superattack_buffer = 0
 superattack_max = 360
-function player_destroy(argument0)
+function player_destroy(_a0)
 {
-	SUPER_player_destroy(argument0)
+	SUPER_player_destroy(_a0)
 	exit;
 }
 
-function boss_destroy(argument0)
+function boss_destroy(_a0)
 {
 	hitstate = states.normal
-	SUPER_boss_destroy(argument0)
+	SUPER_boss_destroy(_a0)
 	with (obj_peppermanbrick)
 		instance_destroy()
 	global.peppermancutscene2 = 1
@@ -94,7 +95,7 @@ function boss_destroy(argument0)
 	exit;
 }
 
-function boss_hurt(argument0, argument1)
+function boss_hurt(_a0, _a1)
 {
 	if (targetstunned > 0)
 	{
@@ -105,12 +106,12 @@ function boss_hurt(argument0, argument1)
 	}
 	else
 		targetstunned = 150
-	SUPER_boss_hurt(argument0, argument1)
-	targetxscale = (-argument1.xscale)
+	SUPER_boss_hurt(_a0, _a1)
+	targetxscale = (-_a1.xscale)
 	exit;
 }
 
-function boss_hurt_noplayer(argument0)
+function boss_hurt_noplayer(_a0)
 {
 	if (targetstunned > 0)
 	{
@@ -121,16 +122,16 @@ function boss_hurt_noplayer(argument0)
 	}
 	else
 		targetstunned = 150
-	SUPER_boss_hurt_noplayer(argument0)
+	SUPER_boss_hurt_noplayer(_a0)
 	exit;
 }
 
-function player_hurt(argument0, argument1)
+function player_hurt(_a0, _a1)
 {
-	if (argument1.state != states.backbreaker or argument1.parry_inst == -4)
+	if (_a1.state != states.backbreaker or _a1.parry_inst == -4)
 	{
 		var _prevstate = state
-		SUPER_player_hurt(argument0, argument1)
+		SUPER_player_hurt(_a0, _a1)
 		if (_prevstate == states.shoulderbash or _prevstate == states.boss_supershoulderbash or _prevstate == states.shoulder or _prevstate == states.superslam)
 		{
 			with (obj_camera)
@@ -166,7 +167,7 @@ function player_hurt(argument0, argument1)
 	}
 	else if (state == states.superslam)
 	{
-		with (argument1)
+		with (_a1)
 		{
 			if (state == states.hit or state == states.chainsaw)
 			{

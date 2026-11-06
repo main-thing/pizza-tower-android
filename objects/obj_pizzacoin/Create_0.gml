@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 image_speed = 0.5
 hsp = 0
 vsp = random_range(-2, -4)
@@ -7,3 +8,4 @@ if (obj_player.character == "S")
 platformid = -4
 hsp_carry = 0
 vsp_carry = 0
+use_collision = 1

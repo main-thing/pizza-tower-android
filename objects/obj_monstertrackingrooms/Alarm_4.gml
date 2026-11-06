@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (monster_active[4] && room != kidsparty_entrance1 && room != kidsparty_entrance2)
 {
 	var n = irandom(3)

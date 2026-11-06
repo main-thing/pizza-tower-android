@@ -17,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 128,
   "height": 96,
   "textureGroupId": {
@@ -72,6 +73,6 @@
   "nineSlice": null,
   "parent": {
     "name": "War",
-    "path": "folders/Sprites/Backgrounds/War.yy",
+    "path": "folders/Sprites/Decorations/War.yy",
   },
 }

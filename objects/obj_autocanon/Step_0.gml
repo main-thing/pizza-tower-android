@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (cooldown <= 0 && (escape == false or global.panic == true))
 {
 	with (instance_create((x + (image_xscale * 15)), y, obj_canongoblinbomb))

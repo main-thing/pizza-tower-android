@@ -3,15 +3,15 @@
   "resourceVersion": "1.0",
   "name": "tile_freezer",
   "spriteId": {
-    "name": "tilespr_tile_freezer",
-    "path": "sprites/tilespr_tile_freezer/tilespr_tile_freezer.yy",
+    "name": "tile_freezer_1",
+    "path": "sprites/tile_freezer_1/tile_freezer_1.yy",
   },
   "tileWidth": 32,
   "tileHeight": 32,
-  "tilexoff": 2,
-  "tileyoff": 2,
-  "tilehsep": 4,
-  "tilevsep": 4,
+  "tilexoff": 0,
+  "tileyoff": 0,
+  "tilehsep": 0,
+  "tilevsep": 0,
   "spriteNoExport": false,
   "textureGroupId": {
     "name": "Default",
@@ -135,7 +135,7 @@
     "TileSerialiseData": [],
   },
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "2019",
+    "path": "folders/Tile Sets/2019.yy",
   },
 }

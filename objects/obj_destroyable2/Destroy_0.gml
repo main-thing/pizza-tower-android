@@ -1,6 +1,7 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (room == rm_editor)
 	exit;
-if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == 0)
+if (ds_list_find_index(global.saveroom, id) == -1 && !global.snickchallenge)
 {
 	repeat (6)
 	{
@@ -24,10 +25,12 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == 0)
 	global.combotime += 10
 	global.combotime = clamp(global.combotime, 0, 60)
 	var val = heat_calculate(10)
+	
 	if (other.object_index == obj_player1)
 		global.collect += val
 	else
 		global.collectN += val
+		
 	with (instance_create((x + 16), y, obj_smallnumber))
 		number = string(val)
 	tile_layer_delete_at(1, x, y)

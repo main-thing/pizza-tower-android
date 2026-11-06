@@ -1,0 +1,2 @@
+ADD_OBJECT_EVENT_GML_HOOK;
+instance_activate_object(obj_pause);

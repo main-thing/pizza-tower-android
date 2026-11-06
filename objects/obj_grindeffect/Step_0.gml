@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 x = obj_player.x
 y = obj_player.y
 if (obj_player.state != states.grind)

@@ -1,0 +1,19 @@
+ADD_OBJECT_EVENT_GML_HOOK;
+hspeed = 0
+alarm[1] = 300
+alarm[0] = 800
+image_speed = 0.35
+grav = 0.5
+hsp = 0
+vsp = 0
+minutes = 5
+seconds = 30
+activated = 0
+play_music = 1
+var player = instance_nearest(x, y, obj_player)
+if (player.x != x)
+	image_xscale = (-(sign((x - player.x))))
+grounded = 1
+platformid = -4
+hsp_carry = 0
+vsp_carry = 0

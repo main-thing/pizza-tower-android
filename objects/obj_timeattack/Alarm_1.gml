@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (global.timeattack == 1 && stop == 0)
 {
 	global.taseconds += 1

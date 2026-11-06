@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (obj_player.state != states.portal && global.panic == true)
 {
 	obj_player.hsp = 0;

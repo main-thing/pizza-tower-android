@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 scr_losepoints()
 sprite_index = spr_knightpepthunder
 GamepadSetVibration((object_index == obj_player1 ? 0 : 1), 1, 1, 0.9)

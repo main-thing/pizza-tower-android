@@ -1,2 +1,2 @@
 targetRoom = desert_4
-visible = false
+depth = 101

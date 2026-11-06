@@ -1,5 +1,5 @@
 ///NSP_initialize()
-function nsp_reset_functionslist(){
+function nsp_reset_functionslist() {
 global.___nspfunctions = {}; // Edit this global all you want just call nsp_reset_functionslist to fix it.
 	for (var i = 0; i < 10000; i++) { 
 		var name = script_get_name(i);

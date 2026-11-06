@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (distance_to_object(obj_player1) < 50)
 {
 	var str = ""

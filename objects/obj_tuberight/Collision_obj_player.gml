@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (other.tube_id == id)
 	exit;
 if (other.state == states.hurt)

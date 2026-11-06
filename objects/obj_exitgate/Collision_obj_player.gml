@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (image_index == 1 && global.panic == false && room != war_13)
 {
 	with (obj_player)
@@ -41,7 +42,7 @@ if (drop && dropstate != states.idle)
 	exit;
 with (obj_player)
 {
-	if (grounded && x > (other.x - 160) && x < (other.x + 160) && key_up && (state == states.normal or state == states.mach1 or state == states.mach2 or state == states.mach3) && (global.panic == true or global.snickchallenge == 1 or room == war_13))
+	if (grounded && x > (other.x - 160) && x < (other.x + 160) && key_up && (state == states.normal or state == states.mach1 or state == states.mach2 or state == states.mach3) && (global.panic == true or global.snickchallenge == 1 or room == war_13 or other.random_secret))
 	{
 		var ex = x
 		var ey = y

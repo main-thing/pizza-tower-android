@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 drawing = place_meeting(x, y, obj_player)
 if place_meeting(x, y, obj_player)
 	image_speed = 0.35

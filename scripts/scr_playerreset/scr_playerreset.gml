@@ -10,10 +10,10 @@ function scr_playerreset()
 		music = -4
 		secretmusic = -4
 		lapstart = false
-		if(obj_player1.escapemusic != undefined){
+		if(obj_player1.escapemusic != undefined) {
 			escapemusic = obj_player1.escapemusic
 		}
-		if(obj_player1.lap2music != undefined){
+		if(obj_player1.lap2music != undefined) {
 			lap2music = obj_player1.lap2music
 		}
 	}
@@ -25,6 +25,7 @@ function scr_playerreset()
 		alarm[4] = -1
 	if (!global.levelreset)
 	{
+		instance_destroy(obj_randomsecret)
 		instance_destroy(obj_deliverytimer)
 		instance_destroy(obj_wartimer)
 		with (obj_cutscene_handler)

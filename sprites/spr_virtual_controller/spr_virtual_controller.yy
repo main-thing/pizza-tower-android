@@ -17,11 +17,12 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 64,
   "height": 64,
   "textureGroupId": {
-    "name": "backgroundgroup",
-    "path": "texturegroups/backgroundgroup",
+    "name": "Default",
+    "path": "texturegroups/Default",
   },
   "swatchColours": null,
   "gridX": 0,
@@ -67,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "mobilecontrols",
-    "path": "folders/Sprites/mobilecontrols.yy",
+    "name": "PTEM Controls",
+    "path": "folders/Sprites/PTEM Controls.yy",
   },
 }

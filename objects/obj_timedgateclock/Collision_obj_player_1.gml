@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var _notif = false;
 if (sprite_index != spr_button_pressed && sprite_index != spr_button_goingpressed)
 {

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 hsp = (image_xscale * movespeed)
 mask_index = spr_player_mask
 if (scr_solid(x, (y + 1)) && vsp > 0)

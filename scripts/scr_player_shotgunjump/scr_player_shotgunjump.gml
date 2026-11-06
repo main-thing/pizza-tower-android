@@ -32,7 +32,7 @@ function scr_player_shotgunjump()
 		vsp = grav
 		jumpstop = 1
 	}
-	if(!finalmoveset){
+	if(!finalmoveset) {
 		if (input_buffer_jump < 8 && grounded)
 		{
 			input_buffer_jump = 8

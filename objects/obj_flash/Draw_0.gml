@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 draw_set_alpha(fadealpha)
 draw_set_color(c_white)
 var cam_x = camera_get_view_x(view_camera[0])

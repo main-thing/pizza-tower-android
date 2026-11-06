@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (room == timesuproom)
 	instance_destroy();
 switch (state)
@@ -54,7 +55,7 @@ switch (state)
 		}
 		else
 		{
-			if(instance_exists(trapid)){
+			if(instance_exists(trapid)) {
 			with (trapid)
 			{
 				switch object_index

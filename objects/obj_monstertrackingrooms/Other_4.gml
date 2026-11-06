@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 player_posX = ds_grid_value_x(room_grid, 0, 0, (map_width - 1), (map_height - 1), room_get_name(room))
 player_posY = ds_grid_value_y(room_grid, 0, 0, (map_width - 1), (map_height - 1), room_get_name(room))
 for (var i = 0; i < array_length(monster_room); i++)

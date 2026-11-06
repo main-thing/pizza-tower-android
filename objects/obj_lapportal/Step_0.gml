@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if global.panic || forceshow
 {
 	image_alpha = 1
@@ -62,3 +63,8 @@ if global.panic || forceshow
 }
 else
 	image_alpha = 0.5
+
+if(!global.oldsprites)
+	hasicon = 1;
+else
+	hasicon = 0;

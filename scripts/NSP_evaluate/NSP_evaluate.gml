@@ -1,6 +1,6 @@
 /// @description NSP_evaluate(String)
 /// @param String
-function NSP_evaluate(argument0) {
+function NSP_evaluate(_a0) {
 	/*
 
 	Evaluates a string of GML code.
@@ -12,12 +12,12 @@ function NSP_evaluate(argument0) {
 	    nspToken = global.nspToken;
 	var rv, succ;
 
-	if (argument0 == "") return "";
+	if (_a0 == "") return "";
 
 	nspListStr = ds_list_create();
 	nspListPar = ds_list_create();
 
-	succ = nsp_convert_to_list(argument0, nspListStr, nspListPar);
+	succ = nsp_convert_to_list(_a0, nspListStr, nspListPar);
 
 	if (!succ) {
 

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 with (other)
 {
 	if (character == "V")
@@ -5,7 +6,7 @@ with (other)
 	else if ((!isgustavo) && state != states.ghost && state != states.ghostpossess && state != states.actor && state != states.parry && state != states.gotoplayer)
 	{
 		scr_losepoints()
-		tv_push_prompt_once(tv_create_prompt("This is the ghost transformation text", tvprompt.transfo, self._spr_tv_ghost, 3), "ghost")
+		tv_push_prompt_once(tv_create_prompt("This is the ghost transformation text", tvprompt.transfo, self.tv_ghost, 3), "ghost")
 		grav /= 2
 		state = states.ghost
 		sprite_index = spr_ghostidle

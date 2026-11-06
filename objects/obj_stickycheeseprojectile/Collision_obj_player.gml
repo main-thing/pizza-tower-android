@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 alarm[0] = 60
 sticked = 1
 create_debris((x + random_range(-5, 5)), (y + random_range(-5, 5)), spr_slimedebris, 0)

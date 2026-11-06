@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 if (timermax > 1)
 	timermax -= 2
 if (timermax <= 5)

@@ -1,3 +1,4 @@
+ADD_OBJECT_EVENT_GML_HOOK;
 var current_scene = scene_info[scene]
 switch (array_length(current_scene) - 1)
 {
